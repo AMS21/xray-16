@@ -37,4 +37,3 @@ jobs:
             echo Formatting problems found!
             git diff --color=always --minimal
             exit 1
-          fi
