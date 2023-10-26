@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: level_graph_space.h
-//	Created 	: 02.10.2001
-//  Modified 	: 08.12.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Level graph space
+//  Module      : level_graph_space.h
+//  Created     : 02.10.2001
+//  Modified    : 08.12.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Level graph space
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

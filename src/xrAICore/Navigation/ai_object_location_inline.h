@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_object_location.h
-//	Created 	: 27.11.2003
-//  Modified 	: 27.11.2003
-//	Author		: Dmitriy Iassenev
-//	Description : AI object location
+//  Module      : ai_object_location.h
+//  Created     : 27.11.2003
+//  Modified    : 27.11.2003
+//  Author      : Dmitriy Iassenev
+//  Description : AI object location
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

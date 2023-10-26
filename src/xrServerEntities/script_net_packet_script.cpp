@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_net packet_script.cpp
-//	Created 	: 06.02.2004
-//  Modified 	: 24.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : XRay Script net packet class script export
+//  Module      : script_net packet_script.cpp
+//  Created     : 06.02.2004
+//  Modified    : 24.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : XRay Script net packet class script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -55,8 +55,8 @@ SCRIPT_EXPORT(NET_Packet, (),
         class_<NET_Packet>("net_packet")
             .def(constructor<>())
             .def("w_begin", &NET_Packet::w_begin)
-            //			.def("w",				&NET_Packet::w				)
-            //			.def("w_seek",			&NET_Packet::w_seek			)
+            //          .def("w",               &NET_Packet::w              )
+            //          .def("w_seek",          &NET_Packet::w_seek         )
             .def("w_tell", &NET_Packet::w_tell)
             .def("w_vec3", &NET_Packet::w_vec3)
             .def("w_float", &NET_Packet::w_float)
@@ -67,7 +67,7 @@ SCRIPT_EXPORT(NET_Packet, (),
             .def("w_u16", &NET_Packet::w_u16)
             .def("w_s16", &NET_Packet::w_s16)
             .def("w_u8", &NET_Packet::w_u8)
-            //			.def("w_s8",			&NET_Packet::w_s8			)
+            //          .def("w_s8",            &NET_Packet::w_s8           )
             .def("w_bool", &w_bool)
             .def("w_float_q16", &NET_Packet::w_float_q16)
             .def("w_float_q8", &NET_Packet::w_float_q8)
@@ -83,7 +83,7 @@ SCRIPT_EXPORT(NET_Packet, (),
             .def("w_chunk_open16", &NET_Packet::w_chunk_open16, out_value<2>())
             .def("w_chunk_close16", &NET_Packet::w_chunk_close16)
             .def("r_begin", &NET_Packet::r_begin, out_value<2>())
-            //			.def("r",				&NET_Packet::r				)
+            //          .def("r",               &NET_Packet::r              )
             .def("r_seek", &NET_Packet::r_seek)
             .def("r_tell", &NET_Packet::r_tell)
             // XXX: used as r_vec3(vec) -- remove pure_out_value?

@@ -382,7 +382,7 @@ void CArtefact::UpdateXForm()
         N.normalize_safe();
         mRes.set(R, N, D, mR.c);
         mRes.mulA_43(E->XFORM());
-        //		UpdatePosition		(mRes);
+        //      UpdatePosition      (mRes);
         XFORM().mul(mRes, offset());
     }
 }

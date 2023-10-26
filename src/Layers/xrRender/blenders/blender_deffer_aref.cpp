@@ -34,7 +34,7 @@ void CBlender_deffer_aref::Compile(CBlender_Compile& C)
 {
     IBlender::Compile(C);
 
-    // oBlend.value	= FALSE	;
+    // oBlend.value = FALSE ;
 
 #if RENDER == R_R2
     if (oBlend.value)
@@ -137,7 +137,7 @@ void CBlender_deffer_aref::Compile(CBlender_Compile& C)
                             D3DSTENCILOP_KEEP);
                 C.r_ColorWriteEnable(false, false, false, false);
                 C.r_StencilRef(0x01);
-                //	Alpha to coverage.
+                //  Alpha to coverage.
                 C.RS.SetRS(XRDX11RS_ALPHATOCOVERAGE, TRUE);
                 C.r_End();
             }
@@ -160,7 +160,7 @@ void CBlender_deffer_aref::Compile(CBlender_Compile& C)
                             D3DSTENCILOP_KEEP);
                 C.r_StencilRef(0x01);
                 C.r_ColorWriteEnable(false, false, false, false);
-                //	Alpha to coverage.
+                //  Alpha to coverage.
                 C.RS.SetRS(XRDX11RS_ALPHATOCOVERAGE, TRUE);
                 C.r_End();
             }
@@ -175,8 +175,8 @@ void CBlender_deffer_aref::Compile(CBlender_Compile& C)
 
 
         case SE_R2_SHADOW: // smap
-            //			if (RImplementation.o.HW_smap)	C.r_Pass	("shadow_direct_base_aref","shadow_direct_base_aref",FALSE,TRUE,TRUE,FALSE,D3DBLEND_ZERO,D3DBLEND_ONE,TRUE,220);
-            //			else							C.r_Pass	("shadow_direct_base_aref","shadow_direct_base_aref",FALSE);
+            //          if (RImplementation.o.HW_smap)  C.r_Pass    ("shadow_direct_base_aref","shadow_direct_base_aref",FALSE,TRUE,TRUE,FALSE,D3DBLEND_ZERO,D3DBLEND_ONE,TRUE,220);
+            //          else                            C.r_Pass    ("shadow_direct_base_aref","shadow_direct_base_aref",FALSE);
             C.r_Pass("shadow_direct_base_aref", "shadow_direct_base_aref", FALSE, TRUE,TRUE,FALSE);
             C.r_Sampler("s_base", C.L_textures[0]);
             C.r_ColorWriteEnable(false, false, false, false);
@@ -195,10 +195,10 @@ void CBlender_deffer_aref::Compile(CBlender_Compile& C)
             {
                 C.r_Pass("lmapE", "lmapE", TRUE, TRUE, FALSE, TRUE, D3DBLEND_SRCALPHA, D3DBLEND_INVSRCALPHA, TRUE,
                     oAREF.value);
-                // C.r_Sampler			("s_base",	C.L_textures[0]	);
-                // C.r_Sampler			("s_lmap",	C.L_textures[1]	);
-                // C.r_Sampler_clf		("s_hemi",	*C.L_textures[2]);
-                // C.r_Sampler			("s_env",	r2_T_envs0,		false,D3DTADDRESS_CLAMP);
+                // C.r_Sampler          ("s_base",  C.L_textures[0] );
+                // C.r_Sampler          ("s_lmap",  C.L_textures[1] );
+                // C.r_Sampler_clf      ("s_hemi",  *C.L_textures[2]);
+                // C.r_Sampler          ("s_env",   r2_T_envs0,     false,D3DTADDRESS_CLAMP);
 
                 C.r_dx11Texture("s_base", C.L_textures[0]);
                 C.r_dx11Texture("s_lmap", C.L_textures[1]);
@@ -214,7 +214,7 @@ void CBlender_deffer_aref::Compile(CBlender_Compile& C)
             {
                 C.r_Pass("vert", "vert", TRUE, TRUE, FALSE, TRUE, D3DBLEND_SRCALPHA, D3DBLEND_INVSRCALPHA, TRUE,
                     oAREF.value);
-                // C.r_Sampler			("s_base",	C.L_textures[0]	);
+                // C.r_Sampler          ("s_base",  C.L_textures[0] );
                 C.r_dx11Texture("s_base", C.L_textures[0]);
                 C.r_dx11Sampler("smp_base");
                 C.r_End();
@@ -242,7 +242,7 @@ void CBlender_deffer_aref::Compile(CBlender_Compile& C)
                     TRUE, D3DCMP_ALWAYS, 0xff, 0x7f, D3DSTENCILOP_KEEP, D3DSTENCILOP_REPLACE, D3DSTENCILOP_KEEP);
                 C.r_ColorWriteEnable(false, false, false, false);
                 C.r_StencilRef(0x01);
-                //	Alpha to coverage.
+                //  Alpha to coverage.
                 C.RS.SetRS(XRDX11RS_ALPHATOCOVERAGE, TRUE);
                 C.r_End();
             }
@@ -264,7 +264,7 @@ void CBlender_deffer_aref::Compile(CBlender_Compile& C)
                     TRUE, D3DCMP_ALWAYS, 0xff, 0x7f, D3DSTENCILOP_KEEP, D3DSTENCILOP_REPLACE, D3DSTENCILOP_KEEP);
                 C.r_StencilRef(0x01);
                 C.r_ColorWriteEnable(false, false, false, false);
-                //	Alpha to coverage.
+                //  Alpha to coverage.
                 C.RS.SetRS(XRDX11RS_ALPHATOCOVERAGE, TRUE);
                 C.r_End();
             }
@@ -278,12 +278,12 @@ void CBlender_deffer_aref::Compile(CBlender_Compile& C)
             break;
 
         case SE_R2_SHADOW: // smap
-            //			if (RImplementation.o.HW_smap)	C.r_Pass
+            //          if (RImplementation.o.HW_smap)  C.r_Pass
             //("shadow_direct_base_aref","shadow_direct_base_aref",FALSE,TRUE,TRUE,FALSE,D3DBLEND_ZERO,D3DBLEND_ONE,TRUE,220);
-            //			else							C.r_Pass
+            //          else                            C.r_Pass
             //("shadow_direct_base_aref","shadow_direct_base_aref",FALSE);
             C.r_Pass("shadow_direct_base_aref", "shadow_direct_base_aref", FALSE, TRUE, TRUE, FALSE);
-            // C.r_Sampler		("s_base",C.L_textures[0]);
+            // C.r_Sampler      ("s_base",C.L_textures[0]);
             C.r_dx11Texture("s_base", C.L_textures[0]);
             C.r_dx11Sampler("smp_base");
             C.r_dx11Sampler("smp_linear");

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: rat_state_base.cpp
-//	Created 	: 31.08.2007
-//  Modified 	: 31.08.2007
-//	Author		: Dmitriy Iassenev
-//	Description : rat state base class
+//  Module      : rat_state_base.cpp
+//  Created     : 31.08.2007
+//  Modified    : 31.08.2007
+//  Author      : Dmitriy Iassenev
+//  Description : rat state base class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

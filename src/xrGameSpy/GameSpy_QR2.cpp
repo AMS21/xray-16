@@ -68,16 +68,16 @@ void CGameSpy_QR2::RegisterAdditionalKeys()
     qr2_register_keyA(G_BEARER_CANT_SPRINT_KEY, ("bearercant_sprint"));
 
     //---- Player keys
-    //	qr2_register_keyA(P_NAME__KEY,					("name_"));
-    //	qr2_register_keyA(P_FRAGS__KEY,					("frags_"));
-    //	qr2_register_keyA(P_DEATH__KEY,					("death_"));
-    //	qr2_register_keyA(P_RANK__KEY,					("rank_"));
-    //	qr2_register_keyA(P_TEAM__KEY,					("p_team_"));
+    //  qr2_register_keyA(P_NAME__KEY,                  ("name_"));
+    //  qr2_register_keyA(P_FRAGS__KEY,                 ("frags_"));
+    //  qr2_register_keyA(P_DEATH__KEY,                 ("death_"));
+    //  qr2_register_keyA(P_RANK__KEY,                  ("rank_"));
+    //  qr2_register_keyA(P_TEAM__KEY,                  ("p_team_"));
     qr2_register_keyA(P_SPECTATOR__KEY, ("spectator_"));
     qr2_register_keyA(P_ARTEFACTS__KEY, ("artefacts_"));
 
     //---- Team keys
-    //	qr2_register_keyA(T_NAME_KEY,					("t_name_key"));
+    //  qr2_register_keyA(T_NAME_KEY,                   ("t_name_key"));
     qr2_register_keyA(T_SCORE_T_KEY, ("t_score_t"));
     qr2_register_keyA(SERVER_UP_TIME_KEY, ("server_up_time"));
 };

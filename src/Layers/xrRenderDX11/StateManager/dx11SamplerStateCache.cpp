@@ -17,8 +17,8 @@ dx11SamplerStateCache::SHandle dx11SamplerStateCache::GetState(D3D_SAMPLER_DESC&
 {
     SHandle hResult;
 
-    //	MaxAnisitropy is reset by ValidateState if not aplicable
-    //	to the filter mode used.
+    //  MaxAnisitropy is reset by ValidateState if not aplicable
+    //  to the filter mode used.
     desc.MaxAnisotropy = m_uiMaxAnisotropy;
     // RZ
     desc.MipLODBias = m_uiMipLODBias;
@@ -58,7 +58,7 @@ dx11SamplerStateCache::SHandle dx11SamplerStateCache::FindState(const StateDecs&
             m_StateArray[i].m_pState->GetDesc(&descCandidate);
             if (descCandidate == desc)
             // return i;
-            //	TEST
+            //  TEST
             {
                 // return i;
                 res = i;
@@ -66,7 +66,7 @@ dx11SamplerStateCache::SHandle dx11SamplerStateCache::FindState(const StateDecs&
             }
             // else
             //{
-            //	VERIFY(0);
+            //  VERIFY(0);
             //}
         }
         i++;
@@ -157,14 +157,14 @@ void dx11SamplerStateCache::SetMaxAnisotropy(u32 uiMaxAniso)
 
         rec.m_pState->GetDesc(&desc);
 
-        //	MaxAnisitropy is reset by ValidateState if not aplicable
-        //	to the filter mode used.
-        //	Reason: all checks for aniso applicability are done
-        //	in ValidateState.
+        //  MaxAnisitropy is reset by ValidateState if not aplicable
+        //  to the filter mode used.
+        //  Reason: all checks for aniso applicability are done
+        //  in ValidateState.
         desc.MaxAnisotropy = m_uiMaxAnisotropy;
         dx11StateUtils::ValidateState(desc);
 
-        //	This can cause fragmentation if called too often
+        //  This can cause fragmentation if called too often
         rec.m_pState->Release();
         CreateState(desc, &rec.m_pState);
     }

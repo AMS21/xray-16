@@ -189,7 +189,7 @@ void CUIGameSP::Render()
 
 void CUIGameSP::StartTrade(CInventoryOwner* pActorInv, CInventoryOwner* pOtherOwner)
 {
-    //.	if( MainInputReceiver() )	return;
+    //. if( MainInputReceiver() )   return;
 
     ActorMenu->SetActor(pActorInv);
     ActorMenu->SetPartner(pOtherOwner);
@@ -200,7 +200,7 @@ void CUIGameSP::StartTrade(CInventoryOwner* pActorInv, CInventoryOwner* pOtherOw
 
 void CUIGameSP::StartUpgrade(CInventoryOwner* pActorInv, CInventoryOwner* pMech)
 {
-    //.	if( MainInputReceiver() )	return;
+    //. if( MainInputReceiver() )   return;
 
     ActorMenu->SetActor(pActorInv);
     ActorMenu->SetPartner(pMech);

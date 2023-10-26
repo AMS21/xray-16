@@ -69,8 +69,8 @@ void CPHCharacter::get_State(SPHNetState& state)
     state.quaternion.identity();
     state.previous_quaternion.identity();
     state.torque.set(0.f, 0.f, 0.f);
-    //	state.accel = GetAcceleration();
-    //	state.max_velocity = GetMaximumVelocity();
+    //  state.accel = GetAcceleration();
+    //  state.max_velocity = GetMaximumVelocity();
 
     if (!b_exist)
     {
@@ -87,8 +87,8 @@ void CPHCharacter::set_State(const SPHNetState& state)
     SetVelocity(state.linear_vel);
     setForce(state.force);
 
-    //	SetAcceleration(state.accel);
-    //	SetMaximumVelocity(state.max_velocity);
+    //  SetAcceleration(state.accel);
+    //  SetMaximumVelocity(state.max_velocity);
 
     if (!b_exist)
         return;

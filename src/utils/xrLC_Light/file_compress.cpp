@@ -33,7 +33,7 @@ void decompress(LPCSTR f_in, LPCSTR f_out)
     FILE* file = fopen(f_out, "wb");
     u32 buff_size = 1024 * 1024 / 2;
 
-    // u32 const length	= _filelength( _fileno( file ) );
+    // u32 const length = _filelength( _fileno( file ) );
 
     void* buff = xr_alloca(buff_size);
     gzFile z_file = gzopen(f_in, "rb");

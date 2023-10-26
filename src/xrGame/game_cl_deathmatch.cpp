@@ -462,8 +462,8 @@ void game_cl_Deathmatch::shedule_Update(u32 dt)
         m_game_ui->SetForceRespawnTimeCaption(NULL);
         m_game_ui->SetWarmUpCaption(NULL);
     };
-    //	if (CurrentGameUI() && CurrentGameUI()->UIMainIngameWnd)
-    //		CurrentGameUI()->UIMainIngameWnd->ZoneCounter().SetText("");
+    //  if (CurrentGameUI() && CurrentGameUI()->UIMainIngameWnd)
+    //      CurrentGameUI()->UIMainIngameWnd->ZoneCounter().SetText("");
 
     switch (Phase())
     {
@@ -656,7 +656,7 @@ void game_cl_Deathmatch::shedule_Update(u32 dt)
 
     //-----------------------------------------------
     // if (m_game_ui->m_pInventoryMenu && m_game_ui->m_pInventoryMenu->IsShown() && !CanCallInventoryMenu())
-    //	StartStopMenu(m_game_ui->m_pInventoryMenu,true);
+    //  StartStopMenu(m_game_ui->m_pInventoryMenu,true);
     if (m_game_ui && m_game_ui->GetActorMenu().IsShown() && !CanCallInventoryMenu())
     {
         m_game_ui->HideActorMenu();
@@ -667,7 +667,7 @@ void game_cl_Deathmatch::shedule_Update(u32 dt)
     u32 cur_game_state = Phase();
     // if(m_game_ui->m_pMapDesc && m_game_ui->m_pMapDesc->IsShown() && cur_game_state!=GAME_PHASE_INPROGRESS)
     //{
-    //	m_game_ui->m_pMapDesc->HideDialog();
+    //  m_game_ui->m_pMapDesc->HideDialog();
     //}
 
     if (pCurSkinMenu && pCurSkinMenu->IsShown() && cur_game_state != GAME_PHASE_INPROGRESS)
@@ -744,7 +744,7 @@ bool game_cl_Deathmatch::OnKeyboardPress(int key)
                 if (!pCurBuyMenu->IsShown())
                     SetBuyMenuItems(&PlayerDefItems);
 
-                //				LoadDefItemsForRank(pCurBuyMenu);
+                //              LoadDefItemsForRank(pCurBuyMenu);
                 ShowBuyMenu();
             }
         };
@@ -899,8 +899,8 @@ void game_cl_Deathmatch::GetMapEntities(xr_vector<SZoneMapEntityData>& dst)
 {
     /*
     SZoneMapEntityData D;
-    u32 color_self_team		=		0xff00ff00;
-    D.color					=		color_self_team;
+    u32 color_self_team     =       0xff00ff00;
+    D.color                 =       color_self_team;
 
     PLAYERS_MAP_IT it = players.begin();
     for(;it!=players.end();++it)
@@ -975,7 +975,7 @@ void game_cl_Deathmatch::PlayParticleEffect(LPCSTR EffName, Fvector& pos)
     Fmatrix M;
     M.translate(pos);
 
-    //	CParticlesPlayer::MakeXFORM(pObj,0,Fvector().set(0.f,1.f,0.f),Fvector().set(0.f,0.f,0.f),pos);
+    //  CParticlesPlayer::MakeXFORM(pObj,0,Fvector().set(0.f,1.f,0.f),Fvector().set(0.f,0.f,0.f),pos);
 
     // установить particles
     CParticlesObject* ps = NULL;
@@ -1150,7 +1150,7 @@ void game_cl_Deathmatch::OnGameMenuRespond_ChangeSkin(NET_Packet& P)
         pCurSkinMenu->HideDialog();
 
     // if (m_game_ui->m_pMapDesc && m_game_ui->m_pMapDesc->IsShown())
-    //	m_game_ui->m_pMapDesc->HideDialog();
+    //  m_game_ui->m_pMapDesc->HideDialog();
 
     SetCurrentSkinMenu();
     if (pCurSkinMenu)

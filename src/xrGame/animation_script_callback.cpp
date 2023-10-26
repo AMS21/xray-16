@@ -55,20 +55,20 @@ void anim_script_callback::anim_callback(CBlend* B)
     // float quant = dt*speed;
     // timeCurrent += quant; // stop@end - time is not going
 
-    // bool	running_fwrd	=  ( quant > 0 );
-    // float	const END_EPS	=	SAMPLE_SPF+EPS;
-    // bool	at_end			=	running_fwrd && ( timeCurrent > ( timeTotal-END_EPS ) );
-    // bool	at_begin		=	!running_fwrd && ( timeCurrent < 0.f );
+    // bool running_fwrd    =  ( quant > 0 );
+    // float    const END_EPS   =   SAMPLE_SPF+EPS;
+    // bool at_end          =   running_fwrd && ( timeCurrent > ( timeTotal-END_EPS ) );
+    // bool at_begin        =   !running_fwrd && ( timeCurrent < 0.f );
     ////..............................
     ////..............................
     ////..............................
     // if( at_end )
     //{
-    //	timeCurrent	= timeTotal-END_EPS;		// stop@end - time frozen at the end
-    //	if( timeCurrent<0.f ) timeCurrent =0.f;
+    //  timeCurrent = timeTotal-END_EPS;        // stop@end - time frozen at the end
+    //  if( timeCurrent<0.f ) timeCurrent =0.f;
     //}
     // else
-    //	timeCurrent	= 0.f;
+    //  timeCurrent = 0.f;
 
     ////////////////////BLEND UPDATE//////////////////////////////////////////////
 

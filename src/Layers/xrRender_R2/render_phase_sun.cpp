@@ -17,12 +17,12 @@ void render_sun::init()
     m_sun_cascades[2].size = 160;
     m_sun_cascades[2].bias = m_sun_cascades[2].size * fBias;
 
-    // 	for( u32 i = 0; i < cascade_count; ++i )
-    // 	{
-    // 		m_sun_cascades[i].size = size;
-    // 		size *= MAP_GROW_FACTOR;
-    // 	}
-    /// 	m_sun_cascades[m_sun_cascades.size()-1].size = 80;
+    //  for( u32 i = 0; i < cascade_count; ++i )
+    //  {
+    //      m_sun_cascades[i].size = size;
+    //      size *= MAP_GROW_FACTOR;
+    //  }
+    ///     m_sun_cascades[m_sun_cascades.size()-1].size = 80;
     sun = (light*)RImplementation.Lights.sun._get();
 
     const Fcolor sun_color = sun->color;
@@ -162,7 +162,7 @@ void render_sun::calculate()
         Fmatrix cull_xform_inv;
         cull_xform_inv.invert(cull_xform[cascade_ind]);
 
-        //		light_cuboid.light_cuboid_points.reserve		(9);
+        //      light_cuboid.light_cuboid_points.reserve        (9);
         for (int p = 0; p < 8; p++)
         {
             Fvector3 xf = wform(cull_xform_inv, sun::corners[p]);
@@ -268,7 +268,7 @@ void render_sun::calculate()
             // Begin SMAP-render
             auto& dsgraph = RImplementation.get_context(contexts_ids[cascade_ind]);
             {
-                //		sun->svis.begin					();
+                //      sun->svis.begin                 ();
                 dsgraph.o.phase = CRender::PHASE_SMAP;
                 dsgraph.r_pmask(true, RImplementation.o.Tshadows);
                 dsgraph.o.sector_id = RImplementation.get_largest_sector();

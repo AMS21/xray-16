@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: CEdge.h
-//	Created 	: 14.01.2004
-//  Modified 	: 19.02.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Graph edge class template
+//  Module      : CEdge.h
+//  Created     : 14.01.2004
+//  Modified    : 19.02.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Graph edge class template
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

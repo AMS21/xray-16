@@ -3,30 +3,30 @@
 #pragma once
 
 // Common
-extern ECORE_API u32 ps_r_sun_shafts; //=	0;
+extern ECORE_API u32 ps_r_sun_shafts; //=   0;
 extern ECORE_API const xr_token qsun_shafts_token[];
 
 extern ECORE_API u32 ps_r2_smapsize;
 extern ECORE_API const xr_token qsmapsize_token[];
 
-extern ECORE_API u32 ps_r_ssao; //	=	0;
+extern ECORE_API u32 ps_r_ssao; //  =   0;
 extern ECORE_API const xr_token qssao_token[];
 
 extern ECORE_API u32 ps_r_ssao_mode;
 extern ECORE_API const xr_token qssao_mode_token[];
 
-extern ECORE_API u32 ps_r_sun_quality; //	=	0;
-extern ECORE_API u32 ps_r_water_reflection; //	=	0;
+extern ECORE_API u32 ps_r_sun_quality; //   =   0;
+extern ECORE_API u32 ps_r_water_reflection; //  =   0;
 extern ECORE_API const xr_token qsun_quality_token[];
 extern ECORE_API const xr_token qwater_reflection_quality_token[];
 
-extern ECORE_API u32 ps_r3_msaa; //	=	0;
+extern ECORE_API u32 ps_r3_msaa; // =   0;
 extern ECORE_API const xr_token qmsaa_token[];
 
-extern ECORE_API u32 ps_r3_msaa_atest; //=	0;
+extern ECORE_API u32 ps_r3_msaa_atest; //=  0;
 extern ECORE_API const xr_token qmsaa__atest_token[];
 
-extern ECORE_API u32 ps_r3_minmax_sm; //	=	0;
+extern ECORE_API u32 ps_r3_minmax_sm; //    =   0;
 extern ECORE_API const xr_token qminmax_sm_token[];
 
 extern ENGINE_API int ps_r__Supersample;
@@ -50,7 +50,7 @@ extern ECORE_API float ps_r__WallmarkSHIFT_V;
 extern ECORE_API float ps_r__GLOD_ssa_start;
 extern ECORE_API float ps_r__GLOD_ssa_end;
 extern ECORE_API float ps_r__LOD;
-//.extern ECORE_API	float		ps_r__LOD_Power		;
+//.extern ECORE_API float       ps_r__LOD_Power     ;
 extern ECORE_API float ps_r__ssaDISCARD;
 extern ECORE_API float ps_r__ssaDONTSORT;
 extern ECORE_API float ps_r__ssaHZBvsTEX;
@@ -105,9 +105,9 @@ extern ECORE_API float ps_r2_tonemap_middlegray; // r2-only
 extern ECORE_API float ps_r2_tonemap_adaptation; // r2-only
 extern ECORE_API float ps_r2_tonemap_low_lum; // r2-only
 extern ECORE_API float ps_r2_tonemap_amount; // r2-only
-extern ECORE_API float ps_r2_ls_bloom_kernel_scale; // r2-only	// gauss
-extern ECORE_API float ps_r2_ls_bloom_kernel_g; // r2-only	// gauss
-extern ECORE_API float ps_r2_ls_bloom_kernel_b; // r2-only	// bilinear
+extern ECORE_API float ps_r2_ls_bloom_kernel_scale; // r2-only  // gauss
+extern ECORE_API float ps_r2_ls_bloom_kernel_g; // r2-only  // gauss
+extern ECORE_API float ps_r2_ls_bloom_kernel_b; // r2-only  // bilinear
 extern ECORE_API float ps_r2_ls_bloom_threshold; // r2-only
 extern ECORE_API float ps_r2_ls_bloom_speed; // r2-only
 extern ECORE_API float ps_r2_ls_dsm_kernel; // r2-only
@@ -145,10 +145,10 @@ extern ECORE_API float ps_r2_slight_fade; // 1.f
 extern ECORE_API int ps_r2_wait_sleep;
 extern ECORE_API int ps_r2_wait_timeout;
 
-//	x - min (0), y - focus (1.4), z - max (100)
+//  x - min (0), y - focus (1.4), z - max (100)
 extern ECORE_API Fvector3 ps_r2_dof;
-extern ECORE_API float ps_r2_dof_sky; //	distance to sky
-extern ECORE_API float ps_r2_dof_kernel_size; //	7.0f
+extern ECORE_API float ps_r2_dof_sky; //    distance to sky
+extern ECORE_API float ps_r2_dof_kernel_size; //    7.0f
 
 extern ECORE_API float ps_r3_dyn_wet_surf_near; // 10.0f
 extern ECORE_API float ps_r3_dyn_wet_surf_far; // 30.0f
@@ -169,7 +169,7 @@ enum
     R2FLAG_R1LIGHTS = (1 << 10),
     R2FLAG_SUN_IGNORE_PORTALS = (1 << 11),
 
-    //	R2FLAG_SUN_STATIC			= (1<<12),
+    //  R2FLAG_SUN_STATIC           = (1<<12),
 
     R2FLAG_EXP_SPLIT_SCENE = (1 << 13),
     R2FLAG_EXP_DONT_TEST_UNSHADOWED = (1 << 14),
@@ -180,8 +180,8 @@ enum
 
     R2FLAG_EXP_MT_CALC = (1 << 18),
 
-    R2FLAG_SOFT_WATER = (1 << 19), //	Igor: need restart
-    R2FLAG_SOFT_PARTICLES = (1 << 20), //	Igor: need restart
+    R2FLAG_SOFT_WATER = (1 << 19), //   Igor: need restart
+    R2FLAG_SOFT_PARTICLES = (1 << 20), //   Igor: need restart
     R2FLAG_VOLUMETRIC_LIGHTS = (1 << 21),
     R2FLAG_STEEP_PARALLAX = (1 << 22),
     R2FLAG_DOF = (1 << 23),
@@ -193,12 +193,12 @@ enum
     R3FLAG_DYN_WET_SURF = (1 << 26),
     R3FLAG_VOLUMETRIC_SMOKE = (1 << 27),
 
-    // R3FLAG_MSAA					= (1<<28),
+    // R3FLAG_MSAA                  = (1<<28),
     R3FLAG_MSAA_HYBRID = (1 << 28),
     R3FLAG_MSAA_OPT = (1 << 29),
     R3FLAG_GBUFFER_OPT = (1 << 30),
     R3FLAG_USE_DX10_1 = (1 << 31),
-    // R3FLAG_MSAA_ALPHATEST		= (1<<31),
+    // R3FLAG_MSAA_ALPHATEST        = (1<<31),
 };
 
 enum

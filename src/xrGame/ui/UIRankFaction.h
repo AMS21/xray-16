@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: UIRankFaction.h
-//	Created 	: 22.01.2008
-//	Author		: Evgeniy Sokolov
-//	Description : UI Rank Faction info window class
+//  Module      : UIRankFaction.h
+//  Created     : 22.01.2008
+//  Author      : Evgeniy Sokolov
+//  Description : UI Rank Faction info window class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

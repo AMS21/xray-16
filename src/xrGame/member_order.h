@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: member_order.h
-//	Created 	: 26.05.2004
-//  Modified 	: 26.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Member order
+//  Module      : member_order.h
+//  Created     : 26.05.2004
+//  Modified    : 26.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Member order
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

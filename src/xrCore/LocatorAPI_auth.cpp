@@ -27,7 +27,7 @@ u64 CLocatorAPI::auth_get()
 
 void CLocatorAPI::auth_runtime(void* params)
 {
-	m_auth_lock->Enter();
+    m_auth_lock->Enter();
     auth_options* _o = (auth_options*)params;
 
     CMemoryWriter writer;
@@ -108,5 +108,5 @@ void CLocatorAPI::auth_runtime(void* params)
 #endif // DEBUG
     xr_delete(_o);
 
-	m_auth_lock->Leave();
+    m_auth_lock->Leave();
 }

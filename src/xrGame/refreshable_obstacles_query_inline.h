@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: refreshable_obstacles_query_inline .h
-//	Created 	: 16.05.2007
-//  Modified 	: 16.05.2007
-//	Author		: Dmitriy Iassenev
-//	Description : refreshable obstacles query inline functions
+//  Module      : refreshable_obstacles_query_inline .h
+//  Created     : 16.05.2007
+//  Modified    : 16.05.2007
+//  Author      : Dmitriy Iassenev
+//  Description : refreshable obstacles query inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

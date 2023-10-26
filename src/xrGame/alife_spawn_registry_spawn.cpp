@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_spawn_registry_spawn.cpp
-//	Created 	: 19.10.2004
-//  Modified 	: 19.10.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALife spawn registry spawn routines
+//  Module      : alife_spawn_registry_spawn.cpp
+//  Created     : 19.10.2004
+//  Modified    : 19.10.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALife spawn registry spawn routines
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -20,8 +20,8 @@ IC bool CALifeSpawnRegistry::count_limit(CSE_Abstract& abstract) const
     if (!!abstract.m_spawn_flags.is(CSE_Abstract::flSpawnInfiniteCount))
         return (false);
 
-    //	if (abstract.m_spawn_count < abstract.m_max_spawn_count)
-    //		return	(false);
+    //  if (abstract.m_spawn_count < abstract.m_max_spawn_count)
+    //      return  (false);
 
     return (true);
 }
@@ -31,8 +31,8 @@ IC bool CALifeSpawnRegistry::time_limit(CSE_Abstract& abstract, ALife::_TIME_ID 
     if (!!abstract.m_spawn_flags.is(CSE_Abstract::flSpawnOnSurgeOnly))
         return (false);
 
-    //	if (game_time >= abstract.m_next_spawn_time)
-    //		return	(false);
+    //  if (game_time >= abstract.m_next_spawn_time)
+    //      return  (false);
 
     return (true);
 }
@@ -88,7 +88,7 @@ void CALifeSpawnRegistry::fill_new_spawns_single(
         accumulator += (*I).weight();
 
     float probability = randF(accumulator);
-    //	float						group_probability = vertex->data()->object().m_spawn_probability;
+    //  float                       group_probability = vertex->data()->object().m_spawn_probability;
     float group_probability = 1.f;
 
     if (probability >= accumulator * group_probability)
@@ -101,7 +101,7 @@ void CALifeSpawnRegistry::fill_new_spawns_single(
         accumulator += (*I).weight() * group_probability;
         if (accumulator > probability)
         {
-            //			vertex->data()->object().m_spawn_count++;
+            //          vertex->data()->object().m_spawn_count++;
             fill_new_spawns(m_spawns.vertex((*I).vertex_id()), spawns, game_time, objects);
             return;
         }
@@ -117,7 +117,7 @@ void CALifeSpawnRegistry::fill_new_spawns(
 
     if (vertex->edges().empty())
     {
-        //		vertex->data()->object().m_spawn_count++;
+        //      vertex->data()->object().m_spawn_count++;
         spawns.push_back(vertex->data()->object().m_tSpawnID);
         return;
     }
@@ -128,7 +128,7 @@ void CALifeSpawnRegistry::fill_new_spawns(
         return;
     }
 
-    //	vertex->data()->object().m_spawn_count++;
+    //  vertex->data()->object().m_spawn_count++;
 
     SPAWN_GRAPH::const_iterator I = vertex->edges().begin();
     SPAWN_GRAPH::const_iterator E = vertex->edges().end();

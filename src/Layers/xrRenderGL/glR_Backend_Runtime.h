@@ -1,5 +1,5 @@
-#ifndef	glR_Backend_Runtime_included
-#define	glR_Backend_Runtime_included
+#ifndef glR_Backend_Runtime_included
+#define glR_Backend_Runtime_included
 #pragma once
 
 #include "glStateUtils.h"
@@ -7,7 +7,7 @@
 IC void CBackend::set_xform(u32 ID, const Fmatrix& M)
 {
     stat.xforms++;
-    //	TODO: OGL: Implement CBackend::set_xform
+    //  TODO: OGL: Implement CBackend::set_xform
     //VERIFY(!"Implement CBackend::set_xform");
 }
 
@@ -149,7 +149,7 @@ ICF void CBackend::set_Format(SDeclaration* _decl)
     {
         PGO(Msg("PGO:v_format:%x", _decl));
 #ifdef DEBUG
-		stat.decl++;
+        stat.decl++;
 #endif
         decl = _decl;
         CHK_GL(glBindVertexArray(_decl->dcl));
@@ -164,7 +164,7 @@ ICF void CBackend::set_PS(GLuint _ps, LPCSTR _n)
     if (ps != _ps)
     {
 #ifdef RBackend_PGO
-		string_path name;
+        string_path name;
 #endif
         PGO(glGetObjectLabel(GL_PROGRAM, _ps, sizeof(name), nullptr, name));
         PGO(Msg("PGO:Pshader:%d,%s", _ps, _n ? _n : name));
@@ -172,7 +172,7 @@ ICF void CBackend::set_PS(GLuint _ps, LPCSTR _n)
         ps = _ps;
         //CHK_GL(glUseProgramStages(HW.pPP, GL_FRAGMENT_SHADER_BIT, ps));
 #ifdef DEBUG
-		ps_name = _n;
+        ps_name = _n;
 #endif
     }
 }
@@ -182,7 +182,7 @@ ICF void CBackend::set_GS(GLuint _gs, LPCSTR _n)
     if (gs != _gs)
     {
 #ifdef RBackend_PGO
-		string_path name;
+        string_path name;
 #endif
         PGO(glGetObjectLabel(GL_PROGRAM, _gs, sizeof(name), nullptr, name));
         PGO(Msg("PGO:Gshader:%d,%s", _gs, _n ? _n : name));
@@ -190,7 +190,7 @@ ICF void CBackend::set_GS(GLuint _gs, LPCSTR _n)
         gs = _gs;
         //CHK_GL(glUseProgramStages(HW.pPP, GL_GEOMETRY_SHADER_BIT, gs));
 #ifdef DEBUG
-		gs_name = _n;
+        gs_name = _n;
 #endif
     }
 }
@@ -200,7 +200,7 @@ ICF void CBackend::set_VS(GLuint _vs, LPCSTR _n)
     if (vs != _vs)
     {
 #ifdef RBackend_PGO
-		string_path name;
+        string_path name;
 #endif
         PGO(glGetObjectLabel(GL_PROGRAM, _vs, sizeof(name), nullptr, name));
         PGO(Msg("PGO:Vshader:%d,%s", _vs, _n ? _n : name));
@@ -208,7 +208,7 @@ ICF void CBackend::set_VS(GLuint _vs, LPCSTR _n)
         vs = _vs;
         //CHK_GL(glUseProgramStages(HW.pPP, GL_VERTEX_SHADER_BIT, vs));
 #ifdef DEBUG
-		vs_name = _n;
+        vs_name = _n;
 #endif
     }
 }
@@ -243,7 +243,7 @@ ICF void CBackend::set_Vertices(GLuint _vb, u32 _vb_stride)
     {
         PGO(Msg("PGO:VB:%x,%d", _vb, _vb_stride));
 #ifdef DEBUG
-		stat.vb++;
+        stat.vb++;
 #endif
         vb = _vb;
         vb_stride = _vb_stride;
@@ -266,7 +266,7 @@ ICF void CBackend::set_Indices(GLuint _ib)
     {
         PGO(Msg("PGO:IB:%x", _ib));
 #ifdef DEBUG
-		stat.ib++;
+        stat.ib++;
 #endif
         ib = _ib;
         CHK_GL(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ib));
@@ -277,13 +277,13 @@ IC GLenum TranslateTopology(D3DPRIMITIVETYPE T)
 {
     static GLenum translateTable[] =
     {
-        GL_NONE, //	None
-        GL_POINTS, //	D3DPT_POINTLIST = 1,
-        GL_LINES, //	D3DPT_LINELIST = 2,
-        GL_LINE_STRIP, //	D3DPT_LINESTRIP = 3,
-        GL_TRIANGLES, //	D3DPT_TRIANGLELIST = 4,
-        GL_TRIANGLE_STRIP, //	D3DPT_TRIANGLESTRIP = 5,
-        GL_TRIANGLE_FAN, //	D3DPT_TRIANGLEFAN = 6,
+        GL_NONE, // None
+        GL_POINTS, //   D3DPT_POINTLIST = 1,
+        GL_LINES, //    D3DPT_LINELIST = 2,
+        GL_LINE_STRIP, //   D3DPT_LINESTRIP = 3,
+        GL_TRIANGLES, //    D3DPT_TRIANGLELIST = 4,
+        GL_TRIANGLE_STRIP, //   D3DPT_TRIANGLESTRIP = 5,
+        GL_TRIANGLE_FAN, // D3DPT_TRIANGLEFAN = 6,
     };
 
     VERIFY(T<sizeof(translateTable) / sizeof(translateTable[0]));
@@ -312,7 +312,7 @@ IC u32 GetIndexCount(D3DPRIMITIVETYPE T, u32 iPrimitiveCount)
         return iPrimitiveCount + 2;
     default: NODEFAULT;
 #ifdef DEBUG
-		return 0;
+        return 0;
 #endif // #ifdef DEBUG
     }
 }
@@ -524,4 +524,4 @@ void CBackend::set_pass_targets(const ref_rt& _1, const ref_rt& _2, const ref_rt
     SetViewport(viewport);
 }
 
-#endif	//	glR_Backend_Runtime_included
+#endif  //  glR_Backend_Runtime_included

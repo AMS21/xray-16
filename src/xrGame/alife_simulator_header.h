@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_simulator_header.h
-//	Created 	: 05.01.2003
-//  Modified 	: 12.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALife Simulator header
+//  Module      : alife_simulator_header.h
+//  Created     : 05.01.2003
+//  Modified    : 12.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALife Simulator header
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

@@ -7,25 +7,25 @@ dx113DFluidVolume::dx113DFluidVolume() {}
 dx113DFluidVolume::~dx113DFluidVolume() {}
 void dx113DFluidVolume::Load(LPCSTR /*N*/, IReader* data, u32 /*dwFlags*/)
 {
-    //	Uncomment this if choose to read from OGF
-    //	dxRender_Visual::Load		(N,data,dwFlags);
+    //  Uncomment this if choose to read from OGF
+    //  dxRender_Visual::Load       (N,data,dwFlags);
 
-    //	Create shader for correct sort while rendering
-    //	shader name can't start from a digit
+    //  Create shader for correct sort while rendering
+    //  shader name can't start from a digit
     shader.create("fluid3d_stub", "water\\water_ryaska1");
 
-    //	Create debug geom
+    //  Create debug geom
     m_Geom.create(FVF::F_LIT, RImplementation.Vertex.Buffer(), RImplementation.QuadIB);
 
     Type = MT_3DFLUIDVOLUME;
 
-    //	Version 3>
+    //  Version 3>
     m_FluidData.Load(data);
 
-    //	Prepare transform
+    //  Prepare transform
     const Fmatrix& Transform = m_FluidData.GetTransform();
 
-    //	Update visibility data
+    //  Update visibility data
     vis.box.vMin = Fvector3().set(-0.5f, -0.5f, -0.5f);
     vis.box.vMax = Fvector3().set(0.5f, 0.5f, 0.5f);
 
@@ -35,13 +35,13 @@ void dx113DFluidVolume::Load(LPCSTR /*N*/, IReader* data, u32 /*dwFlags*/)
     vis.sphere.R = vis.box.getradius();
 
     /*
-        //	Version 2
-        //	Prepare transform
-        Fmatrix		Transform;
+        //  Version 2
+        //  Prepare transform
+        Fmatrix     Transform;
         data->r( &Transform, sizeof(Transform) );
         m_FluidData.SetTransform(Transform);
 
-        //	Update visibility data
+        //  Update visibility data
         vis.box.vMin = Fvector3().set(-0.5f, -0.5f, -0.5f);
         vis.box.vMax = Fvector3().set( 0.5f,  0.5f,  0.5f);
 
@@ -50,23 +50,23 @@ void dx113DFluidVolume::Load(LPCSTR /*N*/, IReader* data, u32 /*dwFlags*/)
         vis.box.getcenter(vis.sphere.P);
         vis.sphere.R = vis.box.getradius();
 
-        //	Read obstacles
+        //  Read obstacles
         u32 uiObstCnt = data->r_u32();
         for(u32 i=0; i<uiObstCnt; ++i)
         {
-            Fmatrix		ObstTransform;
+            Fmatrix     ObstTransform;
             data->r( &ObstTransform, sizeof(ObstTransform) );
             m_FluidData.AddObstacle(ObstTransform);
         }
         */
 
-    //	Version 0
+    //  Version 0
     /*
-    Fbox	B;
+    Fbox    B;
     data->r( &B, sizeof(B) );
 
-    Fmatrix		Transform;
-    Fvector3	temp;
+    Fmatrix     Transform;
+    Fvector3    temp;
 
     B.getsize(temp);
     Transform.scale(temp);
@@ -87,10 +87,10 @@ void dx113DFluidVolume::Load(LPCSTR /*N*/, IReader* data, u32 /*dwFlags*/)
 
 void dx113DFluidVolume::Render(CBackend& cmd_list, float /*LOD*/, bool use_fast_geo) // LOD - Level Of Detail  [0.0f - min, 1.0f - max], Ignored ?
 {
-    //	Render debug box
-    //	Do it BEFORE update since update resets shaders and other pipeline settings
+    //  Render debug box
+    //  Do it BEFORE update since update resets shaders and other pipeline settings
 
-    //	FluidManager.RenderFluid( m_FluidData );
+    //  FluidManager.RenderFluid( m_FluidData );
 
     u32 dwOffset, dwCount;
 
@@ -105,9 +105,9 @@ void dx113DFluidVolume::Render(CBackend& cmd_list, float /*LOD*/, bool use_fast_
     // box.vMin = Fvector3().set( 0.0f,  0.0f,  0.0f);
     // box.vMax = Fvector3().set( 1.0f,  1.0f,  1.0f);
 
-    //	Prepare box here
+    //  Prepare box here
     {
-        //	Face 0
+        //  Face 0
         pv->set(box.x1, box.y1, box.z1, clr, 0, 0);
         pv++;
         pv->set(box.x1, box.y1, box.z2, clr, 0, 1);
@@ -117,7 +117,7 @@ void dx113DFluidVolume::Render(CBackend& cmd_list, float /*LOD*/, bool use_fast_
         pv->set(box.x1, box.y2, box.z2, clr, 1, 1);
         pv++;
 
-        //	Face 1
+        //  Face 1
         pv->set(box.x2, box.y1, box.z2, clr, 0, 1);
         pv++;
         pv->set(box.x2, box.y1, box.z1, clr, 0, 0);
@@ -127,7 +127,7 @@ void dx113DFluidVolume::Render(CBackend& cmd_list, float /*LOD*/, bool use_fast_
         pv->set(box.x2, box.y2, box.z1, clr, 1, 0);
         pv++;
 
-        //	Face 2
+        //  Face 2
         pv->set(box.x1, box.y1, box.z2, clr, 0, 1);
         pv++;
         pv->set(box.x1, box.y1, box.z1, clr, 0, 0);
@@ -137,7 +137,7 @@ void dx113DFluidVolume::Render(CBackend& cmd_list, float /*LOD*/, bool use_fast_
         pv->set(box.x2, box.y1, box.z1, clr, 1, 0);
         pv++;
 
-        //	Face 3
+        //  Face 3
         pv->set(box.x1, box.y2, box.z1, clr, 0, 0);
         pv++;
         pv->set(box.x1, box.y2, box.z2, clr, 0, 1);
@@ -147,7 +147,7 @@ void dx113DFluidVolume::Render(CBackend& cmd_list, float /*LOD*/, bool use_fast_
         pv->set(box.x2, box.y2, box.z2, clr, 1, 1);
         pv++;
 
-        //	Face 4
+        //  Face 4
         pv->set(box.x1, box.y1, box.z1, clr, 0, 1);
         pv++;
         pv->set(box.x1, box.y2, box.z1, clr, 0, 0);
@@ -157,7 +157,7 @@ void dx113DFluidVolume::Render(CBackend& cmd_list, float /*LOD*/, bool use_fast_
         pv->set(box.x2, box.y2, box.z1, clr, 1, 0);
         pv++;
 
-        //	Face 5
+        //  Face 5
         pv->set(box.x1, box.y2, box.z2, clr, 0, 0);
         pv++;
         pv->set(box.x1, box.y1, box.z2, clr, 0, 1);
@@ -176,14 +176,14 @@ void dx113DFluidVolume::Render(CBackend& cmd_list, float /*LOD*/, bool use_fast_
 
     // RCache.Render(D3DPT_TRIANGLELIST,dwOffset,0,dwCount,0,dwCount/2);
 
-    //	Render obstacles
+    //  Render obstacles
     for (const Fmatrix& obstacle : m_FluidData.GetObstaclesList())
     {
         cmd_list.set_xform_world(obstacle);
         // RCache.Render(D3DPT_TRIANGLELIST,dwOffset,0,dwCount,0,dwCount/2);
     }
 
-    //	FluidManager.Update( m_FluidData, 1.0f/30.0f);
+    //  FluidManager.Update( m_FluidData, 1.0f/30.0f);
 
     // float fTimeStep = Device.fTimeDelta*30*2.0f;
     const float fTimeStep = 2.0f;

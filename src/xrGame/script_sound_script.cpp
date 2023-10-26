@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_sound_script.cpp
-//	Created 	: 06.02.2004
-//  Modified 	: 06.02.2004
-//	Author		: Dmitriy Iassenev
-//	Description : XRay Script sound class script export
+//  Module      : script_sound_script.cpp
+//  Created     : 06.02.2004
+//  Modified    : 06.02.2004
+//  Author      : Dmitriy Iassenev
+//  Description : XRay Script sound class script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

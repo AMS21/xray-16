@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: problem_solver_inline.h
-//	Created 	: 24.02.2004
-//  Modified 	: 24.02.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Problem solver inline functions
+//  Module      : problem_solver_inline.h
+//  Created     : 24.02.2004
+//  Modified    : 24.02.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Problem solver inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

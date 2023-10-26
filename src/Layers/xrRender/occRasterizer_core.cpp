@@ -363,7 +363,7 @@ IC void i_section(int Sect, BOOL bMiddle)
         leftZ = startp1[2] + E1[2] * t;
         left_dZ = E1[2] / E1[1];
 
-        // Initial Ending values for right	(from E2)
+        // Initial Ending values for right  (from E2)
         t = e2_init_dY / E2[1]; // Initial fraction of offset
         rightX = startp2[0] + E2[0] * t;
         right_dX = mE2;
@@ -380,7 +380,7 @@ IC void i_section(int Sect, BOOL bMiddle)
         leftZ = startp2[2] + E2[2] * t;
         left_dZ = E2[2] / E2[1];
 
-        // Initial Ending values for right	(from E1)
+        // Initial Ending values for right  (from E1)
         t = e1_init_dY / E1[1]; // Initial fraction of offset
         rightX = startp1[0] + E1[0] * t;
         right_dX = mE1;

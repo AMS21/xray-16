@@ -541,15 +541,15 @@ void CMapLocation::UpdateSpot(CUICustomMap* map, CMapSpot* sp)
             // xr_vector<CLevelChanger*>::iterator lit_e = g_lchangers.end();
             bool bDone = false;
             // for(; (it!=it_e)&&(!bDone) ;++it){
-            //	for(lit=g_lchangers.begin();lit!=lit_e; ++lit){
+            //  for(lit=g_lchangers.begin();lit!=lit_e; ++lit){
 
-            //		if((*it)==(*lit)->ai_location().game_vertex_id() )
-            //		{
-            //			bDone = true;
-            //			break;
-            //		}
+            //      if((*it)==(*lit)->ai_location().game_vertex_id() )
+            //      {
+            //          bDone = true;
+            //          break;
+            //      }
 
-            //	}
+            //  }
             //}
             static bool bbb = false;
             if (!bDone && bbb)
@@ -560,7 +560,7 @@ void CMapLocation::UpdateSpot(CUICustomMap* map, CMapSpot* sp)
                 xr_vector<u32>::iterator it_e = map_point_path.end();
                 for (; it != it_e; ++it)
                 {
-                    //					Msg("%d-%s",(*it),ai().game_graph().vertex(*it));
+                    //                  Msg("%d-%s",(*it),ai().game_graph().vertex(*it));
                     Msg("[%d] level[%s]", (*it),
                         *ai().game_graph().header().level(ai().game_graph().vertex(*it)->level_id()).name());
                 }

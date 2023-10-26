@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cast_stats.cpp
-//	Created 	: 17.09.2004
-//  Modified 	: 17.09.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Smart dynamic cast statistics
+//  Module      : smart_cast_stats.cpp
+//  Created     : 17.09.2004
+//  Modified    : 17.09.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Smart dynamic cast statistics
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_float_reference.hpp
-//	Created 	: 17.12.2007
-//  Modified 	: 17.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : float property reference implementation class
+//  Module      : property_float_reference.hpp
+//  Created     : 17.12.2007
+//  Modified    : 17.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : float property reference implementation class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_FLOAT_REFERENCE_HPP_INCLUDED

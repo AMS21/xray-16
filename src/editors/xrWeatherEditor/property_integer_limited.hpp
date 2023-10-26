@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_integer_limited.hpp
-//	Created 	: 12.12.2007
-//  Modified 	: 12.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : limited integer property implementation class
+//  Module      : property_integer_limited.hpp
+//  Created     : 12.12.2007
+//  Modified    : 12.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : limited integer property implementation class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_INTEGER_LIMITED_HPP_INCLUDED

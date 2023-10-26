@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: object_item_script.h
-//	Created 	: 27.05.2004
-//  Modified 	: 30.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Object item script class
+//  Module      : object_item_script.h
+//  Created     : 27.05.2004
+//  Modified    : 30.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Object item script class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

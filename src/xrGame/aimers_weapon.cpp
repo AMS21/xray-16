@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: aimers_weapon.cpp
-//	Created 	: 04.04.2008
-//  Modified 	: 04.04.2008
-//	Author		: Dmitriy Iassenev
-//	Description : weapon aimer class
+//  Module      : aimers_weapon.cpp
+//  Created     : 04.04.2008
+//  Modified    : 04.04.2008
+//  Author      : Dmitriy Iassenev
+//  Description : weapon aimer class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

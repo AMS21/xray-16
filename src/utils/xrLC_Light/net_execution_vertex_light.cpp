@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Created		: 23.03.2009
-//	Author		: Konstantin Slipchenko
-//	Copyright (C) GSC Game World - 2009
+//  Created     : 23.03.2009
+//  Author      : Konstantin Slipchenko
+//  Copyright (C) GSC Game World - 2009
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
@@ -93,7 +93,7 @@ bool net_execution_vertex_light::execute(net_task_callback& net_callback)
         CDB::COLLIDER DB;
         LightPoint(&DB, 0, lc_global_data()->RCAST_Model(), vC, V->P, V->N, lc_global_data()->L_static(),
             (lc_global_data()->b_nosun() ? LP_dont_sun : 0) | LP_dont_hemi, 0);
-        // vC._tmp_			= v_trans; //we olready have it in V->C.t
+        // vC._tmp_         = v_trans; //we olready have it in V->C.t
         vC.mul(.5f);
         vC.hemi = old.hemi; // preserve pre-calculated hemisphere
         V->C._set(vC.rgb, vC.hemi, vC.sun);

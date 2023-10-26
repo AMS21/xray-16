@@ -155,7 +155,7 @@ LPCSTR CPhraseDialog::GetPhraseText(const shared_str& phrase_id, bool current_sp
 {
     // CPhraseGraph::CVertex* phrase_vertex = data()->m_PhraseGraph.vertex(phrase_id);
     // THROW(phrase_vertex);
-    // CPhrase*	ph = phrase_vertex->data();
+    // CPhrase* ph = phrase_vertex->data();
     CPhrase* ph = GetPhrase(phrase_id);
 
     CGameObject* pSpeakerGO1 = (current_speaking) ? smart_cast<CGameObject*>(FirstSpeaker()) : NULL;

@@ -5,18 +5,18 @@
 
 CUILabel::CUILabel()
 {
-    m_textPos.set				(0,0);
-    m_lines.SetVTextAlignment	(valCenter);
-    m_lainm_start_time			= -1.0f;
-    m_lanim						= NULL;
+    m_textPos.set               (0,0);
+    m_lines.SetVTextAlignment   (valCenter);
+    m_lainm_start_time          = -1.0f;
+    m_lanim                     = NULL;
 }
 
 void CUILabel::InitLabel(Fvector2 pos, Fvector2 size)
 {
-    CUIFrameLineWnd::SetWndPos	(pos);
-    CUIFrameLineWnd::SetWndSize	(size);
-    m_lines.SetWndPos			(pos);
-    m_lines.SetWndSize			(size);
+    CUIFrameLineWnd::SetWndPos  (pos);
+    CUIFrameLineWnd::SetWndSize (size);
+    m_lines.SetWndPos           (pos);
+    m_lines.SetWndSize          (size);
 }
 
 void CUILabel::SetFont(CGameFont* pFont){
@@ -43,9 +43,9 @@ void CUILabel::SetHeight(float height){
 void CUILabel::SetLightAnim(LPCSTR lanim)
 {
     if(lanim&&xr_strlen(lanim))
-        m_lanim	= LALib.FindItem(lanim);
+        m_lanim = LALib.FindItem(lanim);
     else
-        m_lanim	= NULL;
+        m_lanim = NULL;
 }
 
 void CUILabel::Update()
@@ -55,9 +55,9 @@ void CUILabel::Update()
     {
         if(m_lainm_start_time<0.0f) m_lainm_start_time = Device.fTimeGlobal;
         int frame;
-        u32 clr					= m_lanim->CalculateRGB(Device.fTimeGlobal-m_lainm_start_time,frame);
-        SetColor				(clr);
-        SetTextColor			(clr);
+        u32 clr                 = m_lanim->CalculateRGB(Device.fTimeGlobal-m_lainm_start_time,frame);
+        SetColor                (clr);
+        SetTextColor            (clr);
     }
 }
 */

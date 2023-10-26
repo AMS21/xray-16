@@ -29,7 +29,7 @@ void CRenderTarget::phase_smap_spot(CBackend& cmd_list, light* L)
     const D3D_VIEWPORT viewport = { L->X.S.posX, L->X.S.posY, L->X.S.size, L->X.S.size, 0.f, 1.f };
     cmd_list.SetViewport(viewport);
 
-    // Misc		- draw only front-faces //back-faces
+    // Misc     - draw only front-faces //back-faces
     cmd_list.set_CullMode(CULL_CCW);
     cmd_list.set_Stencil(FALSE);
     // no transparency

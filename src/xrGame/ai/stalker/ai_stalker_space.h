@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_stalker_space.h
-//	Created 	: 28.03.2003
-//  Modified 	: 28.03.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker types and structures
+//  Module      : ai_stalker_space.h
+//  Created     : 28.03.2003
+//  Modified    : 28.03.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker types and structures
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -37,7 +37,7 @@ enum EStalkerSounds
     eStalkerSoundFriendlyGrenadeAlarm,
     eStalkerSoundNeedBackup,
     eStalkerSoundRunningInDanger,
-    //		eStalkerSoundWalkingInDanger,
+    //      eStalkerSoundWalkingInDanger,
     eStalkerSoundKillWounded,
     eStalkerSoundEnemyCriticallyWounded,
     eStalkerSoundEnemyKilledOrWounded,

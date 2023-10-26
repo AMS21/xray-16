@@ -5,5 +5,5 @@ float4 _main ();
 
 void main()
 {
-	SV_Target 	= _main ();
+    SV_Target   = _main ();
 }

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: path_manager_game_selector.h
-//	Created 	: 21.03.2002
-//  Modified 	: 19.11.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Game selector
+//  Module      : path_manager_game_selector.h
+//  Created     : 21.03.2002
+//  Modified    : 19.11.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Game selector
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

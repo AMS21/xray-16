@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: xrGame.cpp
-//	Created 	: 07.01.2001
-//  Modified 	: 27.05.2004
-//	Author		: Aleksandr Maksimchuk and Oles' Shyshkovtsov
-//	Description : Defines the entry point for the DLL application.
+//  Module      : xrGame.cpp
+//  Created     : 07.01.2001
+//  Modified    : 27.05.2004
+//  Author      : Aleksandr Maksimchuk and Oles' Shyshkovtsov
+//  Description : Defines the entry point for the DLL application.
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

@@ -29,11 +29,11 @@ extern const xr_token round_end_result_str[] = {{"Finish", int(eRoundEnd_Finish)
     {0, 0}};
 
 // Main
-/*game_PlayerState*	game_sv_GameState::get_it					(u32 it)
+/*game_PlayerState* game_sv_GameState::get_it                   (u32 it)
 {
-    xrClientData*	C	= (xrClientData*)m_server->client_Get			(it);
-    if (0==C)			return 0;
-    else				return C->ps;
+    xrClientData*   C   = (xrClientData*)m_server->client_Get           (it);
+    if (0==C)           return 0;
+    else                return C->ps;
 }*/
 
 game_PlayerState* game_sv_GameState::get_id(ClientID id)
@@ -45,21 +45,21 @@ game_PlayerState* game_sv_GameState::get_id(ClientID id)
         return C->ps;
 }
 
-/*ClientID				game_sv_GameState::get_it_2_id				(u32 it)
+/*ClientID              game_sv_GameState::get_it_2_id              (u32 it)
 {
-    xrClientData*	C	= (xrClientData*)m_server->client_Get		(it);
+    xrClientData*   C   = (xrClientData*)m_server->client_Get       (it);
     if (0==C){
         ClientID clientID;clientID.set(0);
         return clientID;
     }
-    else				return C->ID;
+    else                return C->ID;
 }
 
-LPCSTR				game_sv_GameState::get_name_it				(u32 it)
+LPCSTR              game_sv_GameState::get_name_it              (u32 it)
 {
-    xrClientData*	C	= (xrClientData*)m_server->client_Get		(it);
-    if (0==C)			return 0;
-    else				return *C->name;
+    xrClientData*   C   = (xrClientData*)m_server->client_Get       (it);
+    if (0==C)           return 0;
+    else                return *C->name;
 }*/
 
 LPCSTR game_sv_GameState::get_name_id(ClientID id)
@@ -202,7 +202,7 @@ float game_sv_GameState::get_option_f(LPCSTR lst, LPCSTR name, float def)
         [[maybe_unused]] int cnt = sscanf(found + xr_strlen(op), "%f", &val);
         VERIFY(cnt == 1);
         return val;
-        //.		return atoi	(strstr(lst,op)+xr_strlen(op));
+        //.     return atoi (strstr(lst,op)+xr_strlen(op));
     }
     else
         return def;
@@ -288,7 +288,7 @@ void game_sv_GameState::net_Export_State(NET_Packet& P, ClientID to)
     P.w_u8(u8(g_bCollectStatisticData));
 
     // Players
-    //	u32	p_count			= get_players_count() - ((GEnv.isDedicatedServer)? 1 : 0);
+    //  u32 p_count         = get_players_count() - ((GEnv.isDedicatedServer)? 1 : 0);
 
     xrClientData* tmp_client = static_cast<xrClientData*>(m_server->GetClientByID(to));
     game_PlayerState* tmp_ps = tmp_client->ps;
@@ -437,9 +437,9 @@ void game_sv_GameState::Create(shared_str& options)
     //---------------------------------------------------------------------
     ConsoleCommands_Create();
     //---------------------------------------------------------------------
-    //	CCC_LoadCFG_custom*	pTmp = new CCC_LoadCFG_custom("sv_");
-    //	pTmp->Execute				(Console->ConfigFile);
-    //	xr_delete					(pTmp);
+    //  CCC_LoadCFG_custom* pTmp = new CCC_LoadCFG_custom("sv_");
+    //  pTmp->Execute               (Console->ConfigFile);
+    //  xr_delete                   (pTmp);
     //---------------------------------------------------------------------
     LPCSTR svcfg_ltx_name = "-svcfg ";
     if (strstr(Core.Params, svcfg_ltx_name))
@@ -447,7 +447,7 @@ void game_sv_GameState::Create(shared_str& options)
         string_path svcfg_name = "";
         int sz = xr_strlen(svcfg_ltx_name);
         sscanf(strstr(Core.Params, svcfg_ltx_name) + sz, "%[^ ] ", svcfg_name);
-        //		if (FS.exist(svcfg_name))
+        //      if (FS.exist(svcfg_name))
         {
             Console->ExecuteScript(svcfg_name);
         }
@@ -460,8 +460,8 @@ void game_sv_GameState::ReadOptions(shared_str& options)
 {
     g_sv_base_dwRPointFreezeTime = get_option_i(*options, "rpfrz", g_sv_base_dwRPointFreezeTime / 1000) * 1000;
 
-    //.	xr_strcpy(MAPROT_LIST, MAPROT_LIST_NAME);
-    //.	if (!FS.exist(MAPROT_LIST))
+    //. xr_strcpy(MAPROT_LIST, MAPROT_LIST_NAME);
+    //. if (!FS.exist(MAPROT_LIST))
     FS.update_path(MAPROT_LIST, "$app_data_root$", MAPROT_LIST_NAME);
     if (FS.exist(MAPROT_LIST))
         Console->ExecuteScript(MAPROT_LIST);
@@ -516,7 +516,7 @@ void game_sv_GameState::assign_RP(CSE_Abstract* E, game_PlayerState* ps_who)
     Msg("---Size of rpoints of team [%d] is [%d]", l_uc_team, rp.size());
 #endif
     //-----------------------------------------------------------
-    xr_vector<u32> xrp; //	= rpoints[l_uc_team];
+    xr_vector<u32> xrp; //  = rpoints[l_uc_team];
     for (u32 i = 0; i < rp.size(); i++)
     {
         if (rp[i].TimeToUnfreeze < Level().timeServer())
@@ -563,7 +563,7 @@ CSE_Abstract* game_sv_GameState::spawn_begin(LPCSTR N)
     CSE_Abstract* A = F_entity_Create(N);
     R_ASSERT(A); // create SE
     A->s_name = N; // ltx-def
-    //.	A->s_gameid			=	u8(m_type);							// game-type
+    //. A->s_gameid         =   u8(m_type);                         // game-type
     A->s_RP = 0xFE; // use supplied
     A->ID = 0xffff; // server must generate ID
     A->ID_Parent = 0xffff; // no-parent
@@ -667,7 +667,7 @@ void game_sv_GameState::OnHit(u16 id_hitter, u16 id_hitted, NET_Packet& P)
     if (!e_hitter || !e_hitted)
         return;
 
-    //	CSE_ALifeCreatureActor*		a_hitter		= smart_cast <CSE_ALifeCreatureActor*> (e_hitter);
+    //  CSE_ALifeCreatureActor*     a_hitter        = smart_cast <CSE_ALifeCreatureActor*> (e_hitter);
     CSE_ALifeCreatureActor* a_hitted = smart_cast<CSE_ALifeCreatureActor*>(e_hitted);
 
     if (a_hitted /* && a_hitter*/)
@@ -823,7 +823,7 @@ void game_sv_GameState::OnSwitchPhase(u32 old_phase, u32 new_phase)
 
 void game_sv_GameState::AddDelayedEvent(NET_Packet& tNetPacket, u16 type, u32 time, ClientID sender)
 {
-    //	OnEvent(tNetPacket,type,time,sender);
+    //  OnEvent(tNetPacket,type,time,sender);
     if (IsGameTypeSingle())
     {
         m_event_queue->Create(tNetPacket, type, time, sender);

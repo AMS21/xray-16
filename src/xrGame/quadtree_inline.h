@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: quadtree_inline.h
-//	Created 	: 23.03.2004
-//  Modified 	: 23.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Quadtree class inline functions
+//  Module      : quadtree_inline.h
+//  Created     : 23.03.2004
+//  Modified    : 23.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Quadtree class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

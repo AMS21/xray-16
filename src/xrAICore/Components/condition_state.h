@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: condition_state.h
-//	Created 	: 26.02.2004
-//  Modified 	: 26.02.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Condition state
+//  Module      : condition_state.h
+//  Created     : 26.02.2004
+//  Modified    : 26.02.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Condition state
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

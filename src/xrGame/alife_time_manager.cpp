@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_time_manager.cpp
-//	Created 	: 05.01.2003
-//  Modified 	: 12.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALfie time manager class
+//  Module      : alife_time_manager.cpp
+//  Created     : 05.01.2003
+//  Modified    : 12.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALfie time manager class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

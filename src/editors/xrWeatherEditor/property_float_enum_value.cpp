@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_float_enum_value.cpp
-//	Created 	: 12.12.2007
-//  Modified 	: 12.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property float enum value class
+//  Module      : property_float_enum_value.cpp
+//  Created     : 12.12.2007
+//  Modified    : 12.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property float enum value class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

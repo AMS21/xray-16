@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_velocity_collection_inline.h
-//	Created 	: 23.12.2005
-//  Modified 	: 23.12.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker velocity collection inline functions
+//  Module      : stalker_velocity_collection_inline.h
+//  Created     : 23.12.2005
+//  Modified    : 23.12.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker velocity collection inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

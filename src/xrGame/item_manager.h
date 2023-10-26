@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: item_manager.h
-//	Created 	: 27.12.2003
-//  Modified 	: 27.12.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Item manager
+//  Module      : item_manager.h
+//  Created     : 27.12.2003
+//  Modified    : 27.12.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Item manager
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

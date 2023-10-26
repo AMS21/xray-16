@@ -65,9 +65,9 @@ static void check(Vertex* vE1, Vertex* vE2, Vertex* vTEST)
         vecJunctions->push_back(rec);
 
         // display
-        // if (bWeld)	clMsg	("ERROR. unwelded vertex      [%3.1f,%3.1f,%3.1f]",	VPUSH(vTEST->P));
-        // else			clMsg	("ERROR. T-junction at vertex [%3.1f,%3.1f,%3.1f]",	VPUSH(vTEST->P));
-        // pBuild->err_tjunction.w_fvector3	(vTEST->P);
+        // if (bWeld)   clMsg   ("ERROR. unwelded vertex      [%3.1f,%3.1f,%3.1f]", VPUSH(vTEST->P));
+        // else         clMsg   ("ERROR. T-junction at vertex [%3.1f,%3.1f,%3.1f]", VPUSH(vTEST->P));
+        // pBuild->err_tjunction.w_fvector3 (vTEST->P);
     }
 }
 
@@ -94,7 +94,7 @@ static void edge(Vertex* vE1, Vertex* vE2)
     rec.T = 0;
     vecEdges->push_back(rec);
 
-    // clMsg	("ERROR: too long edge        %3.1fm [%3.1f,%3.1f,%3.1f] -
+    // clMsg    ("ERROR: too long edge        %3.1fm [%3.1f,%3.1f,%3.1f] -
     // [%3.1f,%3.1f,%3.1f]",len,VPUSH(vE1->P),VPUSH(vE2->P));
 }
 

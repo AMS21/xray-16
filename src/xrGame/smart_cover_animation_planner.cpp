@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_animation_planner.h
-//	Created 	: 04.09.2007
-//	Author		: Alexander Dudin
-//	Description : Smart cover planner class
+//  Module      : smart_cover_animation_planner.h
+//  Created     : 04.09.2007
+//  Author      : Alexander Dudin
+//  Description : Smart cover planner class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -40,7 +40,7 @@ void animation_planner::setup(CAI_Stalker* object, CPropertyStorage* storage)
 {
     inherited::setup(object);
 #ifdef DEBUG
-//	inherited::m_use_log	= true;
+//  inherited::m_use_log    = true;
 #endif // DEBUG
 
     add_evaluators();
@@ -66,7 +66,7 @@ void animation_planner::initialize()
     object().hit_callback(hit_callback);
 
     m_head_speed = object().movement().m_head.speed;
-    //	object().movement().m_head.speed	= PI_DIV_4;
+    //  object().movement().m_head.speed    = PI_DIV_4;
 
     m_storage.set_property(eWorldPropertyLookedOut, false);
     m_storage.set_property(eWorldPropertyReadyToIdle, true);

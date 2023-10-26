@@ -7,7 +7,7 @@ class XRUICORE_API CUI3tButton : public CUIButton
 {
     typedef CUIButton inherited;
     friend class CUIXmlInitBase;
-    //.	using CUIButton::SetTextColor;
+    //. using CUIButton::SetTextColor;
 public:
     CUI3tButton();
     virtual ~CUI3tButton();
@@ -17,7 +17,7 @@ public:
     bool InitTexture(pcstr texture, bool fatal = true) override;
     virtual bool InitTexture(pcstr tex_enabled, pcstr tex_disabled, pcstr tex_touched, pcstr tex_highlighted, bool fatal = true);
 
-    //.			void 	SetTextColor				(u32 color);
+    //.         void    SetTextColor                (u32 color);
     virtual void SetTextureOffset(float x, float y);
     virtual void SetWidth(float width);
     virtual void SetHeight(float height);

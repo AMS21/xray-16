@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_update_manager.h
-//	Created 	: 25.12.2002
-//  Modified 	: 12.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALife Simulator update manager
+//  Module      : alife_update_manager.h
+//  Created     : 25.12.2002
+//  Modified    : 12.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALife Simulator update manager
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -137,7 +137,7 @@ bool CALifeUpdateManager::change_level(NET_Packet& net_packet)
     if (m_changing_level)
         return (false);
 
-    //	prepare_objects_for_save		();
+    //  prepare_objects_for_save        ();
     // we couldn't use prepare_objects_for_save since we need
     // get updates from client
     // then change actor server entity

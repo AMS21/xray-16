@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: danger_cover_location_inline.h
-//	Created 	: 24.05.2004
-//  Modified 	: 14.01.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Danger cover location inline functions
+//  Module      : danger_cover_location_inline.h
+//  Created     : 24.05.2004
+//  Modified    : 14.01.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Danger cover location inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

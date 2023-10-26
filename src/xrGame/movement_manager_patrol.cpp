@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: movement_manager_patrol.cpp
-//	Created 	: 03.12.2003
-//  Modified 	: 03.12.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Movement manager for patrol paths
+//  Module      : movement_manager_patrol.cpp
+//  Created     : 03.12.2003
+//  Modified    : 03.12.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Movement manager for patrol paths
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -24,7 +24,7 @@ void CMovementManager::process_patrol_path()
 
     if (!patrol().actual() && (m_path_state > ePathStateSelectPatrolPoint))
     {
-        //		Msg					("[%6d][%s] actuality is false 2",Device.dwFrame,*object().cName());
+        //      Msg                 ("[%6d][%s] actuality is false 2",Device.dwFrame,*object().cName());
         m_path_state = ePathStateSelectPatrolPoint;
     }
 
@@ -90,7 +90,7 @@ void CMovementManager::process_patrol_path()
     {
         if (!patrol().actual())
         {
-            //				Msg				("[%6d][%s] actuality is false 3",Device.dwFrame,*object().cName());
+            //              Msg             ("[%6d][%s] actuality is false 3",Device.dwFrame,*object().cName());
             m_path_state = ePathStateSelectPatrolPoint;
         }
         else if (!level_path().actual())
@@ -99,18 +99,18 @@ void CMovementManager::process_patrol_path()
             m_path_state = ePathStateBuildLevelPath;
         else if (detail().completed(object().Position(), !detail().state_patrol_path()))
         {
-            //							Msg				("[%6d][%s] detail path is
+            //                          Msg             ("[%6d][%s] detail path is
             // completed",Device.dwFrame,*object().cName());
-            //							Msg				(
-            //								"[path_size=%d][curr_id=%d][last_pp=%d] start_position=[%f][%f][%f]
+            //                          Msg             (
+            //                              "[path_size=%d][curr_id=%d][last_pp=%d] start_position=[%f][%f][%f]
             // stop_position=[%f][%f][%f] position=[%f][%f][%f]",
-            //								detail().path().size(),
-            //								detail().curr_travel_point_index(),
-            //								detail().last_patrol_point(),
-            //								VPUSH(detail().path().front().position),
-            //								VPUSH(detail().curr_travel_point().position),
-            //								VPUSH(object().Position())
-            //							);
+            //                              detail().path().size(),
+            //                              detail().curr_travel_point_index(),
+            //                              detail().last_patrol_point(),
+            //                              VPUSH(detail().path().front().position),
+            //                              VPUSH(detail().curr_travel_point().position),
+            //                              VPUSH(object().Position())
+            //                          );
             m_path_state = ePathStateContinueLevelPath;
             if (level_path().completed())
             {
@@ -125,7 +125,7 @@ void CMovementManager::process_patrol_path()
     {
         if (!patrol().actual())
         {
-            //				Msg				("[%6d][%s] actuality is false 4",Device.dwFrame,*object().cName());
+            //              Msg             ("[%6d][%s] actuality is false 4",Device.dwFrame,*object().cName());
             m_path_state = ePathStateSelectPatrolPoint;
         }
         break;

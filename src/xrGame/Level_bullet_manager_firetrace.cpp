@@ -1,6 +1,6 @@
-// Level_Bullet_Manager.cpp:	для обеспечения полета пули по траектории
-//								все пули и осколки передаются сюда
-//								(для просчета столкновений и их визуализации)
+// Level_Bullet_Manager.cpp:    для обеспечения полета пули по траектории
+//                              все пули и осколки передаются сюда
+//                              (для просчета столкновений и их визуализации)
 //////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -78,13 +78,13 @@ bool CBulletManager::test_callback(const collide::ray_defs& rd, IGameObject* obj
                         float ahp = actor->HitProbability();
 #if 1
 #if 0
-                        IGameObject					*weapon_object = Level().Objects.net_Find	(bullet->weapon_id);
+                        IGameObject                 *weapon_object = Level().Objects.net_Find   (bullet->weapon_id);
                         if (weapon_object) {
-                            CWeapon				*weapon = smart_cast<CWeapon*>(weapon_object);
+                            CWeapon             *weapon = smart_cast<CWeapon*>(weapon_object);
                             if (weapon) {
-                                float fly_dist		= bullet->fly_dist+dist;
-                                float dist_factor	= _min(1.f,fly_dist/Level().BulletManager().m_fHPMaxDist);
-                                ahp					= dist_factor*weapon->hit_probability() + (1.f-dist_factor)*1.f;
+                                float fly_dist      = bullet->fly_dist+dist;
+                                float dist_factor   = _min(1.f,fly_dist/Level().BulletManager().m_fHPMaxDist);
+                                ahp                 = dist_factor*weapon->hit_probability() + (1.f-dist_factor)*1.f;
                             }
                         }
 #else
@@ -162,11 +162,11 @@ bool CBulletManager::test_callback(const collide::ray_defs& rd, IGameObject* obj
 }
 
 // callback функция
-//	result.O;		// 0-static else IGameObject*
-//	result.range;	// range from start to element
-//	result.element;	// if (O) "num tri" else "num bone"
-//	params;			// user defined abstract data
-//	Device.Statistic.TEST0.End();
+//  result.O;       // 0-static else IGameObject*
+//  result.range;   // range from start to element
+//  result.element; // if (O) "num tri" else "num bone"
+//  params;         // user defined abstract data
+//  Device.Statistic.TEST0.End();
 // return TRUE-продолжить трассировку / FALSE-закончить трассировку
 
 void CBulletManager::FireShotmark(SBullet* bullet, const Fvector& vDir, const Fvector& vEnd, collide::rq_result& R,
@@ -261,9 +261,9 @@ void CBulletManager::FireShotmark(SBullet* bullet, const Fvector& vDir, const Fv
 
 void CBulletManager::StaticObjectHit(CBulletManager::_event& E)
 {
-    //	Fvector hit_normal;
+    //  Fvector hit_normal;
     FireShotmark(&E.bullet, E.bullet.dir, E.point, E.R, E.tgt_material, E.normal);
-    //	ObjectHit	(&E.bullet,					E.point, E.R, E.tgt_material, hit_normal);
+    //  ObjectHit   (&E.bullet,                 E.point, E.R, E.tgt_material, hit_normal);
 }
 
 static bool g_clear = false;
@@ -300,7 +300,7 @@ void CBulletManager::DynamicObjectHit(CBulletManager::_event& E)
     }
 
     //визуальное обозначение попадание на объекте
-    //	Fvector			hit_normal;
+    //  Fvector         hit_normal;
     FireShotmark(&E.bullet, E.bullet.dir, E.point, E.R, E.tgt_material, E.normal, NeedShootmark);
 
     Fvector original_dir = E.bullet.dir;
@@ -358,7 +358,7 @@ void CBulletManager::DynamicObjectHit(CBulletManager::_event& E)
         NET_Packet np;
         Hit.Write_Packet(np);
 
-        //		Msg("Hit sended: %d[%d,%d]", Hit.whoID, Hit.weaponID, Hit.BulletID);
+        //      Msg("Hit sended: %d[%d,%d]", Hit.whoID, Hit.weaponID, Hit.BulletID);
         CGameObject::u_EventSend(np);
     }
 }
@@ -410,7 +410,7 @@ bool CBulletManager::ObjectHit(SBullet_Hit* hit_res, SBullet* bullet, const Fvec
         {
             if (bullet->density_mode)
             {
-                //				Log("WARNING: Material in material found while bullet tracing. Incorrect behaviour of
+                //              Log("WARNING: Material in material found while bullet tracing. Incorrect behaviour of
                 //shooting
                 // is possible.");
             }
@@ -535,7 +535,7 @@ bool CBulletManager::ObjectHit(SBullet_Hit* hit_res, SBullet* bullet, const Fvec
     extern BOOL g_bDrawBulletHit;
     if (g_bDrawBulletHit)
     {
-        //		g_hit[bullet_state].push_back(dbg_bullet_pos);
+        //      g_hit[bullet_state].push_back(dbg_bullet_pos);
         g_hit[bullet_state].push_back(end_point);
     }
 #endif

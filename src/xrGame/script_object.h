@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_object.h
-//	Created 	: 06.10.2003
-//  Modified 	: 14.12.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script object class
+//  Module      : script_object.h
+//  Created     : 06.10.2003
+//  Modified    : 14.12.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script object class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

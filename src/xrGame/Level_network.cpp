@@ -104,8 +104,8 @@ void CLevel::remove_objects()
 
     g_pGamePersistent->destroy_particles(false);
 
-    //.	xr_delete									(m_seniority_hierarchy_holder);
-    //.	m_seniority_hierarchy_holder				= new CSeniorityHierarchyHolder();
+    //. xr_delete                                   (m_seniority_hierarchy_holder);
+    //. m_seniority_hierarchy_holder                = new CSeniorityHierarchyHolder();
     if (!IsGameTypeSingle())
         Msg("CLevel::remove_objects - End");
 }
@@ -181,9 +181,9 @@ void CLevel::ClientSend()
     NET_Packet P;
     u32 start = 0;
     //----------- for E3 -----------------------------
-    //	if ()
+    //  if ()
     {
-        //		if (!(Game().local_player) || Game().local_player->testFlag(GAME_PLAYER_FLAG_VERY_VERY_DEAD)) return;
+        //      if (!(Game().local_player) || Game().local_player->testFlag(GAME_PLAYER_FLAG_VERY_VERY_DEAD)) return;
         if (CurrentControlEntity())
         {
             IGameObject* pObj = CurrentControlEntity();
@@ -239,16 +239,16 @@ u32 CLevel::Objects_net_Save(NET_Packet* _Packet, u32 start, u32 max_object_size
     {
         IGameObject* _P = Objects.o_get_by_iterator(start);
         CGameObject* P = smart_cast<CGameObject*>(_P);
-        //		Msg			("save:iterating:%d:%s, size[%d]",P->ID(),*P->cName(), Packet.w_tell() );
+        //      Msg         ("save:iterating:%d:%s, size[%d]",P->ID(),*P->cName(), Packet.w_tell() );
         if (P && !P->getDestroy() && P->net_SaveRelevant())
         {
             Packet.w_u16(u16(P->ID()));
             Packet.w_chunk_open16(position);
-            //			Msg						("save:saving:%d:%s",P->ID(),*P->cName());
+            //          Msg                     ("save:saving:%d:%s",P->ID(),*P->cName());
             P->net_Save(Packet);
 #ifdef DEBUG
             u32 size = u32(Packet.w_tell() - position) - sizeof(u16);
-            //			Msg						("save:saved:%d bytes:%d:%s",size,P->ID(),*P->cName());
+            //          Msg                     ("save:saved:%d bytes:%d:%s",size,P->ID(),*P->cName());
             if (size >= 65536)
             {
                 xrDebug::Fatal(DEBUG_INFO, "Object [%s][%d] exceed network-data limit\n size=%d, Pend=%d, Pstart=%d",
@@ -256,8 +256,8 @@ u32 CLevel::Objects_net_Save(NET_Packet* _Packet, u32 start, u32 max_object_size
             }
 #endif
             Packet.w_chunk_close16(position);
-            //			if (0==(--count))
-            //				break;
+            //          if (0==(--count))
+            //              break;
             if (max_object_size >= (NET_PacketSizeLimit - Packet.w_tell()))
                 break;
         }
@@ -283,7 +283,7 @@ void CLevel::ClientSave()
     }
 }
 
-// extern	XRPHYSICS_API	float		phTimefactor;
+// extern   XRPHYSICS_API   float       phTimefactor;
 extern BOOL g_SV_Disable_Auth_Check;
 
 void CLevel::Send(NET_Packet& P, u32 dwFlags, u32 dwTimeout)
@@ -422,8 +422,8 @@ bool CLevel::Connect2Server(const char* options)
     };
 
     //---------------------------------------------------------------------------
-    // P.w_begin	(M_CLIENT_REQUEST_CONNECTION_DATA);
-    // Send		(P, net_flags(TRUE, TRUE, TRUE, TRUE));
+    // P.w_begin    (M_CLIENT_REQUEST_CONNECTION_DATA);
+    // Send     (P, net_flags(TRUE, TRUE, TRUE, TRUE));
     //---------------------------------------------------------------------------
     return TRUE;
 };
@@ -611,8 +611,8 @@ void CLevel::OnConnectRejected()
 {
     IPureClient::OnConnectRejected();
 
-    //	if (MainMenu()->GetErrorDialogType() != CMainMenu::ErrNoError)
-    //		MainMenu()->SetErrorDialog(CMainMenu::ErrServerReject);
+    //  if (MainMenu()->GetErrorDialogType() != CMainMenu::ErrNoError)
+    //      MainMenu()->SetErrorDialog(CMainMenu::ErrServerReject);
 };
 
 void CLevel::net_OnChangeSelfName(NET_Packet* P)

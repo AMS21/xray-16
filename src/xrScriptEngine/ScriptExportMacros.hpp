@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_export_macroses.h
-//	Created 	: 24.06.2004
-//  Modified 	: 24.06.2004
-//	Author		: Andy Kolomiets, Dmitriy Iassenev
-//	Description : XRay Script export macroses
+//  Module      : script_export_macroses.h
+//  Created     : 24.06.2004
+//  Modified    : 24.06.2004
+//  Author      : Andy Kolomiets, Dmitriy Iassenev
+//  Description : XRay Script export macroses
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

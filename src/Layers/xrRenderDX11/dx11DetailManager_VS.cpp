@@ -31,8 +31,8 @@ void CDetailManager::hw_Render(CBackend& cmd_list)
     using namespace detail_manager;
 
     // Render-prepare
-    //	Update timer
-    //	Can't use Device.fTimeDelta since it is smoothed! Don't know why, but smoothed value looks more choppy!
+    //  Update timer
+    //  Can't use Device.fTimeDelta since it is smoothed! Don't know why, but smoothed value looks more choppy!
     float fDelta = Device.fTimeGlobal - m_global_time_old;
     if ((fDelta < 0) || (fDelta > 1))
         fDelta = 0.03f;
@@ -42,8 +42,8 @@ void CDetailManager::hw_Render(CBackend& cmd_list)
     m_time_rot_2 += (PI_MUL_2 * fDelta / swing_current.rot2);
     m_time_pos += fDelta * swing_current.speed;
 
-    // float		tm_rot1		= (PI_MUL_2*Device.fTimeGlobal/swing_current.rot1);
-    // float		tm_rot2		= (PI_MUL_2*Device.fTimeGlobal/swing_current.rot2);
+    // float        tm_rot1     = (PI_MUL_2*Device.fTimeGlobal/swing_current.rot1);
+    // float        tm_rot2     = (PI_MUL_2*Device.fTimeGlobal/swing_current.rot2);
     float tm_rot1 = m_time_rot_1;
     float tm_rot2 = m_time_rot_2;
 
@@ -59,31 +59,31 @@ void CDetailManager::hw_Render(CBackend& cmd_list)
     Fvector4 wave;
     Fvector4 consts;
     consts.set(scale, scale, ps_r__Detail_l_aniso, ps_r__Detail_l_ambient);
-    // wave.set				(1.f/5.f,		1.f/7.f,	1.f/3.f,	Device.fTimeGlobal*swing_current.speed);
+    // wave.set             (1.f/5.f,       1.f/7.f,    1.f/3.f,    Device.fTimeGlobal*swing_current.speed);
     wave.set(1.f / 5.f, 1.f / 7.f, 1.f / 3.f, m_time_pos);
-    // RCache.set_c			(&*hwc_consts,	scale,		scale,		ps_r__Detail_l_aniso,	ps_r__Detail_l_ambient);
+    // RCache.set_c         (&*hwc_consts,  scale,      scale,      ps_r__Detail_l_aniso,   ps_r__Detail_l_ambient);
     // //
     // consts
-    // RCache.set_c			(&*hwc_wave,	wave.div(PI_MUL_2));	// wave
-    // RCache.set_c			(&*hwc_wind,	dir1); //
+    // RCache.set_c         (&*hwc_wave,    wave.div(PI_MUL_2));    // wave
+    // RCache.set_c         (&*hwc_wind,    dir1); //
     // wind-dir
-    // hw_Render_dump			(&*hwc_array,	1, 0, c_hdr );
+    // hw_Render_dump           (&*hwc_array,   1, 0, c_hdr );
     hw_Render_dump(cmd_list, consts, wave.div(PI_MUL_2), dir1, 1, 0);
 
     // Wave1
-    // wave.set				(1.f/3.f,		1.f/7.f,	1.f/5.f,	Device.fTimeGlobal*swing_current.speed);
+    // wave.set             (1.f/3.f,       1.f/7.f,    1.f/5.f,    Device.fTimeGlobal*swing_current.speed);
     wave.set(1.f / 3.f, 1.f / 7.f, 1.f / 5.f, m_time_pos);
-    // RCache.set_c			(&*hwc_wave,	wave.div(PI_MUL_2));	// wave
-    // RCache.set_c			(&*hwc_wind,	dir2); //
+    // RCache.set_c         (&*hwc_wave,    wave.div(PI_MUL_2));    // wave
+    // RCache.set_c         (&*hwc_wind,    dir2); //
     // wind-dir
-    // hw_Render_dump			(&*hwc_array,	2, 0, c_hdr );
+    // hw_Render_dump           (&*hwc_array,   2, 0, c_hdr );
     hw_Render_dump(cmd_list, consts, wave.div(PI_MUL_2), dir2, 2, 0);
 
     // Still
     consts.set(scale, scale, scale, 1.f);
-    // RCache.set_c			(&*hwc_s_consts,scale,		scale,		scale,				1.f);
-    // RCache.set_c			(&*hwc_s_xform,	Device.mFullTransform);
-    // hw_Render_dump			(&*hwc_s_array,	0, 1, c_hdr );
+    // RCache.set_c         (&*hwc_s_consts,scale,      scale,      scale,              1.f);
+    // RCache.set_c         (&*hwc_s_xform, Device.mFullTransform);
+    // hw_Render_dump           (&*hwc_s_array, 0, 1, c_hdr );
     hw_Render_dump(cmd_list, consts, wave.div(PI_MUL_2), dir2, 0, 1);
 }
 
@@ -121,12 +121,12 @@ void CDetailManager::hw_Render_dump(CBackend& cmd_list,
             for (u32 iPass = 0; iPass < Object.shader->E[lod_id]->passes.size(); ++iPass)
             {
                 // Setup matrices + colors (and flush it as necessary)
-                // RCache.set_Element				(Object.shader->E[lod_id]);
+                // RCache.set_Element               (Object.shader->E[lod_id]);
                 cmd_list.set_Element(Object.shader->E[lod_id], iPass);
                 cmd_list.apply_lmaterial();
 
-                //	This could be cached in the corresponding consatant buffer
-                //	as it is done for DX9
+                //  This could be cached in the corresponding consatant buffer
+                //  as it is done for DX9
                 cmd_list.set_c(strConsts, consts);
                 cmd_list.set_c(strWave, wave);
                 cmd_list.set_c(strDir2D, wind);
@@ -135,10 +135,10 @@ void CDetailManager::hw_Render_dump(CBackend& cmd_list,
                 // ref_constant constArray = RCache.get_c(strArray);
                 // VERIFY(constArray);
 
-                // u32			c_base				= x_array->vs.index;
-                // Fvector4*	c_storage			= RCache.get_ConstantCache_Vertex().get_array_f().access(c_base);
+                // u32          c_base              = x_array->vs.index;
+                // Fvector4*    c_storage           = RCache.get_ConstantCache_Vertex().get_array_f().access(c_base);
                 Fvector4* c_storage = 0;
-                //	Map constants to memory directly
+                //  Map constants to memory directly
                 {
                     void* pVData;
                     cmd_list.get_ConstantDirect(strArray, hw_BatchSize * sizeof(Fvector4) * 4, &pVData, 0, 0);
@@ -167,16 +167,16 @@ void CDetailManager::hw_Render_dump(CBackend& cmd_list,
                         c_storage[base + 0].set(M._11 * scale, M._21 * scale, M._31 * scale, M._41);
                         c_storage[base + 1].set(M._12 * scale, M._22 * scale, M._32 * scale, M._42);
                         c_storage[base + 2].set(M._13 * scale, M._23 * scale, M._33 * scale, M._43);
-                        // RCache.set_ca(&*constArray, base+0, M._11*scale,	M._21*scale,	M._31*scale,	M._41	);
-                        // RCache.set_ca(&*constArray, base+1, M._12*scale,	M._22*scale,	M._32*scale,	M._42	);
-                        // RCache.set_ca(&*constArray, base+2, M._13*scale,	M._23*scale,	M._33*scale,	M._43	);
+                        // RCache.set_ca(&*constArray, base+0, M._11*scale, M._21*scale,    M._31*scale,    M._41   );
+                        // RCache.set_ca(&*constArray, base+1, M._12*scale, M._22*scale,    M._32*scale,    M._42   );
+                        // RCache.set_ca(&*constArray, base+2, M._13*scale, M._23*scale,    M._33*scale,    M._43   );
 
                         // Build color
                         // R2 only needs hemisphere
                         float h = Instance.c_hemi;
                         float s = Instance.c_sun;
                         c_storage[base + 3].set(s, s, s, h);
-                        // RCache.set_ca(&*constArray, base+3, s,				s,				s,				h
+                        // RCache.set_ca(&*constArray, base+3, s,               s,              s,              h
                         // );
                         dwBatch++;
                         if (dwBatch == hw_BatchSize)
@@ -185,15 +185,15 @@ void CDetailManager::hw_Render_dump(CBackend& cmd_list,
                             RImplementation.BasicStats.DetailCount += dwBatch;
                             u32 dwCNT_verts = dwBatch * Object.number_vertices;
                             u32 dwCNT_prims = (dwBatch * Object.number_indices) / 3;
-                            // RCache.get_ConstantCache_Vertex().b_dirty				=	TRUE;
-                            // RCache.get_ConstantCache_Vertex().get_array_f().dirty	(c_base,c_base+dwBatch*4);
+                            // RCache.get_ConstantCache_Vertex().b_dirty                =   TRUE;
+                            // RCache.get_ConstantCache_Vertex().get_array_f().dirty    (c_base,c_base+dwBatch*4);
                             cmd_list.Render(D3DPT_TRIANGLELIST, vOffset, 0, dwCNT_verts, iOffset, dwCNT_prims);
                             cmd_list.stat.r.s_details.add(dwCNT_verts);
 
                             // restart
                             dwBatch = 0;
 
-                            //	Remap constants to memory directly (just in case anything goes wrong)
+                            //  Remap constants to memory directly (just in case anything goes wrong)
                             {
                                 void* pVData;
                                 cmd_list.get_ConstantDirect(strArray, hw_BatchSize * sizeof(Fvector4) * 4, &pVData, 0, 0);
@@ -209,8 +209,8 @@ void CDetailManager::hw_Render_dump(CBackend& cmd_list,
                     RImplementation.BasicStats.DetailCount += dwBatch;
                     u32 dwCNT_verts = dwBatch * Object.number_vertices;
                     u32 dwCNT_prims = (dwBatch * Object.number_indices) / 3;
-                    // RCache.get_ConstantCache_Vertex().b_dirty				=	TRUE;
-                    // RCache.get_ConstantCache_Vertex().get_array_f().dirty	(c_base,c_base+dwBatch*4);
+                    // RCache.get_ConstantCache_Vertex().b_dirty                =   TRUE;
+                    // RCache.get_ConstantCache_Vertex().get_array_f().dirty    (c_base,c_base+dwBatch*4);
                     cmd_list.Render(D3DPT_TRIANGLELIST, vOffset, 0, dwCNT_verts, iOffset, dwCNT_prims);
                     cmd_list.stat.r.s_details.add(dwCNT_verts);
                 }

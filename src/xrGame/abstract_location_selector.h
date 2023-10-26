@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: abstract_location_selector.h
-//	Created 	: 02.10.2001
-//  Modified 	: 19.11.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Abstract location selector
+//  Module      : abstract_location_selector.h
+//  Created     : 02.10.2001
+//  Modified    : 19.11.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Abstract location selector
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

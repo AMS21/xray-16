@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: path_manager_solver_inline.h
-//	Created 	: 21.03.2002
-//  Modified 	: 03.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Solver path manager inline functions
+//  Module      : path_manager_solver_inline.h
+//  Created     : 21.03.2002
+//  Modified    : 03.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Solver path manager inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -63,9 +63,9 @@ TEMPLATE_SPECIALIZATION
 IC _dist_type CSolverPathManager::estimate(const _index_type& vertex_id) const
 {
     VERIFY(this->graph);
-    //	return					((_dist_type)this->graph->get_edge_weight(vertex_id,start_node_index,m_iterator));
+    //  return                  ((_dist_type)this->graph->get_edge_weight(vertex_id,start_node_index,m_iterator));
     return (1 * (_dist_type)this->graph->estimate_edge_weight(vertex_id));
-    //	return					((_dist_type)0);
+    //  return                  ((_dist_type)0);
 }
 
 TEMPLATE_SPECIALIZATION

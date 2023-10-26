@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_sound_data_visitor.h
-//	Created 	: 02.02.2005
-//  Modified 	: 02.02.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker sound data visitor
+//  Module      : stalker_sound_data_visitor.h
+//  Created     : 02.02.2005
+//  Modified    : 02.02.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker sound data visitor
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

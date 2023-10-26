@@ -10,7 +10,7 @@
 #include "Include/xrRender/Kinematics.h"
 #include "xrPhysics/IPHWorld.h"
 
-// extern CPHWorld*	ph_world;
+// extern CPHWorld* ph_world;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 CCar::SExhaust::~SExhaust() { CParticlesObject::Destroy(p_pgobject); }
@@ -40,7 +40,7 @@ void CCar::SExhaust::Update()
     global_transform.mulB_43(transform);
 
     // dVector3 res;
-    // Fvector	 res_vel;
+    // Fvector   res_vel;
     // dBodyGetPointVel(pelement->get_body(),global_transform.c.x,global_transform.c.y,global_transform.c.z,res);
     // CopyMemory (&res_vel,res,sizeof(Fvector));
     Fvector res_vel;

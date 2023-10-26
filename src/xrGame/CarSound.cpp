@@ -8,7 +8,7 @@
 #include "Car.h"
 #include "Include/xrRender/Kinematics.h"
 
-// extern CPHWorld*	ph_world;
+// extern CPHWorld* ph_world;
 #include "xrPhysics/IPHWorld.h"
 CCar::SCarSound::SCarSound(CCar* car) : eCarSound(), engine_start_delay(0), time_state_start(0)
 {

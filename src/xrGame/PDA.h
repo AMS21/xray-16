@@ -57,7 +57,7 @@ public:
     virtual void save(NET_Packet& output_packet);
     virtual void load(IReader& input_packet);
 
-    //*	virtual LPCSTR							Name					();
+    //* virtual LPCSTR                          Name                    ();
 
 protected:
     void UpdateActiveContacts();

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: inventory_upgrade_group.h
-//	Created 	: 22.10.2007
-//  Modified 	: 27.11.2007
-//	Author		: Evgeniy Sokolov
-//	Description : inventory upgrade group class
+//  Module      : inventory_upgrade_group.h
+//  Created     : 22.10.2007
+//  Modified    : 27.11.2007
+//  Author      : Evgeniy Sokolov
+//  Description : inventory upgrade group class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef INVENTORY_UPGRADE_GROUP_H_INCLUDED

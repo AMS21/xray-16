@@ -418,7 +418,7 @@ float CBoxGeom::radius() { return m_box.m_halfsize.x; }
 void CODEGeom::get_final_tx_bt(const dReal*& p, const dReal*& R, dReal* bufV, dReal* bufM) const
 {
     VERIFY(m_geom_transform);
-    // dGeomID		g		=	geometry_bt()						;
+    // dGeomID      g       =   geometry_bt()                       ;
     get_final_tx(m_geom_transform, p, R, bufV, bufM);
 }
 void CODEGeom::get_final_tx(dGeomID g, const dReal*& p, const dReal*& R, dReal* bufV, dReal* bufM)

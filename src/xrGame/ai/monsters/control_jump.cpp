@@ -321,7 +321,7 @@ void CControlJump::update_frame()
         ctrl_data_dir->heading.target_speed = angle_difference(cur_yaw, target_yaw) / m_jump_time;
         ctrl_data_dir->linear_dependency = false;
 
-        // 		ctrl_data->set_speed	(m_man->animation().current_blend()->timeTotal /
+        //      ctrl_data->set_speed    (m_man->animation().current_blend()->timeTotal /
         // m_man->animation().current_blend()->speed / m_jump_time);
     }
 

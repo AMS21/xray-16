@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_container_holder.hpp
-//	Created 	: 29.12.2007
-//  Modified 	: 29.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property container holder interface class
+//  Module      : property_container_holder.hpp
+//  Created     : 29.12.2007
+//  Modified    : 29.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property container holder interface class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_CONTAINER_HOLDER_HPP_INCLUDED

@@ -63,7 +63,7 @@ void interactive_animation::contact_callback(
         return;
     save_max(depth, c.geom.depth);
     // if(gd1&&gd2&&(CPhysicsShellHolder*)gd1->callback_data==gd2->ph_ref_object)
-    //																			do_colide=false;
+    //                                                                          do_colide=false;
 }
 
 void interactive_animation::create_shell(CPhysicsShellHolder* O)

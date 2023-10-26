@@ -237,7 +237,7 @@ public:
     {
         u16 bone_id;
         Fmatrix transform;
-        // Fvector				velocity;
+        // Fvector              velocity;
         CParticlesObject* p_pgobject;
         CPhysicsElement* pelement;
         CCar* pcar;
@@ -516,9 +516,9 @@ public:
     void SetfFuelTank(float fuel_tank);
 
     float GetfFuelConsumption();
-    void SetfFuelConsumption	(float fuel_consumption);
+    void SetfFuelConsumption    (float fuel_consumption);
 
-    void ChangefFuel	(float fuel);
+    void ChangefFuel    (float fuel);
     void ChangefHealth(float health);
 
     void PlayDamageParticles()
@@ -527,13 +527,13 @@ public:
         m_damage_particles.Play2(this);
     }
 
-    void StopDamageParticles	()
+    void StopDamageParticles    ()
     {
         m_damage_particles.Stop1(this);
         m_damage_particles.Stop2(this);
     }
 
-    bool isActiveEngine	();
+    bool isActiveEngine ();
     /***** added by Ray Twitty (aka Shadows) END *****/
   
 

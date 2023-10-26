@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_sound_data_visitor.cpp
-//	Created 	: 02.02.2005
-//  Modified 	: 02.02.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker sound data visitor
+//  Module      : stalker_sound_data_visitor.cpp
+//  Created     : 02.02.2005
+//  Modified    : 02.02.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker sound data visitor
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -50,9 +50,9 @@ void CStalkerSoundDataVisitor::visit(CStalkerSoundData* data)
 #endif //#ifdef DEBUG
     object().memory().make_object_visible_somewhen(data->object().memory().enemy().selected());
 
-    //	const MemorySpace::CHitObject	*m =
+    //  const MemorySpace::CHitObject   *m =
     // data->object().memory().hit().hit(data->object().memory().enemy().selected());
-    //	if (!m)
-    //		return;
-    //	object().memory().hit().add		(*m);
+    //  if (!m)
+    //      return;
+    //  object().memory().hit().add     (*m);
 }

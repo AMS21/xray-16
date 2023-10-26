@@ -18,8 +18,8 @@ CPHActorCharacter::CPHActorCharacter(bool single_game) : b_single_game(single_ga
     SetRestrictionType(rtActor);
 
     // std::fill(m_restrictors_index,m_restrictors_index+CPHCharacter::rtNone,end(m_restrictors));
-    // m_restrictors_index[CPHCharacter::rtStalker]		=begin(m_restrictors)+0;
-    // m_restrictors_index[CPHCharacter::rtMonsterMedium]	=begin(m_restrictors)+1;
+    // m_restrictors_index[CPHCharacter::rtStalker]     =begin(m_restrictors)+0;
+    // m_restrictors_index[CPHCharacter::rtMonsterMedium]   =begin(m_restrictors)+1;
 
     {
         m_restrictors.resize(3);
@@ -259,12 +259,12 @@ static void BigVelSeparate(dContact* c, bool& do_collide)
         dat1->ph_object->CastType() != CPHObject::tpCharacter || dat2->ph_object->CastType() != CPHObject::tpCharacter)
         return;
 
-    // float spr	= Spring( c->surface.soft_cfm,c->surface.soft_erp);
-    // float dmp	= Damping( c->surface.soft_cfm,c->surface.soft_erp);
+    // float spr    = Spring( c->surface.soft_cfm,c->surface.soft_erp);
+    // float dmp    = Damping( c->surface.soft_cfm,c->surface.soft_erp);
     // spr *=0.001f;
     // dmp *=10.f;
-    // float cfm	= Cfm( spr, dmp );
-    // float e		= Erp( spr, dmp );
+    // float cfm    = Cfm( spr, dmp );
+    // float e      = Erp( spr, dmp );
     c->surface.soft_cfm *= 100.f;
     c->surface.soft_erp *= 0.1f;
     // MulSprDmp(c->surface.soft_cfm,c->surface.soft_erp ,0.1f,10);

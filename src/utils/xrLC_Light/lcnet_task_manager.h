@@ -52,7 +52,7 @@ private:
     void release_user();
     void create_user();
     void user_init_thread();
-    // static	void					release_user_thread_proc( void *_this );
+    // static   void                    release_user_thread_proc( void *_this );
     static void user_thread_proc(void* _this);
 
 public:

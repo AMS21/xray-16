@@ -27,16 +27,16 @@
 // For efficiency, also define some of the following according to use:
 //
 // MESHCTRL_EDGES_ALWAYS_ADDED_BEFORE_TRIS:
-//		Set to 1 to enforce/assume that when adding a tri, all three edges
-//		will exist. So all tris must have all three edge entries filled.
-//		This is a speedup, and an error check, if that's what your app does.
-//		The exception is if autocreation of edges is done for the MeshTri creator.
-//		Similarly, before deleteing edges, make sure you have deleted all the
-//		tris that use them
+//      Set to 1 to enforce/assume that when adding a tri, all three edges
+//      will exist. So all tris must have all three edge entries filled.
+//      This is a speedup, and an error check, if that's what your app does.
+//      The exception is if autocreation of edges is done for the MeshTri creator.
+//      Similarly, before deleteing edges, make sure you have deleted all the
+//      tris that use them
 // MESHCTRL_PTS_ALWAYS_ADDED_BEFORE_TRIS:
-//		Ditto, but for pts.
+//      Ditto, but for pts.
 // MESHCTRL_PTS_ALWAYS_ADDED_BEFORE_EDGES:
-//		Ditto, but pts must be added before edges are created.
+//      Ditto, but pts must be added before edges are created.
 
 class MeshPt;
 class MeshEdge;
@@ -133,7 +133,7 @@ public:
 
     MESHEDGE_APP_DEFINED // App-defined data.
 
-    //	BINARY_HEAP_VARS();			// Helper stuff.
+    //  BINARY_HEAP_VARS();         // Helper stuff.
 
     MeshEdge(void);
     MeshEdge(MeshPt* pNewPt1, MeshPt* pNewPt2, MeshEdge* pListRoot = NULL);
@@ -1049,8 +1049,8 @@ inline bool MeshEdge::AddProx(MeshEdge* pEdge)
 inline MeshEdge* MeshEdge::DoProxMatch(void)
 {
     // Loop through all the prox pts to pPt1
-    //		Loop through all their edges.
-    //			If the other pt is prox to pPt2, then we found a prox edge.
+    //      Loop through all their edges.
+    //          If the other pt is prox to pPt2, then we found a prox edge.
     u32 i;
     MeshPt** ppPt = pPt1->ProxPtList.ptr();
     for (i = 0; i < pPt1->ProxPtList.size(); i++)
@@ -1382,10 +1382,10 @@ inline MeshEdge* MeshPt::FindTriEdge(MeshPt* pPt)
             {
                 return (pEdge);
             }
-            //			else
-            //			{
-            //				int bogus = 0;
-            //			}
+            //          else
+            //          {
+            //              int bogus = 0;
+            //          }
         }
         if (pEdge->pPt1 == pPt)
         {
@@ -1397,10 +1397,10 @@ inline MeshEdge* MeshPt::FindTriEdge(MeshPt* pPt)
             {
                 return (pEdge);
             }
-            //			else
-            //			{
-            //				int bogus = 0;
-            //			}
+            //          else
+            //          {
+            //              int bogus = 0;
+            //          }
         }
     }
     return (NULL);
@@ -1573,8 +1573,8 @@ inline bool MeshPt::AddProx(MeshPt* pPt, bool bProxEdges)
 
     // Now check all their edges for proximity.
     // For each edge of this.
-    //		Find other pt and scan proxs of that.
-    //			If those proxes form and edge with pPt, the edges are prox.
+    //      Find other pt and scan proxs of that.
+    //          If those proxes form and edge with pPt, the edges are prox.
     MeshEdge* pedge = FirstEdge();
     while (pedge != NULL)
     {

@@ -72,8 +72,8 @@ public:
     void StopAnimation() { m_bAnimate = false; }
 protected:
     // Переменные времени для каждого из стилей.
-    // В паре:	first	- контрольный период эффекта (задаваемый пользователем)
-    //			second	- прошедшее время с текущего апдейта
+    // В паре: first   - контрольный период эффекта (задаваемый пользователем)
+    //          second  - прошедшее время с текущего апдейта
     typedef xr_map<TextBannerStyles, EffectParams> StyleParams;
     typedef StyleParams::iterator StyleParams_it;
     StyleParams m_StyleParams;

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: inventory_upgrade_group.cpp
-//	Created 	: 22.10.2007
-//  Modified 	: 27.11.2007
-//	Author		: Evgeniy Sokolov
-//	Description : inventory upgrade group class implementation
+//  Module      : inventory_upgrade_group.cpp
+//  Created     : 22.10.2007
+//  Modified    : 27.11.2007
+//  Author      : Evgeniy Sokolov
+//  Description : inventory upgrade group class implementation
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

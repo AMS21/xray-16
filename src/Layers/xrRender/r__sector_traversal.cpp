@@ -34,7 +34,7 @@ void CPortalTraverser::traverse(IRender_Sector* start, CFrustum& F, Fvector& vBa
 
     if (options & VQ_SCISSOR)
     {
-        // dbg_sectors					= r_sectors;
+        // dbg_sectors                  = r_sectors;
         // merge scissor info
         for (u32 s = 0; s < r_sectors.size(); s++)
         {

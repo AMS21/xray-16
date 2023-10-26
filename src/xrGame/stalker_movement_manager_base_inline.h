@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_movement_manager_base_inline.h
-//	Created 	: 27.12.2003
-//	Modified	: 13.02.2008
-//	Author		: Dmitriy Iassenev
-//	Description : stalker movement manager base class inline functions
+//  Module      : stalker_movement_manager_base_inline.h
+//  Created     : 27.12.2003
+//  Modified    : 13.02.2008
+//  Author      : Dmitriy Iassenev
+//  Description : stalker movement manager base class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef STALKER_MOVEMENT_MANAGER_BASE_INLINE_H_INCLUDED
@@ -49,7 +49,7 @@ IC void stalker_movement_manager_base::set_mental_state(EMentalState mental_stat
     m_target.m_mental_state = mental_state;
     //#pragma todo("Dima to Dima: this is correct, commented just because of the October presentation, no time right now
     // to fix it correctly, should be fixed sometimes later")
-    //.	m_path_actuality			= m_path_actuality && (m_target.m_mental_state == m_current.m_mental_state);
+    //. m_path_actuality            = m_path_actuality && (m_target.m_mental_state == m_current.m_mental_state);
 }
 
 IC void stalker_movement_manager_base::set_path_type(EPathType path_type) { m_target.m_path_type = path_type; }

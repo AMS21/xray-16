@@ -40,9 +40,9 @@ BattlEyeServer::BattlEyeServer(xrServer* Server)
         Msg("! Error LoadLibrary %s", BATTLEYE_SERVER_DLL);
         return;
     }
-    //	string_path		path_dll;
-    //	GetModuleFileName( m_module, path_dll, sizeof(path_dll) );
-    //	Level().battleye_system.SetServerPath( path_dll );
+    //  string_path     path_dll;
+    //  GetModuleFileName( m_module, path_dll, sizeof(path_dll) );
+    //  Level().battleye_system.SetServerPath( path_dll );
 
     Init = (InitSrv_t)(GetProcAddress(m_module, "Init")); //=
     if (!Init)
@@ -60,7 +60,7 @@ BattlEyeServer::BattlEyeServer(xrServer* Server)
     strcpy_s(game_version, GAME_VERSION);
 
     m_succefull = Init(game_version,
-        //		Level().battleye_system.auto_update,
+        //      Level().battleye_system.auto_update,
         &PrintMessage, &SendPacket, &KickPlayer, &pfnExit, &pfnRun, &pfnCommand, &pfnAddPlayer, &pfnRemovePlayer,
         &pfnNewPacket);
 
@@ -168,7 +168,7 @@ void BattlEyeServer::KickPlayer(int player, char* reason)
 
     if (Level().Server->GetServerClient() == tmp_client)
     {
-        //				"  Disconnecting : %s !  Server's Client kicked by BattlEye Server.  Reason: %s",
+        //              "  Disconnecting : %s !  Server's Client kicked by BattlEye Server.  Reason: %s",
         NET_Packet P;
         P.w_begin(M_GAMEMESSAGE);
         P.w_u32(GAME_EVENT_SERVER_DIALOG_MESSAGE);

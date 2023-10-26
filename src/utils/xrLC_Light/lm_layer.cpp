@@ -32,7 +32,7 @@ void lm_layer::Pack_hemi(xr_vector<u32>& dest) const //.
         I->_get(C);
         u8 _d = u8_clr(C.sun);
         u8 _h = u8_clr(C.hemi);
-        //*W++	= color_rgba(_h,_h,_h,_d);
+        //*W++  = color_rgba(_h,_h,_h,_d);
         *W++ = color_rgba(_d, _d, _d, _h);
     }
 }
@@ -49,11 +49,11 @@ void lm_layer::Pixel(u32 ID, u8& r, u8& g, u8& b, u8& s, u8& h)
 }
 
 /*
-    u32						width;
-    u32						height;
-    xr_vector<base_color>	surface;
-    xr_vector<u8>			marker;
-    LMODE					mode;
+    u32                     width;
+    u32                     height;
+    xr_vector<base_color>   surface;
+    xr_vector<u8>           marker;
+    LMODE                   mode;
 */
 
 void lm_layer::read(INetReader& r)
@@ -62,7 +62,7 @@ void lm_layer::read(INetReader& r)
     height = r.r_u32();
     r_pod_vector(r, surface);
     r_pod_vector(r, marker);
-    //	mode    =(LMODE)r.r_u8();
+    //  mode    =(LMODE)r.r_u8();
 }
 void lm_layer::write(IWriter& w) const
 {
@@ -70,7 +70,7 @@ void lm_layer::write(IWriter& w) const
     w.w_u32(height);
     w_pod_vector(w, surface);
     w_pod_vector(w, marker);
-    //	w.w_u8((u8)mode);
+    //  w.w_u8((u8)mode);
 }
 
 bool lm_layer::similar(const lm_layer& layer, float eps /* =EPS*/) const

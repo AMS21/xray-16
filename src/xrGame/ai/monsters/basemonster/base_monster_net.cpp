@@ -36,8 +36,8 @@ void CBaseMonster::net_Export(NET_Packet& P)
     GameGraph::_GRAPH_ID l_game_vertex_id = ai_location().game_vertex_id();
     P.w(&l_game_vertex_id, sizeof(l_game_vertex_id));
     P.w(&l_game_vertex_id, sizeof(l_game_vertex_id));
-    //	P.w						(&m_fGoingSpeed,			sizeof(m_fGoingSpeed));
-    //	P.w						(&m_fGoingSpeed,			sizeof(m_fGoingSpeed));
+    //  P.w                     (&m_fGoingSpeed,            sizeof(m_fGoingSpeed));
+    //  P.w                     (&m_fGoingSpeed,            sizeof(m_fGoingSpeed));
     float f1 = 0;
     if (ai().game_graph().valid_vertex_id(l_game_vertex_id))
     {
@@ -85,8 +85,8 @@ void CBaseMonster::net_Import(NET_Packet& P)
         NET_WasInterpolating = TRUE;
     }
 
-    //	P.r						(&m_fGoingSpeed,			sizeof(m_fGoingSpeed));
-    //	P.r						(&m_fGoingSpeed,			sizeof(m_fGoingSpeed));
+    //  P.r                     (&m_fGoingSpeed,            sizeof(m_fGoingSpeed));
+    //  P.r                     (&m_fGoingSpeed,            sizeof(m_fGoingSpeed));
     float f1 = 0;
     if (ai().game_graph().valid_vertex_id(l_game_vertex_id))
     {

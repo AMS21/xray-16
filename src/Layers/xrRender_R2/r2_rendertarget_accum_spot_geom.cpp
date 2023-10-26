@@ -48,7 +48,7 @@ void CRenderTarget::accum_volumetric_geom_create()
 {
     // Vertices
     {
-        //	VOLUMETRIC_SLICES quads
+        //  VOLUMETRIC_SLICES quads
         constexpr size_t vCount = VOLUMETRIC_SLICES * 4;
         constexpr size_t vSize = 3 * 4;
         constexpr float dt = 1.0f / static_cast<float>(VOLUMETRIC_SLICES - 1);

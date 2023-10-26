@@ -22,8 +22,8 @@ Fmatrix& ik_limb_state::to_ref_bone(Fmatrix& m) const
     if (state.ref_bone == limb->ref_bone())
         return m;
 
-    //	Fmatrix tobone;
-    //	m = Fmatrix().mul_43( m, limb->transform( tobone, state.ref_bone, limb->ref_bone() ) );
+    //  Fmatrix tobone;
+    //  m = Fmatrix().mul_43( m, limb->transform( tobone, state.ref_bone, limb->ref_bone() ) );
 
     Fmatrix tobone = state.b2tob3;
     if (state.ref_bone == 2 && limb->ref_bone() == 3)

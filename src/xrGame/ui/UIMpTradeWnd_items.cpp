@@ -486,16 +486,16 @@ const preset_items& CUIMpTradeWnd::GetPreset(ETradePreset idx)
 };
 
 u32 _list_prio[] = {
-    6, //	e_pistol
-    4, //	e_pistol_ammo
-    7, //	e_rifle
-    5, //	e_rifle_ammo
-    10, //	e_outfit
-    9, //	e_medkit
-    8, //	e_granade
-    3, //	e_others
-    2, //	e_player_bag
-    0, //	e_shop
+    6, //   e_pistol
+    4, //   e_pistol_ammo
+    7, //   e_rifle
+    5, //   e_rifle_ammo
+    10, //  e_outfit
+    9, //   e_medkit
+    8, //   e_granade
+    3, //   e_others
+    2, //   e_player_bag
+    0, //   e_shop
     0, 0, 0, 0,
 };
 
@@ -839,11 +839,11 @@ void CUIMpTradeWnd::DumpPreset(ETradePreset idx)
         Msg("[%s]-[%d]", _one.sect_name.c_str(), _one.count);
 
         if (_one.addon_names[0].c_str())
-            Msg("	[%s]", _one.addon_names[0].c_str());
+            Msg("   [%s]", _one.addon_names[0].c_str());
         if (_one.addon_names[1].c_str())
-            Msg("	[%s]", _one.addon_names[1].c_str());
+            Msg("   [%s]", _one.addon_names[1].c_str());
         if (_one.addon_names[2].c_str())
-            Msg("	[%s]", _one.addon_names[2].c_str());
+            Msg("   [%s]", _one.addon_names[2].c_str());
     }
 #endif // #ifndef MASTER_GOLD
 }

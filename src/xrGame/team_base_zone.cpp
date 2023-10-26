@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: team_base_zone.h
-//	Created 	: 27.04.2004
-//  Modified 	: 27.04.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Team base zone object
+//  Module      : team_base_zone.h
+//  Created     : 27.04.2004
+//  Modified    : 27.04.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Team base zone object
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -139,7 +139,7 @@ void CTeamBaseZone::OnRender()
         return;
     if (!(dbg_net_Draw_Flags.is_any(dbg_draw_teamzone)))
         return;
-    //	RCache.OnFrameEnd();
+    //  RCache.OnFrameEnd();
     Fvector l_half;
     l_half.set(.5f, .5f, .5f);
     Fmatrix l_ball, l_box;

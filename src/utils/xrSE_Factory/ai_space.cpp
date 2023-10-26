@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_space.h
-//	Created 	: 12.11.2003
-//  Modified 	: 18.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : AI space class
+//  Module      : ai_space.h
+//  Created     : 12.11.2003
+//  Modified    : 18.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : AI space class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"

@@ -90,7 +90,7 @@ void CSoundRender_Core::update(const Fvector& P, const Fvector& D, const Fvector
     // Msg("! update: targets");
     s_targets_defer.clear();
     s_targets_pu++;
-    // u32 PU				= s_targets_pu%s_targets.size();
+    // u32 PU               = s_targets_pu%s_targets.size();
     for (it = 0; it < s_targets.size(); it++)
     {
         CSoundRender_Target* T = s_targets[it];
@@ -99,7 +99,7 @@ void CSoundRender_Core::update(const Fvector& P, const Fvector& D, const Fvector
             // Has emmitter, maybe just not started rendering
             if (T->get_Rendering())
             {
-                /*if	(PU == it)*/ T->fill_parameters();
+                /*if    (PU == it)*/ T->fill_parameters();
                 T->update();
             }
             else
@@ -110,7 +110,7 @@ void CSoundRender_Core::update(const Fvector& P, const Fvector& D, const Fvector
     // Commit parameters from pending targets
     if (!s_targets_defer.empty())
     {
-        // Msg	("! update: start render - commit");
+        // Msg  ("! update: start render - commit");
         s_targets_defer.erase(std::unique(s_targets_defer.begin(), s_targets_defer.end()), s_targets_defer.end());
         for (it = 0; it < s_targets_defer.size(); it++)
             s_targets_defer[it]->fill_parameters();
@@ -137,7 +137,7 @@ void CSoundRender_Core::update(const Fvector& P, const Fvector& D, const Fvector
     // Start rendering of pending targets
     if (!s_targets_defer.empty())
     {
-        // Msg	("! update: start render");
+        // Msg  ("! update: start render");
         for (it = 0; it < s_targets_defer.size(); it++)
             s_targets_defer[it]->render();
     }

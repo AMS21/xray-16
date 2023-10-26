@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: xrServer_Objects_script.cpp
-//	Created 	: 19.09.2002
-//  Modified 	: 23.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Server objects script export
+//  Module      : xrServer_Objects_script.cpp
+//  Created     : 19.09.2002
+//  Modified    : 23.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Server objects script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -60,7 +60,7 @@ SCRIPT_EXPORT(CPureServerObject, (),
         class_<ISerializable>("iserializable"),
         class_<IPureServerObject, ISerializable>("ipure_server_object"),
         class_<CPureServerObject, IPureServerObject>("cpure_server_object")
-        //			.def(		constructor<>())
+        //          .def(       constructor<>())
     ];
 });
 
@@ -87,7 +87,7 @@ SCRIPT_EXPORT(CSE_Abstract, (CPureServerObject),
             .def("STATE_Write", &BaseType::STATE_Write, &WrapType::STATE_Write_static)
             .def("UPDATE_Read", &BaseType::UPDATE_Read, &WrapType::UPDATE_Read_static)
             .def("UPDATE_Write", &BaseType::UPDATE_Write, &WrapType::UPDATE_Write_static)
-            //			.def(		constructor<pcstr>())
+            //          .def(       constructor<pcstr>())
     ];
 });
 
@@ -98,7 +98,7 @@ SCRIPT_EXPORT(CSE_Shape, (),
     module(luaState)
     [
         class_<CSE_Shape>("cse_shape")
-        //			.def(		constructor<>())
+        //          .def(       constructor<>())
     ];
 });
 
@@ -109,8 +109,8 @@ SCRIPT_EXPORT(CSE_Visual, (),
     module(luaState)
     [
         class_<CSE_Visual>("cse_visual")
-        //			.def(		constructor<>())
-        //			.def(		constructor<pcstr>())
+        //          .def(       constructor<>())
+        //          .def(       constructor<pcstr>())
     ];
 });
 
@@ -121,8 +121,8 @@ SCRIPT_EXPORT(CSE_Motion, (),
     module(luaState)
     [
         class_<CSE_Motion>("cse_motion")
-        //			.def(		constructor<>())
-        //			.def(		constructor<pcstr>())
+        //          .def(       constructor<>())
+        //          .def(       constructor<pcstr>())
     ];
 });
 

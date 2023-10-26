@@ -10,17 +10,17 @@ factory::factory() { register_all(); }
 factory::~factory() { clear(); }
 // struct sfind_type
 //{
-//	u32 _id;
-//	sfind_type(  u32 id  ): _id( id ){}
-//	bool operator () ( const factory::type_reg &tr )
-//	{
-//		return tr->type() == _id;
-//	}
+//  u32 _id;
+//  sfind_type(  u32 id  ): _id( id ){}
+//  bool operator () ( const factory::type_reg &tr )
+//  {
+//      return tr->type() == _id;
+//  }
 //};
 
 // xr_vector< factory::type_reg >::iterator factory::find_type(  u32 id  )
 //{
-//	return  std::find_if( vec_types.begin(), vec_types.end(), sfind_type( id )  );
+//  return  std::find_if( vec_types.begin(), vec_types.end(), sfind_type( id )  );
 //}
 
 void lc_net::factory::register_type(base_execution_type_creator* creator)

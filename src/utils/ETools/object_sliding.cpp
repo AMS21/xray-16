@@ -235,8 +235,8 @@ BOOL CalculateSW(Object* object, VIPM_Result* result, u32 optimize_vertex_order)
             R_ASSERT(pPt->mypt.dwNewIndex == wCurIndex);
             result->permute_verts[pPt->mypt.dwIndex] = wCurIndex;
             /*
-                        pCurVertex->pt	= pPt->mypt.vPos;
-            //.			pCurVertex->norm = pPt->mypt.vNorm;
+                        pCurVertex->pt  = pPt->mypt.vPos;
+            //.         pCurVertex->norm = pPt->mypt.vNorm;
                         pCurVertex->uv.x = pPt->mypt.fU;
                         pCurVertex->uv.y = pPt->mypt.fV;
                         pCurVertex++;
@@ -290,7 +290,7 @@ BOOL CalculateSW(Object* object, VIPM_Result* result, u32 optimize_vertex_order)
         // added into the middle of the list.
         iJustCheckingNumTris = 0;
         int iTempTriNum = 0;
-        //.		wTempIndices.resize	(0);
+        //.     wTempIndices.resize (0);
         for (tri = object->CurTriRoot.ListNext(); tri != NULL; tri = tri->ListNext())
         {
             iJustCheckingNumTris++;
@@ -337,7 +337,7 @@ BOOL CalculateSW(Object* object, VIPM_Result* result, u32 optimize_vertex_order)
             VIPM_SWR *swr = result->swr_records.item ( i );
             for ( int j = 0; j < swr->num_tris * 3; j++ ){
                 R_ASSERT ( (j+swr->offset) < result->indices.size() );
-                //			R_ASSERT ( *(result->indices.item(j+swr->offset)) < swr->num_verts );
+                //          R_ASSERT ( *(result->indices.item(j+swr->offset)) < swr->num_verts );
                 if (!(*(result->indices.item(j+swr->offset)) < swr->num_verts )){
                     error_found = i;
                 }
@@ -369,11 +369,11 @@ BOOL CalculateSW(Object* object, VIPM_Result* result, u32 optimize_vertex_order)
             R_ASSERT((j + swr->offset) < result->indices.size());
             swr->num_verts =
                 std::max(swr->num_verts, *(result->indices.item(j + swr->offset))); // fignya index ne doljen bit bolshe!!!
-            //.			R_ASSERT ( *(result->indices.item(j+swr->offset)) < swr->num_verts );
+            //.         R_ASSERT ( *(result->indices.item(j+swr->offset)) < swr->num_verts );
             if (*(result->indices.item(j + swr->offset)) >= swr->num_verts)
             {
                 bRes = FALSE;
-                //.				OutputDebugString("--ERROR-------------------\n");
+                //.             OutputDebugString("--ERROR-------------------\n");
             }
         }
     }

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_evaluator_script.cpp
-//	Created 	: 12.03.2004
-//  Modified 	: 12.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Property evaluator script export
+//  Module      : property_evaluator_script.cpp
+//  Created     : 12.03.2004
+//  Modified    : 12.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Property evaluator script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

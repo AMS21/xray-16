@@ -44,11 +44,11 @@ private:
 public:
     CUIMPPlayerName() = default;
 
-    //	virtual	void	SetText			(LPCSTR str) {}
+    //  virtual void    SetText         (LPCSTR str) {}
 
-    //	virtual void	SetCurrentValue();
-    //	virtual void	SaveValue();
-    //	virtual bool	IsChanged();
+    //  virtual void    SetCurrentValue();
+    //  virtual void    SaveValue();
+    //  virtual bool    IsChanged();
 
     void OnFocusLost() override;
 

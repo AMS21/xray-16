@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_kill_wounded_actions.cpp
-//	Created 	: 25.05.2006
-//  Modified 	: 25.05.2006
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker kill wounded action classes
+//  Module      : stalker_kill_wounded_actions.cpp
+//  Created     : 25.05.2006
+//  Modified    : 25.05.2006
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker kill wounded action classes
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -93,7 +93,7 @@ void CStalkerActionReachWounded::initialize()
 void CStalkerActionReachWounded::finalize()
 {
     inherited::finalize();
-    //	object().movement().set_desired_position	(0);
+    //  object().movement().set_desired_position    (0);
 }
 
 void CStalkerActionReachWounded::execute()
@@ -139,11 +139,11 @@ void CStalkerActionReachWounded::execute()
         return;
     }
 
-    //	IGameObject									*processor = Level().Objects.net_Find(processor_id);
-    //	if (processor && processor->Position().distance_to_sqr(object().Position()) < _sqr(3.f)) {
-    //		object().movement().set_movement_type	(eMovementTypeStand);
-    //		return;
-    //	}
+    //  IGameObject                                 *processor = Level().Objects.net_Find(processor_id);
+    //  if (processor && processor->Position().distance_to_sqr(object().Position()) < _sqr(3.f)) {
+    //      object().movement().set_movement_type   (eMovementTypeStand);
+    //      return;
+    //  }
 
     if (object().Position().distance_to_sqr(mem_object.m_object_params.m_position) < _sqr(3.f))
     {
@@ -183,8 +183,8 @@ void CStalkerActionAimWounded::initialize()
     if (!object().memory().visual().visible_now(enemy))
         object().movement().set_movement_type(eMovementTypeWalk);
 
-    //	m_speed									= object().movement().m_head.speed;
-    //	object().movement().danger_head_speed	(PI_DIV_4);
+    //  m_speed                                 = object().movement().m_head.speed;
+    //  object().movement().danger_head_speed   (PI_DIV_4);
 }
 
 void CStalkerActionAimWounded::execute()
@@ -217,7 +217,7 @@ void CStalkerActionAimWounded::finalize()
 {
     inherited::finalize();
 
-    //	object().movement().danger_head_speed	(m_speed);
+    //  object().movement().danger_head_speed   (m_speed);
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -269,9 +269,9 @@ void CStalkerActionPrepareWounded::execute()
     if (object().agent_manager().enemy().wounded_processor(enemy) != object().ID())
         return;
 
-    //	not a bug since killer do not look at enemy and can be too close
-    //	to see him straight forward
-    //	VERIFY						(object().memory().visual().visible_now(enemy));
+    //  not a bug since killer do not look at enemy and can be too close
+    //  to see him straight forward
+    //  VERIFY                      (object().memory().visual().visible_now(enemy));
     object().sight().setup(CSightAction(enemy, true));
 
     if (!object().sound().active_sound_count(true))

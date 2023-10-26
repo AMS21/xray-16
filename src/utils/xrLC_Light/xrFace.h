@@ -38,7 +38,7 @@ typedef Tface<DataVertex> Face;
 struct XRLC_LIGHT_API DataFace : public base_Face
 {
 public:
-    // Vertex*					v[3];			// vertices
+    // Vertex*                  v[3];           // vertices
     Fvector N; // face normal
 
     svector<_TCF, 2> tc; // TC

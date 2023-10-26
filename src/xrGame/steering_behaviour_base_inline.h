@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: steering_behaviour_base_inline.h
-//	Created 	: 07.11.2007
-//  Modified 	: 07.11.2007
-//	Author		: Dmitriy Iassenev
-//	Description : steering behaviour base class inline functions
+//  Module      : steering_behaviour_base_inline.h
+//  Created     : 07.11.2007
+//  Modified    : 07.11.2007
+//  Author      : Dmitriy Iassenev
+//  Description : steering behaviour base class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef STEERING_BEHAVIOUR_BASE_INLINE_H_INCLUDED

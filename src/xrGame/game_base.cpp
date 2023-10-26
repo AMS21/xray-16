@@ -141,22 +141,22 @@ void game_PlayerState::skip_Import(NET_Packet& P)
 {
     BOOL bFullUpdate = !!P.r_u8();
 
-    P.r_u8(); //	team	);
+    P.r_u8(); //    team    );
 
-    P.r_s16(); //	m_iRivalKills	);
-    P.r_s16(); //	m_iSelfKills	);
-    P.r_s16(); //	m_iTeamKills	);
-    P.r_s16(); //	m_iDeaths		);
+    P.r_s16(); //   m_iRivalKills   );
+    P.r_s16(); //   m_iSelfKills    );
+    P.r_s16(); //   m_iTeamKills    );
+    P.r_s16(); //   m_iDeaths       );
 
-    P.r_s32(); //	money_for_round	);
-    P.r_u8(); //	rank		);
-    P.r_u8(); //	af_count	);
-    P.r_u16(); //	flags__	);
-    P.r_u16(); //	ping	);
+    P.r_s32(); //   money_for_round );
+    P.r_u8(); //    rank        );
+    P.r_u8(); //    af_count    );
+    P.r_u16(); //   flags__ );
+    P.r_u16(); //   ping    );
 
-    P.r_u16(); //	GameID	);
-    P.r_s8(); //	skin	);
-    P.r_u8(); //	m_bCurrentVoteAgreed	);
+    P.r_u16(); //   GameID  );
+    P.r_s8(); //    skin    );
+    P.r_u8(); //    m_bCurrentVoteAgreed    );
 
     P.r_u32(); // DeathTime
     if (bFullUpdate)
@@ -200,25 +200,25 @@ game_GameState::game_GameState()
 
 CLASS_ID game_GameState::getCLASS_ID(LPCSTR game_type_name, bool isServer)
 {
-    /*	if (!GEnv.isDedicatedServer)
+    /*  if (!GEnv.isDedicatedServer)
         {
-            string_path		S;
-            FS.update_path	(S,"$game_config$","script.ltx");
-            CInifile		*l_tpIniFile = xr_new<CInifile>(S);
-            R_ASSERT		(l_tpIniFile);
+            string_path     S;
+            FS.update_path  (S,"$game_config$","script.ltx");
+            CInifile        *l_tpIniFile = xr_new<CInifile>(S);
+            R_ASSERT        (l_tpIniFile);
 
-            string256				I;
+            string256               I;
             xr_strcpy(I,l_tpIniFile->r_string("common","game_type_clsid_factory"));
 
-            luabind::functor<LPCSTR>	result;
-            R_ASSERT					(GEnv.ScriptEngine->functor(I,result));
-            shared_str clsid = result		(game_type_name, isServer);
+            luabind::functor<LPCSTR>    result;
+            R_ASSERT                    (GEnv.ScriptEngine->functor(I,result));
+            shared_str clsid = result       (game_type_name, isServer);
 
-            xr_delete			(l_tpIniFile);
+            xr_delete           (l_tpIniFile);
             if(clsid.size()==0)
-                xrDebug::Fatal		(DEBUG_INFO,"Unknown game type: %s",game_type_name);
+                xrDebug::Fatal      (DEBUG_INFO,"Unknown game type: %s",game_type_name);
 
-            return				(TEXT2CLSID(*clsid));
+            return              (TEXT2CLSID(*clsid));
         }*/
 
     EGameIDs gameID = ParseStringToGameType(game_type_name);

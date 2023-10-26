@@ -76,8 +76,8 @@ bool CHangingLamp::net_Spawn(CSE_Abstract* DC)
     inherited::net_Spawn(DC);
 
     // set bone id
-    //	CInifile* pUserData		= K->LL_UserData();
-    //	R_ASSERT3				(pUserData,"Empty HangingLamp user data!",lamp->get_visual());
+    //  CInifile* pUserData     = K->LL_UserData();
+    //  R_ASSERT3               (pUserData,"Empty HangingLamp user data!",lamp->get_visual());
     xr_delete(CForm);
     if (Visual())
     {
@@ -144,7 +144,7 @@ bool CHangingLamp::net_Spawn(CSE_Abstract* DC)
     }
     if (lamp->flags.is(CSE_ALifeObjectHangingLamp::flPhysic) && !Visual())
         Msg("! WARNING: lamp, obj name [%s],flag physics set, but has no visual", *cName());
-    //.	if (lamp->flags.is(CSE_ALifeObjectHangingLamp::flPhysic)&&Visual()&&!guid_physic_bone)	fHealth=0.f;
+    //. if (lamp->flags.is(CSE_ALifeObjectHangingLamp::flPhysic)&&Visual()&&!guid_physic_bone)  fHealth=0.f;
     if (Alive() && m_bState)
         TurnOn();
     else
@@ -325,7 +325,7 @@ void CHangingLamp::TurnOff()
 }
 
 // void CHangingLamp::Hit(float P,Fvector &dir, IGameObject* who,s16 element,
-//					   Fvector p_in_object_space, float impulse, ALife::EHitType hit_type)
+//                     Fvector p_in_object_space, float impulse, ALife::EHitType hit_type)
 void CHangingLamp::Hit(SHit* pHDS)
 {
     SHit HDS = *pHDS;

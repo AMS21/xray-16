@@ -35,7 +35,7 @@ public:
     void UpdateInterpolationRecursive();
     void InterpolateTransform(Fmatrix& transform);
     void InterpolateTransformVsParent(Fmatrix& transform);
-    //	PHDynamicData& operator [] (unsigned int i) {return Childs[i];};
+    //  PHDynamicData& operator [] (unsigned int i) {return Childs[i];};
     void Destroy();
     void Create(unsigned int numOfchilds, dBodyID Body);
     void CalculateData(void);
@@ -46,7 +46,7 @@ public:
     void SetZeroTransform(Fmatrix& aTransform);
     PHDynamicData(unsigned int numOfchilds, dBodyID body);
     PHDynamicData();
-    //	virtual ~PHDynamicData();
+    //  virtual ~PHDynamicData();
     void GetWorldMX(Fmatrix& aTransform)
     {
         dMatrix3 R;
@@ -74,7 +74,7 @@ public:
         aTransform.translate_over(Translate1);
         aTransform.mulA_43(Transform);
 
-        //	Translate.add(Translate1);
+        //  Translate.add(Translate1);
         // transform.translate_over(Translate1);
 
         // transform.translate_add

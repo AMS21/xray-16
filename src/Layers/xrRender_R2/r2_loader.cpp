@@ -133,7 +133,7 @@ void CRender::level_Unload()
     cleanup_contexts();
 
     //*** Lights
-    // Glows.Unload			();
+    // Glows.Unload         ();
     Lights.Unload();
 
     //*** Visuals
@@ -237,7 +237,7 @@ void CRender::LoadBuffers(CStreamReader* base_fs, bool alternative)
             fs->r(pData, vCount * vSize);
             _VB[i].Unmap(true); // upload vertex data
 
-            //			fs->advance			(vCount*vSize);
+            //          fs->advance         (vCount*vSize);
         }
         fs->close();
     }
@@ -264,7 +264,7 @@ void CRender::LoadBuffers(CStreamReader* base_fs, bool alternative)
             fs->r(pData, iCount * 2);
             _IB[i].Unmap(true); // upload index data
 
-            //			fs().advance		(iCount*2);
+            //          fs().advance        (iCount*2);
         }
         fs->close();
     }
@@ -479,14 +479,14 @@ void CRender::Load3DFluid()
 
                 auto& dsgraph = get_imm_context();
 
-                //	Attach to sector's static geometry
+                //  Attach to sector's static geometry
                 const auto sector_id = dsgraph.detect_sector(pVolume->getVisData().sphere.P);
                 auto* pSector = static_cast<CSector*>(dsgraph.get_sector(sector_id));
-                //	3DFluid volume must be in render sector
+                //  3DFluid volume must be in render sector
                 VERIFY(pSector);
 
                 dxRender_Visual* pRoot = pSector->root();
-                //	Sector must have root
+                //  Sector must have root
                 VERIFY(pRoot);
                 VERIFY(pRoot->getType() == MT_HIERRARHY);
 

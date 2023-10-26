@@ -10,7 +10,7 @@ public:
         hInvalidHandle = 0xFFFFFFFF
     };
 
-    //	State handle
+    //  State handle
     typedef u32 SHandle;
     typedef xr_vector<SHandle> HArray;
 
@@ -48,9 +48,9 @@ private:
 
     void PrepareSamplerStates(HArray& samplers, ID3DSamplerState* pSS[D3D_COMMONSHADER_SAMPLER_SLOT_COUNT]) const;
 
-    //	Private data
+    //  Private data
 private:
-    //	This must be cleared on device destroy
+    //  This must be cleared on device destroy
     xr_vector<StateRecord> m_StateArray;
 
     u32 m_uiMaxAnisotropy;
@@ -59,4 +59,4 @@ private:
 
 extern dx11SamplerStateCache SSManager;
 
-#endif //	dx11SamplerStateCache_included
+#endif //   dx11SamplerStateCache_included

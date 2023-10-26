@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: level_graph_vertex_inline.h
-//	Created 	: 02.10.2001
-//  Modified 	: 11.11.2003
-//	Author		: Oles Shihkovtsov, Dmitriy Iassenev
-//	Description : Level graph vertex inline functions
+//  Module      : level_graph_vertex_inline.h
+//  Created     : 02.10.2001
+//  Modified    : 11.11.2003
+//  Author      : Oles Shihkovtsov, Dmitriy Iassenev
+//  Description : Level graph vertex inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

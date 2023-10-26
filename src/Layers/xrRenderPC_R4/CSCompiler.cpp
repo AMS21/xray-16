@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Created		: 22.05.2009
-//	Author		: Mykhailo Parfeniuk
-//	Copyright (C) GSC Game World - 2009
+//  Created     : 22.05.2009
+//  Author      : Mykhailo Parfeniuk
+//  Copyright (C) GSC Game World - 2009
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
@@ -20,7 +20,7 @@ CSCompiler& CSCompiler::defSampler(LPCSTR ResourceName)
     D3D11_SAMPLER_DESC desc;
     ZeroMemory(&desc, sizeof(desc));
 
-    //	Use D3DTADDRESS_CLAMP,	D3DTEXF_POINT,			D3DTEXF_NONE,	D3DTEXF_POINT
+    //  Use D3DTADDRESS_CLAMP,  D3DTEXF_POINT,          D3DTEXF_NONE,   D3DTEXF_POINT
     if (0 == xr_strcmp(ResourceName, "smp_nofilter"))
     {
         // i_Address( stage, D3DTADDRESS_CLAMP);
@@ -30,7 +30,7 @@ CSCompiler& CSCompiler::defSampler(LPCSTR ResourceName)
         return defSampler(ResourceName, desc);
     }
 
-    //	Use D3DTADDRESS_CLAMP,	D3DTEXF_LINEAR,			D3DTEXF_NONE,	D3DTEXF_LINEAR
+    //  Use D3DTADDRESS_CLAMP,  D3DTEXF_LINEAR,         D3DTEXF_NONE,   D3DTEXF_LINEAR
     if (0 == xr_strcmp(ResourceName, "smp_rtlinear"))
     {
         // i_Address( stage, D3DTADDRESS_CLAMP);
@@ -40,7 +40,7 @@ CSCompiler& CSCompiler::defSampler(LPCSTR ResourceName)
         return defSampler(ResourceName, desc);
     }
 
-    //	Use	D3DTADDRESS_WRAP,	D3DTEXF_LINEAR,			D3DTEXF_LINEAR,	D3DTEXF_LINEAR
+    //  Use D3DTADDRESS_WRAP,   D3DTEXF_LINEAR,         D3DTEXF_LINEAR, D3DTEXF_LINEAR
     if (0 == xr_strcmp(ResourceName, "smp_linear"))
     {
         // i_Address( stage, D3DTADDRESS_WRAP);
@@ -50,7 +50,7 @@ CSCompiler& CSCompiler::defSampler(LPCSTR ResourceName)
         return defSampler(ResourceName, desc);
     }
 
-    //	Use D3DTADDRESS_WRAP,	D3DTEXF_ANISOTROPIC, 	D3DTEXF_LINEAR,	D3DTEXF_ANISOTROPIC
+    //  Use D3DTADDRESS_WRAP,   D3DTEXF_ANISOTROPIC,    D3DTEXF_LINEAR, D3DTEXF_ANISOTROPIC
     if (0 == xr_strcmp(ResourceName, "smp_base"))
     {
         // i_Address( stage, D3DTADDRESS_WRAP);
@@ -61,12 +61,12 @@ CSCompiler& CSCompiler::defSampler(LPCSTR ResourceName)
         return defSampler(ResourceName, desc);
     }
 
-    //	Use D3DTADDRESS_CLAMP,	D3DTEXF_LINEAR,			D3DTEXF_NONE,	D3DTEXF_LINEAR
+    //  Use D3DTADDRESS_CLAMP,  D3DTEXF_LINEAR,         D3DTEXF_NONE,   D3DTEXF_LINEAR
     if (0 == xr_strcmp(ResourceName, "smp_material"))
     {
         // i_Address( stage, D3DTADDRESS_CLAMP);
         // i_Filter(stage, D3DTEXF_LINEAR, D3DTEXF_NONE, D3DTEXF_LINEAR);
-        // RS.SetSAMP(stage,D3DSAMP_ADDRESSW,	D3DTADDRESS_WRAP);
+        // RS.SetSAMP(stage,D3DSAMP_ADDRESSW,   D3DTADDRESS_WRAP);
         desc.AddressU = desc.AddressV = D3D11_TEXTURE_ADDRESS_CLAMP;
         desc.AddressW = D3D11_TEXTURE_ADDRESS_WRAP;
         desc.Filter = D3D11_FILTER_MIN_MAG_LINEAR_MIP_POINT;

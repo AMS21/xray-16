@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////////
-//	Module		:	cta_game_artefact.h
-//	Created		:	19.12.2007
-//	Modified	:	19.12.2007
-//	Autor		:	Alexander Maniluk
-//	Description	:	Artefact object for Capture The Artefact game mode
+//  Module      :   cta_game_artefact.h
+//  Created     :   19.12.2007
+//  Modified    :   19.12.2007
+//  Autor       :   Alexander Maniluk
+//  Description :   Artefact object for Capture The Artefact game mode
 ////////////////////////////////////////////////////////////////////////////////
 
 #ifndef CTA_GAME_ARTEFACT
@@ -24,13 +24,13 @@ public:
     virtual void OnAnimationEnd(u32 state);
     virtual void UpdateCLChild();
     virtual bool CanTake() const;
-    // virtual		void	net_Export					(NET_Packet& P);
+    // virtual      void    net_Export                  (NET_Packet& P);
     virtual void PH_A_CrPr();
-    // virtual void				Interpolate			();
+    // virtual void             Interpolate         ();
 protected:
     virtual void CreateArtefactActivation();
     virtual void InitializeArtefactRPoint();
-    // virtual		BOOL	net_Relevant				();
+    // virtual      BOOL    net_Relevant                ();
 private:
     bool IsMyTeamArtefact();
     typedef CArtefact inherited;

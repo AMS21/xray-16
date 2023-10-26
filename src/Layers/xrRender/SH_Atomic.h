@@ -78,7 +78,7 @@ typedef resptr_core<SGS, resptr_base<SGS>> ref_gs;
 struct ECORE_API SHS : public xr_resource_named
 {
 #   if defined(USE_DX11)
-	ID3D11HullShader* sh;
+    ID3D11HullShader* sh;
 #   elif defined(USE_OGL)
     GLuint sh;
 #   else
@@ -147,11 +147,11 @@ typedef resptr_core<SState, resptr_base<SState>> ref_state;
 //////////////////////////////////////////////////////////////////////////
 struct ECORE_API SDeclaration : public xr_resource_flagged
 {
-#if defined(USE_DX9) //	Don't need it: use ID3DInputLayout instead
-    //	which is per ( declaration, VS input layout) pair
+#if defined(USE_DX9) // Don't need it: use ID3DInputLayout instead
+    //  which is per ( declaration, VS input layout) pair
     IDirect3DVertexDeclaration9* dcl;
 #elif defined(USE_DX11)
-    //	Maps input signature to input layout
+    //  Maps input signature to input layout
     xr_map<ID3DBlob*, ID3DInputLayout*> vs_to_layout;
     xr_vector<D3D_INPUT_ELEMENT_DESC> dx11_dcl_code;
 #elif defined(USE_OGL)
@@ -160,7 +160,7 @@ struct ECORE_API SDeclaration : public xr_resource_flagged
 #   error No graphics API selected or enabled!
 #endif
 
-    //	Use this for DirectX10 to cache DX9 declaration for comparison purpose only
+    //  Use this for DirectX10 to cache DX9 declaration for comparison purpose only
     xr_vector<VertexElement> dcl_code;
     SDeclaration() = default;
     ~SDeclaration();

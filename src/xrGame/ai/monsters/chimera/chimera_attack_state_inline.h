@@ -202,7 +202,7 @@ bool ChimeraAttackState<Object>::select_target_for_move()
 template <class Object>
 Fvector ChimeraAttackState<Object>::correct_jump_pos(Fvector const& pos)
 {
-    //	return										pos;
+    //  return                                      pos;
     Fvector const self_pos = this->object->Position();
     Fvector const self2pos_norm = normalize(pos - self_pos);
 

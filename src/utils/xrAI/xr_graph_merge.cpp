@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: xr_graph_merge.cpp
-//	Created 	: 25.01.2003
-//  Modified 	: 25.01.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Merging level graphs for off-line AI NPC computations
+//  Module      : xr_graph_merge.cpp
+//  Created     : 25.01.2003
+//  Modified    : 25.01.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Merging level graphs for off-line AI NPC computations
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
@@ -231,8 +231,8 @@ public:
                         S = xr_strdup(tpGraphPoint->name_replace());
                         T.caConnectName = xr_strdup(*tpGraphPoint->m_caConnectionPointName);
                         T.dwLevelID = dwfGetIDByLevelName(Ini, *tpGraphPoint->m_caConnectionLevelName);
-                        //						T.tGraphID						= (GameGraph::_GRAPH_ID)vertexId;
-                        //						T.tOldGraphID					= tGraphID;
+                        //                      T.tGraphID                      = (GameGraph::_GRAPH_ID)vertexId;
+                        //                      T.tOldGraphID                   = tGraphID;
                         T.tOldGraphID = (GameGraph::_GRAPH_ID)vertexId;
                         T.tGraphID = tGraphID;
 
@@ -621,7 +621,7 @@ CGraphMerger::CGraphMerger(LPCSTR game_graph_id, LPCSTR name, bool rebuild)
                         i.second->m_tpVertices[tConnectionVertex.tGraphID].tGlobalPoint.distance_to(
                         (*K).second->m_tpVertices[(*M).second.tGraphID].tGlobalPoint);
                     i.second->vfAddEdge(j.second.tGraphID, tGraphEdge);
-                    //tGraphEdge.dwVertexNumber	= j.second.tGraphID + i.second->m_dwOffset;
+                    //tGraphEdge.dwVertexNumber = j.second.tGraphID + i.second->m_dwOffset;
                     //(*K).second->vfAddEdge((*M).second.tGraphID,tGraphEdge);
                 }
             }

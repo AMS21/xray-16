@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_container.cpp
-//	Created 	: 07.12.2007
-//  Modified 	: 07.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property container class
+//  Module      : property_container.cpp
+//  Created     : 07.12.2007
+//  Modified    : 07.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property container class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"
@@ -154,13 +154,13 @@ void property_container::add_property(PropertySpec ^ description, IProperty ^ va
     VERIFY(!m_properties[description]);
 
 #if 0
-	u32							n = description->Attributes ? description->Attributes->Length : 0;
-	array<System::Attribute^>^	attributes = gcnew array<System::Attribute^>(n + 1);
-	for (u32 i = 0; i < n; ++i)
-		attributes[i + 0]		= description->Attributes[i];
+    u32                         n = description->Attributes ? description->Attributes->Length : 0;
+    array<System::Attribute^>^  attributes = gcnew array<System::Attribute^>(n + 1);
+    for (u32 i = 0; i < n; ++i)
+        attributes[i + 0]       = description->Attributes[i];
 
-	attributes[n]				= gcnew System::ComponentModel::DisplayNameAttribute(description->Name);
-	description->Attributes		= attributes;
+    attributes[n]               = gcnew System::ComponentModel::DisplayNameAttribute(description->Name);
+    description->Attributes     = attributes;
 #endif
 
     description->Category = update_categories(description->Category);

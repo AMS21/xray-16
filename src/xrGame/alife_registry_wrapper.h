@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////
 // alife_registry_wrapper.h - обертка для реестра, предусматривающая работу
-//							  без alife()
+//                            без alife()
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -26,14 +26,14 @@ private:
     u16 holder_id;
 
     //реестр на случай, если нет ALife (для отладки)
-    //	typename _registry_type::_data	local_registry;
+    //  typename _registry_type::_data  local_registry;
     typename _registry_type::OBJECT_REGISTRY local_registry;
 };
 
 template <typename _registry_type>
 const typename _registry_type::_data* CALifeRegistryWrapper<_registry_type>::objects_ptr(u16 id)
 {
-    //	if(NULL == ai().get_alife()) return &local_registry;
+    //  if(NULL == ai().get_alife()) return &local_registry;
     if (NULL == ai().get_alife())
     {
         typename _registry_type::iterator I = local_registry.find(id);
@@ -56,7 +56,7 @@ const typename _registry_type::_data* CALifeRegistryWrapper<_registry_type>::obj
 template <typename _registry_type>
 typename _registry_type::_data& CALifeRegistryWrapper<_registry_type>::objects(u16 id)
 {
-    //	if(NULL == ai().get_alife()) return local_registry;
+    //  if(NULL == ai().get_alife()) return local_registry;
     if (NULL == ai().get_alife())
     {
         typename _registry_type::iterator I = local_registry.find(id);

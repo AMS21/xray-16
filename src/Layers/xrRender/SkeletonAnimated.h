@@ -37,7 +37,7 @@ public:
 };
 #pragma pack(pop)
 
-// typedef void	( * MotionMarkCallback)		(CBlend*		P);
+// typedef void ( * MotionMarkCallback)     (CBlend*        P);
 
 //*** The visual itself ***************************************************************************
 class ECORE_API CKinematicsAnimated : public CKinematics, public IKinematicsAnimated
@@ -111,7 +111,7 @@ private:
         float blendFalloff, float Speed, BOOL noloop, PlayCallback Callback, LPVOID CallbackParam);
     void IFXBlendSetup(
         CBlend& B, MotionID motion_ID, float blendAccrue, float blendFalloff, float Power, float Speed, u16 bone);
-    //.	bool						LoadMotions				(LPCSTR N, IReader *data);
+    //. bool                        LoadMotions             (LPCSTR N, IReader *data);
 public:
 #if (defined DEBUG || defined _EDITOR)
     std::pair<LPCSTR, LPCSTR> LL_MotionDefName_dbg(MotionID ID);
@@ -123,7 +123,7 @@ public:
 
     void SetUpdateTracksCalback(IUpdateTracksCallback* callback);
     IUpdateTracksCallback* GetUpdateTracksCalback() { return m_update_tracks_callback; }
-//	LPCSTR						LL_MotionDefName_dbg	(LPVOID		ptr);
+//  LPCSTR                      LL_MotionDefName_dbg    (LPVOID     ptr);
 
 #ifdef _EDITOR
     u32 LL_CycleCount()

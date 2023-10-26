@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_low_cover_planner.h
-//	Created 	: 04.09.2007
-//  Modified 	: 04.09.2007
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker low cover planner
+//  Module      : stalker_low_cover_planner.h
+//  Created     : 04.09.2007
+//  Modified    : 04.09.2007
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker low cover planner
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef STALKER_LOW_COVER_PLANNER_H_INCLUDED

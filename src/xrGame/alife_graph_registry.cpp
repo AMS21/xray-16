@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_graph_registry.cpp
-//	Created 	: 15.01.2003
-//  Modified 	: 12.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALife graph registry
+//  Module      : alife_graph_registry.cpp
+//  Created     : 15.01.2003
+//  Modified    : 12.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALife graph registry
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -162,7 +162,7 @@ void CALifeGraphRegistry::detach(CSE_Abstract& object, CSE_ALifeInventoryItem* i
                 *item->base()->s_name);
         }
 #endif // DEBUG
-        //		R_ASSERT2				(value,"Can't detach an item which is not on my own");
+        //      R_ASSERT2               (value,"Can't detach an item which is not on my own");
     }
 }
 

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_kill_wounded_actions.h
-//	Created 	: 25.05.2006
-//  Modified 	: 25.05.2006
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker kill wounded action classes
+//  Module      : stalker_kill_wounded_actions.h
+//  Created     : 25.05.2006
+//  Modified    : 25.05.2006
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker kill wounded action classes
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -36,7 +36,7 @@ protected:
     typedef CStalkerActionCombatBase inherited;
 
 private:
-    //	float				m_speed;
+    //  float               m_speed;
 
 public:
     CStalkerActionAimWounded(CAI_Stalker* object, LPCSTR action_name = "");

@@ -1,8 +1,8 @@
-// File:		UILines.cpp
-// Description:	Multi-line Text Control
-// Created:		12.03.2005
-// Author:		Serge Vynnycheko
-// Mail:		narrator@gsc-game.kiev.ua
+// File:        UILines.cpp
+// Description: Multi-line Text Control
+// Created:     12.03.2005
+// Author:      Serge Vynnycheko
+// Mail:        narrator@gsc-game.kiev.ua
 //
 // Copyright 2005 GSC Game World
 
@@ -354,7 +354,7 @@ void CUILines::Draw(float x, float y)
         text_pos.set(0, 0);
 
         text_pos.x = x + GetIndentByAlign();
-        //		text_pos.y = y + GetVIndentByAlign();
+        //      text_pos.y = y + GetVIndentByAlign();
         text_pos.y = y;
         UI().ClientToScreenScaled(text_pos);
         text_pos.y += GetVIndentByAlign();

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: mt_config.h
-//	Created 	: 22.02.2005
-//  Modified 	: 22.02.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Multithreading configuration options
+//  Module      : mt_config.h
+//  Created     : 22.02.2005
+//  Modified    : 22.02.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Multithreading configuration options
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

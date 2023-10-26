@@ -91,30 +91,30 @@ bool square_equation(float a, float b, float c, float& x0, float& x1) // returns
 // float clamp_taget_to_max_possible_shift_speed_return_shift_taget(float &taget, float current, float speed, float time
 // )
 //{
-//	float x			= taget - current ;
-//	return x;
-//	float taget_speed = x/time;
+//  float x         = taget - current ;
+//  return x;
+//  float taget_speed = x/time;
 //
-//		//clamp(taget_speed,-max_possible_shift_speed, max_possible_shift_speed );
-//	save_min( taget_speed, max_possible_shift_speed_up );
-//	save_max( taget_speed, -max_possible_shift_speed_down );
+//      //clamp(taget_speed,-max_possible_shift_speed, max_possible_shift_speed );
+//  save_min( taget_speed, max_possible_shift_speed_up );
+//  save_max( taget_speed, -max_possible_shift_speed_down );
 //
-//	float change_speed = taget_speed - speed;
-//	float avr_accel = change_speed/time;
+//  float change_speed = taget_speed - speed;
+//  float avr_accel = change_speed/time;
 //
-//	//clamp( avr_accel,-max_shift_avr_accel, max_shift_avr_accel );
-//	save_min( avr_accel, max_shift_avr_accel_up );
-//	save_max( avr_accel, -max_shift_avr_accel_down );
-//	taget_speed = speed + avr_accel * time;
+//  //clamp( avr_accel,-max_shift_avr_accel, max_shift_avr_accel );
+//  save_min( avr_accel, max_shift_avr_accel_up );
+//  save_max( avr_accel, -max_shift_avr_accel_down );
+//  taget_speed = speed + avr_accel * time;
 //
-//	//clamp(taget_speed,-max_possible_shift_speed, max_possible_shift_speed );
-//	save_min( taget_speed, max_possible_shift_speed_up );
-//	save_max( taget_speed, -max_possible_shift_speed_down );
-//	x = taget_speed * time;
+//  //clamp(taget_speed,-max_possible_shift_speed, max_possible_shift_speed );
+//  save_min( taget_speed, max_possible_shift_speed_up );
+//  save_max( taget_speed, -max_possible_shift_speed_down );
+//  x = taget_speed * time;
 //
-//	taget = x + current;
+//  taget = x + current;
 //
-//	return x;
+//  return x;
 //
 //
 //}
@@ -127,7 +127,7 @@ void object_shift::set_taget(float taget_, float time)
         return;
     clamp(taget_, -global_max_shift, global_max_shift);
     // if( fsimilar(taget, taget_) )
-    //	return;
+    //  return;
     taget = taget_;
 
     float time_global = Device.fTimeGlobal;

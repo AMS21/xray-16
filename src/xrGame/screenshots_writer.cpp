@@ -28,7 +28,7 @@ void writer::set_player_cdkey_digest(shared_str const& cdkeydigest)
 {
     m_info_data.w_string(ss_info_secion, ss_player_digest_key, cdkeydigest.c_str());
 }
-/*void writer::set_admin_name				(shared_str const & admin_name)
+/*void writer::set_admin_name               (shared_str const & admin_name)
 {
     m_info_data.w_string(ss_info_secion, ss_admin_name_key, admin_name.c_str());
 }*/

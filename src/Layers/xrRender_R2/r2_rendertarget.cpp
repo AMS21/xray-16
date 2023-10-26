@@ -89,7 +89,7 @@ void CRenderTarget::u_stencil_optimize(CBackend& cmd_list, eStencilOptimizeMode 
     cmd_list.set_Geometry(g_combine);
     cmd_list.Render(D3DPT_TRIANGLELIST, Offset, 0, 4, 0, 2);
 #elif defined(USE_OGL)
-    //	TODO: OGL: should we implement stencil optimization?
+    //  TODO: OGL: should we implement stencil optimization?
     VERIFY(RImplementation.o.nvstencil);
     VERIFY(!"CRenderTarget::u_stencil_optimize no implemented");
     UNUSED(eSOM);
@@ -365,9 +365,9 @@ CRenderTarget::CRenderTarget()
             rt_Generic_0_r.create(r2_RT_generic0_r, w, h, D3DFMT_A8R8G8B8, SampleCount);
             rt_Generic_1_r.create(r2_RT_generic1_r, w, h, D3DFMT_A8R8G8B8, SampleCount);
         }
-        //	Igor: for volumetric lights
-        // rt_Generic_2.create			(r2_RT_generic2,w,h,D3DFMT_A8R8G8B8		);
-        //	temp: for higher quality blends
+        //  Igor: for volumetric lights
+        // rt_Generic_2.create          (r2_RT_generic2,w,h,D3DFMT_A8R8G8B8     );
+        //  temp: for higher quality blends
         if (options.advancedpp)
             rt_Generic_2.create(r2_RT_generic2, w, h, D3DFMT_A16B16G16R16F, SampleCount);
     }

@@ -90,7 +90,7 @@ long _ModelDataSize = 0;
 static const u32 _SuballocatorSize = 32;
 static const u32 _OrderModel = 8;
 static const MR_METHOD _RestorationMethodCutOff = MRM_FREEZE;
-// static const MR_METHOD	_RestorationMethodCutOff	= MRM_RESTART;
+// static const MR_METHOD   _RestorationMethodCutOff    = MRM_RESTART;
 
 static char* _LZOWrkMem = NULL;
 static uint8_t* _LZO_Dict = NULL;

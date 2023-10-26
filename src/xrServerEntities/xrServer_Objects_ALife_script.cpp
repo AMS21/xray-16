@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: xrServer_Objects_ALife_script.cpp
-//	Created 	: 19.09.2002
-//  Modified 	: 04.06.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Server objects for ALife simulator, script export
+//  Module      : xrServer_Objects_ALife_script.cpp
+//  Created     : 19.09.2002
+//  Modified    : 04.06.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Server objects for ALife simulator, script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -18,10 +18,10 @@ SCRIPT_EXPORT(CSE_ALifeSchedulable, (),
     module(luaState)
     [
         class_<IPureSchedulableObject>("ipure_schedulable_object"),
-        //			.def(		constructor<>()),
+        //          .def(       constructor<>()),
 
         class_<CSE_ALifeSchedulable, IPureSchedulableObject>("cse_alife_schedulable")
-        //			.def(		constructor<pcstr>())
+        //          .def(       constructor<pcstr>())
     ];
 });
 
@@ -63,7 +63,7 @@ SCRIPT_EXPORT(CSE_ALifeGroupAbstract, (),
     module(luaState)
     [
         class_<CSE_ALifeGroupAbstract>("cse_alife_group_abstract")
-        //			.def(		constructor<pcstr>())
+        //          .def(       constructor<pcstr>())
     ];
 });
 

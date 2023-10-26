@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_human_abstract.cpp
-//	Created 	: 27.10.2005
-//  Modified 	: 27.10.2005
-//	Author		: Dmitriy Iassenev
-//	Description : ALife human abstract class
+//  Module      : alife_human_abstract.cpp
+//  Created     : 27.10.2005
+//  Modified    : 27.10.2005
+//  Author      : Dmitriy Iassenev
+//  Description : ALife human abstract class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

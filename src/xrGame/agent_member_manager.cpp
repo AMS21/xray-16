@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: agent_member_manager.cpp
-//	Created 	: 24.05.2004
-//  Modified 	: 14.01.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Agent member manager
+//  Module      : agent_member_manager.cpp
+//  Created     : 24.05.2004
+//  Modified    : 14.01.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Agent member manager
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -93,17 +93,17 @@ void CAgentMemberManager::remove_links(IGameObject* object)
 
 void CAgentMemberManager::register_in_combat(const CAI_Stalker* object)
 {
-//	if (!object->group_behaviour())
-//		return;
+//  if (!object->group_behaviour())
+//      return;
 
 #if 0 // def DEBUG
-	Msg							(
-		"%6d registering stalker %s in combat: 0x%08x -> 0x%08x",
-		Device.dwTimeGlobal,
-		*object->cName(),
-		m_combat_mask,
-		m_combat_mask | mask(object)
-	);
+    Msg                         (
+        "%6d registering stalker %s in combat: 0x%08x -> 0x%08x",
+        Device.dwTimeGlobal,
+        *object->cName(),
+        m_combat_mask,
+        m_combat_mask | mask(object)
+    );
 #endif // DEBUG
 
     squad_mask_type m = mask(object);
@@ -113,19 +113,19 @@ void CAgentMemberManager::register_in_combat(const CAI_Stalker* object)
 
 void CAgentMemberManager::unregister_in_combat(const CAI_Stalker* object)
 {
-//	if (!object->group_behaviour()) {
-//		VERIFY					(!registered_in_combat(object));
-//		return;
-//	}
+//  if (!object->group_behaviour()) {
+//      VERIFY                  (!registered_in_combat(object));
+//      return;
+//  }
 
 #if 0 // def DEBUG
-	Msg							(
-		"%6d UNregistering stalker %s in combat: 0x%08x -> 0x%08x",
-		Device.dwTimeGlobal,
-		*object->cName(),
-		m_combat_mask,
-		(m_combat_mask & (squad_mask_type(-1) ^ mask(object)))
-	);
+    Msg                         (
+        "%6d UNregistering stalker %s in combat: 0x%08x -> 0x%08x",
+        Device.dwTimeGlobal,
+        *object->cName(),
+        m_combat_mask,
+        (m_combat_mask & (squad_mask_type(-1) ^ mask(object)))
+    );
 #endif // DEBUG
 
     squad_mask_type m = mask(object);

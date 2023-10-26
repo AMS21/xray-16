@@ -136,36 +136,36 @@ void CRenderTarget::phase_luminance()
 #if defined(USE_DX9) || defined(USE_DX11)
         pv->p.set(eps, float(_ts + eps), eps, 1.f);
         for (int t = 0; t < 8; t++)
-            pv->uv[t].set(a[t].x, b[t].y, b[t + 8].y, a[t + 8].x); // xy/yx	- left+down
+            pv->uv[t].set(a[t].x, b[t].y, b[t + 8].y, a[t + 8].x); // xy/yx - left+down
         pv++;
         pv->p.set(eps, eps, eps, 1.f);
         for (int t = 0; t < 8; t++)
-            pv->uv[t].set(a[t].x, a[t].y, a[t + 8].y, a[t + 8].x); // xy/yx	- left+up
+            pv->uv[t].set(a[t].x, a[t].y, a[t + 8].y, a[t + 8].x); // xy/yx - left+up
         pv++;
         pv->p.set(float(_ts + eps), float(_ts + eps), eps, 1.f);
         for (int t = 0; t < 8; t++)
-            pv->uv[t].set(b[t].x, b[t].y, b[t + 8].y, b[t + 8].x); // xy/yx	- right+down
+            pv->uv[t].set(b[t].x, b[t].y, b[t + 8].y, b[t + 8].x); // xy/yx - right+down
         pv++;
         pv->p.set(float(_ts + eps), eps, eps, 1.f);
         for (int t = 0; t < 8; t++)
-            pv->uv[t].set(b[t].x, a[t].y, a[t + 8].y, b[t + 8].x); // xy/yx	- right+up
+            pv->uv[t].set(b[t].x, a[t].y, a[t + 8].y, b[t + 8].x); // xy/yx - right+up
         pv++;
 #elif defined(USE_OGL)
         pv->p.set(eps, eps, eps, 1.f);
         for (int t = 0; t < 8; t++)
-            pv->uv[t].set(a[t].x, a[t].y, a[t + 8].y, a[t + 8].x); // xy/yx	- left+up
+            pv->uv[t].set(a[t].x, a[t].y, a[t + 8].y, a[t + 8].x); // xy/yx - left+up
         pv++;
         pv->p.set(eps, float(_ts + eps), eps, 1.f);
         for (int t = 0; t < 8; t++)
-            pv->uv[t].set(a[t].x, b[t].y, b[t + 8].y, a[t + 8].x); // xy/yx	- left+down
+            pv->uv[t].set(a[t].x, b[t].y, b[t + 8].y, a[t + 8].x); // xy/yx - left+down
         pv++;
         pv->p.set(float(_ts + eps), eps, eps, 1.f);
         for (int t = 0; t < 8; t++)
-            pv->uv[t].set(b[t].x, a[t].y, a[t + 8].y, b[t + 8].x); // xy/yx	- right+up
+            pv->uv[t].set(b[t].x, a[t].y, a[t + 8].y, b[t + 8].x); // xy/yx - right+up
         pv++;
         pv->p.set(float(_ts + eps), float(_ts + eps), eps, 1.f);
         for (int t = 0; t < 8; t++)
-            pv->uv[t].set(b[t].x, b[t].y, b[t + 8].y, b[t + 8].x); // xy/yx	- right+down
+            pv->uv[t].set(b[t].x, b[t].y, b[t + 8].y, b[t + 8].x); // xy/yx - right+down
         pv++;
 #else
 #   error No graphics API selected or enabled!
@@ -197,36 +197,36 @@ void CRenderTarget::phase_luminance()
 #if defined(USE_DX9) || defined(USE_DX11)
         pv->p.set(eps, float(_ts + eps), eps, 1.f);
         for (int t = 0; t < 8; t++)
-            pv->uv[t].set(a[t].x, b[t].y, b[t + 8].y, a[t + 8].x); // xy/yx	- left+down
+            pv->uv[t].set(a[t].x, b[t].y, b[t + 8].y, a[t + 8].x); // xy/yx - left+down
         pv++;
         pv->p.set(eps, eps, eps, 1.f);
         for (int t = 0; t < 8; t++)
-            pv->uv[t].set(a[t].x, a[t].y, a[t + 8].y, a[t + 8].x); // xy/yx	- left+up
+            pv->uv[t].set(a[t].x, a[t].y, a[t + 8].y, a[t + 8].x); // xy/yx - left+up
         pv++;
         pv->p.set(float(_ts + eps), float(_ts + eps), eps, 1.f);
         for (int t = 0; t < 8; t++)
-            pv->uv[t].set(b[t].x, b[t].y, b[t + 8].y, b[t + 8].x); // xy/yx	- right+down
+            pv->uv[t].set(b[t].x, b[t].y, b[t + 8].y, b[t + 8].x); // xy/yx - right+down
         pv++;
         pv->p.set(float(_ts + eps), eps, eps, 1.f);
         for (int t = 0; t < 8; t++)
-            pv->uv[t].set(b[t].x, a[t].y, a[t + 8].y, b[t + 8].x); // xy/yx	- right+up
+            pv->uv[t].set(b[t].x, a[t].y, a[t + 8].y, b[t + 8].x); // xy/yx - right+up
         pv++;
 #elif defined(USE_OGL)
         pv->p.set(eps, eps, eps, 1.f);
         for (int t = 0; t < 8; t++)
-            pv->uv[t].set(a[t].x, a[t].y, a[t + 8].y, a[t + 8].x); // xy/yx	- left+up
+            pv->uv[t].set(a[t].x, a[t].y, a[t + 8].y, a[t + 8].x); // xy/yx - left+up
         pv++;
         pv->p.set(eps, float(_ts + eps), eps, 1.f);
         for (int t = 0; t < 8; t++)
-            pv->uv[t].set(a[t].x, b[t].y, b[t + 8].y, a[t + 8].x); // xy/yx	- left+down
+            pv->uv[t].set(a[t].x, b[t].y, b[t + 8].y, a[t + 8].x); // xy/yx - left+down
         pv++;
         pv->p.set(float(_ts + eps), eps, eps, 1.f);
         for (int t = 0; t < 8; t++)
-            pv->uv[t].set(b[t].x, a[t].y, a[t + 8].y, b[t + 8].x); // xy/yx	- right+up
+            pv->uv[t].set(b[t].x, a[t].y, a[t + 8].y, b[t + 8].x); // xy/yx - right+up
         pv++;
         pv->p.set(float(_ts + eps), float(_ts + eps), eps, 1.f);
         for (int t = 0; t < 8; t++)
-            pv->uv[t].set(b[t].x, b[t].y, b[t + 8].y, b[t + 8].x); // xy/yx	- right+down
+            pv->uv[t].set(b[t].x, b[t].y, b[t + 8].y, b[t + 8].x); // xy/yx - right+down
         pv++;
 #else
 #   error No graphics API selected or enabled!

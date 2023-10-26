@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: guid_generator.cpp
-//	Created 	: 21.03.2005
-//  Modified 	: 21.03.2005
-//	Author		: Dmitriy Iassenev
-//	Description : GUID generator
+//  Module      : guid_generator.cpp
+//  Created     : 21.03.2005
+//  Modified    : 21.03.2005
+//  Author      : Dmitriy Iassenev
+//  Description : GUID generator
 ////////////////////////////////////////////////////////////////////////////
 #include "stdafx.h"
 #pragma hdrstop

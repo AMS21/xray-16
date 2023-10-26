@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_search_planner.cpp
-//	Created 	: 31.05.2005
-//  Modified 	: 31.05.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker search planner class
+//  Module      : stalker_search_planner.cpp
+//  Created     : 31.05.2005
+//  Modified    : 31.05.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker search planner class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

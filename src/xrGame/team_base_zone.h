@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: team_base_zone.h
-//	Created 	: 27.04.2004
-//  Modified 	: 27.04.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Team base zone object
+//  Module      : team_base_zone.h
+//  Created     : 27.04.2004
+//  Modified    : 27.04.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Team base zone object
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

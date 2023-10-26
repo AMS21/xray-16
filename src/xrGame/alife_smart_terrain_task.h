@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_smart_terrain_task.h
-//	Created 	: 20.09.2005
-//  Modified 	: 20.09.2005
-//	Author		: Dmitriy Iassenev
-//	Description : ALife smart terrain task
+//  Module      : alife_smart_terrain_task.h
+//  Created     : 20.09.2005
+//  Modified    : 20.09.2005
+//  Author      : Dmitriy Iassenev
+//  Description : ALife smart terrain task
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

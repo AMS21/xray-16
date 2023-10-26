@@ -68,7 +68,7 @@ private:
 
     CUIComboBox* m_pWeatherSelector;
     CUIWindow* m_pModeSelector;
-    //	CUISpinText*		m_pModeSelector;
+    //  CUISpinText*        m_pModeSelector;
     CUIStatic* m_pMapPic;
     CUIMapInfo* m_pMapInfo;
     // XXX nitrocaster: use MPWeatherDesc

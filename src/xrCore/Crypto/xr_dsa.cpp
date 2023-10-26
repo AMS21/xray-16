@@ -131,7 +131,7 @@ void xr_dsa::generate_params()
     Msg("// Private key:");
     for (int i = 0; i < private_key_length; ++i)
     {
-        Msg("	m_private_key.m_value[%d]	= 0x%02x;", i, priv_bin[i]);
+        Msg("   m_private_key.m_value[%d]   = 0x%02x;", i, priv_bin[i]);
     }
 
     std::string debug_digest = "this is a test";

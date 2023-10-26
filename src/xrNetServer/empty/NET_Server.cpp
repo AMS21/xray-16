@@ -175,7 +175,7 @@ void IPureServer::_Recieve(const void* data, u32 data_size, u32 param)
     // Msg("-S- Entering to csMessages from _Receive [%d]", currentThreadId);
     csMessage.Enter();
     // LogStackTrace(
-    //		make_string("-S- Entered to csMessages [%d]", currentThreadId).c_str());
+    //      make_string("-S- Entered to csMessages [%d]", currentThreadId).c_str());
     //---------------------------------------
     if (psNET_Flags.test(NETFLAG_LOG_SV_PACKETS)) {
         if (!pSvNetLog)
@@ -304,7 +304,7 @@ IPureServer::EConnect IPureServer::Connect(pcstr options, GameDescriptionData& g
         psNET_Port = dwServerPort;
         while (HostSuccess != S_OK) {
             if (HostSuccess != S_OK) {
-                //			xr_string res = xrDebug::ErrorToString(HostSuccess);
+                //          xr_string res = xrDebug::ErrorToString(HostSuccess);
                 if (bPortWasSet) {
                     Msg("! IPureServer : port %d is BUSY!", psNET_Port);
                     return ErrConnect;
@@ -332,7 +332,7 @@ IPureServer::EConnect IPureServer::Connect(pcstr options, GameDescriptionData& g
 
 void IPureServer::Disconnect()
 {
-    //.	config_Save		();
+    //. config_Save     ();
 
     if (!psNET_direct_connect) {
         BannedList_Save();
@@ -367,7 +367,7 @@ void IPureServer::SendTo_Buf(ClientID id, void* data, u32 size, u32 dwFlags, u32
 
 void IPureServer::SendTo_LL(ClientID ID /*DPNID ID*/, void* data, u32 size, u32 dwFlags, u32 dwTimeout)
 {
-    //	if (psNET_Flags.test(NETFLAG_LOG_SV_PACKETS)) pSvNetLog->LogData(TimeGlobal(device_timer), data, size);
+    //  if (psNET_Flags.test(NETFLAG_LOG_SV_PACKETS)) pSvNetLog->LogData(TimeGlobal(device_timer), data, size);
     if (psNET_Flags.test(NETFLAG_LOG_SV_PACKETS)) {
         if (!pSvNetLog)
             pSvNetLog = xr_new<INetLog>("logs" DELIMITER "net_sv_log.log", TimeGlobal(device_timer));

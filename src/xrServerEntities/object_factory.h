@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: object_factory.h
-//	Created 	: 27.05.2004
-//  Modified 	: 27.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Object factory
+//  Module      : object_factory.h
+//  Created     : 27.05.2004
+//  Modified    : 27.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Object factory
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

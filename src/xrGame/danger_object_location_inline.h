@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: danger_object_location_inline.h
-//	Created 	: 24.05.2004
-//  Modified 	: 14.01.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Danger object location inline functions
+//  Module      : danger_object_location_inline.h
+//  Created     : 24.05.2004
+//  Modified    : 14.01.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Danger object location inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

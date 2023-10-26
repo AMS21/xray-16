@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: operator_condition.h
-//	Created 	: 24.02.2004
-//  Modified 	: 24.02.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Operator condition
+//  Module      : operator_condition.h
+//  Created     : 24.02.2004
+//  Modified    : 24.02.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Operator condition
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

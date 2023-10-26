@@ -11,8 +11,8 @@ class CMonsterEffector : public CEffectorPP
 
     SPPInfo state; // current state
     float m_total; // total PP time
-    float m_attack; // attack time in percents	[0..1]
-    float m_release; // release time in percents	[0..1]
+    float m_attack; // attack time in percents  [0..1]
+    float m_release; // release time in percents    [0..1]
 
     float m_spec_factor;
 

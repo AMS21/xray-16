@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: level_changer.h
-//	Created 	: 10.07.2003
-//  Modified 	: 10.07.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Level change object
+//  Module      : level_changer.h
+//  Created     : 10.07.2003
+//  Modified    : 10.07.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Level change object
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

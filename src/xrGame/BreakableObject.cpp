@@ -38,16 +38,16 @@ bool CBreakableObject::net_Spawn(CSE_Abstract* DC)
     CForm = xr_new<CCF_Skeleton>(this);
     // set bone id
     R_ASSERT(Visual() && smart_cast<IKinematics*>(Visual()));
-    //	IKinematics* K			= smart_cast<IKinematics*>(Visual());
+    //  IKinematics* K          = smart_cast<IKinematics*>(Visual());
     fHealth = obj->m_health;
     processing_deactivate();
     setVisible(TRUE);
     setEnabled(TRUE);
     CreateUnbroken();
-    // CreateBroken			();
+    // CreateBroken         ();
     bRemoved = false;
-    // Break					();
-    //	shedule_unregister		();
+    // Break                    ();
+    //  shedule_unregister      ();
     return (TRUE);
 }
 
@@ -60,7 +60,7 @@ void CBreakableObject::shedule_Update(u32 dt)
 void CBreakableObject::UpdateCL()
 {
     inherited::UpdateCL();
-    //	Fmatrix	d;
+    //  Fmatrix d;
     if (m_pPhysicsShell && m_pPhysicsShell->isFullActive())
         m_pPhysicsShell->InterpolateGlobalTransform(&XFORM());
 }
@@ -71,7 +71,7 @@ void CBreakableObject::enable_notificate()
 }
 
 // void CBreakableObject::Hit(float P,Fvector &dir, IGameObject* who,s16 element,
-//					   Fvector p_in_object_space, float impulse, ALife::EHitType hit_type)
+//                     Fvector p_in_object_space, float impulse, ALife::EHitType hit_type)
 void CBreakableObject::Hit(SHit* pHDS)
 {
     CheckHitBreak(pHDS->damage(), pHDS->hit_type);
@@ -118,15 +118,15 @@ void CBreakableObject::DestroyUnbroken()
 // shell->addEquelInertiaToEls(m);
 // shell->SmoothElementsInertia(0.3f);
 ////shell->SetAirResistance(0.002f*skel_airr_lin_factor,
-////	0.3f*skel_airr_ang_factor);
+////    0.3f*skel_airr_ang_factor);
 // ELEMENT_STORAGE& elements = pshell->Elements();
 // ELEMENT_I i=elements.begin(),e=elements.end();
 // for(;e!=i;i++)
 //{
-//	m_Shells.push_back(P_create_splited_Shell());
-//	m_Shells.back()->mXFORM.set(XFORM());
-//	m_Shells.back()->add_Element	(*i);
-//	m_Shells.back()->Build();
+//  m_Shells.push_back(P_create_splited_Shell());
+//  m_Shells.back()->mXFORM.set(XFORM());
+//  m_Shells.back()->add_Element    (*i);
+//  m_Shells.back()->Build();
 //}
 
 //}
@@ -138,7 +138,7 @@ void CBreakableObject::CreateBroken()
     m_Shell->preBuild_FromKinematics(smart_cast<IKinematics*>(Visual()));
     m_Shell->mXFORM.set(XFORM());
     // m_Shell->SetAirResistance(0.002f*skel_airr_lin_factor,
-    //	0.3f*skel_airr_ang_factor);
+    //  0.3f*skel_airr_ang_factor);
     m_Shell->set_PhysicsRefObject(this);
     m_Shell->Build();
     m_Shell->setMass(m_Shell->getMass() * 0.1f * 100.f);
@@ -187,11 +187,11 @@ void CBreakableObject::Split()
 {
     // for (u16 k=0; k<K->LL_BoneCount(); k++){
 
-    //		Fmatrix& M = K->LL_GetTransform(k);
-    //		Fmatrix R; R.setHPB(-0.1,-0.1,-0.1);
-    //		M.mulB		(R);
-    //		Fmatrix S;	S.scale(0.98f,0.98f,0.98f);
-    //		M.mulB		(S);
+    //      Fmatrix& M = K->LL_GetTransform(k);
+    //      Fmatrix R; R.setHPB(-0.1,-0.1,-0.1);
+    //      M.mulB      (R);
+    //      Fmatrix S;  S.scale(0.98f,0.98f,0.98f);
+    //      M.mulB      (S);
     //}
 }
 
@@ -219,10 +219,10 @@ void CBreakableObject::SendDestroy()
 {
     if (Local())
         DestroyObject();
-    //	NET_Packet		P;
-    //	u_EventGen		(P,GE_DESTROY,ID());
-    //	Msg				("ge_destroy: [%d] - %s",ID(),*cName());
-    //	if (Local())	u_EventSend			(P);
+    //  NET_Packet      P;
+    //  u_EventGen      (P,GE_DESTROY,ID());
+    //  Msg             ("ge_destroy: [%d] - %s",ID(),*cName());
+    //  if (Local())    u_EventSend         (P);
     bRemoved = true;
 }
 
@@ -307,6 +307,6 @@ void CBreakableObject::Init()
     bRemoved = false;
     m_max_frame_damage = 0.f;
     b_resived_damage = false;
-    // m_damage_threshold		=5.f;
-    // m_health_threshhold		=0.f
+    // m_damage_threshold       =5.f;
+    // m_health_threshhold      =0.f
 }

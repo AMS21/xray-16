@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: trade_factor_parameters.h
-//	Created 	: 13.01.2006
-//  Modified 	: 13.01.2006
-//	Author		: Dmitriy Iassenev
-//	Description : trade factor parameters class
+//  Module      : trade_factor_parameters.h
+//  Created     : 13.01.2006
+//  Modified    : 13.01.2006
+//  Author      : Dmitriy Iassenev
+//  Description : trade factor parameters class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

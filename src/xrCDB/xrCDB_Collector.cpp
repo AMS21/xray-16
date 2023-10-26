@@ -165,47 +165,47 @@ void Collector::calc_adjacency(xr_vector<u32>& dest) const
         }
     }
 #if 0
-		xr_vector<u32>	test = dest;
+        xr_vector<u32>  test = dest;
 
-		dest.assign		(faces.size()*3,0xffffffff);
-		// Dumb algorithm O(N^2) :)
-		for (u32 f=0; f<faces.size(); f++)
-		{
-			for (u32 t=0; t<faces.size(); t++)
-			{
-				if (t==f)	continue;
+        dest.assign     (faces.size()*3,0xffffffff);
+        // Dumb algorithm O(N^2) :)
+        for (u32 f=0; f<faces.size(); f++)
+        {
+            for (u32 t=0; t<faces.size(); t++)
+            {
+                if (t==f)   continue;
 
-				for (u32 f_e=0; f_e<3; f_e++)
-				{
-					u32 f1	= faces[f].verts[(f_e+0)%3];
-					u32 f2	= faces[f].verts[(f_e+1)%3];
-					if (f1>f2)	std::swap(f1,f2);
+                for (u32 f_e=0; f_e<3; f_e++)
+                {
+                    u32 f1  = faces[f].verts[(f_e+0)%3];
+                    u32 f2  = faces[f].verts[(f_e+1)%3];
+                    if (f1>f2)  std::swap(f1,f2);
 
-					for (u32 t_e=0; t_e<3; t_e++)
-					{
-						u32 t1	= faces[t].verts[(t_e+0)%3];
-						u32 t2	= faces[t].verts[(t_e+1)%3];
-						if (t1>t2)	std::swap(t1,t2);
+                    for (u32 t_e=0; t_e<3; t_e++)
+                    {
+                        u32 t1  = faces[t].verts[(t_e+0)%3];
+                        u32 t2  = faces[t].verts[(t_e+1)%3];
+                        if (t1>t2)  std::swap(t1,t2);
 
-						if (f1==t1 && f2==t2)
-						{
-							// f.edge[f_e] linked to t.edge[t_e]
-							dest[f*3+f_e]	= t;
-							break;
-						}
-					}
-				}
-			}
-		}
+                        if (f1==t1 && f2==t2)
+                        {
+                            // f.edge[f_e] linked to t.edge[t_e]
+                            dest[f*3+f_e]   = t;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
 
-		{
-			xr_vector<u32>::const_iterator	I = test.begin();
-			xr_vector<u32>::const_iterator	E = test.end();
-			xr_vector<u32>::const_iterator	J = dest.begin();
-			for ( ; I != E; ++I, ++J) {
-				VERIFY	(*I == *J);
-			}
-		}
+        {
+            xr_vector<u32>::const_iterator  I = test.begin();
+            xr_vector<u32>::const_iterator  E = test.end();
+            xr_vector<u32>::const_iterator  J = dest.begin();
+            for ( ; I != E; ++I, ++J) {
+                VERIFY  (*I == *J);
+            }
+        }
 #endif
 #else
     dest.assign(faces.size() * 3, 0xffffffff);
@@ -346,7 +346,7 @@ u32 CollectorPacked::VPack(const Fvector& V)
     iy = iFloor(float(V.y - VMmin.y) / VMscale.y * clpMY);
     iz = iFloor(float(V.z - VMmin.z) / VMscale.z * clpMZ);
 
-    //		R_ASSERT(ix<=clpMX && iy<=clpMY && iz<=clpMZ);
+    //      R_ASSERT(ix<=clpMX && iy<=clpMY && iz<=clpMZ);
     clamp(ix, (u32)0, clpMX);
     clamp(iy, (u32)0, clpMY);
     clamp(iz, (u32)0, clpMZ);
@@ -372,7 +372,7 @@ u32 CollectorPacked::VPack(const Fvector& V)
         iyE = iFloor(float(V.y + VMeps.y - VMmin.y) / VMscale.y * clpMY);
         izE = iFloor(float(V.z + VMeps.z - VMmin.z) / VMscale.z * clpMZ);
 
-        //			R_ASSERT(ixE<=clpMX && iyE<=clpMY && izE<=clpMZ);
+        //          R_ASSERT(ixE<=clpMX && iyE<=clpMY && izE<=clpMZ);
         clamp(ixE, (u32)0, clpMX);
         clamp(iyE, (u32)0, clpMY);
         clamp(izE, (u32)0, clpMZ);

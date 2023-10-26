@@ -44,11 +44,11 @@ void CStateBurerAttack<Object>::initialize()
     m_allow_anti_aim = false;
     m_wait_state_end = false;
 
-    // 	CMonsterSquad *squad					=	monster_squad().get_squad(object);
-    // 	if ( squad )
-    // 	{
-    // 		squad->InformSquadAboutEnemy			(object->EnemyMan.get_enemy());
-    // 	}
+    //  CMonsterSquad *squad                    =   monster_squad().get_squad(object);
+    //  if ( squad )
+    //  {
+    //      squad->InformSquadAboutEnemy            (object->EnemyMan.get_enemy());
+    //  }
 }
 
 template <typename Object>

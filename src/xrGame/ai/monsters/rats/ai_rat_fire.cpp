@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_rat_fire.cpp
-//	Created 	: 23.07.2002
-//  Modified 	: 07.11.2002
-//	Author		: Dmitriy Iassenev
-//	Description : Fire and enemy parameters for monster "Rat"
+//  Module      : ai_rat_fire.cpp
+//  Created     : 23.07.2002
+//  Modified    : 07.11.2002
+//  Author      : Dmitriy Iassenev
+//  Description : Fire and enemy parameters for monster "Rat"
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -41,21 +41,21 @@ void CAI_Rat::Exec_Action(float /**dt**/)
                 CEntityAlive* entity_alive = const_cast<CEntityAlive*>(memory().enemy().selected());
                 VERIFY(entity_alive);
 
-                //					entity_alive->Hit(m_fHitPower,tDirection,this,0,position_in_bone_space,0);
+                //                  entity_alive->Hit(m_fHitPower,tDirection,this,0,position_in_bone_space,0);
                 u16 id_to = entity_alive->ID();
                 u16 id_from = ID();
                 NET_Packet l_P;
                 SHit HS;
-                HS.GenHeader(GE_HIT, id_to); //					u_EventGen	(l_P,GE_HIT, id_to);
-                HS.whoID = (id_from); //					l_P.w_u16	(id_from);
-                HS.weaponID = (id_from); //					l_P.w_u16	(id_from);
-                HS.dir = (tDirection); //					l_P.w_dir	(tDirection);
-                HS.power = (m_fHitPower); //					l_P.w_float	(m_fHitPower);
-                HS.boneID = (0); //					l_P.w_s16	(0);
-                HS.p_in_bone_space = (position_in_bone_space); //					l_P.w_vec3
+                HS.GenHeader(GE_HIT, id_to); //                 u_EventGen  (l_P,GE_HIT, id_to);
+                HS.whoID = (id_from); //                    l_P.w_u16   (id_from);
+                HS.weaponID = (id_from); //                 l_P.w_u16   (id_from);
+                HS.dir = (tDirection); //                   l_P.w_dir   (tDirection);
+                HS.power = (m_fHitPower); //                    l_P.w_float (m_fHitPower);
+                HS.boneID = (0); //                 l_P.w_s16   (0);
+                HS.p_in_bone_space = (position_in_bone_space); //                   l_P.w_vec3
                 //(position_in_bone_space);
-                HS.impulse = (0.f); //					l_P.w_float	(0.f);
-                HS.hit_type = (ALife::eHitTypeWound); //					l_P.w_u16	((u16)ALife::eHitTypeWound);
+                HS.impulse = (0.f); //                  l_P.w_float (0.f);
+                HS.hit_type = (ALife::eHitTypeWound); //                    l_P.w_u16   ((u16)ALife::eHitTypeWound);
                 HS.Write_Packet(l_P);
                 u_EventSend(l_P);
             }

@@ -256,7 +256,7 @@ void CLevel::IR_OnKeyboardPress(int key)
         if (GameID() != eGameIDSingle)
         {
             Msg("For this game type Demo Record is disabled.");
-            ///				return;
+            ///             return;
         };
         if (!pInput->iGetAsyncKeyState(SDL_SCANCODE_LSHIFT))
         {
@@ -306,7 +306,7 @@ void CLevel::IR_OnKeyboardPress(int key)
     case SDL_SCANCODE_BACKSPACE:
         if (GameID() == eGameIDSingle)
             GEnv.DRender->NextSceneMode();
-        // HW.Caps.SceneMode			= (HW.Caps.SceneMode+1)%3;
+        // HW.Caps.SceneMode            = (HW.Caps.SceneMode+1)%3;
         return;
 
     case SDL_SCANCODE_F4:

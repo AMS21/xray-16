@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: inventory_item_impl.h
-//	Created 	: 18.08.2005
-//  Modified 	: 18.08.2005
-//	Author		: Dmitriy Iassenev
-//	Description : inventory item implementation functions
+//  Module      : inventory_item_impl.h
+//  Created     : 18.08.2005
+//  Modified    : 18.08.2005
+//  Author      : Dmitriy Iassenev
+//  Description : inventory item implementation functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

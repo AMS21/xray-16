@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: moving_objects.h
-//	Created 	: 28.03.2007
-//  Modified 	: 28.03.2007
-//	Author		: Dmitriy Iassenev
-//	Description : moving objects
+//  Module      : moving_objects.h
+//  Created     : 28.03.2007
+//  Modified    : 28.03.2007
+//  Author      : Dmitriy Iassenev
+//  Description : moving objects
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef MOVING_OBJECT_H

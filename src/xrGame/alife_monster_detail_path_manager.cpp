@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_monster_detail_path_manager.cpp
-//	Created 	: 01.11.2005
-//  Modified 	: 22.11.2005
-//	Author		: Dmitriy Iassenev
-//	Description : ALife monster detail path manager class
+//  Module      : alife_monster_detail_path_manager.cpp
+//  Created     : 01.11.2005
+//  Modified    : 22.11.2005
+//  Author      : Dmitriy Iassenev
+//  Description : ALife monster detail path manager class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -46,7 +46,7 @@ void CALifeMonsterDetailPathManager::target(
     m_destination.m_level_vertex_id = level_vertex_id;
     m_destination.m_position = position;
 
-    //	Msg
+    //  Msg
     //("[%6d][%s][%f][%f][%f]",Device.dwTimeGlobal,object().name_replace(),VPUSH(m_destination.m_position));
 }
 
@@ -64,7 +64,7 @@ void CALifeMonsterDetailPathManager::target(const CALifeSmartTerrainTask& task)
 
 void CALifeMonsterDetailPathManager::target(const CALifeSmartTerrainTask* task)
 {
-    //	Msg
+    //  Msg
     //("[%6d][%s][%s]",Device.dwTimeGlobal,object().name_replace(),*task->patrol_path_name());
     target(*task);
 }
@@ -98,8 +98,8 @@ void CALifeMonsterDetailPathManager::update()
     if (current_time <= m_last_update_time)
         return;
 
-    //	if (ai().game_graph().vertex(object().m_tGraphID)->level_id() == ai().level_graph().level_id())
-    //		Msg							("[detail::update][%6d][%s]",Device.dwTimeGlobal,object().name_replace());
+    //  if (ai().game_graph().vertex(object().m_tGraphID)->level_id() == ai().level_graph().level_id())
+    //      Msg                         ("[detail::update][%6d][%s]",Device.dwTimeGlobal,object().name_replace());
 
     ALife::_TIME_ID time_delta = current_time - m_last_update_time;
     update(time_delta);
@@ -240,7 +240,7 @@ void CALifeMonsterDetailPathManager::follow_path(const ALife::_TIME_ID& time_del
 
         m_walked_distance = 0.f;
         m_path.pop_back();
-        //		Msg									("%6d %s changes graph point from %d to
+        //      Msg                                 ("%6d %s changes graph point from %d to
         //%d",Device.dwTimeGlobal,object().name_replace(),object().m_tGraphID,(GameGraph::_GRAPH_ID)m_path.back());
         object().get_object().alife().graph().change(
             &object().get_object(), object().get_object().m_tGraphID, (GameGraph::_GRAPH_ID)m_path.back());

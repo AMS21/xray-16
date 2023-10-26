@@ -218,7 +218,7 @@ void CLightShadows::calculate()
             if (L.energy < S_level)
                 continue;
 
-            // Msg	("~ light: %d",l_it);
+            // Msg  ("~ light: %d",l_it);
 
             // setup rt+state(s) for first use
             if (!bRTS)
@@ -234,11 +234,11 @@ void CLightShadows::calculate()
             // calculate light center
             Fvector Lpos = L.source->position;
             float Lrange = L.source->range;
-            // Log	("* l-pos:",Lpos);
-            // Msg	("* l-range: %f",Lrange);
+            // Log  ("* l-pos:",Lpos);
+            // Msg  ("* l-range: %f",Lrange);
             if (L.source->flags.type == IRender_Light::DIRECT)
             {
-                // Msg		(" -direct- : %f",L.energy);
+                // Msg      (" -direct- : %f",L.energy);
                 Lpos.mul(L.source->direction, -100);
                 Lpos.add(C.C);
                 Lrange = 120;
@@ -251,20 +251,20 @@ void CLightShadows::calculate()
                 while (true)
                 {
                     _dist = C.C.distance_to(Lpos);
-                    // Msg		("* o-dist: %f",	_dist);
+                    // Msg      ("* o-dist: %f",    _dist);
                     if (_dist > EPS_L)
                         break;
                     Lpos.y += .01f; //. hack to avoid light-in-the-center-of-object
                 }
                 float _R = C.O->GetRenderData().visual->getVisData().sphere.R + 0.1f;
-                // Msg	("* o-r: %f",_R);
+                // Msg  ("* o-r: %f",_R);
                 if (_dist < _R)
                 {
                     Fvector Ldir;
                     Ldir.sub(C.C, Lpos);
                     Ldir.normalize();
                     Lpos.mad(Lpos, Ldir, _dist - _R);
-                    // Msg	("* moving lpos");
+                    // Msg  ("* moving lpos");
                 }
             }
 
@@ -275,14 +275,14 @@ void CLightShadows::calculate()
             float p_hat = p_R / p_dist;
             float p_asp = 1.f;
             float p_near = p_dist - p_R - eps;
-            // float		p_nearR	=	C.C.distance_to(L.source->position) + p_R*0.85f + eps;
-            //			p_nearR =	p_near;
+            // float        p_nearR =   C.C.distance_to(L.source->position) + p_R*0.85f + eps;
+            //          p_nearR =   p_near;
             float p_far = std::min(Lrange, std::max(p_dist + S_fade, p_dist + p_R));
             if (p_near < eps)
                 continue;
             if (p_far < (p_near + eps))
                 continue;
-            //	Igor: make check here instead of assertion in buil_projection_hat
+            //  Igor: make check here instead of assertion in buil_projection_hat
             if (!(_abs(p_far - p_near) > eps))
                 continue;
             if (p_hat > 0.9f)
@@ -290,13 +290,13 @@ void CLightShadows::calculate()
             if (p_hat < 0.01f)
                 continue;
 
-            // Msg			("* near(%f), near-x(%f)",p_near,p_nearR);
+            // Msg          ("* near(%f), near-x(%f)",p_near,p_nearR);
 
             mProject.build_projection_HAT(p_hat, p_asp, p_near, p_far);
-            //	Igor: strange bug with building projection_hat
-            //	building projection with the same parameters fails for the
-            //	second time
-            // mProjectR.build_projection_HAT	(p_hat,p_asp,p_nearR,	p_far);
+            //  Igor: strange bug with building projection_hat
+            //  building projection with the same parameters fails for the
+            //  second time
+            // mProjectR.build_projection_HAT   (p_hat,p_asp,p_nearR,   p_far);
             mProjectR = mProject;
             RCache.set_xform_project(mProject);
 
@@ -476,18 +476,18 @@ void CLightShadows::render()
     // Projection and xform
     float _43 = Device.mProject._43;
 
-    //	Handle biasing problem when near changes
+    //  Handle biasing problem when near changes
     const float fMinNear = 0.1f;
     const float fMaxNear = 0.2f;
     const float fMinNearBias = 0.0002f;
     const float fMaxNearBias = 0.002f;
     float fLerpCoeff = (_43 - fMinNear) / (fMaxNear - fMinNear);
     clamp(fLerpCoeff, 0.0f, 1.0f);
-    //	lerp
+    //  lerp
     Device.mProject._43 -= fMinNearBias + (fMaxNearBias - fMinNearBias) * fLerpCoeff;
-    // Device.mProject._43			-=	0.0002f;
+    // Device.mProject._43          -=  0.0002f;
     Device.mProject._43 -= 0.002f;
-    // Device.mProject._43			-=	0.0008f;
+    // Device.mProject._43          -=  0.0008f;
     RCache.set_xform_world(Fidentity);
     RCache.set_xform_project(Device.mProject);
     Fvector View = Device.vCameraPosition;
@@ -610,13 +610,13 @@ void CLightShadows::render()
             CI->L = S.L;
             CI->Lp = CI->L->position;
             CI->tcnt = tess.size();
-            // Msg						("---free--- %x",u32(CI->tris));
+            // Msg                      ("---free--- %x",u32(CI->tris));
             xr_free(CI->tris);
             VERIFY(nullptr == CI->tris);
             if (tess.size())
             {
                 CI->tris = xr_alloc<tess_tri>(CI->tcnt);
-                // Msg					("---alloc--- %x",u32(CI->tris));
+                // Msg                  ("---alloc--- %x",u32(CI->tris));
                 CopyMemory(CI->tris, &*tess.begin(), CI->tcnt * sizeof(tess_tri));
             }
         }
@@ -680,7 +680,7 @@ void CLightShadows::render()
         u32 time = Device.dwTimeGlobal - ci.time;
         if (time > cache_old)
         {
-            // Msg			("---free--- %x",u32(ci.tris));
+            // Msg          ("---free--- %x",u32(ci.tris));
             xr_free(ci.tris);
             VERIFY(nullptr == ci.tris);
             cache.erase(cache.begin() + cit);

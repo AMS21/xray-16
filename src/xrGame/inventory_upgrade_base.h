@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: inventory_upgrade_base.h
-//	Created 	: 19.10.2007
-//  Modified 	: 27.11.2007
-//	Author		: Dmitriy Iassenev, Evgeniy Sokolov
-//	Description : inventory upgrade base class
+//  Module      : inventory_upgrade_base.h
+//  Created     : 19.10.2007
+//  Modified    : 27.11.2007
+//  Author      : Dmitriy Iassenev, Evgeniy Sokolov
+//  Description : inventory upgrade base class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef INVENTORY_UPGRADE_BASE_H_INCLUDED
@@ -52,7 +52,7 @@ public:
 
 #ifdef DEBUG
     virtual void log_hierarchy(LPCSTR nest);
-//	virtual		void		test_all_upgrades( CInventoryItem& item );
+//  virtual     void        test_all_upgrades( CInventoryItem& item );
 #endif // DEBUG
 
     virtual bool is_root();

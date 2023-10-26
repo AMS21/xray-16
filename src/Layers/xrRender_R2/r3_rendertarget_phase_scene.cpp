@@ -5,21 +5,21 @@ void CRenderTarget::phase_scene_prepare()
 {
     PIX_EVENT(phase_scene_prepare);
     // Clear depth & stencil
-    // u_setrt	( Device.dwWidth,Device.dwHeight, get_base_rt(), nullptr, nullptr, get_base_zb() );
-    // CHK_DX	( HW.pDevice->Clear	( 0L, NULL, D3DCLEAR_ZBUFFER|D3DCLEAR_STENCIL, 0x0, 1.0f, 0L) );
-    //	Igor: soft particles
+    // u_setrt  ( Device.dwWidth,Device.dwHeight, get_base_rt(), nullptr, nullptr, get_base_zb() );
+    // CHK_DX   ( HW.pDevice->Clear ( 0L, NULL, D3DCLEAR_ZBUFFER|D3DCLEAR_STENCIL, 0x0, 1.0f, 0L) );
+    //  Igor: soft particles
 
     const auto& env = g_pGamePersistent->Environment().CurrentEnv;
     const float fValue = env.m_fSunShaftsIntensity;
-    //	TODO: add multiplication by sun color here
+    //  TODO: add multiplication by sun color here
     // if (fValue<0.0001) FlagSunShafts = 0;
 
-    //	TODO: DX11: Check if complete clear of _ALL_ rendertargets will increase
-    //	FPS. Make check for SLI configuration.
+    //  TODO: DX11: Check if complete clear of _ALL_ rendertargets will increase
+    //  FPS. Make check for SLI configuration.
     if (RImplementation.o.advancedpp && (ps_r2_ls_flags.test(R2FLAG_SOFT_PARTICLES | R2FLAG_DOF) ||
                                             ((ps_r_sun_shafts > 0) && (fValue >= 0.0001)) || (ps_r_ssao > 0)))
     {
-        //	TODO: DX11: Check if we need to set RT here.
+        //  TODO: DX11: Check if we need to set RT here.
         u_setrt(RCache, Device.dwWidth, Device.dwHeight, rt_Position->pRT, 0, 0, rt_MSAADepth);
 
         const Fcolor color{}; // black
@@ -38,14 +38,14 @@ void CRenderTarget::phase_scene_prepare()
     }
     else
     {
-        //	TODO: DX11: Check if we need to set RT here.
+        //  TODO: DX11: Check if we need to set RT here.
         u_setrt(RCache, Device.dwWidth, Device.dwHeight, get_base_rt(), 0, 0, rt_MSAADepth);
         RCache.ClearZB(rt_MSAADepth, 1.0f, 0);
     }
 
-    //	Igor: for volumetric lights
+    //  Igor: for volumetric lights
     m_bHasActiveVolumetric = false;
-    //	Clear later if try to draw volumetric
+    //  Clear later if try to draw volumetric
 }
 
 // begin
@@ -65,16 +65,16 @@ void CRenderTarget::phase_scene_begin()
             u_setrt(RCache, rt_Position, rt_Accumulator, rt_MSAADepth);
         else
             u_setrt(RCache, rt_Position, rt_Color, rt_MSAADepth);
-        // else								u_setrt		(rt_Position,	rt_Color, rt_Normal,		rt_MSAADepth);
+        // else                             u_setrt     (rt_Position,   rt_Color, rt_Normal,        rt_MSAADepth);
     }
 
     // Stencil - write 0x1 at pixel pos
     RCache.set_Stencil(
         TRUE, D3DCMP_ALWAYS, 0x01, 0xff, 0x7f, D3DSTENCILOP_KEEP, D3DSTENCILOP_REPLACE, D3DSTENCILOP_KEEP);
 
-    // Misc		- draw only front-faces
-    //	TODO: DX11: siable two-sided stencil here
-    // CHK_DX(HW.pDevice->SetRenderState	( D3DRS_TWOSIDEDSTENCILMODE,FALSE				));
+    // Misc     - draw only front-faces
+    //  TODO: DX11: siable two-sided stencil here
+    // CHK_DX(HW.pDevice->SetRenderState    ( D3DRS_TWOSIDEDSTENCILMODE,FALSE               ));
     RCache.set_CullMode(CULL_CCW);
     RCache.set_ColorWriteEnable();
 }
@@ -82,9 +82,9 @@ void CRenderTarget::phase_scene_begin()
 void CRenderTarget::disable_aniso()
 {
     // Disable ANISO
-    //	TODO: DX11: disable aniso here
+    //  TODO: DX11: disable aniso here
     // for (u32 i=0; i<HW.Caps.raster.dwStages; i++)
-    //	CHK_DX(HW.pDevice->SetSamplerState( i, D3DSAMP_MAXANISOTROPY, 1	));
+    //  CHK_DX(HW.pDevice->SetSamplerState( i, D3DSAMP_MAXANISOTROPY, 1 ));
 }
 
 // end
@@ -126,7 +126,7 @@ void CRenderTarget::phase_scene_end()
     pv++;
     RImplementation.Vertex.Unlock(4, g_combine->vb_stride);
 
-    // if (stencil>=1 && aref_pass)	stencil = light_id
+    // if (stencil>=1 && aref_pass) stencil = light_id
     RCache.set_Element(s_accum_mask->E[SE_MASK_ALBEDO]); // masker
     RCache.set_Geometry(g_combine);
     RCache.Render(D3DPT_TRIANGLELIST, Offset, 0, 4, 0, 2);

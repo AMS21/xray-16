@@ -99,7 +99,7 @@ void game_sv_CaptureTheArtefact::SetReadyToSpawnPlayer(xrClientData const* pclie
 {
     R_ASSERT(pclient->ps);
 // if (!pclient->ps->testFlag(GAME_PLAYER_FLAG_VERY_VERY_DEAD))
-//	return;
+//  return;
 // R_ASSERT2(pclient->ps->testFlag(GAME_PLAYER_FLAG_VERY_VERY_DEAD), "only dead players can open buy menu in async
 // mode");
 #ifdef DEBUG

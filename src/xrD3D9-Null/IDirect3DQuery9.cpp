@@ -77,17 +77,17 @@ HRESULT xrIDirect3DQuery9::GetData(void* pData, DWORD dwSize, DWORD dwGetDataFla
 };
 //-----------------------------------------------------------------------
 /*
-HRESULT		xrIDirect3DQuery9::HRESULT_Proc(HRESULT ret)
+HRESULT     xrIDirect3DQuery9::HRESULT_Proc(HRESULT ret)
 {
     return ret;
 }
 
-ULONG		xrIDirect3DQuery9::ULONG_Proc(ULONG ret)
+ULONG       xrIDirect3DQuery9::ULONG_Proc(ULONG ret)
 {
     return ret;
 }
 
-DWORD		xrIDirect3DQuery9::DWORD_Proc(DWORD ret)
+DWORD       xrIDirect3DQuery9::DWORD_Proc(DWORD ret)
 {
     return ret;
 }

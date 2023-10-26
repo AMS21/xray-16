@@ -153,7 +153,7 @@ bool check_actor_visibility(const Fvector trace_from, const Fvector trace_to, IG
     Fvector trace_dir;
     trace_dir.sub(trace_to, trace_from);
 
-    // DBG().level_info(this).add_item	(trace_from,trace_to,color_xrgb(0,150,150));
+    // DBG().level_info(this).add_item  (trace_from,trace_to,color_xrgb(0,150,150));
 
     collide::rq_result l_rq;
     l_rq.O = NULL;
@@ -169,22 +169,22 @@ extern CActor* g_actor;
 bool CControllerPsyHit::see_enemy()
 {
     return m_object->EnemyMan.see_enemy_now(Actor());
-    // 	using namespace detail;
-    // 	Fvector const self_head = get_head_position(m_object);
-    // 	Fvector actor_center;
-    // 	Actor()->Center(actor_center);
-    // 	Fvector self_center;
-    // 	m_object->Center(self_center);
+    //  using namespace detail;
+    //  Fvector const self_head = get_head_position(m_object);
+    //  Fvector actor_center;
+    //  Actor()->Center(actor_center);
+    //  Fvector self_center;
+    //  m_object->Center(self_center);
     //
-    // 	if ( check_actor_visibility(self_head, get_head_position(Actor()), m_object) &&
-    // 		 check_actor_visibility(self_head, actor_center, m_object) &&
-    // 		 check_actor_visibility(self_center, get_head_position(Actor()), m_object) &&
-    // 		 check_actor_visibility(self_center, actor_center, m_object) )
-    // 	{
-    // 		return true;
-    // 	}
+    //  if ( check_actor_visibility(self_head, get_head_position(Actor()), m_object) &&
+    //       check_actor_visibility(self_head, actor_center, m_object) &&
+    //       check_actor_visibility(self_center, get_head_position(Actor()), m_object) &&
+    //       check_actor_visibility(self_center, actor_center, m_object) )
+    //  {
+    //      return true;
+    //  }
     //
-    // 	return false;
+    //  return false;
 }
 
 bool CControllerPsyHit::check_conditions_final()
@@ -195,8 +195,8 @@ bool CControllerPsyHit::check_conditions_final()
     if (!g_actor)
         return false;
 
-    // 	if (m_object->EnemyMan.get_enemy() != Actor())
-    // 		return false;
+    //  if (m_object->EnemyMan.get_enemy() != Actor())
+    //      return false;
 
     if (!m_object->EnemyMan.is_enemy(Actor()))
         return false;
@@ -296,11 +296,11 @@ void CControllerPsyHit::death_glide_end()
 void CControllerPsyHit::update_frame()
 {
     // if (m_sound_state == eStart) {
-    //	CController *monster = smart_cast<CController *>(m_object);
-    //	if (!monster->m_sound_tube_start._feedback()) {
-    //		m_sound_state = ePull;
-    //		monster->m_sound_tube_pull.play_at_pos(Actor(), Fvector().set(0.f, 0.f, 0.f), sm_2D);
-    //	}
+    //  CController *monster = smart_cast<CController *>(m_object);
+    //  if (!monster->m_sound_tube_start._feedback()) {
+    //      m_sound_state = ePull;
+    //      monster->m_sound_tube_pull.play_at_pos(Actor(), Fvector().set(0.f, 0.f, 0.f), sm_2D);
+    //  }
     //}
 }
 
@@ -344,10 +344,10 @@ void CControllerPsyHit::set_sound_state(ESoundState state)
 
 void CControllerPsyHit::hit()
 {
-    // CController *monster	= smart_cast<CController *>(m_object);
+    // CController *monster = smart_cast<CController *>(m_object);
 
     set_sound_state(eHit);
-    // m_object->Hit_Psy		(Actor(), monster->m_tube_damage);
+    // m_object->Hit_Psy        (Actor(), monster->m_tube_damage);
 }
 
 void CControllerPsyHit::stop()

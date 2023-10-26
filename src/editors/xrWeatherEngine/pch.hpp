@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: pch.hpp
-//	Created 	: 04.12.2007
-//  Modified 	: 04.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : precompiled header for editor library
+//  Module      : pch.hpp
+//  Created     : 04.12.2007
+//  Modified    : 04.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : precompiled header for editor library
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

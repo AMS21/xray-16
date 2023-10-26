@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_planner_actions.cpp
-//	Created 	: 04.09.2007
-//	Author		: Alexander Dudin
-//	Description : Smart cover planner action classes
+//  Module      : smart_cover_planner_actions.cpp
+//  Created     : 04.09.2007
+//  Author      : Alexander Dudin
+//  Description : Smart cover planner action classes
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -48,7 +48,7 @@ void action_base::on_no_mark() {}
 bool action_base::is_animated_action() { return (true); }
 void action_base::setup_orientation()
 {
-    //	VERIFY										(!object().sight().enabled());
+    //  VERIFY                                      (!object().sight().enabled());
     object().sight().enable(true);
     object().animation().assign_bone_callbacks();
 }
@@ -157,12 +157,12 @@ void exit::execute()
     setup_orientation();
     object().movement().go_next_loophole();
     object().movement().set_movement_type(eMovementTypeRun);
-    //	object().movement().start_non_animated_loophole_change	();
+    //  object().movement().start_non_animated_loophole_change  ();
 }
 
 void exit::finalize()
 {
-    //	object().movement().stop_non_animated_loophole_change	();
+    //  object().movement().stop_non_animated_loophole_change   ();
     inherited::finalize();
 }
 

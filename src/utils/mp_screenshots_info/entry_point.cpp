@@ -10,27 +10,27 @@ u32 ss_buffer_size = 0;
 void debug_sign_screenshot(IReader* screenshot)
 {
     using namespace screenshots; //for writer
-    int	tmp_jpeg_size			= screenshot->elapsed();
+    int tmp_jpeg_size           = screenshot->elapsed();
     if (tmp_jpeg_size < 0)
         return;
-    u32	tmp_buff_size			= tmp_jpeg_size + writer::info_max_size;
-    u8*	tmp_buff				= static_cast<u8*>(xr_malloc(tmp_buff_size));
+    u32 tmp_buff_size           = tmp_jpeg_size + writer::info_max_size;
+    u8* tmp_buff                = static_cast<u8*>(xr_malloc(tmp_buff_size));
 
-    screenshot->r				(tmp_buff, tmp_jpeg_size);
+    screenshot->r               (tmp_buff, tmp_jpeg_size);
 
-    writer	tmp_writer			(tmp_buff, tmp_jpeg_size, tmp_buff_size);
+    writer  tmp_writer          (tmp_buff, tmp_jpeg_size, tmp_buff_size);
 
-    tmp_writer.set_player_name			("some_cheater");
-    tmp_writer.set_player_cdkey_digest	("238940293847298374982734");
-    u32 final_ss_size					= tmp_writer.write_info();
+    tmp_writer.set_player_name          ("some_cheater");
+    tmp_writer.set_player_cdkey_digest  ("238940293847298374982734");
+    u32 final_ss_size                   = tmp_writer.write_info();
 
-    IWriter* result_writer		= FS.w_open("$screenshots$", "result.jpg");
-    VERIFY						(result_writer);
-    result_writer->w			(tmp_buff, final_ss_size);
-    FS.w_close					(result_writer);
+    IWriter* result_writer      = FS.w_open("$screenshots$", "result.jpg");
+    VERIFY                      (result_writer);
+    result_writer->w            (tmp_buff, final_ss_size);
+    FS.w_close                  (result_writer);
 
-    xr_free						(tmp_buff);
-    Msg							("Screenshot signed successfully !");
+    xr_free                     (tmp_buff);
+    Msg                         ("Screenshot signed successfully !");
 };
 #endif*/
 
@@ -51,10 +51,10 @@ void screenshot_info(IReader* screenshot)
         return;
     }
     Msg("Screenshot info:");
-    Msg("	Player name:		%s", tmp_reader.player_name().c_str());
-    Msg("	Player cdkey digest:	%s", tmp_reader.player_cdkey_digest().c_str());
-    // Msg("	Admin name:		%s", tmp_reader.admin_name().c_str());
-    Msg("	Creation date:		%s", tmp_reader.creation_date().c_str());
+    Msg("   Player name:        %s", tmp_reader.player_name().c_str());
+    Msg("   Player cdkey digest:    %s", tmp_reader.player_cdkey_digest().c_str());
+    // Msg("    Admin name:     %s", tmp_reader.admin_name().c_str());
+    Msg("   Creation date:      %s", tmp_reader.creation_date().c_str());
 }
 
 int main(int argc, char** argv)
@@ -98,10 +98,10 @@ int main(int argc, char** argv)
     /*#ifdef DEBUG
         if (strstr(argv[1], "--sign"))
         {
-            debug_sign_screenshot	(tmp_jpg);
+            debug_sign_screenshot   (tmp_jpg);
         } else if (strstr(argv[1], "--info"))
         {
-            screenshot_info			(tmp_jpg);
+            screenshot_info         (tmp_jpg);
         }
     #else*/
     screenshot_info(tmp_jpg);

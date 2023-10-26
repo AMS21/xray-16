@@ -245,16 +245,16 @@ bool CPolterTele::tele_raise_objects()
     tele_objects.erase(std::unique(tele_objects.begin(), tele_objects.end()), tele_objects.end());
 
     // оставить необходимое количество объектов
-    // if (tele_objects.size() > m_pmt_tele_object_count) tele_objects.resize	(m_pmt_tele_object_count);
+    // if (tele_objects.size() > m_pmt_tele_object_count) tele_objects.resize   (m_pmt_tele_object_count);
 
     //// активировать
     // for (u32 i=0; i<tele_objects.size(); i++) {
-    //	CPhysicsShellHolder *obj = smart_cast<CPhysicsShellHolder *>(tele_objects[i]);
+    //  CPhysicsShellHolder *obj = smart_cast<CPhysicsShellHolder *>(tele_objects[i]);
 
-    //	// применить телекинез на объект
-    //	bool	rotate = false;
+    //  // применить телекинез на объект
+    //  bool    rotate = false;
 
-    //	CTelekinesis::activate		(obj, m_pmt_tele_raise_speed, m_pmt_tele_object_height, m_pmt_tele_time_object_keep,
+    //  CTelekinesis::activate      (obj, m_pmt_tele_raise_speed, m_pmt_tele_object_height, m_pmt_tele_time_object_keep,
     // rotate);
     //}
 
@@ -278,7 +278,7 @@ bool CPolterTele::tele_raise_objects()
 struct SCollisionHitCallback : public ICollisionHitCallback
 
 {
-    //	CollisionHitCallbackFun				*m_collision_hit_callback
+    //  CollisionHitCallbackFun             *m_collision_hit_callback
     //;
     CPhysicsShellHolder* m_object;
     float m_pmt_object_collision_damage;

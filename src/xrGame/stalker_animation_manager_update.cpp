@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_animation_manager_update.cpp
-//	Created 	: 25.02.2003
-//  Modified 	: 13.12.2006
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker animation manager update cycle
+//  Module      : stalker_animation_manager_update.cpp
+//  Created     : 25.02.2003
+//  Modified    : 13.12.2006
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker animation manager update cycle
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

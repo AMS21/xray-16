@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: inventory_item_object.cpp
-//	Created 	: 24.03.2003
-//  Modified 	: 27.12.2004
-//	Author		: Victor Reutsky, Yuri Dobronravin
-//	Description : Inventory item object implementation
+//  Module      : inventory_item_object.cpp
+//  Created     : 24.03.2003
+//  Modified    : 27.12.2004
+//  Author      : Victor Reutsky, Yuri Dobronravin
+//  Description : Inventory item object implementation
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -24,20 +24,20 @@ void CInventoryItemObject::Load(LPCSTR section)
     CInventoryItem::Load(section);
 }
 /* remove
-LPCSTR CInventoryItemObject::Name			()
+LPCSTR CInventoryItemObject::Name           ()
 {
-    return						(CInventoryItem::Name());
+    return                      (CInventoryItem::Name());
 }
 
-LPCSTR CInventoryItemObject::NameShort		()
+LPCSTR CInventoryItemObject::NameShort      ()
 {
-    return						(CInventoryItem::NameShort());
+    return                      (CInventoryItem::NameShort());
 }
 */
 /*
-LPCSTR CInventoryItemObject::NameComplex	()
+LPCSTR CInventoryItemObject::NameComplex    ()
 {
-    return						(CInventoryItem::NameComplex());
+    return                      (CInventoryItem::NameComplex());
 }
 */
 

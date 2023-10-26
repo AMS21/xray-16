@@ -15,7 +15,7 @@ void xrServer::Perform_transfer(
     // 1. Perform migration if need it
     if (from->owner != to->owner)
         PerformMigration(what, from->owner, to->owner);
-    // Log						("B");
+    // Log                      ("B");
 
     // 2. Detach "FROM"
     xr_vector<u16>& C = from->children;

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_monsters_anims.h
-//	Created 	: 23.05.2003
-//  Modified 	: 23.05.2003
-//	Author		: Serge Zhem
-//	Description : Animation templates for all of the monsters
+//  Module      : ai_monsters_anims.h
+//  Created     : 23.05.2003
+//  Modified    : 23.05.2003
+//  Author      : Serge Zhem
+//  Description : Animation templates for all of the monsters
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

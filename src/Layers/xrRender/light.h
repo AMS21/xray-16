@@ -59,7 +59,7 @@ public:
     ref_shader s_spot_msaa[8];
     ref_shader s_point_msaa[8];
     ref_shader s_volumetric_msaa[8];
-#endif //	(RENDER==R_R3) || (RENDER==R_R4) || (RENDER==R_GL)
+#endif //   (RENDER==R_R3) || (RENDER==R_R4) || (RENDER==R_GL)
 
     u32 m_xform_frame;
     Fmatrix m_xform;
@@ -101,7 +101,7 @@ public:
             BOOL transluent;
         } S;
     } X;
-#endif //	(RENDER==R_R2) || (RENDER==R_R3) || (RENDER==R_R4) || (RENDER==R_GL)
+#endif //   (RENDER==R_R2) || (RENDER==R_R3) || (RENDER==R_R4) || (RENDER==R_GL)
 
 public:
     void set_type(LT type) override

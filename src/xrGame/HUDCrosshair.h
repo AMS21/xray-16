@@ -21,7 +21,7 @@ private:
 #ifdef DEBUG
     float fb_radius;
 #endif
-    // ref_geom 		hGeomLine;
+    // ref_geom         hGeomLine;
     ui_shader hShader;
 
 public:

@@ -158,8 +158,8 @@ void CSkeletonX::_Load(const char* N, IReader* data, u32& dwVertCount)
     // Load vertices
     R_ASSERT(data->find_chunk(OGF_VERTICES));
 
-    // u16			hw_bones_cnt		= u16((HW.Caps.geometry.dwRegisters-22)/3);
-    //	Igor: some shaders in r1 need more free constant registers
+    // u16          hw_bones_cnt        = u16((HW.Caps.geometry.dwRegisters-22)/3);
+    //  Igor: some shaders in r1 need more free constant registers
     u16 hw_bones_cnt = u16((HW.Caps.geometry.dwRegisters - 22 - 3) / 3);
 
 #if RENDER == R_R1
@@ -241,7 +241,7 @@ void CSkeletonX::_Load(const char* N, IReader* data, u32& dwVertCount)
             if (bids.end() == std::find(bids.begin(), bids.end(), VB.matrix1))
                 bids.push_back(VB.matrix1);
         }
-        //.			R_ASSERT(sw_bones_cnt<=hw_bones_cnt);
+        //.         R_ASSERT(sw_bones_cnt<=hw_bones_cnt);
         if (sw_bones_cnt <= hw_bones_cnt)
         {
             // HW- two weights
@@ -275,7 +275,7 @@ void CSkeletonX::_Load(const char* N, IReader* data, u32& dwVertCount)
                     bids.push_back(VB.m[i]);
             }
         }
-        //.			R_ASSERT(sw_bones_cnt<=hw_bones_cnt);
+        //.         R_ASSERT(sw_bones_cnt<=hw_bones_cnt);
         if ((sw_bones_cnt <= hw_bones_cnt))
         {
             RenderMode = RImplementation.m_hq_skinning ? RM_SKINNING_3B_HQ : RM_SKINNING_3B;
@@ -308,7 +308,7 @@ void CSkeletonX::_Load(const char* N, IReader* data, u32& dwVertCount)
                     bids.push_back(VB.m[i]);
             }
         }
-        //.			R_ASSERT(sw_bones_cnt<=hw_bones_cnt);
+        //.         R_ASSERT(sw_bones_cnt<=hw_bones_cnt);
         if (sw_bones_cnt <= hw_bones_cnt)
         {
             RenderMode = RImplementation.m_hq_skinning ? RM_SKINNING_4B_HQ : RM_SKINNING_4B;
@@ -437,45 +437,45 @@ BOOL CSkeletonX::_PickBoneSoft4W(IKinematics::pick_result& r, float dist, const 
     return pick_bone<vertBoned4W>(Vertices4W, Parent, r, dist, S, D, indices, faces);
 }
 /*
-BOOL	CSkeletonX::_PickBoneSoft1W	(Fvector& normal, float& dist, const Fvector& S, const Fvector& D, u16* indices,
+BOOL    CSkeletonX::_PickBoneSoft1W (Fvector& normal, float& dist, const Fvector& S, const Fvector& D, u16* indices,
 CBoneData::FacesVec& faces)
 {
-    VERIFY				(*Vertices1W);
-    bool intersect		= FALSE;
+    VERIFY              (*Vertices1W);
+    bool intersect      = FALSE;
     for (CBoneData::auto it=faces.begin(); it!=faces.end(); it++){
-        Fvector			p[3];
-        u32 idx			= (*it)*3;
+        Fvector         p[3];
+        u32 idx         = (*it)*3;
         for (u32 k=0; k<3; k++){
-            vertBoned1W& vert		= Vertices1W[indices[idx+k]];
+            vertBoned1W& vert       = Vertices1W[indices[idx+k]];
             get_pos_bones(vert, p[k], Parent);
         }
-        float u,v,range	= flt_max;
+        float u,v,range = flt_max;
         if (CDB::TestRayTri(S,D,p,u,v,range,true)&&(range<dist)){
             normal.mknormal(p[0],p[1],p[2]);
-            dist		= range;
-            intersect	= TRUE;
+            dist        = range;
+            intersect   = TRUE;
         }
     }
     return intersect;
 }
 
-BOOL CSkeletonX::_PickBoneSoft2W	(Fvector& normal, float& dist, const Fvector& S, const Fvector& D, u16* indices,
+BOOL CSkeletonX::_PickBoneSoft2W    (Fvector& normal, float& dist, const Fvector& S, const Fvector& D, u16* indices,
 CBoneData::FacesVec& faces)
 {
-    VERIFY				(*Vertices2W);
-    bool intersect		= FALSE;
+    VERIFY              (*Vertices2W);
+    bool intersect      = FALSE;
     for (CBoneData::auto it=faces.begin(); it!=faces.end(); it++){
-        Fvector			p[3];
-        u32 idx			= (*it)*3;
+        Fvector         p[3];
+        u32 idx         = (*it)*3;
         for (u32 k=0; k<3; k++){
-            vertBoned2W& vert		= Vertices2W[indices[idx+k]];
+            vertBoned2W& vert       = Vertices2W[indices[idx+k]];
             get_pos_bones(vert, p[k], Parent);
         }
-        float u,v,range	= flt_max;
+        float u,v,range = flt_max;
         if (CDB::TestRayTri(S,D,p,u,v,range,true)&&(range<dist)){
             normal.mknormal(p[0],p[1],p[2]);
-            dist		= range;
-            intersect	= TRUE;
+            dist        = range;
+            intersect   = TRUE;
         }
     }
     return intersect;

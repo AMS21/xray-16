@@ -103,8 +103,8 @@ void CUIMpPlayersAdm::Init(CUIXml& xml_doc)
     SetMaxPingLimitText();
     m_pBanPlayerCombo->SetCurrentOptValue();
     m_pBanPlayerCombo->SetItemIDX(0);
-    //	m_pBanTimeTrack->SetCurrentOptValue();
-    //	SetBanSelPlayerText();
+    //  m_pBanTimeTrack->SetCurrentOptValue();
+    //  SetBanSelPlayerText();
 }
 
 void CUIMpPlayersAdm::FillPlayersList(u32 const)
@@ -113,7 +113,7 @@ void CUIMpPlayersAdm::FillPlayersList(u32 const)
     game_cl_GameState::PLAYERS_MAP_IT b = Game().players.begin();
     for (; b != Game().players.end(); ++b)
     {
-        //		if(b->first!=Game().local_svdpnid)
+        //      if(b->first!=Game().local_svdpnid)
         {
             string512 tmp_string;
             xr_sprintf(tmp_string, "%s, id:%u, ip:%s, ping:%u", b->second->getName(), b->first.value(),
@@ -158,8 +158,8 @@ void CUIMpPlayersAdm::SendMessage(CUIWindow* pWnd, s16 msg, void* pData)
             KickSelPlayer();
         else if (pWnd == m_pBanPlayerBtn)
             BanSelPlayer();
-        //			else if(pWnd==m_pBanTimeTrack)
-        //				SetBanSelPlayerText();
+        //          else if(pWnd==m_pBanTimeTrack)
+        //              SetBanSelPlayerText();
         break;
     }
     };
@@ -220,7 +220,7 @@ void CUIMpPlayersAdm::BanSelPlayer()
 
     u32 client_id = itm->GetTAG();
     int ban_time = m_pBanPlayerCombo->CurrentID();
-    //	int ban_time = m_pBanTimeTrack->GetIValue();
+    //  int ban_time = m_pBanTimeTrack->GetIValue();
     string512 tmp_string;
     xr_sprintf(tmp_string, "ra sv_banplayer %u %d", client_id, ban_time);
     Console->Execute(tmp_string);
@@ -228,8 +228,8 @@ void CUIMpPlayersAdm::BanSelPlayer()
 
 // void CUIMpPlayersAdm::SetBanSelPlayerText()
 //{
-//	int ban_time = m_pBanTimeTrack->GetIValue();
-//	string512 tmp_string;
-//	xr_sprintf(tmp_string, "Ban time (minutes): %d", ban_time);
-//	m_pBanTimeText->SetText(tmp_string);
+//  int ban_time = m_pBanTimeTrack->GetIValue();
+//  string512 tmp_string;
+//  xr_sprintf(tmp_string, "Ban time (minutes): %d", ban_time);
+//  m_pBanTimeText->SetText(tmp_string);
 //}

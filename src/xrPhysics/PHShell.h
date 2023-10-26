@@ -165,7 +165,7 @@ public:
             m_spliter_holder->SetBreakable();
     }
     virtual bool IsBreakingBlocked() { return m_spliter_holder && m_spliter_holder->IsUnbreakable(); }
-    ///////	////////////////////////////////////////////////////////////////////////////////////////////
+    /////// ////////////////////////////////////////////////////////////////////////////////////////////
     virtual void get_LinearVel(Fvector& velocity) const;
     virtual void get_AngularVel(Fvector& velocity) const;
     virtual void set_LinearVel(const Fvector& velocity);
@@ -252,7 +252,7 @@ public:
     virtual bool HasTracedGeoms() { return !m_traced_geoms.empty(); }
     virtual void SetPrefereExactIntegration();
     virtual void CutVelocity(float l_limit, float a_limit);
-    ///////////	//////////////////////////////////////////////////////////////////////////////////////////
+    /////////// //////////////////////////////////////////////////////////////////////////////////////////
     void CreateSpace();
     void PassEndElements(u16 from, u16 to, CPHShell* dest);
     void PassEndJoints(u16 from, u16 to, CPHShell* dest);

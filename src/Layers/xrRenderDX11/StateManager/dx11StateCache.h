@@ -5,7 +5,7 @@
 template <class IDeviceState, class StateDecs>
 class dx11StateCache
 {
-    //	Public interface
+    //  Public interface
 public:
     dx11StateCache();
     ~dx11StateCache();
@@ -14,13 +14,13 @@ public:
 
     IDeviceState* GetState(SimulatorStates& state_code);
     IDeviceState* GetState(StateDecs& desc);
-    //	Can be called on device destruction only!
-    //	dx11State holds weak links on manager's states and
-    //	won't understand that state was destroyed
-    // void	FlushStates();
-    //	Private functionality
+    //  Can be called on device destruction only!
+    //  dx11State holds weak links on manager's states and
+    //  won't understand that state was destroyed
+    // void FlushStates();
+    //  Private functionality
 
-    //	Private declarations
+    //  Private declarations
 private:
     struct StateRecord
     {
@@ -32,9 +32,9 @@ private:
     void CreateState(StateDecs desc, IDeviceState** ppIState);
     IDeviceState* FindState(const StateDecs& desc, u32 StateCRC);
 
-    //	Private data
+    //  Private data
 private:
-    //	This must be cleared on device destroy
+    //  This must be cleared on device destroy
     xr_vector<StateRecord> m_StateArray;
 };
 
@@ -44,4 +44,4 @@ extern dx11StateCache<ID3DBlendState, D3D_BLEND_DESC> BSManager;
 
 #include "dx11StateCacheImpl.h"
 
-#endif //	dx11StateCache_included
+#endif //   dx11StateCache_included

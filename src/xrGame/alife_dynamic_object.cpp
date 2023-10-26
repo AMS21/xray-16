@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_dynamic_object.cpp
-//	Created 	: 27.10.2005
-//  Modified 	: 27.10.2005
-//	Author		: Dmitriy Iassenev
-//	Description : ALife dynamic object class
+//  Module      : alife_dynamic_object.cpp
+//  Created     : 27.10.2005
+//  Modified    : 27.10.2005
+//  Author      : Dmitriy Iassenev
+//  Description : ALife dynamic object class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -20,7 +20,7 @@
 void CSE_ALifeDynamicObject::on_spawn()
 {
 #ifdef DEBUG
-//	Msg			("[LSS] spawning object [%d][%d][%s][%s]",ID,ID_Parent,name(),name_replace());
+//  Msg         ("[LSS] spawning object [%d][%d][%s][%s]",ID,ID_Parent,name(),name_replace());
 #endif
 }
 
@@ -191,8 +191,8 @@ void CSE_ALifeInventoryBox::add_online(const bool& update_registries)
         object->alife().server().entity_Destroy(l_tpAbstract);
 
 #ifdef DEBUG
-        //		if (psAI_Flags.test(aiALife))
-        //			Msg					("[LSS] Spawning item
+        //      if (psAI_Flags.test(aiALife))
+        //          Msg                 ("[LSS] Spawning item
         //[%s][%s][%d]",l_tpALifeInventoryItem->base()->name_replace(),*l_tpALifeInventoryItem->base()->s_name,l_tpALifeDynamicObject->ID);
         Msg("[LSS][%d] Going online [%d][%s][%d] with parent [%d][%s] on '%s'", Device.dwFrame, Device.dwTimeGlobal,
             l_tpALifeInventoryItem->base()->name_replace(), l_tpALifeInventoryItem->base()->ID, ID, name_replace(),
@@ -224,8 +224,8 @@ void CSE_ALifeInventoryBox::add_offline(
         CSE_ALifeInventoryItem* inventory_item = smart_cast<CSE_ALifeInventoryItem*>(child);
         VERIFY2(inventory_item, "Non inventory item object has parent?!");
 #ifdef DEBUG
-        //		if (psAI_Flags.test(aiALife))
-        //			Msg					("[LSS] Destroying item
+        //      if (psAI_Flags.test(aiALife))
+        //          Msg                 ("[LSS] Destroying item
         //[%s][%s][%d]",inventory_item->base()->name_replace(),*inventory_item->base()->s_name,inventory_item->base()->ID);
         Msg("[LSS][%d] Going offline [%d][%s][%d] with parent [%d][%s] on '%s'", Device.dwFrame, Device.dwTimeGlobal,
             inventory_item->base()->name_replace(), inventory_item->base()->ID, ID, name_replace(), "*SERVER*");
@@ -243,7 +243,7 @@ void CSE_ALifeInventoryBox::add_offline(
         }
         child->clear_client_data();
         object->alife().graph().add(child, child->m_tGraphID, false);
-        //		object->alife().graph().attach	(*object,inventory_item,child->m_tGraphID,true);
+        //      object->alife().graph().attach  (*object,inventory_item,child->m_tGraphID,true);
         alife().graph().remove(child, child->m_tGraphID);
         children.push_back(child->ID);
         child->ID_Parent = ID;

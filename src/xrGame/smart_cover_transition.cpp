@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_transition.cpp
-//	Created 	: 20.12.2007
-//	Author		: Alexander Dudin
-//	Description : Transition class for smart_cover
+//  Module      : smart_cover_transition.cpp
+//  Created     : 20.12.2007
+//  Author      : Alexander Dudin
+//  Description : Transition class for smart_cover
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -72,7 +72,7 @@ public:
         VERIFY(animation_action);
 
         // if (!animation_action->has_animation())
-        //	return				(false);
+        //  return              (false);
 
         return (m_body_state == animation_action->body_state());
     }
@@ -93,10 +93,10 @@ animation_action const& action::animation(MonsterSpace::EBodyState const& target
     }
 
 #if 0 // for testing
-	VERIFY2						(
-		found != m_animations.end(),
-		make_string("There is no animation which can transfer bot to body_state [%i]", target_body_state)
-	);
+    VERIFY2                     (
+        found != m_animations.end(),
+        make_string("There is no animation which can transfer bot to body_state [%i]", target_body_state)
+    );
 #endif
 
     return (**found);

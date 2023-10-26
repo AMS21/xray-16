@@ -16,17 +16,17 @@ public:
     //! Destructor
     IC ~Point() {}
     //! Returns MIN(x, y, z);
-    // IC	float		Min()								const		{ return MIN(x, MIN(y, z));
+    // IC   float       Min()                               const       { return MIN(x, MIN(y, z));
     // }
     //! Returns MAX(x, y, z);
-    // IC	float		Max()								const		{ return MAX(x, MAX(y, z));
+    // IC   float       Max()                               const       { return MAX(x, MAX(y, z));
     // }
     //! TO BE DOCUMENTED
-    // IC	Point&		Min(const Point& p)								{ x = MIN(x, p.x); y = MIN(y, p.y); z = MIN(z, p.z);	return
+    // IC   Point&      Min(const Point& p)                             { x = MIN(x, p.x); y = MIN(y, p.y); z = MIN(z, p.z);    return
     // *this;
     // }
     //! TO BE DOCUMENTED
-    // IC	Point&		Max(const Point& p)								{ x = MAX(x, p.x); y = MAX(y, p.y); z = MAX(z, p.z);	return
+    // IC   Point&      Max(const Point& p)                             { x = MAX(x, p.x); y = MAX(y, p.y); z = MAX(z, p.z);    return
     // *this;
     // }
 
@@ -121,13 +121,13 @@ public:
 
     // Arithmetic operators
     //! Operator for Point Mul = Point * Matrix3x3.
-    //					Point		operator*(const Matrix3x3& mat)		const;
+    //                  Point       operator*(const Matrix3x3& mat)     const;
     //! Operator for Point Mul = Point * Matrix4x4.
-    //					Point		operator*(const Matrix4x4& mat)		const;
+    //                  Point       operator*(const Matrix4x4& mat)     const;
     //! Operator for Point *= Matrix3x3.
-    ///					Point&		operator*=(const Matrix3x3& mat);
+    ///                 Point&      operator*=(const Matrix3x3& mat);
     //! Operator for Point *= Matrix4x4.
-    //					Point&		operator*=(const Matrix4x4& mat);
+    //                  Point&      operator*=(const Matrix4x4& mat);
 
     //! Access as array
     ICF operator const float*() const { return &x; }
@@ -140,8 +140,8 @@ public:
 };
 // using namespace CDB;
 using namespace Opcode;
-// typedef float*	Point;
-// typedef	dVector3 Point
+// typedef float*   Point;
+// typedef  dVector3 Point
 //! This macro quickly finds the min & max values among 3 variables
 #define FINDMINMAX(x0, x1, x2, min, max) \
     min = max = x0;                      \

@@ -146,9 +146,9 @@ protected:
     NET_Compressor net_Compressor;
 
     PlayersMonitor net_players;
-    // Lock		csPlayers;
-    // xr_vector<IClient*>	net_Players;
-    // xr_vector<IClient*>	net_Players_disconnected;
+    // Lock     csPlayers;
+    // xr_vector<IClient*>  net_Players;
+    // xr_vector<IClient*>  net_Players_disconnected;
     IClient* SV_Client;
 
     int psNET_Port;

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_collection_enumerator.hpp
-//	Created 	: 24.12.2007
-//  Modified 	: 24.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : collection property implementation class
+//  Module      : property_collection_enumerator.hpp
+//  Created     : 24.12.2007
+//  Modified    : 24.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : collection property implementation class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_COLLECTION_ENUMERATOR_HPP_INCLUDED

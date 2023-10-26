@@ -21,14 +21,14 @@ game_state_accumulator::game_state_accumulator()
 game_state_accumulator::~game_state_accumulator() { delete_data(m_accumulative_values); }
 void game_state_accumulator::update()
 {
-    // update_average_values		();
+    // update_average_values        ();
     update_accumulative_values();
 }
 
 void game_state_accumulator::init_bone_groups(CActor* first_spawned_actor) { m_bone_groups.init(first_spawned_actor); }
 void game_state_accumulator::init()
 {
-    // init_average_values	();
+    // init_average_values  ();
     init_accumulative_values();
 }
 

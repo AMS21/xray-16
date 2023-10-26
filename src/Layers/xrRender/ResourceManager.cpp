@@ -12,7 +12,7 @@
 #include "Blender.h"
 #include "Blender_Recorder.h"
 
-//	Already defined in Texture.cpp
+//  Already defined in Texture.cpp
 void fix_texture_name(pstr fn);
 /*
 void fix_texture_name(LPSTR fn)
@@ -94,7 +94,7 @@ void CResourceManager::_ParseList(sh_list& dest, LPCSTR names)
             xr_strlwr(N.begin());
 
             fix_texture_name(N.begin());
-            //. andy			if (strext(N.begin())) *strext(N.begin())=0;
+            //. andy            if (strext(N.begin())) *strext(N.begin())=0;
             dest.push_back(N.begin());
             N.clear();
         }
@@ -111,7 +111,7 @@ void CResourceManager::_ParseList(sh_list& dest, LPCSTR names)
         xr_strlwr(N.begin());
 
         fix_texture_name(N.begin());
-        //. andy		if (strext(N.begin())) *strext(N.begin())=0;
+        //. andy        if (strext(N.begin())) *strext(N.begin())=0;
         dest.push_back(N.begin());
     }
 }
@@ -148,7 +148,7 @@ Shader* CResourceManager::_cpp_Create(
     Shader S;
 
     //.
-    // if (strstr(s_shader,"transparent"))	__asm int 3;
+    // if (strstr(s_shader,"transparent"))  __asm int 3;
 
     // Access to template
     C.BT = B;
@@ -170,7 +170,7 @@ Shader* CResourceManager::_cpp_Create(
     _ParseList(C.L_constants, s_constants);
     _ParseList(C.L_matrices, s_matrices);
 
-    // Compile element	(LOD0 - HQ)
+    // Compile element  (LOD0 - HQ)
     {
         C.iElement = SE_R1_NORMAL_HQ;
         C.bDetail = m_textures_description.GetDetailTexture(C.L_textures[0], C.detail_texture, C.detail_scaler);
@@ -179,7 +179,7 @@ Shader* CResourceManager::_cpp_Create(
         S.E[SE_R1_NORMAL_HQ] = _CreateElement(std::move(E));
     }
 
-    // Compile element	(LOD1)
+    // Compile element  (LOD1)
     {
         C.iElement = SE_R1_NORMAL_LQ;
         C.bDetail = m_textures_description.GetDetailTexture(C.L_textures[0], C.detail_texture, C.detail_scaler);
@@ -400,7 +400,7 @@ void CResourceManager::ED_UpdateTextures(AStringVec* names)
     }
 
     // 2. Load
-    // DeferredUpload	();
+    // DeferredUpload   ();
 }
 #endif
 
@@ -458,14 +458,14 @@ void CResourceManager::Evict()
 #endif
 }
 /*
-BOOL	CResourceManager::_GetDetailTexture(LPCSTR Name,LPCSTR& T, R_constant_setup* &CS)
+BOOL    CResourceManager::_GetDetailTexture(LPCSTR Name,LPCSTR& T, R_constant_setup* &CS)
 {
     LPSTR N = LPSTR(Name);
-    map_TD::iterator I = m_td.find	(N);
+    map_TD::iterator I = m_td.find  (N);
     if (I!=m_td.end())
     {
-        T	= I->second.T;
-        CS	= I->second.cs;
+        T   = I->second.T;
+        CS  = I->second.cs;
         return TRUE;
     } else {
         return FALSE;

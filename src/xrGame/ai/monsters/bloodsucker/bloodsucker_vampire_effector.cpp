@@ -88,7 +88,7 @@ bool CVampireCameraEffector::ProcessCam(SCamEffectorInfo& info)
 
     //////////////////////////////////////////////////////////////////////////
     // using formula: y = k - 2*k*abs(x-1/2)   k - max distance
-    // float	cur_dist = m_dist * (1 - 2*_abs((1-time_left_perc) - 0.5f));
+    // float    cur_dist = m_dist * (1 - 2*_abs((1-time_left_perc) - 0.5f));
     float time_passed = 1 - time_left_perc;
     float cur_dist = m_dist * (_sqrt(0.5f * 0.5f - (time_passed - 0.5f) * (time_passed - 0.5f)));
 

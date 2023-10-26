@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_movement_restriction_inline.h
-//	Created 	: 25.03.2004
-//  Modified 	: 26.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker movement restriction inline functions
+//  Module      : stalker_movement_restriction_inline.h
+//  Created     : 25.03.2004
+//  Modified    : 26.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker movement restriction inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

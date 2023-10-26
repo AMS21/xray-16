@@ -87,7 +87,7 @@ extern int g_dwInputUpdateDelta;
 extern BOOL g_ShowAnimationInfo;
 #endif // DEBUG
 extern BOOL g_bShowHitSectors;
-// extern	BOOL	g_bDebugDumpPhysicsStep	;
+// extern   BOOL    g_bDebugDumpPhysicsStep ;
 extern ESingleGameDifficulty g_SingleGameDifficulty;
 //-----------------------------------------------------------
 extern float g_fTimeFactor;
@@ -188,7 +188,7 @@ public:
         CCC_Token::Execute(args);
         if (g_pGameLevel && Level().game)
         {
-            //#ifndef	DEBUG
+            //#ifndef   DEBUG
             if (GameID() != eGameIDSingle)
             {
                 Msg("For this game type difficulty level is disabled.");
@@ -266,11 +266,11 @@ public:
                     Msg("! invalid vertex number (%d)!", _min(id1, id2));
                 else
                 {
-                    //						Sleep				(1);
-                    //						CTimer				timer;
-                    //						timer.Start			();
-                    //						float				fValue = ai().m_tpAStar->ffFindMinimalPath(id1,id2);
-                    //						Msg					("* %7.2f[%d] : %11I64u cycles (%.3f
+                    //                      Sleep               (1);
+                    //                      CTimer              timer;
+                    //                      timer.Start         ();
+                    //                      float               fValue = ai().m_tpAStar->ffFindMinimalPath(id1,id2);
+                    //                      Msg                 ("* %7.2f[%d] : %11I64u cycles (%.3f
                     // microseconds)",fValue,ai().m_tpAStar->m_tpaNodes.size(),timer.GetElapsed_ticks(),timer.GetElapsed_ms()*1000.f);
                 }
             else
@@ -456,8 +456,8 @@ public:
 #ifndef DEBUG
 // if (GameID() != eGameIDSingle)
 //{
-//	Msg("For this game type Demo Record is disabled.");
-//	return;
+//  Msg("For this game type Demo Record is disabled.");
+//  return;
 //};
 #endif
         CDemoRecord::GetGlobalPosition(p);
@@ -477,8 +477,8 @@ public:
 #ifndef DEBUG
 // if (GameID() != eGameIDSingle)
 //{
-//	Msg("For this game type Demo Play is disabled.");
-//	return;
+//  Msg("For this game type Demo Play is disabled.");
+//  return;
 //};
 #endif
         if (0 == g_pGameLevel)
@@ -623,7 +623,7 @@ public:
     {
 #if 0
         if (!Level().autosave_manager().ready_for_autosave()) {
-            Msg		("! Cannot save the game right now!");
+            Msg     ("! Cannot save the game right now!");
             return;
         }
 #endif
@@ -743,16 +743,16 @@ public:
         }
 
         /*     moved to level_network_messages.cpp
-                CSavedGameWrapper			wrapper(args);
+                CSavedGameWrapper           wrapper(args);
                 if (wrapper.level_id() == ai().level_graph().level_id()) {
                     if (Device.Paused())
-                        Device.Pause		(FALSE, TRUE, TRUE, "CCC_ALifeLoadFrom");
+                        Device.Pause        (FALSE, TRUE, TRUE, "CCC_ALifeLoadFrom");
 
-                    Level().remove_objects	();
+                    Level().remove_objects  ();
 
-                    game_sv_Single			*game = smart_cast<game_sv_Single*>(Level().Server->game);
-                    R_ASSERT				(game);
-                    game->restart_simulator	(saved_game);
+                    game_sv_Single          *game = smart_cast<game_sv_Single*>(Level().Server->game);
+                    R_ASSERT                (game);
+                    game->restart_simulator (saved_game);
 
                     return;
                 }
@@ -1174,14 +1174,14 @@ public:
         // IGameObject* O= Level().Objects.FindObjectByName(args);
         // if(O)
         //{
-        //	PH_DBG_SetTrackObject(*(O->cName()));
-        //	ph_dbg_draw_mask1.set(ph_m1_DbgTrackObject,TRUE);
+        //  PH_DBG_SetTrackObject(*(O->cName()));
+        //  ph_dbg_draw_mask1.set(ph_m1_DbgTrackObject,TRUE);
         //}
     }
 
-    // virtual void	Info	(TInfo& I)
+    // virtual void Info    (TInfo& I)
     //{
-    //	xr_strcpy(I,"restart game fast");
+    //  xr_strcpy(I,"restart game fast");
     //}
 };
 #endif
@@ -1276,7 +1276,7 @@ struct CCC_NoClip : public CCC_Mask
 {
 public:
     CCC_NoClip(LPCSTR N, Flags32* V, u32 M):CCC_Mask(N,V,M){};
-    virtual	void Execute(LPCSTR args)
+    virtual void Execute(LPCSTR args)
     {
         CCC_Mask::Execute(args);
         if (EQ(args,"on") || EQ(args,"1"))
@@ -1415,7 +1415,7 @@ public:
 
             GEnv.ScriptEngine->print_output(GEnv.ScriptEngine->lua(), *m_script_name, l_iErrorCode);
         }
-    } // void	Execute
+    } // void   Execute
 
     void GetStatus(TStatus& S) override { xr_strcpy(S, "<script_name.function()> (Specify script and function name!)"); }
     virtual void Save(IWriter* F) {}
@@ -2119,24 +2119,24 @@ void CCC_RegisterCommands()
     CMD3(CCC_Mask, "ai_draw_game_graph_real_pos", &psAI_Flags, aiDrawGameGraphRealPos);
 
     // XXX: register from script engine
-    // CMD3(CCC_Mask,				"lua_nil_object_access",	&psAI_Flags,	aiNilObjectAccess);
+    // CMD3(CCC_Mask,               "lua_nil_object_access",    &psAI_Flags,    aiNilObjectAccess);
 
     CMD3(CCC_Mask, "ai_draw_visibility_rays", &psAI_Flags, aiDrawVisibilityRays);
     CMD3(CCC_Mask, "ai_animation_stats", &psAI_Flags, aiAnimationStats);
 
     /////////////////////////////////////////////HIT ANIMATION////////////////////////////////////////////////////
-    // float						power_factor				= 2.f;
-    // float						rotational_power_factor		= 3.f;
-    // float						side_sensitivity_threshold	= 0.2f;
-    // float						anim_channel_factor			= 3.f;
+    // float                        power_factor                = 2.f;
+    // float                        rotational_power_factor     = 3.f;
+    // float                        side_sensitivity_threshold  = 0.2f;
+    // float                        anim_channel_factor         = 3.f;
 
     CMD4(CCC_Float, "hit_anims_power", &ghit_anims_params.power_factor, 0.0f, 100.0f);
     CMD4(CCC_Float, "hit_anims_rotational_power", &ghit_anims_params.rotational_power_factor, 0.0f, 100.0f);
     CMD4(CCC_Float, "hit_anims_side_sensitivity_threshold", &ghit_anims_params.side_sensitivity_threshold, 0.0f, 10.0f);
     CMD4(CCC_Float, "hit_anims_channel_factor", &ghit_anims_params.anim_channel_factor, 0.0f, 100.0f);
-    // float	block_blend					= 0.1f;
-    // float	reduce_blend				= 0.5f;
-    // float	reduce_power_factor			= 0.5f;
+    // float    block_blend                 = 0.1f;
+    // float    reduce_blend                = 0.5f;
+    // float    reduce_power_factor         = 0.5f;
     CMD4(CCC_Float, "hit_anims_block_blend", &ghit_anims_params.block_blend, 0.f, 1.f);
     CMD4(CCC_Float, "hit_anims_reduce_blend", &ghit_anims_params.reduce_blend, 0.f, 1.f);
     CMD4(CCC_Float, "hit_anims_reduce_blend_factor", &ghit_anims_params.reduce_power_factor, 0.0f, 1.0f);
@@ -2299,10 +2299,10 @@ void CCC_RegisterCommands()
     extern int ik_local_blending;
     extern int ik_blend_free_foot;
     extern int ik_collide_blend;
-        CMD4(CCC_Integer,	"ik_allign_free_foot"			,&ik_allign_free_foot,	0,	1);
-        CMD4(CCC_Integer,	"ik_local_blending"				,&ik_local_blending,	0,	1);
-        CMD4(CCC_Integer,	"ik_blend_free_foot"			,&ik_blend_free_foot,	0,	1);
-        CMD4(CCC_Integer,	"ik_collide_blend"				,&ik_collide_blend,	0,	1);
+        CMD4(CCC_Integer,   "ik_allign_free_foot"           ,&ik_allign_free_foot,  0,  1);
+        CMD4(CCC_Integer,   "ik_local_blending"             ,&ik_local_blending,    0,  1);
+        CMD4(CCC_Integer,   "ik_blend_free_foot"            ,&ik_blend_free_foot,   0,  1);
+        CMD4(CCC_Integer,   "ik_collide_blend"              ,&ik_collide_blend, 0,  1);
     */
     extern BOOL dbg_draw_ragdoll_spawn;
     CMD4(CCC_Integer, "dbg_draw_ragdoll_spawn", &dbg_draw_ragdoll_spawn, FALSE, TRUE);
@@ -2324,17 +2324,17 @@ void CCC_RegisterCommands()
     /*
     enum
     {
-        dbg_track_obj_blends_bp_0			= 1<< 0,
-        dbg_track_obj_blends_bp_1			= 1<< 1,
-        dbg_track_obj_blends_bp_2			= 1<< 2,
-        dbg_track_obj_blends_bp_3			= 1<< 3,
-        dbg_track_obj_blends_motion_name	= 1<< 4,
-        dbg_track_obj_blends_time			= 1<< 5,
-        dbg_track_obj_blends_ammount		= 1<< 6,
-        dbg_track_obj_blends_mix_params		= 1<< 7,
-        dbg_track_obj_blends_flags			= 1<< 8,
-        dbg_track_obj_blends_state			= 1<< 9,
-        dbg_track_obj_blends_dump			= 1<< 10
+        dbg_track_obj_blends_bp_0           = 1<< 0,
+        dbg_track_obj_blends_bp_1           = 1<< 1,
+        dbg_track_obj_blends_bp_2           = 1<< 2,
+        dbg_track_obj_blends_bp_3           = 1<< 3,
+        dbg_track_obj_blends_motion_name    = 1<< 4,
+        dbg_track_obj_blends_time           = 1<< 5,
+        dbg_track_obj_blends_ammount        = 1<< 6,
+        dbg_track_obj_blends_mix_params     = 1<< 7,
+        dbg_track_obj_blends_flags          = 1<< 8,
+        dbg_track_obj_blends_state          = 1<< 9,
+        dbg_track_obj_blends_dump           = 1<< 10
     };
     */
     extern Flags32 dbg_track_obj_flags;
@@ -2429,7 +2429,7 @@ void CCC_RegisterCommands()
 
 #ifdef DEBUG
     // extern BOOL g_use_new_ballistics;
-    // CMD4(CCC_Integer,	"use_new_ballistics",	&g_use_new_ballistics, 0, 1);
+    // CMD4(CCC_Integer,    "use_new_ballistics",   &g_use_new_ballistics, 0, 1);
     extern float g_bullet_time_factor;
     CMD4(CCC_Float, "g_bullet_time_factor", &g_bullet_time_factor, 0.f, 10.f);
 #endif

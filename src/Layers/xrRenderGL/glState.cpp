@@ -37,7 +37,7 @@ glState* glState::Create()
     return xr_new<glState>();
 }
 
-//	TODO: OGL: Does the render cache provide enough state management?
+//  TODO: OGL: Does the render cache provide enough state management?
 void glState::Apply()
 {
     // TODO: OGL: Use glBindSamplers if ARB_multi_bind is supported.

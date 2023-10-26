@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_reader_script.cpp
-//	Created 	: 05.10.2004
-//  Modified 	: 05.10.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script reader
+//  Module      : script_reader_script.cpp
+//  Created     : 05.10.2004
+//  Modified    : 05.10.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script reader
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

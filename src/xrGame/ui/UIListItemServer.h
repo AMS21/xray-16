@@ -66,7 +66,7 @@ protected:
     LIST_SRV_ITEM m_srv_info;
     CUIStatic* m_iconPass;
     CUIStatic* m_iconDedicated;
-    //	CUIStatic* 				m_iconPunkBuster;
+    //  CUIStatic*              m_iconPunkBuster;
     CUIStatic* m_iconUserPass;
     CUITextWnd* m_server;
     CUITextWnd* m_map;

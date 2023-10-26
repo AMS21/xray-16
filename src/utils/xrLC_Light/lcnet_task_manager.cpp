@@ -168,10 +168,10 @@ void task_manager::progress(u32 task)
     Logger.Progress(float(l_completed) / float(start));
 }
 
-//	void task_manager::release_user_thread_proc(void *_this )
-//	{
-//		((task_manager*)_this)->release_user();
-//	}
+//  void task_manager::release_user_thread_proc(void *_this )
+//  {
+//      ((task_manager*)_this)->release_user();
+//  }
 void task_manager::user_thread_proc(void* _this) { ((task_manager*)_this)->user_init_thread(); }
 void task_manager::release_user()
 {

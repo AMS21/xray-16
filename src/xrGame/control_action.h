@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: animation_action.h
-//	Created 	: 05.04.2004
-//  Modified 	: 05.04.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Control action
+//  Module      : animation_action.h
+//  Created     : 05.04.2004
+//  Modified    : 05.04.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Control action
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

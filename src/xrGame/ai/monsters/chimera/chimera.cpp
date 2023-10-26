@@ -84,12 +84,12 @@ void CChimera::Load(LPCSTR section)
     anim().LinkAction(ACT_SIT_IDLE, eAnimLieIdle);
     anim().LinkAction(ACT_LIE_IDLE, eAnimLieIdle);
     anim().LinkAction(ACT_WALK_FWD, eAnimWalkFwd);
-    // anim().LinkAction						(ACT_WALK_BKWD,		eAnimDragCorpse);
+    // anim().LinkAction                        (ACT_WALK_BKWD,     eAnimDragCorpse);
     anim().LinkAction(ACT_RUN, eAnimRun);
     anim().LinkAction(ACT_EAT, eAnimEat);
     anim().LinkAction(ACT_SLEEP, eAnimSleep);
     anim().LinkAction(ACT_REST, eAnimLieIdle);
-    // anim().LinkAction						(ACT_DRAG,			eAnimDragCorpse);
+    // anim().LinkAction                        (ACT_DRAG,          eAnimDragCorpse);
     anim().LinkAction(ACT_ATTACK, eAnimAttack);
     anim().LinkAction(ACT_STEAL, eAnimSteal);
     anim().LinkAction(ACT_LOOK_AROUND, eAnimLookAround);
@@ -134,14 +134,14 @@ void CChimera::reinit()
 
 void CChimera::CheckSpecParams(u32 spec_params)
 {
-    // 	if ( (spec_params & ASP_THREATEN) == ASP_THREATEN )
-    // 	{
-    // 		anim().SetCurAnim(eAnimThreaten);
-    // 	}
-    // 	if ( (spec_params & ASP_ATTACK_RUN) == ASP_ATTACK_RUN )
-    // 	{
-    // 		anim().SetCurAnim(eAnimAttackRun);
-    // 	}
+    //  if ( (spec_params & ASP_THREATEN) == ASP_THREATEN )
+    //  {
+    //      anim().SetCurAnim(eAnimThreaten);
+    //  }
+    //  if ( (spec_params & ASP_ATTACK_RUN) == ASP_ATTACK_RUN )
+    //  {
+    //      anim().SetCurAnim(eAnimAttackRun);
+    //  }
 }
 
 void CChimera::HitEntityInJump(const CEntity* pEntity)

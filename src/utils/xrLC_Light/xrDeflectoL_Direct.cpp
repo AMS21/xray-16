@@ -114,8 +114,8 @@ void CDeflector::L_Direct(CDB::COLLIDER* DB, base_lighting* LightsSelected, HASH
                             Vertex* V2 = F->v[1];
                             Vertex* V3 = F->v[2];
                             wP.from_bary(V1->P, V2->P, V3->P, B);
-                            //. не нужно использовать	if (F->Shader().flags.bLIGHT_Sharp)	{ wN.set(F->N); }
-                            //							else
+                            //. не нужно использовать    if (F->Shader().flags.bLIGHT_Sharp) { wN.set(F->N); }
+                            //                          else
                             {
                                 wN.from_bary(V1->N, V2->N, V3->N, B);
                                 exact_normalize(wN);

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_movement_manager_base.cpp
-//	Created 	: 27.12.2003
-//  Modified 	: 13.02.2008
-//	Author		: Dmitriy Iassenev
-//	Description : stalker movement manager base class
+//  Module      : stalker_movement_manager_base.cpp
+//  Created     : 27.12.2003
+//  Modified    : 13.02.2008
+//  Author      : Dmitriy Iassenev
+//  Description : stalker movement manager base class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -186,7 +186,7 @@ void stalker_movement_manager_base::initialize()
 
     restrictions().remove_all_restrictions();
     set_nearest_accessible_position();
-    //	Msg						("[%6d] m_failed_to_build_path = %s
+    //  Msg                     ("[%6d] m_failed_to_build_path = %s
     //(stalker_movement_manager_base::initialize)",Device.dwTimeGlobal,m_failed_to_build_path ? "true" : "false");
 }
 
@@ -398,15 +398,15 @@ void stalker_movement_manager_base::parse_velocity_mask(stalker_movement_params&
         {
             setup_body_orientation();
             guard.enable(false);
-            //			Msg						("%d FALSE",Device.dwTimeGlobal);
+            //          Msg                     ("%d FALSE",Device.dwTimeGlobal);
         }
         if ((movement_params.m_mental_state != eMentalStateFree) ||
-            //				(object().sight().current_action().sight_type() != SightManager::eSightTypePathDirection) ||
+            //              (object().sight().current_action().sight_type() != SightManager::eSightTypePathDirection) ||
             fis_zero(path_direction_angle(), EPS_L) || (m_last_turn_index == detail().curr_travel_point_index()))
         {
             m_last_turn_index = detail().curr_travel_point_index();
             guard.enable(true);
-            //			Msg						("%d TRUE",Device.dwTimeGlobal);
+            //          Msg                     ("%d TRUE",Device.dwTimeGlobal);
             if (detail().curr_travel_point_index() + 1 < path().size())
             {
                 point = path()[detail().curr_travel_point_index() + 1];

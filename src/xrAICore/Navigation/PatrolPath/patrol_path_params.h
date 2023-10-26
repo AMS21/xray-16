@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: patrol_path_params.h
-//	Created 	: 30.09.2003
-//  Modified 	: 29.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Patrol path parameters class
+//  Module      : patrol_path_params.h
+//  Created     : 30.09.2003
+//  Modified    : 29.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Patrol path parameters class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

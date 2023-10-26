@@ -23,4 +23,4 @@ private:
     ref_geom pGeom;
 };
 
-#endif //	FontRender_included
+#endif //   FontRender_included

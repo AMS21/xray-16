@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: path_manager_level_straight_line_inline.h
-//	Created 	: 21.03.2002
-//  Modified 	: 03.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Level straight line path manager inline functions
+//  Module      : path_manager_level_straight_line_inline.h
+//  Created     : 21.03.2002
+//  Modified    : 03.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Level straight line path manager inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

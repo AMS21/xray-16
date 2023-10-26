@@ -58,7 +58,7 @@ public:
     CUITextWnd* UIWeight;
     CUITextWnd* UICost;
     CUITextWnd* UITradeTip;
-    //	CUIStatic*			UIDesc_line;
+    //  CUIStatic*          UIDesc_line;
     CUIScrollView* UIDesc;
     bool m_complex_desc;
 

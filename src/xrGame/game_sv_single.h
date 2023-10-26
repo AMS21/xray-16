@@ -19,7 +19,7 @@ public:
 
     virtual LPCSTR type_name() const { return "single"; };
     virtual void Create(shared_str& options);
-    //	virtual		CSE_Abstract*		get_entity_from_eid		(u16 id);
+    //  virtual     CSE_Abstract*       get_entity_from_eid     (u16 id);
 
     virtual void OnCreate(u16 id_who);
     virtual BOOL OnTouch(u16 eid_who, u16 eid_what, BOOL bForced = FALSE);

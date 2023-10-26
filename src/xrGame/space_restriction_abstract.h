@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: space_restriction_abstract.h
-//	Created 	: 10.08.2005
-//  Modified 	: 10.08.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Space restriction abstract
+//  Module      : space_restriction_abstract.h
+//  Created     : 10.08.2005
+//  Modified    : 10.08.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Space restriction abstract
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

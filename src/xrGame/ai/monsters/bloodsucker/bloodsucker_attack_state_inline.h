@@ -91,7 +91,7 @@ void CBloodsuckerStateAttackAbstract::execute()
             // check if enemy is behind me for a long time
             // [TODO] make specific state and replace run_away state (to avoid ratation jumps)
             // if (check_behinder())
-            //	select_state(eStateAttack_RunAway);
+            //  select_state(eStateAttack_RunAway);
             // else
             select_state(eStateAttack_Melee);
         }

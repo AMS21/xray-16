@@ -20,19 +20,19 @@ void __cdecl SBCallback(ServerBrowser sb, SBCallbackReason reason, SBServer serv
     case sbc_serveradded: // a server was added to the list, may just have an IP & port at this point
     {
 #ifdef _DEBUG
-//.			Msg("sbc_serveradded");
+//.         Msg("sbc_serveradded");
 #endif
-        //			pGSBrowser->SortBrowserByPing();
-        //			pGSBrowser->UpdateServerList();
+        //          pGSBrowser->SortBrowserByPing();
+        //          pGSBrowser->UpdateServerList();
     }
     break;
     case sbc_serverupdated: // server information has been updated - either basic or full information is now available
         // about this server
         {
 #ifdef _DEBUG
-//.			Msg("sbc_serverupdated");
+//.         Msg("sbc_serverupdated");
 #endif
-            //			pGSBrowser->SortBrowserByPing();
+            //          pGSBrowser->SortBrowserByPing();
             pGSBrowser->UpdateServerList();
         }
         break;
@@ -40,10 +40,10 @@ void __cdecl SBCallback(ServerBrowser sb, SBCallbackReason reason, SBServer serv
         // master, failed
         {
 #ifdef _DEBUG
-//.			Msg("sbc_serverupdatefailed");
+//.         Msg("sbc_serverupdatefailed");
 #endif
-            //			pGSBrowser->OnUpdateFailed(server);
-            //			pGSBrowser->SortBrowserByPing();
+            //          pGSBrowser->OnUpdateFailed(server);
+            //          pGSBrowser->SortBrowserByPing();
             pGSBrowser->UpdateServerList();
         }
         break;
@@ -52,16 +52,16 @@ void __cdecl SBCallback(ServerBrowser sb, SBCallbackReason reason, SBServer serv
 #ifdef _DEBUG
         Msg("sbc_serverdeleted");
 #endif
-        //			pGSBrowser->SortBrowserByPing();
+        //          pGSBrowser->SortBrowserByPing();
         pGSBrowser->UpdateServerList();
     }
     break;
     case sbc_updatecomplete: // the server query engine is now idle
     {
 #ifdef _DEBUG
-//.			Msg("sbc_updatecomplete");
+//.         Msg("sbc_updatecomplete");
 #endif
-        //			pGSBrowser->SortBrowserByPing();
+        //          pGSBrowser->SortBrowserByPing();
         pGSBrowser->UpdateServerList();
     }
     break;
@@ -74,7 +74,7 @@ void __cdecl SBCallback(ServerBrowser sb, SBCallbackReason reason, SBServer serv
     break;
     case sbc_serverchallengereceived: {
 #ifdef _DEBUG
-//.			Msg("sbc_serverchallengereceived");
+//.         Msg("sbc_serverchallengereceived");
 #endif
     }
     break;
@@ -103,8 +103,8 @@ CGameSpy_Browser::CGameSpy_Browser(const SMasterListConfig& masterListCfg)
     {
         Msg("! Unable to init Server Browser!");
     }
-    //	else
-    //		Msg("- GS Server Browser Inited!");
+    //  else
+    //      Msg("- GS Server Browser Inited!");
 };
 
 CGameSpy_Browser::~CGameSpy_Browser()
@@ -399,6 +399,6 @@ bool CGameSpy_Browser::HasAllKeys(int Index)
         return true;
     ServerInfo xServerInfo;
     ReadServerInfo(&xServerInfo, pServer);
-    //	xrGS_ServerBrowserAuxUpdateServer(m_pGSBrowser, pServer, SBFalse, SBTrue);
+    //  xrGS_ServerBrowserAuxUpdateServer(m_pGSBrowser, pServer, SBFalse, SBTrue);
     return (SBServerHasFullKeys(pServer) == SBTrue);
 };

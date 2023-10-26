@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: agent_corpse_manager_inline.h
-//	Created 	: 24.05.2004
-//  Modified 	: 14.01.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Agent corpse manager inline functions
+//  Module      : agent_corpse_manager_inline.h
+//  Created     : 24.05.2004
+//  Modified    : 14.01.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Agent corpse manager inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

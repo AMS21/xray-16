@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_planner_target_provider.cpp
-//	Created 	: 18.09.2007
-//	Author		: Alexander Dudin
-//	Description : Target provider for target selector
+//  Module      : smart_cover_planner_target_provider.cpp
+//  Created     : 18.09.2007
+//  Author      : Alexander Dudin
+//  Description : Target provider for target selector
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -34,7 +34,7 @@ void target_provider::initialize()
 
 void target_provider::finalize() { inherited::finalize(); }
 ////////////////////////////////////////////////////////////////////////////
-//	class target_idle
+//  class target_idle
 ////////////////////////////////////////////////////////////////////////////
 
 target_idle::target_idle(animation_planner* object, LPCSTR name,
@@ -54,7 +54,7 @@ void target_idle::execute()
 }
 
 ////////////////////////////////////////////////////////////////////////////
-//	class target_fire
+//  class target_fire
 ////////////////////////////////////////////////////////////////////////////
 
 target_fire::target_fire(animation_planner* object, LPCSTR name,
@@ -97,7 +97,7 @@ void target_fire::execute()
 }
 
 ////////////////////////////////////////////////////////////////////////////
-//	class target_fire_no_lookout
+//  class target_fire_no_lookout
 ////////////////////////////////////////////////////////////////////////////
 
 target_fire_no_lookout::target_fire_no_lookout(animation_planner* object, LPCSTR name,

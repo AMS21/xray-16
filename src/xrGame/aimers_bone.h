@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: aimers_bone.h
-//	Created 	: 04.04.2008
-//  Modified 	: 08.04.2008
-//	Author		: Dmitriy Iassenev
-//	Description : bone aimer class
+//  Module      : aimers_bone.h
+//  Created     : 04.04.2008
+//  Modified    : 08.04.2008
+//  Author      : Dmitriy Iassenev
+//  Description : bone aimer class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef AIMERS_BONE_H_INCLUDED

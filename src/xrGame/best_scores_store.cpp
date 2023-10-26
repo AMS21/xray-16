@@ -63,8 +63,8 @@ void best_scores_store::load_best_scores_from_ltx(CInifile& ini)
     {
         enum_best_score_type bstype = static_cast<enum_best_score_type>(i);
         m_ltx_result_scores.emplace(
-			bstype, ini.r_u32(get_best_score_name(bstype), best_score_value_line)
-		);
+            bstype, ini.r_u32(get_best_score_name(bstype), best_score_value_line)
+        );
     }
 }
 

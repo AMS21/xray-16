@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ef_base.h
-//	Created 	: 13.06.2003
-//  Modified 	: 13.06.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Base evaluation function class
+//  Module      : ef_base.h
+//  Created     : 13.06.2003
+//  Modified    : 13.06.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Base evaluation function class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

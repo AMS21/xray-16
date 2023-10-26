@@ -90,7 +90,7 @@ bool CPhysicsShellHolder::net_Spawn(CSE_Abstract* DC)
     st_enable_state = (u8)stNotDefitnite;
     b_sheduled = true;
     BOOL ret = inherited::net_Spawn(DC); // load
-    // create_physic_shell			();
+    // create_physic_shell          ();
     if (PPhysicsShell() && PPhysicsShell()->isFullActive())
     {
         PPhysicsShell()->GetGlobalTransformDynamic(&XFORM());
@@ -115,8 +115,8 @@ void CPhysicsShellHolder::PHHit(SHit& H)
             m_pPhysicsShell->applyHit(H.bone_space_position(), H.direction(), H.phys_impulse(), H.bone(), H.type());
 }
 
-// void	CPhysicsShellHolder::Hit(float P, Fvector &dir, IGameObject* who, s16 element,
-//						 Fvector p_in_object_space, float impulse, ALife::EHitType hit_type)
+// void CPhysicsShellHolder::Hit(float P, Fvector &dir, IGameObject* who, s16 element,
+//                       Fvector p_in_object_space, float impulse, ALife::EHitType hit_type)
 void CPhysicsShellHolder::Hit(SHit* pHDS)
 {
     bool const is_special_burn_hit_2_self = (pHDS->who == this) && (pHDS->boneID == BI_NONE) &&
@@ -177,14 +177,14 @@ void CPhysicsShellHolder::correct_spawn_pos()
     Fvector ap = Fvector().set(0, 0, 0);
     ActivateShapePhysShellHolder(this, XFORM(), size, c, ap);
 
-    ////	VERIFY								(valid_pos(activation_shape.Position(),phBoundaries));
-    //	if (!valid_pos(activation_shape.Position(),phBoundaries)) {
-    //		CPHActivationShape				activation_shape;
-    //		activation_shape.Create			(c,size,this);
-    //		activation_shape.set_rotation	(XFORM());
-    //		activation_shape.Activate		(size,1,1.f,M_PI/8.f);
-    ////		VERIFY							(valid_pos(activation_shape.Position(),phBoundaries));
-    //	}
+    ////    VERIFY                              (valid_pos(activation_shape.Position(),phBoundaries));
+    //  if (!valid_pos(activation_shape.Position(),phBoundaries)) {
+    //      CPHActivationShape              activation_shape;
+    //      activation_shape.Create         (c,size,this);
+    //      activation_shape.set_rotation   (XFORM());
+    //      activation_shape.Activate       (size,1,1.f,M_PI/8.f);
+    ////        VERIFY                          (valid_pos(activation_shape.Position(),phBoundaries));
+    //  }
 
     PPhysicsShell()->EnableCollision();
 
@@ -224,7 +224,7 @@ void CPhysicsShellHolder::activate_physic_shell()
         if (!smart_cast<CCustomRocket*>(this) && !smart_cast<CGrenade*>(this))
             PPhysicsShell()->SetIgnoreDynamic();
     }
-    //	XFORM().set					(l_p1);
+    //  XFORM().set                 (l_p1);
     correct_spawn_pos();
 
     Fvector overriden_vel;
@@ -371,7 +371,7 @@ void CPhysicsShellHolder::PHSaveState(NET_Packet& P)
     // if(pPhysicsShell&&pPhysicsShell->isActive())
     // lflags.set(CSE_PHSkeleton::flActive,pPhysicsShell->isEnabled());
 
-    //	P.w_u8 (lflags.get());
+    //  P.w_u8 (lflags.get());
     if (K)
     {
         P.w_u64(K->LL_GetBonesVisible());
@@ -428,9 +428,9 @@ void CPhysicsShellHolder::PHSaveState(NET_Packet& P)
 }
 void CPhysicsShellHolder::PHLoadState(IReader& P)
 {
-    //	Flags8 lflags;
+    //  Flags8 lflags;
     IKinematics* K = smart_cast<IKinematics*>(Visual());
-    //	P.r_u8 (lflags.flags);
+    //  P.r_u8 (lflags.flags);
     if (K)
     {
         K->LL_SetBonesVisible(P.r_u64());
@@ -457,9 +457,9 @@ void CPhysicsShellHolder::on_physics_disable()
     if (IsGameTypeSingle())
         return;
 
-    /*NET_Packet			net_packet;
-    u_EventGen			(net_packet,GE_FREEZE_OBJECT,ID());
-    Level().Send		(net_packet,net_flags(TRUE,TRUE));*/
+    /*NET_Packet            net_packet;
+    u_EventGen          (net_packet,GE_FREEZE_OBJECT,ID());
+    Level().Send        (net_packet,net_flags(TRUE,TRUE));*/
 }
 
 Fmatrix& CPhysicsShellHolder::ObjectXFORM() { return XFORM(); }
@@ -516,7 +516,7 @@ bool CPhysicsShellHolder::IsStalker() { return !!cast_stalker(); }
 bool CPhysicsShellHolder::IsCollideWithBullets() { return true; }
 bool CPhysicsShellHolder::IsCollideWithActorCamera() { return true; }
 
-// void						SetWeaponHideState( u16 State, bool bSet )
+// void                     SetWeaponHideState( u16 State, bool bSet )
 void CPhysicsShellHolder::HideAllWeapons(bool v) {}
 void CPhysicsShellHolder::MovementCollisionEnable(bool enable)
 {

@@ -27,22 +27,22 @@ void SJointIKData::clamp_by_limits(Fvector& dest_xyz)
         break;
         /*
             case jtWheelXZ:
-                clamp(dest_xyz.x,limits[0].limit.x,limits[0].limit.y);		dest_xyz.y=0;
+                clamp(dest_xyz.x,limits[0].limit.x,limits[0].limit.y);      dest_xyz.y=0;
             break;
             case jtWheelXY:
-                clamp(dest_xyz.x,limits[0].limit.x,limits[0].limit.y);		dest_xyz.z=0;
+                clamp(dest_xyz.x,limits[0].limit.x,limits[0].limit.y);      dest_xyz.z=0;
             break;
             case jtWheelYX:
-                clamp(dest_xyz.y,limits[1].limit.x,limits[1].limit.y);		dest_xyz.z=0;
+                clamp(dest_xyz.y,limits[1].limit.x,limits[1].limit.y);      dest_xyz.z=0;
             break;
             case jtWheelYZ:
-                clamp(dest_xyz.y,limits[1].limit.x,limits[1].limit.y);		dest_xyz.x=0;
+                clamp(dest_xyz.y,limits[1].limit.x,limits[1].limit.y);      dest_xyz.x=0;
             break;
             case jtWheelZX:
-                clamp(dest_xyz.z,limits[2].limit.x,limits[2].limit.y);		dest_xyz.y=0;
+                clamp(dest_xyz.z,limits[2].limit.x,limits[2].limit.y);      dest_xyz.y=0;
             break;
             case jtWheelZY:
-                clamp(dest_xyz.z,limits[2].limit.x,limits[2].limit.y);		dest_xyz.x=0;
+                clamp(dest_xyz.z,limits[2].limit.x,limits[2].limit.y);      dest_xyz.x=0;
             break;
         */
     }
@@ -55,9 +55,9 @@ void CBone::ShapeScale(const Fvector& _amount, bool /*parentCS = false*/)
     case SBoneShape::stBox:
     {
         Fvector amount = _amount;
-        //		Fmatrix _IT;_IT.invert(_LTransform());
-        //		_IT.transform_dir(amount,_amount);
-        //		if (parentCS) _IT.transform_dir(amount);
+        //      Fmatrix _IT;_IT.invert(_LTransform());
+        //      _IT.transform_dir(amount,_amount);
+        //      if (parentCS) _IT.transform_dir(amount);
         shape.box.m_halfsize.add(amount);
         if (shape.box.m_halfsize.x < EPS)
             shape.box.m_halfsize.x = EPS;
@@ -162,23 +162,23 @@ void CBone::BoneRotate(const Fvector& _axis, float angle, bool parentCS /*= fals
             ClampByLimits();
             /*
                         Fmatrix mBind,mBindI,mLocal,mRotate,mLocalBP;
-                        mBind.setXYZi		(rest_rotate);
-                        mBindI.invert		(mBind);
-                        mLocal.setXYZi		(mot_rotate);
+                        mBind.setXYZi       (rest_rotate);
+                        mBindI.invert       (mBind);
+                        mLocal.setXYZi      (mot_rotate);
                         Fvector axis;
-                        mBind.transform		(axis,_axis);
-                        mRotate.rotation	(axis,angle);
-                        mLocal.mulA			(mRotate);
+                        mBind.transform     (axis,_axis);
+                        mRotate.rotation    (axis,angle);
+                        mLocal.mulA         (mRotate);
 
-                        mLocalBP.mul		(mBindI,mLocal);
+                        mLocalBP.mul        (mBindI,mLocal);
                         Fvector mot;
-                        mLocalBP.getXYZi	(mot);
+                        mLocalBP.getXYZi    (mot);
 
                         IK_data.clamp_by_limits(mot);
 
-                        mLocalBP.setXYZi	(mot);
-                        mLocal.mul			(mBind,mLocalBP);
-                        mLocal.getXYZi		(mot_rotate);
+                        mLocalBP.setXYZi    (mot);
+                        mLocal.mul          (mBind,mLocalBP);
+                        mLocal.getXYZi      (mot_rotate);
             */
         }
         else

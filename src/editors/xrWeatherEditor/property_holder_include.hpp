@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_holder_include.hpp
-//	Created 	: 04.12.2007
-//  Modified 	: 11.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property holder correct include
+//  Module      : property_holder_include.hpp
+//  Created     : 04.12.2007
+//  Modified    : 11.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property holder correct include
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_HOLDER_INCLUDE_HPP_INCLUDED

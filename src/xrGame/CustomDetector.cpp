@@ -295,12 +295,12 @@ void CCustomDetector::OnH_B_Independent(bool just_before_destroy)
 
     m_artefacts.clear();
 
-	if (GetState() != eHidden)
-	{
-		// Detaching hud item and animation stop in OnH_A_Independent
-		TurnDetectorInternal(false);
-		SwitchState(eHidden);
-	}
+    if (GetState() != eHidden)
+    {
+        // Detaching hud item and animation stop in OnH_A_Independent
+        TurnDetectorInternal(false);
+        SwitchState(eHidden);
+    }
 }
 
 void CCustomDetector::OnMoveToRuck(const SInvItemPlace& prev)
@@ -325,7 +325,7 @@ void CCustomDetector::TurnDetectorInternal(bool b)
     }
     else
     {
-        //.		xr_delete			(m_ui);
+        //.     xr_delete           (m_ui);
     }
 
     UpdateNightVisionMode(b);

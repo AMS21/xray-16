@@ -101,22 +101,22 @@ void CSoundRender_Environment::lerp(CSoundRender_Environment& A, CSoundRender_En
 }
 
 /*
-void CSoundRender_Environment::get			(EAXLISTENERPROPERTIES& ep)
+void CSoundRender_Environment::get          (EAXLISTENERPROPERTIES& ep)
 {
-    ep.lRoom					= iFloor(Room)					;	// room effect level at low frequencies
-    ep.lRoomHF					= iFloor(RoomHF)				;   // room effect high-frequency level re. low frequency level
-    ep.flRoomRolloffFactor		= RoomRolloffFactor				;   // like DS3D flRolloffFactor but for room effect
-    ep.flDecayTime				= DecayTime						;   // reverberation decay time at low frequencies
-    ep.flDecayHFRatio			= DecayHFRatio					;   // high-frequency to low-frequency decay time ratio
-    ep.lReflections				= iFloor(Reflections)			;   // early reflections level relative to room effect
-    ep.flReflectionsDelay		= ReflectionsDelay				;   // initial reflection delay time
-    ep.lReverb					= iFloor(Reverb)	 			;   // late reverberation level relative to room effect
-    ep.flReverbDelay			= ReverbDelay					;   // late reverberation delay time relative to initial reflection
-    ep.dwEnvironment			= EAXLISTENER_DEFAULTENVIRONMENT;  	// sets all listener properties
-    ep.flEnvironmentSize		= EnvironmentSize				;  	// environment size in meters
-    ep.flEnvironmentDiffusion	= EnvironmentDiffusion			; 	// environment diffusion
-    ep.flAirAbsorptionHF		= AirAbsorptionHF				;	// change in level per meter at 5 kHz
-    ep.dwFlags					= EAXLISTENER_DEFAULTFLAGS		;	// modifies the behavior of properties
+    ep.lRoom                    = iFloor(Room)                  ;   // room effect level at low frequencies
+    ep.lRoomHF                  = iFloor(RoomHF)                ;   // room effect high-frequency level re. low frequency level
+    ep.flRoomRolloffFactor      = RoomRolloffFactor             ;   // like DS3D flRolloffFactor but for room effect
+    ep.flDecayTime              = DecayTime                     ;   // reverberation decay time at low frequencies
+    ep.flDecayHFRatio           = DecayHFRatio                  ;   // high-frequency to low-frequency decay time ratio
+    ep.lReflections             = iFloor(Reflections)           ;   // early reflections level relative to room effect
+    ep.flReflectionsDelay       = ReflectionsDelay              ;   // initial reflection delay time
+    ep.lReverb                  = iFloor(Reverb)                ;   // late reverberation level relative to room effect
+    ep.flReverbDelay            = ReverbDelay                   ;   // late reverberation delay time relative to initial reflection
+    ep.dwEnvironment            = EAXLISTENER_DEFAULTENVIRONMENT;   // sets all listener properties
+    ep.flEnvironmentSize        = EnvironmentSize               ;   // environment size in meters
+    ep.flEnvironmentDiffusion   = EnvironmentDiffusion          ;   // environment diffusion
+    ep.flAirAbsorptionHF        = AirAbsorptionHF               ;   // change in level per meter at 5 kHz
+    ep.dwFlags                  = EAXLISTENER_DEFAULTFLAGS      ;   // modifies the behavior of properties
 }
 */
 void CSoundRender_Environment::clamp()

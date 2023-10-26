@@ -41,7 +41,7 @@ enum enum_awards_t
     at_award_lucky,
     at_award_black_list,
     at_award_silent_death,
-    // at_award_okulist	=	0x00,
+    // at_award_okulist =   0x00,
     at_awards_count
 }; // enum enum_awards_t
 

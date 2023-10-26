@@ -12,7 +12,7 @@
 
 LPCSTR make_time(string64& buf, float fsec)
 {
-    // char		buf[64];
+    // char     buf[64];
 
     int sec = iFloor(fsec);
     if (sec < 0)
@@ -97,17 +97,17 @@ void exec_pool::receive_result(IGenericStream* inStream)
     {
         string64 buf;
         Logger.clLog(" %s, calculation complited", _name);
-        // clMsg	("%f %s calculation seconds",start_time.GetElapsed_sec(), _name );
+        // clMsg    ("%f %s calculation seconds",start_time.GetElapsed_sec(), _name );
 
         Logger.clLog("%s %s calculation time", make_time(buf, start_time.GetElapsed_sec()), _name);
-        // Status	("%s %s calculation time",make_time( buf,start_time.GetElapsed_sec() ), _name );
+        // Status   ("%s %s calculation time",make_time( buf,start_time.GetElapsed_sec() ), _name );
 
         // xr_sprintf( buf, "%s %s calculation time",make_time( buf,start_time.GetElapsed_sec() ), _name );
         // Phase( buf );
-        //		}
+        //      }
 
-        //		if( l_completed == size )
-        //		{
+        //      if( l_completed == size )
+        //      {
         execution_factory.free_pool(type);
         run_lock.Enter();
         _running = false;

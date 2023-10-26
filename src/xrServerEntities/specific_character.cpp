@@ -49,8 +49,8 @@ void CSpecificCharacter::Load(shared_str id)
 void CSpecificCharacter::load_shared(LPCSTR)
 {
 #if 0
-	CTimer			timer;
-	timer.Start		();
+    CTimer          timer;
+    timer.Start     ();
 #endif
     const ITEM_DATA& item_data = *id_to_index::GetById(m_OwnId);
 
@@ -185,7 +185,7 @@ void CSpecificCharacter::load_shared(LPCSTR)
 #endif
 
 #if 0
-	Msg			("CSpecificCharacter::load_shared() takes %f milliseconds",timer.GetElapsed_sec()*1000.f);
+    Msg         ("CSpecificCharacter::load_shared() takes %f milliseconds",timer.GetElapsed_sec()*1000.f);
 #endif
 }
 

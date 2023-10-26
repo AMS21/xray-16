@@ -30,7 +30,7 @@ class tnet_global_data : public tnet_global_data_base<gl_type>
 // public net_global_data_impl<gl_type>
 {
     typedef net_global_data_impl<gl_type> impl;
-    // net_global_data_impl<gl_type>	impl;
+    // net_global_data_impl<gl_type>    impl;
 
     Lock create_data_lock;
     Lock ref_lock;

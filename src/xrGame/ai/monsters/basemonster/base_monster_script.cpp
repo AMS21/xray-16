@@ -247,9 +247,9 @@ bool CBaseMonster::bfAssignMovement(CScriptEntityAction* tpEntityAction)
         break;
     case CScriptMovementAction::eGoalTypeJumpToPosition:
     {
-        //			control().deactivate	(ControlCom::eControlRunAttack);
-        //			control().deactivate	(ControlCom::eControlRunAttack);
-        //			control().deactivate	(ControlCom::eControlRunAttack);
+        //          control().deactivate    (ControlCom::eControlRunAttack);
+        //          control().deactivate    (ControlCom::eControlRunAttack);
+        //          control().deactivate    (ControlCom::eControlRunAttack);
         com_man().script_jump(l_tMovementAction.m_tDestinationPosition, l_tMovementAction.m_fDistToEnd);
         break;
     }
@@ -264,23 +264,23 @@ bool CBaseMonster::bfAssignObject(CScriptEntityAction* tpEntityAction)
     if (!inherited::bfAssignObject(tpEntityAction))
         return (false);
 
-    //	CScriptObjectAction	&l_tObjectAction = tpEntityAction->m_tObjectAction;
-    //	if (!l_tObjectAction.m_tpObject)
-    //		return	(false == (l_tObjectAction.m_bCompleted = true));
+    //  CScriptObjectAction &l_tObjectAction = tpEntityAction->m_tObjectAction;
+    //  if (!l_tObjectAction.m_tpObject)
+    //      return  (false == (l_tObjectAction.m_bCompleted = true));
     //
-    //	CEntityAlive	*l_tpEntity		= smart_cast<CEntityAlive*>(l_tObjectAction.m_tpObject);
-    //	if (!l_tpEntity) return	(false == (l_tObjectAction.m_bCompleted = true));
+    //  CEntityAlive    *l_tpEntity     = smart_cast<CEntityAlive*>(l_tObjectAction.m_tpObject);
+    //  if (!l_tpEntity) return (false == (l_tObjectAction.m_bCompleted = true));
     //
-    //	switch (l_tObjectAction.m_tGoalType) {
-    //		case eObjectActionTake:
-    //			m_PhysicMovementControl->PHCaptureObject(l_tpEntity);
-    //			break;
-    //		case eObjectActionDrop:
-    //			m_PhysicMovementControl->PHReleaseObject();
-    //			break;
-    //	}
+    //  switch (l_tObjectAction.m_tGoalType) {
+    //      case eObjectActionTake:
+    //          m_PhysicMovementControl->PHCaptureObject(l_tpEntity);
+    //          break;
+    //      case eObjectActionDrop:
+    //          m_PhysicMovementControl->PHReleaseObject();
+    //          break;
+    //  }
     //
-    //	l_tObjectAction.m_bCompleted = true;
+    //  l_tObjectAction.m_bCompleted = true;
     return (true);
 }
 
@@ -457,7 +457,7 @@ void CBaseMonster::ProcessScripts()
     m_bRunTurnRight = false;
     m_bRunTurnLeft = false;
 
-    // movement().Update_Initialize			();
+    // movement().Update_Initialize         ();
 
     // Выполнить скриптовые actions
     m_script_state_must_execute = false;
@@ -475,12 +475,12 @@ void CBaseMonster::ProcessScripts()
     TranslateActionToPathParams();
 
     // обновить путь
-    // movement().Update_Execute			();
+    // movement().Update_Execute            ();
 
-    // anim().Update							();
+    // anim().Update                            ();
 
     // установить текущую скорость
-    // movement().Update_Finalize			();
+    // movement().Update_Finalize           ();
 
     // Удалить все враги и объекты, которые были принудительно установлены
     // во время выполнения скриптового действия

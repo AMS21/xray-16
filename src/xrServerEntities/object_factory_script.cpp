@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: object_factory_script.cpp
-//	Created 	: 27.05.2004
-//  Modified 	: 28.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Object factory script export
+//  Module      : object_factory_script.cpp
+//  Created     : 27.05.2004
+//  Modified    : 28.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Object factory script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

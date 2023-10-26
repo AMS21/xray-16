@@ -11,7 +11,7 @@ extern Fbox phBoundaries;
 bool valid_pos(const Fvector& P) { return valid_pos(P, phBoundaries); }
 const Fbox& ph_boundaries() { return phBoundaries; }
 /*
-    Msg(" %s	\n", msg);\
+    Msg(" %s    \n", msg);\
     Msg(" pos: %e,%e,%e, seems to be invalid", pos.x,pos.y,pos.z);\
     Msg("Level box: %e,%e,%e-%e,%e,%e,",bounds.x1,bounds.y1,bounds.z1,bounds.x2,bounds.y2,bounds.z2);\
     Msg("Object: %s",(obj->cName().c_str()));\

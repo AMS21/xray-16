@@ -132,8 +132,8 @@ void CControlAnimationBase::set_override_animation(pcstr name)
 
 //////////////////////////////////////////////////////////////////////////
 // SelectAnimation
-// In:	path, target_yaw, m_tAction
-// Out:	установить анимацию в cur_anim_info().motion
+// In:  path, target_yaw, m_tAction
+// Out: установить анимацию в cur_anim_info().motion
 void CControlAnimationBase::SelectAnimation()
 {
     // Lain: added
@@ -191,10 +191,10 @@ void CControlAnimationBase::SetTurnAnimation()
 
 //////////////////////////////////////////////////////////////////////////
 // SelectVelocities
-// In:	path, target_yaw, анимация
-// Out:	установить linear и angular velocities,
-//		по скорости движения выбрать финальную анимацию из Velocity_Chain
-//		установить скорость анимации в соответствие с физ скоростью
+// In:  path, target_yaw, анимация
+// Out: установить linear и angular velocities,
+//      по скорости движения выбрать финальную анимацию из Velocity_Chain
+//      установить скорость анимации в соответствие с физ скоростью
 void CControlAnimationBase::SelectVelocities()
 {
     // получить скорости движения по пути
@@ -236,9 +236,9 @@ void CControlAnimationBase::SelectVelocities()
     // получить скорости движения по анимации
     anim_vel.set(item_it->velocity.velocity.linear, item_it->velocity.velocity.angular_real);
 
-    //	// проверить на совпадение
-    //	R_ASSERT(fsimilar(path_vel.linear,	anim_vel.linear));
-    //	R_ASSERT(fsimilar(path_vel.angular,	anim_vel.angular));
+    //  // проверить на совпадение
+    //  R_ASSERT(fsimilar(path_vel.linear,  anim_vel.linear));
+    //  R_ASSERT(fsimilar(path_vel.angular, anim_vel.angular));
 
     // установка линейной скорости
     if (m_object->state_invisible)

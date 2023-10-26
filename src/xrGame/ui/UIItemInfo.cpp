@@ -110,10 +110,10 @@ bool CUIItemInfo::InitItemInfo(cpcstr xml_name)
         if (!UIBoosterInfo->InitFromXml(uiXml))
             xr_delete(UIBoosterInfo);
 
-        // UIDesc_line						= xr_new<CUIStatic>("Description line");
-        // AttachChild						(UIDesc_line);
-        // UIDesc_line->SetAutoDelete		(true);
-        // xml_init.InitStatic				(uiXml, "description_line", 0, UIDesc_line);
+        // UIDesc_line                      = xr_new<CUIStatic>("Description line");
+        // AttachChild                      (UIDesc_line);
+        // UIDesc_line->SetAutoDelete       (true);
+        // xml_init.InitStatic              (uiXml, "description_line", 0, UIDesc_line);
 
         if (ai().get_alife()) // (-designer)
         {
@@ -229,13 +229,13 @@ void CUIItemInfo::InitItem(CUICellItem* pCellItem, CInventoryItem* pCompareItem,
             UICost->Show(false);
     }
 
-    //	CActor* actor = smart_cast<CActor*>( Level().CurrentViewEntity() );
-    //	if ( g_pGameLevel && Level().game && actor )
-    //	{
-    //		game_cl_Deathmatch* gs_mp = smart_cast<game_cl_Deathmatch*>( Game() );
-    //		IBuyWnd* buy_menu = gs_mp->pCurBuyMenu->GetItemPrice();
-    //		GetItemPrice();
-    //	}
+    //  CActor* actor = smart_cast<CActor*>( Level().CurrentViewEntity() );
+    //  if ( g_pGameLevel && Level().game && actor )
+    //  {
+    //      game_cl_Deathmatch* gs_mp = smart_cast<game_cl_Deathmatch*>( Game() );
+    //      IBuyWnd* buy_menu = gs_mp->pCurBuyMenu->GetItemPrice();
+    //      GetItemPrice();
+    //  }
     if (UITradeTip && IsGameTypeSingle())
     {
         pos.y = UITradeTip->GetWndPos().y;

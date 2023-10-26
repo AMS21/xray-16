@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: sound_player_inline.h
-//	Created 	: 27.12.2003
-//  Modified 	: 27.12.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Sound player inline functions
+//  Module      : sound_player_inline.h
+//  Created     : 27.12.2003
+//  Modified    : 27.12.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Sound player inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

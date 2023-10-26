@@ -10,7 +10,7 @@ namespace ACTOR_DEFS
 {
 enum ESoundCcount
 {
-    //	SND_HIT_COUNT=8,
+    //  SND_HIT_COUNT=8,
     SND_DIE_COUNT = 4
 };
 
@@ -69,7 +69,7 @@ extern string32 g_quick_use_slots[4];
 //результат функции GoSleep у актера
 enum EActorSleep
 {
-    easCanSleep			= 0,
+    easCanSleep         = 0,
     easNotSolidGround,
     easEnemies
 };
@@ -103,7 +103,7 @@ struct net_update
     u32 mstate;
     int weapon;
     float fHealth;
-    //	float				fArmor;
+    //  float               fArmor;
 
     net_update() : o_model(0), mstate(0), weapon(0), fHealth(0)
     {
@@ -121,8 +121,8 @@ struct net_update
 struct net_update_A
 {
     u32 dwTimeStamp;
-    //	u32					dwTime0;
-    //	u32					dwTime1;
+    //  u32                 dwTime0;
+    //  u32                 dwTime1;
     SPHNetState State;
 };
 

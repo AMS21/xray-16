@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_render_device_script.cpp
-//	Created 	: 28.06.2004
-//  Modified 	: 28.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script render device script export
+//  Module      : script_render_device_script.cpp
+//  Created     : 28.06.2004
+//  Modified    : 28.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script render device script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -34,9 +34,9 @@ SCRIPT_EXPORT(CRenderDevice, (),
             .def_readonly("cam_dir", &CRenderDevice::vCameraDirection)
             .def_readonly("cam_top", &CRenderDevice::vCameraTop)
             .def_readonly("cam_right", &CRenderDevice::vCameraRight)
-            //			.def_readonly("view",					&CRenderDevice::mView)
-            //			.def_readonly("projection",				&CRenderDevice::mProject)
-            //			.def_readonly("full_transform",			&CRenderDevice::mFullTransform)
+            //          .def_readonly("view",                   &CRenderDevice::mView)
+            //          .def_readonly("projection",             &CRenderDevice::mProject)
+            //          .def_readonly("full_transform",         &CRenderDevice::mFullTransform)
             .def_readonly("fov", &CRenderDevice::fFOV)
             .def_readonly("aspect_ratio", &CRenderDevice::fASPECT)
             .def("time_global", &time_global)

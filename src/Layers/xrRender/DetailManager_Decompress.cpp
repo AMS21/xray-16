@@ -68,7 +68,7 @@ bool det_render_debug = false;
 
 #include "xrEngine/GameMtlLib.h"
 
-//#define		DBG_SWITCHOFF_RANDOMIZE
+//#define       DBG_SWITCHOFF_RANDOMIZE
 void CDetailManager::cache_Decompress(Slot* S)
 {
     VERIFY(S);
@@ -218,7 +218,7 @@ void CDetailManager::cache_Decompress(Slot* S)
             Item.scale = r_scale.randF(Dobj->m_fMinScale * 0.5f, Dobj->m_fMaxScale * 0.9f) * ps_current_detail_height;
 #else
             Item.scale = (Dobj->m_fMinScale * 0.5f + Dobj->m_fMaxScale * 0.9f) / 2;
-// Item.scale	= 0.1f;
+// Item.scale   = 0.1f;
 #endif
             // X-Form BBox
             Fmatrix mScale, mXform;
@@ -245,17 +245,17 @@ void CDetailManager::cache_Decompress(Slot* S)
 
 // Color
 /*
-DetailPalette*	c_pal			= (DetailPalette*)&DS.color;
-float gray255	[4];
-gray255[0]						=	255.f*float(c_pal->a0)/15.f;
-gray255[1]						=	255.f*float(c_pal->a1)/15.f;
-gray255[2]						=	255.f*float(c_pal->a2)/15.f;
-gray255[3]						=	255.f*float(c_pal->a3)/15.f;
+DetailPalette*  c_pal           = (DetailPalette*)&DS.color;
+float gray255   [4];
+gray255[0]                      =   255.f*float(c_pal->a0)/15.f;
+gray255[1]                      =   255.f*float(c_pal->a1)/15.f;
+gray255[2]                      =   255.f*float(c_pal->a2)/15.f;
+gray255[3]                      =   255.f*float(c_pal->a3)/15.f;
 */
-// float c_f						=	1.f;	//Interpolate		(gray255,x,z,d_size)+.5f;
-// int c_dw						=	255;	//iFloor			(c_f);
-// clamp							(c_dw,0,255);
-// Item.C_dw						=	color_rgba		(c_dw,c_dw,c_dw,255);
+// float c_f                        =   1.f;    //Interpolate       (gray255,x,z,d_size)+.5f;
+// int c_dw                     =   255;    //iFloor            (c_f);
+// clamp                            (c_dw,0,255);
+// Item.C_dw                        =   color_rgba      (c_dw,c_dw,c_dw,255);
 #if RENDER == R_R1
             Item.c_rgb.x = DS.r_qclr(DS.c_r, 15);
             Item.c_rgb.y = DS.r_qclr(DS.c_g, 15);
@@ -265,7 +265,7 @@ gray255[3]						=	255.f*float(c_pal->a3)/15.f;
             Item.c_sun = DS.r_qclr(DS.c_dir, 15);
 
 //? hack: RGB = hemi
-//? Item.c_rgb.add					(ps_r__Detail_rainbow_hemi*Item.c_hemi);
+//? Item.c_rgb.add                  (ps_r__Detail_rainbow_hemi*Item.c_hemi);
 
 // Vis-sorting
 #ifndef DBG_SWITCHOFF_RANDOMIZE

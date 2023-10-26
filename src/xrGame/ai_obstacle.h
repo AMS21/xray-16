@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_obstacle.h
-//	Created 	: 02.04.2007
-//  Modified 	: 06.04.2007
-//	Author		: Dmitriy Iassenev
-//	Description : ai obstacle class inline functions
+//  Module      : ai_obstacle.h
+//  Created     : 02.04.2007
+//  Modified    : 06.04.2007
+//  Author      : Dmitriy Iassenev
+//  Description : ai obstacle class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef AI_OBSTACLE_H

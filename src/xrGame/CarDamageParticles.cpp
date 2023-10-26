@@ -11,7 +11,7 @@
 #include "Include/xrRender/Kinematics.h"
 #include "xrPhysics/IPHWorld.h"
 
-// extern CPHWorld*	ph_world;
+// extern CPHWorld* ph_world;
 void read_bones(IKinematics* K, LPCSTR S, xr_vector<u16>& bones)
 {
     string64 S1;

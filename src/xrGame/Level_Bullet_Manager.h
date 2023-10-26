@@ -1,5 +1,5 @@
 // Level_Bullet_Manager.h:  для обеспечения полета пули по траектории
-//							все пули и осколки передаются сюда
+//                          все пули и осколки передаются сюда
 //////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -30,7 +30,7 @@ struct SBullet
             u16 allow_tracer : 1;
             u16 allow_ricochet : 1; //разрешить рикошет
             u16 allow_sendhit : 1; // statistics
-            //.			u16			skipped_frame	: 1	;			//пропуск первой отрисовки
+            //.         u16         skipped_frame   : 1 ;           //пропуск первой отрисовки
             u16 aim_bullet : 1; //прицеленная пуля( вылетевшая первой после длительного молчания оружия (1-3 сек.))
             u16 magnetic_beam : 1; //магнитный луч (нет отклонения после пробивания, не падает скорость после
                                    //пробивания)
@@ -127,7 +127,7 @@ protected:
     xr_vector<shared_str> m_ExplodeParticles;
 
     //список пуль находящихся в данный момент на уровне
-    //.	Lock		m_Lock				;
+    //. Lock        m_Lock              ;
 
     xr_vector<SBullet> m_Bullets; // working set, locked
     xr_vector<SBullet> m_BulletsRendered; // copy for rendering

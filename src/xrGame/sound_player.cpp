@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: sound_player.cpp
-//	Created 	: 27.12.2003
-//  Modified 	: 27.12.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Sound player
+//  Module      : sound_player.cpp
+//  Created     : 27.12.2003
+//  Modified    : 27.12.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Sound player
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -183,7 +183,7 @@ void CSoundPlayer::play(
 
     sound_single.m_sound = xr_new<ref_sound>();
     /**
-    sound_single.m_sound->clone	(
+    sound_single.m_sound->clone (
         *(*I).second.second->m_sounds[
             id == u32(-1)
             ?

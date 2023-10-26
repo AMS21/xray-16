@@ -18,7 +18,7 @@ void net_global_data_impl<gl_lm_data>::create_data_file(LPCSTR path)
 {
     FPU::m64r();
     Memory.mem_compact();
-    // std::random_shuffle	(inlc_global_data()->g_deflectors().begin(),inlc_global_data()->g_deflectors().end());
+    // std::random_shuffle  (inlc_global_data()->g_deflectors().begin(),inlc_global_data()->g_deflectors().end());
     std::sort(inlc_global_data()->g_deflectors().begin(), inlc_global_data()->g_deflectors().end(), cmp_weight);
     Logger.clMsg("create_lm_data_write:  start");
     IWriter* file = FS.w_open(path);
@@ -38,8 +38,8 @@ bool net_global_data_impl<gl_lm_data>::create_data(LPCSTR path)
         inlc_global_data()->read_lm_data(r_global);
     }
     // xr_unlink( fn );
-    //	inlc_global_data()->create_read_faces();
-    //	inlc_global_data()->create_write_faces();
+    //  inlc_global_data()->create_read_faces();
+    //  inlc_global_data()->create_write_faces();
     FPU::m64r();
     Memory.mem_compact();
     return true;

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_danger_in_direction_actions.cpp
-//	Created 	: 31.05.2005
-//  Modified 	: 31.05.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker danger in direction actions classes
+//  Module      : stalker_danger_in_direction_actions.cpp
+//  Created     : 31.05.2005
+//  Modified    : 31.05.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker danger in direction actions classes
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -85,15 +85,15 @@ void CStalkerActionDangerInDirectionTakeCover::execute()
     {
         object().movement().set_level_dest_vertex(point->level_vertex_id());
         object().movement().set_desired_position(&point->position());
-        //		if (object().movement().path_completed() && object().Position().distance_to(point->position()) < 1.f)
-        //			object().brain().affect_cover			(true);
-        //		else
-        //			object().brain().affect_cover			(false);
+        //      if (object().movement().path_completed() && object().Position().distance_to(point->position()) < 1.f)
+        //          object().brain().affect_cover           (true);
+        //      else
+        //          object().brain().affect_cover           (false);
     }
     else
     {
         object().movement().set_nearest_accessible_position();
-        //		object().brain().affect_cover				(true);
+        //      object().brain().affect_cover               (true);
     }
 
     if (object()
@@ -138,7 +138,7 @@ void CStalkerActionDangerInDirectionLookOut::initialize()
         min_queue_interval, max_queue_interval);
 
     set_inertia_time(1000);
-    //	object().brain().affect_cover				(true);
+    //  object().brain().affect_cover               (true);
 }
 
 void CStalkerActionDangerInDirectionLookOut::execute()
@@ -150,11 +150,11 @@ void CStalkerActionDangerInDirectionLookOut::execute()
         return;
     //Alundaio: END
 
-    //	CMemoryInfo							mem_object =
+    //  CMemoryInfo                         mem_object =
     // object().memory().memory(object().memory().danger().selected()->object());
     //
-    //	if (!mem_object.m_object)
-    //		return;
+    //  if (!mem_object.m_object)
+    //      return;
     Fvector position = object().memory().danger().selected()->position();
 
     object().sight().setup(CSightAction(SightManager::eSightTypePosition, position, true));
@@ -166,7 +166,7 @@ void CStalkerActionDangerInDirectionLookOut::execute()
         return;
     }
 
-    //	Fvector								position = mem_object.m_object_params.m_position;
+    //  Fvector                             position = mem_object.m_object_params.m_position;
     object().m_ce_close->setup(position, 10.f, 170.f, 10.f);
     const CCoverPoint* point = ai().cover_manager().best_cover(
         object().Position(), 10.f, *object().m_ce_close, CStalkerMovementRestrictor(m_object, true, false));
@@ -223,18 +223,18 @@ void CStalkerActionDangerInDirectionHoldPosition::initialize()
         min_queue_interval, max_queue_interval);
 
     set_inertia_time(5000 + ::Random32.random(5000));
-    //	object().brain().affect_cover				(true);
+    //  object().brain().affect_cover               (true);
 }
 
 void CStalkerActionDangerInDirectionHoldPosition::execute()
 {
     inherited::execute();
 
-    //	CMemoryInfo							mem_object =
+    //  CMemoryInfo                         mem_object =
     // object().memory().memory(object().memory().danger().selected()->object());
     //
-    //	if (!mem_object.m_object)
-    //		return;
+    //  if (!mem_object.m_object)
+    //      return;
 
     //Alundaio:
     if (!object().memory().danger().selected())

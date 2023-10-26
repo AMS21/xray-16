@@ -237,7 +237,7 @@ void CRestrictions::Dump() const
         group_items::const_iterator it2 = it->second.begin();
         group_items::const_iterator it2_e = it->second.end();
         for (; it2 != it2_e; ++it2)
-            Msg("	[%s]", (*it2).c_str());
+            Msg("   [%s]", (*it2).c_str());
     }
     Msg("------------rank restrictions------------");
     for (u32 i = 0; i < _RANK_COUNT + 1; ++i)
@@ -246,13 +246,13 @@ void CRestrictions::Dump() const
         rank_rest_vec::const_iterator it = v.begin();
         rank_rest_vec::const_iterator it_e = v.end();
         if (i < _RANK_COUNT)
-            Msg("---	for rank %d  ---count=[%d]", i, v.size());
+            Msg("---    for rank %d  ---count=[%d]", i, v.size());
         else
-            Msg("---	base restrictions ---count=[%d]", v.size());
+            Msg("---    base restrictions ---count=[%d]", v.size());
 
         for (; it != it_e; ++it)
         {
-            Msg("	[%s]:[%d]", (*it).first.c_str(), (*it).second);
+            Msg("   [%s]:[%d]", (*it).first.c_str(), (*it).second);
         }
         Msg("-----------------------------------------");
     }

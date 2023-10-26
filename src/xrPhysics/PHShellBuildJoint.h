@@ -28,8 +28,8 @@ IC void SetJointLimit(CPhysicsJoint& J, const IBoneData& bone_data, u8 limit_num
 
 IC bool IsFreeRLimit(const IBoneData& bone_data, u8 limit_num)
 {
-    // const SJointIKData& joint_data	=	bone_data.get_IK_data();
-    // const SJointLimit&	limit		=	joint_data.limits[limit_num];
+    // const SJointIKData& joint_data   =   bone_data.get_IK_data();
+    // const SJointLimit&   limit       =   joint_data.limits[limit_num];
     float lo = bone_data.lo_limit(limit_num); // limit.x;
     float hi = bone_data.hi_limit(limit_num); // limit.y;
     return !(hi - lo < M_PI * 2.f);
@@ -66,10 +66,10 @@ IC CPhysicsJoint* CtreateFullControl(
     const IBoneData& bone_data, u8 limit_num[3], CPhysicsElement* root_e, CPhysicsElement* E)
 {
     const SJointIKData& joint_data = bone_data.get_IK_data();
-    // CPhysicsJoint	* J = P_create_Joint(CPhysicsJoint::hinge,root_e,E);
+    // CPhysicsJoint    * J = P_create_Joint(CPhysicsJoint::hinge,root_e,E);
     CPhysicsJoint* J = P_create_Joint(CPhysicsJoint::full_control, root_e, E);
     SetJoint(*J, joint_data);
-    // J->SetAnchorVsSecondElement	(0,0,0);
+    // J->SetAnchorVsSecondElement  (0,0,0);
     // J->SetJointSDfactors(joint_data.spring_factor,joint_data.damping_factor);
 
     const bool set_axis[3] = {true, false, true};
@@ -88,7 +88,7 @@ IC CPhysicsJoint* BuildWheelJoint(const IBoneData& bone_data, CPhysicsElement* r
     const SJointIKData& joint_data = bone_data.get_IK_data();
     CPhysicsJoint* J = P_create_Joint(CPhysicsJoint::hinge2, root_e, E);
 
-    // J->SetAnchorVsSecondElement	(0,0,0);
+    // J->SetAnchorVsSecondElement  (0,0,0);
     // J->SetJointSDfactors(joint_data.spring_factor,joint_data.damping_factor);
     SetJoint(*J, joint_data);
 
@@ -97,8 +97,8 @@ IC CPhysicsJoint* BuildWheelJoint(const IBoneData& bone_data, CPhysicsElement* r
 
     // if(joint_data.limits[0].limit.y-joint_data.limits[0].limit.x<M_PI*2.f)
     //{
-    //	J->SetLimits(joint_data.limits[0].limit.x,joint_data.limits[0].limit.y,0);
-    //	J->SetAxisSDfactors(joint_data.limits[0].spring_factor,joint_data.limits[0].damping_factor,0);
+    //  J->SetLimits(joint_data.limits[0].limit.x,joint_data.limits[0].limit.y,0);
+    //  J->SetAxisSDfactors(joint_data.limits[0].spring_factor,joint_data.limits[0].damping_factor,0);
     //}
     SetJointLimit(*J, bone_data, 0, 0);
     return J;
@@ -108,7 +108,7 @@ IC CPhysicsJoint* BuildSliderJoint(const IBoneData& bone_data, CPhysicsElement* 
     const SJointIKData& joint_data = bone_data.get_IK_data();
     CPhysicsJoint* J = P_create_Joint(CPhysicsJoint::slider, root_e, E);
     /////////////////////////////////////////////////////////////////////////////////////
-    // J->SetAnchorVsSecondElement	(0,0,0);
+    // J->SetAnchorVsSecondElement  (0,0,0);
     // J->SetJointSDfactors(joint_data.spring_factor,joint_data.damping_factor);
     SetJoint(*J, joint_data);
 
@@ -117,8 +117,8 @@ IC CPhysicsJoint* BuildSliderJoint(const IBoneData& bone_data, CPhysicsElement* 
 
     // if(joint_data.limits[1].limit.y-joint_data.limits[1].limit.x<M_PI*2.f)
     //{
-    //	J->SetLimits(joint_data.limits[1].limit.x,joint_data.limits[1].limit.y,1);
-    //	J->SetAxisSDfactors(joint_data.limits[1].spring_factor,joint_data.limits[1].damping_factor,1);
+    //  J->SetLimits(joint_data.limits[1].limit.x,joint_data.limits[1].limit.y,1);
+    //  J->SetAxisSDfactors(joint_data.limits[1].spring_factor,joint_data.limits[1].damping_factor,1);
     //}
     SetJointLimit(*J, bone_data, 1, 1);
     return J;
@@ -129,7 +129,7 @@ IC CPhysicsJoint* BuildBallJoint(const IBoneData& bone_data, CPhysicsElement* ro
     const SJointIKData& joint_data = bone_data.get_IK_data();
     CPhysicsJoint* J = P_create_Joint(CPhysicsJoint::ball, root_e, E);
     SetJoint(*J, joint_data);
-    // J->SetAnchorVsSecondElement	(0,0,0);
+    // J->SetAnchorVsSecondElement  (0,0,0);
     // J->SetJointSDfactors(joint_data.spring_factor,joint_data.damping_factor);
     return J;
 }

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: location_manager.cpp
-//	Created 	: 27.12.2003
-//  Modified 	: 27.12.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Location manager
+//  Module      : location_manager.cpp
+//  Created     : 27.12.2003
+//  Modified    : 27.12.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Location manager
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

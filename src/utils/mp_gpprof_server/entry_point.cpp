@@ -31,9 +31,9 @@ int main(int argc, char** argv)
         pthread_win32_process_attach_np();
 #endif
 
-        /*streambuf*		cin_streambuf  = cin.rdbuf();
-        streambuf*		cout_streambuf = cout.rdbuf();
-        streambuf*		cerr_streambuf = cerr.rdbuf();*/
+        /*streambuf*        cin_streambuf  = cin.rdbuf();
+        streambuf*      cout_streambuf = cout.rdbuf();
+        streambuf*      cerr_streambuf = cerr.rdbuf();*/
 
         FCGX_Init();
         int binded_sock = 0;

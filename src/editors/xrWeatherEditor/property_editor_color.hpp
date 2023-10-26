@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_editor_color.hpp
-//	Created 	: 12.12.2007
-//  Modified 	: 12.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property editor color class
+//  Module      : property_editor_color.hpp
+//  Created     : 12.12.2007
+//  Modified    : 12.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property editor color class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_EDITOR_COLOR_HPP_INCLUDED

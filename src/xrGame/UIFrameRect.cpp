@@ -28,7 +28,7 @@ void CUIFrameRect::InitTextureEx(LPCSTR texture, LPCSTR shader)
 void CUIFrameRect::InitTexture(LPCSTR texture) { InitTextureEx(texture, "hud" DELIMITER "default"); }
 void CUIFrameRect::UpdateSize(bool recall)
 {
-    //	VERIFY(g_bRendering);
+    //  VERIFY(g_bRendering);
     // texture size
     Fvector2 ts;
     float rem_x, rem_y;

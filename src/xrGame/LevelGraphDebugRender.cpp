@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: level_graph_debug.cpp
-//	Created 	: 02.10.2001
-//  Modified 	: 11.11.2003
-//	Author		: Oles Shihkovtsov, Dmitriy Iassenev
-//	Description : Level graph debug functions
+//  Module      : level_graph_debug.cpp
+//  Created     : 02.10.2001
+//  Modified    : 11.11.2003
+//  Author      : Oles Shihkovtsov, Dmitriy Iassenev
+//  Description : Level graph debug functions
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -412,7 +412,7 @@ void LevelGraphDebugRender::DrawGameGraph()
         t1.y += .6f;
         NORMALIZE_VECTOR(t1);
         Level().debug_renderer().draw_aabb(t1, .05f, .05f, .05f, color_xrgb(0, 0, 255));
-        CGameGraph::const_iterator	I, E;
+        CGameGraph::const_iterator  I, E;
         ai().game_graph().begin(i, I, E);
         for (; I != E; ++I)
         {
@@ -486,8 +486,8 @@ void LevelGraphDebugRender::DrawGameGraph()
             }
         }
 
-        ALife::D_OBJECT_P_MAP::const_iterator	I = ai().alife().objects().objects().begin();
-        ALife::D_OBJECT_P_MAP::const_iterator	E = ai().alife().objects().objects().end();
+        ALife::D_OBJECT_P_MAP::const_iterator   I = ai().alife().objects().objects().begin();
+        ALife::D_OBJECT_P_MAP::const_iterator   E = ai().alife().objects().objects().end();
         for (; I != E; ++I)
         {
             {

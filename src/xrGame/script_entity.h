@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_entity.h
-//	Created 	: 06.10.2003
-//  Modified 	: 14.12.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script entity class
+//  Module      : script_entity.h
+//  Created     : 06.10.2003
+//  Modified    : 14.12.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script entity class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

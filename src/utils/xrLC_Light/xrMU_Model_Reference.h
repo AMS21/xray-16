@@ -37,7 +37,7 @@ public:
     void receive_result(INetReader& r);
     void send_result(IWriter& w) const;
     static xrMU_Reference* read_create() { return xr_new<xrMU_Reference>(); };
-    //	void					export_ogf			();
+    //  void                    export_ogf          ();
 };
 
 typedef vector_serialize<t_read<xrMU_Reference, get_id_standart<xrMU_Reference>>> tread_mu_refs;

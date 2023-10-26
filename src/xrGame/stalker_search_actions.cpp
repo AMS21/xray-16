@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_search_actions.cpp
-//	Created 	: 25.03.2004
-//  Modified 	: 08.10.2007
-//	Author		: Dmitriy Iassenev
-//	Description : stalker search enemy action classes
+//  Module      : stalker_search_actions.cpp
+//  Created     : 25.03.2004
+//  Modified    : 08.10.2007
+//  Author      : Dmitriy Iassenev
+//  Description : stalker search enemy action classes
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -58,14 +58,14 @@ void CStalkerActionReachEnemyLocation::initialize()
     else
         m_last_hit_time = hit->m_level_time;
 
-    //	object().sniper_update_rate			(true);
+    //  object().sniper_update_rate         (true);
 }
 
 void CStalkerActionReachEnemyLocation::finalize()
 {
     inherited::finalize();
 
-    //	object().sniper_update_rate			(false);
+    //  object().sniper_update_rate         (false);
 }
 
 void CStalkerActionReachEnemyLocation::execute()
@@ -93,24 +93,24 @@ void CStalkerActionReachEnemyLocation::execute()
     if (object().movement().path_completed())
     {
 #if 0
-		object().m_ce_ambush->setup		(mem_object.m_object_params.m_position,mem_object.m_self_params.m_position,10.f);
-		const CCoverPoint				*point = ai().cover_manager().best_cover(mem_object.m_object_params.m_position,10.f,*object().m_ce_ambush,CStalkerMovementRestrictor(m_object,true));
-		if (!point) {
-			object().m_ce_ambush->setup	(mem_object.m_object_params.m_position,mem_object.m_self_params.m_position,10.f);
-			point						= ai().cover_manager().best_cover(mem_object.m_object_params.m_position,30.f,*object().m_ce_ambush,CStalkerMovementRestrictor(m_object,true));
-		}
+        object().m_ce_ambush->setup     (mem_object.m_object_params.m_position,mem_object.m_self_params.m_position,10.f);
+        const CCoverPoint               *point = ai().cover_manager().best_cover(mem_object.m_object_params.m_position,10.f,*object().m_ce_ambush,CStalkerMovementRestrictor(m_object,true));
+        if (!point) {
+            object().m_ce_ambush->setup (mem_object.m_object_params.m_position,mem_object.m_self_params.m_position,10.f);
+            point                       = ai().cover_manager().best_cover(mem_object.m_object_params.m_position,30.f,*object().m_ce_ambush,CStalkerMovementRestrictor(m_object,true));
+        }
 
-		if (point) {
-			object().movement().set_level_dest_vertex	(point->level_vertex_id());
-			object().movement().set_desired_position	(&point->position());
-		}
-		else
-			object().movement().set_nearest_accessible_position	();
+        if (point) {
+            object().movement().set_level_dest_vertex   (point->level_vertex_id());
+            object().movement().set_desired_position    (&point->position());
+        }
+        else
+            object().movement().set_nearest_accessible_position ();
 #else
         if (object().movement().accessible(mem_object.m_object_params.m_level_vertex_id))
         {
             object().movement().set_level_dest_vertex(mem_object.m_object_params.m_level_vertex_id);
-            //			object().movement().set_desired_position	(0);
+            //          object().movement().set_desired_position    (0);
         }
         else
         {
@@ -120,7 +120,7 @@ void CStalkerActionReachEnemyLocation::execute()
 
         object().sight().setup(CSightAction(SightManager::eSightTypePosition,
             Fvector(mem_object.m_object_params.m_position).add(Fvector().set(0.f, .5f, 0.f)),
-            //				mem_object.m_object_params.m_position,
+            //              mem_object.m_object_params.m_position,
             true));
 #endif
 
@@ -137,7 +137,7 @@ void CStalkerActionReachEnemyLocation::execute()
     {
         object().sight().setup(CSightAction(SightManager::eSightTypePosition,
             Fvector(mem_object.m_object_params.m_position).add(Fvector().set(0.f, .5f, 0.f)),
-            //				mem_object.m_object_params.m_position,
+            //              mem_object.m_object_params.m_position,
             true));
     }
 }

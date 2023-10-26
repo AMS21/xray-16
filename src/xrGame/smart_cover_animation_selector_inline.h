@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_animation_selector_inline.h
-//	Created 	: 07.09.2007
-//	Author		: Alexander Dudin
-//	Description : Animation selector for smart covers inline functions
+//  Module      : smart_cover_animation_selector_inline.h
+//  Created     : 07.09.2007
+//  Author      : Alexander Dudin
+//  Description : Animation selector for smart covers inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef SMART_COVER_ANIMATION_SELECTOR_INLINE_H_INCLUDED

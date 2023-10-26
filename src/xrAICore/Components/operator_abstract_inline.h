@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: operator_abstract_inline.h
-//	Created 	: 24.02.2004
-//  Modified 	: 24.02.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Operator abstract inline functions
+//  Module      : operator_abstract_inline.h
+//  Created     : 24.02.2004
+//  Modified    : 24.02.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Operator abstract inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

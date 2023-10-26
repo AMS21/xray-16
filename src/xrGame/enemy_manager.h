@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: enemy_manager.h
-//	Created 	: 30.12.2003
-//  Modified 	: 30.12.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Enemy manager
+//  Module      : enemy_manager.h
+//  Created     : 30.12.2003
+//  Modified    : 30.12.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Enemy manager
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

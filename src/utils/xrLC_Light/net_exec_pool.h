@@ -19,7 +19,7 @@ class exec_pool
     xr_vector<net_execution*> pool;
     CTimer start_time;
     task_manager& _task_manager;
-    // IGridUser					*_user;
+    // IGridUser                    *_user;
     bool _running;
 
 public:

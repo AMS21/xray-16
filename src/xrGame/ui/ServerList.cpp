@@ -112,9 +112,9 @@ void CServerList::Update()
 
     if (m_bAnimation)
     {
-        //		m_pAnimation->Update();
-        //		m_frame[LST_SRV_PROP].SetColor(subst_alpha(0xffffffff, color_get_A(m_pAnimation->GetColor())));
-        //		m_frame[LST_PLAYERS].SetColor(subst_alpha(0xffffffff, color_get_A(m_pAnimation->GetColor())));
+        //      m_pAnimation->Update();
+        //      m_frame[LST_SRV_PROP].SetColor(subst_alpha(0xffffffff, color_get_A(m_pAnimation->GetColor())));
+        //      m_frame[LST_PLAYERS].SetColor(subst_alpha(0xffffffff, color_get_A(m_pAnimation->GetColor())));
 
         if (true /*m_pAnimation->Done()*/)
         {
@@ -921,7 +921,7 @@ void CServerList::SrvInfo2LstSrvInfo(const ServerInfo* pServerInfo)
     m_itemInfo.info.version = pServerInfo->m_ServerVersion;
     m_itemInfo.info.icons.pass = pServerInfo->m_bPassword;
     m_itemInfo.info.icons.dedicated = pServerInfo->m_bDedicated;
-    m_itemInfo.info.icons.punkbuster = false; //	= pServerInfo->m_bPunkBuster;
+    m_itemInfo.info.icons.punkbuster = false; //    = pServerInfo->m_bPunkBuster;
     m_itemInfo.info.icons.user_pass = pServerInfo->m_bUserPass;
 
     m_itemInfo.info.Index = pServerInfo->Index;

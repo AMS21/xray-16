@@ -25,7 +25,7 @@ void CUIListWnd::script_register(lua_State* L)
     [
         class_<CUIListWnd, CUIWindow>("CUIListWnd")
             .def(constructor<>())
-            //		.def("AddText",					&CUIListWnd::AddText_script)
+            //      .def("AddText",                 &CUIListWnd::AddText_script)
             .def("AddItem", &CUIListWnd::AddItem_script, adopt(_2))
             .def("RemoveItem", &CUIListWnd::RemoveItem)
             .def("RemoveAll", &CUIListWnd::RemoveAll)

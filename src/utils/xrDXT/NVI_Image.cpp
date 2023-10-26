@@ -74,7 +74,7 @@ u32 NVI_Image::GetBytesPerPixel()
     case NVI_A16: return 2; break;
     case NVI_R16_G16_B16_A16: return 8; break;
     }
-    //.	FDebug("Unrecognized format! %d\n", m_Format );
+    //. FDebug("Unrecognized format! %d\n", m_Format );
     assert(false);
     return 0;
 }
@@ -225,10 +225,10 @@ void NVI_ImageBordered::CopyDataFromSource()
     u32* pPadArray = (u32*)m_pArray;
     assert(m_pArray != NULL);
     // Duplicate values into the padded region, taking wrapping into account
-    //.	ASSERT_MSG( m_nBorderXLow < sx, "Borders larger than image not supported! ulow\n" );
-    //.	ASSERT_MSG( m_nBorderYLow < sy, "Borders larger than image not supported! uhigh\n" );
-    //.	ASSERT_MSG( m_nBorderXHigh < sx, "Borders larger than image not supported! vlow\n" );
-    //.	ASSERT_MSG( m_nBorderYHigh < sy, "Borders larger than image not supported! vhigh\n" );
+    //. ASSERT_MSG( m_nBorderXLow < sx, "Borders larger than image not supported! ulow\n" );
+    //. ASSERT_MSG( m_nBorderYLow < sy, "Borders larger than image not supported! uhigh\n" );
+    //. ASSERT_MSG( m_nBorderXHigh < sx, "Borders larger than image not supported! vlow\n" );
+    //. ASSERT_MSG( m_nBorderYHigh < sy, "Borders larger than image not supported! vhigh\n" );
     // First, copy source image within the borders
     for (int j = 0; j < sy; j++)
     {
@@ -300,7 +300,7 @@ void NVI_ImageBordered::CopyDataFromSource()
         }
     }
     // To save the result of the padding operation:
-    //	ulTarga newfile;
-    //	newfile.WriteFile( "temp_result1.tga", (unsigned char*) pPadArray,
-    //						(u32) m_nSizeX, (u32) m_nSizeY, 32, 32, 0 );
+    //  ulTarga newfile;
+    //  newfile.WriteFile( "temp_result1.tga", (unsigned char*) pPadArray,
+    //                      (u32) m_nSizeX, (u32) m_nSizeY, 32, 32, 0 );
 }

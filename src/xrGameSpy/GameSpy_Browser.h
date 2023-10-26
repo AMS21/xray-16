@@ -35,7 +35,7 @@ struct TeamInfo
 
 struct ServerInfo
 {
-    //	SBServer pSBServer;
+    //  SBServer pSBServer;
     string128 m_Address;
     string128 m_HostName;
     string128 m_ServerName;
@@ -117,7 +117,7 @@ public:
     };
 
 private:
-    //	string16	m_SecretKey;
+    //  string16    m_SecretKey;
     _ServerBrowser* m_pGSBrowser;
     CGameSpy_QR2* m_pQR2;
     UpdateCallback onUpdate;

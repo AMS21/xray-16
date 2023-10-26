@@ -22,7 +22,7 @@ void xrServer::Perform_destroy(CSE_Abstract* object, u32 mode)
     {
         CSE_Abstract* child = game->get_entity_from_eid(object->children.back());
         R_ASSERT2(child, make_string("child registered but not found [%d]", object->children.back()));
-        //		Msg					("SLS-CLEAR : REJECT  [%s][%s] FROM
+        //      Msg                 ("SLS-CLEAR : REJECT  [%s][%s] FROM
         //[%s][%s]",child->name(),child->name_replace(),object->name(),object->name_replace());
         Perform_reject(child, object, 2 * NET_Latency);
 #ifdef DEBUG
@@ -33,7 +33,7 @@ void xrServer::Perform_destroy(CSE_Abstract* object, u32 mode)
         Perform_destroy(child, mode);
     }
 
-    //	Msg						("SLS-CLEAR : DESTROY [%s][%s]",object->name(),object->name_replace());
+    //  Msg                     ("SLS-CLEAR : DESTROY [%s][%s]",object->name(),object->name_replace());
     u16 object_id = object->ID;
     entity_Destroy(object);
 
@@ -54,11 +54,11 @@ void xrServer::Perform_destroy(CSE_Abstract* object, u32 mode)
 void xrServer::SLS_Clear()
 {
 #if 0
-	Msg									("SLS-CLEAR : %d objects");
-	xrS_entities::const_iterator		I = entities.begin();
-	xrS_entities::const_iterator		E = entities.end();
-	for ( ; I != E; ++I)
-		Msg								("entity to destroy : [%d][%s][%s]",(*I).second->ID,(*I).second->name(),(*I).second->name_replace());
+    Msg                                 ("SLS-CLEAR : %d objects");
+    xrS_entities::const_iterator        I = entities.begin();
+    xrS_entities::const_iterator        E = entities.end();
+    for ( ; I != E; ++I)
+        Msg                             ("entity to destroy : [%d][%s][%s]",(*I).second->ID,(*I).second->name(),(*I).second->name_replace());
 #endif
 
     u32 mode = net_flags(TRUE, TRUE);

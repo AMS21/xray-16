@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: saved_game_wrapper.cpp
-//	Created 	: 21.02.2006
-//  Modified 	: 21.02.2006
-//	Author		: Dmitriy Iassenev
-//	Description : saved game wrapper class
+//  Module      : saved_game_wrapper.cpp
+//  Created     : 21.02.2006
+//  Modified    : 21.02.2006
+//  Author      : Dmitriy Iassenev
+//  Description : saved game wrapper class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

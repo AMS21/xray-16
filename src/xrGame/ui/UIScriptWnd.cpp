@@ -22,8 +22,8 @@ void CUIDialogWndEx::SendMessage(CUIWindow* pWnd, s16 msg, void* pData)
 
     ((*it)->m_callback)();
 
-    //	if ( (*it)->m_cpp_callback )
-    //		(*it)->m_cpp_callback(pData);
+    //  if ( (*it)->m_cpp_callback )
+    //      (*it)->m_cpp_callback(pData);
 }
 
 bool CUIDialogWndEx::Load(LPCSTR xml_name) { return true; }

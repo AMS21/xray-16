@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_holder.hpp
-//	Created 	: 06.12.2007
-//  Modified 	: 07.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property holder implementation class
+//  Module      : property_holder.hpp
+//  Created     : 06.12.2007
+//  Modified    : 07.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property holder implementation class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_HOLDER_HPP_INCLUDED

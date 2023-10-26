@@ -217,7 +217,7 @@ void CUIScrollView::Draw()
     UI().PushScissor(visible_rect);
 
     auto it = m_pad->GetChildWndList().begin();
-    //	auto it_e					= m_pad->GetChildWndList().end();
+    //  auto it_e                   = m_pad->GetChildWndList().end();
 
     if (!Empty() && m_visible_rgn.x != -1)
     {

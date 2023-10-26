@@ -51,7 +51,7 @@ void CSnork::Load(LPCSTR section)
     SVelocityParam& velocity_walk_dmg = move().get_velocity(MonsterMovement::eVelocityParameterWalkDamaged);
     SVelocityParam& velocity_run_dmg = move().get_velocity(MonsterMovement::eVelocityParameterRunDamaged);
     SVelocityParam& velocity_steal = move().get_velocity(MonsterMovement::eVelocityParameterSteal);
-    // SVelocityParam &velocity_drag		= move().get_velocity(MonsterMovement::eVelocityParameterDrag);
+    // SVelocityParam &velocity_drag        = move().get_velocity(MonsterMovement::eVelocityParameterDrag);
 
     anim().AddAnim(eAnimStandIdle, "stand_idle_", -1, &velocity_none, PS_STAND, STAND_FX_ALL);
     anim().AddAnim(eAnimStandDamaged, "stand_idle_damaged_", -1, &velocity_none, PS_STAND, STAND_FX_ALL);
@@ -117,7 +117,7 @@ void CSnork::UpdateCL()
 // IGameObject *obj = Level().CurrentEntity();
 // if (!obj) return;
 
-// find_geometry	();
+// find_geometry    ();
 //////////////////////////////////////////////////////////////////////////
 
 #ifdef _DEBUG
@@ -278,9 +278,9 @@ bool CSnork::check_start_conditions(ControlCom::EControlType type)
     if (type == ControlCom::eControlThreaten)
     {
         return false;
-        // 		if (!start_threaten) return false;
-        // 		start_threaten = false;
-        // 		if (Random.randI(100) < 50) return false;
+        //      if (!start_threaten) return false;
+        //      start_threaten = false;
+        //      if (Random.randI(100) < 50) return false;
     }
 
     return true;

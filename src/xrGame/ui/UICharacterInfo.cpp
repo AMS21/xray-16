@@ -95,7 +95,7 @@ void CUICharacterInfo::Init_IconInfoItem(CUIXml& xml_doc, LPCSTR item_str, UIIte
     CUIStatic* item = UIHelper::CreateStatic(xml_doc, item_str, this, false);
     if (item)
     {
-        //.		item->ClipperOn();
+        //.     item->ClipperOn();
         item->Show(true);
         m_icons[type] = item;
     }

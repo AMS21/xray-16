@@ -9,15 +9,15 @@ class CPHAICharacter : public CPHSimpleCharacter
 public:
     CPHAICharacter();
     virtual CPHAICharacter* CastAICharacter() { return this; }
-    // virtual		void		SetPosition							(const Fvector &pos);
-    // virtual		void		SetDesiredPosition					(const Fvector& pos)
+    // virtual      void        SetPosition                         (const Fvector &pos);
+    // virtual      void        SetDesiredPosition                  (const Fvector& pos)
     // {m_vDesiredPosition.set(pos)
     // ;}
-    // virtual		void		GetDesiredPosition					(Fvector& dpos)
+    // virtual      void        GetDesiredPosition                  (Fvector& dpos)
     // {dpos.set(m_vDesiredPosition)
     // ;}
     virtual void ValidateWalkOn();
-    //	virtual		void		BringToDesired						(float time,float velocity,float force=1.f)
+    //  virtual     void        BringToDesired                      (float time,float velocity,float force=1.f)
     //;
     virtual bool TryPosition(Fvector pos, bool exact_state);
     virtual void Jump(const Fvector& jump_velocity);
@@ -29,7 +29,7 @@ public:
 
 private:
     virtual void UpdateStaticDamage(dContact* c, SGameMtl* tri_material, bool bo1) {}
-// virtual		EEnvironment CheckInvironment					();
+// virtual      EEnvironment CheckInvironment                   ();
 #ifdef DEBUG
     virtual void OnRender();
 #endif

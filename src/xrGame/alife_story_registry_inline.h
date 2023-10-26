@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_story_registry_inline.h
-//	Created 	: 02.06.2004
-//  Modified 	: 02.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALife story registry inline functions
+//  Module      : alife_story_registry_inline.h
+//  Created     : 02.06.2004
+//  Modified    : 02.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALife story registry inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

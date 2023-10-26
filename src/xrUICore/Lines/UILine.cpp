@@ -1,8 +1,8 @@
-// File:		UILine.cpp
-// Description:	Single text line
-// Created:		05.04.2005
-// Author:		Serge Vynnycheko
-// Mail:		narrator@gsc-game.kiev.ua
+// File:        UILine.cpp
+// Description: Single text line
+// Created:     05.04.2005
+// Author:      Serge Vynnycheko
+// Mail:        narrator@gsc-game.kiev.ua
 //
 // Copyright 2005 GSC Game World
 
@@ -57,8 +57,8 @@ void CUILine::ProcessNewLines()
     for (u32 i = 0; i < m_subLines.size(); i++)
     {
         StrSize pos = m_subLines[i].m_text.find("\\n");
-        //		if (pos != npos)
-        //			pos = m_subLines[i].m_text.find('\r');
+        //      if (pos != npos)
+        //          pos = m_subLines[i].m_text.find('\r');
 
         if (pos != npos)
         {

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_animation_callbacks.cpp
-//	Created 	: 25.02.2003
-//  Modified 	: 19.11.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker animation manager : bone callbacks
+//  Module      : stalker_animation_callbacks.cpp
+//  Created     : 25.02.2003
+//  Modified    : 19.11.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker animation manager : bone callbacks
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -67,7 +67,7 @@ static void callback_rotation_blend(CBoneInstance* const bone)
     VERIFY(parameter->m_rotation);
     VERIFY(parameter->m_object);
     VERIFY(parameter->m_blend);
-    //	VERIFY2							( *parameter->m_blend, make_string( "%d %s[%s]", Device.dwTimeGlobal,
+    //  VERIFY2                         ( *parameter->m_blend, make_string( "%d %s[%s]", Device.dwTimeGlobal,
     // parameter->m_object->cName().c_str(), parameter->m_object->g_Alive() ? "+" : "-") );
 
     float multiplier = 1.f;
@@ -82,11 +82,11 @@ static void callback_rotation_blend(CBoneInstance* const bone)
     multiplier = parameter->m_forward ? multiplier : (1.f - multiplier);
 
 #if 0
-    Fmatrix rotation				= *parameter->m_rotation;
-    Fvector							angles;
-    rotation.getXYZ					(angles);
-    angles.mul						(multiplier);
-    rotation.setXYZ					(angles);
+    Fmatrix rotation                = *parameter->m_rotation;
+    Fvector                         angles;
+    rotation.getXYZ                 (angles);
+    angles.mul                      (multiplier);
+    rotation.setXYZ                 (angles);
 #else // #if 0
     Fquaternion left;
     left.set(Fidentity);
@@ -145,7 +145,7 @@ void CStalkerAnimationManager::assign_bone_callbacks()
     int spine_bone = kinematics->LL_BoneID(pSettings->r_string(section, "bone_spin"));
     kinematics->LL_GetBoneInstance(u16(spine_bone)).set_callback(bctCustom, &callback_rotation, &m_spine_params);
 
-    //	remove_bone_callbacks	();
+    //  remove_bone_callbacks   ();
 }
 
 void CStalkerAnimationManager::assign_bone_blend_callbacks(bool const& forward_direction)
@@ -186,7 +186,7 @@ void CStalkerAnimationManager::assign_bone_blend_callbacks(bool const& forward_d
     int spine_bone = kinematics->LL_BoneID(pSettings->r_string(section, "bone_spin"));
     kinematics->LL_GetBoneInstance(u16(spine_bone)).set_callback(bctCustom, &callback_rotation_blend, &m_spine_params);
 
-    //	remove_bone_callbacks	();
+    //  remove_bone_callbacks   ();
 }
 
 void CStalkerAnimationManager::remove_bone_callbacks()

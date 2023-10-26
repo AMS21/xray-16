@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_holder_string.cpp
-//	Created 	: 06.12.2007
-//  Modified 	: 09.01.2008
-//	Author		: Dmitriy Iassenev
-//	Description : property holder implementation class (string properties)
+//  Module      : property_holder_string.cpp
+//  Created     : 06.12.2007
+//  Modified    : 09.01.2008
+//  Author      : Dmitriy Iassenev
+//  Description : property holder implementation class (string properties)
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"
@@ -27,12 +27,12 @@ ref class property_editor_tree_values;
 using Flobbster::Windows::Forms::PropertySpec;
 using System::String;
 
-//	NotifyParentPropertyAttribute
-//	PasswordPropertyTextAttribute
-//	RefreshPropertiesAttribute
-//	spec->Attributes			=
-//		gcnew array<System::Attribute^>{
-//				gcnew System::ComponentModel::ReadOnlyAttribute(true)
+//  NotifyParentPropertyAttribute
+//  PasswordPropertyTextAttribute
+//  RefreshPropertiesAttribute
+//  spec->Attributes            =
+//      gcnew array<System::Attribute^>{
+//              gcnew System::ComponentModel::ReadOnlyAttribute(true)
 //
 
 XRay::Editor::property_value* property_holder::add_property(pcstr identifier, pcstr category, pcstr description,

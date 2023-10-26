@@ -419,7 +419,7 @@ void SGameTaskObjective::CreateMapLocation(bool on_load)
                 break;
             }
         }
-        //.		m_linked_map_location =	Level().MapManager().GetMapLocation(m_map_location, m_map_object_id);
+        //.     m_linked_map_location = Level().MapManager().GetMapLocation(m_map_location, m_map_object_id);
     }
     else
     {

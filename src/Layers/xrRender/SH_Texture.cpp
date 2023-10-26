@@ -115,11 +115,11 @@ void CTexture::apply_avi(CBackend& cmd_list, u32 dwStage) const
         D3DLOCKED_RECT R;
         R_CHK(T2D->LockRect(0, &R, NULL, 0));
         R_ASSERT(R.Pitch == int(pAVI->m_dwWidth * 4));
-        //		R_ASSERT(pAVI->DecompressFrame((u32*)(R.pBits)));
+        //      R_ASSERT(pAVI->DecompressFrame((u32*)(R.pBits)));
         u8* ptr{};
         pAVI->GetFrame(&ptr);
         CopyMemory(R.pBits, ptr, pAVI->m_dwWidth * pAVI->m_dwHeight * 4);
-        //		R_ASSERT(pAVI->GetFrame((u8*)(&R.pBits)));
+        //      R_ASSERT(pAVI->GetFrame((u8*)(&R.pBits)));
 
         R_CHK(T2D->UnlockRect(0));
     }
@@ -269,7 +269,7 @@ void CTexture::Load()
                     pSurface = ::RImplementation.texture_load(buffer, mem);
                     if (pSurface)
                     {
-                        // pSurface->SetPriority	(PRIORITY_LOW);
+                        // pSurface->SetPriority    (PRIORITY_LOW);
                         seqDATA.push_back(pSurface);
                         flags.MemoryUsage += mem;
                     }
@@ -287,7 +287,7 @@ void CTexture::Load()
             // Calc memory usage and preload into vid-mem
             if (pSurface)
             {
-                // pSurface->SetPriority	(PRIORITY_NORMAL);
+                // pSurface->SetPriority    (PRIORITY_NORMAL);
                 flags.MemoryUsage = mem;
             }
         }
@@ -303,7 +303,7 @@ void CTexture::Unload()
     _SHOW_REF(msg_buff, pSurface);
 #endif // DEBUG
 
-    //.	if (flags.bLoaded)		Msg		("* Unloaded: %s",cName.c_str());
+    //. if (flags.bLoaded)      Msg     ("* Unloaded: %s",cName.c_str());
 
     flags.bLoaded = FALSE;
     if (!seqDATA.empty())

@@ -46,7 +46,7 @@ public:
     virtual u16 ObjectID() const = 0;
     virtual IGameObject* IObject() = 0; //--#SM+#--
     virtual ICollisionForm* ObjectCollisionModel() = 0;
-    //	virtual	IRenderVisual*					ObjectVisual						()						=0;
+    //  virtual IRenderVisual*                  ObjectVisual                        ()                      =0;
     virtual IKinematics* ObjectKinematics() = 0;
     virtual IDamageSource* ObjectCastIDamageSource() = 0;
     virtual void ObjectProcessingDeactivate() = 0;
@@ -62,7 +62,7 @@ public:
     virtual bool IsStalker() = 0;
     virtual bool IsCollideWithBullets() = 0; //--#SM+#--
     virtual bool IsCollideWithActorCamera() = 0; //--#SM+#--
-    // virtual	void							SetWeaponHideState					( u16 State, bool bSet )=0;
+    // virtual  void                            SetWeaponHideState                  ( u16 State, bool bSet )=0;
     virtual void HideAllWeapons(bool v) = 0; //(SetWeaponHideState(INV_STATE_BLOCK_ALL,true))
     virtual void MovementCollisionEnable(bool enable) = 0;
     virtual CPHSoundPlayer* ObjectPhSoundPlayer() = 0;

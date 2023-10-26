@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: base_monster_path.cpp
-//	Created 	: 26.05.2003
-//  Modified 	: 26.05.2003
-//	Author		: Serge Zhem
-//	Description : Path finding, curve building, position prediction
+//  Module      : base_monster_path.cpp
+//  Created     : 26.05.2003
+//  Modified    : 26.05.2003
+//  Author      : Serge Zhem
+//  Description : Path finding, curve building, position prediction
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

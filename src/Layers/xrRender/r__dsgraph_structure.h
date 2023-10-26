@@ -2,7 +2,7 @@
 
 #include "r__sector.h"
 
-// feedback	for receiving visuals
+// feedback for receiving visuals
 class R_feedback
 {
 public:
@@ -44,9 +44,9 @@ struct R_dsgraph_structure
     } o;
 
     // Dynamic scene graph
-    // R_dsgraph::mapNormal_T										mapNormal	[2]		;	// 2==(priority/2)
+    // R_dsgraph::mapNormal_T                                       mapNormal   [2]     ;   // 2==(priority/2)
     R_dsgraph::mapNormalPasses_T mapNormalPasses[2]; // 2==(priority/2)
-    // R_dsgraph::mapMatrix_T										mapMatrix	[2]		;
+    // R_dsgraph::mapMatrix_T                                       mapMatrix   [2]     ;
     R_dsgraph::mapMatrixPasses_T mapMatrixPasses[2];
     R_dsgraph::mapSorted_T mapSorted;
     R_dsgraph::mapHUD_T mapHUD;

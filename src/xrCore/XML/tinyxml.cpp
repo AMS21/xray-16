@@ -252,10 +252,10 @@ const char* TiXmlElement::Attribute(const char* name) const
 //#ifdef TIXML_USE_STL
 // const xr_string* TiXmlElement::Attribute( const xr_string& name ) const
 //{
-//	const TiXmlAttribute* node = attributeSet.Find( name );
-//	if ( node )
-//		return &node->ValueStr();
-//	return 0;
+//  const TiXmlAttribute* node = attributeSet.Find( name );
+//  if ( node )
+//      return &node->ValueStr();
+//  return 0;
 //}
 //#endif
 
@@ -367,11 +367,11 @@ const TiXmlAttribute* TiXmlAttribute::Next() const
 
 // const TiXmlAttribute* TiXmlAttribute::Previous() const
 //{
-//	// We are using knowledge of the sentinel. The sentinel
-//	// have a value or name.
-//	if ( prev->value.empty() && prev->name.empty() )
-//		return 0;
-//	return prev;
+//  // We are using knowledge of the sentinel. The sentinel
+//  // have a value or name.
+//  if ( prev->value.empty() && prev->name.empty() )
+//      return 0;
+//  return prev;
 //}
 
 int TiXmlAttribute::QueryIntValue(int* ival) const

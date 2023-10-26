@@ -96,7 +96,7 @@ u32 CBlender_Compile::i_Sampler(LPCSTR _name) const
     u32 stage = C->samp.index;
 
     // Create texture
-    // while (stage>=passTextures.size())	passTextures.push_back		(NULL);
+    // while (stage>=passTextures.size())   passTextures.push_back      (NULL);
     return stage;
 }
 
@@ -190,7 +190,7 @@ u32 CBlender_Compile::r_Sampler(
         // Sampler states
         i_Address(dwStage, address);
         i_Filter(dwStage, fmin, fmip, fmag);
-        //.i_Filter				(dwStage,D3DTEXF_POINT,D3DTEXF_POINT,D3DTEXF_POINT); // show pixels
+        //.i_Filter             (dwStage,D3DTEXF_POINT,D3DTEXF_POINT,D3DTEXF_POINT); // show pixels
         if (dwStage < 4)
             i_Projective(dwStage, b_ps1x_ProjectiveDivide);
     }

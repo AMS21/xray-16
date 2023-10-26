@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_danger_planner.cpp
-//	Created 	: 11.02.2005
-//  Modified 	: 11.02.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker danger planner
+//  Module      : stalker_danger_planner.cpp
+//  Created     : 11.02.2005
+//  Modified    : 11.02.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker danger planner
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -55,7 +55,7 @@ void CStalkerDangerPlanner::finalize()
     if (object().memory().enemy().selected())
         object().memory().danger().time_line(Device.dwTimeGlobal);
 
-    //	object().sound().remove_active_sounds		(u32(-1));
+    //  object().sound().remove_active_sounds       (u32(-1));
 }
 
 void CStalkerDangerPlanner::update()

@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_loophole_planner_actions.h
-//	Created 	: 04.09.2007
-//	Author		: Alexander Dudin
-//	Description	: Smart cover loophole planner action classes
+//  Module      : smart_cover_loophole_planner_actions.h
+//  Created     : 04.09.2007
+//  Author      : Alexander Dudin
+//  Description : Smart cover loophole planner action classes
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef SMART_COVER_LOOPHOLE_PLANNER_ACTIONS_H_INCLUDED

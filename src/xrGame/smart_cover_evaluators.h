@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_evaluators.h
-//	Created 	: 05.11.2007
-//	Author		: Alexander Dudin
-//	Description : Smart cover evaluators classes
+//  Module      : smart_cover_evaluators.h
+//  Created     : 05.11.2007
+//  Author      : Alexander Dudin
+//  Description : Smart cover evaluators classes
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef SMART_COVER_EVALUATORS_H_INCLUDED

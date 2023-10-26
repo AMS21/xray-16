@@ -251,7 +251,7 @@ void CPHShell::Deactivate()
     vis_update_activate();
     // if(ref_object && !CPHObject::is_active() && m_active_count == 0)
     //{
-    //	ref_object->processing_activate();
+    //  ref_object->processing_activate();
     //}
     DisableObject();
     CPHObject::remove_from_recently_deactivated();

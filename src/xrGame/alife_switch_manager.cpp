@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_switch_manager.cpp
-//	Created 	: 25.12.2002
-//  Modified 	: 12.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALife Simulator switch manager
+//  Module      : alife_switch_manager.cpp
+//  Created     : 25.12.2002
+//  Modified    : 12.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALife Simulator switch manager
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -106,7 +106,7 @@ void CALifeSwitchManager::switch_online(CSE_ALifeDynamicObject* object)
 {
     START_PROFILE("ALife/switch/switch_online")
 #ifdef DEBUG
-    //	if (psAI_Flags.test(aiALife))
+    //  if (psAI_Flags.test(aiALife))
     Msg("[LSS][%d] Going online [%d][%s][%d] ([%f][%f][%f] : [%f][%f][%f]), on '%s'", Device.dwFrame,
         Device.dwTimeGlobal, object->name_replace(), object->ID, VPUSH(graph().actor()->o_Position),
         VPUSH(object->o_Position), "*SERVER*");
@@ -119,7 +119,7 @@ void CALifeSwitchManager::switch_offline(CSE_ALifeDynamicObject* object)
 {
     START_PROFILE("ALife/switch/switch_offline")
 #ifdef DEBUG
-    //	if (psAI_Flags.test(aiALife))
+    //  if (psAI_Flags.test(aiALife))
     Msg("[LSS][%d] Going offline [%d][%s][%d] ([%f][%f][%f] : [%f][%f][%f]), on '%s'", Device.dwFrame,
         Device.dwTimeGlobal, object->name_replace(), object->ID, VPUSH(graph().actor()->o_Position),
         VPUSH(object->o_Position), "*SERVER*");

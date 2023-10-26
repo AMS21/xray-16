@@ -18,7 +18,7 @@ BattlEyeSystem::BattlEyeSystem()
     server = NULL;
 
     m_test_load_client = false;
-    //-	auto_update = 1;
+    //- auto_update = 1;
 }
 
 BattlEyeSystem::~BattlEyeSystem()

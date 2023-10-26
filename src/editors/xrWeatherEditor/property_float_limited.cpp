@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_float_limited.cpp
-//	Created 	: 07.12.2007
-//  Modified 	: 07.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : float property implementation class
+//  Module      : property_float_limited.cpp
+//  Created     : 07.12.2007
+//  Modified    : 07.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : float property implementation class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

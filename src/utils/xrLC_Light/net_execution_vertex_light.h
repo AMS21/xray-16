@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Created		: 23.03.2009
-//	Author		: Konstantin Slipchenko
-//	Copyright (C) GSC Game World - 2009
+//  Created     : 23.03.2009
+//  Author      : Konstantin Slipchenko
+//  Copyright (C) GSC Game World - 2009
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef NET_EXECUTION_VERTEX_LIGHT_H_INCLUDED

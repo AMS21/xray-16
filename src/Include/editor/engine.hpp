@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: engine.hpp
-//	Created 	: 04.12.2007
-//  Modified 	: 04.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : engine interface class
+//  Module      : engine.hpp
+//  Created     : 04.12.2007
+//  Modified    : 04.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : engine interface class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef EDITOR_ENGINE_HPP_INCLUDED

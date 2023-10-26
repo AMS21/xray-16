@@ -8,10 +8,10 @@
 enum
 {
     NO_ACTIVE_SLOT = 0,
-    KNIFE_SLOT = 1, // btn1			was (0)			!!!
-    INV_SLOT_2, // btn2 PISTOL_SLOT	was (1)
-    INV_SLOT_3, // btn3 RIFLE_SLOT	was (2)
-    GRENADE_SLOT, // btn4 GRENADE_SLOT	was (3)
+    KNIFE_SLOT = 1, // btn1         was (0)         !!!
+    INV_SLOT_2, // btn2 PISTOL_SLOT was (1)
+    INV_SLOT_3, // btn3 RIFLE_SLOT  was (2)
+    GRENADE_SLOT, // btn4 GRENADE_SLOT  was (3)
     BINOCULAR_SLOT, // btn5 BINOCULAR_SLOT
     BOLT_SLOT, // btn6 BOLT_SLOT
     OUTFIT_SLOT, // outfit

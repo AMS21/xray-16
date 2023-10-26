@@ -6,7 +6,7 @@
 //.#include "xrCore/xrPool.h"
 
 // pool
-//.static	poolSS<R_constant,512>			g_constant_allocator;
+//.static   poolSS<R_constant,512>          g_constant_allocator;
 
 R_constant_table::~R_constant_table()
 {
@@ -132,7 +132,7 @@ void R_constant_table::merge(R_constant_table* T)
     }
 
 #if defined(USE_DX11)
-    //	TODO:	DX11:	Implement merge with validity check
+    //  TODO:   DX11:   Implement merge with validity check
     for (int id = 0; id < R__NUM_CONTEXTS; ++id)
     {
         m_CBTable[id].reserve(m_CBTable[id].size() + T->m_CBTable[id].size());

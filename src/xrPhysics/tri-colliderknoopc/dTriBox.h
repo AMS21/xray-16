@@ -338,14 +338,14 @@ dReal depth2=BxExPr/2.f-dFabs(distance2);
 
 if(depth0<depth1){
 
-if(depth0<depth2)						{
+if(depth0<depth2)                       {
 norm[0]=distance0*crossAx0[0];
 norm[1]=distance0*crossAx0[1];
 norm[2]=distance0*crossAx0[2];
 return depth0;
 }
 
-else									{
+else                                    {
 
 norm[0]=distance2*crossAx2[0];
 norm[1]=distance2*crossAx2[1];
@@ -357,13 +357,13 @@ return depth2;
 
 else{
 
-if(depth1<depth2)						{
+if(depth1<depth2)                       {
 norm[0]=distance1*crossAx1[0];
 norm[1]=distance1*crossAx1[1];
 norm[2]=distance1*crossAx1[2];
 return depth1;
 }
-else 									{
+else                                    {
 norm[0]=distance2*crossAx2[0];
 norm[1]=distance2*crossAx2[1];
 norm[2]=distance2*crossAx2[2];

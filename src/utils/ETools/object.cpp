@@ -440,7 +440,7 @@ long Object::CollapseAllowedForLevel(MeshPt* pptBinned, int iLevel)
 // Return the error from this edge collapse.
 // Set bTryToCacheResult=TRUE if you can pass pptBinned in multiple times.
 // Make sure you call this with bTryToCacheResult=FALSE if any data changes,
-//	or you'll confuse the poor thing.
+//  or you'll confuse the poor thing.
 void pack_to_vector(MxVector& tgt, const Fvector3& src_p, float src_u, float src_v)
 {
     tgt[0] = src_p.x;

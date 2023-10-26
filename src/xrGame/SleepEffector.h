@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////
-// SleepEffector.h:		эффектор, который запускается во время сна
-//						актера
+// SleepEffector.h:     эффектор, который запускается во время сна
+//                      актера
 //////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -19,8 +19,8 @@ class CSleepEffectorPP : public CEffectorPP
 
     SPPInfo state; // current state
     float m_total; // total PP time
-    float m_attack; // attack time in percents	[0..1]
-    float m_release; // release time in percents	[0..1]
+    float m_attack; // attack time in percents  [0..1]
+    float m_release; // release time in percents    [0..1]
 
 public:
     CSleepEffectorPP(const SPPInfo& ppi, float life_time, float attack_time = 0.0f, float release_time = 0.0f);

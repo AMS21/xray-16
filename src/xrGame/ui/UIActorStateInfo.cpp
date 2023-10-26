@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: UIActorStateInfo.cpp
-//	Created 	: 15.02.2008
-//	Author		: Evgeniy Sokolov
-//	Description : UI actor state window class implementation
+//  Module      : UIActorStateInfo.cpp
+//  Created     : 15.02.2008
+//  Author      : Evgeniy Sokolov
+//  Description : UI actor state window class implementation
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

@@ -37,7 +37,7 @@ public:
 Requirements:
 0. Generic
     * O(1) insertion
-        - radius completely determines	"level"
+        - radius completely determines  "level"
         - position completely determines "node"
     * O(1) removal
     *
@@ -69,23 +69,23 @@ enum
 };
 //////////////////////////////////////////////////////////////////////////
 // Comment:
-//		ordinal objects			- renderable?, collideable?, visibleforAI?
-//		physical-decorations	- renderable, collideable
-//		lights					- lightsource
-//		particles(temp-objects)	- renderable
-//		glow					- renderable
-//		sound					- ???
+//      ordinal objects         - renderable?, collideable?, visibleforAI?
+//      physical-decorations    - renderable, collideable
+//      lights                  - lightsource
+//      particles(temp-objects) - renderable
+//      glow                    - renderable
+//      sound                   - ???
 //////////////////////////////////////////////////////////////////////////
-// class 				IRender_Sector;
-// class 				ISpatial;
-// class 				ISpatial_NODE;
-// class 				ISpatial_DB;
+// class                IRender_Sector;
+// class                ISpatial;
+// class                ISpatial_NODE;
+// class                ISpatial_DB;
 
 //////////////////////////////////////////////////////////////////////////
 // Fast type conversion
-// class 			IGameObject;
-// class 			IRenderable;
-// class 			IRender_Light;
+// class            IGameObject;
+// class            IRenderable;
+// class            IRender_Light;
 //
 // namespace Feel { class Sound; }
 
@@ -265,7 +265,7 @@ public:
 
     // managing
     void initialize(Fbox& BB);
-    // void							destroy			();
+    // void                         destroy         ();
     void insert(ISpatial* S);
     void remove(ISpatial* S);
     void update(u32 nodes = 8);

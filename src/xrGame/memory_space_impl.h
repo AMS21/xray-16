@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: memory_space_impl.h
-//	Created 	: 25.05.2004
-//  Modified 	: 25.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Memory space implementation
+//  Module      : memory_space_impl.h
+//  Created     : 25.05.2004
+//  Modified    : 25.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Memory space implementation
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -32,12 +32,12 @@ IC void CObjectParams<T>::fill(const T* game_object)
 #endif
 
     m_level_vertex_id = game_object ? game_object->ai_location().level_vertex_id() : u32(-1);
-    //	if (game_object && ai().get_level_graph() && ai().level_graph().valid_vertex_id(m_level_vertex_id) &&
+    //  if (game_object && ai().get_level_graph() && ai().level_graph().valid_vertex_id(m_level_vertex_id) &&
     //! ai().level_graph().inside(m_level_vertex_id,game_object->Position())) {
-    //		m_position			= ai().level_graph().vertex_position(m_level_vertex_id);
-    //		m_position.y		= game_object->Position().y;
-    //		return;
-    //	}
+    //      m_position          = ai().level_graph().vertex_position(m_level_vertex_id);
+    //      m_position.y        = game_object->Position().y;
+    //      return;
+    //  }
 
     if (game_object)
     {

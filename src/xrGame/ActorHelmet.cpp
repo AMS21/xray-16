@@ -91,7 +91,7 @@ void CHelmet::net_Import(NET_Packet& P)
 void CHelmet::OnH_A_Chield()
 {
     inherited::OnH_A_Chield();
-    //	ReloadBonesProtection();
+    //  ReloadBonesProtection();
 }
 
 void CHelmet::OnMoveToSlot(const SInvItemPlace& previous_place)

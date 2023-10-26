@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: particles_systems_library_interface.hpp
-//	Created 	: 26.01.2008
-//  Modified 	: 26.01.2008
-//	Author		: Dmitriy Iassenev
-//	Description : particles systems library interface
+//  Module      : particles_systems_library_interface.hpp
+//  Created     : 26.01.2008
+//  Modified    : 26.01.2008
+//  Author      : Dmitriy Iassenev
+//  Description : particles systems library interface
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PARTICLES_SYSTEMS_LIBRARY_INTERFACE_HPP_INCLUDED

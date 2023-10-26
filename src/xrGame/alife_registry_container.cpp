@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_registry_container.cpp
-//	Created 	: 01.07.2004
-//  Modified 	: 01.07.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALife registry container class
+//  Module      : alife_registry_container.cpp
+//  Created     : 01.07.2004
+//  Modified    : 01.07.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALife registry container class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

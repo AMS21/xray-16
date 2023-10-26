@@ -5,7 +5,7 @@
 struct XRCORE_API Fcylinder
 {
     Fvector3 m_center;
-	Fvector3 m_direction;
+    Fvector3 m_direction;
     float m_height;
     float m_radius;
 

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: space_restriction_base.cpp
-//	Created 	: 17.08.2004
-//  Modified 	: 27.08.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Space restriction base
+//  Module      : space_restriction_base.cpp
+//  Created     : 17.08.2004
+//  Modified    : 27.08.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Space restriction base
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

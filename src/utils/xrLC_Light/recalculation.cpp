@@ -94,14 +94,14 @@ void recalculation::close()
         xr_delete(dtFS);
 }
 
-// const DetailHeader				&dtH;
-// u8								*slots_flags;
-// CVirtualFileRW					*dtFS;
+// const DetailHeader               &dtH;
+// u8                               *slots_flags;
+// CVirtualFileRW                   *dtFS;
 
-// Frect	calculation_rect;
-// bool	recalculate;
-// bool	partial_calculate;
-// bool	force_recalculate;
+// Frect    calculation_rect;
+// bool recalculate;
+// bool partial_calculate;
+// bool force_recalculate;
 void recalculation::read(INetReader& r)
 {
     R_ASSERT(!slots_flags);

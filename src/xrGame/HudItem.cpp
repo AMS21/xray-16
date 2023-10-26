@@ -236,7 +236,7 @@ void CHudItem::OnH_B_Independent(bool just_before_destroy)
         g_player_hud->detach_item(this);
         Msg("---Detaching hud item [%s][%d]", this->HudSection().c_str(), this->object().ID());
     }*/
-    // SetHudItemData			(NULL);
+    // SetHudItemData           (NULL);
 }
 
 void CHudItem::OnH_A_Independent()
@@ -253,13 +253,13 @@ void CHudItem::on_a_hud_attach()
     {
         PlayHUDMotion_noCB(m_current_motion, FALSE);
 #ifdef DEBUG
-//		Msg("continue playing [%s][%d]",m_current_motion.c_str(), Device.dwFrame);
+//      Msg("continue playing [%s][%d]",m_current_motion.c_str(), Device.dwFrame);
 #endif // #ifdef DEBUG
     }
     else
     {
 #ifdef DEBUG
-//		Msg("no active motion");
+//      Msg("no active motion");
 #endif // #ifdef DEBUG
     }
 }

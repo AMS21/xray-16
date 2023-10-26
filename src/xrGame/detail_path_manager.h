@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: detailed_path_manager.h
-//	Created 	: 02.10.2001
-//  Modified 	: 12.11.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Detail path manager
+//  Module      : detailed_path_manager.h
+//  Created     : 02.10.2001
+//  Modified    : 12.11.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Detail path manager
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

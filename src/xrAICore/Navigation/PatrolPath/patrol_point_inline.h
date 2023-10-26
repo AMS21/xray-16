@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: patrol_point_inline.h
-//	Created 	: 15.06.2004
-//  Modified 	: 15.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Patrol point inline functions
+//  Module      : patrol_point_inline.h
+//  Created     : 15.06.2004
+//  Modified    : 15.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Patrol point inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

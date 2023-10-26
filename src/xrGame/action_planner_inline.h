@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: action_planner_inline.h
-//	Created 	: 28.01.2004
-//  Modified 	: 10.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Action planner inline functions
+//  Module      : action_planner_inline.h
+//  Created     : 28.01.2004
+//  Modified    : 10.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Action planner inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -82,7 +82,7 @@ void CPlanner::update()
 
         show_current_world_state();
         show_target_world_state();
-        //		VERIFY2						(!this->m_failed,"Problem solver couldn't build a valid path - verify your
+        //      VERIFY2                     (!this->m_failed,"Problem solver couldn't build a valid path - verify your
         //conditions,
         // effects and goals!");
     }
@@ -275,10 +275,10 @@ IC void CPlanner::show(LPCSTR offset)
         Msg("%soperator    [%d][%s]", offset, it.m_operator_id, it.m_operator->m_action_name);
 
         for (const auto& it2 : it.m_operator->conditions().conditions())
-            Msg("%s	condition [%d][%s] = %s", offset, it2.condition(), property2string(it2.condition()),
+            Msg("%s condition [%d][%s] = %s", offset, it2.condition(), property2string(it2.condition()),
                 it2.value() ? "TRUE" : "FALSE");
         for (const auto& it2 : it.m_operator->effects().conditions())
-            Msg("%s	effect    [%d][%s] = %s", offset, it2.condition(), property2string(it2.condition()),
+            Msg("%s effect    [%d][%s] = %s", offset, it2.condition(), property2string(it2.condition()),
                 it2.value() ? "TRUE" : "FALSE");
 
         it.m_operator->show(temp);

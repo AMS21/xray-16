@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_animation_manager_inline.h
-//	Created 	: 25.02.2003
-//  Modified 	: 19.11.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker animation manager inline functions
+//  Module      : stalker_animation_manager_inline.h
+//  Created     : 25.02.2003
+//  Modified    : 19.11.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker animation manager inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

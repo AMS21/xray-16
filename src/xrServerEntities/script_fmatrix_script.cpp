@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_fmatrix_script.cpp
-//	Created 	: 28.06.2004
-//  Modified 	: 28.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script float matrix script export
+//  Module      : script_fmatrix_script.cpp
+//  Created     : 28.06.2004
+//  Modified    : 28.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script float matrix script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -41,117 +41,117 @@ SCRIPT_EXPORT(Fmatrix, (),
                 .def("mul", (Fmatrix & (Fmatrix::*)(float))(&Fmatrix::mul), return_reference_to<1>())
                 .def("div", (Fmatrix & (Fmatrix::*)(const Fmatrix&, float))(&Fmatrix::div), return_reference_to<1>())
                 .def("div", (Fmatrix & (Fmatrix::*)(float))(&Fmatrix::div), return_reference_to<1>())
-                //			.def("invert",						(Fmatrix & (Fmatrix::*)())(&Fmatrix::invert),
+                //          .def("invert",                      (Fmatrix & (Fmatrix::*)())(&Fmatrix::invert),
                 // return_reference_to<1>())
-                //			.def("invert",						(Fmatrix & (Fmatrix::*)(const Fmatrix
+                //          .def("invert",                      (Fmatrix & (Fmatrix::*)(const Fmatrix
                 //&))(&Fmatrix::invert), return_reference_to<1>())
-                //			.def("transpose",					(Fmatrix & (Fmatrix::*)())(&Fmatrix::transpose),
+                //          .def("transpose",                   (Fmatrix & (Fmatrix::*)())(&Fmatrix::transpose),
                 // return_reference_to<1>())
-                //			.def("transpose",					(Fmatrix & (Fmatrix::*)(const Fmatrix
+                //          .def("transpose",                   (Fmatrix & (Fmatrix::*)(const Fmatrix
                 //&))(&Fmatrix::transpose), return_reference_to<1>())
-                //			.def("translate",					(Fmatrix & (Fmatrix::*)(const Fvector
+                //          .def("translate",                   (Fmatrix & (Fmatrix::*)(const Fvector
                 //&))(&Fmatrix::translate), return_reference_to<1>())
-                //			.def("translate",					(Fmatrix & (Fmatrix::*)(float, float,
+                //          .def("translate",                   (Fmatrix & (Fmatrix::*)(float, float,
                 // float))(&Fmatrix::translate), return_reference_to<1>())
-                //			.def("translate_over",				(Fmatrix & (Fmatrix::*)(const Fvector
+                //          .def("translate_over",              (Fmatrix & (Fmatrix::*)(const Fvector
                 //&))(&Fmatrix::translate_over), return_reference_to<1>())
-                //			.def("translate_over",				(Fmatrix & (Fmatrix::*)(float, float,
+                //          .def("translate_over",              (Fmatrix & (Fmatrix::*)(float, float,
                 // float))(&Fmatrix::translate_over), return_reference_to<1>())
-                //			.def("translate_add",				&Fmatrix::translate_add,
+                //          .def("translate_add",               &Fmatrix::translate_add,
                 // return_reference_to<1>())
-                //			.def("scale",						(Fmatrix & (Fmatrix::*)(const Fvector
+                //          .def("scale",                       (Fmatrix & (Fmatrix::*)(const Fvector
                 //&))(&Fmatrix::scale), return_reference_to<1>())
-                //			.def("scale",						(Fmatrix & (Fmatrix::*)(float, float,
+                //          .def("scale",                       (Fmatrix & (Fmatrix::*)(float, float,
                 // float))(&Fmatrix::scale), return_reference_to<1>())
-                //			.def("rotateX",						&Fmatrix::rotateX,
+                //          .def("rotateX",                     &Fmatrix::rotateX,
                 // return_reference_to<1>())
-                //			.def("rotateY",						&Fmatrix::rotateY,
+                //          .def("rotateY",                     &Fmatrix::rotateY,
                 // return_reference_to<1>())
-                //			.def("rotateZ",						&Fmatrix::rotateZ,
+                //          .def("rotateZ",                     &Fmatrix::rotateZ,
                 // return_reference_to<1>())
-                //			.def("rotation",					(Fmatrix & (Fmatrix::*)(const Fvector &, const Fvector
-                //&))(&Fmatrix::rotation),											return_reference_to<1>())
-                //			.def("rotation",					(Fmatrix & (Fmatrix::*)(const Fvector &,
+                //          .def("rotation",                    (Fmatrix & (Fmatrix::*)(const Fvector &, const Fvector
+                //&))(&Fmatrix::rotation),                                          return_reference_to<1>())
+                //          .def("rotation",                    (Fmatrix & (Fmatrix::*)(const Fvector &,
                 // float))(&Fmatrix::rotation), return_reference_to<1>())
-                //			.def("rotation",					&Fmatrix::rotation,
+                //          .def("rotation",                    &Fmatrix::rotation,
                 // return_reference_to<1>())
                 /*
-                            .def("mapXYZ",						&Fmatrix::mapXYZ,
+                            .def("mapXYZ",                      &Fmatrix::mapXYZ,
                    return_reference_to<1>())
-                            .def("mapXZY",						&Fmatrix::mapXZY,
+                            .def("mapXZY",                      &Fmatrix::mapXZY,
                    return_reference_to<1>())
-                            .def("mapYXZ",						&Fmatrix::mapYXZ,
+                            .def("mapYXZ",                      &Fmatrix::mapYXZ,
                    return_reference_to<1>())
-                            .def("mapYZX",						&Fmatrix::mapYZX,
+                            .def("mapYZX",                      &Fmatrix::mapYZX,
                    return_reference_to<1>())
-                            .def("mapZXY",						&Fmatrix::mapZXY,
+                            .def("mapZXY",                      &Fmatrix::mapZXY,
                    return_reference_to<1>())
-                            .def("mapZYX",						&Fmatrix::mapZYX,
+                            .def("mapZYX",                      &Fmatrix::mapZYX,
                    return_reference_to<1>())
-                            .def("mirrorX",						&Fmatrix::mirrorX,
+                            .def("mirrorX",                     &Fmatrix::mirrorX,
                    return_reference_to<1>())
-                            .def("mirrorX_over",				&Fmatrix::mirrorX_over,
+                            .def("mirrorX_over",                &Fmatrix::mirrorX_over,
                    return_reference_to<1>())
-                            .def("mirrorX_add ",				&Fmatrix::mirrorX_add,
+                            .def("mirrorX_add ",                &Fmatrix::mirrorX_add,
                    return_reference_to<1>())
-                            .def("mirrorY",						&Fmatrix::mirrorY,
+                            .def("mirrorY",                     &Fmatrix::mirrorY,
                    return_reference_to<1>())
-                            .def("mirrorY_over",				&Fmatrix::mirrorY_over,
+                            .def("mirrorY_over",                &Fmatrix::mirrorY_over,
                    return_reference_to<1>())
-                            .def("mirrorY_add ",				&Fmatrix::mirrorY_add,
+                            .def("mirrorY_add ",                &Fmatrix::mirrorY_add,
                    return_reference_to<1>())
-                            .def("mirrorZ",						&Fmatrix::mirrorZ,
+                            .def("mirrorZ",                     &Fmatrix::mirrorZ,
                    return_reference_to<1>())
-                            .def("mirrorZ_over",				&Fmatrix::mirrorZ_over,
+                            .def("mirrorZ_over",                &Fmatrix::mirrorZ_over,
                    return_reference_to<1>())
-                            .def("mirrorZ_add ",				&Fmatrix::mirrorZ_add,
+                            .def("mirrorZ_add ",                &Fmatrix::mirrorZ_add,
                    return_reference_to<1>())
                 */
-                //			.def("build_projection",			&Fmatrix::build_projection,
+                //          .def("build_projection",            &Fmatrix::build_projection,
                 // return_reference_to<1>())
-                //			.def("build_projection_HAT",		&Fmatrix::build_projection_HAT,
+                //          .def("build_projection_HAT",        &Fmatrix::build_projection_HAT,
                 // return_reference_to<1>())
-                //			.def("build_projection_ortho",		&Fmatrix::build_projection_ortho,
+                //          .def("build_projection_ortho",      &Fmatrix::build_projection_ortho,
                 // return_reference_to<1>())
-                //			.def("build_camera",				&Fmatrix::build_camera,
+                //          .def("build_camera",                &Fmatrix::build_camera,
                 // return_reference_to<1>())
-                //			.def("build_camera_dir",			&Fmatrix::build_camera_dir,
+                //          .def("build_camera_dir",            &Fmatrix::build_camera_dir,
                 // return_reference_to<1>())
-                //			.def("inertion",					&Fmatrix::inertion,
+                //          .def("inertion",                    &Fmatrix::inertion,
                 // return_reference_to<1>())
-                //			.def("transform_tiny32",			&Fmatrix::transform_tiny32)
-                //			.def("transform_tiny23",			&Fmatrix::transform_tiny23)
-                //			.def("transform_tiny",				(void	   (Fmatrix::*)(Fvector &)
+                //          .def("transform_tiny32",            &Fmatrix::transform_tiny32)
+                //          .def("transform_tiny23",            &Fmatrix::transform_tiny23)
+                //          .def("transform_tiny",              (void      (Fmatrix::*)(Fvector &)
                 // const)(&Fmatrix::transform_tiny), out_value<2>())
-                //			.def("transform_tiny",				(void	   (Fmatrix::*)(Fvector &, const Fvector &)
+                //          .def("transform_tiny",              (void      (Fmatrix::*)(Fvector &, const Fvector &)
                 // const)(&Fmatrix::transform_tiny), out_value<2>())
-                //			.def("transform_dir",				(void	   (Fmatrix::*)(Fvector &)
+                //          .def("transform_dir",               (void      (Fmatrix::*)(Fvector &)
                 // const)(&Fmatrix::transform_dir), out_value<2>())
-                //			.def("transform_dir",				(void	   (Fmatrix::*)(Fvector &, const Fvector &)
+                //          .def("transform_dir",               (void      (Fmatrix::*)(Fvector &, const Fvector &)
                 // const)(&Fmatrix::transform_dir), out_value<2>())
-                //			.def("transform",					(void	   (Fmatrix::*)(Fvector &)
+                //          .def("transform",                   (void      (Fmatrix::*)(Fvector &)
                 // const)(&Fmatrix::transform), out_value<2>())
-                //			.def("transform",					&matrix_transform)
+                //          .def("transform",                   &matrix_transform)
                 .def("setHPB", &Fmatrix::setHPB, return_reference_to<1>())
-                //			.def("setXYZ",						(Fmatrix & (Fmatrix::*)(Fvector &))(&Fmatrix::setXYZ),
+                //          .def("setXYZ",                      (Fmatrix & (Fmatrix::*)(Fvector &))(&Fmatrix::setXYZ),
                 // policy_list<return_reference_to<1>, out_value<2>>())
                 .def(
                     "setXYZ", (Fmatrix & (Fmatrix::*)(float, float, float))(&Fmatrix::setXYZ), return_reference_to<1>())
-                //			.def("setXYZi",						(Fmatrix & (Fmatrix::*)(Fvector
+                //          .def("setXYZi",                     (Fmatrix & (Fmatrix::*)(Fvector
                 //&))(&Fmatrix::setXYZi), policy_list<return_reference_to<1>, out_value<2>>())
                 .def("setXYZi", (Fmatrix & (Fmatrix::*)(float, float, float))(&Fmatrix::setXYZi),
                     return_reference_to<1>())
-                //			.def("getHPB",						(void	   (Fmatrix::*)(Fvector &)
+                //          .def("getHPB",                      (void      (Fmatrix::*)(Fvector &)
                 // const)(&Fmatrix::getHPB), out_value<2>())
                 .def("getHPB", &get_matrix_hpb)
-            //			.def("getXYZ",						(void	   (Fmatrix::*)(Fvector &) const)(&Fmatrix::getXYZ),
+            //          .def("getXYZ",                      (void      (Fmatrix::*)(Fvector &) const)(&Fmatrix::getXYZ),
             // out_value<2>())
-            //			.def("getXYZ",						(void	   (Fmatrix::*)(float &, float &, float &)
+            //          .def("getXYZ",                      (void      (Fmatrix::*)(float &, float &, float &)
             // const)(&Fmatrix::getXYZ))
-            //			.def("getXYZi",						(void	   (Fmatrix::*)(Fvector &)
+            //          .def("getXYZi",                     (void      (Fmatrix::*)(Fvector &)
             //const)(&Fmatrix::getXYZi),
             // out_value<2>())
-            //			.def("getXYZi",						(void	   (Fmatrix::*)(float &, float &, float &)
+            //          .def("getXYZi",                     (void      (Fmatrix::*)(float &, float &, float &)
             // const)(&Fmatrix::getXYZi))
     ];
 });

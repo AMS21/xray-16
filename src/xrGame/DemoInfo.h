@@ -11,7 +11,7 @@ struct game_PlayerState;
 
 // reads string in demo file format: (u32 - str_size, stringz)
 // if the string is longer than max_size, then reads max_size-1 bytes of string, and jumps to the end of string
-// void stream_read_demostring	(CStreamReader* stream, shared_str & dest_rest, u32 max_size =
+// void stream_read_demostring  (CStreamReader* stream, shared_str & dest_rest, u32 max_size =
 // STREAM_DEMOSTRING_MAX_SIZE);
 // void stream_write_demostring(IWriter* writer, shared_str const & string_to_write, u32 max_size =
 // STREAM_DEMOSTRING_MAX_SIZE);

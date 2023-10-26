@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: game_graph_builder.cpp
-//	Created 	: 14.12.2005
-//  Modified 	: 14.12.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Game graph builder
+//  Module      : game_graph_builder.cpp
+//  Created     : 14.12.2005
+//  Modified    : 14.12.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Game graph builder
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
@@ -63,8 +63,8 @@ void CGameGraphBuilder::load_graph_point(NET_Packet& net_packet)
     R_ASSERT(M_SPAWN == id);
     net_packet.r_stringZ(section_id);
 
-    //	if (xr_strcmp("graph_point",section_id))
-    //		return;
+    //  if (xr_strcmp("graph_point",section_id))
+    //      return;
 
     CSE_Abstract* entity = F_entity_Create(section_id);
     if (!entity)
@@ -304,8 +304,8 @@ void CGameGraphBuilder::save_cross_table(const float& start, const float& amount
 
     Msg("Saving cross table");
 
-    //	CTimer								timer;
-    //	timer.Start							();
+    //  CTimer                              timer;
+    //  timer.Start                         ();
 
     CMemoryWriter tMemoryStream;
     CGameLevelCrossTable::CHeader tCrossTableHeader;
@@ -333,13 +333,13 @@ void CGameGraphBuilder::save_cross_table(const float& start, const float& amount
 
     tMemoryStream.close_chunk();
 
-    //	Msg						("CT:SAVE : %f",timer.GetElapsed_sec());
-    //	Msg						("Flushing cross table");
+    //  Msg                     ("CT:SAVE : %f",timer.GetElapsed_sec());
+    //  Msg                     ("Flushing cross table");
 
     tMemoryStream.save_to(m_cross_table_name);
-    //	Msg						("CT:SAVE : %f",timer.GetElapsed_sec());
+    //  Msg                     ("CT:SAVE : %f",timer.GetElapsed_sec());
 
-    //	Msg						("Freiing cross table resources");
+    //  Msg                     ("Freiing cross table resources");
 
     m_marks.clear();
     m_mark_stack.clear();
@@ -347,7 +347,7 @@ void CGameGraphBuilder::save_cross_table(const float& start, const float& amount
     m_current_fringe.clear();
     m_next_fringe.clear();
 
-    //	Msg						("CT:SAVE : %f",timer.GetElapsed_sec());
+    //  Msg                     ("CT:SAVE : %f",timer.GetElapsed_sec());
     Logger.Progress(start + amount);
 }
 
@@ -357,19 +357,19 @@ void CGameGraphBuilder::build_cross_table(const float& start, const float& amoun
 
     Msg("Building cross table");
 
-    //	CTimer					timer;
-    //	timer.Start				();
+    //  CTimer                  timer;
+    //  timer.Start             ();
 
     fill_marks(start + 0.000000f * amount, 0.018725f * amount);
-    //	Msg						("CT : %f",timer.GetElapsed_sec());
+    //  Msg                     ("CT : %f",timer.GetElapsed_sec());
     fill_distances(start + 0.018725f * amount, 0.183732f * amount);
-    //	Msg						("CT : %f",timer.GetElapsed_sec());
+    //  Msg                     ("CT : %f",timer.GetElapsed_sec());
     iterate_distances(start + 0.202457f * amount, 0.757202f * amount);
-    //	Msg						("CT : %f",timer.GetElapsed_sec());
+    //  Msg                     ("CT : %f",timer.GetElapsed_sec());
     save_cross_table(start + 0.959659f * amount, 0.040327f * amount);
-    //	Msg						("CT : %f",timer.GetElapsed_sec());
+    //  Msg                     ("CT : %f",timer.GetElapsed_sec());
     load_cross_table(start + 0.999986f * amount, 0.000014f * amount);
-    //	Msg						("CT : %f",timer.GetElapsed_sec());
+    //  Msg                     ("CT : %f",timer.GetElapsed_sec());
 
     Logger.Progress(start + amount);
 }
@@ -429,7 +429,7 @@ void CGameGraphBuilder::fill_neighbours(const u32& game_vertex_id)
 
 float CGameGraphBuilder::path_distance(const u32& game_vertex_id0, const u32& game_vertex_id1)
 {
-    //	return
+    //  return
     //(graph().vertex(game_vertex_id0)->data().level_point().distance_to(graph().vertex(game_vertex_id1)->data().level_point()));
 
     VERIFY(m_graph_engine);
@@ -441,7 +441,7 @@ float CGameGraphBuilder::path_distance(const u32& game_vertex_id0, const u32& ga
     CStraightLineParams parameters(vertex0.data().level_point(), vertex1.data().level_point());
 
     float pure_distance = vertex0.data().level_point().distance_to_xz(vertex1.data().level_point());
-    //	float					pure_distance = vertex0.data().level_point().distance_to(vertex1.data().level_point());
+    //  float                   pure_distance = vertex0.data().level_point().distance_to(vertex1.data().level_point());
     VERIFY(pure_distance < parameters.max_range);
 
     u32 level_vertex_id = level_graph().check_position_in_direction(
@@ -660,21 +660,21 @@ void CGameGraphBuilder::build_graph(const float& start, const float& amount)
 
     m_graph_engine = xr_new<CGraphEngine>(level_graph().header().vertex_count());
     Logger.Progress(start + 0.000000f * amount + amount * 0.067204f);
-    //	Msg						("BG : %f",timer.GetElapsed_sec());
+    //  Msg                     ("BG : %f",timer.GetElapsed_sec());
 
     generate_edges(start + 0.067204f * amount, amount * 0.922647f);
-    //	Msg						("BG : %f",timer.GetElapsed_sec());
+    //  Msg                     ("BG : %f",timer.GetElapsed_sec());
 
     xr_delete(m_graph_engine);
     Logger.Progress(start + 0.989851f * amount + amount * 0.002150f);
-    //	Msg						("BG : %f",timer.GetElapsed_sec());
+    //  Msg                     ("BG : %f",timer.GetElapsed_sec());
 
     connectivity_check(start + 0.992001f * amount, amount * 0.000030f);
-    //	Msg						("BG : %f",timer.GetElapsed_sec());
+    //  Msg                     ("BG : %f",timer.GetElapsed_sec());
     optimize_graph(start + 0.992031f * amount, amount * 0.000454f);
-    //	Msg						("BG : %f",timer.GetElapsed_sec());
+    //  Msg                     ("BG : %f",timer.GetElapsed_sec());
     save_graph(start + 0.992485f * amount, amount * 0.007515f);
-    //	Msg						("BG : %f",timer.GetElapsed_sec());
+    //  Msg                     ("BG : %f",timer.GetElapsed_sec());
 
     Logger.Progress(start + amount);
 }
@@ -688,19 +688,19 @@ void CGameGraphBuilder::build_graph(LPCSTR graph_name, LPCSTR cross_table_name, 
     m_cross_table_name = cross_table_name;
     m_level_name = level_name;
 
-    //	CTimer					timer;
-    //	timer.Start				();
+    //  CTimer                  timer;
+    //  timer.Start             ();
 
     create_graph(0.000000f, 0.000047f);
-    //	Msg						("%f",timer.GetElapsed_sec());
+    //  Msg                     ("%f",timer.GetElapsed_sec());
     load_level_graph(0.000047f, 0.002470f);
-    //	Msg						("%f",timer.GetElapsed_sec());
+    //  Msg                     ("%f",timer.GetElapsed_sec());
     load_graph_points(0.002517f, 0.111812f);
-    //	Msg						("%f",timer.GetElapsed_sec());
+    //  Msg                     ("%f",timer.GetElapsed_sec());
     build_cross_table(0.114329f, 0.773423f);
-    //	Msg						("%f",timer.GetElapsed_sec());
+    //  Msg                     ("%f",timer.GetElapsed_sec());
     build_graph(0.887752f, 0.112248f);
-    //	Msg						("%f",timer.GetElapsed_sec());
+    //  Msg                     ("%f",timer.GetElapsed_sec());
 
     Msg("Level graph is generated successfully");
 }

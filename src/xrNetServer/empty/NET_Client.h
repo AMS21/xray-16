@@ -114,15 +114,15 @@ public:
     virtual NET_Packet* net_msg_Retreive()
     {
         return net_Queue.Retreive();
-    } //							|
+    } //                            |
     void net_msg_Release()
     {
         net_Queue.Release();
-    } //							|
+    } //                            |
     void EndProcessQueue()
     {
         net_Queue.UnlockQ();
-    } //							<-
+    } //                            <-
     // send
     virtual void Send(NET_Packet& P, u32 dwFlags = 0x0008 /*DPNSEND_GUARANTEED*/,
         u32 dwTimeout = 0);

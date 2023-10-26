@@ -214,7 +214,7 @@ void CRender::LoadBuffers(CStreamReader* base_fs, bool alternative)
         {
             // decl
 
-            //			D3DVERTEXELEMENT9	*dcl = (D3DVERTEXELEMENT9*) fs->pointer();
+            //          D3DVERTEXELEMENT9   *dcl = (D3DVERTEXELEMENT9*) fs->pointer();
 
             fs->r(dcl, buffer_size);
             fs->advance(-(int)buffer_size);
@@ -320,11 +320,11 @@ void CRender::LoadBuffers(CStreamReader* base_fs, bool alternative)
             // Create and fill
             _IB[i].Create(iCount * 2);
             u8* pData = static_cast<u8*>(_IB[i].Map());
-            //			CopyMemory			(pData,fs->pointer(),iCount*2);
+            //          CopyMemory          (pData,fs->pointer(),iCount*2);
             fs->r(pData, iCount * 2);
             _IB[i].Unmap(true); // upload index data
 
-            //			fs->advance			(iCount*2);
+            //          fs->advance         (iCount*2);
         }
         fs->close();
     }

@@ -252,9 +252,9 @@ public:
         VERIFY(b_exist && m_body);
         return cast_fv(dBodyGetPosition(m_body));
     }
-    // virtual		void		CaptureObject						(dBodyID body,const dReal* anchor);
-    // virtual		void		CapturedSetPosition					(const dReal* position);
-    // virtual		void		doCaptureExist						(bool&	do_exist);
+    // virtual      void        CaptureObject                       (dBodyID body,const dReal* anchor);
+    // virtual      void        CapturedSetPosition                 (const dReal* position);
+    // virtual      void        doCaptureExist                      (bool&  do_exist);
 
     virtual void get_State(SPHNetState& state);
     virtual void set_State(const SPHNetState& state);

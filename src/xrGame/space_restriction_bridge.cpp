@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: space_restriction_bridge.cpp
-//	Created 	: 27.08.2004
-//  Modified 	: 27.08.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Space restriction bridge
+//  Module      : space_restriction_bridge.cpp
+//  Created     : 27.08.2004
+//  Modified    : 27.08.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Space restriction bridge
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

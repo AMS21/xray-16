@@ -119,7 +119,7 @@ protected:
 
     LIST_SRV_ITEM m_itemInfo;
     SServerFilters m_sf;
-    //	CUIListWnd		m_list[3];
+    //  CUIListWnd      m_list[3];
     CUIListBox m_list[3];
     CUIFrameWindow m_frame[3];
     CUI3tButton m_header[LST_COLUMN_COUNT];

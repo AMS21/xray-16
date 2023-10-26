@@ -190,8 +190,8 @@ void CParticleGroup::SItem::Clear()
         visual = nullptr;
     }
 
-    //	Igor: zero all pointers! Previous code didn't zero _source_ pointers,
-    //	just temporary ones.
+    //  Igor: zero all pointers! Previous code didn't zero _source_ pointers,
+    //  just temporary ones.
     _effect = nullptr;
     _children_related.clear();
     _children_free.clear();
@@ -450,7 +450,7 @@ void CParticleGroup::SItem::OnFrame(u32 u_dt, const CPGDef::SEffect& def, Fbox& 
             _children_free.erase(new_end, _children_free.end());
         }
     }
-    //	Msg("C: %d CS: %d",_children.size(),_children_stopped.size());
+    //  Msg("C: %d CS: %d",_children.size(),_children_stopped.size());
 }
 void CParticleGroup::SItem::OnDeviceCreate()
 {

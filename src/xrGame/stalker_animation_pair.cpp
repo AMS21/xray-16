@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_animation_pair.cpp
-//	Created 	: 25.02.2003
-//  Modified 	: 19.11.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker animation pair
+//  Module      : stalker_animation_pair.cpp
+//  Created     : 25.02.2003
+//  Modified    : 19.11.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker animation pair
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -105,7 +105,7 @@ void CStalkerAnimationPair::play(IKinematicsAnimated* skeleton_animated, PlayCal
 #if 0
 #ifdef DEBUG
         if (psAI_Flags.is(aiAnimation) && blend())
-            Msg				("%6d [%s][%s][%s][%f]",Device.dwTimeGlobal,m_object_name,m_animation_type_name,*animation()->name(),blend()->timeCurrent);
+            Msg             ("%6d [%s][%s][%s][%f]",Device.dwTimeGlobal,m_object_name,m_animation_type_name,*animation()->name(),blend()->timeCurrent);
 #endif
 #endif
 
@@ -195,14 +195,14 @@ std::pair<LPCSTR, LPCSTR>* CStalkerAnimationPair::blend_id(
     if (!global_animation())
         bone_part_id = blend()->bone_or_part;
 
-    // const BlendSVec			&blends = skeleton_animated->blend_cycle(bone_part_id);
+    // const BlendSVec          &blends = skeleton_animated->blend_cycle(bone_part_id);
     const u32 part_blends_num = skeleton_animated->LL_PartBlendsCount(bone_part_id);
     if (part_blends_num < 2)
         return (0);
     const u32 part_blend = part_blends_num - 2;
     CBlend* b = skeleton_animated->LL_PartBlend(bone_part_id, part_blend);
 #if 0
-    VERIFY2					(
+    VERIFY2                 (
         b->motionID != animation(),
         make_string(
             "animation is blending with itself (%s)",
@@ -304,7 +304,7 @@ void CStalkerAnimationPair::reset()
 {
 #if 0 // def DEBUG
     if (m_animation)
-        Msg						("animation [%s][%s] is reset",m_object_name,m_animation_type_name);
+        Msg                     ("animation [%s][%s] is reset",m_object_name,m_animation_type_name);
 #endif // DEBUG
 
     m_animation.invalidate();

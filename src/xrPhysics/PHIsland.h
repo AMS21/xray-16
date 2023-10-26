@@ -49,7 +49,7 @@ public:
 
 class CPHIsland : public dxWorld
 {
-    // bool						b_active				;
+    // bool                     b_active                ;
     CPHIslandFlags m_flags;
     dxBody* m_first_body;
     dxJoint* m_first_joint;

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: refreshable_obstacles_query.h
-//	Created 	: 16.05.2007
-//  Modified 	: 16.05.2007
-//	Author		: Dmitriy Iassenev
-//	Description : refreshable obstacles query
+//  Module      : refreshable_obstacles_query.h
+//  Created     : 16.05.2007
+//  Modified    : 16.05.2007
+//  Author      : Dmitriy Iassenev
+//  Description : refreshable obstacles query
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

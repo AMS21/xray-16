@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: sight_action.h
-//	Created 	: 27.12.2003
-//  Modified 	: 03.04.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Sight action
+//  Module      : sight_action.h
+//  Created     : 27.12.2003
+//  Modified    : 03.04.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Sight action
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

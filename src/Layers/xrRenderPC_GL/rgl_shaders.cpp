@@ -337,7 +337,7 @@ HRESULT CRender::shader_compile(pcstr name, IReader* fs, pcstr pFunctionName,
     // SKIN_4
     appendShaderOption(4 == m_skinning, "SKIN_4", "1");
 
-    //	Igor: need restart options
+    //  Igor: need restart options
     // Soft water
     {
         const bool softWater = RImplementation.o.advancedpp && ps_r2_ls_flags.test(R2FLAG_SOFT_WATER);

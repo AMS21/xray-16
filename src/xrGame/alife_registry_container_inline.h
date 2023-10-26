@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_registry_container_inline.h
-//	Created 	: 01.07.2004
-//  Modified 	: 01.07.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALife registry container class inline functions
+//  Module      : alife_registry_container_inline.h
+//  Created     : 01.07.2004
+//  Modified    : 01.07.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALife registry container class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

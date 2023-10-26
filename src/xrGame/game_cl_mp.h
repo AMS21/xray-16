@@ -86,7 +86,7 @@ struct Bonus_Struct
     shared_str MoneyStr;
     int Money;
     ui_shader IconShader;
-    // ref_shader	IconShader;
+    // ref_shader   IconShader;
     xr_vector<Frect> IconRects;
     Bonus_Struct()
     {
@@ -100,7 +100,7 @@ struct Bonus_Struct
     ~Bonus_Struct()
     {
         // if (IconShader)
-        //	IconShader.destroy();
+        //  IconShader.destroy();
         // IconShader = NULL;
         IconRects.clear();
     }

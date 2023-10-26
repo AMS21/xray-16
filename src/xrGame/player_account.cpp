@@ -60,7 +60,7 @@ void player_account::net_Import(NET_Packet& P)
         u16 acount = P.r_u16();
         m_awards.emplace(
             static_cast<gamespy_profile::enum_awards_t>(award_id), gamespy_profile::award_data(acount, time_t())
-		);
+        );
     }
 }
 

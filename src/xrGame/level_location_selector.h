@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: level_location_selector.h
-//	Created 	: 02.10.2001
-//  Modified 	: 18.11.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Level location selector
+//  Module      : level_location_selector.h
+//  Created     : 02.10.2001
+//  Modified    : 18.11.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Level location selector
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

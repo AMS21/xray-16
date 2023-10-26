@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: aimers_weapon_inline.h
-//	Created 	: 04.04.2008
-//  Modified 	: 08.04.2008
-//	Author		: Dmitriy Iassenev
-//	Description : weapon aimer class inline functions
+//  Module      : aimers_weapon_inline.h
+//  Created     : 04.04.2008
+//  Modified    : 08.04.2008
+//  Author      : Dmitriy Iassenev
+//  Description : weapon aimer class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef AIMERS_WEAPON_INLINE_H_INCLUDED

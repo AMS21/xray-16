@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_sounds.h
-//	Created 	: 15.08.2002
-//  Modified 	: 15.08.2002
-//	Author		: Dmitriy Iassenev
-//	Description : Sounds for AI personalities
+//  Module      : ai_sounds.h
+//  Created     : 15.08.2002
+//  Modified    : 15.08.2002
+//  Author      : Dmitriy Iassenev
+//  Description : Sounds for AI personalities
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

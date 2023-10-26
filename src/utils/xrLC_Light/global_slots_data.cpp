@@ -42,10 +42,10 @@ void global_slots_data::Free()
     recalculation_data.close();
 }
 
-// DetailHeader					dtH;
-// DetailSlot						*dtS;
-// CVirtualFileRW					*dtFS;
-// recalculation					recalculation_data;
+// DetailHeader                 dtH;
+// DetailSlot                       *dtS;
+// CVirtualFileRW                   *dtFS;
+// recalculation                    recalculation_data;
 
 void global_slots_data::write(IWriter& w) const
 {

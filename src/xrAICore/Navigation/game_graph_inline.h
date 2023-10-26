@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: game_graph_inline.h
-//	Created 	: 18.02.2003
-//  Modified 	: 13.11.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Game graph inline functions
+//  Module      : game_graph_inline.h
+//  Created     : 18.02.2003
+//  Modified    : 13.11.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Game graph inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

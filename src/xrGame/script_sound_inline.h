@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_sound_inline.h
-//	Created 	: 06.02.2004
-//  Modified 	: 06.02.2004
-//	Author		: Dmitriy Iassenev
-//	Description : XRay Script sound class inline functions
+//  Module      : script_sound_inline.h
+//  Created     : 06.02.2004
+//  Modified    : 06.02.2004
+//  Author      : Dmitriy Iassenev
+//  Description : XRay Script sound class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -65,7 +65,7 @@ IC float CScriptSound::GetVolume() const
 IC bool CScriptSound::IsPlaying() const
 {
     //  commented for comfort work with -nosound command line option
-    //	VERIFY				(m_sound._handle());
+    //  VERIFY              (m_sound._handle());
     return (!!m_sound._feedback());
 }
 

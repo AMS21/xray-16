@@ -31,7 +31,7 @@ void CLevel::cl_Process_Spawn(NET_Packet& P)
         return;
     }
     //-------------------------------------------------
-    //.	Msg ("M_SPAWN - %s[%d][%x] - %d %d", *s_name,  E->ID, E,E->ID_Parent, Device.dwFrame);
+    //. Msg ("M_SPAWN - %s[%d][%x] - %d %d", *s_name,  E->ID, E,E->ID_Parent, Device.dwFrame);
     //-------------------------------------------------
     // force object to be local for server client
     if (OnServer())
@@ -41,7 +41,7 @@ void CLevel::cl_Process_Spawn(NET_Packet& P)
 
     /*
     game_spawn_queue.push_back(E);
-    if (g_bDebugEvents)		ProcessGameSpawns();
+    if (g_bDebugEvents)     ProcessGameSpawns();
     /*/
     g_sv_Spawn(E);
 
@@ -58,7 +58,7 @@ void CLevel::g_cl_Spawn(LPCSTR name, u8 rp, u16 flags, Fvector pos)
     // Fill
     E->s_name = name;
     E->set_name_replace("");
-    //.	E->s_gameid			=	u8(GameID());
+    //. E->s_gameid         =   u8(GameID());
     E->s_RP = rp;
     E->ID = 0xffff;
     E->ID_Parent = 0xffff;
@@ -84,24 +84,24 @@ extern float debug_on_frame_gather_stats_frequency;
 
 void CLevel::g_sv_Spawn(CSE_Abstract* E)
 {
-//	CTimer		T(false);
+//  CTimer      T(false);
 
 #ifdef DEBUG
-//	Msg					("* CLIENT: Spawn: %s, ID=%d", *E->s_name, E->ID);
+//  Msg                 ("* CLIENT: Spawn: %s, ID=%d", *E->s_name, E->ID);
 #endif
 
-    // Optimization for single-player only	- minimize traffic between client and server
+    // Optimization for single-player only  - minimize traffic between client and server
     if (GameID() == eGameIDSingle)
         psNET_Flags.set(NETFLAG_MINIMIZEUPDATES, TRUE);
     else
         psNET_Flags.set(NETFLAG_MINIMIZEUPDATES, FALSE);
 
     // Client spawn
-    //	T.Start		();
+    //  T.Start     ();
     IGameObject* O = Objects.Create(*E->s_name);
-// Msg				("--spawn--CREATE: %f ms",1000.f*T.GetAsync());
+// Msg              ("--spawn--CREATE: %f ms",1000.f*T.GetAsync());
 
-//	T.Start		();
+//  T.Start     ();
     if (0 == O || (!O->net_Spawn(E)))
     {
         O->net_Destroy();
@@ -114,7 +114,7 @@ void CLevel::g_sv_Spawn(CSE_Abstract* E)
     {
         if (!GEnv.isDedicatedServer)
             client_spawn_manager().callback(O);
-        // Msg			("--spawn--SPAWN: %f ms",1000.f*T.GetAsync());
+        // Msg          ("--spawn--SPAWN: %f ms",1000.f*T.GetAsync());
 
         if ((E->s_flags.is(M_SPAWN_OBJECT_LOCAL)) && (E->s_flags.is(M_SPAWN_OBJECT_ASPLAYER)))
         {
@@ -144,13 +144,13 @@ void CLevel::g_sv_Spawn(CSE_Abstract* E)
         {
             /*
             // Generate ownership-event
-            NET_Packet			GEN;
-            GEN.w_begin			(M_EVENT);
-            GEN.w_u32			(E->m_dwSpawnTime);//-NET_Latency);
-            GEN.w_u16			(GE_OWNERSHIP_TAKE);
-            GEN.w_u16			(E->ID_Parent);
-            GEN.w_u16			(u16(O->ID()));
-            game_events->insert	(GEN);
+            NET_Packet          GEN;
+            GEN.w_begin         (M_EVENT);
+            GEN.w_u32           (E->m_dwSpawnTime);//-NET_Latency);
+            GEN.w_u16           (GE_OWNERSHIP_TAKE);
+            GEN.w_u16           (E->ID_Parent);
+            GEN.w_u16           (u16(O->ID()));
+            game_events->insert (GEN);
             /*/
             NET_Packet GEN;
             GEN.write_start();
@@ -162,15 +162,15 @@ void CLevel::g_sv_Spawn(CSE_Abstract* E)
     }
 
     /*if (E->s_flags.is(M_SPAWN_UPDATE)) {
-		NET_Packet				temp;
-		temp.B.count			= 0;
-		E->UPDATE_Write			(temp);
-		if (temp.B.count > 0)
-		{
-			temp.r_seek				(0);
-			O->net_Import			(temp);
-		}
-		}*/ //:(
+        NET_Packet              temp;
+        temp.B.count            = 0;
+        E->UPDATE_Write         (temp);
+        if (temp.B.count > 0)
+        {
+            temp.r_seek             (0);
+            O->net_Import           (temp);
+        }
+        }*/ //:(
 
     //---------------------------------------------------------
     Game().OnSpawn(O);
@@ -197,7 +197,7 @@ CSE_Abstract* CLevel::spawn_item(
     // Fill
     abstract->s_name = section;
     abstract->set_name_replace(section);
-    //.	abstract->s_gameid		= u8(GameID());
+    //. abstract->s_gameid      = u8(GameID());
     abstract->o_Position = position;
     abstract->s_RP = 0xff;
     abstract->ID = 0xffff;

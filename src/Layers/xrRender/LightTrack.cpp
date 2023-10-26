@@ -43,7 +43,7 @@ CROS_impl::CROS_impl()
     //#if RENDER==R_R1
     MODE = IRender_ObjectSpecific::TRACE_ALL;
     //#else
-    //	MODE				= IRender_ObjectSpecific::TRACE_HEMI + IRender_ObjectSpecific::TRACE_SUN	;
+    //  MODE                = IRender_ObjectSpecific::TRACE_HEMI + IRender_ObjectSpecific::TRACE_SUN    ;
     //#endif
 }
 
@@ -73,34 +73,34 @@ void CROS_impl::add(light* source)
 #pragma warning(push)
 #pragma warning(disable : 4305)
 
-// const float		hdir		[lt_hemisamples][3] =
+// const float      hdir        [lt_hemisamples][3] =
 // {
-// 	{0.00000,	1.00000,	0.00000	},
-// 	{0.52573,	0.85065,	0.00000	},
-// 	{0.16246,	0.85065,	0.50000	},
-// 	{-0.42533,	0.85065,	0.30902	},
-// 	{-0.42533,	0.85065,	-0.30902},
-// 	{0.16246,	0.85065,	-0.50000},
-// 	{0.89443,	0.44721,	0.00000	},
-// 	{0.27639,	0.44721,	0.85065	},
-// 	{-0.72361,	0.44721,	0.52573	},
-// 	{-0.72361,	0.44721,	-0.52573},
-// 	{0.27639,	0.44721,	-0.85065},
-// 	{0.68819,	0.52573,	0.50000	},
-// 	{-0.26287,	0.52573,	0.80902	},
-// 	{-0.85065,	0.52573,	-0.00000},
-// 	{-0.26287,	0.52573,	-0.80902},
-// 	{0.68819,	0.52573,	-0.50000},
-// 	{0.95106,	0.00000,	0.30902	},
-// 	{0.58779,	0.00000,	0.80902	},
-// 	{-0.00000,	0.00000,	1.00000	},
-// 	{-0.58779,	0.00000,	0.80902	},
-// 	{-0.95106,	0.00000,	0.30902	},
-// 	{-0.95106,	0.00000,	-0.30902},
-// 	{-0.58779,	0.00000,	-0.80902},
-// 	{0.00000,	0.00000,	-1.00000},
-// 	{0.58779,	0.00000,	-0.80902},
-// 	{0.95106,	0.00000,	-0.30902}
+//  {0.00000,   1.00000,    0.00000 },
+//  {0.52573,   0.85065,    0.00000 },
+//  {0.16246,   0.85065,    0.50000 },
+//  {-0.42533,  0.85065,    0.30902 },
+//  {-0.42533,  0.85065,    -0.30902},
+//  {0.16246,   0.85065,    -0.50000},
+//  {0.89443,   0.44721,    0.00000 },
+//  {0.27639,   0.44721,    0.85065 },
+//  {-0.72361,  0.44721,    0.52573 },
+//  {-0.72361,  0.44721,    -0.52573},
+//  {0.27639,   0.44721,    -0.85065},
+//  {0.68819,   0.52573,    0.50000 },
+//  {-0.26287,  0.52573,    0.80902 },
+//  {-0.85065,  0.52573,    -0.00000},
+//  {-0.26287,  0.52573,    -0.80902},
+//  {0.68819,   0.52573,    -0.50000},
+//  {0.95106,   0.00000,    0.30902 },
+//  {0.58779,   0.00000,    0.80902 },
+//  {-0.00000,  0.00000,    1.00000 },
+//  {-0.58779,  0.00000,    0.80902 },
+//  {-0.95106,  0.00000,    0.30902 },
+//  {-0.95106,  0.00000,    -0.30902},
+//  {-0.58779,  0.00000,    -0.80902},
+//  {0.00000,   0.00000,    -1.00000},
+//  {0.58779,   0.00000,    -0.80902},
+//  {0.95106,   0.00000,    -0.30902}
 // };
 
 const float hdir[lt_hemisamples][3] = {
@@ -122,20 +122,20 @@ const float hdir[lt_hemisamples][3] = {
 
 // inline CROS_impl::CubeFaces CROS_impl::get_cube_face(Fvector3& dir)
 //{
-//	float x2 = dir.x*dir.x;
-//	float y2 = dir.y*dir.y;
-//	float z2 = dir.z*dir.z;
+//  float x2 = dir.x*dir.x;
+//  float y2 = dir.y*dir.y;
+//  float z2 = dir.z*dir.z;
 //
-//	if (x2 >= y2 + z2)
-//	{
-//		return (dir.x > 0) ? CUBE_FACE_POS_X : CUBE_FACE_NEG_X;
-//	}
-//	else if (y2 >= z2 + x2)
-//	{
-//		return (dir.y > 0) ? CUBE_FACE_POS_Y : CUBE_FACE_NEG_Y;
-//	}
-//	/*else*/
-//	return (dir.z > 0) ? CUBE_FACE_POS_Z : CUBE_FACE_NEG_Z;
+//  if (x2 >= y2 + z2)
+//  {
+//      return (dir.x > 0) ? CUBE_FACE_POS_X : CUBE_FACE_NEG_X;
+//  }
+//  else if (y2 >= z2 + x2)
+//  {
+//      return (dir.y > 0) ? CUBE_FACE_POS_Y : CUBE_FACE_NEG_Y;
+//  }
+//  /*else*/
+//  return (dir.z > 0) ? CUBE_FACE_POS_Z : CUBE_FACE_NEG_Z;
 //}
 
 inline void CROS_impl::accum_hemi(float* hemi_cube, Fvector3& dir, float scale)
@@ -143,17 +143,17 @@ inline void CROS_impl::accum_hemi(float* hemi_cube, Fvector3& dir, float scale)
     if (dir.x > 0)
         hemi_cube[CUBE_FACE_POS_X] += dir.x * scale;
     else
-        hemi_cube[CUBE_FACE_NEG_X] -= dir.x * scale; //	dir.x <= 0
+        hemi_cube[CUBE_FACE_NEG_X] -= dir.x * scale; // dir.x <= 0
 
     if (dir.y > 0)
         hemi_cube[CUBE_FACE_POS_Y] += dir.y * scale;
     else
-        hemi_cube[CUBE_FACE_NEG_Y] -= dir.y * scale; //	dir.y <= 0
+        hemi_cube[CUBE_FACE_NEG_Y] -= dir.y * scale; // dir.y <= 0
 
     if (dir.z > 0)
         hemi_cube[CUBE_FACE_POS_Z] += dir.z * scale;
     else
-        hemi_cube[CUBE_FACE_NEG_Z] -= dir.z * scale; //	dir.z <= 0
+        hemi_cube[CUBE_FACE_NEG_Z] -= dir.z * scale; // dir.z <= 0
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -168,7 +168,7 @@ void CROS_impl::update(IRenderable* O)
     if (nullptr == O->GetRenderData().visual)
         return;
     VERIFY(dynamic_cast<CROS_impl*>(O->renderable_ROS()));
-    // float	dt			=	Device.fTimeDelta;
+    // float    dt          =   Device.fTimeDelta;
 
     IGameObject* _object = dynamic_cast<IGameObject*>(O);
 
@@ -179,8 +179,8 @@ void CROS_impl::update(IRenderable* O)
     position.y += .3f * vis.sphere.R;
     Fvector direction;
     direction.random_dir();
-    //.			position.mad(direction,0.25f*radius);
-    //.			position.mad(direction,0.025f*radius);
+    //.         position.mad(direction,0.25f*radius);
+    //.         position.mad(direction,0.025f*radius);
 
     // function call order is important at least for r1
     for (size_t i = 0; i < NUM_FACES; ++i)
@@ -259,10 +259,10 @@ void CROS_impl::update(IRenderable* O)
         }
 #endif
 
-        //		lacc.x		*= desc.lmap_color.x;
-        //		lacc.y		*= desc.lmap_color.y;
-        //		lacc.z		*= desc.lmap_color.z;
-        //		Msg				("- rgb[%f,%f,%f]",lacc.x,lacc.y,lacc.z);
+        //      lacc.x      *= desc.lmap_color.x;
+        //      lacc.y      *= desc.lmap_color.y;
+        //      lacc.z      *= desc.lmap_color.z;
+        //      Msg             ("- rgb[%f,%f,%f]",lacc.x,lacc.y,lacc.z);
         accum.add(lacc);
     }
     else
@@ -281,7 +281,7 @@ void CROS_impl::update(IRenderable* O)
 
 #if RENDER != R_R1
 
-//	Update ticks settings
+//  Update ticks settings
 static const s32 s_iUTFirstTimeMin = 1;
 static const s32 s_iUTFirstTimeMax = 1;
 static const s32 s_iUTPosChangedMin = 3;
@@ -298,7 +298,7 @@ void CROS_impl::smart_update(IRenderable* O)
 
     --ticks_to_update;
 
-    //	Acquire current position
+    //  Acquire current position
     Fvector position;
     VERIFY(dynamic_cast<CROS_impl*>(O->renderable_ROS()));
     vis_data& vis = O->GetRenderData().visual->getVisData();
@@ -332,7 +332,7 @@ void CROS_impl::smart_update(IRenderable* O)
     }
 }
 
-#endif //	#if RENDER!=R_R1
+#endif //   #if RENDER!=R_R1
 
 extern float ps_r2_lt_smooth;
 
@@ -347,9 +347,9 @@ void CROS_impl::update_smooth(IRenderable* O)
 #if RENDER == R_R1
     if (O && (0 == result_count))
         update(O); // First time only
-#else //	RENDER!=R_R1
+#else //    RENDER!=R_R1
     smart_update(O);
-#endif //	RENDER!=R_R1
+#endif //   RENDER!=R_R1
 
     float l_f = Device.fTimeDelta * ps_r2_lt_smooth;
     clamp(l_f, 0.f, 1.f);
@@ -389,7 +389,7 @@ void CROS_impl::calc_sky_hemi_value(Fvector& position, IGameObject* _object)
 #if RENDER != R_R1
         sky_rays_uptodate += ps_r2_dhemi_count;
         sky_rays_uptodate = _min(sky_rays_uptodate, lt_hemisamples);
-#endif //	RENDER!=R_R1
+#endif //   RENDER!=R_R1
 
         for (u32 it = 0; it < (u32)ps_r2_dhemi_count; it++)
         { // five samples per one frame
@@ -408,16 +408,16 @@ void CROS_impl::calc_sky_hemi_value(Fvector& position, IGameObject* _object)
             // take sample
             Fvector direction;
             direction.set(hdir[sample][0], hdir[sample][1], hdir[sample][2]).normalize();
-            //.			result[sample]	=
+            //.         result[sample]  =
             //! g_pGameLevel->ObjectSpace.RayTest(position,direction,50.f,collide::rqtBoth,&cache[sample],_object);
             result[sample] = !g_pGameLevel->ObjectSpace.RayTest(
                 position, direction, 50.f, collide::rqtStatic, &cache[sample], _object);
-            //	Msg				("%d:-- %s",sample,result[sample]?"true":"false");
+            //  Msg             ("%d:-- %s",sample,result[sample]?"true":"false");
         }
     }
     // hemi & sun: update and smooth
-    //	float	l_f				=	dt*lt_smooth;
-    //	float	l_i				=	1.f-l_f;
+    //  float   l_f             =   dt*lt_smooth;
+    //  float   l_i             =   1.f-l_f;
     int _pass = 0;
     for (int it = 0; it < result_count; it++)
         if (result[it])

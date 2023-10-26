@@ -119,7 +119,7 @@ public:
     void DumpStatistics(class IGameFont& font, class IPerformanceAlert* alert) override;
 
     // listener
-    //	virtual const Fvector&				listener_position		( )=0;
+    //  virtual const Fvector&              listener_position       ( )=0;
     virtual void update_listener(const Fvector& P, const Fvector& D, const Fvector& N, float dt) = 0;
 
     virtual SoundEnvironment_LIB* get_env_library() { return s_environment; }

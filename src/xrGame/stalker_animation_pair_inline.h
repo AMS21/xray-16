@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_animation_pair_inline.h
-//	Created 	: 25.02.2003
-//  Modified 	: 19.11.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker animation pair inline functions
+//  Module      : stalker_animation_pair_inline.h
+//  Created     : 25.02.2003
+//  Modified    : 19.11.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker animation pair inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_process.h
-//	Created 	: 19.09.2003
-//  Modified 	: 29.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script process class
+//  Module      : script_process.h
+//  Created     : 19.09.2003
+//  Modified    : 29.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script process class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

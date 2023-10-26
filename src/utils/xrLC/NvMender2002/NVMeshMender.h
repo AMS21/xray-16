@@ -39,8 +39,8 @@ Comments:
   NVMeshMender aMender;
 
 
-  xr_vector<NVMeshMender::VertexAttribute> inputAtts;		// What you have
-  xr_vector<NVMeshMender::VertexAttribute> outputAtts;	// What you want.
+  xr_vector<NVMeshMender::VertexAttribute> inputAtts;       // What you have
+  xr_vector<NVMeshMender::VertexAttribute> outputAtts;  // What you want.
 
   NVMeshMender::VertexAttribute posAtt;
   posAtt.Name_ = "position";
@@ -103,8 +103,8 @@ generated on my behalf
   vpos = outputAtts[0].floatVector_; // Note that there may be more vertices than you sent in.
   vnor = outputAtts[2].floatVector_;
   xr_vector<float> texCoords = outputAtts[3].floatVector_; // texcoords
-  xr_vector<float> vtgt = outputAtts[4].floatVector_;		 // tgts
-  triIndices = outputAtts[1].intVector_;					 // new indices.
+  xr_vector<float> vtgt = outputAtts[4].floatVector_;        // tgts
+  triIndices = outputAtts[1].intVector_;                     // new indices.
   xr_vector<float> vbin = outputAtts[5].floatVector_;      // binormals.
 
   // Now the outputAtts may contain more vertex then you sent in !

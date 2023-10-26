@@ -13,7 +13,7 @@ public:
     enum ECurvature : u32
     {
         eFREE_SLOT = 0,
-        //		eFixed,
+        //      eFixed,
         eAccrue,
         eFalloff,
     };

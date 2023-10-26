@@ -79,7 +79,7 @@ void player_hud_motion_container::load(IKinematicsAnimated* model, const shared_
                 {
                     pm.m_animations.emplace_back(motion_descr{ std::move(motion_ID), buff });
 #ifdef DEBUG
-//					Msg(" alias=[%s] base=[%s] name=[%s]",pm.m_alias_name.c_str(), pm.m_base_name.c_str(), buff);
+//                  Msg(" alias=[%s] base=[%s] name=[%s]",pm.m_alias_name.c_str(), pm.m_base_name.c_str(), buff);
 #endif // #ifdef DEBUG
                 }
             }
@@ -467,8 +467,8 @@ u32 attachable_hud_item::anim_play(const shared_str& anm_name_b, BOOL bMixIn, co
 
     R_ASSERT2(m_parent_hud_item, "parent hud item is NULL");
     CPhysicItem& parent_object = m_parent_hud_item->object();
-    // R_ASSERT2		(parent_object, "object has no parent actor");
-    // IGameObject*		parent_object = static_cast_checked<IGameObject*>(&m_parent_hud_item->object());
+    // R_ASSERT2        (parent_object, "object has no parent actor");
+    // IGameObject*     parent_object = static_cast_checked<IGameObject*>(&m_parent_hud_item->object());
 
     if (IsGameTypeSingle() && parent_object.H_Parent() == Level().CurrentControlEntity())
     {

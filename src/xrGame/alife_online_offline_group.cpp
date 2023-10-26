@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_online_offline_group.cpp
-//	Created 	: 25.10.2005
-//  Modified 	: 25.10.2005
-//	Author		: Dmitriy Iassenev
-//	Description : ALife Online Offline Group class
+//  Module      : alife_online_offline_group.cpp
+//  Created     : 25.10.2005
+//  Modified    : 25.10.2005
+//  Author      : Dmitriy Iassenev
+//  Description : ALife Online Offline Group class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -114,7 +114,7 @@ void CSE_ALifeOnlineOfflineGroup::register_member(ALife::_OBJECT_ID member_id)
 void CSE_ALifeOnlineOfflineGroup::unregister_member(ALife::_OBJECT_ID member_id)
 {
     CALifeGraphRegistry& graph = alife().graph();
-    //	CALifeLevelRegistry			&level = graph.level();
+    //  CALifeLevelRegistry         &level = graph.level();
 
     MEMBERS::iterator I = m_members.find(member_id);
     VERIFY(I != m_members.end());
@@ -358,7 +358,7 @@ void CSE_ALifeOnlineOfflineGroup::force_change_position(Fvector position)
         alife().graph().change(this, m_tGraphID, new_graph_vertex);
     }
 
-    // m_tGraphID				= new_graph_vertex;
+    // m_tGraphID               = new_graph_vertex;
 }
 
 void CSE_ALifeOnlineOfflineGroup::on_failed_switch_online()

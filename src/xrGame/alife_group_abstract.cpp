@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_group_abstract.cpp
-//	Created 	: 27.10.2005
-//  Modified 	: 27.10.2005
-//	Author		: Dmitriy Iassenev
-//	Description : ALife group abstract class
+//  Module      : alife_group_abstract.cpp
+//  Created     : 27.10.2005
+//  Modified    : 27.10.2005
+//  Author      : Dmitriy Iassenev
+//  Description : ALife group abstract class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

@@ -3,7 +3,7 @@
 
 #include "PHMovementControl.h"
 
-// extern	class CPHWorld	*ph_world;
+// extern   class CPHWorld  *ph_world;
 #include "xrPhysics/PHCharacter.h"
 #include "xrPhysics/IPhysicsShellHolder.h"
 bool CPHMovementControl::ActivateBoxDynamic(
@@ -56,10 +56,10 @@ bool CPHMovementControl::ActivateBoxDynamic(
         // dBodyID b= !m_character ? 0 : m_character->get_body();//GetBody();
         // if(b)
         //{
-        //	dMatrix3 R;
-        //	dRSetIdentity (R);
-        //	dBodySetAngularVel(b,0.f,0.f,0.f);
-        //	dBodySetRotation(b,R);
+        //  dMatrix3 R;
+        //  dRSetIdentity (R);
+        //  dBodySetAngularVel(b,0.f,0.f,0.f);
+        //  dBodySetRotation(b,R);
         //}
 
         SetPosition(pos);
@@ -72,8 +72,8 @@ bool CPHMovementControl::ActivateBoxDynamic(
         // Msg("activate!");
     }
 
-    //	SetOjectContactCallback(saved_callback);
-    //	saved_callback=0;
+    //  SetOjectContactCallback(saved_callback);
+    //  saved_callback=0;
     SetVelocity(vel);
 
     if (!ret && character_exist)

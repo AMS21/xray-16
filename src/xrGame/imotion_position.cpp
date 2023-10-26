@@ -421,7 +421,7 @@ static u32 blends_num(IKinematicsAnimated& KA)
     // u32 res = 0;
     // for( u32 i = 0; i < MAX_PARTS; ++i  )
     //{
-    //	res += KA.LL_PartBlendsCount( i );
+    //  res += KA.LL_PartBlendsCount( i );
     //}
     // return res;
     struct scbl : public IterateBlendsCallback
@@ -576,7 +576,7 @@ float imotion_position::motion_collide(float dt, IKinematicsAnimated& KA)
 #endif
         u32 sv_blends_num = blends_num(KA);
         buffer_vector<sblend_save> saved_blends(xr_alloca(sv_blends_num * sizeof(sblend_save)), sv_blends_num);
-        save_blends(saved_blends, KA); //		sv1
+        save_blends(saved_blends, KA); //       sv1
         float depth0 = depth;
         advance_time += collide_animation(collide_adwance_delta, KA);
 

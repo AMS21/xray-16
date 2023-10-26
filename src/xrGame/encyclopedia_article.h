@@ -26,7 +26,7 @@ struct SArticleData : CSharedResource
     xr_string text;
 
     //секция ltx, откуда читать данные
-    //	shared_str ltx;
+    //  shared_str ltx;
 
     // Тип статьи
     ARTICLE_DATA::EArticleType articleType;

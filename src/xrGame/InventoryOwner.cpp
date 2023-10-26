@@ -238,8 +238,8 @@ bool CInventoryOwner::OfferTalk(CInventoryOwner* talk_partner)
     CEntityAlive* pPartnerEntityAlive = smart_cast<CEntityAlive*>(talk_partner);
     R_ASSERT(pPartnerEntityAlive);
 
-    //	ALife::ERelationType relation = RELATION_REGISTRY().GetRelationType(this, talk_partner);
-    //	if(relation == ALife::eRelationTypeEnemy) return false;
+    //  ALife::ERelationType relation = RELATION_REGISTRY().GetRelationType(this, talk_partner);
+    //  if(relation == ALife::eRelationTypeEnemy) return false;
 
     if (!is_alive() || !pPartnerEntityAlive->g_Alive())
         return false;
@@ -351,7 +351,7 @@ void CInventoryOwner::spawn_supplies()
 //игровое имя
 LPCSTR CInventoryOwner::Name() const
 {
-    //	return CharacterInfo().Name();
+    //  return CharacterInfo().Name();
     return m_game_name.c_str();
 }
 
@@ -383,7 +383,7 @@ void CInventoryOwner::SetCommunity(CHARACTER_COMMUNITY_INDEX new_community)
     CSE_ALifeTraderAbstract* trader = smart_cast<CSE_ALifeTraderAbstract*>(e_entity);
     if (!trader)
         return;
-    //	EA->id_Team = CharacterInfo().Community().team();
+    //  EA->id_Team = CharacterInfo().Community().team();
     trader->m_community_index = new_community;
 }
 

@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////
-// CustomRocket.cpp:	ракета, которой стреляет RocketLauncher
-//						(умеет лететь, светиться и отыгрывать партиклы)
+// CustomRocket.cpp:    ракета, которой стреляет RocketLauncher
+//                      (умеет лететь, светиться и отыгрывать партиклы)
 //////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -84,7 +84,7 @@ bool CCustomRocket::net_Spawn(CSE_Abstract* DC)
 
 void CCustomRocket::net_Destroy()
 {
-    //	Msg("---------net_Destroy [%d] frame[%d]",ID(), Device.dwFrame);
+    //  Msg("---------net_Destroy [%d] frame[%d]",ID(), Device.dwFrame);
     CPHUpdateObject::Deactivate();
     inherited::net_Destroy();
 
@@ -97,10 +97,10 @@ void CCustomRocket::SetLaunchParams(const Fmatrix& xform, const Fvector& vel, co
     VERIFY2(_valid(xform), "SetLaunchParams. Invalid xform argument!");
     m_LaunchXForm = xform;
     m_vLaunchVelocity = vel;
-    //	if(m_pOwner->ID()==Actor()->ID())
-    //	{
-    //		Msg("set p start v:	%f,%f,%f	\n",m_vLaunchVelocity.x,m_vLaunchVelocity.y,m_vLaunchVelocity.z);
-    //	}
+    //  if(m_pOwner->ID()==Actor()->ID())
+    //  {
+    //      Msg("set p start v: %f,%f,%f    \n",m_vLaunchVelocity.x,m_vLaunchVelocity.y,m_vLaunchVelocity.z);
+    //  }
     m_vLaunchAngularVelocity = angular_vel;
     m_time_to_explode = Device.fTimeGlobal + pSettings->r_float(cNameSect(), "force_explode_time") / 1000.0f;
 #ifdef DEBUG
@@ -120,10 +120,10 @@ void CCustomRocket::activate_physic_shell()
         return;
     VERIFY2(_valid(m_LaunchXForm), "CCustomRocket::activate_physic_shell. Invalid m_LaunchXForm!");
 
-    //	if(m_pOwner->ID()==Actor()->ID())
-    //	{
-    //		Msg("start v:	%f,%f,%f	\n",m_vLaunchVelocity.x,m_vLaunchVelocity.y,m_vLaunchVelocity.z);
-    //	}
+    //  if(m_pOwner->ID()==Actor()->ID())
+    //  {
+    //      Msg("start v:   %f,%f,%f    \n",m_vLaunchVelocity.x,m_vLaunchVelocity.y,m_vLaunchVelocity.z);
+    //  }
     m_pPhysicsShell->Activate(m_LaunchXForm, m_vLaunchVelocity, m_vLaunchAngularVelocity);
     m_pPhysicsShell->Update();
 
@@ -199,9 +199,9 @@ void CCustomRocket::ObjectContactCallback(
         vUp.invert(*(Fvector*)&c.geom.normal);
 
         // if(dGeomGetClass(c.geom.g1)==dTriListClass)
-        //	material=GMLib.GetMaterialByIdx((u16)c.surface.mode);
+        //  material=GMLib.GetMaterialByIdx((u16)c.surface.mode);
         // else
-        //	material=GMLib.GetMaterialByIdx(l_pUD2->material);
+        //  material=GMLib.GetMaterialByIdx(l_pUD2->material);
         material = material_1;
     }
     else
@@ -209,9 +209,9 @@ void CCustomRocket::ObjectContactCallback(
         vUp.set(*(Fvector*)&c.geom.normal);
 
         // if(dGeomGetClass(c.geom.g2)==dTriListClass)
-        //	material=GMLib.GetMaterialByIdx((u16)c.surface.mode);
+        //  material=GMLib.GetMaterialByIdx((u16)c.surface.mode);
         // else
-        //	material=GMLib.GetMaterialByIdx(l_pUD1->material);
+        //  material=GMLib.GetMaterialByIdx(l_pUD1->material);
         material = material_2;
     }
     VERIFY(material);
@@ -262,10 +262,10 @@ void CCustomRocket::ObjectContactCallback(
                         l_pos.sub(velocity);
 #ifdef DEBUG
                         corrected_pos = true;
-//.	DBG_OpenCashedDraw();
-//.	const Fvector*	 V_array	= Level().ObjectSpace.GetStaticVerts();
-//.	DBG_DrawTri(neg_tri.T, V_array, color_xrgb(255,255,0));
-//.	DBG_ClosedCashedDraw(50000);
+//. DBG_OpenCashedDraw();
+//. const Fvector*   V_array    = Level().ObjectSpace.GetStaticVerts();
+//. DBG_DrawTri(neg_tri.T, V_array, color_xrgb(255,255,0));
+//. DBG_ClosedCashedDraw(50000);
 #endif
                     }
                 }
@@ -357,7 +357,7 @@ void CCustomRocket::PlayContact()
         m_pPhysicsShell->set_ObjectContactCallback(NULL);
         m_pPhysicsShell->Disable();
     }
-    //	if (OnClient()) return;
+    //  if (OnClient()) return;
 
     Position().set(m_contact.pos);
     m_contact.contact = false;
@@ -367,13 +367,13 @@ void CCustomRocket::OnH_B_Chield()
 {
     VERIFY(m_eState == eInactive);
     inherited::OnH_B_Chield();
-    //	Msg("! CCustomRocket::OnH_B_Chield called, id[%d] frame[%d]",ID(),Device.dwFrame);
+    //  Msg("! CCustomRocket::OnH_B_Chield called, id[%d] frame[%d]",ID(),Device.dwFrame);
 }
 void CCustomRocket::OnH_A_Chield()
 {
     VERIFY(m_eState == eInactive);
     inherited::OnH_A_Chield();
-    //	Msg("! CCustomRocket::OnH_A_Chield called, id[%d] frame[%d]",ID(),Device.dwFrame);
+    //  Msg("! CCustomRocket::OnH_A_Chield called, id[%d] frame[%d]",ID(),Device.dwFrame);
 }
 
 void CCustomRocket::OnH_B_Independent(bool just_before_destroy)
@@ -393,7 +393,7 @@ void CCustomRocket::OnH_A_Independent()
     setVisible(true);
     StartFlying();
     StartEngine();
-    //	Msg("! CCustomRocket::OnH_A_Independent called, id[%d] frame[%d]",ID(),Device.dwFrame);
+    //  Msg("! CCustomRocket::OnH_A_Independent called, id[%d] frame[%d]",ID(),Device.dwFrame);
 }
 
 void CCustomRocket::UpdateCL()
@@ -486,8 +486,8 @@ void CCustomRocket::UpdateEnginePh()
 
 void CCustomRocket::UpdateEngine()
 {
-    //	VERIFY( getVisible() );
-    //	VERIFY( m_pPhysicsShell);
+    //  VERIFY( getVisible() );
+    //  VERIFY( m_pPhysicsShell);
     if (!m_pPhysicsShell)
         Msg("! CCustomRocket::UpdateEngine called, but m_pPhysicsShell is NULL");
 
@@ -506,7 +506,7 @@ void CCustomRocket::UpdateEngine()
 }
 
 //////////////////////////////////////////////////////////////////////////
-//	Lights
+//  Lights
 //////////////////////////////////////////////////////////////////////////
 void CCustomRocket::StartLights()
 {
@@ -538,7 +538,7 @@ void CCustomRocket::UpdateLights()
 void CCustomRocket::PhDataUpdate(float step) {}
 void CCustomRocket::PhTune(float step) { UpdateEnginePh(); }
 //////////////////////////////////////////////////////////////////////////
-//	Particles
+//  Particles
 //////////////////////////////////////////////////////////////////////////
 
 void CCustomRocket::UpdateParticles()

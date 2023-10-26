@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_monsters_misc.cpp
-//	Created 	: 23.07.2002
-//  Modified 	: 23.07.2002
-//	Author		: Dmitriy Iassenev
-//	Description : Miscellanious routines for monsters
+//  Module      : ai_monsters_misc.cpp
+//  Created     : 23.07.2002
+//  Modified    : 23.07.2002
+//  Author      : Dmitriy Iassenev
+//  Description : Miscellanious routines for monsters
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

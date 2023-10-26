@@ -134,7 +134,7 @@ void CRenderTarget::build_textures()
         t_material->surface_set(t_material_surf);
 
         // #ifdef DEBUG
-        // R_CHK	(D3DXSaveTextureToFile	("x:" DELIMITER "r2_material.dds",D3DXIFF_DDS,t_material_surf,0));
+        // R_CHK    (D3DXSaveTextureToFile  ("x:" DELIMITER "r2_material.dds",D3DXIFF_DDS,t_material_surf,0));
         // #endif
 
         _RELEASE(t_material_surf);
@@ -249,16 +249,16 @@ void CRenderTarget::build_textures()
         t_noise[it] = RImplementation.Resources->_CreateTexture(name);
         t_noise[it]->surface_set(t_noise_surf[it]);
 
-        //	Create noise mipped
+        //  Create noise mipped
         {
-            //	Autogen mipmaps
+            //  Autogen mipmaps
             desc.MipLevels = 0;
             ID3DTexture2D* t_noise_surf_mipped{};
             R_CHK(HW.pDevice->CreateTexture2D(&desc, 0, &t_noise_surf_mipped));
             t_noise_mipped = RImplementation.Resources->_CreateTexture(r2_jitter_mipped);
             t_noise_mipped->surface_set(t_noise_surf_mipped);
 
-            //	Update texture. Generate mips.
+            //  Update texture. Generate mips.
 
             HW.get_context(CHW::IMM_CTX_ID)->CopySubresourceRegion(t_noise_surf_mipped, 0, 0, 0, 0, t_noise_surf[0], 0, 0); // TODO: id
 

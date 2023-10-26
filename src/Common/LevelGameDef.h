@@ -66,11 +66,11 @@ xr_token rpoint_type[] = {
 /*
 - chunk RPOINT_CHUNK
     - chunk #0
-        vector3	(PPosition);
-        vector3	(PRotation);
-        u8		(team_id);
-        u8		(type)
-        u16		(reserved)
+        vector3 (PPosition);
+        vector3 (PRotation);
+        u8      (team_id);
+        u8      (type)
+        u16     (reserved)
     ...
     - chunk #n
 
@@ -86,15 +86,15 @@ xr_token rpoint_type[] = {
             word (count)
             for (i=0; i<count; ++i){
                 Fvector (pos)
-                dword	(flags)
-                stringZ	(name)
+                dword   (flags)
+                stringZ (name)
             }
         chunk WAY_CHUNK_LINKS
             word (count)
             for (i=0; i<count; ++i){
-                word 	(from)
-                word 	(to)
-                float	(probability)
+                word    (from)
+                word    (to)
+                float   (probability)
             }
     ...
     - chunk #n

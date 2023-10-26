@@ -62,7 +62,7 @@ xrServer::EConnect xrServer::Connect(shared_str& session_name, GameDescriptionDa
     // Options
     if (0 == game)
         return ErrConnect;
-    //	game->type				= type_id;
+    //  game->type              = type_id;
     if (game->Type() != eGameIDSingle)
     {
         m_file_transfers = xr_new<file_transfer::server_site>();
@@ -133,8 +133,8 @@ void xrServer::AttachNewClient(IClient* CL)
     }
 
     // xrClientData * CL_D=(xrClientData*)(CL);
-    // ip_address				ClAddress;
-    // GetClientAddress		(CL->ID, ClAddress);
+    // ip_address               ClAddress;
+    // GetClientAddress     (CL->ID, ClAddress);
     CL->m_guid[0] = 0;
 }
 

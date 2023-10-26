@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: moving_objects.h
-//	Created 	: 27.03.2007
-//  Modified 	: 27.03.2007
-//	Author		: Dmitriy Iassenev
-//	Description : moving objects
+//  Module      : moving_objects.h
+//  Created     : 27.03.2007
+//  Modified    : 27.03.2007
+//  Author      : Dmitriy Iassenev
+//  Description : moving objects
 ////////////////////////////////////////////////////////////////////////////
 #pragma once
 #ifndef MOVING_OBJECTS_H

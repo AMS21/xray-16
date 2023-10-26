@@ -35,7 +35,7 @@ public:
     template <execution_types etype>
     tnet_execution_base<etype>* create()
     {
-        //	return (tnet_execution_base< etype >*) create( etype, u32(-1) );
+        //  return (tnet_execution_base< etype >*) create( etype, u32(-1) );
         return (tnet_execution_base<etype>*)create_in_pool(etype);
     }
     virtual void destroy(net_execution*& e);
@@ -53,7 +53,7 @@ public:
     void register_type(base_execution_type_creator* creator);
 
 private:
-    //	xr_vector< type_reg >::iterator find_type		( u32 id  );
+    //  xr_vector< type_reg >::iterator find_type       ( u32 id  );
     void register_all();
     void clear();
 };

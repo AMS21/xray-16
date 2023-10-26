@@ -85,7 +85,7 @@ public:
     virtual EConnect Connect(shared_str& session_name, GameDescriptionData& game_descr);
     virtual void Update();
 
-    //	virtual void			OnCL_Connected		(IClient* C);
+    //  virtual void            OnCL_Connected      (IClient* C);
     virtual void OnCL_Disconnected(IClient* C);
     virtual IClient* client_Create();
 

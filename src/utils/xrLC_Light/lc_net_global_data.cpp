@@ -12,7 +12,7 @@ void net_global_data_impl<gl_cl_data>::create_data_file(LPCSTR path)
 {
     FPU::m64r();
     Memory.mem_compact();
-    // std::random_shuffle	(inlc_global_data()->g_deflectors().begin(),inlc_global_data()->g_deflectors().end());
+    // std::random_shuffle  (inlc_global_data()->g_deflectors().begin(),inlc_global_data()->g_deflectors().end());
     Logger.clMsg("create_global_data_write:  start");
     IWriter* file = FS.w_open(path);
     inlc_global_data()->write(*file);

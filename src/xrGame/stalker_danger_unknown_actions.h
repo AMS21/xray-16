@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_danger_unknown_actions.h
-//	Created 	: 31.05.2005
-//  Modified 	: 31.05.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker danger unknown actions classes
+//  Module      : stalker_danger_unknown_actions.h
+//  Created     : 31.05.2005
+//  Modified    : 31.05.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker danger unknown actions classes
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: physic_item.h
-//	Created 	: 11.02.2004
-//  Modified 	: 11.02.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Physic item
+//  Module      : physic_item.h
+//  Created     : 11.02.2004
+//  Modified    : 11.02.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Physic item
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_callback_ex.h
-//	Created 	: 06.02.2004
-//  Modified 	: 11.01.2005
-//	Author		: Sergey Zhemeitsev and Dmitriy Iassenev
-//	Description : Script callbacks with return value
+//  Module      : script_callback_ex.h
+//  Created     : 06.02.2004
+//  Modified    : 11.01.2005
+//  Author      : Sergey Zhemeitsev and Dmitriy Iassenev
+//  Description : Script callbacks with return value
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

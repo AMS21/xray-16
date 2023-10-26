@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_base_action.cpp
-//	Created 	: 25.03.2004
-//  Modified 	: 27.09.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker base action
+//  Module      : stalker_base_action.cpp
+//  Created     : 25.03.2004
+//  Modified    : 27.09.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker base action
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

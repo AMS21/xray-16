@@ -168,7 +168,7 @@ void CParticleManager::Update(int effect_id, int alist_id, float dt)
 
 void CParticleManager::Render(int effect_id)
 {
-    //    ParticleEffect* pe	= GetEffectPtr(effect_id);
+    //    ParticleEffect* pe    = GetEffectPtr(effect_id);
 }
 
 void CParticleManager::Transform(int alist_id, const Fmatrix& full, const Fvector& vel)

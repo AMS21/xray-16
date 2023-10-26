@@ -19,9 +19,9 @@ void CBlender_Compile::r_Stencil(BOOL Enable, u32 Func, u32 Mask, u32 WriteMask,
     RS.SetRS(D3DRS_STENCILFAIL, Fail);
     RS.SetRS(D3DRS_STENCILPASS, Pass);
     RS.SetRS(D3DRS_STENCILZFAIL, ZFail);
-    //	Since we never really support different options for
-    //	CW/CCW stencil use it to mimic DX9 behaviour for
-    //	single-sided stencil
+    //  Since we never really support different options for
+    //  CW/CCW stencil use it to mimic DX9 behaviour for
+    //  single-sided stencil
     RS.SetRS(D3DRS_CCW_STENCILFUNC, Func);
     RS.SetRS(D3DRS_CCW_STENCILFAIL, Fail);
     RS.SetRS(D3DRS_CCW_STENCILPASS, Pass);
@@ -73,30 +73,30 @@ u32 CBlender_Compile::r_dx11Sampler(LPCSTR ResourceName)
     if (stage == u32(-1))
         return u32(-1);
 
-    //	init defaults here:
+    //  init defaults here:
 
-    //	Use D3DTADDRESS_CLAMP,	D3DTEXF_POINT,			D3DTEXF_NONE,	D3DTEXF_POINT
+    //  Use D3DTADDRESS_CLAMP,  D3DTEXF_POINT,          D3DTEXF_NONE,   D3DTEXF_POINT
     if (0 == xr_strcmp(ResourceName, "smp_nofilter"))
     {
         i_Address(stage, D3DTADDRESS_CLAMP);
         i_Filter(stage, D3DTEXF_POINT, D3DTEXF_NONE, D3DTEXF_POINT);
     }
 
-    //	Use D3DTADDRESS_CLAMP,	D3DTEXF_LINEAR,			D3DTEXF_NONE,	D3DTEXF_LINEAR
+    //  Use D3DTADDRESS_CLAMP,  D3DTEXF_LINEAR,         D3DTEXF_NONE,   D3DTEXF_LINEAR
     else if (0 == xr_strcmp(ResourceName, "smp_rtlinear"))
     {
         i_Address(stage, D3DTADDRESS_CLAMP);
         i_Filter(stage, D3DTEXF_LINEAR, D3DTEXF_NONE, D3DTEXF_LINEAR);
     }
 
-    //	Use	D3DTADDRESS_WRAP,	D3DTEXF_LINEAR,			D3DTEXF_LINEAR,	D3DTEXF_LINEAR
+    //  Use D3DTADDRESS_WRAP,   D3DTEXF_LINEAR,         D3DTEXF_LINEAR, D3DTEXF_LINEAR
     else if (0 == xr_strcmp(ResourceName, "smp_linear"))
     {
         i_Address(stage, D3DTADDRESS_WRAP);
         i_Filter(stage, D3DTEXF_LINEAR, D3DTEXF_LINEAR, D3DTEXF_LINEAR);
     }
 
-    //	Use D3DTADDRESS_WRAP,	D3DTEXF_ANISOTROPIC, 	D3DTEXF_LINEAR,	D3DTEXF_ANISOTROPIC
+    //  Use D3DTADDRESS_WRAP,   D3DTEXF_ANISOTROPIC,    D3DTEXF_LINEAR, D3DTEXF_ANISOTROPIC
     else if (0 == xr_strcmp(ResourceName, "smp_base"))
     {
         i_Address(stage, D3DTADDRESS_WRAP);
@@ -104,7 +104,7 @@ u32 CBlender_Compile::r_dx11Sampler(LPCSTR ResourceName)
         // i_Filter(stage, D3DTEXF_LINEAR, D3DTEXF_LINEAR, D3DTEXF_LINEAR);
     }
 
-    //	Use D3DTADDRESS_CLAMP,	D3DTEXF_LINEAR,			D3DTEXF_NONE,	D3DTEXF_LINEAR
+    //  Use D3DTADDRESS_CLAMP,  D3DTEXF_LINEAR,         D3DTEXF_NONE,   D3DTEXF_LINEAR
     else if (0 == xr_strcmp(ResourceName, "smp_material"))
     {
         i_Address(stage, D3DTADDRESS_CLAMP);

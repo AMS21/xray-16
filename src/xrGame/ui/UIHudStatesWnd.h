@@ -18,7 +18,7 @@ class CUIHudStatesWnd final : public CUIWindow
 {
 private:
     typedef CUIWindow inherited;
-    //-	typedef ALife::EInfluenceType	EIndicatorType;
+    //- typedef ALife::EInfluenceType   EIndicatorType;
 
     CUIStatic* m_back;
     CUIStatic* m_back_v;
@@ -53,24 +53,24 @@ private:
 
     CUIStatic* m_bleeding;
     /*
-        CUIStatic*			m_bleeding_lev1;
-        CUIStatic*			m_bleeding_lev2;
-        CUIStatic*			m_bleeding_lev3;
+        CUIStatic*          m_bleeding_lev1;
+        CUIStatic*          m_bleeding_lev2;
+        CUIStatic*          m_bleeding_lev3;
 
-        CUIStatic*			m_radiation_lev1;
-        CUIStatic*			m_radiation_lev2;
-        CUIStatic*			m_radiation_lev3;
+        CUIStatic*          m_radiation_lev1;
+        CUIStatic*          m_radiation_lev2;
+        CUIStatic*          m_radiation_lev3;
     */
     float m_last_health{};
     float m_health_blink;
 
     float m_radia_self{};
-    //	float				m_actor_radia_factor;
+    //  float               m_actor_radia_factor;
     float m_radia_hit{};
     shared_str m_lanim_name;
 
     float m_zone_cur_power[ALife::infl_max_count];
-    //--	float				m_zone_max_power[hud_it_max];//<-- CActorCondition
+    //--    float               m_zone_max_power[hud_it_max];//<-- CActorCondition
     float m_zone_feel_radius[ALife::infl_max_count];
     ALife::EHitType m_zone_hit_type[ALife::infl_max_count];
     float m_zone_threshold[ALife::infl_max_count];
@@ -88,7 +88,7 @@ public:
     void InitFromXml(CUIXml& xml, LPCSTR path);
     void Load_section();
     virtual void Update();
-    //	virtual void	Draw				();
+    //  virtual void    Draw                ();
 
     void on_connected();
     void reset_ui();

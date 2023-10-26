@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_rtoken_list.h
-//	Created 	: 16.07.2004
-//  Modified 	: 16.07.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script rtoken list class
+//  Module      : script_rtoken_list.h
+//  Created     : 16.07.2004
+//  Modified    : 16.07.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script rtoken list class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_collection_getter.hpp
-//	Created 	: 08.01.2008
-//  Modified 	: 08.01.2008
-//	Author		: Dmitriy Iassenev
-//	Description : property collection getter class
+//  Module      : property_collection_getter.hpp
+//  Created     : 08.01.2008
+//  Modified    : 08.01.2008
+//  Author      : Dmitriy Iassenev
+//  Description : property collection getter class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_COLLECTION_GETTER_HPP_INCLUDED

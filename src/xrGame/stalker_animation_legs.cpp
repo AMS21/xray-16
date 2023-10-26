@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_animation_legs.cpp
-//	Created 	: 25.02.2003
-//  Modified 	: 19.11.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker animation manager : legs animations
+//  Module      : stalker_animation_legs.cpp
+//  Created     : 25.02.2003
+//  Modified    : 19.11.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker animation manager : legs animations
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -20,7 +20,7 @@
 
 const float right_forward_angle = PI_DIV_4;
 const float left_forward_angle = PI_DIV_4;
-// const float standing_turn_angle			= PI_DIV_6;
+// const float standing_turn_angle          = PI_DIV_6;
 const float epsilon = EPS_L;
 
 const u32 direction_switch_interval = 500;
@@ -28,10 +28,10 @@ const u32 direction_switch_interval = 500;
 const u32 need_look_back_time_delay = 0;
 
 const float direction_angles[] = {
-    0.f, //	eMovementDirectionForward
-    PI, //	eMovementDirectionBackward
-    PI_DIV_2, //	eMovementDirectionLeft
-    -PI_DIV_2 //	eMovementDirectionRight
+    0.f, // eMovementDirectionForward
+    PI, //  eMovementDirectionBackward
+    PI_DIV_2, //    eMovementDirectionLeft
+    -PI_DIV_2 //    eMovementDirectionRight
 };
 
 void CStalkerAnimationManager::legs_play_callback(CBlend* blend)
@@ -233,7 +233,7 @@ MotionID CStalkerAnimationManager::legs_no_move_animation()
     float target = body_orientation.target.yaw;
     if (angle_difference(target, current) < EPS_L)
     {
-        //		float					head_current = movement.head_orientation().current.yaw;
+        //      float                   head_current = movement.head_orientation().current.yaw;
         if ((movement.mental_state() != eMentalStateFree) || !object().sight().turning_in_place())
         {
             if (movement.mental_state() == eMentalStateFree)

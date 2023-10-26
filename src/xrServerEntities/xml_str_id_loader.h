@@ -179,7 +179,7 @@ void CSXML_IdToIndex::InitInternal(bool crashOnFail /*= true*/, bool ignoreMissi
             data.id = item_name;
             data.index = index;
             data.pos_in_file = i;
-            //.				data.file_name		= xml_file;
+            //.             data.file_name      = xml_file;
             data._xml = uiXml;
             m_pItemDataVector->push_back(data);
 

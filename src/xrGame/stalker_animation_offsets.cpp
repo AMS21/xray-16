@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_animation_offsets.cpp
-//	Created 	: 19.12.2007
-//	Author		: Alexander Dudin
-//	Description : Animation offsets class
+//  Module      : stalker_animation_offsets.cpp
+//  Created     : 19.12.2007
+//  Author      : Alexander Dudin
+//  Description : Animation offsets class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

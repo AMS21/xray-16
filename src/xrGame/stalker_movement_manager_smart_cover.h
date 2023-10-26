@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_movement_manager_smart_cover.h
-//	Created 	: 27.12.2003
-//	Modified	: 13.02.2008
-//	Author		: Dmitriy Iassenev
-//	Description : stalker movement manager class with smart covers
+//  Module      : stalker_movement_manager_smart_cover.h
+//  Created     : 27.12.2003
+//  Modified    : 13.02.2008
+//  Author      : Dmitriy Iassenev
+//  Description : stalker movement manager class with smart covers
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

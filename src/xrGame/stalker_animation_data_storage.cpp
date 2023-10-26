@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_animation_data_storage.cpp
-//	Created 	: 13.10.2005
-//  Modified 	: 13.10.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker animation data storage
+//  Module      : stalker_animation_data_storage.cpp
+//  Created     : 13.10.2005
+//  Modified    : 13.10.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker animation data storage
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

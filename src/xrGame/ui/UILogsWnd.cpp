@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: UILogsWnd.cpp
-//	Created 	: 25.04.2008
-//	Author		: Evgeniy Sokolov
-//	Description : UI Logs (PDA) window class implementation
+//  Module      : UILogsWnd.cpp
+//  Created     : 25.04.2008
+//  Author      : Evgeniy Sokolov
+//  Description : UI Logs (PDA) window class implementation
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -131,8 +131,8 @@ bool CUILogsWnd::Init()
     m_list->SetAutoDelete(true);
     AttachChild(m_list);
     CUIXmlInit::InitScrollView(m_uiXml, "logs_list", 0, m_list);
-    //	m_list->SetWindowName("---logs_list");
-    //	m_logs_list->m_sort_function = fastdelegate::MakeDelegate( this, &CUIRankingWnd::SortingLessFunction );
+    //  m_list->SetWindowName("---logs_list");
+    //  m_logs_list->m_sort_function = fastdelegate::MakeDelegate( this, &CUIRankingWnd::SortingLessFunction );
 
     m_filter_news = UIHelper::CreateCheck(m_uiXml, "filter_news", this);
     m_filter_talk = UIHelper::CreateCheck(m_uiXml, "filter_talk", this);
@@ -197,7 +197,7 @@ void CUILogsWnd::ReLoadNews()
     VERIFY(m_filter_news && m_filter_talk);
     GAME_NEWS_VECTOR& news_vector = Actor()->game_news_registry->registry().objects();
 
-    //	u32 currentNews = 0;
+    //  u32 currentNews = 0;
 
     bool filter_news = m_filter_news->GetCheck();
     bool filter_talk = m_filter_talk->GetCheck();
@@ -224,7 +224,7 @@ void CUILogsWnd::ReLoadNews()
         if (add)
         {
             m_news_in_queue.push_back(idx);
-            //			++currentNews;
+            //          ++currentNews;
         }
     }
     m_need_reload = false;
@@ -266,9 +266,9 @@ CUIWindow* CUILogsWnd::CreateItem()
 
 // void CUILogsWnd::ItemToCache(CUIWindow* w)
 //{
-//	CUINewsItemWnd* itm = smart_cast<CUINewsItemWnd*>(w);
-//	VERIFY				(w);
-//	m_items_cache.push_back(itm);
+//  CUINewsItemWnd* itm = smart_cast<CUINewsItemWnd*>(w);
+//  VERIFY              (w);
+//  m_items_cache.push_back(itm);
 //}
 
 CUIWindow* CUILogsWnd::ItemFromCache()

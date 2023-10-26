@@ -126,7 +126,7 @@ void CEntityAlive::LoadBloodyWallmarks(LPCSTR section)
     for (int k=0; k<cnt; ++k)
     {
         s.create ("effects" DELIMITER "wallmark",_GetItem(wallmarks_name,k,tmp));
-        m_pBloodDropsVector->push_back	(s);
+        m_pBloodDropsVector->push_back  (s);
     }
     */
 
@@ -139,12 +139,12 @@ void CEntityAlive::UnloadBloodyWallmarks()
 {
     if (m_pBloodMarksVector)
     {
-        //		m_pBloodMarksVector->clear	();
+        //      m_pBloodMarksVector->clear  ();
         xr_delete(m_pBloodMarksVector);
     }
     if (m_pBloodDropsVector)
     {
-        //		m_pBloodDropsVector->clear	();
+        //      m_pBloodDropsVector->clear  ();
         xr_delete(m_pBloodDropsVector);
     }
 }
@@ -191,7 +191,7 @@ void CEntityAlive::reinit()
 void CEntityAlive::reload(LPCSTR section)
 {
     CEntity::reload(section);
-    //	CEntityCondition::reload(section);
+    //  CEntityCondition::reload(section);
 
     m_ef_creature_type = pSettings->r_u32(section, "ef_creature_type");
     m_ef_weapon_type = READ_IF_EXISTS(pSettings, r_u32, section, "ef_weapon_type", u32(-1));
@@ -219,13 +219,13 @@ void CEntityAlive::shedule_Update(u32 dt)
     {
         if (conditions().GetWhoHitLastTime())
         {
-            //			Msg			("%6d : KillEntity from CEntityAlive (using who hit last time) for object
+            //          Msg         ("%6d : KillEntity from CEntityAlive (using who hit last time) for object
             //%s",Device.dwTimeGlobal,*cName());
             KillEntity(conditions().GetWhoHitLastTimeID());
         }
         else
         {
-            //			Msg			("%6d : KillEntity from CEntityAlive for object %s",Device.dwTimeGlobal,*cName());
+            //          Msg         ("%6d : KillEntity from CEntityAlive for object %s",Device.dwTimeGlobal,*cName());
             KillEntity(ID());
         }
     }
@@ -234,7 +234,7 @@ void CEntityAlive::shedule_Update(u32 dt)
 bool CEntityAlive::net_Spawn(CSE_Abstract* DC)
 {
     //установить команду в соответствии с community
-    /*	if(monster_community->team() != 255)
+    /*  if(monster_community->team() != 255)
             id_Team = monster_community->team();*/
 
     conditions().reinit();
@@ -257,8 +257,8 @@ bool CEntityAlive::net_Spawn(CSE_Abstract* DC)
 void CEntityAlive::net_Destroy() { inherited::net_Destroy(); }
 void CEntityAlive::HitImpulse(float /**amount**/, Fvector& /**vWorldDir**/, Fvector& /**vLocalDir**/)
 {
-    //	float Q					= 2*float(amount)/m_PhysicMovementControl->GetMass();
-    //	m_PhysicMovementControl->vExternalImpulse.mad	(vWorldDir,Q);
+    //  float Q                 = 2*float(amount)/m_PhysicMovementControl->GetMass();
+    //  m_PhysicMovementControl->vExternalImpulse.mad   (vWorldDir,Q);
 }
 
 void CEntityAlive::Hit(SHit* pHDS)
@@ -457,7 +457,7 @@ void CEntityAlive::UpdateFireParticles()
     if (m_ParticleWounds.empty())
         return;
 
-    //	WOUND_VECTOR_IT last_it;
+    //  WOUND_VECTOR_IT last_it;
 
     for (auto it = m_ParticleWounds.begin(); it != m_ParticleWounds.end();)
     {
@@ -523,7 +523,7 @@ void CEntityAlive::UpdateBloodDrops()
         return;
     }
 
-    //	WOUND_VECTOR_IT last_it;
+    //  WOUND_VECTOR_IT last_it;
 
     for (auto it = m_BloodWounds.begin(); it != m_BloodWounds.end();)
     {
@@ -583,12 +583,12 @@ CEntityConditionSimple* CEntityAlive::create_entity_condition(CEntityConditionSi
 }
 
 /*
-float CEntityAlive::GetfHealth	() const
+float CEntityAlive::GetfHealth  () const
 {
     return conditions().health()*100.f;
 }
 
-float CEntityAlive::SetfHealth	(float value)
+float CEntityAlive::SetfHealth  (float value)
 {
     conditions().health() = value/100.f;
     return value;
@@ -600,11 +600,11 @@ float CEntityAlive::SetfRadiation(float value)
     return value;
 }
 /*
-float CEntityAlive::g_Health	() const
+float CEntityAlive::g_Health    () const
 {
     return conditions().GetHealth()*100.f;
 }
-float CEntityAlive::g_MaxHealth	() const
+float CEntityAlive::g_MaxHealth () const
 {
     return conditions().GetMaxHealth()*100.f;
 }

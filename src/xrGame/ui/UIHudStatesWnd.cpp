@@ -26,7 +26,7 @@ CUIHudStatesWnd::CUIHudStatesWnd()
     for (int i = 0; i < ALife::infl_max_count; ++i)
     {
         m_zone_cur_power[i] = 0.0f;
-        //--		m_zone_max_power[i] = 1.0f;
+        //--        m_zone_max_power[i] = 1.0f;
         m_zone_feel_radius[i] = 1.0f;
     }
     m_zone_hit_type[ALife::infl_rad] = ALife::eHitTypeRadiation;
@@ -37,7 +37,7 @@ CUIHudStatesWnd::CUIHudStatesWnd()
 
     m_health_blink = pSettings->read_if_exists<float>("actor_condition", "hud_health_blink", 0.f);
     clamp(m_health_blink, 0.0f, 1.0f);
-    //-	Load_section();
+    //- Load_section();
 }
 
 void CUIHudStatesWnd::reset_ui()
@@ -153,7 +153,7 @@ void CUIHudStatesWnd::InitFromXml(CUIXml& xml, LPCSTR path)
 
     m_ui_weapon_icon = UIHelper::CreateStatic(xml, "static_wpn_icon", weaponsParent);
     m_ui_weapon_icon->SetShader(InventoryUtilities::GetEquipmentIconsShader());
-    //	m_ui_weapon_icon->Enable	( false );
+    //  m_ui_weapon_icon->Enable    ( false );
     m_ui_weapon_icon_rect = m_ui_weapon_icon->GetWndRect();
 
     m_progress_self = UIHelper::CreateProgressShape(xml, "progress", this, false);
@@ -202,7 +202,7 @@ void CUIHudStatesWnd::Load_section()
         VERIFY(Level().hud_zones_list);
     }
 
-    //	m_actor_radia_factor = pSettings->r_float( "radiation_zone_detector", "actor_radia_factor" );
+    //  m_actor_radia_factor = pSettings->r_float( "radiation_zone_detector", "actor_radia_factor" );
     Level().hud_zones_list->load("all_zone_detector", "zone");
 
     Load_section_type(ALife::infl_rad, "radiation_zone_detector");
@@ -250,10 +250,10 @@ void CUIHudStatesWnd::Update()
 
 void CUIHudStatesWnd::UpdateHealth(CActor* actor)
 {
-    //	if ( Device.dwTimeGlobal - m_timer_1sec > 1000 ) // 1 sec
-    //	{
-    //		m_timer_1sec = Device.dwTimeGlobal;
-    //	}
+    //  if ( Device.dwTimeGlobal - m_timer_1sec > 1000 ) // 1 sec
+    //  {
+    //      m_timer_1sec = Device.dwTimeGlobal;
+    //  }
 
     const float cur_health = actor->GetfHealth();
     m_ui_health_bar->SetProgressPos(iCeil(cur_health * 100.0f * 35.f) / 35.f);
@@ -348,7 +348,7 @@ void CUIHudStatesWnd::UpdateActiveItemInfo(CActor* actor)
 
         item->GetBriefInfo(m_item_info);
 
-        //		UIWeaponBack.SetText		( str_name.c_str() );
+        //      UIWeaponBack.SetText        ( str_name.c_str() );
         m_fire_mode->SetText(m_item_info.fire_mode.c_str());
         SetAmmoIcon(m_item_info.icon.c_str());
 
@@ -579,7 +579,7 @@ void CUIHudStatesWnd::UpdateZones()
     }
     m_radia_hit = m_zone_cur_power[ALife::infl_rad];
 
-    /*	if ( Device.dwFrame % 20 == 0 )
+    /*  if ( Device.dwFrame % 20 == 0 )
         {
             Msg(" self = %.2f   hit = %.2f", m_radia_self, m_radia_hit );
         }*/
@@ -632,7 +632,7 @@ void CUIHudStatesWnd::UpdateZones()
 
         ALife::EHitType hit_type = pZone->GetHitType();
         ALife::EInfluenceType z_type = get_indik_type(hit_type);
-        /*		if ( z_type == indik_type_max )
+        /*      if ( z_type == indik_type_max )
                 {
                     continue;
                 }
@@ -673,7 +673,7 @@ void CUIHudStatesWnd::UpdateZones()
         //определить текущую частоту срабатывания сигнала
         zone_info.cur_period = zone_type->freq.x + (zone_type->freq.y - zone_type->freq.x) * (fRelPow * fRelPow);
 
-        // string256	buff_z;
+        // string256    buff_z;
         // xr_sprintf( buff_z, "zone %2.2f\n", zone_info.cur_period );
         // xr_strcat( buff, buff_z );
         if (zone_info.snd_time > zone_info.cur_period)
@@ -752,8 +752,8 @@ void CUIHudStatesWnd::UpdateIndicatorType(CActor* actor, ALife::EInfluenceType t
             protect += it->second.fBoostValue;
     }
 
-    //	float max_power = actor->conditions().GetZoneMaxPower( hit_type );
-    //	protect = protect / max_power; // = 0..1
+    //  float max_power = actor->conditions().GetZoneMaxPower( hit_type );
+    //  protect = protect / max_power; // = 0..1
     m_indik[type]->Show(true);
 
     if (hit_power < EPS)

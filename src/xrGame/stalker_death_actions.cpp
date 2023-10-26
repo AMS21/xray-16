@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_death_actions.cpp
-//	Created 	: 25.03.2004
-//  Modified 	: 26.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker death action classes
+//  Module      : stalker_death_actions.cpp
+//  Created     : 25.03.2004
+//  Modified    : 26.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker death action classes
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: UIActorMenu_script.cpp
-//	Created 	: 18.04.2008
-//	Author		: Evgeniy Sokolov
-//	Description : UI ActorMenu script implementation
+//  Module      : UIActorMenu_script.cpp
+//  Created     : 18.04.2008
+//  Author      : Evgeniy Sokolov
+//  Description : UI ActorMenu script implementation
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

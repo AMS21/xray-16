@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_integer_values_value_reference_getter.hpp
-//	Created 	: 09.01.2008
-//  Modified 	: 09.01.2008
-//	Author		: Dmitriy Iassenev
-//	Description : property integer values value reference getter class
+//  Module      : property_integer_values_value_reference_getter.hpp
+//  Created     : 09.01.2008
+//  Modified    : 09.01.2008
+//  Author      : Dmitriy Iassenev
+//  Description : property integer values value reference getter class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_INTEGER_VALUES_VALUE_REFERENCE_GETTER_HPP_INCLUDED

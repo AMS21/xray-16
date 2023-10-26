@@ -120,14 +120,14 @@ public:
         if (o_fastmode)
             return;
         o_fastmode = TRUE;
-        // processing_activate		();
+        // processing_activate      ();
     }
     IC void o_switch_2_slow()
     {
         if (!o_fastmode)
             return;
         o_fastmode = FALSE;
-        // processing_deactivate		();
+        // processing_deactivate        ();
     }
 };
 

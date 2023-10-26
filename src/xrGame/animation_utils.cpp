@@ -13,7 +13,7 @@ anim_bone_fix::~anim_bone_fix()
 }
 void anim_bone_fix::callback(CBoneInstance* BI)
 {
-    //	Fmatrix	m = BI->mTransform;
+    //  Fmatrix m = BI->mTransform;
 
     anim_bone_fix* fix = (anim_bone_fix*)BI->callback_param();
     VERIFY(fix->bone);
@@ -25,9 +25,9 @@ void anim_bone_fix::callback(CBoneInstance* BI)
 
     // if(diff.c.magnitude() > 0.5f)
     //{
-    //	int i=0;i++;
+    //  int i=0;i++;
     //}
-    R_ASSERT2(_valid(BI->mTransform), "anim_bone_fix::	callback");
+    R_ASSERT2(_valid(BI->mTransform), "anim_bone_fix::  callback");
 }
 
 void anim_bone_fix::fix(u16 bone_id, IKinematics& K)

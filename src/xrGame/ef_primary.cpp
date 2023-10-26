@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ef_primary.cpp
-//	Created 	: 13.06.2003
-//  Modified 	: 13.06.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Primary evaluation function classes
+//  Module      : ef_primary.cpp
+//  Created     : 13.06.2003
+//  Modified    : 13.06.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Primary evaluation function classes
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -274,11 +274,11 @@ float CEnemyRukzakWeightFunction::ffGetValue()
     }
     else
     {
-        //		CSE_ALifeHumanAbstract *l_tpALifeHumanAbstract =
+        //      CSE_ALifeHumanAbstract *l_tpALifeHumanAbstract =
         // smart_cast<CSE_ALifeHumanAbstract*>(ef_storage().alife().member());
-        //		if (l_tpALifeHumanAbstract)
-        //			m_fLastValue	= l_tpALifeHumanAbstract->m_fCumulativeItemMass;
-        //		else
+        //      if (l_tpALifeHumanAbstract)
+        //          m_fLastValue    = l_tpALifeHumanAbstract->m_fCumulativeItemMass;
+        //      else
         m_fLastValue = 0;
     }
     return (m_fLastValue);

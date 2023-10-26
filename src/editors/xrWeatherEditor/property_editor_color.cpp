@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_editor_color.cpp
-//	Created 	: 12.12.2007
-//  Modified 	: 12.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property editor color class
+//  Module      : property_editor_color.cpp
+//  Created     : 12.12.2007
+//  Modified    : 12.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property editor color class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

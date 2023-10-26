@@ -111,9 +111,9 @@ struct v_type<e_net_globals>
 template <typename e>
 struct list_exec
 {
-    // typedef	typename e::type e_type;
-    // static const  e_type		ii			=	( e_type )(e::value);
-    // static const  e_type	next_ii		=	( e_type )(i+1);
+    // typedef  typename e::type e_type;
+    // static const  e_type     ii          =   ( e_type )(e::value);
+    // static const  e_type next_ii     =   ( e_type )(i+1);
     typedef typename n_type<e>::next n;
     typedef list_exec<n> next;
     typedef list_glob<gl_cl_data, e> globs;

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: cover_point_script.cpp
-//	Created 	: 24.03.2004
-//  Modified 	: 24.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Cover point class
+//  Module      : cover_point_script.cpp
+//  Created     : 24.03.2004
+//  Modified    : 24.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Cover point class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

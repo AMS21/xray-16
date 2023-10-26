@@ -9,7 +9,7 @@
 #if !defined(XR_PLATFORM_WINDOWS) || !defined(XR_ARCHITECTURE_X86)
 void Skin1W(vertRender* D, vertBoned1W* S, u32 vCount, CBoneInstance* Bones)
 {
-    //	return;
+    //  return;
     // Prepare
     int U_Count = vCount / 8;
     vertBoned1W* V = S;

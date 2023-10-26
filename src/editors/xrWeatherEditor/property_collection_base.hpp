@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_collection_base.hpp
-//	Created 	: 08.01.2008
-//  Modified 	: 08.01.2008
-//	Author		: Dmitriy Iassenev
-//	Description : property collection base class
+//  Module      : property_collection_base.hpp
+//  Created     : 08.01.2008
+//  Modified    : 08.01.2008
+//  Author      : Dmitriy Iassenev
+//  Description : property collection base class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_COLLECTION_BASE_HPP_INCLUDED

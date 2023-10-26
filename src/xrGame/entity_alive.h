@@ -33,7 +33,7 @@ private:
     bool m_is_agresive;
     bool m_is_start_attack;
     // m_PhysicMovementControl
-    // CPHMovementControl		*m_PhysicMovementControl;
+    // CPHMovementControl       *m_PhysicMovementControl;
 public:
     // General
     CEntityAlive();
@@ -63,11 +63,11 @@ public:
     virtual void g_WeaponBones(int& L, int& R1, int& R2) = 0;
     void set_lock_corpse(bool b_l_corpse);
     bool is_locked_corpse();
-    //	virtual float			GetfHealth				() const;
-    //	virtual float			SetfHealth				(float value);
+    //  virtual float           GetfHealth              () const;
+    //  virtual float           SetfHealth              (float value);
 
-    //	virtual float			g_Health				()	const;
-    //	virtual float			g_MaxHealth				()	const;
+    //  virtual float           g_Health                ()  const;
+    //  virtual float           g_MaxHealth             ()  const;
 
     virtual float g_Radiation() const;
     virtual float SetfRadiation(float value);
@@ -80,7 +80,7 @@ public:
 
     virtual bool human_being() const { return false; }
 public:
-    // IC	CPHMovementControl*					PMovement					()						{return
+    // IC   CPHMovementControl*                 PMovement                   ()                      {return
     // m_PhysicMovementControl;}
 
     virtual u16 PHGetSyncItemsNumber();

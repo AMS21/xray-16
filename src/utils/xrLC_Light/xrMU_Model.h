@@ -16,9 +16,9 @@ class XRLC_LIGHT_API xrMU_Model
 {
 public:
     //**
-    // struct	_vertex;
-    // struct	_face;
-    // struct	data_face;
+    // struct   _vertex;
+    // struct   _face;
+    // struct   data_face;
     // struct data_vertex;
     //**
 
@@ -74,14 +74,14 @@ public:
     ~xrMU_Model();
     void clear_mesh();
     void Load(IReader& F, u32 version);
-    //	void					calc_normals		();
+    //  void                    calc_normals        ();
     void calc_materials();
     void calc_faceopacity();
     void calc_lighting(
         xr_vector<base_color>& dest, const Fmatrix& xform, CDB::MODEL* M, base_lighting& lights, u32 flags);
     void calc_lighting();
-    //	void					calc_ogf			();
-    //	void					export_geometry		();
+    //  void                    calc_ogf            ();
+    //  void                    export_geometry     ();
     void export_cform_rcast(CDB::CollectorPacked& CL, Fmatrix& xform);
     void read(INetReader& r);
     void write(IWriter& w) const;

@@ -27,26 +27,26 @@ void weapon_collection::load_all_mp_weapons()
     FS.update_path(path_ltx, "$game_config$", "system.ltx");
     priquel_config = new CInifileEx(path_ltx, TRUE, TRUE, FALSE);
 
-    /*FS.update_path			(path_ltx, "$game_config$", "mp\\weapons_mp\\weapons_mp_for_work.ltx");
-    work_mp_weapons			= xr_new<CInifileEx>(path_ltx, TRUE, TRUE, FALSE);
+    /*FS.update_path            (path_ltx, "$game_config$", "mp\\weapons_mp\\weapons_mp_for_work.ltx");
+    work_mp_weapons         = xr_new<CInifileEx>(path_ltx, TRUE, TRUE, FALSE);
 
-    FS.update_path			(path_ltx, "$game_config$", "mp\\weapons_mp\\ammo_mp_for_work.ltx");
-    work_mp_ammo				= xr_new<CInifileEx>(path_ltx, TRUE, TRUE, FALSE);
+    FS.update_path          (path_ltx, "$game_config$", "mp\\weapons_mp\\ammo_mp_for_work.ltx");
+    work_mp_ammo                = xr_new<CInifileEx>(path_ltx, TRUE, TRUE, FALSE);
 
-    FS.update_path			(path_ltx, "$game_config$", "mp\\weapons_mp\\items_mp_for_work.ltx");
-    work_mp_items			= xr_new<CInifileEx>(path_ltx, TRUE, TRUE, FALSE);
+    FS.update_path          (path_ltx, "$game_config$", "mp\\weapons_mp\\items_mp_for_work.ltx");
+    work_mp_items           = xr_new<CInifileEx>(path_ltx, TRUE, TRUE, FALSE);
 
-    FS.update_path			(path_ltx, "$game_config$", "mp\\weapons_mp\\outfit_mp_for_work.ltx");
-    work_mp_outfits			= xr_new<CInifileEx>(path_ltx, TRUE, TRUE, FALSE);*/
+    FS.update_path          (path_ltx, "$game_config$", "mp\\weapons_mp\\outfit_mp_for_work.ltx");
+    work_mp_outfits         = xr_new<CInifileEx>(path_ltx, TRUE, TRUE, FALSE);*/
 
     FS.update_path(path_ltx, "$app_data_root$", "export_settings.ltx");
     settings = new CInifileEx(path_ltx, TRUE, TRUE, FALSE);
     load_settings();
 
-    /*new_mp_weapons			= xr_new<CInifileEx>("new_weapons_mp.ltx", FALSE, FALSE, FALSE);
-    new_mp_ammo				= xr_new<CInifileEx>("new_ammo_mp.ltx", FALSE, FALSE, FALSE);
-    new_mp_items			= xr_new<CInifileEx>("new_items_mp.ltx", FALSE, FALSE, FALSE);
-    new_mp_outfits			= xr_new<CInifileEx>("new_outfit_mp.ltx", FALSE, FALSE, FALSE);*/
+    /*new_mp_weapons            = xr_new<CInifileEx>("new_weapons_mp.ltx", FALSE, FALSE, FALSE);
+    new_mp_ammo             = xr_new<CInifileEx>("new_ammo_mp.ltx", FALSE, FALSE, FALSE);
+    new_mp_items            = xr_new<CInifileEx>("new_items_mp.ltx", FALSE, FALSE, FALSE);
+    new_mp_outfits          = xr_new<CInifileEx>("new_outfit_mp.ltx", FALSE, FALSE, FALSE);*/
 
     CInifileEx::Sect& dm_base_cost = priquel_config->r_section("deathmatch_base_cost");
     CInifileEx::SectIt_ ie = dm_base_cost.Data.end();

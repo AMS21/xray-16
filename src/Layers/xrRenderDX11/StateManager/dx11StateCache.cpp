@@ -16,7 +16,7 @@ template <class IDeviceState, class StateDecs>
 dx11StateCache<IDeviceState, StateDecs>::~dx11StateCache()
 {
     ClearStateArray();
-    //	VERIFY(m_StateArray.empty());
+    //  VERIFY(m_StateArray.empty());
 }
 
 /*
@@ -46,10 +46,10 @@ void dx11StateCache<ID3DRasterizerState, D3D_RASTERIZER_DESC>::CreateState(
 {
     CHK_DX(HW.pDevice->CreateRasterizerState(&desc, ppIState));
 
-//	TODO: DX11: Remove this.
+//  TODO: DX11: Remove this.
 #ifdef DEBUG
     Msg("ID3DRasterizerState #%d created.", m_StateArray.size());
-#endif //	DEBUG
+#endif //   DEBUG
 }
 
 template <>
@@ -58,10 +58,10 @@ void dx11StateCache<ID3DDepthStencilState, D3D_DEPTH_STENCIL_DESC>::CreateState(
 {
     CHK_DX(HW.pDevice->CreateDepthStencilState(&desc, ppIState));
 
-//	TODO: DX11: Remove this.
+//  TODO: DX11: Remove this.
 #ifdef DEBUG
     Msg("ID3DDepthStencilState #%d created.", m_StateArray.size());
-#endif //	DEBUG
+#endif //   DEBUG
 }
 
 template <>
@@ -69,10 +69,10 @@ void dx11StateCache<ID3DBlendState, D3D_BLEND_DESC>::CreateState(D3D_BLEND_DESC 
 {
     CHK_DX(HW.pDevice->CreateBlendState(&desc, ppIState));
 
-//	TODO: DX11: Remove this.
+//  TODO: DX11: Remove this.
 #ifdef DEBUG
     Msg("ID3DBlendState #%d created.", m_StateArray.size());
-#endif //	DEBUG
+#endif //   DEBUG
 }
 
 /*

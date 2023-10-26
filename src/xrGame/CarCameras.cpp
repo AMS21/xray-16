@@ -21,7 +21,7 @@ void CCar::cam_Update(float dt, float fov)
     VERIFY(!physics_world()->Processing());
     Fvector P, Da;
     Da.set(0, 0, 0);
-    // bool							owner = !!Owner();
+    // bool                         owner = !!Owner();
 
     XFORM().transform_tiny(P, m_camera_position);
 

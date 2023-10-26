@@ -64,7 +64,7 @@ void MK_Frustum(CFrustum& F, float FOV, float _FAR, float A, Fvector& P, Fvector
 
 void dbg_draw_frustum(float FOV, float _FAR, float A, Fvector& P, Fvector& D, Fvector& U)
 {
-    // if (!bDebug)		return;
+    // if (!bDebug)     return;
 
     float YFov = deg2rad(FOV * A);
     float XFov = deg2rad(FOV);
@@ -110,9 +110,9 @@ void dbg_draw_frustum(float FOV, float _FAR, float A, Fvector& P, Fvector& D, Fv
     ProjDirs[2].sub(sPts[2], COP);
     ProjDirs[3].sub(sPts[3], COP);
 
-    // RCache.set_CullMode	(CULL_NONE);
+    // RCache.set_CullMode  (CULL_NONE);
     GEnv.DRender->CacheSetCullMode(IDebugRender::cmNONE);
-    // CHK_DX(HW.pDevice->SetRenderState	(D3DRS_AMBIENT,		0xffffffff			));
+    // CHK_DX(HW.pDevice->SetRenderState    (D3DRS_AMBIENT,     0xffffffff          ));
     GEnv.DRender->SetAmbient(0xffffffff);
 
     Fvector _F[4];
@@ -121,16 +121,16 @@ void dbg_draw_frustum(float FOV, float _FAR, float A, Fvector& P, Fvector& D, Fv
     _F[2].mad(COP, ProjDirs[2], _FAR);
     _F[3].mad(COP, ProjDirs[3], _FAR);
 
-    //	u32 CT	= color_rgba(255,255,255,64);
+    //  u32 CT  = color_rgba(255,255,255,64);
     u32 CL = color_rgba(0, 255, 255, 255);
     Fmatrix& M = Fidentity;
-    // ref_shader				l_tShaderReference = Level().ObjectSpace.dbgGetShader();
-    // RCache.set_Shader		(l_tShaderReference);
+    // ref_shader               l_tShaderReference = Level().ObjectSpace.dbgGetShader();
+    // RCache.set_Shader        (l_tShaderReference);
     (*Level().ObjectSpace.m_pRender)->SetShader();
-    //	RCache.dbg_DrawTRI	(M,COP,_F[0],_F[1],CT);
-    //	RCache.dbg_DrawTRI	(M,COP,_F[1],_F[2],CT);
-    //	RCache.dbg_DrawTRI	(M,COP,_F[2],_F[3],CT);
-    //	RCache.dbg_DrawTRI	(M,COP,_F[3],_F[0],CT);
+    //  RCache.dbg_DrawTRI  (M,COP,_F[0],_F[1],CT);
+    //  RCache.dbg_DrawTRI  (M,COP,_F[1],_F[2],CT);
+    //  RCache.dbg_DrawTRI  (M,COP,_F[2],_F[3],CT);
+    //  RCache.dbg_DrawTRI  (M,COP,_F[3],_F[0],CT);
     Level().debug_renderer().draw_line(M, COP, _F[0], CL);
     Level().debug_renderer().draw_line(M, COP, _F[1], CL);
     Level().debug_renderer().draw_line(M, COP, _F[2], CL);
@@ -141,9 +141,9 @@ void dbg_draw_frustum(float FOV, float _FAR, float A, Fvector& P, Fvector& D, Fv
     Level().debug_renderer().draw_line(M, _F[2], _F[3], CL);
     Level().debug_renderer().draw_line(M, _F[3], _F[0], CL);
 
-    // RCache.set_CullMode			(CULL_CCW);
+    // RCache.set_CullMode          (CULL_CCW);
     GEnv.DRender->CacheSetCullMode(IDebugRender::cmCCW);
-    // CHK_DX(HW.pDevice->SetRenderState	(D3DRS_AMBIENT,	0						));
+    // CHK_DX(HW.pDevice->SetRenderState    (D3DRS_AMBIENT, 0                       ));
     GEnv.DRender->SetAmbient(0);
 }
 #endif

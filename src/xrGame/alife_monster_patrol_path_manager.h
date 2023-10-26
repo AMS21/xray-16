@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_monster_patrol_path_manager.h
-//	Created 	: 01.11.2005
-//  Modified 	: 22.11.2005
-//	Author		: Dmitriy Iassenev
-//	Description : ALife monster patrol path manager class
+//  Module      : alife_monster_patrol_path_manager.h
+//  Created     : 01.11.2005
+//  Modified    : 22.11.2005
+//  Author      : Dmitriy Iassenev
+//  Description : ALife monster patrol path manager class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

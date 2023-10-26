@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: path_manager_game_vertex_inline.h
-//	Created 	: 05.07.2006
-//  Modified 	: 05.07.2006
-//	Author		: Dmitriy Iassenev
-//	Description : Game vertex path manager inline functions
+//  Module      : path_manager_game_vertex_inline.h
+//  Created     : 05.07.2006
+//  Modified    : 05.07.2006
+//  Author      : Dmitriy Iassenev
+//  Description : Game vertex path manager inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

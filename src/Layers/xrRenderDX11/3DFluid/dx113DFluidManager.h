@@ -15,13 +15,13 @@ public:
     enum RENDER_TARGET
     {
         RENDER_TARGET_VELOCITY1 = 0,
-        RENDER_TARGET_COLOR, //	Swap with object's
+        RENDER_TARGET_COLOR, // Swap with object's
         RENDER_TARGET_OBSTACLES,
         RENDER_TARGET_OBSTVELOCITY,
         RENDER_TARGET_TEMPSCALAR,
         RENDER_TARGET_TEMPVECTOR,
-        NUM_OWN_RENDER_TARGETS, //	Owns render targets only upt to this id.
-        RENDER_TARGET_VELOCITY0 = NUM_OWN_RENDER_TARGETS, //	For textures generated from local data
+        NUM_OWN_RENDER_TARGETS, //  Owns render targets only upt to this id.
+        RENDER_TARGET_VELOCITY0 = NUM_OWN_RENDER_TARGETS, //    For textures generated from local data
         RENDER_TARGET_PRESSURE,
         RENDER_TARGET_COLOR_IN,
         NUM_RENDER_TARGETS
@@ -31,7 +31,7 @@ public:
     dx113DFluidManager();
     ~dx113DFluidManager();
 
-    //		Manager setup
+    //      Manager setup
     void Initialize(int width, int height, int depth);
     void Destroy();
     void SetScreenSize(int width, int height)
@@ -40,15 +40,15 @@ public:
             m_pRenderer->SetScreenSize(width, height);
     }
 
-    //		Interface for fluid volume
+    //      Interface for fluid volume
     void Update(dx113DFluidData& FluidData, float timestep);
     void RenderFluid(dx113DFluidData& FluidData);
 
-    //		Interface for blenders
+    //      Interface for blenders
     int GetTextureWidth() const { return m_iTextureWidth; }
     int GetTextureHeight() const { return m_iTextureHeight; }
     int GetTextureDepth() const { return m_iTextureDepth; }
-    //	float	GetDecay() { return m_fDecay; }
+    //  float   GetDecay() { return m_fDecay; }
     float GetImpulseSize() const { return m_fImpulseSize; }
     static LPCSTR* GetEngineTextureNames() { return m_pEngineTextureNames; }
     static LPCSTR* GetShaderTextureNames() { return m_pShaderTextureNames; }
@@ -81,7 +81,7 @@ private:
     };
 
 private:
-    //		Initialization
+    //      Initialization
     void InitShaders();
     void DestroyShaders();
 
@@ -91,11 +91,11 @@ private:
 
     void Reset();
 
-    //		Simlulation data initialisation
+    //      Simlulation data initialisation
     void AttachFluidData(dx113DFluidData& FluidData);
     void DetachAndSwapFluidData(dx113DFluidData& FluidData);
 
-    //	Simulation code
+    //  Simulation code
     void AdvectColorBFECC(float timestep, bool bTeperature);
     void AdvectColor(float timestep, bool bTeperature);
     void AdvectVelocity(float timestep, float fGravity);
@@ -123,7 +123,7 @@ private:
     dx113DFluidObstacles* m_pObstaclesHandler;
     dx113DFluidEmitters* m_pEmittersHandler;
 
-    //	Simulation options
+    //  Simulation options
     int m_nIterations;
     bool m_bUseBFECC;
     float m_fSaturation;
@@ -132,7 +132,7 @@ private:
     float m_fConfinementScale;
     float m_fDecay;
 
-    //	Volume textures dimensions
+    //  Volume textures dimensions
     int m_iTextureWidth;
     int m_iTextureHeight;
     int m_iTextureDepth;
@@ -146,4 +146,4 @@ private:
 
 extern dx113DFluidManager FluidManager;
 
-#endif //	dx113DFluidManager_included
+#endif //   dx113DFluidManager_included

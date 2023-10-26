@@ -85,14 +85,14 @@ public:
     virtual void CalculateBones_Invalidate() = 0;
     virtual void Callback(UpdateCallback C, void* Param) = 0;
 
-    //	Callback: data manipulation
+    //  Callback: data manipulation
     virtual void SetUpdateCallback(UpdateCallback pCallback) = 0;
     virtual void SetUpdateCallbackParam(void* pCallbackParam) = 0;
 
     virtual UpdateCallback GetUpdateCallback() = 0;
     virtual void* GetUpdateCallbackParam() = 0;
-    // UpdateCallback						Update_Callback;
-    // void*								Update_Callback_Param;
+    // UpdateCallback                       Update_Callback;
+    // void*                                Update_Callback_Param;
     virtual IRenderVisual* dcast_RenderVisual() = 0;
     virtual IKinematicsAnimated* dcast_PKinematicsAnimated() = 0;
 
@@ -104,4 +104,4 @@ public:
 };
 
 IC IKinematics* PKinematics(IRenderVisual* V) { return V ? V->dcast_PKinematics() : 0; }
-#endif //	Kinematics_included
+#endif //   Kinematics_included

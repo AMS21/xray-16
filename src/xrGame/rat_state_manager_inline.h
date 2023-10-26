@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: rat_state_manager_inline.h
-//	Created 	: 31.08.2007
-//  Modified 	: 31.08.2007
-//	Author		: Dmitriy Iassenev
-//	Description : rat state manager class inline functions
+//  Module      : rat_state_manager_inline.h
+//  Created     : 31.08.2007
+//  Modified    : 31.08.2007
+//  Author      : Dmitriy Iassenev
+//  Description : rat state manager class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef RAT_STATE_MANAGER_INLINE_H_INCLUDED

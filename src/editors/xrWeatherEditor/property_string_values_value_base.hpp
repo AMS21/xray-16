@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_string_values_value_base.hpp
-//	Created 	: 20.12.2007
-//  Modified 	: 20.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property string values value base class
+//  Module      : property_string_values_value_base.hpp
+//  Created     : 20.12.2007
+//  Modified    : 20.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property string values value base class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_STRING_VALUES_VALUE_BASE_HPP_INCLUDED

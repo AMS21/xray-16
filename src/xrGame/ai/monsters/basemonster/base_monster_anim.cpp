@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: base_monster_anim.cpp
-//	Created 	: 22.05.2003
-//  Modified 	: 23.09.2003
-//	Author		: Serge Zhem
-//	Description : Animations for monsters of biting class
+//  Module      : base_monster_anim.cpp
+//  Created     : 22.05.2003
+//  Modified    : 23.09.2003
+//  Author      : Serge Zhem
+//  Description : Animations for monsters of biting class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

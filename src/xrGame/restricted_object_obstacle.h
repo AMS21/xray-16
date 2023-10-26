@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: restricted_object_obstacle.h
-//	Created 	: 18.08.2004
-//  Modified 	: 23.08.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Restricted object with obstacles' avoidance
+//  Module      : restricted_object_obstacle.h
+//  Created     : 18.08.2004
+//  Modified    : 23.08.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Restricted object with obstacles' avoidance
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

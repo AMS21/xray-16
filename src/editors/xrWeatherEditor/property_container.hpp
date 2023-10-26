@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_container.hpp
-//	Created 	: 07.12.2007
-//  Modified 	: 07.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property container class
+//  Module      : property_container.hpp
+//  Created     : 07.12.2007
+//  Modified    : 07.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property container class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_CONTAINER_HPP_INCLUDED

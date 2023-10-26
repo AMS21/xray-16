@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_integer_reference.hpp
-//	Created 	: 17.12.2007
-//  Modified 	: 17.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : integer property reference implementation class
+//  Module      : property_integer_reference.hpp
+//  Created     : 17.12.2007
+//  Modified    : 17.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : integer property reference implementation class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_INTEGER_REFERENCE_HPP_INCLUDED

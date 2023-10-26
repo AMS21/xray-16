@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: agent_enemy_manager.cpp
-//	Created 	: 24.05.2004
-//  Modified 	: 14.01.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Agent enemy manager
+//  Module      : agent_enemy_manager.cpp
+//  Created     : 24.05.2004
+//  Modified    : 14.01.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Agent enemy manager
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -418,14 +418,14 @@ void CAgentEnemyManager::assign_wounded()
     VERIFY(m_only_wounded_left);
 
 #if 0 // def DEBUG
-	u32						enemy_mask = 0;
-	ENEMIES::iterator		I = m_enemies.begin();
-	ENEMIES::iterator		E = m_enemies.end();
-	for ( ; I != E; ++I) {
-		VERIFY				(!(*I).m_distribute_mask.get());
-		enemy_mask			|= (*I).m_mask.get();
-	}
-	VERIFY					(enemy_mask == object().member().combat_mask());
+    u32                     enemy_mask = 0;
+    ENEMIES::iterator       I = m_enemies.begin();
+    ENEMIES::iterator       E = m_enemies.end();
+    for ( ; I != E; ++I) {
+        VERIFY              (!(*I).m_distribute_mask.get());
+        enemy_mask          |= (*I).m_mask.get();
+    }
+    VERIFY                  (enemy_mask == object().member().combat_mask());
 #endif // DEBUG
 
     u32 previous_wounded_count = m_wounded.size();
@@ -546,8 +546,8 @@ void CAgentEnemyManager::assign_wounded()
         }
 #endif
 
-        //		VERIFY						(enemy);
-        //		VERIFY						(processor);
+        //      VERIFY                      (enemy);
+        //      VERIFY                      (processor);
 
         // this situation is possible
         // for example
@@ -569,7 +569,7 @@ void CAgentEnemyManager::assign_wounded()
         if (!enemy)
             return;
 
-        //		Msg							("wounded enemy [%s] is assigned to member
+        //      Msg                         ("wounded enemy [%s] is assigned to member
         //[%s]",*enemy->m_object->cName(),*processor->cName());
 
         if (wounded_processor(enemy->m_object) == ALife::_OBJECT_ID(-1))
@@ -581,11 +581,11 @@ void CAgentEnemyManager::assign_wounded()
         assigned |= mask;
     }
 
-    //	Msg								("[%6d] assigned = %x",Device.dwTimeGlobal,assigned);
-    //	ENEMIES::iterator				I = m_enemies.begin();
-    //	ENEMIES::iterator				E = m_enemies.end();
-    //	for ( ; I != E; ++I)
-    //		Msg							("[%6d] [%s] =
+    //  Msg                             ("[%6d] assigned = %x",Device.dwTimeGlobal,assigned);
+    //  ENEMIES::iterator               I = m_enemies.begin();
+    //  ENEMIES::iterator               E = m_enemies.end();
+    //  for ( ; I != E; ++I)
+    //      Msg                         ("[%6d] [%s] =
     //%x",Device.dwTimeGlobal,*(*I).m_object->cName(),(*I).m_distribute_mask.get());
 }
 
@@ -664,7 +664,7 @@ void CAgentEnemyManager::wounded_processed(const CEntityAlive* object, bool valu
     if (I == m_wounded.end())
         return;
     VERIFY((*I).second.first != ALife::_OBJECT_ID(-1));
-    //	VERIFY							(!(*I).second.second);
+    //  VERIFY                          (!(*I).second.second);
     (*I).second.second = true;
 }
 

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_stalker_alife.cpp
-//	Created 	: 15.10.2004
-//  Modified 	: 15.10.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker ALife functions
+//  Module      : ai_stalker_alife.cpp
+//  Created     : 15.10.2004
+//  Modified    : 15.10.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker ALife functions
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -248,8 +248,8 @@ void CAI_Stalker::select_items()
 
 void CAI_Stalker::update_sell_info()
 {
-    //	if (m_sell_info_actuality)
-    //		return;
+    //  if (m_sell_info_actuality)
+    //      return;
 
     m_sell_info_actuality = true;
     m_temp_items.clear();

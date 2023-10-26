@@ -14,64 +14,64 @@ extern "C" {
 #endif // __cplusplus
 
 #ifndef OPENAL
-	#include <dsound.h>
-	/*
-	* EAX Wrapper Interface (using Direct X 7) {4FF53B81-1CE0-11d3-AAB8-00A0C95949D5}
-	*/
-	DEFINE_GUID(CLSID_EAXDirectSound, 
-		0x4ff53b81, 
-		0x1ce0, 
-		0x11d3,
-		0xaa, 0xb8, 0x0, 0xa0, 0xc9, 0x59, 0x49, 0xd5);
+    #include <dsound.h>
+    /*
+    * EAX Wrapper Interface (using Direct X 7) {4FF53B81-1CE0-11d3-AAB8-00A0C95949D5}
+    */
+    DEFINE_GUID(CLSID_EAXDirectSound, 
+        0x4ff53b81, 
+        0x1ce0, 
+        0x11d3,
+        0xaa, 0xb8, 0x0, 0xa0, 0xc9, 0x59, 0x49, 0xd5);
 
-	/*
-	* EAX Wrapper Interface (using Direct X 8) {CA503B60-B176-11d4-A094-D0C0BF3A560C}
-	*/
-	DEFINE_GUID(CLSID_EAXDirectSound8, 
-		0xca503b60,
-		0xb176,
-		0x11d4,
-		0xa0, 0x94, 0xd0, 0xc0, 0xbf, 0x3a, 0x56, 0xc);
+    /*
+    * EAX Wrapper Interface (using Direct X 8) {CA503B60-B176-11d4-A094-D0C0BF3A560C}
+    */
+    DEFINE_GUID(CLSID_EAXDirectSound8, 
+        0xca503b60,
+        0xb176,
+        0x11d4,
+        0xa0, 0x94, 0xd0, 0xc0, 0xbf, 0x3a, 0x56, 0xc);
 
 #ifdef DIRECTSOUND_VERSION
 #if DIRECTSOUND_VERSION == 0x0900
-		__declspec(dllimport) HRESULT WINAPI EAXDirectSoundCreate8(GUID*, LPDIRECTSOUND8*, IUnknown FAR *);
-		typedef HRESULT (FAR PASCAL *LPEAXDIRECTSOUNDCREATE8)(GUID*, LPDIRECTSOUND8*, IUnknown FAR*);
+        __declspec(dllimport) HRESULT WINAPI EAXDirectSoundCreate8(GUID*, LPDIRECTSOUND8*, IUnknown FAR *);
+        typedef HRESULT (FAR PASCAL *LPEAXDIRECTSOUNDCREATE8)(GUID*, LPDIRECTSOUND8*, IUnknown FAR*);
 #endif
 #endif
 
-	__declspec(dllimport) HRESULT WINAPI EAXDirectSoundCreate(GUID*, LPDIRECTSOUND*, IUnknown FAR *);
-	typedef HRESULT (FAR PASCAL *LPEAXDIRECTSOUNDCREATE)(GUID*, LPDIRECTSOUND*, IUnknown FAR*);
+    __declspec(dllimport) HRESULT WINAPI EAXDirectSoundCreate(GUID*, LPDIRECTSOUND*, IUnknown FAR *);
+    typedef HRESULT (FAR PASCAL *LPEAXDIRECTSOUNDCREATE)(GUID*, LPDIRECTSOUND*, IUnknown FAR*);
 
 #else
-	#include <al.h>
+    #include <al.h>
 
-	#ifndef GUID_DEFINED
-		#define GUID_DEFINED
-		typedef struct _GUID
-		{
-			unsigned long Data1;
-			unsigned short Data2;
-			unsigned short Data3;
-			unsigned char Data4[8];
-		} GUID;
-	#endif // !GUID_DEFINED
+    #ifndef GUID_DEFINED
+        #define GUID_DEFINED
+        typedef struct _GUID
+        {
+            unsigned long Data1;
+            unsigned short Data2;
+            unsigned short Data3;
+            unsigned char Data4[8];
+        } GUID;
+    #endif // !GUID_DEFINED
 
-	#ifndef DEFINE_GUID
-		#ifndef INITGUID
-			#define DEFINE_GUID(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) \
-					extern const GUID FAR name
-		#else
-			#define DEFINE_GUID(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) \
-					extern const GUID name = { l, w1, w2, { b1, b2,  b3,  b4,  b5,  b6,  b7,  b8 } }
-		#endif // INITGUID
-	#endif // DEFINE_GUID
+    #ifndef DEFINE_GUID
+        #ifndef INITGUID
+            #define DEFINE_GUID(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) \
+                    extern const GUID FAR name
+        #else
+            #define DEFINE_GUID(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) \
+                    extern const GUID name = { l, w1, w2, { b1, b2,  b3,  b4,  b5,  b6,  b7,  b8 } }
+        #endif // INITGUID
+    #endif // DEFINE_GUID
 
-	/*
-	* EAX OpenAL Extension {4FF53B81-1CE0-11d3-AAB8-00A0C95949D5}
-	*/
-	typedef ALenum (__cdecl *EAXSet)(const GUID*, ALuint, ALuint, ALvoid*, ALuint);
-	typedef ALenum (__cdecl *EAXGet)(const GUID*, ALuint, ALuint, ALvoid*, ALuint);
+    /*
+    * EAX OpenAL Extension {4FF53B81-1CE0-11d3-AAB8-00A0C95949D5}
+    */
+    typedef ALenum (__cdecl *EAXSet)(const GUID*, ALuint, ALuint, ALvoid*, ALuint);
+    typedef ALenum (__cdecl *EAXGet)(const GUID*, ALuint, ALuint, ALvoid*, ALuint);
 #endif
 
 #pragma pack(push, 4)
@@ -108,7 +108,7 @@ typedef enum
     DSPROPERTY_EAXLISTENER_AIRABSORPTIONHF,
     DSPROPERTY_EAXLISTENER_FLAGS
 } DSPROPERTY_EAX_LISTENERPROPERTY;
-	
+    
 // OR these flags with property id
 #define DSPROPERTY_EAXLISTENER_IMMEDIATE 0x00000000 // changes take effect immediately
 #define DSPROPERTY_EAXLISTENER_DEFERRED  0x80000000 // changes take effect later

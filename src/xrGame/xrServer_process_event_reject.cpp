@@ -10,7 +10,7 @@ bool xrServer::Process_event_reject(
     CSE_Abstract* e_parent = game->get_entity_from_eid(id_parent);
     CSE_Abstract* e_entity = game->get_entity_from_eid(id_entity);
 
-    //	R_ASSERT2( e_entity, make_string( "entity not found. parent_id = [%d], entity_id = [%d], frame = [%d]",
+    //  R_ASSERT2( e_entity, make_string( "entity not found. parent_id = [%d], entity_id = [%d], frame = [%d]",
     // id_parent, id_entity, Device.dwFrame ).c_str() );
     VERIFY2(e_entity, make_string("entity not found. parent_id = [%d], entity_id = [%d], frame = [%d]", id_parent,
                           id_entity, Device.dwFrame)
@@ -22,7 +22,7 @@ bool xrServer::Process_event_reject(
         return false;
     }
 
-    //	R_ASSERT2( e_parent, make_string( "parent not found. parent_id = [%d], entity_id = [%d], frame = [%d]",
+    //  R_ASSERT2( e_parent, make_string( "parent not found. parent_id = [%d], entity_id = [%d], frame = [%d]",
     // id_parent, id_entity, Device.dwFrame ).c_str() );
     VERIFY2(e_parent, make_string("parent not found. parent_id = [%d], entity_id = [%d], frame = [%d]", id_parent,
                           id_entity, Device.dwFrame)
@@ -57,7 +57,7 @@ bool xrServer::Process_event_reject(
     }
 
     // Rebuild parentness
-    //.	Msg("---ID_Parent [%d], id_parent [%d]", e_entity->ID_Parent, id_parent);
+    //. Msg("---ID_Parent [%d], id_parent [%d]", e_entity->ID_Parent, id_parent);
 
     // R_ASSERT(e_entity->ID_Parent == id_parent);
     if (e_entity->ID_Parent != id_parent)

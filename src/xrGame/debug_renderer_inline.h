@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: debug_renderer_inline.h
-//	Created 	: 19.06.2006
-//  Modified 	: 19.06.2006
-//	Author		: Dmitriy Iassenev
-//	Description : debug renderer inline functions
+//  Module      : debug_renderer_inline.h
+//  Created     : 19.06.2006
+//  Modified    : 19.06.2006
+//  Author      : Dmitriy Iassenev
+//  Description : debug renderer inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_storage_inline.h
-//	Created 	: 29.03.2004
-//  Modified 	: 29.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Property storage class inline functions
+//  Module      : property_storage_inline.h
+//  Created     : 29.03.2004
+//  Modified    : 29.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Property storage class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

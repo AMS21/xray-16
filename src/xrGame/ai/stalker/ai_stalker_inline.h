@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_stalker_inline.h
-//	Created 	: 25.02.2003
-//  Modified 	: 25.02.2003
-//	Author		: Dmitriy Iassenev
-//	Description : AI Behaviour for monster "Stalker" (inline functions)
+//  Module      : ai_stalker_inline.h
+//  Created     : 25.02.2003
+//  Modified    : 25.02.2003
+//  Author      : Dmitriy Iassenev
+//  Description : AI Behaviour for monster "Stalker" (inline functions)
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -141,33 +141,33 @@ IC u32 CAI_Stalker::auto_min_queue_size_close() const { return (m_auto_min_queue
 IC u32 CAI_Stalker::auto_max_queue_size_close() const { return (m_auto_max_queue_size_close); }
 IC u32 CAI_Stalker::auto_min_queue_interval_close() const { return (m_auto_min_queue_interval_close); }
 IC u32 CAI_Stalker::auto_max_queue_interval_close() const { return (m_auto_max_queue_interval_close); }
-// IC	float CAI_Stalker::pstl_queue_fire_dist_close						() const
+// IC   float CAI_Stalker::pstl_queue_fire_dist_close                       () const
 //{
-//	return					(m_pstl_queue_fire_dist_close);
+//  return                  (m_pstl_queue_fire_dist_close);
 //}
 IC float CAI_Stalker::pstl_queue_fire_dist_med() const { return (m_pstl_queue_fire_dist_med); }
 IC float CAI_Stalker::pstl_queue_fire_dist_far() const { return (m_pstl_queue_fire_dist_far); }
-// IC	float CAI_Stalker::shtg_queue_fire_dist_close						() const
+// IC   float CAI_Stalker::shtg_queue_fire_dist_close                       () const
 //{
-//	return					(m_shtg_queue_fire_dist_close);
+//  return                  (m_shtg_queue_fire_dist_close);
 //}
 IC float CAI_Stalker::shtg_queue_fire_dist_med() const { return (m_shtg_queue_fire_dist_med); }
 IC float CAI_Stalker::shtg_queue_fire_dist_far() const { return (m_shtg_queue_fire_dist_far); }
-// IC	float CAI_Stalker::snp_queue_fire_dist_close						() const
+// IC   float CAI_Stalker::snp_queue_fire_dist_close                        () const
 //{
-//	return					(m_snp_queue_fire_dist_close);
+//  return                  (m_snp_queue_fire_dist_close);
 //}
 IC float CAI_Stalker::snp_queue_fire_dist_med() const { return (m_snp_queue_fire_dist_med); }
 IC float CAI_Stalker::snp_queue_fire_dist_far() const { return (m_snp_queue_fire_dist_far); }
-// IC	float CAI_Stalker::mchg_queue_fire_dist_close						() const
+// IC   float CAI_Stalker::mchg_queue_fire_dist_close                       () const
 //{
-//	return					(m_mchg_queue_fire_dist_close);
+//  return                  (m_mchg_queue_fire_dist_close);
 //}
 IC float CAI_Stalker::mchg_queue_fire_dist_med() const { return (m_mchg_queue_fire_dist_med); }
 IC float CAI_Stalker::mchg_queue_fire_dist_far() const { return (m_mchg_queue_fire_dist_far); }
-// IC	float CAI_Stalker::auto_queue_fire_dist_close						() const
+// IC   float CAI_Stalker::auto_queue_fire_dist_close                       () const
 //{
-//	return					(m_auto_queue_fire_dist_close);
+//  return                  (m_auto_queue_fire_dist_close);
 //}
 IC float CAI_Stalker::auto_queue_fire_dist_med() const { return (m_auto_queue_fire_dist_med); }
 IC float CAI_Stalker::auto_queue_fire_dist_far() const { return (m_auto_queue_fire_dist_far); }

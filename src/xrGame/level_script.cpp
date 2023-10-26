@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: level_script.cpp
-//	Created 	: 28.06.2004
-//  Modified 	: 28.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Level script export
+//  Module      : level_script.cpp
+//  Created     : 28.06.2004
+//  Modified    : 28.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Level script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -628,11 +628,11 @@ float g_get_target_dist()
 
 u32 g_get_target_element()
 {
-	collide::rq_result& RQ = HUD().GetCurrentRayQuery();
-	if (RQ.element)
-		return RQ.element;
+    collide::rq_result& RQ = HUD().GetCurrentRayQuery();
+    if (RQ.element)
+        return RQ.element;
 
-	return 0;
+    return 0;
 }
 
 u8 get_active_cam()
@@ -923,7 +923,7 @@ IC static void CLevel_Export(lua_State* luaState)
         // declarations
         def("time", get_time),
         def("get_game_time", get_time_struct),
-        // def("get_surge_time",	Game::get_surge_time),
+        // def("get_surge_time",    Game::get_surge_time),
         // def("get_object_by_name",Game::get_object_by_name),
 
         def("start_tutorial", &start_tutorial),

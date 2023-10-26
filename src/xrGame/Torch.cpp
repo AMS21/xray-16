@@ -278,7 +278,7 @@ bool CTorch::net_Spawn(CSE_Abstract* DC)
     if (torch->ID_Parent == 0)
         SwitchNightVision(torch->m_nightvision_active, false);
     // else
-    //	SwitchNightVision	(false, false);
+    //  SwitchNightVision   (false, false);
 
     m_delta_h = PI_DIV_2 - atan((range * 0.5f) / _abs(TORCH_OFFSET.x));
 
@@ -442,7 +442,7 @@ void CTorch::setup_physic_shell() { CPhysicsShellHolder::setup_physic_shell(); }
 void CTorch::net_Export(NET_Packet& P)
 {
     inherited::net_Export(P);
-    //	P.w_u8						(m_switched_on ? 1 : 0);
+    //  P.w_u8                      (m_switched_on ? 1 : 0);
 
     u8 F = 0;
     F |= (m_switched_on ? eTorchActive : 0);
@@ -454,7 +454,7 @@ void CTorch::net_Export(NET_Packet& P)
             F |= eAttached;
     }
     P.w_u8(F);
-    //	Msg("CTorch::net_export - NV[%d]", m_bNightVisionOn);
+    //  Msg("CTorch::net_export - NV[%d]", m_bNightVisionOn);
 }
 
 void CTorch::net_Import(NET_Packet& P)
@@ -469,7 +469,7 @@ void CTorch::net_Import(NET_Packet& P)
         Switch(new_m_switched_on);
     if (new_m_bNightVisionOn != m_bNightVisionOn)
     {
-        //		Msg("CTorch::net_Import - NV[%d]", new_m_bNightVisionOn);
+        //      Msg("CTorch::net_Import - NV[%d]", new_m_bNightVisionOn);
 
         const CActor* pA = smart_cast<const CActor*>(H_Parent());
         if (pA)

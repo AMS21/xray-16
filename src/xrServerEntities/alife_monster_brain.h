@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_monster_brain.h
-//	Created 	: 06.10.2005
-//  Modified 	: 22.11.2005
-//	Author		: Dmitriy Iassenev
-//	Description : ALife monster brain class
+//  Module      : alife_monster_brain.h
+//  Created     : 06.10.2005
+//  Modified    : 22.11.2005
+//  Author      : Dmitriy Iassenev
+//  Description : ALife monster brain class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

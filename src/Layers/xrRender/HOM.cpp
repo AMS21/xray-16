@@ -352,23 +352,23 @@ BOOL CHOM::visible(vis_data& vis) const
     ScopeStatTimer scopeStats(stats.Total, stats.TotalTimerLock);
 
     // Now, the test time comes
-    // 0. The object was hidden, and we must prove that each frame	- test		| frame-old, tested-new, hom_res =
+    // 0. The object was hidden, and we must prove that each frame  - test      | frame-old, tested-new, hom_res =
     // false;
-    // 1. The object was visible, but we must to re-check it		- test		| frame-new, tested-???, hom_res = true;
-    // 2. New object slides into view								- delay test| frame-old, tested-old, hom_res = ???;
+    // 1. The object was visible, but we must to re-check it        - test      | frame-new, tested-???, hom_res = true;
+    // 2. New object slides into view                               - delay test| frame-old, tested-old, hom_res = ???;
     const u32 frame_current = Device.dwFrame;
-    // u32	frame_prev		= frame_current-1;
+    // u32  frame_prev      = frame_current-1;
 
     const BOOL result = _visible(vis.box, m_xform_01);
     u32 delay = 1;
     if (result)
     {
-        // visible	- delay next test
+        // visible  - delay next test
         delay = ::Random.randI(5 * 2, 5 * 5);
     }
     else
     {
-        // hidden	- shedule to next frame
+        // hidden   - shedule to next frame
     }
     vis.hom_frame = frame_current + delay;
     vis.hom_tested = frame_current;

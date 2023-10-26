@@ -73,7 +73,7 @@ VertexFormatPairs VertexFormatList[] = {{D3DDECLTYPE_FLOAT1, DXGI_FORMAT_R32_FLO
     {D3DDECLTYPE_FLOAT2, DXGI_FORMAT_R32G32_FLOAT}, {D3DDECLTYPE_FLOAT3, DXGI_FORMAT_R32G32B32_FLOAT},
     {D3DDECLTYPE_FLOAT4, DXGI_FORMAT_R32G32B32A32_FLOAT},
     {D3DDECLTYPE_D3DCOLOR,
-        DXGI_FORMAT_R8G8B8A8_UNORM}, // Warning. Explicit RGB component swizzling is nesessary	//	Not available
+        DXGI_FORMAT_R8G8B8A8_UNORM}, // Warning. Explicit RGB component swizzling is nesessary  //  Not available
     {D3DDECLTYPE_UBYTE4, DXGI_FORMAT_R8G8B8A8_UINT}, // Note: Shader gets UINT values, but if Direct3D 9 style integral
     // floats are needed (0.0f, 1.0f... 255.f), UINT can just be converted
     // to float32 in shader.
@@ -111,7 +111,7 @@ struct VertexSemanticPairs
 };
 
 VertexSemanticPairs VertexSemanticList[] = {
-    {D3DDECLUSAGE_POSITION, "POSITION"}, //	0
+    {D3DDECLUSAGE_POSITION, "POSITION"}, // 0
     {D3DDECLUSAGE_BLENDWEIGHT, "BLENDWEIGHT"}, // 1
     {D3DDECLUSAGE_BLENDINDICES, "BLENDINDICES"}, // 2
     {D3DDECLUSAGE_NORMAL, "NORMAL"}, // 3

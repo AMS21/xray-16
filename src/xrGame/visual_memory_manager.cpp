@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: visual_memory_manager.cpp
-//	Created 	: 02.10.2001
-//  Modified 	: 19.11.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Visual memory manager
+//  Module      : visual_memory_manager.cpp
+//  Created     : 02.10.2001
+//  Modified    : 19.11.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Visual memory manager
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -127,10 +127,10 @@ void CVisualMemoryManager::reinit()
     }
 
     m_visible_objects.clear();
-    //	m_visible_objects.reserve			(100);
+    //  m_visible_objects.reserve           (100);
 
     m_not_yet_visible_objects.clear();
-    //	m_not_yet_visible_objects.reserve	(100);
+    //  m_not_yet_visible_objects.reserve   (100);
 
     if (m_object)
         m_object->feel_vision_clear();
@@ -445,18 +445,18 @@ void CVisualMemoryManager::add_visible_object(const IGameObject* object, float t
     const CGameObject* game_object;
     const CGameObject* self;
 
-    //	START_PROFILE("Memory Manager/visuals/update/add_visibles/visible")
+    //  START_PROFILE("Memory Manager/visuals/update/add_visibles/visible")
     game_object = smart_cast<const CGameObject*>(object);
     if (!game_object || (!fictitious && !visible(game_object, time_delta)))
         return;
-    //	STOP_PROFILE
+    //  STOP_PROFILE
 
-    //	START_PROFILE("Memory Manager/visuals/update/add_visibles/find_object_by_id")
+    //  START_PROFILE("Memory Manager/visuals/update/add_visibles/find_object_by_id")
     self = m_object;
     J = std::find(m_objects->begin(), m_objects->end(), object_id(game_object));
-    //	STOP_PROFILE
+    //  STOP_PROFILE
 
-    //	START_PROFILE("Memory Manager/visuals/update/add_visibles/fill")
+    //  START_PROFILE("Memory Manager/visuals/update/add_visibles/fill")
     if (m_objects->end() == J)
     {
         CVisibleObject visible_object;
@@ -490,7 +490,7 @@ void CVisualMemoryManager::add_visible_object(const IGameObject* object, float t
             (*J).m_enabled = true;
         }
     }
-    //	STOP_PROFILE
+    //  STOP_PROFILE
 }
 
 void CVisualMemoryManager::add_visible_object(const CVisibleObject visible_object)
@@ -709,12 +709,12 @@ void CVisualMemoryManager::update(float time_delta)
     STOP_PROFILE
 
 #if 0 // def DEBUG
-	if (m_stalker) {
-		CAgentMemberManager::MEMBER_STORAGE::const_iterator	I = m_stalker->agent_manager().member().members().begin();
-		CAgentMemberManager::MEMBER_STORAGE::const_iterator	E = m_stalker->agent_manager().member().members().end();
-		for ( ; I != E; ++I)
-			(*I)->object().memory().visual().check_visibles();
-	}
+    if (m_stalker) {
+        CAgentMemberManager::MEMBER_STORAGE::const_iterator I = m_stalker->agent_manager().member().members().begin();
+        CAgentMemberManager::MEMBER_STORAGE::const_iterator E = m_stalker->agent_manager().member().members().end();
+        for ( ; I != E; ++I)
+            (*I)->object().memory().visual().check_visibles();
+    }
 #endif
 
     if (m_object && g_actor)
@@ -758,7 +758,7 @@ void CVisualMemoryManager::save(NET_Packet& packet) const
     if (!m_object->g_Alive())
         return;
 
-    //	Msg("before saving object %s[%d]", m_object->cName().c_str(), packet.w_tell() );
+    //  Msg("before saving object %s[%d]", m_object->cName().c_str(), packet.w_tell() );
     u32 count = 0;
     VISIBLES::const_iterator I = objects().begin();
     VISIBLES::const_iterator const E = objects().end();
@@ -808,7 +808,7 @@ void CVisualMemoryManager::save(NET_Packet& packet) const
         packet.w_u64((*I).m_visible.flags);
     }
 
-    //	Msg("after saving object %s[%d]", m_object->cName().c_str(), packet.w_tell() );
+    //  Msg("after saving object %s[%d]", m_object->cName().c_str(), packet.w_tell() );
 }
 
 void CVisualMemoryManager::load(IReader& packet)

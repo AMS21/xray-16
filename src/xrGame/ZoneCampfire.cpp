@@ -16,7 +16,7 @@ void turn_zone()
 */
 CZoneCampfire::CZoneCampfire()
 {
-    //.	g_zone = this;
+    //. g_zone = this;
 }
 
 CZoneCampfire::~CZoneCampfire()

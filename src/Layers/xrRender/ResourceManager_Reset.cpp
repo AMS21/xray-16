@@ -76,11 +76,11 @@ void CResourceManager::reset_end()
     }
     {
         // RTc
-    //DX10 cut		const size_t buffer_size = m_rtargets_c.size() * sizeof(CRTC*);
-    //DX10 cut		buffer_vector<CRTC*> sorted_rtcs(xr_alloca(buffer_size), m_rtargets_c.size());
-    //DX10 cut		for (map_RTCIt rt_it=m_rtargets_c.begin(); rt_it!=m_rtargets_c.end(); rt_it++)	sorted_rtcs.push_back(rt_it->second);
-    //DX10 cut		std::sort(sorted_rtcs.begin(),sorted_rtcs.end(),cmp_rtc);
-    //DX10 cut		for (u32 _it=0; _it<sorted_rtcs.size(); _it++)	sorted_rtcs[_it]->reset_end	();
+    //DX10 cut      const size_t buffer_size = m_rtargets_c.size() * sizeof(CRTC*);
+    //DX10 cut      buffer_vector<CRTC*> sorted_rtcs(xr_alloca(buffer_size), m_rtargets_c.size());
+    //DX10 cut      for (map_RTCIt rt_it=m_rtargets_c.begin(); rt_it!=m_rtargets_c.end(); rt_it++)  sorted_rtcs.push_back(rt_it->second);
+    //DX10 cut      std::sort(sorted_rtcs.begin(),sorted_rtcs.end(),cmp_rtc);
+    //DX10 cut      for (u32 _it=0; _it<sorted_rtcs.size(); _it++)  sorted_rtcs[_it]->reset_end ();
     }
 
     // create state-blocks

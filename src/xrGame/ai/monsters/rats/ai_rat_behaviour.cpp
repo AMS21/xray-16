@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_rat_fsm.cpp
-//	Created 	: 25.04.2002
-//  Modified 	: 07.11.2002
-//	Author		: Dmitriy Iassenev
-//	Description : AI Behaviour for monster "Rat"
+//  Module      : ai_rat_fsm.cpp
+//  Created     : 25.04.2002
+//  Modified    : 07.11.2002
+//  Author      : Dmitriy Iassenev
+//  Description : AI Behaviour for monster "Rat"
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

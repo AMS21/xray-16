@@ -41,9 +41,9 @@ class XRCDB_API CObjectSpace : protected CObjectSpaceData, public Noncopyable
 public:
 #ifdef DEBUG
     FactoryPtr<IObjectSpaceRender>* m_pRender;
-// ref_shader							sh_debug;
-// clQueryCollision					q_debug;			// MT: dangerous
-// xr_vector<std::pair<Fsphere,u32> >	dbg_S;				// MT: dangerous
+// ref_shader                           sh_debug;
+// clQueryCollision                 q_debug;            // MT: dangerous
+// xr_vector<std::pair<Fsphere,u32> >   dbg_S;              // MT: dangerous
 #endif
 
 private:
@@ -107,7 +107,7 @@ public:
 // Debugging
 #ifdef DEBUG
     void dbgRender();
-// ref_shader							dbgGetShader		()	{ return sh_debug;	}
+// ref_shader                           dbgGetShader        ()  { return sh_debug;  }
 #endif
     void DumpStatistics(IGameFont& font, IPerformanceAlert* alert);
 };

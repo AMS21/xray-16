@@ -3,17 +3,17 @@
 #include "MathUtils.h"
 enum EBoxSideNearestPointCode
 {
-    box_inside		,
-    side_invisible	,
-    on_side			,
-    on_edge			,
+    box_inside      ,
+    side_invisible  ,
+    on_side         ,
+    on_edge         ,
     on_vertex
 };
-EBoxSideNearestPointCode GetNearestPointOnOBBSide(const Fmatrix &xform,const Fvector	&center,const Fvector &sides,u16
+EBoxSideNearestPointCode GetNearestPointOnOBBSide(const Fmatrix &xform,const Fvector    &center,const Fvector &sides,u16
 side,const Fvector &p,Fvector &point)
 {
     //to plane dist
-    const Fvector	&norm=xform[side];
+    const Fvector   &norm=xform[side];
     u16 side1=(side+1)%3,side2=(side+2)%3;
     float h=sides[side],h1=sides[side1],h2=sides[side2];
     //Fvector vdiffc;vdiffc.sub(center,p);
@@ -45,7 +45,7 @@ side,const Fvector &p,Fvector &point)
             }
         }
     }
-    float diffs=diffc<0.f ? diffc+h	:	diffc-h;
+    float diffs=diffc<0.f ? diffc+h :   diffc-h;
 }
 */
 IC bool RAYvsCYLINDER(const Fcylinder& c_cylinder, const Fvector& S, const Fvector& D, float& R, BOOL bCull)
@@ -184,7 +184,7 @@ IC bool RAYvsCYLINDER(const Fcylinder& c_cylinder, const Fvector& S, const Fvect
 
     float sq_horde = (sq_r - sq_nearest_dist);
 
-    // float horde=_sqrt(sq_horde)					;
+    // float horde=_sqrt(sq_horde)                  ;
     float sq_c_diff = sq_horde * sq_cos * r_sq_sin;
     float c_diff = _sqrt(sq_c_diff); // ccc
     float cp1 = tc - c_diff;
@@ -194,7 +194,7 @@ IC bool RAYvsCYLINDER(const Fcylinder& c_cylinder, const Fvector& S, const Fvect
     if (cp1 > h)
     {
         // sphere
-        float tc_h = tc - h; //!! hi					(=)/;
+        float tc_h = tc - h; //!! hi                    (=)/;
         float sq_sphere_dist = sq_sin * tc_h * tc_h;
         if (sq_sphere_dist > sq_horde)
             return false;
@@ -225,7 +225,7 @@ IC bool RAYvsCYLINDER(const Fcylinder& c_cylinder, const Fvector& S, const Fvect
 
     if (cp2 < -h)
     {
-        // sphere lo								/(=)
+        // sphere lo                                /(=)
         float tc_h = tc + h; //!!
         float sq_sphere_dist = sq_sin * tc_h * tc_h;
         if (sq_sphere_dist > sq_horde)
@@ -261,7 +261,7 @@ IC bool RAYvsCYLINDER(const Fcylinder& c_cylinder, const Fvector& S, const Fvect
         {
             if (cp2 < h)
             {
-                // cylinder							(=/=)
+                // cylinder                         (=/=)
                 float diff = c_diff / cs;
                 tr1 = tr - diff;
                 if (tr1 > R)
@@ -287,7 +287,7 @@ IC bool RAYvsCYLINDER(const Fcylinder& c_cylinder, const Fvector& S, const Fvect
             }
             else
             {
-                // mixed//cyl hi sphere					(=/)
+                // mixed//cyl hi sphere                 (=/)
                 float diff = c_diff / cs;
                 tr1 = tr - diff;
                 if (tr1 > R)
@@ -300,7 +300,7 @@ IC bool RAYvsCYLINDER(const Fcylinder& c_cylinder, const Fvector& S, const Fvect
                     {
                         float tc_h = tc - h;
                         float sq_sphere_dist = sq_sin * tc_h * tc_h;
-                        // if(sq_sphere_dist>sq_horde)return false	;
+                        // if(sq_sphere_dist>sq_horde)return false  ;
                         float tr_c = tr - tc_h * cs;
                         float diff = _sqrt(sq_horde - sq_sphere_dist);
                         tr2 = tr_c + diff;
@@ -321,7 +321,7 @@ IC bool RAYvsCYLINDER(const Fcylinder& c_cylinder, const Fvector& S, const Fvect
         {
             if (cp2 < h)
             {
-                // mixed//lo sphere	cyl						(/=)
+                // mixed//lo sphere cyl                     (/=)
 
                 float tc_h = tc + h; //(tc-(-h))
                 float sq_sphere_dist = sq_sin * tc_h * tc_h;
@@ -353,7 +353,7 @@ IC bool RAYvsCYLINDER(const Fcylinder& c_cylinder, const Fvector& S, const Fvect
             }
             else
             {
-                //-(--)-								//sphere lo&&hi
+                //-(--)-                                //sphere lo&&hi
 
                 /////////////////////////////////////////////
                 float tc_h = tc + h;
@@ -478,7 +478,7 @@ IC bool RAYvsCYLINDER(const Fcylinder& c_cylinder, const Fvector& S, const Fvect
             }
             else // cp2>=h
             {
-                //-(--)-								//sphere hi&&lo
+                //-(--)-                                //sphere hi&&lo
 
                 float tc_h = tc - h;
                 float tr_c = tr - tc_h * cs;

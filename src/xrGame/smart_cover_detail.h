@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_detail.h
-//	Created 	: 17.08.2007
-//	Author		: Alexander Dudin
-//	Description : Smart cover auxillary namespace
+//  Module      : smart_cover_detail.h
+//  Created     : 17.08.2007
+//  Author      : Alexander Dudin
+//  Description : Smart cover auxillary namespace
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

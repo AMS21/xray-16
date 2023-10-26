@@ -7,8 +7,8 @@
 
 
 //----------------------------------------------------------------------
-// Class	: CObjectSpaceData
-// Purpose	: stores thread sensitive data
+// Class    : CObjectSpaceData
+// Purpose  : stores thread sensitive data
 //----------------------------------------------------------------------
 thread_local xrXRC CObjectSpaceData::xrc("object space");
 thread_local collide::rq_results CObjectSpaceData::r_temp;
@@ -17,8 +17,8 @@ thread_local xr_vector<ISpatial*> CObjectSpaceData::r_spatial;
 using namespace collide;
 
 //----------------------------------------------------------------------
-// Class	: CObjectSpace
-// Purpose	: stores space slots
+// Class    : CObjectSpace
+// Purpose  : stores space slots
 //----------------------------------------------------------------------
 CObjectSpace::CObjectSpace()
 #ifdef DEBUG
@@ -29,7 +29,7 @@ CObjectSpace::CObjectSpace()
     if (GEnv.RenderFactory)
         m_pRender = xr_new<FactoryPtr<IObjectSpaceRender>>();
 
-// sh_debug.create				("debug\\wireframe","$null");
+// sh_debug.create              ("debug\\wireframe","$null");
 #endif
     m_BoundingVolume.invalidate();
 }
@@ -37,11 +37,11 @@ CObjectSpace::CObjectSpace()
 CObjectSpace::~CObjectSpace()
 {
 // moved to ~IGameLevel
-//	GEnv.Sound->set_geometry_occ		(NULL);
-//	GEnv.Sound->set_handler			(NULL);
+//  GEnv.Sound->set_geometry_occ        (NULL);
+//  GEnv.Sound->set_handler         (NULL);
 //
 #ifdef DEBUG
-    // sh_debug.destroy			();
+    // sh_debug.destroy         ();
     xr_delete(m_pRender);
 #endif
 }
@@ -156,8 +156,8 @@ void CObjectSpace::Create(Fvector* verts, CDB::TRI* tris, const hdrCFORM& H,
     m_BoundingVolume.set(H.aabb);
     g_SpatialSpace->initialize(m_BoundingVolume);
     g_SpatialSpacePhysic->initialize(m_BoundingVolume);
-    // GEnv.Sound->set_geometry_occ				( &Static );
-    // GEnv.Sound->set_handler					( _sound_event );
+    // GEnv.Sound->set_geometry_occ             ( &Static );
+    // GEnv.Sound->set_handler                  ( _sound_event );
 }
 
 //----------------------------------------------------------------------
@@ -171,12 +171,12 @@ void CObjectSpace::dbgRender()
     RCache.set_Shader(sh_debug);
     for (u32 i=0; i<q_debug.boxes.size(); i++)
     {
-        Fobb&		obb		= q_debug.boxes[i];
-        Fmatrix		X,S,R;
+        Fobb&       obb     = q_debug.boxes[i];
+        Fmatrix     X,S,R;
         obb.xform_get(X);
         RCache.dbg_DrawOBB(X,obb.m_halfsize,color_xrgb(255,0,0));
-        S.scale		(obb.m_halfsize);
-        R.mul		(X,S);
+        S.scale     (obb.m_halfsize);
+        R.mul       (X,S);
         RCache.dbg_DrawEllipse(R,color_xrgb(0,0,255));
     }
     q_debug.boxes.clear();
@@ -184,9 +184,9 @@ void CObjectSpace::dbgRender()
     for (i=0; i<dbg_S.size(); i++)
     {
         std::pair<Fsphere,u32>& P = dbg_S[i];
-        Fsphere&	S = P.first;
-        Fmatrix		M;
-        M.scale		(S.R,S.R,S.R);
+        Fsphere&    S = P.first;
+        Fmatrix     M;
+        M.scale     (S.R,S.R,S.R);
         M.translate_over(S.P);
         RCache.dbg_DrawEllipse(M,P.second);
     }

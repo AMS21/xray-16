@@ -31,12 +31,12 @@ private:
     void ProcessStaticObstacles(const dx113DFluidData& FluidData, const Fmatrix& WorldToFluid);
     void ProcessDynamicObstacles(const dx113DFluidData& FluidData, const Fmatrix& WorldToFluid, float timestep);
 
-    //	This technique renders several objects.
+    //  This technique renders several objects.
     void RenderPhysicsShell(const IPhysicsShell* pShell, const Fmatrix& WorldToFluid, float timestep);
     void RenderPhysicsElement(const IPhysicsElement& Element, const Fmatrix& WorldToFluid, float timestep);
 
     void RenderStaticOOBB(const Fmatrix& Transform);
-    // void	RenderDynamicOOBB( const IPhysicsElement &Element, const Fmatrix &WorldToFluid, float timestep);
+    // void RenderDynamicOOBB( const IPhysicsElement &Element, const Fmatrix &WorldToFluid, float timestep);
     void RenderDynamicOOBB(const IPhysicsGeometry& Geometry, const Fmatrix& WorldToFluid, float timestep);
 
 private:
@@ -46,11 +46,11 @@ private:
 
     dx113DFluidGrid* m_pGrid;
 
-    //	Cache vectors to avoid memory reallocations
-    //	TODO: DX11: Reserve memory on object creation
+    //  Cache vectors to avoid memory reallocations
+    //  TODO: DX11: Reserve memory on object creation
     xr_vector<ISpatial*> m_lstRenderables;
     xr_vector<const IPhysicsShell*> m_lstShells;
     xr_vector<const IPhysicsElement*> m_lstElements;
 };
 
-#endif //	dx113DFluidObstacles_included
+#endif //   dx113DFluidObstacles_included

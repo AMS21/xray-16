@@ -12,7 +12,7 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/matrix_access.hpp"
 
-// float			OLES_SUN_LIMIT_27_01_07			= 180.f		;
+// float            OLES_SUN_LIMIT_27_01_07         = 180.f     ;
 float OLES_SUN_LIMIT_27_01_07 = 100.f;
 
 //////////////////////////////////////////////////////////////////////////
@@ -150,7 +150,7 @@ Fvector3 wform(Fmatrix const& m, glm::vec3 const& v)
     r.y = v.x * m._12 + v.y * m._22 + v.z * m._32 + m._42;
     r.z = v.x * m._13 + v.y * m._23 + v.z * m._33 + m._43;
     r.w = v.x * m._14 + v.y * m._24 + v.z * m._34 + m._44;
-    // VERIFY		(r.w>0.f);
+    // VERIFY       (r.w>0.f);
     const float invW = 1.0f / r.w;
     return {r.x * invW, r.y * invW, r.z * invW};
 }
@@ -162,7 +162,7 @@ Fvector3 wform(glm::mat4 const& m, Fvector3 const& v)
     r.y = v.x * m[0][1] + v.y * m[1][1] + v.z * m[2][1] + m[3][1];
     r.z = v.x * m[0][2] + v.y * m[1][2] + v.z * m[2][2] + m[3][2];
     r.w = v.x * m[0][3] + v.y * m[1][3] + v.z * m[2][3] + m[3][3];
-    // VERIFY		(r.w>0.f);
+    // VERIFY       (r.w>0.f);
     const float invW = 1.0f / r.w;
     return {r.x * invW, r.y * invW, r.z * invW};
 }
@@ -174,7 +174,7 @@ Fvector3 wform(glm::mat4 const& m, glm::vec3 const& v)
     r.y = v.x * m[0][1] + v.y * m[1][1] + v.z * m[2][1] + m[3][1];
     r.z = v.x * m[0][2] + v.y * m[1][2] + v.z * m[2][2] + m[3][2];
     r.w = v.x * m[0][3] + v.y * m[1][3] + v.z * m[2][3] + m[3][3];
-    // VERIFY		(r.w>0.f);
+    // VERIFY       (r.w>0.f);
     const float invW = 1.0f / r.w;
     return {r.x * invW, r.y * invW, r.z * invW};
 }
@@ -294,7 +294,7 @@ void render_sun_old::init()
     m_sun_cascades.resize(cascade_count);
 
     float fBias = -0.0000025f;
-    //	float size = MAP_SIZE_START;
+    //  float size = MAP_SIZE_START;
     m_sun_cascades[0].reset_chain = true;
     m_sun_cascades[0].size = 20;
     m_sun_cascades[0].bias = m_sun_cascades[0].size * fBias;
@@ -305,12 +305,12 @@ void render_sun_old::init()
     m_sun_cascades[2].size = 160;
     m_sun_cascades[2].bias = m_sun_cascades[2].size * fBias;
 
-    // 	for( u32 i = 0; i < cascade_count; ++i )
-    // 	{
-    // 		m_sun_cascades[i].size = size;
-    // 		size *= MAP_GROW_FACTOR;
-    // 	}
-    /// 	m_sun_cascades[m_sun_cascades.size()-1].size = 80;
+    //  for( u32 i = 0; i < cascade_count; ++i )
+    //  {
+    //      m_sun_cascades[i].size = size;
+    //      size *= MAP_GROW_FACTOR;
+    //  }
+    ///     m_sun_cascades[m_sun_cascades.size()-1].size = 80;
     sun = (light*)RImplementation.Lights.sun._get();
 
     const Fcolor sun_color = sun->color;
@@ -413,7 +413,7 @@ void render_sun_old::render_sun()
 
     auto& dsgraph = RImplementation.get_context(context_id);
     {
-        //		sun->svis.begin					();
+        //      sun->svis.begin                 ();
         dsgraph.o.phase = CRender::PHASE_SMAP;
         dsgraph.r_pmask(true, RImplementation.o.Tshadows);
         dsgraph.o.sector_id = RImplementation.get_largest_sector();
@@ -437,7 +437,7 @@ void render_sun_old::render_sun()
         dsgraph.set_Recorder(nullptr);
     }
 
-    //	Prepare to interact with D3DX code
+    //  Prepare to interact with D3DX code
     const glm::mat4 m_View = glm::make_mat4x4(&Device.mView.m[0][0]);
     const glm::mat4 m_Projection = ex_project;
     glm::vec3 m_lightDir = -glm::vec3(sun->direction.x, sun->direction.y, sun->direction.z);
@@ -698,7 +698,7 @@ void render_sun_old::render_sun()
         b_receivers = view_clipper.clipped_AABB(s_receivers, xform);
         Fmatrix x_project, x_full, x_full_inverse;
         {
-            //x_project.build_projection	(deg2rad(Device.fFOV),Device.fASPECT,ps_r2_sun_near,ps_r2_sun_near+tweak_guaranteed_range);
+            //x_project.build_projection    (deg2rad(Device.fFOV),Device.fASPECT,ps_r2_sun_near,ps_r2_sun_near+tweak_guaranteed_range);
             x_project.build_projection(deg2rad(Device.fFOV), Device.fASPECT,VIEWPORT_NEAR,
                                        ps_r2_sun_near + tweak_guaranteed_range);
             x_full.mul(x_project, Device.mView);
@@ -732,11 +732,11 @@ void render_sun_old::render_sun()
 
         // refit?
         /*
-        const float EPS				= 0.001f;
-        D3DXMATRIX					refit;
-        D3DXMatrixOrthoOffCenterLH	( &refit, b_receivers.vMin.x, b_receivers.vMax.x, b_receivers.vMin.y,
+        const float EPS             = 0.001f;
+        D3DXMATRIX                  refit;
+        D3DXMatrixOrthoOffCenterLH  ( &refit, b_receivers.vMin.x, b_receivers.vMax.x, b_receivers.vMin.y,
         b_receivers.vMax.y, b_casters.vMin.z-EPS, b_casters.vMax.z+EPS );
-        D3DXMatrixMultiply			( &m_LightViewProj, &m_LightViewProj, &refit);
+        D3DXMatrixMultiply          ( &m_LightViewProj, &m_LightViewProj, &refit);
         */
 
         float boxWidth = b_receivers.vMax.x - b_receivers.vMin.x;
@@ -784,7 +784,7 @@ void render_sun_old::render_sun()
 
     // End SMAP-render
     {
-        //		sun->svis.end					();
+        //      sun->svis.end                   ();
         dsgraph.r_pmask(true, false);
     }
 
@@ -870,12 +870,12 @@ void render_sun_old::render_sun_near()
         L_right = glm::normalize(glm::cross(L_up, L_dir));
         mdir_View = glm::lookAt(L_pos, L_dir, L_up);
 
-        //	Simple
+        //  Simple
         Fbox frustum_bb;
         frustum_bb.invalidate();
         for (int it = 0; it < 8; it++)
         {
-            // for (int it=0; it<9; it++)	{
+            // for (int it=0; it<9; it++)   {
             Fvector xf = wform(mdir_View, hull.points[it]);
             frustum_bb.modify(xf);
         }
@@ -931,7 +931,7 @@ void render_sun_old::render_sun_near()
     // Begin SMAP-render
     auto& dsgraph = RImplementation.get_context(context_id);
     {
-        //		sun->svis.begin					();
+        //      sun->svis.begin                 ();
         dsgraph.o.use_hom = false;
         dsgraph.o.phase = CRender::PHASE_SMAP;
         dsgraph.r_pmask(true, RImplementation.o.Tshadows);
@@ -976,7 +976,7 @@ void render_sun_old::render_sun_near()
 
     // End SMAP-render
     {
-        //		sun->svis.end					();
+        //      sun->svis.end                   ();
         dsgraph.r_pmask(true, false);
     }
 

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: agent_enemy_manager.h
-//	Created 	: 24.05.2004
-//  Modified 	: 14.01.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Agent enemy manager
+//  Module      : agent_enemy_manager.h
+//  Created     : 24.05.2004
+//  Modified    : 14.01.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Agent enemy manager
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

@@ -15,7 +15,7 @@ const float CActorMP::cam_inert_value = 0.7f;
 
 CActorMP::CActorMP()
 {
-    // m_i_am_dead				= false;
+    // m_i_am_dead              = false;
 }
 
 void CActorMP::OnEvent(NET_Packet& P, u16 type)
@@ -30,8 +30,8 @@ void CActorMP::OnEvent(NET_Packet& P, u16 type)
 
 void CActorMP::Die(IGameObject* killer)
 {
-    // m_i_am_dead				= true;
-    // conditions().health()	= 0.f;
+    // m_i_am_dead              = true;
+    // conditions().health()    = 0.f;
     conditions().SetHealth(0.f);
     inherited::Die(killer);
 }

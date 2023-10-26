@@ -19,7 +19,7 @@ extern ENGINE_API bool bShowPauseString;
 //-----------------------------------------------------------------------------
 CUISequenceVideoItem::CUISequenceVideoItem(CUISequencer* owner) : CUISequenceItem(owner)
 {
-    // m_texture				= NULL;
+    // m_texture                = NULL;
     m_flags.set(etiPlaying | etiNeedStart | etiDelayed | etiBackVisible, FALSE);
     m_delay = 0.f;
     m_wnd = NULL;

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: path_manager_game_vertex.h
-//	Created 	: 05.07.2006
-//  Modified 	: 05.07.2006
-//	Author		: Dmitriy Iassenev
-//	Description : path manager parameters for game vertex path manager
+//  Module      : path_manager_game_vertex.h
+//  Created     : 05.07.2006
+//  Modified    : 05.07.2006
+//  Author      : Dmitriy Iassenev
+//  Description : path manager parameters for game vertex path manager
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

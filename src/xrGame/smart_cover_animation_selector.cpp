@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_animation_selector.cpp
-//	Created 	: 07.09.2007
-//	Author		: Alexander Dudin
-//	Description : Animation selector for smart covers
+//  Module      : smart_cover_animation_selector.cpp
+//  Created     : 07.09.2007
+//  Author      : Alexander Dudin
+//  Description : Animation selector for smart covers
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -45,7 +45,7 @@ void animation_selector::initialize()
     // our bone callback could be called
     // but UpdateCL is not called yet
     // and we will have
-    // VERIFY	(*parameter->m_blend);
+    // VERIFY   (*parameter->m_blend);
     m_callback_called = true;
     m_object->animation().update();
 
@@ -79,18 +79,18 @@ MotionID animation_selector::select_animation(bool& animation_movement_controlle
             m_previous_time = 0.f;
             if (!m_planner->initialized())
             {
-                //				Msg				("%6d no planner update, planner is not initialized, exiting",
+                //              Msg             ("%6d no planner update, planner is not initialized, exiting",
                 // Device.dwTimeGlobal);
                 return (m_object->animation().assign_global_animation(animation_movement_controller));
             }
         }
 
-        //		Msg					("%6d updating planner", Device.dwTimeGlobal);
+        //      Msg                 ("%6d updating planner", Device.dwTimeGlobal);
         m_planner->update();
 
         if (!m_planner->initialized())
         {
-            //			Msg				("%6d planner is not initialized after update, exiting", Device.dwTimeGlobal);
+            //          Msg             ("%6d planner is not initialized after update, exiting", Device.dwTimeGlobal);
             return (m_object->animation().assign_global_animation(animation_movement_controller));
         }
 
@@ -106,33 +106,33 @@ MotionID animation_selector::select_animation(bool& animation_movement_controlle
 
 #if 0 // ndef MASTER_GOLD
         if (!psAI_Flags.test((u32)aiUseSmartCoversAnimationSlot))
-            return			(m_skeleton_animated->ID_Cycle(m_animation.c_str()));
+            return          (m_skeleton_animated->ID_Cycle(m_animation.c_str()));
 
         VERIFY(m_object->inventory().ActiveItem());
-        CHudItem* const		hud_item = smart_cast<CHudItem*>(m_object->inventory().ActiveItem());
+        CHudItem* const     hud_item = smart_cast<CHudItem*>(m_object->inventory().ActiveItem());
         VERIFY(hud_item);
 
-        string16			animation_slot_string;
+        string16            animation_slot_string;
         R_ASSERT(!_itoa_s(hud_item->animation_slot(), animation_slot_string, sizeof(animation_slot_string), 10));
 
-        pstr				result;
+        pstr                result;
         STRCONCAT(result, m_animation, "_slot_", animation_slot_string);
 
-        MotionID			animation_id = m_skeleton_animated->ID_Cycle_Safe(result);
+        MotionID            animation_id = m_skeleton_animated->ID_Cycle_Safe(result);
         if (animation_id)
-            return			(animation_id);
+            return          (animation_id);
 
         STRCONCAT(result, m_animation, "_slot_2");
         animation_id = m_skeleton_animated->ID_Cycle_Safe(result);
         VERIFY(animation_id);
-        return				(animation_id);
+        return              (animation_id);
 #else // #ifndef MASTER_GOLD
         return (m_skeleton_animated->ID_Cycle(m_animation.c_str()));
 #endif // #ifndef MASTER_GOLD
     }
 
     VERIFY(m_animation._get());
-    //	VERIFY				(m_first_time || m_object->animation().global().blend());
+    //  VERIFY              (m_first_time || m_object->animation().global().blend());
     MotionID result = m_skeleton_animated->ID_Cycle(m_animation.c_str());
     if (m_first_time)
     {
@@ -174,7 +174,7 @@ MotionID animation_selector::select_animation(bool& animation_movement_controlle
         return (result);
     }
 
-    //	Msg					( "%d on_mark", Device.dwTimeGlobal );
+    //  Msg                 ( "%d on_mark", Device.dwTimeGlobal );
     current_operator()->on_mark();
     return (result);
 }

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: game_spawn_constructor.h
-//	Created 	: 16.10.2004
-//  Modified 	: 16.10.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Game spawn constructor
+//  Module      : game_spawn_constructor.h
+//  Created     : 16.10.2004
+//  Modified    : 16.10.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Game spawn constructor
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

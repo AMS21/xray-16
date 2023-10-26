@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_hit_script.cpp
-//	Created 	: 06.02.2004
-//  Modified 	: 24.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : XRay Script hit class script export
+//  Module      : script_hit_script.cpp
+//  Created     : 06.02.2004
+//  Modified    : 24.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : XRay Script hit class script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

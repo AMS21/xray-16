@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_float_enum_value.hpp
-//	Created 	: 12.12.2007
-//  Modified 	: 12.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property float enum value class
+//  Module      : property_float_enum_value.hpp
+//  Created     : 12.12.2007
+//  Modified    : 12.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property float enum value class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_FLOAT_ENUM_VALUE_HPP_INCLUDED

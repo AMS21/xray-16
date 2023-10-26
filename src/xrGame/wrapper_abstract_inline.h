@@ -1,20 +1,20 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: wrapper_abstract_inline.h
-//	Created 	: 28.01.2004
-//  Modified 	: 10.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Abstract wrapper inline functions
+//  Module      : wrapper_abstract_inline.h
+//  Created     : 28.01.2004
+//  Modified    : 10.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Abstract wrapper inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
 #include "xrGame/script_game_object.h"
 
 #define TEMPLATE_SPECIALIZATION \
-	template <\
-		typename _object_type,\
-		template <typename _base_object_type> class ancestor,\
-		typename _base_object_type\
-	>
+    template <\
+        typename _object_type,\
+        template <typename _base_object_type> class ancestor,\
+        typename _base_object_type\
+    >
 
 /*
 #define CWrapper CWrapperAbstract<_object_type,ancestor,_base_object_type>
@@ -37,10 +37,10 @@ void CWrapper::setup(CScriptGameObject *object)
 }
 
 TEMPLATE_SPECIALIZATION
-IC	_object_type &CWrapper::object() const
+IC  _object_type &CWrapper::object() const
 {
     VERIFY(m_object);
-    return				(*m_object);
+    return              (*m_object);
 }
 
 #undef CWrapper*/
@@ -51,10 +51,10 @@ IC	_object_type &CWrapper::object() const
 #define CWrapper2 CWrapperAbstract2<_object_type, ancestor, _base_object_type>
 
 TEMPLATE_SPECIALIZATION
-IC	_object_type &CWrapper2::object() const
+IC  _object_type &CWrapper2::object() const
 {
     VERIFY(m_object);
-    return				(*m_object);
+    return              (*m_object);
 }
 
 TEMPLATE_SPECIALIZATION

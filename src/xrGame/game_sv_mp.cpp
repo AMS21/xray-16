@@ -55,7 +55,7 @@ game_sv_mp::game_sv_mp()
     m_strWeaponsData = xr_new<CItemMgr>();
     m_bVotingActive = false;
     //------------------------------------------------------
-    //	g_pGamePersistent->Environment().SetWeather("mp_weather");
+    //  g_pGamePersistent->Environment().SetWeather("mp_weather");
     m_aRanks.clear();
     //------------------------------------------------------
     round_end_reason = eRoundEnd_Force; // unknown
@@ -165,7 +165,7 @@ void game_sv_mp::OnRoundStart()
 
     // send "RoundStarted" Message To Allclients
     NET_Packet P;
-    //	P.w_begin			(M_GAMEMESSAGE);
+    //  P.w_begin           (M_GAMEMESSAGE);
     GenerateGameMessage(P);
     P.w_u32(GAME_EVENT_ROUND_STARTED);
     u_EventSend(P);
@@ -184,7 +184,7 @@ void game_sv_mp::OnRoundEnd()
     switch_Phase(GAME_PHASE_PENDING);
     // send "RoundOver" Message To All clients
     NET_Packet P;
-    //	P.w_begin			(M_GAMEMESSAGE);
+    //  P.w_begin           (M_GAMEMESSAGE);
     GenerateGameMessage(P);
     P.w_u32(GAME_EVENT_ROUND_END);
     P.w_stringZ(res_str);
@@ -283,8 +283,8 @@ void game_sv_mp::KillPlayer(ClientID id_who, u16 GameID)
     //-------------------------------------------------------
     SendPlayerKilledMessage(PlayerID, KT_HIT, PlayerID, 0, SKT_NONE);
     //-------------------------------------------------------
-    /*AllowDeadBodyRemove			(id_who, GameID);
-    m_CorpseList.push_back		(GameID);*/
+    /*AllowDeadBodyRemove           (id_who, GameID);
+    m_CorpseList.push_back      (GameID);*/
     // Kill Player on all clients
     NET_Packet P;
     u_EventGen(P, GE_DIE, PlayerID);
@@ -379,7 +379,7 @@ void game_sv_mp::OnEvent(NET_Packet& P, u16 type, u32 time, ClientID sender)
     case GAME_EVENT_PLAYER_GAME_MENU:
     {
         OnPlayerGameMenu(P, sender);
-        //			OnPlayerSelectSpectator(P, sender);
+        //          OnPlayerSelectSpectator(P, sender);
     }
     break;
     case GAME_EVENT_PLAYER_STARTED: {
@@ -523,7 +523,7 @@ void game_sv_mp::RespawnPlayer(ClientID id_who, bool NoSpectator)
     xrClientData* xrCData = m_server->ID_to_client(id_who);
     if (!xrCData || !xrCData->owner)
         return;
-    //	game_PlayerState*	ps	=	&(xrCData->ps);
+    //  game_PlayerState*   ps  =   &(xrCData->ps);
     CSE_Abstract* pOwner = xrCData->owner;
     CSE_ALifeCreatureActor* pA = smart_cast<CSE_ALifeCreatureActor*>(pOwner);
     CSE_Spectator* pS = smart_cast<CSE_Spectator*>(pOwner);
@@ -556,13 +556,13 @@ void game_sv_mp::RespawnPlayer(ClientID id_who, bool NoSpectator)
         {
             NET_Packet P;
             u_EventGen(P, GE_DESTROY, pS->ID);
-            //		pObject->u_EventSend		(P);
+            //      pObject->u_EventSend        (P);
             Level().Send(P, net_flags(TRUE, TRUE));
         };
         //------------------------------------------------------------
         SpawnPlayer(id_who, "mp_actor");
         //------------------------------------------------------------
-        //		SpawnWeaponsForActor(xrCData->owner, ps);
+        //      SpawnWeaponsForActor(xrCData->owner, ps);
         //------------------------------------------------------------
     };
 };
@@ -605,7 +605,7 @@ void game_sv_mp::SpawnPlayer(ClientID id, LPCSTR N)
     else if (pS)
     {
         Fvector Pos, Angle;
-        //			ps_who->setFlag(GAME_PLAYER_FLAG_CS_SPECTATOR);
+        //          ps_who->setFlag(GAME_PLAYER_FLAG_CS_SPECTATOR);
         if (!GetPosAngleFromActor(id, Pos, Angle))
             assign_RP(E, ps_who);
         else
@@ -708,7 +708,7 @@ bool game_sv_mp::GetPosAngleFromActor(ClientID id, Fvector& Pos, Fvector& Angle)
         return false;
 
     IGameObject* pObject = Level().Objects.net_Find(xrCData->owner->ID);
-    ///	R_ASSERT2	((pObject && smart_cast<CActor*>(pObject)),"Dead Player is not Actor");
+    /// R_ASSERT2   ((pObject && smart_cast<CActor*>(pObject)),"Dead Player is not Actor");
 
     if (!pObject || !smart_cast<CActor*>(pObject))
         return false;
@@ -734,7 +734,7 @@ TeamStruct* game_sv_mp::GetTeamData(u32 Team)
     return &(TeamList[Team]);
 };
 
-/*void	game_sv_mp::SpawnWeaponForActor		(u16 actorId,  LPCSTR N, bool isScope, bool isGrenadeLauncher, bool
+/*void  game_sv_mp::SpawnWeaponForActor     (u16 actorId,  LPCSTR N, bool isScope, bool isGrenadeLauncher, bool
 isSilencer)
 {
         u8 addon_flags = 0;
@@ -1106,7 +1106,7 @@ void game_sv_mp::OnVoteStart(LPCSTR VoteCommand, ClientID sender)
             }
             //} else
             //{
-            //	Msg("! ERROR: failed to extract ban time from vote string.");
+            //  Msg("! ERROR: failed to extract ban time from vote string.");
             //}
             xr_strcpy(resVoteCommand, VoteCommand);
         }
@@ -1310,7 +1310,7 @@ void game_sv_mp::ClearPlayerItems(game_PlayerState* ps)
 {
     ps->pItemList.clear();
     ps->LastBuyAcount = 0;
-    //	ps->m_bClearRun = false;
+    //  ps->m_bClearRun = false;
 };
 
 void game_sv_mp::SetPlayersDefItems(game_PlayerState* ps)
@@ -1340,22 +1340,22 @@ void game_sv_mp::SetPlayersDefItems(game_PlayerState* ps)
         for (u32 it = 0; it < ps->pItemList.size(); it++)
         {
             u16* pItemID = &(ps->pItemList[it]);
-            //			WeaponDataStruct* pWpnS = NULL;
-            //			if (!GetTeamItem_ByID(&pWpnS, &(TeamList[ps->team].aWeapons), *pItemID)) continue;
+            //          WeaponDataStruct* pWpnS = NULL;
+            //          if (!GetTeamItem_ByID(&pWpnS, &(TeamList[ps->team].aWeapons), *pItemID)) continue;
             if (m_strWeaponsData->GetItemsCount() <= *pItemID)
                 continue;
             shared_str WeaponName = m_strWeaponsData->GetItemName((*pItemID) & 0x00FF);
-            //			strconcat(ItemStr, "def_item_repl_", pWpnS->WeaponName.c_str());
+            //          strconcat(ItemStr, "def_item_repl_", pWpnS->WeaponName.c_str());
             strconcat(sizeof(ItemStr), ItemStr, "def_item_repl_", *WeaponName);
             if (!pSettings->line_exist(RankStr, ItemStr))
                 continue;
 
             xr_strcpy(NewItemStr, sizeof(NewItemStr), pSettings->r_string(RankStr, ItemStr));
-            //			if (!GetTeamItem_ByName(&pWpnS, &(TeamList[ps->team].aWeapons), NewItemStr)) continue;
+            //          if (!GetTeamItem_ByName(&pWpnS, &(TeamList[ps->team].aWeapons), NewItemStr)) continue;
             if (m_strWeaponsData->GetItemIdx(NewItemStr) == u32(-1))
                 continue;
 
-            //			*pItemID = pWpnS->SlotItem_ID;
+            //          *pItemID = pWpnS->SlotItem_ID;
             *pItemID = u16(m_strWeaponsData->GetItemIdx(NewItemStr) & 0xffff);
         }
     }
@@ -1363,8 +1363,8 @@ void game_sv_mp::SetPlayersDefItems(game_PlayerState* ps)
     for (u32 it = 0; it < ps->pItemList.size(); it++)
     {
         u16* pItemID = &(ps->pItemList[it]);
-        //		WeaponDataStruct* pWpnS = NULL;
-        //		if (!GetTeamItem_ByID(&pWpnS, &(TeamList[ps->team].aWeapons), *pItemID)) continue;
+        //      WeaponDataStruct* pWpnS = NULL;
+        //      if (!GetTeamItem_ByID(&pWpnS, &(TeamList[ps->team].aWeapons), *pItemID)) continue;
         if (m_strWeaponsData->GetItemsCount() <= *pItemID)
             continue;
 
@@ -1379,14 +1379,14 @@ void game_sv_mp::SetPlayersDefItems(game_PlayerState* ps)
             _GetItem(wpnAmmos, 0, BaseAmmoName);
             AmmoID = u16(m_strWeaponsData->GetItemIdx(BaseAmmoName) & 0xffff);
         };
-        //		if (!pWpnS->WeaponBaseAmmo.size()) continue;
-        //		WeaponDataStruct* pWpnAmmo = NULL;
-        //		if (!GetTeamItem_ByName(&pWpnAmmo, &(TeamList[ps->team].aWeapons), *(pWpnS->WeaponBaseAmmo))) continue;
+        //      if (!pWpnS->WeaponBaseAmmo.size()) continue;
+        //      WeaponDataStruct* pWpnAmmo = NULL;
+        //      if (!GetTeamItem_ByName(&pWpnAmmo, &(TeamList[ps->team].aWeapons), *(pWpnS->WeaponBaseAmmo))) continue;
         if (AmmoID == u16(-1))
             continue;
 
-        //		ps->pItemList.push_back(pWpnAmmo->SlotItem_ID);
-        //		ps->pItemList.push_back(pWpnAmmo->SlotItem_ID);
+        //      ps->pItemList.push_back(pWpnAmmo->SlotItem_ID);
+        //      ps->pItemList.push_back(pWpnAmmo->SlotItem_ID);
         // if (Type() == eGameIDArtefactHunt)
         //{
         ps->pItemList.push_back(AmmoID);
@@ -1715,19 +1715,19 @@ void game_sv_mp::UpdatePlayersMoney()
     m_server->ForEachClientDoSender(tmp_functor);
 };
 /*
-bool	game_sv_mp::GetTeamItem_ByID		(WeaponDataStruct** pRes, TEAM_WPN_LIST* pWpnList, u16 ItemID)
+bool    game_sv_mp::GetTeamItem_ByID        (WeaponDataStruct** pRes, TEAM_WPN_LIST* pWpnList, u16 ItemID)
 {
     if (!pWpnList) return false;
-    TEAM_WPN_LIST_it pWpnI	= std::find(pWpnList->begin(), pWpnList->end(), (ItemID));
+    TEAM_WPN_LIST_it pWpnI  = std::find(pWpnList->begin(), pWpnList->end(), (ItemID));
     if (pWpnI == pWpnList->end() || !((*pWpnI) == (ItemID))) return false;
     *pRes = &(*pWpnI);
     return true;
 };
 
-bool	game_sv_mp::GetTeamItem_ByName		(WeaponDataStruct** pRes,TEAM_WPN_LIST* pWpnList, LPCSTR ItemName)
+bool    game_sv_mp::GetTeamItem_ByName      (WeaponDataStruct** pRes,TEAM_WPN_LIST* pWpnList, LPCSTR ItemName)
 {
     if (!pWpnList) return false;
-    TEAM_WPN_LIST_it pWpnI	= std::find(pWpnList->begin(), pWpnList->end(), ItemName);
+    TEAM_WPN_LIST_it pWpnI  = std::find(pWpnList->begin(), pWpnList->end(), ItemName);
     if (pWpnI == pWpnList->end() || !((*pWpnI) == ItemName)) return false;
     *pRes = &(*pWpnI);
     return true;
@@ -1842,7 +1842,7 @@ void game_sv_mp::RenewAllActorsHealth()
 
 void game_sv_mp::DestroyGameItem(CSE_Abstract* entity)
 {
-    //	R_ASSERT2( entity, "entity not found for destroying" );
+    //  R_ASSERT2( entity, "entity not found for destroying" );
     VERIFY2(entity, "entity not found for destroying");
     if (!entity)
     {
@@ -1861,7 +1861,7 @@ void game_sv_mp::DestroyGameItem(CSE_Abstract* entity)
 
 void game_sv_mp::RejectGameItem(CSE_Abstract* entity)
 {
-    //	R_ASSERT2( entity, "entity not found for rejecting" );
+    //  R_ASSERT2( entity, "entity not found for rejecting" );
     VERIFY2(entity, "entity not found for rejecting");
     if (!entity)
     {
@@ -1878,7 +1878,7 @@ void game_sv_mp::RejectGameItem(CSE_Abstract* entity)
 
     CSE_Abstract* e_parent = get_entity_from_eid(entity->ID_Parent);
 
-    //	R_ASSERT2( e_parent, make_string( "RejectGameItem: parent not found. entity_id = [%d], parent_id = [%d]",
+    //  R_ASSERT2( e_parent, make_string( "RejectGameItem: parent not found. entity_id = [%d], parent_id = [%d]",
     // entity->ID, entity->ID_Parent ).c_str() );
     VERIFY2(e_parent, make_string("RejectGameItem: parent not found. entity_id = [%d], parent_id = [%d]", entity->ID,
                           entity->ID_Parent)
@@ -2183,14 +2183,14 @@ void game_sv_mp::DestroyAllPlayerItems(ClientID id_who) // except rukzak
     TIItemContainer::const_iterator iie = pActor->inventory().m_all.end();
     for (TIItemContainer::const_iterator ii = pActor->inventory().m_all.begin(); ii != iie; ++ii)
     {
-        //		VERIFY(*ii);
+        //      VERIFY(*ii);
         R_ASSERT2(*ii,
             make_string("PIItem in player`s inventory not found. Destroy all items of actor[%d]", ps->GameID).c_str());
 
         u16 object_id = (*ii)->object().ID();
         CSE_Abstract* tempEntity = m_server->ID_to_entity(object_id);
 
-        //		R_ASSERT2( tempEntity, make_string("entity not found [%d]. Destroy all items of actor[%d]", object_id,
+        //      R_ASSERT2( tempEntity, make_string("entity not found [%d]. Destroy all items of actor[%d]", object_id,
         // ps->GameID).c_str() );
         VERIFY2(tempEntity,
             make_string("entity not found [%d]. Destroy all items of actor[%d]", object_id, ps->GameID).c_str());

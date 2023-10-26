@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: path_manager_level_nearest_vertex_inline.h
-//	Created 	: 21.03.2002
-//  Modified 	: 03.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : path manager level nearest vertex inline functions
+//  Module      : path_manager_level_nearest_vertex_inline.h
+//  Created     : 21.03.2002
+//  Modified    : 03.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : path manager level nearest vertex inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

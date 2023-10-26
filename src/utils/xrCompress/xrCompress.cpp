@@ -341,7 +341,7 @@ void xrCompressor::OpenPack(LPCSTR tgt_folder, int num)
     else
         printf("...Pack header not found\n");
 
-    //	g_dummy_stuff	= _dummy_stuff_subst;
+    //  g_dummy_stuff   = _dummy_stuff_subst;
 
     fs_pack_writer->open_chunk(0);
 }

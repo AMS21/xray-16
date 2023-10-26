@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: patrol_path_storage_inline.h
-//	Created 	: 15.06.2004
-//  Modified 	: 15.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Patrol path storage inline functions
+//  Module      : patrol_path_storage_inline.h
+//  Created     : 15.06.2004
+//  Modified    : 15.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Patrol path storage inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

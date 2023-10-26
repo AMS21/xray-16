@@ -1,8 +1,8 @@
-// File:		UILine.h
-// Description:	Single text line
-// Created:		11.03.2005
-// Author:		Serge Vynnycheko
-// Mail:		narrator@gsc-game.kiev.ua
+// File:        UILine.h
+// Description: Single text line
+// Created:     11.03.2005
+// Author:      Serge Vynnycheko
+// Mail:        narrator@gsc-game.kiev.ua
 //
 // Copyright 2005 GSC Game World
 

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_integer_values_value_base.hpp
-//	Created 	: 07.12.2007
-//  Modified 	: 11.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property integer values value base class
+//  Module      : property_integer_values_value_base.hpp
+//  Created     : 07.12.2007
+//  Modified    : 11.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property integer values value base class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_INTEGER_VALUES_VALUE_BASE_HPP_INCLUDED

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: moving_objects_static.cpp
-//	Created 	: 27.03.2007
-//  Modified 	: 14.05.2007
-//	Author		: Dmitriy Iassenev
-//	Description : moving objects with static objects, i.e stable dynamic objects
+//  Module      : moving_objects_static.cpp
+//  Created     : 27.03.2007
+//  Modified    : 14.05.2007
+//  Author      : Dmitriy Iassenev
+//  Description : moving objects with static objects, i.e stable dynamic objects
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -149,7 +149,7 @@ void moving_objects::query_action_static(
     fill_nearest_list(start_position, dest_position.distance_to(start_position) + additional_radius + EPS, object);
 
     fill_static(object->static_query());
-    //	fill_all_static			(object,dest_position);
+    //  fill_all_static         (object,dest_position);
 }
 
 void moving_objects::query_action_static(moving_object* object)

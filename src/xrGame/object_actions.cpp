@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: object_actions.h
-//	Created 	: 12.03.2004
-//  Modified 	: 26.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Object actions
+//  Module      : object_actions.h
+//  Created     : 12.03.2004
+//  Modified    : 26.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Object actions
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -311,7 +311,7 @@ void CObjectActionFireNoReload::execute()
             return;
 
         object().inventory().Action(kWPN_FIRE, CMD_STOP);
-        //		m_fired					= false;
+        //      m_fired                 = false;
         return;
     }
 
@@ -702,9 +702,9 @@ void CObjectActionQueueWait::finalize()
 {
     inherited::finalize();
 
-    // VERIFY						(m_item);
-    // VERIFY						(object().inventory().ActiveItem());
-    // VERIFY						(object().inventory().ActiveItem()->object().ID() == m_item->object().ID());
+    // VERIFY                       (m_item);
+    // VERIFY                       (object().inventory().ActiveItem());
+    // VERIFY                       (object().inventory().ActiveItem()->object().ID() == m_item->object().ID());
 
     if ((object().inventory().ActiveItem() == m_magazined) && !completed())
         m_magazined->StopedAfterQueueFired(false);
@@ -770,7 +770,7 @@ CObjectActionAim::CObjectActionAim(CInventoryItem* item, CAI_Stalker* owner, CPr
     : inherited(item, owner, storage, condition_id, value, action_name)
 {
     m_weapon = smart_cast<CWeaponMagazined*>(m_item);
-    //	VERIFY						(m_weapon);
+    //  VERIFY                      (m_weapon);
 }
 
 void CObjectActionAim::initialize()

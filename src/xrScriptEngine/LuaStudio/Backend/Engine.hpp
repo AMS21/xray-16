@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: engine.h
-//	Created 	: 10.04.2008
-//  Modified 	: 10.04.2008
-//	Author		: Dmitriy Iassenev
-//	Description : script debugger engine  class
+//  Module      : engine.h
+//  Created     : 10.04.2008
+//  Modified    : 10.04.2008
+//  Author      : Dmitriy Iassenev
+//  Description : script debugger engine  class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

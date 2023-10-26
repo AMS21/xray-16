@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_movement_params_inline.h
-//	Created 	: 23.12.2005
-//  Modified 	: 23.12.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker movement parameters class inline functions
+//  Module      : stalker_movement_params_inline.h
+//  Created     : 23.12.2005
+//  Modified    : 23.12.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker movement parameters class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef STALKER_MOVEMENT_PARAMS_INLINE_H_INCLUDED

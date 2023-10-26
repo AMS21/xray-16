@@ -258,7 +258,7 @@ void render_sun_old::init()
     m_sun_cascades.resize(cascade_count);
 
     float fBias = -0.0000025f;
-    //	float size = MAP_SIZE_START;
+    //  float size = MAP_SIZE_START;
     m_sun_cascades[0].reset_chain = true;
     m_sun_cascades[0].size = 20;
     m_sun_cascades[0].bias = m_sun_cascades[0].size * fBias;
@@ -269,12 +269,12 @@ void render_sun_old::init()
     m_sun_cascades[2].size = 160;
     m_sun_cascades[2].bias = m_sun_cascades[2].size * fBias;
 
-    // 	for( u32 i = 0; i < cascade_count; ++i )
-    // 	{
-    // 		m_sun_cascades[i].size = size;
-    // 		size *= MAP_GROW_FACTOR;
-    // 	}
-    /// 	m_sun_cascades[m_sun_cascades.size()-1].size = 80;
+    //  for( u32 i = 0; i < cascade_count; ++i )
+    //  {
+    //      m_sun_cascades[i].size = size;
+    //      size *= MAP_GROW_FACTOR;
+    //  }
+    ///     m_sun_cascades[m_sun_cascades.size()-1].size = 80;
     sun = (light*)RImplementation.Lights.sun._get();
 
     const Fcolor sun_color = sun->color;
@@ -302,7 +302,7 @@ void render_sun_old::render_sun()
     XMMATRIX ex_full_inverse;
     {
         float _far_ = std::min(OLES_SUN_LIMIT_27_01_07, g_pGamePersistent->Environment().CurrentEnv.far_plane);
-        // ex_project.build_projection	(deg2rad(Device.fFOV/* *Device.fASPECT*/),Device.fASPECT,ps_r2_sun_near,_far_);
+        // ex_project.build_projection  (deg2rad(Device.fFOV/* *Device.fASPECT*/),Device.fASPECT,ps_r2_sun_near,_far_);
         ex_project.build_projection(deg2rad(Device.fFOV /* *Device.fASPECT*/), Device.fASPECT, VIEWPORT_NEAR, _far_);
         // VIEWPORT_NEAR
         ex_full.mul(ex_project, Device.mView);
@@ -382,7 +382,7 @@ void render_sun_old::render_sun()
 
     auto& dsgraph = RImplementation.get_context(context_id);
     {
-        //		sun->svis.begin					();
+        //      sun->svis.begin                 ();
         dsgraph.o.phase = CRender::PHASE_SMAP;
         dsgraph.r_pmask(true, RImplementation.o.Tshadows);
         dsgraph.o.sector_id = RImplementation.get_largest_sector();
@@ -407,7 +407,7 @@ void render_sun_old::render_sun()
         dsgraph.set_Recorder(nullptr);
     }
 
-    //	Prepare to interact with D3DX code
+    //  Prepare to interact with D3DX code
     const XMMATRIX m_View = XMLoadFloat4x4((XMFLOAT4X4*)(&Device.mView));
     const XMFLOAT3 m_lightDir =
         XMFLOAT3(-sun->direction.x, -sun->direction.y, -sun->direction.z);
@@ -669,11 +669,11 @@ void render_sun_old::render_sun()
 
         // refit?
         /*
-        const float EPS				= 0.001f;
-        D3DXMATRIX					refit;
-        D3DXMatrixOrthoOffCenterLH	( &refit, b_receivers.vMin.x, b_receivers.vMax.x, b_receivers.vMin.y,
+        const float EPS             = 0.001f;
+        D3DXMATRIX                  refit;
+        D3DXMatrixOrthoOffCenterLH  ( &refit, b_receivers.vMin.x, b_receivers.vMax.x, b_receivers.vMin.y,
         b_receivers.vMax.y, b_casters.vMin.z-EPS, b_casters.vMax.z+EPS );
-        D3DXMatrixMultiply			( &m_LightViewProj, &m_LightViewProj, &refit);
+        D3DXMatrixMultiply          ( &m_LightViewProj, &m_LightViewProj, &refit);
         */
 
         float boxWidth = b_receivers.vMax.x - b_receivers.vMin.x;
@@ -807,42 +807,42 @@ void render_sun_old::render_sun_near()
 
         // projection: box
         /*
-        //	Original
-        float	_D					= ps_r2_sun_near;
-        float	a0					= deg2rad(Device.fFOV*Device.fASPECT)/2.f;
-        float	a1					= deg2rad(Device.fFOV)/2.f;
-        float	c0					= _D/_cos(a0);
-        float	c1					= _D/_cos(a1);
-        float	k0					= 2.f*c0*_sin(a0);
-        float	k1					= 2.f*c1*_sin(a1);
-        float	borderalpha			= (Device.fFOV-10) / (90-10);
+        //  Original
+        float   _D                  = ps_r2_sun_near;
+        float   a0                  = deg2rad(Device.fFOV*Device.fASPECT)/2.f;
+        float   a1                  = deg2rad(Device.fFOV)/2.f;
+        float   c0                  = _D/_cos(a0);
+        float   c1                  = _D/_cos(a1);
+        float   k0                  = 2.f*c0*_sin(a0);
+        float   k1                  = 2.f*c1*_sin(a1);
+        float   borderalpha         = (Device.fFOV-10) / (90-10);
 
-        float	nearborder			= 1*borderalpha + 1.136363636364f*(1-borderalpha);
-        float	spherical_range		= ps_r2_sun_near_border * nearborder * _max(_max(c0,c1),
+        float   nearborder          = 1*borderalpha + 1.136363636364f*(1-borderalpha);
+        float   spherical_range     = ps_r2_sun_near_border * nearborder * _max(_max(c0,c1),
         _max(k0,k1)*1.414213562373f );
-        Fbox	frustum_bb;			frustum_bb.invalidate	();
-        hull.points.push_back		(Device.vCameraPosition);
-        for (int it=0; it<9; it++)	{
-        Fvector	xf	= wform		(mdir_View,hull.points[it]);
-        frustum_bb.modify		(xf);
+        Fbox    frustum_bb;         frustum_bb.invalidate   ();
+        hull.points.push_back       (Device.vCameraPosition);
+        for (int it=0; it<9; it++)  {
+        Fvector xf  = wform     (mdir_View,hull.points[it]);
+        frustum_bb.modify       (xf);
         }
-        float	size_x				= frustum_bb.vMax.x - frustum_bb.vMin.x;
-        float	size_y				= frustum_bb.vMax.y - frustum_bb.vMin.y;
-        float	diff_x				= (spherical_range - size_x)/2.f;	//VERIFY(diff_x>=0);
-        float	diff_y				= (spherical_range - size_y)/2.f;	//VERIFY(diff_y>=0);
+        float   size_x              = frustum_bb.vMax.x - frustum_bb.vMin.x;
+        float   size_y              = frustum_bb.vMax.y - frustum_bb.vMin.y;
+        float   diff_x              = (spherical_range - size_x)/2.f;   //VERIFY(diff_x>=0);
+        float   diff_y              = (spherical_range - size_y)/2.f;   //VERIFY(diff_y>=0);
         frustum_bb.vMin.x -= diff_x; frustum_bb.vMax.x += diff_x;
         frustum_bb.vMin.y -= diff_y; frustum_bb.vMax.y += diff_y;
-        Fbox&	bb					= frustum_bb;
-        D3DXMatrixOrthoOffCenterLH	((D3DXMATRIX*)&mdir_Project,bb.vMin.x,bb.vMax.x,  bb.vMin.y,bb.vMax.y,
+        Fbox&   bb                  = frustum_bb;
+        D3DXMatrixOrthoOffCenterLH  ((D3DXMATRIX*)&mdir_Project,bb.vMin.x,bb.vMax.x,  bb.vMin.y,bb.vMax.y,
         bb.vMin.z-tweak_ortho_xform_initial_offs,bb.vMax.z);
         */
 
-        //	Simple
+        //  Simple
         Fbox frustum_bb;
         frustum_bb.invalidate();
         for (int it = 0; it < 8; it++)
         {
-            // for (int it=0; it<9; it++)	{
+            // for (int it=0; it<9; it++)   {
             Fvector xf = wform(mdir_View, hull.points[it]);
             frustum_bb.modify(xf);
         }
@@ -902,7 +902,7 @@ void render_sun_old::render_sun_near()
     // Begin SMAP-render
     auto& dsgraph = RImplementation.get_context(context_id);
     {
-        //		sun->svis.begin					();
+        //      sun->svis.begin                 ();
         dsgraph.o.use_hom = false;
         dsgraph.o.phase = CRender::PHASE_SMAP;
         dsgraph.r_pmask(true, RImplementation.o.Tshadows);

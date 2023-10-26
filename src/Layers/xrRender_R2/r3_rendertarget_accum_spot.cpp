@@ -9,7 +9,7 @@ void CRenderTarget::accum_spot(CBackend& cmd_list, light* L)
     RImplementation.Stats.l_visible++;
 
     // *** assume accumulator already setup ***
-    // *****************************	Mask by stencil		*************************************
+    // *****************************    Mask by stencil     *************************************
     ref_shader shader;
     ref_shader* shader_msaa;
     if (IRender_Light::OMNIPART == L->flags.type)
@@ -45,11 +45,11 @@ void CRenderTarget::accum_spot(CBackend& cmd_list, light* L)
         // *** similar to "Carmack's reverse", but assumes convex, non intersecting objects,
         // *** thus can cope without stencil clear with 127 lights
         // *** in practice, 'cause we "clear" it back to 0x1 it usually allows us to > 200 lights :)
-        //	Done in blender!
-        // cmd_list.set_ColorWriteEnable		(FALSE);
+        //  Done in blender!
+        // cmd_list.set_ColorWriteEnable        (FALSE);
         cmd_list.set_Element(s_accum_mask->E[SE_MASK_SPOT]); // masker
 
-        // backfaces: if (stencil>=1 && zfail)			stencil = light_id
+        // backfaces: if (stencil>=1 && zfail)          stencil = light_id
         cmd_list.set_CullMode(CULL_CW);
         if (!RImplementation.o.msaa)
         {
@@ -63,7 +63,7 @@ void CRenderTarget::accum_spot(CBackend& cmd_list, light* L)
         }
         draw_volume(cmd_list, L);
 
-        // frontfaces: if (stencil>=light_id && zfail)	stencil = 0x1
+        // frontfaces: if (stencil>=light_id && zfail)  stencil = 0x1
         cmd_list.set_CullMode(CULL_CCW);
         if (!RImplementation.o.msaa)
         {
@@ -82,7 +82,7 @@ void CRenderTarget::accum_spot(CBackend& cmd_list, light* L)
     if (RImplementation.o.nvstencil)
         u_stencil_optimize(cmd_list);
 
-    // *****************************	Minimize overdraw	*************************************
+    // *****************************    Minimize overdraw   *************************************
     // Select shader (front or back-faces), *** back, if intersect near plane
     cmd_list.set_ColorWriteEnable();
     cmd_list.set_CullMode(CULL_CW); // back
@@ -204,11 +204,11 @@ void CRenderTarget::accum_spot(CBackend& cmd_list, light* L)
         cmd_list.set_ca("m_lmap", 1, m_Lmap._12, m_Lmap._22, m_Lmap._32, m_Lmap._42);
 
         // Fetch4 : enable
-        //		if (RImplementation.o.HW_smap_FETCH4)	{
+        //      if (RImplementation.o.HW_smap_FETCH4)   {
         //. we hacked the shader to force smap on S0
-        //#			define FOURCC_GET4  MAKEFOURCC('G','E','T','4')
-        //			HW.pDevice->SetSamplerState	( 0, D3DSAMP_MIPMAPLODBIAS, FOURCC_GET4 );
-        //		}
+        //#         define FOURCC_GET4  MAKEFOURCC('G','E','T','4')
+        //          HW.pDevice->SetSamplerState ( 0, D3DSAMP_MIPMAPLODBIAS, FOURCC_GET4 );
+        //      }
 
         if (!RImplementation.o.msaa)
         {
@@ -253,11 +253,11 @@ void CRenderTarget::accum_spot(CBackend& cmd_list, light* L)
         }
 
         // Fetch4 : disable
-        //		if (RImplementation.o.HW_smap_FETCH4)	{
+        //      if (RImplementation.o.HW_smap_FETCH4)   {
         //. we hacked the shader to force smap on S0
-        //#			define FOURCC_GET1  MAKEFOURCC('G','E','T','1')
-        //			HW.pDevice->SetSamplerState	( 0, D3DSAMP_MIPMAPLODBIAS, FOURCC_GET1 );
-        //		}
+        //#         define FOURCC_GET1  MAKEFOURCC('G','E','T','1')
+        //          HW.pDevice->SetSamplerState ( 0, D3DSAMP_MIPMAPLODBIAS, FOURCC_GET1 );
+        //      }
     }
 
     // blend-copy
@@ -307,7 +307,7 @@ void CRenderTarget::accum_spot(CBackend& cmd_list, light* L)
     }
 
     cmd_list.set_Scissor(0);
-    // dwLightMarkerID					+=	2;	// keep lowest bit always setted up
+    // dwLightMarkerID                  +=  2;  // keep lowest bit always setted up
     increment_light_marker(cmd_list);
 
     u_DBT_disable();
@@ -333,7 +333,7 @@ void CRenderTarget::accum_volumetric(CBackend& cmd_list, light* L)
     }
 
     // *** assume accumulator setted up ***
-    // *****************************	Mask by stencil		*************************************
+    // *****************************    Mask by stencil     *************************************
     {
         // setup xform
         L->xform_calc();
@@ -342,7 +342,7 @@ void CRenderTarget::accum_volumetric(CBackend& cmd_list, light* L)
         cmd_list.set_xform_project(Device.mProject);
         enable_scissor(L);
 
-        // enable_dbt_bounds				(L);
+        // enable_dbt_bounds                (L);
     }
 
     cmd_list.set_ColorWriteEnable();
@@ -425,54 +425,54 @@ void CRenderTarget::accum_volumetric(CBackend& cmd_list, light* L)
         // Compute light frustum in world space
         mFrustumSrc.mul(L->X.S.project, xf_view);
         ClipFrustum.CreateFromMatrix(mFrustumSrc, FRUSTUM_P_ALL);
-        //	Adjust frustum far plane
-        //	4 - far, 5 - near
+        //  Adjust frustum far plane
+        //  4 - far, 5 - near
         ClipFrustum.planes[4].d -= (ClipFrustum.planes[4].d + ClipFrustum.planes[5].d) * (1 - L->m_volumetric_distance);
     }
 
-    //	Calculate camera space AABB
+    //  Calculate camera space AABB
     // xform BB
     /*
-    Fbox	BB;
-    Fvector	rr; rr.set(L->spatial.sphere.R,L->spatial.sphere.R,L->spatial.sphere.R);
-    BB.setb	(L->spatial.sphere.P, rr);
+    Fbox    BB;
+    Fvector rr; rr.set(L->spatial.sphere.R,L->spatial.sphere.R,L->spatial.sphere.R);
+    BB.setb (L->spatial.sphere.P, rr);
 
-    Fbox	bbp; bbp.invalidate();
-    for (u32 i=0; i<8; i++)		{
-        Fvector		pt;
-        BB.getpoint	(i,pt);
-        //Device.mFullTransform.transform	(pt);
-        Device.mFullTransform.transform	(mView);
-        bbp.modify	(pt);
+    Fbox    bbp; bbp.invalidate();
+    for (u32 i=0; i<8; i++)     {
+        Fvector     pt;
+        BB.getpoint (i,pt);
+        //Device.mFullTransform.transform   (pt);
+        Device.mFullTransform.transform (mView);
+        bbp.modify  (pt);
     }
     */
 
-    //	Calculate camera space AABB
-    //	Adjust AABB according to the adjusted distance for the light volume
+    //  Calculate camera space AABB
+    //  Adjust AABB according to the adjusted distance for the light volume
     Fbox aabb;
 
-    // float	scaledRadius = L->spatial.sphere.R * (1+L->m_volumetric_distance)*0.5f;
+    // float    scaledRadius = L->spatial.sphere.R * (1+L->m_volumetric_distance)*0.5f;
     float scaledRadius = L->spatial.sphere.R * L->m_volumetric_distance;
     Fvector rr = Fvector().set(scaledRadius, scaledRadius, scaledRadius);
     Fvector pt = L->spatial.sphere.P;
     pt.sub(L->position);
     pt.mul(L->m_volumetric_distance);
     pt.add(L->position);
-    //	Don't adjust AABB
-    // float	scaledRadius = L->spatial.sphere.R;
-    // Fvector	rr = Fvector().set(scaledRadius,scaledRadius,scaledRadius);
+    //  Don't adjust AABB
+    // float    scaledRadius = L->spatial.sphere.R;
+    // Fvector  rr = Fvector().set(scaledRadius,scaledRadius,scaledRadius);
     // Fvector pt = L->spatial.sphere.P;
     Device.mView.transform(pt);
     aabb.setb(pt, rr);
     /*
-        //	Calculate presise AABB assuming we are drawing for the spot light
+        //  Calculate presise AABB assuming we are drawing for the spot light
         {
             aabb.invalidate();
-            Fmatrix	transform;
+            Fmatrix transform;
             transform.mul( Device.mView, L->m_xform);
             for (u32 i=0; i<DU_CONE_NUMVERTEX; ++i)
             {
-                Fvector		pt = du_cone_vertices[i];
+                Fvector     pt = du_cone_vertices[i];
                 transform.transform(pt);
                 aabb.modify(pt);
             }
@@ -481,9 +481,9 @@ void CRenderTarget::accum_volumetric(CBackend& cmd_list, light* L)
     // Common constants
     float fQuality = L->m_volumetric_quality;
     int iNumSlises = int(float(VOLUMETRIC_SLICES) * fQuality);
-    //			min 10 surfaces
+    //          min 10 surfaces
     iNumSlises = _max(10, iNumSlises);
-    //	Adjust slice intensity
+    //  Adjust slice intensity
     fQuality = float(iNumSlises) / float(VOLUMETRIC_SLICES);
     Fvector L_dir, L_clr, L_pos;
     float L_spec;
@@ -501,17 +501,17 @@ void CRenderTarget::accum_volumetric(CBackend& cmd_list, light* L)
     {
         /*
         // Select shader
-        u32		_id					= 0;
-        if (L->flags.bShadow)		{
-            bool	bFullSize			= (L->X.S.size == RImplementation.o.smapsize);
-            if (L->X.S.transluent)	_id	= SE_L_TRANSLUENT;
-            else if		(bFullSize)	_id	= SE_L_FULLSIZE;
-            else					_id	= SE_L_NORMAL;
+        u32     _id                 = 0;
+        if (L->flags.bShadow)       {
+            bool    bFullSize           = (L->X.S.size == RImplementation.o.smapsize);
+            if (L->X.S.transluent)  _id = SE_L_TRANSLUENT;
+            else if     (bFullSize) _id = SE_L_FULLSIZE;
+            else                    _id = SE_L_NORMAL;
         } else {
-            _id						= SE_L_UNSHADOWED;
-            m_Shadow				= m_Lmap;
+            _id                     = SE_L_UNSHADOWED;
+            m_Shadow                = m_Lmap;
         }
-        cmd_list.set_Element			(shader->E[ _id ]	);
+        cmd_list.set_Element            (shader->E[ _id ]   );
         */
 
         cmd_list.set_Element(shader->E[0]);
@@ -527,16 +527,16 @@ void CRenderTarget::accum_volumetric(CBackend& cmd_list, light* L)
         cmd_list.set_ca("m_lmap", 0, m_Lmap._11, m_Lmap._21, m_Lmap._31, m_Lmap._41);
         cmd_list.set_ca("m_lmap", 1, m_Lmap._12, m_Lmap._22, m_Lmap._32, m_Lmap._42);
         cmd_list.set_c("vMinBounds", aabb.x1, aabb.y1, aabb.z1, 0.f);
-        //	Increase camera-space aabb z size to compensate decrease of slices number
+        //  Increase camera-space aabb z size to compensate decrease of slices number
         cmd_list.set_c("vMaxBounds", aabb.x2, aabb.y2, aabb.z1 + (aabb.z2 - aabb.z1) / fQuality, 0.f);
 
-        //	Set up user clip planes
+        //  Set up user clip planes
         {
             static shared_str strFrustumClipPlane("FrustumClipPlane");
-            //	TODO: DX11: Check if it's equivalent to the previouse code.
+            //  TODO: DX11: Check if it's equivalent to the previouse code.
             // cmd_list.set_ClipPlanes (TRUE,ClipFrustum.planes,ClipFrustum.p_count);
 
-            //	Transform frustum to clip space
+            //  Transform frustum to clip space
             Fmatrix PlaneTransform;
             PlaneTransform.transpose(Device.mInvFullTransform);
             // HW.pDevice->SetRenderState(D3DRS_CLIPPLANEENABLE, 0x3F);
@@ -553,7 +553,7 @@ void CRenderTarget::accum_volumetric(CBackend& cmd_list, light* L)
             /*
             for ( int i=0; i<6; ++i)
             {
-                Fvector4	TransformedPlane;
+                Fvector4    TransformedPlane;
                 ClipTransform.transform(TransformedPlane, UnitClipPlanes[i]);
                 TransformedPlane.normalize_as_plane();
                 cmd_list.set_ca(strOOBBClipPlane, i, TransformedPlane);
@@ -561,15 +561,15 @@ void CRenderTarget::accum_volumetric(CBackend& cmd_list, light* L)
             */
 
             /*
-            //	Transform frustum to clip space
+            //  Transform frustum to clip space
             Fmatrix PlaneTransform;
             PlaneTransform.transpose(Device.mInvFullTransform);
             HW.pDevice->SetRenderState(D3DRS_CLIPPLANEENABLE, 0x3F);
 
             for ( int i=0; i<6; ++i)
             {
-                Fvector4	&ClipPlane = *(Fvector4*)&ClipFrustum.planes[i].n.x;
-                Fvector4	TransformedPlane;
+                Fvector4    &ClipPlane = *(Fvector4*)&ClipFrustum.planes[i].n.x;
+                Fvector4    TransformedPlane;
                 PlaneTransform.transform(TransformedPlane, ClipPlane);
                 TransformedPlane.mul(-1.0f);
                 HW.pDevice->SetClipPlane( i, &TransformedPlane.x);
@@ -578,7 +578,7 @@ void CRenderTarget::accum_volumetric(CBackend& cmd_list, light* L)
         }
 
         /*
-        float	clip[4];
+        float   clip[4];
         clip[0] = 1;
         clip[1] =
         clip[2] =
@@ -587,16 +587,16 @@ void CRenderTarget::accum_volumetric(CBackend& cmd_list, light* L)
         */
 
         // Fetch4 : enable
-        //		if (RImplementation.o.HW_smap_FETCH4)	{
+        //      if (RImplementation.o.HW_smap_FETCH4)   {
         //. we hacked the shader to force smap on S0
-        //#			define FOURCC_GET4  MAKEFOURCC('G','E','T','4')
-        //			HW.pDevice->SetSamplerState	( 0, D3DSAMP_MIPMAPLODBIAS, FOURCC_GET4 );
-        //		}
+        //#         define FOURCC_GET4  MAKEFOURCC('G','E','T','4')
+        //          HW.pDevice->SetSamplerState ( 0, D3DSAMP_MIPMAPLODBIAS, FOURCC_GET4 );
+        //      }
 
         cmd_list.set_ColorWriteEnable(D3DCOLORWRITEENABLE_RED | D3DCOLORWRITEENABLE_GREEN | D3DCOLORWRITEENABLE_BLUE);
 
         cmd_list.set_Geometry(g_accum_volumetric);
-        //	Igor: no need to do it per sub-sample. Plain AA will go just fine.
+        //  Igor: no need to do it per sub-sample. Plain AA will go just fine.
         cmd_list.Render(D3DPT_TRIANGLELIST, 0, 0, VOLUMETRIC_SLICES * 4, 0, VOLUMETRIC_SLICES * 2);
 
         /*
@@ -613,7 +613,7 @@ void CRenderTarget::accum_volumetric(CBackend& cmd_list, light* L)
             if( RImplementation.o.msaa_opt )
             {
                 // per sample
-                cmd_list.set_Element	(shader_msaa[0]->E[0]);
+                cmd_list.set_Element    (shader_msaa[0]->E[0]);
                 cmd_list.set_Stencil(TRUE,D3DCMP_EQUAL,dwLightMarkerID|0x80,0xff,0x00);
                 cmd_list.Render(D3DPT_TRIANGLELIST,0,0,iNumSlises*4,0,iNumSlises*2);
             }
@@ -622,7 +622,7 @@ void CRenderTarget::accum_volumetric(CBackend& cmd_list, light* L)
 #ifdef USE_DX11
                 for( u32 i = 0; i < RImplementation.o.msaa_samples; ++i )
                 {
-                    cmd_list.set_Element	      (shader_msaa[i]->E[0]);
+                    cmd_list.set_Element          (shader_msaa[i]->E[0]);
                     StateManager.SetSampleMask ( u32(1) << i );
                     cmd_list.set_Stencil         (TRUE,D3DCMP_EQUAL,dwLightMarkerID|0x80,0xff,0x00);
                     cmd_list.Render(D3DPT_TRIANGLELIST,0,0,iNumSlises*4,0,iNumSlises*2);
@@ -639,23 +639,23 @@ void CRenderTarget::accum_volumetric(CBackend& cmd_list, light* L)
         cmd_list.set_ColorWriteEnable();
 
         // Fetch4 : disable
-        //		if (RImplementation.o.HW_smap_FETCH4)	{
+        //      if (RImplementation.o.HW_smap_FETCH4)   {
         //. we hacked the shader to force smap on S0
-        //#			define FOURCC_GET1  MAKEFOURCC('G','E','T','1')
-        //			HW.pDevice->SetSamplerState	( 0, D3DSAMP_MIPMAPLODBIAS, FOURCC_GET1 );
-        //		}
+        //#         define FOURCC_GET1  MAKEFOURCC('G','E','T','1')
+        //          HW.pDevice->SetSamplerState ( 0, D3DSAMP_MIPMAPLODBIAS, FOURCC_GET1 );
+        //      }
 
-        //	Restore clip planes
+        //  Restore clip planes
         cmd_list.set_ClipPlanes(FALSE, (Fmatrix*)0, 0);
     }
     /*
         // blend-copy
-        if (!RImplementation.o.fp16_blend)	{
-            u_setrt						(rt_Accumulator,NULL,NULL,get_base_zb());
-            cmd_list.set_Element			(s_accum_mask->E[SE_MASK_ACCUM_VOL]	);
-            cmd_list.set_c				("m_texgen",		m_Texgen);
-            cmd_list.set_c				("m_texgen_J",		m_Texgen_J	);
-            draw_volume					(L);
+        if (!RImplementation.o.fp16_blend)  {
+            u_setrt                     (rt_Accumulator,NULL,NULL,get_base_zb());
+            cmd_list.set_Element            (s_accum_mask->E[SE_MASK_ACCUM_VOL] );
+            cmd_list.set_c              ("m_texgen",        m_Texgen);
+            cmd_list.set_c              ("m_texgen_J",      m_Texgen_J  );
+            draw_volume                 (L);
         }
     */
     cmd_list.set_Scissor(0);

@@ -181,7 +181,7 @@ void CUIListBox::MoveSelectedDown()
     CUIWindow* w = GetSelected();
     if (!w)
         return;
-    //.	R_ASSERT(!m_flags.test(CUIScrollView::eMultiSelect));
+    //. R_ASSERT(!m_flags.test(CUIScrollView::eMultiSelect));
     auto it = m_pad->GetChildWndList().begin();
     auto it_e = m_pad->GetChildWndList().end();
 

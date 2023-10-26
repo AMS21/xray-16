@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: level_graph.h
-//	Created 	: 02.10.2001
-//  Modified 	: 11.11.2003
-//	Author		: Oles Shihkovtsov, Dmitriy Iassenev
-//	Description : Level graph
+//  Module      : level_graph.h
+//  Created     : 02.10.2001
+//  Modified    : 11.11.2003
+//  Author      : Oles Shihkovtsov, Dmitriy Iassenev
+//  Description : Level graph
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

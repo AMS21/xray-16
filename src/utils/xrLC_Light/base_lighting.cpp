@@ -25,9 +25,9 @@ void base_lighting::select(base_lighting& from, Fvector& P, float R)
     select(sun, from.sun, P, R);
 }
 /*
-    xr_vector<R_Light>		rgb;		// P,N
-    xr_vector<R_Light>		hemi;		// P,N
-    xr_vector<R_Light>		sun;		// P
+    xr_vector<R_Light>      rgb;        // P,N
+    xr_vector<R_Light>      hemi;       // P,N
+    xr_vector<R_Light>      sun;        // P
 */
 void base_lighting::read(INetReader& r)
 {

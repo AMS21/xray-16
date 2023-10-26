@@ -1,8 +1,8 @@
-// File:		UIMessagesWindow.h
-// Description:	Window with MP chat and Game Log ( with PDA messages in single and Kill Messages in MP)
-// Created:		22.04.2005
-// Author:		Serge Vynnychenko
-// Mail:		narrator@gsc-game.kiev.ua
+// File:        UIMessagesWindow.h
+// Description: Window with MP chat and Game Log ( with PDA messages in single and Kill Messages in MP)
+// Created:     22.04.2005
+// Author:      Serge Vynnychenko
+// Mail:        narrator@gsc-game.kiev.ua
 //
 // Copyright 2005 GSC Game World
 
@@ -25,7 +25,7 @@ public:
     void AddLogMessage(const shared_str& msg);
     void AddLogMessage(KillMessageStruct& msg);
     void AddChatMessage(shared_str msg, shared_str author);
-    //.	void				SetChatOwner					(game_cl_GameState* owner);
+    //. void                SetChatOwner                    (game_cl_GameState* owner);
     void PendingMode(bool const is_in_pending_mode);
     CUIChatWnd* GetChatWnd() { return m_pChatWnd; }
     virtual void Show(bool show);

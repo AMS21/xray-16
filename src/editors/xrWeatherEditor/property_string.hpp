@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_string.hpp
-//	Created 	: 07.12.2007
-//  Modified 	: 07.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : string property implementation class
+//  Module      : property_string.hpp
+//  Created     : 07.12.2007
+//  Modified    : 07.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : string property implementation class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_STRING_HPP_INCLUDED

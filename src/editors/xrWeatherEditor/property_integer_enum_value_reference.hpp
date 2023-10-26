@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_integer_enum_value_reference.hpp
-//	Created 	: 17.12.2007
-//  Modified 	: 17.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property integer enum value reference class
+//  Module      : property_integer_enum_value_reference.hpp
+//  Created     : 17.12.2007
+//  Modified    : 17.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property integer enum value reference class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_INTEGER_ENUM_VALUE_REFERENCE_HPP_INCLUDED

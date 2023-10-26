@@ -120,7 +120,7 @@ void CEngineAPI::Initialize(void)
 
         pFinalizeGame = (FinalizeGameLibraryProc)hGame->GetProcAddress("finalize_library");
         R_ASSERT(pFinalizeGame);
-    	
+        
         pInitializeGame();
     }
 
@@ -131,14 +131,14 @@ void CEngineAPI::Destroy(void)
 {
     if (pFinalizeGame)
         pFinalizeGame();
-	
+    
     pInitializeGame = nullptr;
     pFinalizeGame = nullptr;
     pCreate = nullptr;
     pDestroy = nullptr;
-	
+    
     hGame = nullptr;
-	
+    
     renderers.clear();
     Engine.Event._destroy();
     XRC.r_clear_compact();

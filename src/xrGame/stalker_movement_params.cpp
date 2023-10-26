@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_movement_params.cpp
-//	Created 	: 23.12.2005
-//  Modified 	: 23.12.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker movement parameters class
+//  Module      : stalker_movement_params.cpp
+//  Created     : 23.12.2005
+//  Modified    : 23.12.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker movement parameters class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

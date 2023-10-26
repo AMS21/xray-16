@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: steering_behaviour_cohesion.h
-//	Created 	: 07.11.2007
-//  Modified 	: 07.11.2007
-//	Author		: Dmitriy Iassenev
-//	Description : steering behaviour cohesion class
+//  Module      : steering_behaviour_cohesion.h
+//  Created     : 07.11.2007
+//  Modified    : 07.11.2007
+//  Author      : Dmitriy Iassenev
+//  Description : steering behaviour cohesion class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef STEERING_BEHAVIOUR_COHESION_H_INCLUDED

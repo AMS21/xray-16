@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_transition_animation_inline.hpp
-//	Created 	: 20.12.2007
-//	Author		: Alexander Dudin
-//	Description : Animation transition class for smart_cover inline functions
+//  Module      : smart_cover_transition_animation_inline.hpp
+//  Created     : 20.12.2007
+//  Author      : Alexander Dudin
+//  Description : Animation transition class for smart_cover inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef SMART_COVER_TRANSITION_ANIMATION_INLINE_HPP_INCLUDED

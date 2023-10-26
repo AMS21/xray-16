@@ -225,7 +225,7 @@ void RELATION_REGISTRY::Action(CEntityAlive* from, CEntityAlive* to, ERelationAc
             //было перед началом драки
             ALife::ERelationType relation_before_attack = ALife::eRelationTypeDummy;
             // if(fight_data_from)
-            //	relation_before_attack = fight_data_from->defender_to_attacker;
+            //  relation_before_attack = fight_data_from->defender_to_attacker;
             // else
             relation_before_attack = relation;
 
@@ -340,7 +340,7 @@ void RELATION_REGISTRY::Action(CEntityAlive* from, CEntityAlive* to, ERelationAc
                     ChangeGoodwill(group.members()[i]->ID(), from->ID(), delta_goodwill);
                 }
 
-                //*					ChangeCommunityGoodwill(stalker->Community(), from->ID(), (CHARACTER_GOODWILL)(
+                //*                 ChangeCommunityGoodwill(stalker->Community(), from->ID(), (CHARACTER_GOODWILL)(
                 // stalker->Sympathy() * (float)delta_goodwill ));
                 CHARACTER_GOODWILL community_goodwill =
                     (CHARACTER_GOODWILL)(stalker->Sympathy() * (float)(community_member_fight_help_goodwill));

@@ -41,7 +41,7 @@ SVS::~SVS()
 #if defined(USE_DX11)
     // XXX: check just in case
     //_RELEASE(signature);
-    //	Now it is release automatically
+    //  Now it is release automatically
 #endif
 
 #if defined(USE_DX9) || defined(USE_DX11)
@@ -155,7 +155,7 @@ SPP::~SPP()
 
 #if defined(USE_DX11)
 ///////////////////////////////////////////////////////////////////////
-//	SInputSignature
+//  SInputSignature
 SInputSignature::SInputSignature(ID3DBlob* pBlob)
 {
     VERIFY(pBlob);
@@ -171,7 +171,7 @@ SInputSignature::~SInputSignature()
 #endif // USE_DX11
 
 ///////////////////////////////////////////////////////////////////////
-//	SState
+//  SState
 SState::~SState()
 {
     _RELEASE(state);
@@ -179,11 +179,11 @@ SState::~SState()
 }
 
 ///////////////////////////////////////////////////////////////////////
-//	SDeclaration
+//  SDeclaration
 SDeclaration::~SDeclaration()
 {
     RImplementation.Resources->_DeleteDecl(this);
-    //	Release vertex layout
+    //  Release vertex layout
 #ifdef USE_OGL
     glDeleteVertexArrays(1, &dcl);
 #elif defined(USE_DX11) || defined(USE_OGL)
@@ -191,7 +191,7 @@ SDeclaration::~SDeclaration()
     iLayout = vs_to_layout.begin();
     for (; iLayout != vs_to_layout.end(); ++iLayout)
     {
-        //	Release vertex layout
+        //  Release vertex layout
         _RELEASE(iLayout->second);
     }
 #elif defined(USE_DX9)// USE_DX9

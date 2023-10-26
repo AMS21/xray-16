@@ -84,7 +84,7 @@ void CUIOutfitImmunity::SetProgressValue(float cur, float comp)
     comp *= m_magnitude;
     m_progress.SetTwoPos(cur, comp);
     string32 buf;
-    //	xr_sprintf( buf, sizeof(buf), "%d %%", (int)cur );
+    //  xr_sprintf( buf, sizeof(buf), "%d %%", (int)cur );
     xr_sprintf(buf, sizeof(buf), "%.0f", cur);
     m_value.SetText(buf);
 }
@@ -171,8 +171,8 @@ void CUIOutfitInfo::UpdateInfo(CCustomOutfit* cur_outfit, CCustomOutfit* slot_ou
         float cur = cur_outfit->GetBoneArmor(spine_bone) * cur_outfit->GetCondition();
         // if(!cur_outfit->bIsHelmetAvaliable)
         //{
-        //	spine_bone = ikv->LL_BoneID("bip01_head");
-        //	cur += cur_outfit->GetBoneArmor(spine_bone);
+        //  spine_bone = ikv->LL_BoneID("bip01_head");
+        //  cur += cur_outfit->GetBoneArmor(spine_bone);
         //}
         float slot = cur;
         if (slot_outfit)
@@ -181,8 +181,8 @@ void CUIOutfitInfo::UpdateInfo(CCustomOutfit* cur_outfit, CCustomOutfit* slot_ou
             slot = slot_outfit->GetBoneArmor(spine_bone) * slot_outfit->GetCondition();
             // if(!slot_outfit->bIsHelmetAvaliable)
             //{
-            //	spine_bone = ikv->LL_BoneID("bip01_head");
-            //	slot += slot_outfit->GetBoneArmor(spine_bone);
+            //  spine_bone = ikv->LL_BoneID("bip01_head");
+            //  slot += slot_outfit->GetBoneArmor(spine_bone);
             //}
         }
         float max_power = actor->conditions().GetMaxFireWoundProtection();

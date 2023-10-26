@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: object_item_client_server_inline.h
-//	Created 	: 27.05.2004
-//  Modified 	: 30.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Object item client and server class inline functions
+//  Module      : object_item_client_server_inline.h
+//  Created     : 27.05.2004
+//  Modified    : 30.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Object item client and server class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef object_item_client_server_inlineH

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_smart_zone.cpp
-//	Created 	: 27.10.2005
-//  Modified 	: 27.10.2005
-//	Author		: Dmitriy Iassenev
-//	Description : ALife smart zone class
+//  Module      : alife_smart_zone.cpp
+//  Created     : 27.10.2005
+//  Modified    : 27.10.2005
+//  Author      : Dmitriy Iassenev
+//  Description : ALife smart zone class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

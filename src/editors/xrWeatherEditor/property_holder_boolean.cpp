@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_holder_boolean.cpp
-//	Created 	: 06.12.2007
-//  Modified 	: 08.01.2008
-//	Author		: Dmitriy Iassenev
-//	Description : property holder implementation class (boolean properties)
+//  Module      : property_holder_boolean.cpp
+//  Created     : 06.12.2007
+//  Modified    : 08.01.2008
+//  Author      : Dmitriy Iassenev
+//  Description : property holder implementation class (boolean properties)
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

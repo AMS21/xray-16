@@ -485,13 +485,13 @@ void CWeaponMagazined::UpdateSounds()
     Fvector P = get_LastFP();
     m_sounds.SetPosition("sndShow", P);
     m_sounds.SetPosition("sndHide", P);
-    //. nah	m_sounds.SetPosition("sndShot", P);
+    //. nah m_sounds.SetPosition("sndShot", P);
     m_sounds.SetPosition("sndReload", P);
 
     if (m_sounds.FindSoundItem("sndReloadEmpty", false))
         m_sounds.SetPosition("sndReloadEmpty", P);
 
-    //. nah	m_sounds.SetPosition("sndEmptyClick", P);
+    //. nah m_sounds.SetPosition("sndEmptyClick", P);
 }
 
 void CWeaponMagazined::state_Fire(float dt)
@@ -705,14 +705,14 @@ void CWeaponMagazined::switch2_Fire()
 #endif // DEBUG
 
     //
-    //	VERIFY2(
-    //		io && (ii == io->inventory().ActiveItem()),
-    //		make_string(
-    //			"item[%s], parent[%s]",
-    //			*cName(),
-    //			H_Parent() ? *H_Parent()->cName() : "no_parent"
-    //		)
-    //	);
+    //  VERIFY2(
+    //      io && (ii == io->inventory().ActiveItem()),
+    //      make_string(
+    //          "item[%s], parent[%s]",
+    //          *cName(),
+    //          H_Parent() ? *H_Parent()->cName() : "no_parent"
+    //      )
+    //  );
 
     m_bStopedAfterQueueFired = false;
     m_bFireSingleShot = true;
@@ -872,7 +872,7 @@ bool CWeaponMagazined::CanDetach(const char* item_section_name)
 {
     if (m_eScopeStatus == ALife::eAddonAttachable &&
         0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonScope)) /* &&
-           (m_scopes[cur_scope]->m_sScopeName	== item_section_name))*/
+           (m_scopes[cur_scope]->m_sScopeName   == item_section_name))*/
     {
         auto it = m_scopes.begin();
         for (; it != m_scopes.end(); ++it)
@@ -882,7 +882,7 @@ bool CWeaponMagazined::CanDetach(const char* item_section_name)
         }
         return false;
     }
-    //	   return true;
+    //     return true;
     else if (m_eSilencerStatus == ALife::eAddonAttachable &&
         0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSilencer) && (m_sSilencerName == item_section_name))
         return true;
@@ -935,7 +935,7 @@ bool CWeaponMagazined::Attach(PIItem pIItem, bool b_send_event)
         if (b_send_event && OnServer())
         {
             //уничтожить подсоединенную вещь из инвентаря
-            //.			pIItem->Drop					();
+            //.         pIItem->Drop                    ();
             pIItem->object().DestroyObject();
         };
 
@@ -1028,8 +1028,8 @@ void CWeaponMagazined::InitAddons()
         if (m_eScopeStatus == ALife::eAddonAttachable)
         {
             // m_scopes[cur_scope]->m_sScopeName = pSettings->r_string(cNameSect(), "scope_name");
-            // m_scopes[cur_scope]->m_iScopeX	 = pSettings->r_s32(cNameSect(),"scope_x");
-            // m_scopes[cur_scope]->m_iScopeY	 = pSettings->r_s32(cNameSect(),"scope_y");
+            // m_scopes[cur_scope]->m_iScopeX    = pSettings->r_s32(cNameSect(),"scope_x");
+            // m_scopes[cur_scope]->m_iScopeY    = pSettings->r_s32(cNameSect(),"scope_y");
 
             scope_tex_name = pSettings->r_string(GetScopeName(), "scope_texture");
             m_zoom_params.m_fScopeZoomFactor = pSettings->r_float(GetScopeName(), "scope_zoom_factor");
@@ -1270,10 +1270,10 @@ void CWeaponMagazined::SetQueueSize(int size) { m_iQueueSize = size; };
 float CWeaponMagazined::GetWeaponDeterioration()
 {
     // modified by Peacemaker [17.10.08]
-    //	if (!m_bHasDifferentFireModes || m_iPrefferedFireMode == -1 || u32(GetCurrentFireMode()) <=
+    //  if (!m_bHasDifferentFireModes || m_iPrefferedFireMode == -1 || u32(GetCurrentFireMode()) <=
     // u32(m_iPrefferedFireMode))
-    //		return inherited::GetWeaponDeterioration();
-    //	return m_iShotNum*conditionDecreasePerShot;
+    //      return inherited::GetWeaponDeterioration();
+    //  return m_iShotNum*conditionDecreasePerShot;
     return (m_iShotNum == 1) ? conditionDecreasePerShot : conditionDecreasePerQueueShot;
 };
 

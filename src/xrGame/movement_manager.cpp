@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: movement_manager.cpp
-//	Created 	: 02.10.2001
-//  Modified 	: 12.11.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Movement manager
+//  Module      : movement_manager.cpp
+//  Created     : 02.10.2001
+//  Modified    : 12.11.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Movement manager
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -189,7 +189,7 @@ void CMovementManager::update_path()
         }
         case ePathTypePatrolPath:
         {
-            //				Msg				("[%6d][%s] actuality is false",Device.dwFrame,*object().cName());
+            //              Msg             ("[%6d][%s] actuality is false",Device.dwFrame,*object().cName());
             m_path_state = ePathStateSelectPatrolPoint;
             break;
         }
@@ -317,7 +317,7 @@ void CMovementManager::verify_detail_path()
 
 void CMovementManager::on_restrictions_change()
 {
-    //	Msg								("[%6d][%s][on_restrictions_change]",Device.dwTimeGlobal,*object().cName());
+    //  Msg                             ("[%6d][%s][on_restrictions_change]",Device.dwTimeGlobal,*object().cName());
     m_path_actuality = false;
     level_path_builder().remove();
     detail_path_builder().remove();
@@ -344,7 +344,7 @@ void CMovementManager::on_travel_point_change(const u32& previous_travel_point_i
 
 void CMovementManager::enable_movement(bool enabled)
 {
-    //	m_path_actuality					= m_path_actuality && (m_enabled == enabled);
+    //  m_path_actuality                    = m_path_actuality && (m_enabled == enabled);
     if (!enabled && m_enabled)
         m_on_disable_object_position = object().Position();
     else
@@ -360,11 +360,11 @@ CRestrictedObject* CMovementManager::create_restricted_object() { return (xr_new
 CMovementManager::CLevelPathManager::PATH& CMovementManager::level_path_path() { return (level_path().m_path); }
 void CMovementManager::build_level_path()
 {
-    //	CTimer								timer;
-    //	timer.Start							();
+    //  CTimer                              timer;
+    //  timer.Start                         ();
     level_path_builder().process_impl();
-    //	static int i=0;
-    //	Msg									("[%6d][%6d][%4d][%f]
+    //  static int i=0;
+    //  Msg                                 ("[%6d][%6d][%4d][%f]
     // build_level_path",Device.dwTimeGlobal,Device.dwFrame,++i,timer.GetElapsed_sec()*1000.f);
 }
 

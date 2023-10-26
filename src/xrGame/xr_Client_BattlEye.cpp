@@ -32,9 +32,9 @@ void BattlEyeClient::InitDLL()
         Msg("! Error LoadLibrary  %s", BATTLEYE_CLIENT_DLL);
         return;
     }
-    //	string_path		path_dll;
-    //	GetModuleFileName( m_module, path_dll, sizeof(path_dll) );
-    //	Level().battleye_system.SetClientPath( path_dll );
+    //  string_path     path_dll;
+    //  GetModuleFileName( m_module, path_dll, sizeof(path_dll) );
+    //  Level().battleye_system.SetClientPath( path_dll );
 
     Init = (InitCl_t)GetProcAddress(m_module, "Init");
     if (!Init)
@@ -49,7 +49,7 @@ void BattlEyeClient::InitDLL()
     }
 
     m_succefull = Init(
-        //		Level().battleye_system.auto_update,
+        //      Level().battleye_system.auto_update,
         PrintMessage, SendPacket, &pfnExit, &pfnRun, &pfnCommand, &pfnNewPacket);
 
     if (!m_succefull)

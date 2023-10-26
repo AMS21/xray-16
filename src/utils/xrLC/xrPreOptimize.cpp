@@ -8,7 +8,7 @@ const int HDIM_X = 56;
 const int HDIM_Y = 24;
 const int HDIM_Z = 56;
 
-// extern volatile u32	dwInvalidFaces;
+// extern volatile u32  dwInvalidFaces;
 
 IC bool FaceEqual(Face& F1, Face& F2)
 {
@@ -194,19 +194,19 @@ void CBuild::PreOptimize()
 
     // -------------------------------------------------------------
     /*
-    int		err_count	=0 ;
+    int     err_count   =0 ;
     for (int _1=0; _1<g_faces.size(); _1++)
     {
         Progress(float(_1)/float(g_faces.size()));
         for (int _2=0; _2<g_faces.size(); _2++)
         {
-            if (_1==_2)		continue;
-            if (FaceEqual(*g_faces[_1],*g_faces[_2]))	{
-                err_count	++;
+            if (_1==_2)     continue;
+            if (FaceEqual(*g_faces[_1],*g_faces[_2]))   {
+                err_count   ++;
             }
         }
     }
-    clMsg		("! duplicate/same faces found:%d",err_count);
+    clMsg       ("! duplicate/same faces found:%d",err_count);
     */
     // -------------------------------------------------------------
 }

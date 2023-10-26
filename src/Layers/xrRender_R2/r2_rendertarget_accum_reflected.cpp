@@ -6,7 +6,7 @@ void CRenderTarget::accum_reflected(CBackend& cmd_list, light* L)
     RImplementation.Stats.l_visible++;
 
     // *** assume accumulator setted up ***
-    // *****************************	Mask by stencil		*************************************
+    // *****************************    Mask by stencil     *************************************
 
     bool bIntersect = false; // enable_scissor(L);
     L->xform_calc();
@@ -16,7 +16,7 @@ void CRenderTarget::accum_reflected(CBackend& cmd_list, light* L)
     bIntersect = enable_scissor(L);
     enable_dbt_bounds(L);
 
-    // *****************************	Minimize overdraw	*************************************
+    // *****************************    Minimize overdraw   *************************************
     // Select shader (front or back-faces), *** back, if intersect near plane
     cmd_list.set_ColorWriteEnable();
     if (bIntersect)

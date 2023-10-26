@@ -146,7 +146,7 @@ void CBuild::Light()
     ImplicitNetWait();
     WaitMuModelsLocalCalcLightening();
     lc_net::get_task_manager().wait_all();
-    //	get_task_manager().wait_all();
+    //  get_task_manager().wait_all();
     lc_net::get_task_manager().release();
     //
     //****************************************** Merge LMAPS

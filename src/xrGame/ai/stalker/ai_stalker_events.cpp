@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_stalker_events.cpp
-//	Created 	: 26.02.2003
-//  Modified 	: 26.02.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Events handling for monster "Stalker"
+//  Module      : ai_stalker_events.cpp
+//  Created     : 26.02.2003
+//  Modified    : 26.02.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Events handling for monster "Stalker"
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -55,7 +55,7 @@ void CAI_Stalker::OnEvent(NET_Packet& P, u16 type)
         }
         else
         {
-            //				DropItemSendMessage(O);
+            //              DropItemSendMessage(O);
             NET_Packet P2;
             u_EventGen(P2, GE_OWNERSHIP_REJECT, ID());
             P2.w_u16(u16(O->ID()));
@@ -139,7 +139,7 @@ void CAI_Stalker::UpdateAvailableDialogs(CPhraseDialogManager* partner)
 
 void CAI_Stalker::feel_touch_new(IGameObject* O)
 {
-    //	Msg					("FEEL_TOUCH::NEW : %s",*O->cName());
+    //  Msg                 ("FEEL_TOUCH::NEW : %s",*O->cName());
     if (!g_Alive())
         return;
     if (Remote())

@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Created		: 09.04.2009
-//	Author		: Konstantin Slipchenko
-//	Copyright (C) GSC Game World - 2009
+//  Created     : 09.04.2009
+//  Author      : Konstantin Slipchenko
+//  Copyright (C) GSC Game World - 2009
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef VECTOR_CLEAR_H_INCLUDED

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: client_spawn_manager.cpp
-//	Created 	: 08.10.2004
-//  Modified 	: 08.10.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Seniority hierarchy holder
+//  Module      : client_spawn_manager.cpp
+//  Created     : 08.10.2004
+//  Modified    : 08.10.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Seniority hierarchy holder
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

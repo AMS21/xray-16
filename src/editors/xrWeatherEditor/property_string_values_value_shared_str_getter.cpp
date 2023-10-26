@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_string_values_value_shared_str_getter.cpp
-//	Created 	: 09.01.2008
-//  Modified 	: 09.01.2008
-//	Author		: Dmitriy Iassenev
-//	Description : property string values value shared_str getter class
+//  Module      : property_string_values_value_shared_str_getter.cpp
+//  Created     : 09.01.2008
+//  Modified    : 09.01.2008
+//  Author      : Dmitriy Iassenev
+//  Description : property string values value shared_str getter class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

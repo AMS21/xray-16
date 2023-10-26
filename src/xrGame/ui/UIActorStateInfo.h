@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: UIActorStateInfo.h
-//	Created 	: 15.02.2008
-//	Author		: Evgeniy Sokolov
-//	Description : UI actor state window class
+//  Module      : UIActorStateInfo.h
+//  Created     : 15.02.2008
+//  Author      : Evgeniy Sokolov
+//  Description : UI actor state window class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef UI_ACTOR_STATE_INFO_H_INCLUDED

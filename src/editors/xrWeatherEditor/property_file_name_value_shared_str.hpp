@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_file_name_value_shared_str.hpp
-//	Created 	: 19.12.2007
-//  Modified 	: 19.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property file name value for shared_str class
+//  Module      : property_file_name_value_shared_str.hpp
+//  Created     : 19.12.2007
+//  Modified    : 19.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property file name value for shared_str class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_FILE_NAME_VALUE_SHARED_STR_HPP_INCLUDED

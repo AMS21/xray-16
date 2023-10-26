@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_smart_terrain_registry.h
-//	Created 	: 20.09.2005
-//  Modified 	: 20.09.2005
-//	Author		: Dmitriy Iassenev
-//	Description : ALife smart terrain registry
+//  Module      : alife_smart_terrain_registry.h
+//  Created     : 20.09.2005
+//  Modified    : 20.09.2005
+//  Author      : Dmitriy Iassenev
+//  Description : ALife smart terrain registry
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

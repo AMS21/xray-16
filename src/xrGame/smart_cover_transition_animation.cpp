@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_transition_animation.cpp
-//	Created 	: 20.12.2007
-//	Author		: Alexander Dudin
-//	Description : Animation transition class for smart_cover
+//  Module      : smart_cover_transition_animation.cpp
+//  Created     : 20.12.2007
+//  Author      : Alexander Dudin
+//  Description : Animation transition class for smart_cover
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

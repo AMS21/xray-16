@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_surge_manager.cpp
-//	Created 	: 25.12.2002
-//  Modified 	: 12.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALife Simulator surge manager
+//  Module      : alife_surge_manager.cpp
+//  Created     : 25.12.2002
+//  Modified    : 12.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALife Simulator surge manager
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

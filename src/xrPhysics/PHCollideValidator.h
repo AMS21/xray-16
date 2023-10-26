@@ -52,11 +52,11 @@ public:
     static IC bool DoCollide(const CPHObject& obj1, const CPHObject& obj2)
     {
         // switch(CollideType(obj1.collide_class_bits().flags,obj2.collide_class_bits().flags)) {
-        //	case cbNCGroupObject:	return DoCollideGroup		(obj1,obj2)			;break;
-        //	case 0:					return DoCollideNonMatched	(obj1,obj2)			;break;
-        //	default: NODEFAULT;
+        //  case cbNCGroupObject:   return DoCollideGroup       (obj1,obj2)         ;break;
+        //  case 0:                 return DoCollideNonMatched  (obj1,obj2)         ;break;
+        //  default: NODEFAULT;
         //#ifdef DEBUG
-        //	return false;
+        //  return false;
         //#endif // DEBUG
         return (CollideType(obj1.collide_class_bits().flags, obj2.collide_class_bits().flags) != cbNCGroupObject ||
                    DoCollideGroup(obj1, obj2)) &&

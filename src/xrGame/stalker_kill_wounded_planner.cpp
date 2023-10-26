@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_kill_wounded_planner.cpp
-//	Created 	: 25.05.2006
-//  Modified 	: 25.05.2006
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker kill wounded planner
+//  Module      : stalker_kill_wounded_planner.cpp
+//  Created     : 25.05.2006
+//  Modified    : 25.05.2006
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker kill wounded planner
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -43,10 +43,10 @@ void CStalkerKillWoundedPlanner::update()
 {
     inherited::update();
 
-    //	if (current_action_id() == eWorldOperatorKillWoundedEnemy)
-    //		inherited_action::m_storage->set_property	(eWorldPropertyKilledWounded,true);
-    //	else
-    //		inherited_action::m_storage->set_property	(eWorldPropertyKilledWounded,false);
+    //  if (current_action_id() == eWorldOperatorKillWoundedEnemy)
+    //      inherited_action::m_storage->set_property   (eWorldPropertyKilledWounded,true);
+    //  else
+    //      inherited_action::m_storage->set_property   (eWorldPropertyKilledWounded,false);
 }
 
 void CStalkerKillWoundedPlanner::initialize()

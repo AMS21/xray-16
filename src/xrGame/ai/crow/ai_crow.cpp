@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_crow.cpp
-//	Created 	: 13.05.2002
-//  Modified 	: 13.05.2002
-//	Author		: Dmitriy Iassenev
-//	Description : AI Behaviour for monster "Crow"
+//  Module      : ai_crow.cpp
+//  Created     : 13.05.2002
+//  Modified    : 13.05.2002
+//  Author      : Dmitriy Iassenev
+//  Description : AI Behaviour for monster "Crow"
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -211,7 +211,7 @@ void CAI_Crow::switch2_DeathFall()
 {
     Fvector V;
     V.mul(XFORM().k, fSpeed);
-    //	m_PhysicMovementControl->SetVelocity(V);
+    //  m_PhysicMovementControl->SetVelocity(V);
     smart_cast<IKinematicsAnimated*>(Visual())->PlayCycle(m_Anims.m_death.GetRandom(), TRUE, cb_OnHitEndPlaying, this);
 }
 
@@ -265,7 +265,7 @@ void CAI_Crow::state_Flying(float fdt)
     vOldPosition.set(Position());
     XFORM().setHPB(vHPB.x, vHPB.y, vHPB.z);
     Position().mad(vOldPosition, vDirection, fSpeed * fdt);
-    VERIFY2(valid_pos(Position()), dbg_valide_pos_string(Position(), this, "state_Flying		(float fdt)"));
+    VERIFY2(valid_pos(Position()), dbg_valide_pos_string(Position(), this, "state_Flying        (float fdt)"));
 }
 
 void CAI_Crow::state_DeathFall()
@@ -316,7 +316,7 @@ void CAI_Crow::UpdateWorkload(float fdt)
 void CAI_Crow::UpdateCL()
 {
     inherited::UpdateCL();
-    VERIFY2(valid_pos(Position()), dbg_valide_pos_string(Position(), this, " CAI_Crow::UpdateCL		()"));
+    VERIFY2(valid_pos(Position()), dbg_valide_pos_string(Position(), this, " CAI_Crow::UpdateCL     ()"));
     if (m_pPhysicsShell)
     {
         m_pPhysicsShell->Update();
@@ -394,7 +394,7 @@ void CAI_Crow::shedule_Update(u32 DT)
     if (o_workload_rframe < (Device.dwFrame - 2))
         UpdateWorkload(fDT);
 
-    VERIFY2(valid_pos(Position()), dbg_valide_pos_string(Position(), this, " CAI_Crow::shedule_Update		(u32 DT)"));
+    VERIFY2(valid_pos(Position()), dbg_valide_pos_string(Position(), this, " CAI_Crow::shedule_Update       (u32 DT)"));
 }
 
 // Core events
@@ -449,18 +449,18 @@ void CAI_Crow::net_Import(NET_Packet& P)
     id_Group = P.r_u8();
 
     XFORM().setHPB(yaw, pitch, bank);
-    VERIFY2(valid_pos(Position()), dbg_valide_pos_string(Position(), this, " CAI_Crow::net_Import	(NET_Packet& P)"));
+    VERIFY2(valid_pos(Position()), dbg_valide_pos_string(Position(), this, " CAI_Crow::net_Import   (NET_Packet& P)"));
 }
 //---------------------------------------------------------------------
 void CAI_Crow::HitSignal(float /**HitAmount**/, Fvector& /**local_dir**/, IGameObject* who, s16 /**element**/)
 {
-    // bool				first_time = !!g_Alive();
-    //	bool				first_time = !PPhysicsShell();
+    // bool             first_time = !!g_Alive();
+    //  bool                first_time = !PPhysicsShell();
     SetfHealth(0);
-    // set_death_time		()	;
+    // set_death_time       ()  ;
     if (eDeathDead != st_current)
     {
-        //		if (first_time)	Die			(who);
+        //      if (first_time) Die         (who);
         st_target = eDeathFall;
     }
     else
@@ -477,11 +477,11 @@ void CAI_Crow::CreateSkeleton()
                                      .game_mtl_idx);
 }
 
-// void CAI_Crow::Hit	(float P, Fvector &dir, IGameObject* who, s16 element,Fvector p_in_object_space, float impulse,
+// void CAI_Crow::Hit   (float P, Fvector &dir, IGameObject* who, s16 element,Fvector p_in_object_space, float impulse,
 // ALife::EHitType hit_type)
 void CAI_Crow::Hit(SHit* pHDS)
 {
-    //	inherited::Hit	(P,dir,who,element,p_in_object_space,impulse/100.f, hit_type);
+    //  inherited::Hit  (P,dir,who,element,p_in_object_space,impulse/100.f, hit_type);
     SHit HDS = *pHDS;
     HDS.impulse /= 100.f;
     inherited::Hit(&HDS);

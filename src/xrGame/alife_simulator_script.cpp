@@ -189,8 +189,8 @@ CSE_Abstract* CALifeSimulator__spawn_item2(CALifeSimulator* self, LPCSTR section
 CSE_Abstract* CALifeSimulator__spawn_ammo(CALifeSimulator* self, LPCSTR section, const Fvector& position,
     u32 level_vertex_id, GameGraph::_GRAPH_ID game_vertex_id, ALife::_OBJECT_ID id_parent, int ammo_to_spawn)
 {
-    //	if (id_parent == ALife::_OBJECT_ID(-1))
-    //		return (self->spawn_item(section,position,level_vertex_id,game_vertex_id,id_parent));
+    //  if (id_parent == ALife::_OBJECT_ID(-1))
+    //      return (self->spawn_item(section,position,level_vertex_id,game_vertex_id,id_parent));
     CSE_ALifeDynamicObject* object = 0;
     if (id_parent != ALife::_OBJECT_ID(-1))
     {
@@ -246,7 +246,7 @@ ALife::_SPAWN_ID CALifeSimulator__spawn_id(CALifeSimulator* self, ALife::_SPAWN_
 void CALifeSimulator__release(CALifeSimulator* self, CSE_Abstract* object, bool)
 {
     VERIFY(self);
-    //	self->release						(object,true);
+    //  self->release                       (object,true);
 
     THROW(object);
     if (!object)
@@ -523,30 +523,30 @@ struct dummy {
     int ref;
 };
 
-void CALifeSimulator::validate			()
+void CALifeSimulator::validate          ()
 {
-	typedef CALifeSpawnRegistry::SPAWN_GRAPH::const_vertex_iterator	const_vertex_iterator;
-	const_vertex_iterator		I = spawns().spawns().vertices().begin();
-	const_vertex_iterator		E = spawns().spawns().vertices().end();
-	for ( ; I != E; ++I) {
-		luabind::wrap_base		*base = smart_cast<luabind::wrap_base*>(&(*I).second->data()->object());
-		if (!base)
-			continue;
+    typedef CALifeSpawnRegistry::SPAWN_GRAPH::const_vertex_iterator const_vertex_iterator;
+    const_vertex_iterator       I = spawns().spawns().vertices().begin();
+    const_vertex_iterator       E = spawns().spawns().vertices().end();
+    for ( ; I != E; ++I) {
+        luabind::wrap_base      *base = smart_cast<luabind::wrap_base*>(&(*I).second->data()->object());
+        if (!base)
+            continue;
 
-		if (!base->m_self.m_impl)
-			continue;
+        if (!base->m_self.m_impl)
+            continue;
 
-		dummy					*_dummy = (dummy*)((void*)base->m_self.m_impl);
-		lua_State				**_state = &_dummy->state;
-		VERIFY2					(
-			base->m_self.state(),
-			make_string(
-				"0x%08x name[%s] name_replace[%s]",
-				*(int*)&_state,
-				(*I).second->data()->object().name(),
-				(*I).second->data()->object().name_replace()
-			)
-		);
-	}
+        dummy                   *_dummy = (dummy*)((void*)base->m_self.m_impl);
+        lua_State               **_state = &_dummy->state;
+        VERIFY2                 (
+            base->m_self.state(),
+            make_string(
+                "0x%08x name[%s] name_replace[%s]",
+                *(int*)&_state,
+                (*I).second->data()->object().name(),
+                (*I).second->data()->object().name_replace()
+            )
+        );
+    }
 }
 #endif // DEBUG

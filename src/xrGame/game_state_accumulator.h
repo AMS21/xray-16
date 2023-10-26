@@ -82,13 +82,13 @@ public:
 
     using accumulative_values_collection_t = AssociativeVector<enum_accumulative_player_values, player_state_param*>;
 private:
-    // average_values_collection_t			m_average_values;
+    // average_values_collection_t          m_average_values;
     accumulative_values_collection_t m_accumulative_values;
     CItemMgr const* m_item_mngr;
     game_PlayerState* m_local_player;
     u32 m_last_player_spawn_time;
 
-    // void	init_average_values				();
+    // void init_average_values             ();
     void init_accumulative_values();
     void init_player_accum_values(game_PlayerState* new_local_player);
 

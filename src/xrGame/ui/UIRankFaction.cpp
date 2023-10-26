@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: UIRankFaction.cpp
-//	Created 	: 22.01.2008
-//	Author		: Evgeniy Sokolov
-//	Description : UI Rank Faction info window class implementation
+//  Module      : UIRankFaction.cpp
+//  Created     : 22.01.2008
+//  Author      : Evgeniy Sokolov
+//  Description : UI Rank Faction info window class implementation
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

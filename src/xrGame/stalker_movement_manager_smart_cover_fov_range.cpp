@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_movement_manager_smart_cover_fov_range.cpp
-//	Created 	: 14.02.2008
-//	Modified	: 14.02.2008
-//	Author		: Dmitriy Iassenev
-//	Description : stalker movement manager class with smart covers fov and range stuff
+//  Module      : stalker_movement_manager_smart_cover_fov_range.cpp
+//  Created     : 14.02.2008
+//  Modified    : 14.02.2008
+//  Author      : Dmitriy Iassenev
+//  Description : stalker movement manager class with smart covers fov and range stuff
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

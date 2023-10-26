@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: interfaces.h
-//	Created 	: 15.06.2005
-//  Modified 	: 22.09.2008
-//	Author		: Dmitriy Iassenev
-//	Description : lua studio backend interfaces
+//  Module      : interfaces.h
+//  Created     : 15.06.2005
+//  Modified    : 22.09.2008
+//  Author      : Dmitriy Iassenev
+//  Description : lua studio backend interfaces
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

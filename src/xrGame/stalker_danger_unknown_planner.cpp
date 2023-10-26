@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_danger_unknown_planner.cpp
-//	Created 	: 31.05.2005
-//  Modified 	: 31.05.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker danger unknown planner class
+//  Module      : stalker_danger_unknown_planner.cpp
+//  Created     : 31.05.2005
+//  Modified    : 31.05.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker danger unknown planner class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_editor_tree_values.hpp
-//	Created 	: 20.12.2007
-//  Modified 	: 20.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property editor tree values class
+//  Module      : property_editor_tree_values.hpp
+//  Created     : 20.12.2007
+//  Modified    : 20.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property editor tree values class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_EDITOR_TREE_VALUES_HPP_INCLUDED

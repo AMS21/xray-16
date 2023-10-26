@@ -110,9 +110,9 @@ public:
 
     // receive
     void StartProcessQueue() { net_Queue.Lock(); } // WARNING ! after Start must be End !!! <-
-    virtual NET_Packet* net_msg_Retreive() { return net_Queue.Retreive(); } //							|
-    void net_msg_Release() { net_Queue.Release(); } //							|
-    void EndProcessQueue() { net_Queue.Unlock(); } //							<-
+    virtual NET_Packet* net_msg_Retreive() { return net_Queue.Retreive(); } //                          |
+    void net_msg_Release() { net_Queue.Release(); } //                          |
+    void EndProcessQueue() { net_Queue.Unlock(); } //                           <-
 
     // send
     virtual void Send(NET_Packet& P, u32 dwFlags = 0x0008 /*DPNSEND_GUARANTEED*/, u32 dwTimeout = 0);

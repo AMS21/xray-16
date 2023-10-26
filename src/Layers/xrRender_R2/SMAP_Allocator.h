@@ -74,7 +74,7 @@ public:
             return true;
         }
 
-        // perform search	(first-fit)
+        // perform search   (first-fit)
         for (u32 it = 0; it < cpoint.size(); it++)
         {
             R.setup(cpoint[it], _size);

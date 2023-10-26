@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_abstract_registry_inline.h
-//	Created 	: 30.06.2004
-//  Modified 	: 30.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALife abstract registry inline functions
+//  Module      : alife_abstract_registry_inline.h
+//  Created     : 30.06.2004
+//  Modified    : 30.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALife abstract registry inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

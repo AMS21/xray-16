@@ -1,9 +1,9 @@
-// file:		UITextureMaster.h
-// description:	holds info about shared textures. able to initialize external
-//				through IUITextureControl interface
-// created:		11.05.2005
-// author:		Serge Vynnychenko
-// mail:		narrator@gsc-game.kiev.ua
+// file:        UITextureMaster.h
+// description: holds info about shared textures. able to initialize external
+//              through IUITextureControl interface
+// created:     11.05.2005
+// author:      Serge Vynnychenko
+// mail:        narrator@gsc-game.kiev.ua
 //
 // copyright 2005 GSC Game World
 

@@ -249,7 +249,7 @@ void CGameObject::Load(LPCSTR section)
     if (self)
     {
         // #pragma todo("to Dima: All objects are visible for AI ???")
-        // self->spatial.type	|=	STYPE_VISIBLEFORAI;
+        // self->spatial.type   |=  STYPE_VISIBLEFORAI;
         self->GetSpatialData().type &= ~STYPE_REACTTOSOUND;
     }
 }
@@ -324,7 +324,7 @@ void CGameObject::net_Destroy()
 
     Level().RemoveObject_From_4CrPr(this);
 
-    //.	Parent									= 0;
+    //. Parent                                  = 0;
 
     scriptBinder.net_Destroy();
 
@@ -340,37 +340,37 @@ void CGameObject::OnEvent(NET_Packet& P, u16 type)
     case GE_HIT_STATISTIC:
     {
         /*
-                    u16				id,weapon_id;
-                    Fvector			dir;
-                    float			power, impulse;
-                    s16				element;
-                    Fvector			position_in_bone_space;
-                    u16				hit_type;
-                    float			ap = 0.0f;
+                    u16             id,weapon_id;
+                    Fvector         dir;
+                    float           power, impulse;
+                    s16             element;
+                    Fvector         position_in_bone_space;
+                    u16             hit_type;
+                    float           ap = 0.0f;
 
-                    P.r_u16			(id);
-                    P.r_u16			(weapon_id);
-                    P.r_dir			(dir);
-                    P.r_float		(power);
-                    P.r_s16			(element);
-                    P.r_vec3		(position_in_bone_space);
-                    P.r_float		(impulse);
-                    P.r_u16			(hit_type);	//hit type
+                    P.r_u16         (id);
+                    P.r_u16         (weapon_id);
+                    P.r_dir         (dir);
+                    P.r_float       (power);
+                    P.r_s16         (element);
+                    P.r_vec3        (position_in_bone_space);
+                    P.r_float       (impulse);
+                    P.r_u16         (hit_type); //hit type
                     if ((ALife::EHitType)hit_type == ALife::eHitTypeFireWound)
                     {
-                        P.r_float	(ap);
+                        P.r_float   (ap);
                     }
 
-                    IGameObject*	Hitter = Level().Objects.net_Find(id);
-                    IGameObject*	Weapon = Level().Objects.net_Find(weapon_id);
+                    IGameObject*    Hitter = Level().Objects.net_Find(id);
+                    IGameObject*    Weapon = Level().Objects.net_Find(weapon_id);
 
-                    SHit	HDS = SHit(power, dir, Hitter, element, position_in_bone_space, impulse,
+                    SHit    HDS = SHit(power, dir, Hitter, element, position_in_bone_space, impulse,
            (ALife::EHitType)hit_type, ap);
         */
         SHit HDS;
         HDS.PACKET_TYPE = type;
         HDS.Read_Packet_Cont(P);
-        //			Msg("Hit received: %d[%d,%d]", HDS.whoID, HDS.weaponID, HDS.BulletID);
+        //          Msg("Hit received: %d[%d,%d]", HDS.whoID, HDS.weaponID, HDS.BulletID);
         IGameObject* Hitter = Level().Objects.net_Find(HDS.whoID);
         IGameObject* Weapon = Level().Objects.net_Find(HDS.weaponID);
         HDS.who = Hitter;
@@ -418,7 +418,7 @@ void CGameObject::OnEvent(NET_Packet& P, u16 type)
 #endif // MP_LOGGING
 
         setDestroy(TRUE);
-        //			MakeMeCrow		();
+        //          MakeMeCrow      ();
     }
     break;
     }
@@ -471,8 +471,8 @@ bool CGameObject::net_Spawn(CSE_Abstract* DC)
     }
 
     setID(E->ID);
-    //	if (GameID() != eGameIDSingle)
-    //		Msg ("CGameObject::net_Spawn -- object %s[%x] setID [%d]", *(E->s_name), this, E->ID);
+    //  if (GameID() != eGameIDSingle)
+    //      Msg ("CGameObject::net_Spawn -- object %s[%x] setID [%d]", *(E->s_name), this, E->ID);
 
     // XForm
     XFORM().setXYZ(E->o_Angle);
@@ -541,13 +541,13 @@ bool CGameObject::net_Spawn(CSE_Abstract* DC)
     // load custom user data from server
     if (!E->client_data.empty())
     {
-        //		Msg				("client data is present for object [%d][%s], load is processed",ID(),*cName());
+        //      Msg             ("client data is present for object [%d][%s], load is processed",ID(),*cName());
         IReader ireader = IReader(&*E->client_data.begin(), E->client_data.size());
         net_Load(ireader);
     }
     else
     {
-        //		Msg				("no client data for object [%d][%s], load is skipped",ID(),*cName());
+        //      Msg             ("no client data for object [%d][%s], load is skipped",ID(),*cName());
     }
 
     // if we have a parent
@@ -773,7 +773,7 @@ void CGameObject::spawn_supplies()
 
 void CGameObject::setup_parent_ai_locations(bool assign_position)
 {
-    //	CGameObject				*l_tpGameObject	= static_cast<CGameObject*>(H_Root());
+    //  CGameObject             *l_tpGameObject = static_cast<CGameObject*>(H_Root());
     VERIFY(H_Parent());
     CGameObject* l_tpGameObject = smart_cast<CGameObject*>(H_Parent());
     VERIFY(l_tpGameObject);
@@ -783,11 +783,11 @@ void CGameObject::setup_parent_ai_locations(bool assign_position)
         Position().set(l_tpGameObject->Position());
 
     // if ( assign_position &&
-    //		( use_parent_ai_locations() &&
-    //		!( cast_attachable_item() && cast_attachable_item()->enabled() )
-    //		 )
-    //	)
-    //	Position().set		(l_tpGameObject->Position());
+    //      ( use_parent_ai_locations() &&
+    //      !( cast_attachable_item() && cast_attachable_item()->enabled() )
+    //       )
+    //  )
+    //  Position().set      (l_tpGameObject->Position());
 
     // setup its ai locations
     if (!UsedAI_Locations())
@@ -801,18 +801,18 @@ void CGameObject::setup_parent_ai_locations(bool assign_position)
         ai_location().level_vertex(l_tpGameObject->ai_location().level_vertex_id());
     else
         validate_ai_locations(false);
-    //	VERIFY2						(l_tpGameObject->UsedAI_Locations(),*l_tpGameObject->cNameSect());
-    //	VERIFY2
+    //  VERIFY2                     (l_tpGameObject->UsedAI_Locations(),*l_tpGameObject->cNameSect());
+    //  VERIFY2
     //(ai().level_graph().valid_vertex_id(l_tpGameObject->ai_location().level_vertex_id()),*cNameSect());
-    //	ai_location().level_vertex	(l_tpGameObject->ai_location().level_vertex_id());
+    //  ai_location().level_vertex  (l_tpGameObject->ai_location().level_vertex_id());
 
     if (ai().game_graph().valid_vertex_id(l_tpGameObject->ai_location().game_vertex_id()))
         ai_location().game_vertex(l_tpGameObject->ai_location().game_vertex_id());
     else
         ai_location().game_vertex(ai().cross_table().vertex(ai_location().level_vertex_id()).game_vertex_id());
-    //	VERIFY2
+    //  VERIFY2
     //(ai().game_graph().valid_vertex_id(l_tpGameObject->ai_location().game_vertex_id()),*cNameSect());
-    //	ai_location().game_vertex	(l_tpGameObject->ai_location().game_vertex_id());
+    //  ai_location().game_vertex   (l_tpGameObject->ai_location().game_vertex_id());
 }
 
 u32 CGameObject::new_level_vertex_id() const
@@ -1080,7 +1080,7 @@ void CGameObject::renderable_Render(u32 context_id, IRenderable* root)
 }
 
 /*
-float CGameObject::renderable_Ambient	()
+float CGameObject::renderable_Ambient   ()
 {
     return (ai().get_level_graph() && ai().level_graph().valid_vertex_id(level_vertex_id()) ?
 float(level_vertex()->light()/15.f) : 1.f);
@@ -1116,7 +1116,7 @@ void CGameObject::add_visual_callback(visual_callback callback)
 
     if (m_visual_callback.empty())
         SetKinematicsCallback(true);
-    //		smart_cast<IKinematics*>(Visual())->Callback(VisualCallback,this);
+    //      smart_cast<IKinematics*>(Visual())->Callback(VisualCallback,this);
     m_visual_callback.push_back(callback);
 }
 
@@ -1127,7 +1127,7 @@ void CGameObject::remove_visual_callback(visual_callback callback)
     m_visual_callback.erase(I);
     if (m_visual_callback.empty())
         SetKinematicsCallback(false);
-    //		smart_cast<IKinematics*>(Visual())->Callback(0,0);
+    //      smart_cast<IKinematics*>(Visual())->Callback(0,0);
 }
 
 void CGameObject::SetKinematicsCallback(bool set)
@@ -1223,7 +1223,7 @@ u32 CGameObject::ef_equipment_type() const
     CLSID2TEXT(CLS_ID, temp);
     R_ASSERT3(false, "Invalid equipment type request, virtual function is not properly overridden!", temp);
     return (u32(-1));
-    //	return		(6);
+    //  return      (6);
 }
 
 u32 CGameObject::ef_main_weapon_type() const
@@ -1232,7 +1232,7 @@ u32 CGameObject::ef_main_weapon_type() const
     CLSID2TEXT(CLS_ID, temp);
     R_ASSERT3(false, "Invalid main weapon type request, virtual function is not properly overridden!", temp);
     return (u32(-1));
-    //	return		(5);
+    //  return      (5);
 }
 
 u32 CGameObject::ef_anomaly_type() const
@@ -1249,7 +1249,7 @@ u32 CGameObject::ef_weapon_type() const
     CLSID2TEXT(CLS_ID, temp);
     R_ASSERT3(false, "Invalid weapon type request, virtual function is not properly overridden!", temp);
     return (u32(-1));
-    //	return		(u32(0));
+    //  return      (u32(0));
 }
 
 u32 CGameObject::ef_detector_type() const
@@ -1320,7 +1320,7 @@ void CGameObject::create_anim_mov_ctrl(CBlend* b, Fmatrix* start_pose, bool loca
     }
     else
     {
-        //		start_pose		= &renderable.xform;
+        //      start_pose      = &renderable.xform;
         if (m_anim_mov_ctrl)
             destroy_anim_mov_ctrl();
 
@@ -1388,8 +1388,8 @@ void CGameObject::UpdateCL()
             MakeMeCrow();
     }
     // ~
-    //	if (!is_ai_obstacle())
-    //		return;
+    //  if (!is_ai_obstacle())
+    //      return;
 
     if (H_Parent())
         return;

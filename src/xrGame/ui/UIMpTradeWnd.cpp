@@ -17,7 +17,7 @@ void CUIMpTradeWnd::OnBtnOkClicked(CUIWindow* w, void* d)
     game_cl_mp* clgame = smart_cast<game_cl_mp*>(&(Game()));
     VERIFY(clgame);
     clgame->OnBuyMenu_Ok();
-    //.	StorePreset							(_preset_idx_last, true, true);
+    //. StorePreset                         (_preset_idx_last, true, true);
 }
 
 void CUIMpTradeWnd::OnBtnCancelClicked(CUIWindow* w, void* d)
@@ -182,8 +182,8 @@ void CUIMpTradeWnd::FillUpSubLevelButtons()
 {
     u32 root_cnt = m_store_hierarchy->CurrentLevel().ChildCount();
 
-    //	Fvector2							pos;
-    //	pos.set								(40.0f,90.0f);
+    //  Fvector2                            pos;
+    //  pos.set                             (40.0f,90.0f);
 
     for (u32 i = 0; i < root_cnt; ++i)
     {
@@ -191,10 +191,10 @@ void CUIMpTradeWnd::FillUpSubLevelButtons()
         CUITabButtonMP* btn = it.m_button;
         btn->m_temp_id = it.m_name;
         Register(btn);
-        //		btn->SetWndPos					(pos);
-        //		pos.add							(btn->GetWndSize().y);
-        //		pos.y							+= 40.0f;
-        //		pos.x							= 40.0f;
+        //      btn->SetWndPos                  (pos);
+        //      pos.add                         (btn->GetWndSize().y);
+        //      pos.y                           += 40.0f;
+        //      pos.x                           = 40.0f;
         m_shop_wnd->AttachChild(btn);
     }
 }

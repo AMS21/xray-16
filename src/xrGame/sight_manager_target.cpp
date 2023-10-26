@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: sight_manager_target.cpp
-//	Created 	: 27.12.2003
-//  Modified 	: 08.04.2008
-//	Author		: Dmitriy Iassenev
-//	Description : sight manager target functions
+//  Module      : sight_manager_target.cpp
+//  Created     : 27.12.2003
+//  Modified    : 08.04.2008
+//  Author      : Dmitriy Iassenev
+//  Description : sight manager target functions
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -110,10 +110,10 @@ void CSightManager::SetFirePointLookAngles(
 
 void CSightManager::SetDirectionLook()
 {
-    //	MonsterSpace::SBoneRotation				orientation = object().movement().m_head, body_orientation =
+    //  MonsterSpace::SBoneRotation             orientation = object().movement().m_head, body_orientation =
     // object().movement().body_orientation();
-    //	orientation.target						= orientation.current;
-    //	body_orientation.target					= body_orientation.current;
+    //  orientation.target                      = orientation.current;
+    //  body_orientation.target                 = body_orientation.current;
     if (GetDirectionAngles(object().movement().m_head.target.yaw, object().movement().m_head.target.pitch))
     {
         object().movement().m_head.target.yaw *= -1;

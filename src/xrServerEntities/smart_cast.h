@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cast.h
-//	Created 	: 17.09.2004
-//  Modified 	: 17.09.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Smart dynamic cast
+//  Module      : smart_cast.h
+//  Created     : 17.09.2004
+//  Modified    : 17.09.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Smart dynamic cast
 ////////////////////////////////////////////////////////////////////////////
 
 // WARNING: Due to conditional include of different implementations, this file CAN NOT have a
@@ -26,7 +26,7 @@
 #define PURE_DYNAMIC_CAST_COMPATIBILITY_CHECK
 
 #ifdef DEBUG
-//#		define SMART_CAST_STATS_ALL
+//#     define SMART_CAST_STATS_ALL
 #endif
 
 #ifndef DECLARE_SPECIALIZATION
@@ -164,13 +164,13 @@ DECLARE_SPECIALIZATION(CWeaponAmmo, CInventoryItem, cast_weapon_ammo);
 #undef cast_type_list
 #define cast_type_list save_cast_list(CWeaponAmmo, CInventoryItem)
 /*
-        DECLARE_SPECIALIZATION	(CCameraShotEffector, CCameraEffector,		cast_effector_shot);
-#		undef cast_type_list
-#		define cast_type_list save_cast_list	(CCameraShotEffector,		CCameraEffector)
+        DECLARE_SPECIALIZATION  (CCameraShotEffector, CCameraEffector,      cast_effector_shot);
+#       undef cast_type_list
+#       define cast_type_list save_cast_list    (CCameraShotEffector,       CCameraEffector)
 
-        DECLARE_SPECIALIZATION	(CEffectorZoomInertion,	CCameraEffector,	cast_effector_zoom_inertion);
-#		undef cast_type_list
-#		define cast_type_list save_cast_list	(CEffectorZoomInertion,	CCameraEffector)
+        DECLARE_SPECIALIZATION  (CEffectorZoomInertion, CCameraEffector,    cast_effector_zoom_inertion);
+#       undef cast_type_list
+#       define cast_type_list save_cast_list    (CEffectorZoomInertion, CCameraEffector)
 */
 DECLARE_SPECIALIZATION(CParticlesPlayer, CGameObject, cast_particles_player);
 #undef cast_type_list

@@ -18,7 +18,7 @@ u32 GetNVGpuNum()
     NvPhysicalGpuHandle physicalGPUs[NVAPI_MAX_PHYSICAL_GPUS];
     NvU32 physicalGPUCount;
 
-    //	int result = NVAPI_OK;
+    //  int result = NVAPI_OK;
 
     NvAPI_Status status;
     status = NvAPI_Initialize();
@@ -48,7 +48,7 @@ u32 GetNVGpuNum()
     int iGpuNum = 0;
     Msg("* NVidia MGPU: Logical(%d), Physical(%d)", physicalGPUCount, logicalGPUCount);
 
-    //	Assume that we are running on logical GPU with most physical GPUs connected.
+    //  Assume that we are running on logical GPU with most physical GPUs connected.
     for (u32 i = 0; i < logicalGPUCount; ++i)
     {
         status = NvAPI_GetPhysicalGPUsFromLogicalGPU(logicalGPUs[i], physicalGPUs, &physicalGPUCount);
@@ -228,7 +228,7 @@ void CHWCaps::Update()
 #endif
 
     //
-    bTableFog = FALSE; // BOOL	(caps.RasterCaps&D3DPRASTERCAPS_FOGTABLE);
+    bTableFog = FALSE; // BOOL  (caps.RasterCaps&D3DPRASTERCAPS_FOGTABLE);
 
     // Detect if stencil available
     bStencil = FALSE;

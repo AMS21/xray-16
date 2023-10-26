@@ -89,9 +89,9 @@ struct not_exsiting_clients_deleter
 
         if (*local_player == value.second)
             return false;
-        // 			*local_player	=	NULL;
-        // 			*client_id		=	0;
-        // 		}
+        //          *local_player   =   NULL;
+        //          *client_id      =   0;
+        //      }
 
         xr_delete(value.second);
         return true;
@@ -184,7 +184,7 @@ void game_cl_GameState::net_import_update(NET_Packet& P)
     if (players.end() != I)
     {
         game_PlayerState* IP = I->second;
-        //		CopyMemory	(&IP,&PS,sizeof(PS));
+        //      CopyMemory  (&IP,&PS,sizeof(PS));
         //***********************************************
         u16 OldFlags = IP->flags__;
         u8 OldVote = IP->m_bCurrentVoteAgreed;

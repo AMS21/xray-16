@@ -101,7 +101,7 @@ bool CTeleWhirlwindObject::init(CTelekinesis* tele, CPhysicsShellHolder* obj, fl
 void CTeleWhirlwindObject::raise_update()
 {
     // u32 time=Device.dwTimeGlobal;
-    //	if (time_raise_started + 100000 < time) release();
+    //  if (time_raise_started + 100000 < time) release();
 }
 
 void CTeleWhirlwindObject::release()
@@ -149,7 +149,7 @@ bool CTeleWhirlwindObject::destroy_object(const Fvector dir, float val)
         D->PhysicallyRemoveSelf();
         D->Destroy(m_telekinesis->OwnerObject()->ID());
 
-        //.		m_telekinesis->add_impact(dir,val*10.f);
+        //.     m_telekinesis->add_impact(dir,val*10.f);
 
         if (IsGameTypeSingle())
         {

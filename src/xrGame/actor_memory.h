@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: actor_memory.h
-//	Created 	: 15.09.2005
-//  Modified 	: 15.09.2005
-//	Author		: Dmitriy Iassenev
-//	Description : actor memory
+//  Module      : actor_memory.h
+//  Created     : 15.09.2005
+//  Modified    : 15.09.2005
+//  Author      : Dmitriy Iassenev
+//  Description : actor memory
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

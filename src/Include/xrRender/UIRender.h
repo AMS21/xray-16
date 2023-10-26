@@ -19,7 +19,7 @@ public:
     {
         ptNone = -1,
         ptTriList,
-        //		ptTriFan,
+        //      ptTriFan,
         ptTriStrip,
         ptLineStrip,
         ptLineList
@@ -47,22 +47,22 @@ public:
 
     virtual void SetShader(IUIShader& shader) = 0;
     virtual void SetAlphaRef(int aref) = 0;
-    //.	virtual void StartTriList(u32 iMaxVerts) = 0;
-    //.	virtual void FlushTriList() = 0;
-    //.	virtual void StartTriFan(u32 iMaxVerts) = 0;
-    //.	virtual void FlushTriFan() = 0;
+    //. virtual void StartTriList(u32 iMaxVerts) = 0;
+    //. virtual void FlushTriList() = 0;
+    //. virtual void StartTriFan(u32 iMaxVerts) = 0;
+    //. virtual void FlushTriFan() = 0;
 
     // virtual void StartTriStrip(u32 iMaxVerts) = 0;
     // virtual void FlushTriStrip() = 0;
-    //.	virtual void StartLineStrip(u32 iMaxVerts) = 0;
-    //.	virtual void FlushLineStrip() = 0;
-    //.	virtual void StartLineList(u32 iMaxVerts) = 0;
-    //.	virtual void FlushLineList() = 0;
+    //. virtual void StartLineStrip(u32 iMaxVerts) = 0;
+    //. virtual void FlushLineStrip() = 0;
+    //. virtual void StartLineList(u32 iMaxVerts) = 0;
+    //. virtual void FlushLineList() = 0;
     virtual void SetScissor(Irect* rect = nullptr) = 0;
     virtual void GetActiveTextureResolution(Fvector2& res) = 0;
 
-    //.	virtual void PushPoint(float x, float y, u32 c, float u, float v) = 0;
-    //.	virtual void PushPoint(int x, int y, u32 c, float u, float v) = 0;
+    //. virtual void PushPoint(float x, float y, u32 c, float u, float v) = 0;
+    //. virtual void PushPoint(int x, int y, u32 c, float u, float v) = 0;
     virtual void PushPoint(float x, float y, float z, u32 C, float u, float v) = 0;
 
     virtual void StartPrimitive(u32 iMaxVerts, ePrimitiveType primType, ePointType pointType) = 0;
@@ -74,4 +74,4 @@ public:
     virtual void CacheSetCullMode(CullMode) = 0;
 };
 
-#endif //	UIRender_included
+#endif //   UIRender_included

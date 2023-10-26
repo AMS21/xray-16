@@ -2,9 +2,9 @@
 #ifndef ColorMapManager_included
 #define ColorMapManager_included
 
-//	Reduces amount of work if the texture was not changed.
-//	Stores used textures in a separate map to avoid removal of
-//	of color map textures from memory.
+//  Reduces amount of work if the texture was not changed.
+//  Stores used textures in a separate map to avoid removal of
+//  of color map textures from memory.
 
 class ColorMapManager
 {
@@ -29,4 +29,4 @@ private:
     map_Tex m_TexCache;
 };
 
-#endif //	ColorMapManager_included
+#endif //   ColorMapManager_included

@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Created		: 29.07.2009
-//	Author		: Armen Abroyan
-//	Copyright (C) GSC Game World - 2009
+//  Created     : 29.07.2009
+//  Author      : Armen Abroyan
+//  Copyright (C) GSC Game World - 2009
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
@@ -198,7 +198,7 @@ void stats_manager::decrement_stats(u32 size, enum_stats_buffer_type type, _D3DP
         }
     }
     R_ASSERT(find); //  "Specified buffer not fount in the buffers list.
-//	The buffer may not incremented to stats or it already was removed"
+//  The buffer may not incremented to stats or it already was removed"
 #endif // DEBUG
 
     memory_usage_summary[type][location] -= size;
@@ -208,7 +208,7 @@ stats_manager::~stats_manager()
 {
 #ifdef DEBUG
     Msg("m_buffers_list.size() = %d", m_buffers_list.size());
-//	R_ASSERT( m_buffers_list.size() == 0);	//  Some buffers stats are not removed from the list.
+//  R_ASSERT( m_buffers_list.size() == 0);  //  Some buffers stats are not removed from the list.
 #endif
 }
 

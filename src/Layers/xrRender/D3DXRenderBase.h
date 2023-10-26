@@ -17,27 +17,27 @@ public:
     RenderStatistics BasicStats;
 
 public:
-    //	Gamma correction functions
+    //  Gamma correction functions
     virtual void setGamma(float fGamma) override;
     virtual void setBrightness(float fGamma) override;
     virtual void setContrast(float fGamma) override;
     virtual void updateGamma() override;
 
-    //	Destroy
+    //  Destroy
     virtual void OnDeviceDestroy(bool bKeepTextures) override;
     virtual void Destroy() override;
     virtual void Reset(SDL_Window* hWnd, u32& dwWidth, u32& dwHeight, float& fWidth_2, float& fHeight_2) override;
 
-    //	Init
+    //  Init
     virtual void ObtainRequiredWindowFlags(u32& /*windowFlags*/) override;
     virtual void SetupStates() override;
     virtual void OnDeviceCreate(const char* shName) override;
     virtual void Create(SDL_Window* hWnd, u32& dwWidth, u32& dwHeight, float& fWidth_2, float& fHeight_2) override;
 
-    //	Overdraw
+    //  Overdraw
     virtual void overdrawBegin() override;
     virtual void overdrawEnd() override;
-    //	Resources control
+    //  Resources control
     virtual void DeferredLoad(bool E) override;
     virtual void ResourcesDeferredUpload() override;
     virtual void ResourcesDeferredUnload() override;
@@ -45,9 +45,9 @@ public:
     virtual void ResourcesDestroyNecessaryTextures() override;
     virtual void ResourcesStoreNecessaryTextures() override;
     virtual void ResourcesDumpMemoryUsage() override;
-    //	HWSupport
+    //  HWSupport
     virtual bool HWSupportsShaderYUV2RGB() override;
-    //	Device state
+    //  Device state
     virtual DeviceState GetDeviceState() override;
     virtual bool GetForceGPU_REF() override;
     virtual u32 GetCacheStatPolys() override;

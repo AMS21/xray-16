@@ -154,7 +154,7 @@ ESceneAIMapTool::ESceneAIMapTool() : ESceneToolBase(OBJCLASS_AIMAP)
     m_Flags.zero();
 
     m_AIBBox.invalidate();
-    //    m_Header.size_y				= m_Header.aabb.max.y-m_Header.aabb.min.y+EPS_L;
+    //    m_Header.size_y               = m_Header.aabb.max.y-m_Header.aabb.min.y+EPS_L;
     hash_Initialize();
     m_VisRadius = 30.f;
     m_SmoothHeight = 0.5f;
@@ -257,16 +257,16 @@ void ESceneAIMapTool::DenumerateNodes()
         (*it)->n3 = ((u32)(*it)->n3 == InvalidNode) ? 0 : m_Nodes[(u32)(*it)->n3];
         (*it)->n4 = ((u32)(*it)->n4 == InvalidNode) ? 0 : m_Nodes[(u32)(*it)->n4];
         /*
-                if (((u32)(*it)->n1<cnt)||((u32)(*it)->n1==InvalidNode)) (*it)->n1	=
+                if (((u32)(*it)->n1<cnt)||((u32)(*it)->n1==InvalidNode)) (*it)->n1  =
            ((u32)(*it)->n1==InvalidNode)?0:m_Nodes[(u32)(*it)->n1];
                 else (*it)->n1=0;
-                if (((u32)(*it)->n2<cnt)||((u32)(*it)->n2==InvalidNode)) (*it)->n2	=
+                if (((u32)(*it)->n2<cnt)||((u32)(*it)->n2==InvalidNode)) (*it)->n2  =
            ((u32)(*it)->n2==InvalidNode)?0:m_Nodes[(u32)(*it)->n2];
                 else (*it)->n2=0;
-                if (((u32)(*it)->n3<cnt)||((u32)(*it)->n3==InvalidNode)) (*it)->n3	=
+                if (((u32)(*it)->n3<cnt)||((u32)(*it)->n3==InvalidNode)) (*it)->n3  =
            ((u32)(*it)->n3==InvalidNode)?0:m_Nodes[(u32)(*it)->n3];
                 else (*it)->n3=0;
-                if (((u32)(*it)->n4<cnt)||((u32)(*it)->n4==InvalidNode)) (*it)->n4	=
+                if (((u32)(*it)->n4<cnt)||((u32)(*it)->n4==InvalidNode)) (*it)->n4  =
            ((u32)(*it)->n4==InvalidNode)?0:m_Nodes[(u32)(*it)->n4];
                 else (*it)->n4=0;
         */
@@ -489,7 +489,7 @@ void ESceneAIMapTool::SelectNodesByLink(int link)
     // remove link to sel nodes
     for (AINodeIt it = m_Nodes.begin(); it != m_Nodes.end(); it++)
         if ((*it)->Links() == link)
-            //			if (!(*it)->flags.is(SAINode::flHide))
+            //          if (!(*it)->flags.is(SAINode::flHide))
             (*it)->flags.set(SAINode::flSelected, TRUE);
     UI->RedrawScene();
 }
@@ -501,7 +501,7 @@ void ESceneAIMapTool::SelectObjects(bool flag)
     case estAIMapNode:
     {
         for (AINodeIt it = m_Nodes.begin(); it != m_Nodes.end(); it++)
-            //			if (!(*it)->flags.is(SAINode::flHide))
+            //          if (!(*it)->flags.is(SAINode::flHide))
             (*it)->flags.set(SAINode::flSelected, flag);
     }
     break;
@@ -564,7 +564,7 @@ void ESceneAIMapTool::InvertSelection()
     case estAIMapNode:
     {
         for (AINodeIt it = m_Nodes.begin(); it != m_Nodes.end(); it++)
-            //			if (!(*it)->flags.is(SAINode::flHide))
+            //          if (!(*it)->flags.is(SAINode::flHide))
             (*it)->flags.invert(SAINode::flSelected);
     }
     break;

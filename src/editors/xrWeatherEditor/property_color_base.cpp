@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_color_base.cpp
-//	Created 	: 27.12.2007
-//  Modified 	: 27.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property color base class
+//  Module      : property_color_base.cpp
+//  Created     : 27.12.2007
+//  Modified    : 27.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property color base class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"
@@ -21,7 +21,7 @@ ref class property_converter_float;
 static float s_increment_factor = .001f;
 
 #if 0
-	using System::Windows::Forms::ColorDialog;
+    using System::Windows::Forms::ColorDialog;
 #endif // #if 0
 
 color_components::color_components(property_color_base ^ holder) : m_holder(holder) {}
@@ -115,15 +115,15 @@ void property_color_base::blue(float value)
 void property_color_base::OnDoubleClick(XRay::SdkControls::PropertyGrid ^ property_grid)
 {
 #if 0
-	ColorDialog					^dialog = gcnew ColorDialog();
-	dialog->FullOpen			= true;
-    XRay::Editor::color				color = get_value_raw();
-	dialog->Color				= System::Drawing::Color::FromArgb(255, int(255.f*color.r), int(255.f*color.g), int(255.f*color.b));
-	if (dialog->ShowDialog() == System::Windows::Forms::DialogResult::Cancel)
-		return;
+    ColorDialog                 ^dialog = gcnew ColorDialog();
+    dialog->FullOpen            = true;
+    XRay::Editor::color             color = get_value_raw();
+    dialog->Color               = System::Drawing::Color::FromArgb(255, int(255.f*color.r), int(255.f*color.g), int(255.f*color.b));
+    if (dialog->ShowDialog() == System::Windows::Forms::DialogResult::Cancel)
+        return;
 
-	SetValue					(::Color(dialog->Color.R/255.f, dialog->Color.G/255.f, dialog->Color.B/255.f));
-	property_grid->Refresh		();
+    SetValue                    (::Color(dialog->Color.R/255.f, dialog->Color.G/255.f, dialog->Color.B/255.f));
+    property_grid->Refresh      ();
 #endif // #if 0
 }
 

@@ -18,8 +18,8 @@ void CScriptDebugger::SendMessageToIde(CMailSlotMsg& msg)
 
 LRESULT CScriptDebugger::_SendMessage(u32 message, WPARAM wParam, LPARAM lParam)
 {
-    //	if ( (m_pDebugger)&&(m_pDebugger->Active())&&(message >= _DMSG_FIRST_MSG && message <= _DMSG_LAST_MSG) )
-    //		return m_pDebugger->DebugMessage(message, wParam, lParam);
+    //  if ( (m_pDebugger)&&(m_pDebugger->Active())&&(message >= _DMSG_FIRST_MSG && message <= _DMSG_LAST_MSG) )
+    //      return m_pDebugger->DebugMessage(message, wParam, lParam);
     if (Active() && message >= _DMSG_FIRST_MSG && message <= _DMSG_LAST_MSG)
         return DebugMessage(message, wParam, lParam);
     return 0;
@@ -118,7 +118,7 @@ CScriptDebugger::CScriptDebugger(CScriptEngine* scriptEngine)
     m_callStack = new CScriptCallStack(this);
     m_lua = new CDbgLuaHelper(this);
     ZeroMemory(m_curr_connected_mslot, sizeof(m_curr_connected_mslot));
-    //	m_pDebugger					= this;
+    //  m_pDebugger                 = this;
     m_nLevel = 0;
     m_mailSlot = CreateMailSlotByName(DEBUGGER_MAIL_SLOT);
 #if defined(XR_PLATFORM_WINDOWS)

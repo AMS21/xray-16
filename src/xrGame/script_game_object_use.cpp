@@ -188,7 +188,7 @@ void CScriptGameObject::set_const_force(const Fvector& dir, float value, u32 tim
 {
     CPhysicsShell* shell = object().cast_physics_shell_holder()->PPhysicsShell();
     // if( !shell->isEnabled() )
-    //	shell->set_LinearVel( Fvector().set(0,0,0) );
+    //  shell->set_LinearVel( Fvector().set(0,0,0) );
     if (!physics_world())
     {
         GEnv.ScriptEngine->script_log(LuaMessageType::Error, "set_const_force : ph_world do not exist!");
@@ -201,7 +201,7 @@ void CScriptGameObject::set_const_force(const Fvector& dir, float value, u32 tim
         return;
     }
     //#ifdef DEBUG
-    //	Msg( "const force added: force: %f,  time: %d ,dir(%f,%f,%f)", value, time_interval, dir.x, dir.y, dir.z );
+    //  Msg( "const force added: force: %f,  time: %d ,dir(%f,%f,%f)", value, time_interval, dir.x, dir.y, dir.z );
     //#endif
     Fvector force;
     force.set(dir);

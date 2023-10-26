@@ -1,7 +1,7 @@
 /*
- *		Filtered Image Rescaling
+ *      Filtered Image Rescaling
  *
- *		  by Dale Schumacher
+ *        by Dale Schumacher
  */
 
 #include "stdafx.h"
@@ -19,7 +19,7 @@ struct Image
 };
 
 /*
- *	generic image access and i/o support routines
+ *  generic image access and i/o support routines
  */
 
 Image* new_image(int xsize, int ysize) /* create a blank image */
@@ -80,7 +80,7 @@ Pixel put_pixel(Image* image, int x, int y, Pixel data)
 }
 
 /*
- *	filter function definitions
+ *  filter function definitions
  */
 
 //
@@ -194,7 +194,7 @@ float Mitchell_filter(float t)
 }
 
 /*
- *	image rescaling routine
+ *  image rescaling routine
  */
 
 struct CONTRIB

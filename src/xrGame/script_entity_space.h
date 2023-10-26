@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_entity_space.h
-//	Created 	: 06.10.2003
-//  Modified 	: 14.12.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script entity space
+//  Module      : script_entity_space.h
+//  Created     : 06.10.2003
+//  Modified    : 14.12.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script entity space
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

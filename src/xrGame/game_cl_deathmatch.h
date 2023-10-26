@@ -107,7 +107,7 @@ protected:
     virtual void LoadPlayerDefItems(pcstr TeamName, IBuyWnd* pBuyMenu);
     virtual void LoadDefItemsForRank(IBuyWnd* pBuyMenu);
     virtual void ChangeItemsCosts(IBuyWnd* pBuyMenu);
-    ///	virtual		s16					GetBuyMenuItemIndex			(u8 SlotID, u8 ItemID);
+    /// virtual     s16                 GetBuyMenuItemIndex         (u8 SlotID, u8 ItemID);
     s16 GetBuyMenuItemIndex(u8 Addons, u8 ItemID);
 
     virtual void ConvertTime2String(string64* str, u32 Time);
@@ -123,7 +123,7 @@ public:
 
     virtual pcstr getTeamSection(int Team);
     virtual void SetCurrentBuyMenu();
-    virtual void SetCurrentSkinMenu(); //	{pCurSkinMenu = pSkinMenuTeam0; };
+    virtual void SetCurrentSkinMenu(); //   {pCurSkinMenu = pSkinMenuTeam0; };
 
     virtual void OnSpectatorSelect();
 

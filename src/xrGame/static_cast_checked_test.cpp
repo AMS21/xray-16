@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: static_cast_checked.cpp
-//	Created 	: 04.12.2007
-//  Modified 	: 04.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : checked static_cast implementation for debug purposes
+//  Module      : static_cast_checked.cpp
+//  Created     : 04.12.2007
+//  Modified    : 04.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : checked static_cast implementation for debug purposes
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

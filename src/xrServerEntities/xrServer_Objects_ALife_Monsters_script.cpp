@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: xrServer_Objects_ALife_Monsters_script.cpp
-//	Created 	: 19.09.2002
-//  Modified 	: 04.06.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Server monsters for ALife simulator, script export
+//  Module      : xrServer_Objects_ALife_Monsters_script.cpp
+//  Created     : 19.09.2002
+//  Modified    : 04.06.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Server monsters for ALife simulator, script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -19,7 +19,7 @@ SCRIPT_EXPORT(CSE_ALifeTraderAbstract, (),
     module(luaState)
     [
         class_<CSE_ALifeTraderAbstract>("cse_alife_trader_abstract")
-            //			.def(		constructor<pcstr>())
+            //          .def(       constructor<pcstr>())
             .def("community", &CSE_ALifeTraderAbstract::CommunityName)
             .def("profile_name", +[](CSE_ALifeTraderAbstract* ta) { return ta->character_profile().c_str(); })
             .def("set_profile_name", +[](CSE_ALifeTraderAbstract* ta, const pcstr str) { ta->set_character_profile(str); })
@@ -51,7 +51,7 @@ SCRIPT_EXPORT(CSE_ALifeTraderAbstract, (),
     module(luaState)
     [
         class_<CSE_ALifeTraderAbstract>("cse_alife_trader_abstract")
-            //			.def(		constructor<pcstr>())
+            //          .def(       constructor<pcstr>())
             //.def("community", &CSE_ALifeTraderAbstract::CommunityName)
             .def("profile_name", &profile_name_script)
             //.def("rank", &CSE_ALifeTraderAbstract::Rank)

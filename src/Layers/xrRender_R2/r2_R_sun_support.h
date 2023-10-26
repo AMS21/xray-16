@@ -73,7 +73,7 @@ static inline Fvector3 wform(Fmatrix const& m, Fvector3 const& v)
     r.y = v.x * m._12 + v.y * m._22 + v.z * m._32 + m._42;
     r.z = v.x * m._13 + v.y * m._23 + v.z * m._33 + m._43;
     r.w = v.x * m._14 + v.y * m._24 + v.z * m._34 + m._44;
-    // VERIFY		(r.w>0.f);
+    // VERIFY       (r.w>0.f);
     const float invW = 1.0f / r.w;
     return { r.x * invW, r.y * invW, r.z * invW };
 }
@@ -184,7 +184,7 @@ public:
 
         // Here we can skip this stage us in the next pass we need only normals of planes.
         // in the next translate_light_model call will contain this shift as well.
-        // translate_light_model	( align_vector );
+        // translate_light_model    ( align_vector );
 
         // Reset to reuse.
         align_vector.set(0.f, 0.f, 0.f);
@@ -349,7 +349,7 @@ public:
 
 //////////////////////////////////////////////////////////////////////////
 // OLES: naive builder of infinite volume expanded from base frustum towards
-//		 light source. really slow, but it works for our simple usage :)
+//       light source. really slow, but it works for our simple usage :)
 // note: normals points to 'outside'
 //////////////////////////////////////////////////////////////////////////
 template <bool _debug>
@@ -410,7 +410,7 @@ public:
                 }
                 else
                 {
-                    //	HACK:	Remove plane.
+                    //  HACK:   Remove plane.
                     // VERIFY(!"Can't build normal to plane!");
                     polys.erase(polys.begin() + it);
                     --it;

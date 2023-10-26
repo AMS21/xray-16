@@ -10,8 +10,8 @@ class type_net_globals
 public:
     typedef e_net_globals type;
     static const type value = e;
-    // static const type				first = gl_cl_data	;
-    // static const type				last =	gl_last		;
+    // static const type                first = gl_cl_data  ;
+    // static const type                last =  gl_last     ;
 };
 
 template <execution_types e>
@@ -20,8 +20,8 @@ class type_execution
 public:
     typedef execution_types type;
     static const type value = e;
-    // static const type				first = et_lightmaps	;
-    // static const type				last =	et_last			;
+    // static const type                first = et_lightmaps    ;
+    // static const type                last =  et_last         ;
 };
 
 template <typename e>

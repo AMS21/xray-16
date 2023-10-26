@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Created		: 22.05.2009
-//	Author		: Mykhailo Parfeniuk
-//	Copyright (C) GSC Game World - 2009
+//  Created     : 22.05.2009
+//  Author      : Mykhailo Parfeniuk
+//  Copyright (C) GSC Game World - 2009
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef CSCOMPILER_H_INCLUDED

@@ -527,7 +527,7 @@ void WeaponUsageStatistic::OnBullet_Fire(SBullet* pBullet, const CCartridge& car
     //-----------------------------------------------------------------------------------
     ActiveBullets.push_back(BulletData(object_parent->cName(), object_weapon->cNameSect(), pBullet));
 
-    //	Msg("! OnBullet Fire ID[%d]", pBullet->m_dwID);
+    //  Msg("! OnBullet Fire ID[%d]", pBullet->m_dwID);
 }
 
 void WeaponUsageStatistic::OnBullet_Hit(SBullet* pBullet, u16 TargetID, s16 element, Fvector HitLocation)
@@ -535,7 +535,7 @@ void WeaponUsageStatistic::OnBullet_Hit(SBullet* pBullet, u16 TargetID, s16 elem
     statistic_sync_quard syncg(m_mutex);
     if (!pBullet || !pBullet->flags.allow_sendhit)
         return;
-    //	Msg("! OnBullet Hit ID[%d]", pBullet->m_dwID);
+    //  Msg("! OnBullet Hit ID[%d]", pBullet->m_dwID);
     ABULLETS_it BulletIt;
     if (!FindBullet(pBullet->m_dwID, BulletIt))
         return;
@@ -579,7 +579,7 @@ void WeaponUsageStatistic::OnBullet_Remove(SBullet* pBullet)
     ABULLETS_it BulletIt;
     if (!FindBullet(pBullet->m_dwID, BulletIt))
         return;
-    //	Msg("! Bullet Removed ID[%d]", BulletIt->Bullet.m_dwID);
+    //  Msg("! Bullet Removed ID[%d]", BulletIt->Bullet.m_dwID);
     BulletIt->Removed = true;
     RemoveBullet(BulletIt);
 }
@@ -602,7 +602,7 @@ void WeaponUsageStatistic::OnBullet_Check_Request(SHit* pHDS)
     (*pSenderI).Requests.push_back(Bullet_Check_Request(BulletID, BoneID));
     m_dwLastRequestSenderID = SenderID;
 
-    //	HitChecksReceived++;
+    //  HitChecksReceived++;
 };
 
 void WeaponUsageStatistic::OnBullet_Check_Result(bool Result)
@@ -662,16 +662,16 @@ void WeaponUsageStatistic::Send_Check_Respond()
                     pSTrue->BulletID = curBChR.BulletID;
                     pSTrue->BoneID = curBChR.BoneID;
                     pSTrue++;
-                    //					HitChecksRespondedTrue++;
+                    //                  HitChecksRespondedTrue++;
                     NumTrue++;
                 }
                 else
                 {
                     *(pSFalse++) = curBChR.BulletID;
-                    //					HitChecksRespondedFalse++;
+                    //                  HitChecksRespondedFalse++;
                     NumFalse++;
                 };
-                //				HitChecksResponded++;
+                //              HitChecksResponded++;
                 //-----------------------------------------------------
                 *(BChA_Request.Requests.begin() + j) = BChA_Request.Requests.back();
                 BChA_Request.Requests.pop_back();
@@ -679,7 +679,7 @@ void WeaponUsageStatistic::Send_Check_Respond()
         }
         //-----------------------------------------------------
         P.w_begin(M_BULLET_CHECK_RESPOND);
-        //		Msg("%d-%d || %d-%d", NumFalse, BChA_Request.NumFalse, NumTrue, BChA_Request.NumTrue);
+        //      Msg("%d-%d || %d-%d", NumFalse, BChA_Request.NumFalse, NumTrue, BChA_Request.NumTrue);
         P.w_u8(BChA_Request.NumFalse);
         BChA_Request.NumFalse = 0;
         P.w_u8(BChA_Request.NumTrue);
@@ -797,7 +797,7 @@ void WeaponUsageStatistic::OnPlayerKillPlayer(
 
     Player_Statistic& PlayerStat = *(FindPlayer(ps->getName()));
 
-    //.	m_dwSpecialKills[0];//headshot, backstab, knifekill
+    //. m_dwSpecialKills[0];//headshot, backstab, knifekill
     switch (SpecialKillType)
     {
     case SKT_HEADSHOT: PlayerStat.m_dwSpecialKills[0]++; break;
@@ -891,7 +891,7 @@ u8 WeaponUsageStatistic::ConvertToTeamIndex(s16 team)
     {
         if (team_index == -1)
         {
-            //			Msg("! ERROR: can't process spectators in deathmatch statistics.");
+            //          Msg("! ERROR: can't process spectators in deathmatch statistics.");
             return 1;
         }
     }

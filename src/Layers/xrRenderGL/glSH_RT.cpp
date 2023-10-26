@@ -48,7 +48,7 @@ void CRT::create(LPCSTR Name, u32 w, u32 h, D3DFORMAT f, u32 SampleCount /*= 1*/
     R_ASSERT(Name && Name[0] && w && h);
     _order = CPU::QPC(); //Device.GetTimerGlobal()->GetElapsed_clk();
 
-    //HRESULT		_hr;
+    //HRESULT       _hr;
 
     dwWidth = w;
     dwHeight = h;

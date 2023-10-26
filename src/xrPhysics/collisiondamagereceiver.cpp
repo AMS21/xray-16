@@ -26,7 +26,7 @@ void DamageReceiverCollisionCallback(bool& do_colide, bool bo1, dContact& c, SGa
         o_damager = ud_damager->ph_ref_object;
     u16 source_id = o_damager ? o_damager->ObjectID() : u16(-1);
 
-    // CPHCollisionDamageReceiver	*dr	= static_cast<CPhysicsShellHolder*>( o_self )->PHCollisionDamageReceiver();
+    // CPHCollisionDamageReceiver   *dr = static_cast<CPhysicsShellHolder*>( o_self )->PHCollisionDamageReceiver();
     ICollisionDamageReceiver* dr = (o_self)->ObjectPhCollisionDamageReceiver();
     VERIFY2(dr, "wrong callback");
 
@@ -58,7 +58,7 @@ void BreakableObjectCollisionCallback(
     dxGeomUserData* usr_data_2 = retrieveGeomUserData(c.geom.g2);
     VERIFY(usr_data_1);
     VERIFY(usr_data_2);
-    // CBreakableObject* this_object	= 0;
+    // CBreakableObject* this_object    = 0;
     ICollisionDamageReceiver* damag_receiver = 0;
 
     dBodyID body = 0;
@@ -82,8 +82,8 @@ void BreakableObjectCollisionCallback(
 
     /*
 
-        CBreakableObject* this_object1	= 0;
-        CBreakableObject* this_object2	= 0;
+        CBreakableObject* this_object1  = 0;
+        CBreakableObject* this_object2  = 0;
         VERIFY( usr_data_1 );
         VERIFY( usr_data_2 );
         this_object1 = smart_cast<CBreakableObject*>( usr_data_1->ph_ref_object );
@@ -125,13 +125,13 @@ void BreakableObjectCollisionCallback(
     // VERIFY( this_object->m_pUnbrokenObject );
 
     // if(this_object->m_damage_threshold<c_damage&&
-    //	this_object->m_max_frame_damage<c_damage
-    //	){
-    //		this_object->b_resived_damage=true;
-    //		this_object->m_max_frame_damage=c_damage;
-    //		//this_object->m_contact_damage_pos.set(c.geom.pos[0],c.geom.pos[1],c.geom.pos[2]);
-    //		this_object->m_contact_damage_pos.set( pos );
-    //		//this_object->m_contact_damage_dir.set(-c.geom.normal[0]*norm_sign,-c.geom.normal[1]*norm_sign,-c.geom.normal[2]*norm_sign);
-    //		this_object->m_contact_damage_dir.set( dir );
-    //	}
+    //  this_object->m_max_frame_damage<c_damage
+    //  ){
+    //      this_object->b_resived_damage=true;
+    //      this_object->m_max_frame_damage=c_damage;
+    //      //this_object->m_contact_damage_pos.set(c.geom.pos[0],c.geom.pos[1],c.geom.pos[2]);
+    //      this_object->m_contact_damage_pos.set( pos );
+    //      //this_object->m_contact_damage_dir.set(-c.geom.normal[0]*norm_sign,-c.geom.normal[1]*norm_sign,-c.geom.normal[2]*norm_sign);
+    //      this_object->m_contact_damage_dir.set( dir );
+    //  }
 }

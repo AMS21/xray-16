@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: UIInvUpgradeInfo.cpp
-//	Created 	: 21.11.2007
-//  Modified 	: 13.03.2009
-//	Author		: Evgeniy Sokolov, Prishchepa Sergey
-//	Description : inventory upgrade UI info window class implementation
+//  Module      : UIInvUpgradeInfo.cpp
+//  Created     : 21.11.2007
+//  Modified    : 13.03.2009
+//  Author      : Evgeniy Sokolov, Prishchepa Sergey
+//  Description : inventory upgrade UI info window class implementation
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

@@ -27,9 +27,9 @@ void CCartridge::Load(LPCSTR section, u8 LocalAmmoType)
     param_s.kDist = pSettings->r_float(section, "k_dist");
     param_s.kDisp = pSettings->r_float(section, "k_disp");
     param_s.kHit = pSettings->r_float(section, "k_hit");
-    //.	param_s.kCritical			= pSettings->r_float(section, "k_hit_critical");
+    //. param_s.kCritical           = pSettings->r_float(section, "k_hit_critical");
     param_s.kImpulse = pSettings->r_float(section, "k_impulse");
-    // m_kPierce				= pSettings->r_float(section, "k_pierce");
+    // m_kPierce                = pSettings->r_float(section, "k_pierce");
     param_s.kAP = READ_IF_EXISTS(pSettings, r_float, section, "k_ap", 0.0f);
     param_s.u8ColorID = READ_IF_EXISTS(pSettings, r_u8, section, "tracer_color_ID", 0);
 
@@ -94,9 +94,9 @@ void CWeaponAmmo::Load(LPCSTR section)
     cartridge_param.kDist = pSettings->r_float(section, "k_dist");
     cartridge_param.kDisp = pSettings->r_float(section, "k_disp");
     cartridge_param.kHit = pSettings->r_float(section, "k_hit");
-    //.	cartridge_param.kCritical	= pSettings->r_float(section, "k_hit_critical");
+    //. cartridge_param.kCritical   = pSettings->r_float(section, "k_hit_critical");
     cartridge_param.kImpulse = pSettings->r_float(section, "k_impulse");
-    // m_kPierce				= pSettings->r_float(section, "k_pierce");
+    // m_kPierce                = pSettings->r_float(section, "k_pierce");
     cartridge_param.kAP = READ_IF_EXISTS(pSettings, r_float, section, "k_ap", 0.0f);
     cartridge_param.u8ColorID = READ_IF_EXISTS(pSettings, r_u8, section, "tracer_color_ID", 0);
 

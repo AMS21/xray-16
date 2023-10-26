@@ -41,7 +41,7 @@ void CControlMeleeJump::activate()
     m_man->path_stop(this);
     m_man->move_stop(this);
 
-    // get	direction to enemy
+    // get  direction to enemy
     Fvector dir_to_enemy;
     dir_to_enemy.set(m_object->Direction());
     dir_to_enemy.sub(m_object->EnemyMan.get_enemy()->Position(), m_object->Position());

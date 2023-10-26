@@ -12,7 +12,7 @@
 CWeaponShotEffector::CWeaponShotEffector()
 {
     Reset();
-    //	m_first_shot_pos = 0.0f;
+    //  m_first_shot_pos = 0.0f;
 }
 
 void CWeaponShotEffector::Initialize(const CameraRecoil& cam_recoil)
@@ -130,7 +130,7 @@ void CWeaponShotEffector::Update()
     m_prev_angle_vert = m_angle_vert;
     m_prev_angle_horz = m_angle_horz;
 
-    //	Msg( " <<[%d]  v=%.4f  dv=%.4f   a=%d s=%d  fr=%d", m_shot_numer, m_angle_vert, m_delta_vert, m_actived,
+    //  Msg( " <<[%d]  v=%.4f  dv=%.4f   a=%d s=%d  fr=%d", m_shot_numer, m_angle_vert, m_delta_vert, m_actived,
     // m_first_shot, Device.dwFrame );
 }
 
@@ -153,7 +153,7 @@ void CWeaponShotEffector::SetRndSeed(s32 Seed)
     if (m_LastSeed == 0)
     {
         m_LastSeed = Seed;
-        //		m_Random.seed		(Seed);
+        //      m_Random.seed       (Seed);
         m_Random.seed(Device.dwFrame);
     }
 }
@@ -163,17 +163,17 @@ void CWeaponShotEffector::ChangeHP(float* pitch, float* yaw)
     *pitch -= m_delta_vert; // y = pitch = p = vert
     *yaw -= m_delta_horz; // x = yaw   = h = horz
 
-    //	if ( m_first_shot )
-    //	{
-    //		m_first_shot_pos = *pitch;
-    //		m_first_shot = false;
-    //	}
+    //  if ( m_first_shot )
+    //  {
+    //      m_first_shot_pos = *pitch;
+    //      m_first_shot = false;
+    //  }
 
-    //	if ( m_cam_recoil.ReturnMode && m_cam_recoil.StopReturn && (*pitch > m_first_shot_pos + 0.1f) )
-    //	{
-    //		m_actived = false;
-    //	}
-    //	Msg( "[%d]  pitch = %.4f   yaw = %.4f    fs=%d    a=%d  fr=%d", m_shot_numer, *pitch, *yaw, m_first_shot,
+    //  if ( m_cam_recoil.ReturnMode && m_cam_recoil.StopReturn && (*pitch > m_first_shot_pos + 0.1f) )
+    //  {
+    //      m_actived = false;
+    //  }
+    //  Msg( "[%d]  pitch = %.4f   yaw = %.4f    fs=%d    a=%d  fr=%d", m_shot_numer, *pitch, *yaw, m_first_shot,
     // m_actived, Device.dwFrame );
 }
 

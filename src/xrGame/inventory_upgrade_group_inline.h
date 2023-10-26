@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: inventory_upgrade_group_inline.h
-//	Created 	: 22.10.2007
-//  Modified 	: 27.11.2007
-//	Author		: Evgeniy Sokolov
-//	Description : inventory upgrade group class inline functions
+//  Module      : inventory_upgrade_group_inline.h
+//  Created     : 22.10.2007
+//  Modified    : 27.11.2007
+//  Author      : Evgeniy Sokolov
+//  Description : inventory upgrade group class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef INVENTORY_UPGRADE_GROUP_INLINE_H_INCLUDED

@@ -12,9 +12,9 @@ CUIMoneyIndicator::CUIMoneyIndicator()
     AttachChild(&m_money_change);
     m_pBonusMoney = xr_new<CUIGameLog>();
     AttachChild(m_pBonusMoney);
-    //	m_pAnimChange = new CUIColorAnimatorWrapper("ui_mp_chat");
-    //	m_pAnimChange->Cyclic(false);
-    //	m_pAnimChange->SetDone(true);
+    //  m_pAnimChange = new CUIColorAnimatorWrapper("ui_mp_chat");
+    //  m_pAnimChange->Cyclic(false);
+    //  m_pAnimChange->SetDone(true);
 }
 
 CUIMoneyIndicator::~CUIMoneyIndicator() { xr_delete(m_pBonusMoney); }

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_property_evaluators.cpp
-//	Created 	: 25.03.2004
-//  Modified 	: 26.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker property evaluators classes
+//  Module      : stalker_property_evaluators.cpp
+//  Created     : 25.03.2004
+//  Modified    : 26.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker property evaluators classes
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -413,7 +413,7 @@ CStalkerPropertyEvaluatorShouldThrowGrenade::CStalkerPropertyEvaluatorShouldThro
 _value_type CStalkerPropertyEvaluatorShouldThrowGrenade::evaluate()
 {
 #if 0
-	return						(false);
+    return                      (false);
 #else // #if 1
 
     if (m_storage->property(eWorldPropertyStartedToThrowGrenade))
@@ -508,34 +508,34 @@ _value_type CStalkerPropertyEvaluatorLowCover::evaluate()
     return (false);
 
 #if 0
-	if (!m_storage->property(eWorldPropertyInCover))
-		return					(false);
+    if (!m_storage->property(eWorldPropertyInCover))
+        return                  (false);
 
-	if (!object().memory().enemy().selected())
-		return					(false);
+    if (!object().memory().enemy().selected())
+        return                  (false);
 
-	if (!object().best_weapon())
-		return					(false);
+    if (!object().best_weapon())
+        return                  (false);
 
-	CMemoryInfo					mem_object = object().memory().memory(object().memory().enemy().selected());
-	const CCoverPoint			*cover = object().best_cover(mem_object.m_object_params.m_position);
-	if (!cover)
-		return					(false);
+    CMemoryInfo                 mem_object = object().memory().memory(object().memory().enemy().selected());
+    const CCoverPoint           *cover = object().best_cover(mem_object.m_object_params.m_position);
+    if (!cover)
+        return                  (false);
 
-	if (object().Position().distance_to_sqr(cover->position()) > .1f)
-		return					(false);
+    if (object().Position().distance_to_sqr(cover->position()) > .1f)
+        return                  (false);
 
-	Fvector						direction;
-	float						y,p;
-	direction.sub				(mem_object.m_object_params.m_position, cover->position());
-	direction.getHP				(y,p);
-	float						high_cover_value = ai().level_graph().high_cover_in_direction(y, cover->level_vertex_id());
-	float						low_cover_value  = ai().level_graph().low_cover_in_direction (y, cover->level_vertex_id());
+    Fvector                     direction;
+    float                       y,p;
+    direction.sub               (mem_object.m_object_params.m_position, cover->position());
+    direction.getHP             (y,p);
+    float                       high_cover_value = ai().level_graph().high_cover_in_direction(y, cover->level_vertex_id());
+    float                       low_cover_value  = ai().level_graph().low_cover_in_direction (y, cover->level_vertex_id());
 
-	if (low_cover_value >= high_cover_value)
-		return					(false);
+    if (low_cover_value >= high_cover_value)
+        return                  (false);
 
-	// should be several other conditions here
-	return						(true);
+    // should be several other conditions here
+    return                      (true);
 #endif
 }

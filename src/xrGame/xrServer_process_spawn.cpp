@@ -25,7 +25,7 @@ CSE_Abstract* xrServer::Process_spawn(
         R_ASSERT3(E, "Can't create entity.", s_name);
         E->Spawn_Read(P);
         if (
-            //.				!( (game->Type()==E->s_gameid) || (GAME_ANY==E->s_gameid) ) ||
+            //.             !( (game->Type()==E->s_gameid) || (GAME_ANY==E->s_gameid) ) ||
 
             !E->m_gameType.MatchType((u16)game->Type()) || !E->match_configuration() || !game->OnPreCreate(E))
         {
@@ -36,18 +36,18 @@ CSE_Abstract* xrServer::Process_spawn(
             return NULL;
         }
 
-        //		E->m_bALifeControl = false;
+        //      E->m_bALifeControl = false;
     }
     else
     {
         VERIFY(E->m_bALifeControl);
-        //		E->owner			= CL;
-        //		if (CL != NULL)
-        //		{
-        //			int x=0;
-        //			x=x;
-        //		};
-        //		E->m_bALifeControl = true;
+        //      E->owner            = CL;
+        //      if (CL != NULL)
+        //      {
+        //          int x=0;
+        //          x=x;
+        //      };
+        //      E->m_bALifeControl = true;
     }
 
     CSE_Abstract* e_parent = 0;
@@ -57,7 +57,7 @@ CSE_Abstract* xrServer::Process_spawn(
         if (!e_parent)
         {
             R_ASSERT(!tpExistedEntity);
-            //			VERIFY3			(smart_cast<CSE_ALifeItemBolt*>(E) ||
+            //          VERIFY3         (smart_cast<CSE_ALifeItemBolt*>(E) ||
             // smart_cast<CSE_ALifeItemGrenade*>(E),*E->s_name,E->name_replace());
             F_entity_Destroy(E);
             return NULL;
@@ -96,7 +96,7 @@ CSE_Abstract* xrServer::Process_spawn(
         {
             // Clone from Phantom
             E->ID = PerformIDgen(0xffff);
-            E->owner = CL; //		= SelectBestClientToMigrateTo	(E);
+            E->owner = CL; //       = SelectBestClientToMigrateTo   (E);
             E->s_flags.set(M_SPAWN_OBJECT_PHANTOM, FALSE);
             entities.insert(std::make_pair(E->ID, E));
         }
@@ -120,10 +120,10 @@ CSE_Abstract* xrServer::Process_spawn(
     if (CL && (E->s_flags.is(M_SPAWN_OBJECT_ASPLAYER)))
     {
         CL->owner = E;
-        //		E->set_name_replace	(CL->Name);
+        //      E->set_name_replace (CL->Name);
     }
 
-    // PROCESS RP;	 3D position/orientation
+    // PROCESS RP;   3D position/orientation
     PerformRP(E);
     E->s_RP = 0xFE; // Use supplied
 
@@ -174,7 +174,7 @@ CSE_Abstract* xrServer::Process_spawn(
     };
 
     // log
-    // Msg		("- SERVER: Spawning '%s'(%d,%d,%d) as #%d, on '%s'", E->s_name_replace, E->g_team(), E->g_squad(),
+    // Msg      ("- SERVER: Spawning '%s'(%d,%d,%d) as #%d, on '%s'", E->s_name_replace, E->g_team(), E->g_squad(),
     // E->g_group(), E->ID, CL?CL->Name:"*SERVER*");
     return E;
 }

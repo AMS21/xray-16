@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: inventory_upgrade_property_inline.h
-//	Created 	: 22.11.2007
-//  Modified 	: 27.11.2007
-//	Author		: Evgeniy Sokolov
-//	Description : inventory upgrade property class inline functions
+//  Module      : inventory_upgrade_property_inline.h
+//  Created     : 22.11.2007
+//  Modified    : 27.11.2007
+//  Author      : Evgeniy Sokolov
+//  Description : inventory upgrade property class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef INVENTORY_UPGRADE_PROPERTY_INLINE_H_INCLUDED

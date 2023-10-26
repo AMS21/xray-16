@@ -312,7 +312,7 @@ void CUIPdaWnd::Show_MapLegendWnd(bool status)
 void CUIPdaWnd::Draw()
 {
     inherited::Draw();
-    //.	DrawUpdatedSections();
+    //. DrawUpdatedSections();
     DrawHint();
     if (UINoice)
         UINoice->Draw(); // over all

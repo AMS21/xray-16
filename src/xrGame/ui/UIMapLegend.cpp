@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: UIMapLegend.cpp
-//	Created 	: 03.06.2008
-//	Author		: Evgeniy Sokolov
-//	Description : UI Map Legend Wnd (PDA : Task) class impl
+//  Module      : UIMapLegend.cpp
+//  Created     : 03.06.2008
+//  Author      : Evgeniy Sokolov
+//  Description : UI Map Legend Wnd (PDA : Task) class impl
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

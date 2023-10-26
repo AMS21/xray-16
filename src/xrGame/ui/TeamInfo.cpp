@@ -76,8 +76,8 @@ LPCSTR CTeamInfo::GetTeam_color_tag(int team)
 {
     string32 tmp;
     R_ASSERT2(team == 1 || team == 2 || team == 3, xr_itoa(team, tmp, 10));
-    //	if (flags.test(flTeam1_col_t)) return *team1_color_tag;
-    //	if (flags.test(flTeam2_col_t)) return *team2_color_tag;
+    //  if (flags.test(flTeam1_col_t)) return *team1_color_tag;
+    //  if (flags.test(flTeam2_col_t)) return *team2_color_tag;
     if (team == 3)
     {
         team = 2;

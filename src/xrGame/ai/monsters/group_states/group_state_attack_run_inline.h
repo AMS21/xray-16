@@ -144,7 +144,7 @@ void CStateGroupAttackRunAbstract::execute()
     this->object->path().set_target_point(target, vertex);
     this->object->path().set_rebuild_time(this->object->get_attack_rebuild_time());
     this->object->path().set_use_covers(false);
-    // object->path().set_cover_params			(0.1f, 30.f, 1.f, 30.f);
+    // object->path().set_cover_params          (0.1f, 30.f, 1.f, 30.f);
     this->object->set_state_sound(MonsterSound::eMonsterSoundAggressive);
 
     this->object->path().extrapolate_path(true);
@@ -168,40 +168,40 @@ void CStateGroupAttackRunAbstract::execute()
 // TEMPLATE_SPECIALIZATION
 // void CStateGroupAttackRunAbstract::execute()
 // {
-// 	// установка параметров функциональных блоков
-// 	object->set_action						(ACT_RUN);
-// 	object->anim().accel_activate			(eAT_Aggressive);
-// 	object->anim().accel_set_braking		(false);
-// 	object->path().set_target_point			(object->EnemyMan.get_enemy_position(),
+//  // установка параметров функциональных блоков
+//  object->set_action                      (ACT_RUN);
+//  object->anim().accel_activate           (eAT_Aggressive);
+//  object->anim().accel_set_braking        (false);
+//  object->path().set_target_point         (object->EnemyMan.get_enemy_position(),
 // object->EnemyMan.get_enemy_vertex());
-// 	object->path().set_rebuild_time			(object->get_attack_rebuild_time());
-// 	object->path().set_use_covers			();
-// 	object->path().set_cover_params			(0.1f, 30.f, 1.f, 30.f);
-// 	object->path().set_try_min_time			(false);
-// 	object->set_state_sound					(MonsterSound::eMonsterSoundAggressive);
+//  object->path().set_rebuild_time         (object->get_attack_rebuild_time());
+//  object->path().set_use_covers           ();
+//  object->path().set_cover_params         (0.1f, 30.f, 1.f, 30.f);
+//  object->path().set_try_min_time         (false);
+//  object->set_state_sound                 (MonsterSound::eMonsterSoundAggressive);
 //
-// 	object->path().extrapolate_path			(true);
+//  object->path().extrapolate_path         (true);
 //
-// 	// обработать squad инфо
-// 	object->path().set_use_dest_orient		(false);
+//  // обработать squad инфо
+//  object->path().set_use_dest_orient      (false);
 //
 //
-// 	//	if ( g_bDogsDirMode )
-// 	if ( Device.dwTimeGlobal-time_state_started < m_max_encircle_time )
-// 	{
-//  		CMonsterSquad *squad	= monster_squad().get_squad(object);
-//  		if (squad && squad->SquadActive()) {
-//  			// Получить команду
-//  			SSquadCommand command;
-//  			squad->GetCommand(object, command);
+//  //  if ( g_bDogsDirMode )
+//  if ( Device.dwTimeGlobal-time_state_started < m_max_encircle_time )
+//  {
+//          CMonsterSquad *squad    = monster_squad().get_squad(object);
+//          if (squad && squad->SquadActive()) {
+//              // Получить команду
+//              SSquadCommand command;
+//              squad->GetCommand(object, command);
 //
-//  			if (command.type == SC_ATTACK) {
-//   				object->path().set_use_dest_orient	(true);
-//   				//object->path().set_dest_direction	(command.direction);
-//  				object->path().set_dest_direction	(m_dir_to_enemy);
-//  			}
-//  		}
-// 	}
+//              if (command.type == SC_ATTACK) {
+//                  object->path().set_use_dest_orient  (true);
+//                  //object->path().set_dest_direction (command.direction);
+//                  object->path().set_dest_direction   (m_dir_to_enemy);
+//              }
+//          }
+//  }
 //}
 
 TEMPLATE_SPECIALIZATION
@@ -229,10 +229,10 @@ bool CStateGroupAttackRunAbstract::check_completion()
         return true;
     }
 
-    // 	if ( !ai().level_graph().valid_vertex_id(object->EnemyMan.get_enemy_vertex()) )
-    // 	{
-    // 		return true;
-    // 	}
+    //  if ( !ai().level_graph().valid_vertex_id(object->EnemyMan.get_enemy_vertex()) )
+    //  {
+    //      return true;
+    //  }
 
     return false;
 }

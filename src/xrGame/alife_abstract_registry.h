@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_abstract_registry.h
-//	Created 	: 30.06.2004
-//  Modified 	: 30.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALife abstract registry
+//  Module      : alife_abstract_registry.h
+//  Created     : 30.06.2004
+//  Modified    : 30.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALife abstract registry
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_particles.h
-//	Created 	: 27.07.2004
-//  Modified 	: 27.07.2004
-//	Author		: Alexander Maximchuk
-//	Description : XRay Script particles class
+//  Module      : script_particles.h
+//  Created     : 27.07.2004
+//  Modified    : 27.07.2004
+//  Author      : Alexander Maximchuk
+//  Description : XRay Script particles class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

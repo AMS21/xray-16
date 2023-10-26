@@ -9,7 +9,7 @@ IC Fvector& CIKFoot::HeelPosition(Fvector& heel_position) const
 {
     heel_position.set(m_heel_position.v);
     return heel_position;
-    // return	get_local_vector( heel_position,  m_heel_position );
+    // return   get_local_vector( heel_position,  m_heel_position );
 }
 IC Fvector& CIKFoot::FootNormal(Fvector& foot_normal) const { return get_local_vector(foot_normal, m_foot_normal); }
 IC Fvector& CIKFoot::get_local_vector(Fvector& v, const local_vector& lv) const
@@ -37,7 +37,7 @@ IC Fvector& CIKFoot::get_local_vector(u16 bone, Fvector& v, const local_vector& 
 
     // switch( 1 + ref_bone() - lv.bone )
     //{
-    //	case 0:
-    //	case 1:
+    //  case 0:
+    //  case 1:
     //}
 }

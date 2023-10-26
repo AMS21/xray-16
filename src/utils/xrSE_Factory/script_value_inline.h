@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_value_inline.h
-//	Created 	: 16.07.2004
-//  Modified 	: 16.07.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script value inline functions
+//  Module      : script_value_inline.h
+//  Created     : 16.07.2004
+//  Modified    : 16.07.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script value inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

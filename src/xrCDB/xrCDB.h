@@ -215,10 +215,10 @@ private:
 public:
     CollectorPacked(const Fbox& bb, int apx_vertices = 5000, int apx_faces = 5000);
 
-    //		__declspec(noinline) CollectorPacked &operator=	(const CollectorPacked &object)
-    //		{
-    //			verts
-    //		}
+    //      __declspec(noinline) CollectorPacked &operator= (const CollectorPacked &object)
+    //      {
+    //          verts
+    //      }
 
     void add_face(const Fvector& v0, const Fvector& v1, const Fvector& v2, u16 material, u16 sector, u32 flags);
     void add_face_D(const Fvector& v0, const Fvector& v1, const Fvector& v2, u32 dummy, u32 flags);

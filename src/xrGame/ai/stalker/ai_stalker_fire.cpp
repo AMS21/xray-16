@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_stalker_fire.cpp
-//	Created 	: 25.02.2003
-//  Modified 	: 25.02.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Fire and enemy parameters for monster "Stalker"
+//  Module      : ai_stalker_fire.cpp
+//  Created     : 25.02.2003
+//  Modified    : 25.02.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Fire and enemy parameters for monster "Stalker"
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -104,7 +104,7 @@ float CAI_Stalker::GetWeaponAccuracy() const
 
 void CAI_Stalker::g_fireParams(const CHudItem* pHudItem, Fvector& P, Fvector& D)
 {
-    //.	VERIFY				(inventory().ActiveItem());
+    //. VERIFY              (inventory().ActiveItem());
     if (!inventory().ActiveItem())
     {
 #ifdef DEBUG
@@ -302,8 +302,8 @@ void CAI_Stalker::Hit(SHit* pHDS)
         {
             if (is_relation_enemy(entity_alive))
                 sound().play(eStalkerSoundInjuring);
-            //			else
-            //				sound().play		(eStalkerSoundInjuringByFriend);
+            //          else
+            //              sound().play        (eStalkerSoundInjuringByFriend);
         }
 
 //        int weapon_type = -1;
@@ -323,7 +323,7 @@ void CAI_Stalker::Hit(SHit* pHDS)
                 float power_factor = m_power_fx_factor * HDS.damage() / 100.f;
                 clamp(power_factor, 0.f, 1.f);
 
-                // IKinematicsAnimated		*tpKinematics = smart_cast<IKinematicsAnimated*>(Visual());
+                // IKinematicsAnimated      *tpKinematics = smart_cast<IKinematicsAnimated*>(Visual());
 #ifdef DEBUG
                 IKinematics* tpKinematics = smart_cast<IKinematics*>(Visual());
                 tpKinematics->LL_GetBoneInstance(HDS.bone());
@@ -333,12 +333,12 @@ void CAI_Stalker::Hit(SHit* pHDS)
                     HDS._dump();
                 }
 #endif
-                //				int						fx_index =
+                //              int                     fx_index =
                 //iFloor(tpKinematics->LL_GetBoneInstance(HDS.bone()).get_param(1)
                 //+
                 //(angle_difference(movement().m_body.current.yaw,-yaw) <= PI_DIV_2 ? 0 : 1));
-                //				if (fx_index != -1)
-                //					animation().play_fx	(power_factor,fx_index);
+                //              if (fx_index != -1)
+                //                  animation().play_fx (power_factor,fx_index);
             }
             else
             {
@@ -361,7 +361,7 @@ void CAI_Stalker::Hit(SHit* pHDS)
         memory().hit().add(damage_factor * HDS.damage(), HDS.direction(), HDS.who, HDS.boneID);
     }
 
-    // conditions().health()			= 1.f;
+    // conditions().health()            = 1.f;
 
     inherited::Hit(&HDS);
 }
@@ -387,7 +387,7 @@ void CAI_Stalker::OnItemDrop(CInventoryItem* inventory_item, bool just_before_de
     if (!critically_wounded())
         return;
 
-    //	VERIFY						(inventory().ActiveItem());
+    //  VERIFY                      (inventory().ActiveItem());
 
     if (inventory().ActiveItem() && (inventory().ActiveItem() != inventory_item))
         return;
@@ -616,10 +616,10 @@ IC bool ray_query_callback(collide::rq_result& result, LPVOID params)
     float power = param->m_holder->feel_vision_mtl_transp(result.O, result.element);
     param->m_power *= power;
 
-    //	if (power >= .05f) {
-    //		param->m_pick_distance			= result.range;
-    //		return							(true);
-    //	}
+    //  if (power >= .05f) {
+    //      param->m_pick_distance          = result.range;
+    //      return                          (true);
+    //  }
 
     if (!result.O)
     {
@@ -997,7 +997,7 @@ void CAI_Stalker::check_throw_trajectory(const float& throw_time)
 #endif // #ifdef DEBUG
 
     Fvector box_size = {0.f, 0.f, 0.f};
-    // Fvector box_size				=	{ 0.1f, 0.1f , 0.1f };
+    // Fvector box_size             =   { 0.1f, 0.1f , 0.1f };
 
     if (!trajectory_intersects_geometry(throw_time, m_throw_position, m_throw_target_position, m_throw_velocity,
             m_throw_collide_position, this, m_throw_ignore_object, rq_storage, trajectory_picks, collide_tris,
@@ -1027,7 +1027,7 @@ void CAI_Stalker::update_throw_params()
     m_computed_object_direction = Direction();
 
 #if 0
-	m_throw_position		= eye_matrix.c;
+    m_throw_position        = eye_matrix.c;
 #else
     m_throw_position = Position();
 
@@ -1124,7 +1124,7 @@ bool CAI_Stalker::critical_wound_external_conditions_suitable()
     if (!agent_manager().member().registered_in_combat(this))
         return (false);
 
-    //	Msg								("%6d executing critical hit",Device.dwTimeGlobal);
+    //  Msg                             ("%6d executing critical hit",Device.dwTimeGlobal);
     animation().global().make_inactual();
     return (true);
 }

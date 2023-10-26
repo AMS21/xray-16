@@ -1057,7 +1057,7 @@ void PAMove::Execute(ParticleEffect* effect, const float dt, float& tm_max)
         // move
         m.age += dt;
         m.posB = m.pos;
-        //        m.velB 	= m.vel;
+        //        m.velB    = m.vel;
         m.pos += m.vel * dt;
     }
 }
@@ -1231,11 +1231,11 @@ void PARandomVelocity::Transform(const Fmatrix& m) { gen_vel.transform_dir(gen_v
 // satisfying initial x(0)=x0,v(0)=v0 and desired x(t)=xf,v(t)=vf,
 // where x = x(0) + integrate(v(T),0,t)
 static inline void _pconstrain(float x0, float v0, float xf, float vf,
-							   float t, float *a, float *b, float *c)
+                               float t, float *a, float *b, float *c)
 {
-	*c = v0;
-	*b = 2 * (-t*vf - 2*t*v0 + 3*xf - 3*x0) / (t * t);
-	*a = 3 * (t*vf + t*v0 - 2*xf + 2*x0) / (t * t * t);
+    *c = v0;
+    *b = 2 * (-t*vf - 2*t*v0 + 3*xf - 3*x0) / (t * t);
+    *a = 3 * (t*vf + t*v0 - 2*xf + 2*x0) / (t * t * t);
 }
 #endif
 

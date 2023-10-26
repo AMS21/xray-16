@@ -156,7 +156,7 @@ SVS* CResourceManager::_CreateVS(LPCSTR _name)
         string_path cname;
         strconcat(sizeof(cname), cname, GEnv.Render->getShaderPath(), _name, ".vs");
         FS.update_path(cname, "$game_shaders$", cname);
-        //		LPCSTR						target		= NULL;
+        //      LPCSTR                      target      = NULL;
 
         IReader* fs = FS.r_open(cname);
         R_ASSERT3(fs, "shader file doesnt exist", cname);
@@ -164,8 +164,8 @@ SVS* CResourceManager::_CreateVS(LPCSTR _name)
         // Select target
         LPCSTR c_target = "vs_2_0";
         LPCSTR c_entry = "main";
-        /*if (HW.Caps.geometry.dwVersion>=CAP_VERSION(3,0))			target="vs_3_0";
-		else*/ if (HW.Caps.geometry_major >= 2)
+        /*if (HW.Caps.geometry.dwVersion>=CAP_VERSION(3,0))         target="vs_3_0";
+        else*/ if (HW.Caps.geometry_major >= 2)
             c_target = "vs_2_0";
         else
             c_target = "vs_1_1";
@@ -193,7 +193,7 @@ SVS* CResourceManager::_CreateVS(LPCSTR _name)
         _hr = GEnv.Render->shader_compile(name, LPCSTR(fs->pointer()), fs->length(), NULL, &Includer, c_entry,
             c_target, D3DXSHADER_DEBUG | D3DXSHADER_PACKMATRIX_ROWMAJOR /*| D3DXSHADER_PREFER_FLOW_CONTROL*/,
             &pShaderBuf, &pErrorBuf, NULL);
-        //		_hr = D3DXCompileShader		(LPCSTR(fs->pointer()),fs->length(), NULL, &Includer, "main", target,
+        //      _hr = D3DXCompileShader     (LPCSTR(fs->pointer()),fs->length(), NULL, &Includer, "main", target,
         // D3DXSHADER_DEBUG | D3DXSHADER_PACKMATRIX_ROWMAJOR, &pShaderBuf, &pErrorBuf, NULL);
         FS.r_close(fs);
 
@@ -321,7 +321,7 @@ SPS* CResourceManager::_CreatePS(LPCSTR name)
         HRESULT _hr = S_OK;
         _hr = GEnv.Render->shader_compile(name, data, size, NULL, &Includer, c_entry, c_target,
             D3DXSHADER_DEBUG | D3DXSHADER_PACKMATRIX_ROWMAJOR, &pShaderBuf, &pErrorBuf, NULL);
-        //_hr = D3DXCompileShader		(text,text_size, NULL, &Includer, c_entry, c_target, D3DXSHADER_DEBUG |
+        //_hr = D3DXCompileShader       (text,text_size, NULL, &Includer, c_entry, c_target, D3DXSHADER_DEBUG |
         // D3DXSHADER_PACKMATRIX_ROWMAJOR, &pShaderBuf, &pErrorBuf, NULL);
         xr_free(data);
 

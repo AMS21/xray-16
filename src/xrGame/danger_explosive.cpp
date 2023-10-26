@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: danger_explosive.cpp
-//	Created 	: 08.06.2005
-//  Modified 	: 08.06.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Danger explosive class
+//  Module      : danger_explosive.cpp
+//  Created     : 08.06.2005
+//  Modified    : 08.06.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Danger explosive class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

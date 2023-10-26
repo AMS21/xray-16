@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: UIActorMenu_action.cpp
-//	Created 	: 14.10.2008
-//	Author		: Evgeniy Sokolov (sea)
-//	Description : UI ActorMenu actions implementation
+//  Module      : UIActorMenu_action.cpp
+//  Created     : 14.10.2008
+//  Author      : Evgeniy Sokolov (sea)
+//  Description : UI ActorMenu actions implementation
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -44,7 +44,7 @@ public:
     {
         m_icon.SetWndSize(Fvector2().set(29.0f * UI().get_current_kx(), 36.0f)); // XXX: unhardcode size
         m_icon.SetStretchTexture(true);
-        //		m_icon.SetAlignment		(waCenter);
+        //      m_icon.SetAlignment     (waCenter);
         m_icon.InitTexture("ui_inGame2_inv_trash"); // XXX: unhardcode texture
     }
 
@@ -58,7 +58,7 @@ public:
         pos.y += drag_sz.y;
 
         m_icon.SetWndPos(pos);
-        //		m_icon.SetWndSize(sz);
+        //      m_icon.SetWndSize(sz);
         m_icon.Draw();
     }
 };
@@ -426,7 +426,7 @@ void CUIActorMenu::OnPressUserKey(bool take)
     case mmUndefined: break;
     case mmInventory: break;
     case mmTrade:
-        //		OnBtnPerformTrade( this, 0 );
+        //      OnBtnPerformTrade( this, 0 );
         break;
     case mmUpgrade: TrySetCurUpgrade(); break;
     case mmDeadBodySearch: 

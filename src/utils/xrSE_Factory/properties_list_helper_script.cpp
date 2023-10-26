@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: properties_list_helper_script.cpp
-//	Created 	: 14.07.2004
-//  Modified 	: 14.07.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Properties list helper script export
+//  Module      : properties_list_helper_script.cpp
+//  Created     : 14.07.2004
+//  Modified    : 14.07.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Properties list helper script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
@@ -79,9 +79,9 @@ SCRIPT_EXPORT(CScriptPropertiesListHelper, (),
             class_<RTextValue>("text_value"), class_<Flag8Value>("flag8_value"), class_<Flag16Value>("flag16_value"),
             class_<Flag32Value>("flag32_value"), class_<Token8Value>("token8_value"),
             class_<Token16Value>("token16_value"), class_<Token32Value>("token32_value"),
-            //		class_<RToken8Value>("rtoken8_value"),
-            //		class_<RToken16Value>("rtoken16_value"),
-            //		class_<RToken32Value>("rtoken32_value"),
+            //      class_<RToken8Value>("rtoken8_value"),
+            //      class_<RToken16Value>("rtoken16_value"),
+            //      class_<RToken32Value>("rtoken32_value"),
             class_<RListValue>("list_value"),
 
             class_<CChooseType>("choose_type")
@@ -98,13 +98,13 @@ SCRIPT_EXPORT(CScriptPropertiesListHelper, (),
             class_<CScriptPropertiesListHelper>("properties_list_helper")
                 .def("vector_on_after_edit", &CScriptPropertiesListHelper::FvectorRDOnAfterEdit)
                 .def("vector_on_before_edit", &CScriptPropertiesListHelper::FvectorRDOnBeforeEdit)
-                //			.def("vector_on_draw",			&CScriptPropertiesListHelper::FvectorRDOnDraw)
+                //          .def("vector_on_draw",          &CScriptPropertiesListHelper::FvectorRDOnDraw)
                 .def("float_on_after_edit", &CScriptPropertiesListHelper::floatRDOnAfterEdit, luabind::policy::out_value<3>())
                 .def("float_on_before_edit", &CScriptPropertiesListHelper::floatRDOnBeforeEdit, luabind::policy::out_value<3>())
-                //			.def("float_on_draw",			&CScriptPropertiesListHelper::floatRDOnDraw)
+                //          .def("float_on_draw",           &CScriptPropertiesListHelper::floatRDOnDraw)
                 .def("name_after_edit", &CScriptPropertiesListHelper::NameAfterEdit, luabind::policy::pure_out_value<3>())
                 .def("name_before_edit", &CScriptPropertiesListHelper::NameBeforeEdit, luabind::policy::pure_out_value<3>())
-                //			.def("name_on_draw",			&CScriptPropertiesListHelper::NameDraw)
+                //          .def("name_on_draw",            &CScriptPropertiesListHelper::NameDraw)
 
                 .def("create_caption", &CScriptPropertiesListHelper::CreateCaption)
                 .def("create_canvas", &CScriptPropertiesListHelper::CreateCanvas)
@@ -123,18 +123,18 @@ SCRIPT_EXPORT(CScriptPropertiesListHelper, (),
                     (ChooseValue * (CScriptPropertiesListHelper::*)(PropItemVec*, LPCSTR, luabind::object, LPCSTR, u32,
                                        LPCSTR, LPCSTR, u32))(&CScriptPropertiesListHelper::CreateChoose))
 
-                //			.def("create_s8", (S8Value *(CScriptPropertiesListHelper::*)(PropItemVec*, LPCSTR,
+                //          .def("create_s8", (S8Value *(CScriptPropertiesListHelper::*)(PropItemVec*, LPCSTR,
                 //luabind::object , LPCSTR
-                //))					(&CScriptPropertiesListHelper::CreateS8))
-                //			.def("create_s8", (S8Value *(CScriptPropertiesListHelper::*)(PropItemVec*, LPCSTR,
+                //))                    (&CScriptPropertiesListHelper::CreateS8))
+                //          .def("create_s8", (S8Value *(CScriptPropertiesListHelper::*)(PropItemVec*, LPCSTR,
                 //luabind::object , LPCSTR
-                //,  s8))				(&CScriptPropertiesListHelper::CreateS8))
-                //			.def("create_s8", (S8Value *(CScriptPropertiesListHelper::*)(PropItemVec*, LPCSTR,
+                //,  s8))               (&CScriptPropertiesListHelper::CreateS8))
+                //          .def("create_s8", (S8Value *(CScriptPropertiesListHelper::*)(PropItemVec*, LPCSTR,
                 //luabind::object , LPCSTR
-                //,  s8,  s8))			(&CScriptPropertiesListHelper::CreateS8))
-                //			.def("create_s8", (S8Value *(CScriptPropertiesListHelper::*)(PropItemVec*, LPCSTR,
+                //,  s8,  s8))          (&CScriptPropertiesListHelper::CreateS8))
+                //          .def("create_s8", (S8Value *(CScriptPropertiesListHelper::*)(PropItemVec*, LPCSTR,
                 //luabind::object , LPCSTR
-                //,  s8,  s8,  s8))	(&CScriptPropertiesListHelper::CreateS8))
+                //,  s8,  s8,  s8)) (&CScriptPropertiesListHelper::CreateS8))
 
                 .def("create_s16", (S16Value * (CScriptPropertiesListHelper::*)(PropItemVec*, LPCSTR, luabind::object,
                                                    LPCSTR))(&CScriptPropertiesListHelper::CreateS16))
@@ -258,9 +258,9 @@ SCRIPT_EXPORT(CScriptPropertiesListHelper, (),
                 .def("create_token16", &CScriptPropertiesListHelper::CreateToken16)
                 .def("create_token32", &CScriptPropertiesListHelper::CreateToken32)
 
-                //			.def("create_rtoken8",	&CScriptPropertiesListHelper::CreateRToken8)
-                //			.def("create_rtoken16",	&CScriptPropertiesListHelper::CreateRToken16)
-                //			.def("create_rtoken32",	&CScriptPropertiesListHelper::CreateRToken32)
+                //          .def("create_rtoken8",  &CScriptPropertiesListHelper::CreateRToken8)
+                //          .def("create_rtoken16", &CScriptPropertiesListHelper::CreateRToken16)
+                //          .def("create_rtoken32", &CScriptPropertiesListHelper::CreateRToken32)
 
                 .def("create_list", &CScriptPropertiesListHelper::CreateRList)
 

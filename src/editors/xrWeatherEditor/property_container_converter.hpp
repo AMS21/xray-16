@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_container_converter.hpp
-//	Created 	: 11.12.2007
-//  Modified 	: 11.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property container converter class
+//  Module      : property_container_converter.hpp
+//  Created     : 11.12.2007
+//  Modified    : 11.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property container converter class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_CONTAINER_CONVERTER_HPP_INCLUDED

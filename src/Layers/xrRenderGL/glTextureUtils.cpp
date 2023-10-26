@@ -15,7 +15,7 @@ TextureFormatPairs TextureFormatList[] =
     //D3DFMT_R8G8B8 Not available 
     {D3DFMT_A8R8G8B8, GL_RGBA8}, // Not available 
     //D3DFMT_X8R8G8B8 Not available 
-    //	TODO: DX11: Remove. Need only for nullrt
+    //  TODO: DX11: Remove. Need only for nullrt
     //D3DFMT_R5G6B5 Not available 
     {D3DFMT_R5G6B5, GL_RGBA8}, // Not available 
     //D3DFMT_X1R5G5B5 Not available 
@@ -75,7 +75,7 @@ TextureFormatPairs TextureFormatList[] =
     {D3DFMT_A16B16G16R16F, GL_RGBA16F},
     {D3DFMT_R32F, GL_R32F},
     {D3DFMT_R16F, GL_R16F},
-    //{ D3DFMT_G32R32F,		GL_RG32F },
+    //{ D3DFMT_G32R32F,     GL_RG32F },
     {D3DFMT_A32B32G32R32F, GL_RGBA32F},
     //D3DFMT_CxV8U8 Not available 
     //D3DDECLTYPE_FLOAT1 GL_R32F 

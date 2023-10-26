@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: object_factory_inline.h
-//	Created 	: 27.05.2004
-//  Modified 	: 27.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Object factory inline functions
+//  Module      : object_factory_inline.h
+//  Created     : 27.05.2004
+//  Modified    : 27.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Object factory inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

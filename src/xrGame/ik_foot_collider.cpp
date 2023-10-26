@@ -371,24 +371,24 @@ void ik_foot_collider::collide(SIKCollideData& cld, const ik_foot_geom& foot_geo
 
             //else
             //{
-            //		ik_pick_result r_foot;
-            //		Fvector pos_foot = Fvector().sub( foot.c, Fvector( ).mul( pick_v, collide_dist ) );
-            //		if( cld.collided && Pick( r_foot, pos_foot, pick_v, pick_dist, O ) )
-            //		{
-            //			Fplane plane;
-            //			tri_plane( r_toe.position, r_hill.position , r_foot.position, plane );
+            //      ik_pick_result r_foot;
+            //      Fvector pos_foot = Fvector().sub( foot.c, Fvector( ).mul( pick_v, collide_dist ) );
+            //      if( cld.collided && Pick( r_foot, pos_foot, pick_v, pick_dist, O ) )
+            //      {
+            //          Fplane plane;
+            //          tri_plane( r_toe.position, r_hill.position , r_foot.position, plane );
 
-            //			DBG_DrawTri(r_toe.position, r_hill.position, r_foot.position , color_xrgb( 255, 255, 255 ),
+            //          DBG_DrawTri(r_toe.position, r_hill.position, r_foot.position , color_xrgb( 255, 255, 255 ),
        false  );
             //
-            //			if( plane.n.dotproduct( r_hill.p.n ) < 0.f )
-            //			{
-            //				plane.n.invert();
-            //				plane.d = -cld.m_plane.d;
+            //          if( plane.n.dotproduct( r_hill.p.n ) < 0.f )
+            //          {
+            //              plane.n.invert();
+            //              plane.d = -cld.m_plane.d;
             //
-            //			}
-            //			chose_best_plane( cld.m_plane, pick_v, plane, r_hill.p, r_toe.p   );
-            //		}
+            //          }
+            //          chose_best_plane( cld.m_plane, pick_v, plane, r_hill.p, r_toe.p   );
+            //      }
             //}
 
             cld.collided = true;

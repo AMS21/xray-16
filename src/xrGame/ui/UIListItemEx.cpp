@@ -12,8 +12,8 @@
 
 CUIListItemEx::CUIListItemEx(void)
 {
-    //.	this->InitTexture("ui" DELIMITER "hud_map_point");
-    //.	this->SetStretchTexture(true);
+    //. this->InitTexture("ui" DELIMITER "hud_map_point");
+    //. this->SetStretchTexture(true);
     this->m_dwSelectionColor = color_argb(200, 95, 82, 74);
     this->SetColor(color_argb(0, 0, 0, 0));
 }
@@ -27,11 +27,11 @@ void CUIListItemEx::SendMessage(CUIWindow* pWnd, s16 msg, void* pData)
     {
     case LIST_ITEM_SELECT:
         this->SetColor(m_dwSelectionColor);
-        //		this->Draw();
+        //      this->Draw();
         break;
     case LIST_ITEM_UNSELECT:
         this->SetColor(color_argb(0, 0, 0, 0));
-        //		this->Draw();
+        //      this->Draw();
         break;
     }
 }
@@ -39,7 +39,7 @@ void CUIListItemEx::SendMessage(CUIWindow* pWnd, s16 msg, void* pData)
 void CUIListItemEx::SetSelectionColor(u32 dwColor) { m_dwSelectionColor = dwColor; }
 void CUIListItemEx::Draw()
 {
-    //	if (m_bPerformTextLimit)
-    //		this->PerformTextLengthLimit();
+    //  if (m_bPerformTextLimit)
+    //      this->PerformTextLengthLimit();
     inherited::Draw();
 }

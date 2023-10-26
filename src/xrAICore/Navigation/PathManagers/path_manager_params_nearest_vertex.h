@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: path_manager_params_nearest_vertex.h
-//	Created 	: 21.03.2002
-//  Modified 	: 04.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Nearest vertex path manager parameters
+//  Module      : path_manager_params_nearest_vertex.h
+//  Created     : 21.03.2002
+//  Modified    : 04.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Nearest vertex path manager parameters
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

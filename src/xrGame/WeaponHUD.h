@@ -4,7 +4,7 @@ class CHudItem;
 
 struct weapon_hud_value : public shared_value
 {
-    // IKinematicsAnimated*	m_animations;
+    // IKinematicsAnimated* m_animations;
     IKinematicsAnimated* m_animations;
 
 public:
@@ -38,7 +38,7 @@ public:
     {
         shared_item<weapon_hud_value>::create(key, g_pWeaponHUDContainer, on_new_pred(owner));
     }
-    // IKinematicsAnimated*	animations				(){return p_->m_animations;}
+    // IKinematicsAnimated* animations              (){return p_->m_animations;}
     IKinematicsAnimated* animations() { return p_->m_animations; }
     u32 motion_length(MotionID M);
     MotionID motion_id(LPCSTR name);
@@ -63,7 +63,7 @@ class CWeaponHUD
     u32 m_dwAnimEndTime;
     bool m_bStopAtEndAnimIsRunning;
     u32 m_startedAnimState;
-    //	CInventoryItem*		m_pCallbackItem;
+    //  CInventoryItem*     m_pCallbackItem;
     CHudItem* m_pCallbackItem;
 
     //остановление таймера текущей анимации, и вызов callback

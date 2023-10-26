@@ -250,7 +250,7 @@ void CLevelSoundManager::Update()
                 /*
                                 if ((0==T.m_ActiveTime.x) && (0==T.m_ActiveTime.y)||
                                     ((int(game_time)>=T.m_ActiveTime.x)&&(int(game_time)<T.m_ActiveTime.y)))
-                                    indices.push_back	(k);
+                                    indices.push_back   (k);
                 */
             }
             if (!indices.empty())

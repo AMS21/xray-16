@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: space_restriction.cpp
-//	Created 	: 17.08.2004
-//  Modified 	: 27.08.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Space restriction
+//  Module      : space_restriction.cpp
+//  Created     : 17.08.2004
+//  Modified    : 27.08.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Space restriction
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -301,10 +301,10 @@ bool CSpaceRestriction::affect(SpaceRestrictionHolder::CBaseRestrictionPtr bridg
     return (true);
 
     // if (bridge->inside(start_position))
-    //	return						(false);
-    // Fvector							position;
-    // bridge->accessible_nearest		(start_position,position,false);
-    // return							(start_position.distance_to(position) <= radius + dependent_distance);
+    //  return                      (false);
+    // Fvector                          position;
+    // bridge->accessible_nearest       (start_position,position,false);
+    // return                           (start_position.distance_to(position) <= radius + dependent_distance);
 }
 
 bool CSpaceRestriction::affect(

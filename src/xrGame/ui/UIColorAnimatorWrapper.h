@@ -1,13 +1,13 @@
 //=============================================================================
 //  Filename:   UIColorAnimatorWrapper.h
-//	Created by Roman E. Marchenko, vortex@gsc-game.kiev.ua
-//	Copyright 2004. GSC Game World
-//	---------------------------------------------------------------------------
+//  Created by Roman E. Marchenko, vortex@gsc-game.kiev.ua
+//  Copyright 2004. GSC Game World
+//  ---------------------------------------------------------------------------
 //  Оберточка над LightAnimLibrary, в которой реализуется более удобная
-//	работа с анимацией, и прикручен апдейт времени специфичный для UI: так
-//	как UI апдейтится не на кажом кадре, то кормить функции интерполяции
-//	Device.fTimeDelta нельзя - анимация тормознутая получается. Приходится
-//	постоянно считать время между апдейтами.
+//  работа с анимацией, и прикручен апдейт времени специфичный для UI: так
+//  как UI апдейтится не на кажом кадре, то кормить функции интерполяции
+//  Device.fTimeDelta нельзя - анимация тормознутая получается. Приходится
+//  постоянно считать время между апдейтами.
 //=============================================================================
 #pragma once
 
@@ -29,7 +29,7 @@ public:
     // colorToModify - указатель на цвет который меняем
     // animationName - имя цветовой анимации
     explicit CUIColorAnimatorWrapper(const shared_str& animationName);
-    //						CUIColorAnimatorWrapper	(const shared_str &animationName, u32 *colorToModify);
+    //                      CUIColorAnimatorWrapper (const shared_str &animationName, u32 *colorToModify);
     CUIColorAnimatorWrapper(u32* colorToModify);
 
     // Установить новую цветовую анимацию

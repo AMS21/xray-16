@@ -67,13 +67,13 @@ element_fracture CPHFracturesHolder::SplitFromEnd(CPHElement* element, u16 fract
 
     // dBodyID new_element_body=new_element->get_body();
     // dBodyAddForce(new_element_body,fract_i->m_pos_in_element[0],
-    //									  fract_i->m_pos_in_element[1],
-    //									  fract_i->m_pos_in_element[2]);
+    //                                    fract_i->m_pos_in_element[1],
+    //                                    fract_i->m_pos_in_element[2]);
     ApplyImpactsToElement(new_element);
 
     // dBodyAddTorque(new_element->get_body(),fract_i->m_break_force,
-    //									   fract_i->m_break_torque,
-    //									   fract_i->m_add_torque_z);
+    //                                     fract_i->m_break_torque,
+    //                                     fract_i->m_add_torque_z);
     // BodyCutForce(new_element_body,default_l_limit,default_w_limit);
     element_fracture ret = std::make_pair(new_element, (CShellSplitInfo)(*fract_i));
 
@@ -191,8 +191,8 @@ void CPHFracturesHolder::PhTune(dBodyID body)
                 dJointSetFeedback(joint, ContactFeedBacks.add());
             // if(!dJointGetFeedback(joint))
             //{
-            //	m_feedbacks.push_back(dJointFeedback());
-            //	dJointSetFeedback(joint,&m_feedbacks.back());
+            //  m_feedbacks.push_back(dJointFeedback());
+            //  dJointSetFeedback(joint,&m_feedbacks.back());
             //}
         }
     }

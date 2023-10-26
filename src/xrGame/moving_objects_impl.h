@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: moving_objects_impl.h
-//	Created 	: 14.05.2007
-//  Modified 	: 14.05.2007
-//	Author		: Dmitriy Iassenev
-//	Description : moving objects implementation dependant inline functions
+//  Module      : moving_objects_impl.h
+//  Created     : 14.05.2007
+//  Modified    : 14.05.2007
+//  Author      : Dmitriy Iassenev
+//  Description : moving objects implementation dependant inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef MOVING_OBJECTS_IMPL_H

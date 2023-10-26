@@ -52,9 +52,9 @@ CPhysicsShell* P_build_Shell(
 {
     VERIFY(obj);
     phys_shell_verify_object_model(*obj);
-    // IRenderVisual*	V = obj->ObjectVisual();
+    // IRenderVisual*   V = obj->ObjectVisual();
     // IKinematics* pKinematics=smart_cast<IKinematics*>(V);
-    // IKinematics* pKinematics	=  V->dcast_PKinematics			();
+    // IKinematics* pKinematics =  V->dcast_PKinematics         ();
     IKinematics* pKinematics = obj->ObjectKinematics();
 
     CPhysicsShell* pPhysicsShell = P_create_Shell();
@@ -133,7 +133,7 @@ CPhysicsShell* P_build_Shell(IPhysicsShellHolder* obj, bool not_active_state, LP
     xr_vector<u16> f_bones;
     if (fixed_bones)
     {
-        // IKinematics* K		= smart_cast<IKinematics*>(obj->ObjectVisual());
+        // IKinematics* K       = smart_cast<IKinematics*>(obj->ObjectVisual());
         IKinematics* K = obj->ObjectKinematics();
         VERIFY(K);
         int count = _GetItemCount(fixed_bones);
@@ -253,13 +253,13 @@ void destroy_physics_shell(CPhysicsShell*& p)
 
 bool bone_has_pysics(IKinematics& K, u16 bone_id)
 {
-    // CBoneData	* pBonedata1 = &K.LL_GetData( bone_id );
-    // CBoneData	* pBonedata2 = K.LL_GetBoneData( bone_id );
+    // CBoneData    * pBonedata1 = &K.LL_GetData( bone_id );
+    // CBoneData    * pBonedata2 = K.LL_GetBoneData( bone_id );
 
-    // u32	sz = sizeof(vecBones);
-    // u32	sz1=  sizeof(pBonedata1->children);
+    // u32  sz = sizeof(vecBones);
+    // u32  sz1=  sizeof(pBonedata1->children);
 
-    //	VERIFY(pBonedata1 == pBonedata2);
+    //  VERIFY(pBonedata1 == pBonedata2);
     return K.LL_GetBoneVisible(bone_id) && shape_is_physic(K.GetBoneData(bone_id).get_shape());
 }
 
@@ -283,12 +283,12 @@ void phys_shell_verify_model(IKinematics& K)
 
 void phys_shell_verify_object_model(IPhysicsShellHolder& O)
 {
-    // IRenderVisual	*V = O.ObjectVisual();
+    // IRenderVisual    *V = O.ObjectVisual();
 
     // VERIFY2( V, make_string( "Can not create physics shell for object %s it has no model", O.ObjectName() )/*+
     // make_string("\n object dump: \n") + dbg_object_full_dump_string( &O )*/ );
 
-    // IKinematics		*K = V->dcast_PKinematics();
+    // IKinematics      *K = V->dcast_PKinematics();
 
     IKinematics* K = O.ObjectKinematics();
 

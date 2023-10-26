@@ -11,7 +11,7 @@
 class base_lighting;
 class net_task_callback;
 class CDeflector;
-// extern XRLC_LIGHT_API CDeflector*		Deflector		;
+// extern XRLC_LIGHT_API CDeflector*        Deflector       ;
 class execute_statistics;
 class XRLC_LIGHT_API CDeflector
 {
@@ -27,7 +27,7 @@ public:
 public:
     CDeflector();
     // public:
-    //						CDeflector					(CDeflector** g_defl)	{ CDeflector(); Deflector = this ;}
+    //                      CDeflector                  (CDeflector** g_defl)   { CDeflector(); Deflector = this ;}
     ~CDeflector();
     static CDeflector* read_create();
 

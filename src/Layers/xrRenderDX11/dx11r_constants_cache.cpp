@@ -6,7 +6,7 @@
 template<>
 dx11ConstantBuffer& R_constants::GetCBuffer<R_constants::BT_PixelBuffer>(R_constant* C) const
 {
-    //	Decode index
+    //  Decode index
     int iBufferIndex = (C->destination & RC_dest_pixel_cb_index_mask) >> RC_dest_pixel_cb_index_shift;
 
     VERIFY(iBufferIndex < CBackend::MaxCBuffers);
@@ -17,7 +17,7 @@ dx11ConstantBuffer& R_constants::GetCBuffer<R_constants::BT_PixelBuffer>(R_const
 template<>
 dx11ConstantBuffer& R_constants::GetCBuffer<R_constants::BT_VertexBuffer>(R_constant* C) const
 {
-    //	Decode index
+    //  Decode index
     int iBufferIndex = (C->destination & RC_dest_vertex_cb_index_mask) >> RC_dest_vertex_cb_index_shift;
 
     VERIFY(iBufferIndex < CBackend::MaxCBuffers);
@@ -28,7 +28,7 @@ dx11ConstantBuffer& R_constants::GetCBuffer<R_constants::BT_VertexBuffer>(R_cons
 template<>
 dx11ConstantBuffer& R_constants::GetCBuffer<R_constants::BT_GeometryBuffer>(R_constant* C) const
 {
-    //	Decode index
+    //  Decode index
     int iBufferIndex = (C->destination & RC_dest_geometry_cb_index_mask) >> RC_dest_geometry_cb_index_shift;
 
     VERIFY(iBufferIndex < CBackend::MaxCBuffers);
@@ -39,7 +39,7 @@ dx11ConstantBuffer& R_constants::GetCBuffer<R_constants::BT_GeometryBuffer>(R_co
 template<>
 dx11ConstantBuffer& R_constants::GetCBuffer<R_constants::BT_ComputeBuffer>(R_constant* C) const
 {
-    //	Decode index
+    //  Decode index
     int iBufferIndex = (C->destination & RC_dest_compute_cb_index_mask) >> RC_dest_compute_cb_index_shift;
 
     VERIFY(iBufferIndex < CBackend::MaxCBuffers);
@@ -50,7 +50,7 @@ dx11ConstantBuffer& R_constants::GetCBuffer<R_constants::BT_ComputeBuffer>(R_con
 template<>
 dx11ConstantBuffer& R_constants::GetCBuffer<R_constants::BT_HullBuffer>(R_constant* C) const
 {
-    //	Decode index
+    //  Decode index
     int iBufferIndex = (C->destination & RC_dest_hull_cb_index_mask) >> RC_dest_hull_cb_index_shift;
 
     VERIFY(iBufferIndex < CBackend::MaxCBuffers);
@@ -61,7 +61,7 @@ dx11ConstantBuffer& R_constants::GetCBuffer<R_constants::BT_HullBuffer>(R_consta
 template<>
 dx11ConstantBuffer& R_constants::GetCBuffer<R_constants::BT_DomainBuffer>(R_constant* C) const
 {
-    //	Decode index
+    //  Decode index
     int iBufferIndex = (C->destination & RC_dest_domain_cb_index_mask) >> RC_dest_domain_cb_index_shift;
 
     VERIFY(iBufferIndex < CBackend::MaxCBuffers);
@@ -101,11 +101,11 @@ void R_constants::flush_cache()
     if (a_pixel.b_dirty)
     {
         // fp
-        R_constant_array::t_f&	F	= a_pixel.c_f;
+        R_constant_array::t_f&  F   = a_pixel.c_f;
         {
             //if (F.r_lo() <= 32) //. hack
             {
-                void	*pBuffer;
+                void    *pBuffer;
                 const int iVectorElements = 4;
                 const int iVectorNumber = 256;
                 RCache.m_pPixelConstants->Map(D3Dxx_MAP_WRITE_DISCARD, 0, &pBuffer);
@@ -113,15 +113,15 @@ void R_constants::flush_cache()
                 RCache.m_pPixelConstants->Unmap();
             }
         }
-        a_pixel.b_dirty		= false;
+        a_pixel.b_dirty     = false;
     }
     if (a_vertex.b_dirty)
     {
         // fp
-        R_constant_array::t_f&	F	= a_vertex.c_f;
+        R_constant_array::t_f&  F   = a_vertex.c_f;
         {
-            u32		count		= F.r_hi()-F.r_lo();
-            if (count)			{
+            u32     count       = F.r_hi()-F.r_lo();
+            if (count)          {
 #ifdef DEBUG
                 if (F.r_hi() > HW.Caps.geometry.dwRegisters)
                 {
@@ -129,20 +129,20 @@ void R_constants::flush_cache()
                         HW.Caps.geometry.dwRegisters,F.r_hi()
                         );
                 }
-                PGO		(Msg("PGO:V_CONST:%d",count));
+                PGO     (Msg("PGO:V_CONST:%d",count));
 #endif
                 {
-                    void	*pBuffer;
+                    void    *pBuffer;
                     const int iVectorElements = 4;
                     const int iVectorNumber = 256;
                     RCache.m_pVertexConstants->Map(D3Dxx_MAP_WRITE_DISCARD, 0, &pBuffer);
                     CopyMemory(pBuffer, F.access(0), iVectorNumber*iVectorElements*sizeof(float));
                     RCache.m_pVertexConstants->Unmap();
                 }
-                F.flush	();
+                F.flush ();
             }
         }
-        a_vertex.b_dirty	= false;
+        a_vertex.b_dirty    = false;
     }
 }
 */

@@ -50,8 +50,8 @@ void CWalmarkManager::PlaceWallmark(const Fvector& dir, const Fvector& start_pos
                                       float trace_dist, float wallmark_size,
                                       SHADER_VECTOR& wallmarks_vector,IGameObject* ignore_obj)
 {
-    collide::rq_result	result;
-    BOOL				reach_wall =
+    collide::rq_result  result;
+    BOOL                reach_wall =
         Level().ObjectSpace.RayPick(
         start_pos,
         dir,
@@ -74,10 +74,10 @@ void CWalmarkManager::PlaceWallmark(const Fvector& dir, const Fvector& start_pos
 void CWalmarkManager::PlaceWallmarks(const Fvector& start_pos)
 {
     m_pos = start_pos;
-    //.	LPCSTR				sect				= pSettings->r_string(m_owner->cNameSect(), "wallmark_section");
+    //. LPCSTR              sect                = pSettings->r_string(m_owner->cNameSect(), "wallmark_section");
     Load("explosion_marks");
 
-    //.	Device.seqParallel.push_back	(fastdelegate::FastDelegate0<>(this,&CWalmarkManager::StartWorkflow));
+    //. Device.seqParallel.push_back    (fastdelegate::FastDelegate0<>(this,&CWalmarkManager::StartWorkflow));
 
     StartWorkflow();
 }
@@ -96,39 +96,39 @@ void CWalmarkManager::StartWorkflow()
 
     CDB::TRI* T_array = Level().ObjectSpace.GetStaticTris();
     Fvector* V_array = Level().ObjectSpace.GetStaticVerts();
-    //.	Triangle		ntri;
-    //.	float			ndist					= phInfinity;
-    //.	Fvector			npoint;
+    //. Triangle        ntri;
+    //. float           ndist                   = phInfinity;
+    //. Fvector         npoint;
     u32 wm_count = 0;
 
     u32 _ray_test = 0;
-    //	u32 _tri_behind		= 0;
+    //  u32 _tri_behind     = 0;
     u32 _tri_not_plane = 0;
     u32 _not_dist = 0;
     /*
-        DBG_OpenCashedDraw		();
-        DBG_DrawAABB			(m_pos,Fvector().set(m_trace_dist,m_trace_dist,m_trace_dist),color_xrgb(255,0,0));
-        DBG_DrawAABB			(m_pos,Fvector().set(0.05f,0.05f,0.05f),color_xrgb(0,255,0));
+        DBG_OpenCashedDraw      ();
+        DBG_DrawAABB            (m_pos,Fvector().set(m_trace_dist,m_trace_dist,m_trace_dist),color_xrgb(255,0,0));
+        DBG_DrawAABB            (m_pos,Fvector().set(0.05f,0.05f,0.05f),color_xrgb(0,255,0));
 
         CTimer T; T.Start();
     */
     for (auto &Res : *XRC.r_get())
     {
-        //.		DBG_DrawTri(Res, color_xrgb(0,255,0) );
+        //.     DBG_DrawTri(Res, color_xrgb(0,255,0) );
 
         if (wm_count >= max_wallmarks_count)
             break;
 
-        //.		Triangle					tri;
+        //.     Triangle                    tri;
         Fvector end_point;
-        //.		ETriDist					c;
+        //.     ETriDist                    c;
         Fvector pdir;
         float pfSParam;
         float pfTParam;
 
-        //.		CalculateTriangle			(T_array+Res->id,cast_fp(m_pos),tri);
+        //.     CalculateTriangle           (T_array+Res->id,cast_fp(m_pos),tri);
 
-        //.		float dist					= DistToTri(&tri,cast_fp(m_pos),cast_fp(pdir),cast_fp(end_point),c,V_array);
+        //.     float dist                  = DistToTri(&tri,cast_fp(m_pos),cast_fp(pdir),cast_fp(end_point),c,V_array);
         Fvector _tri[3];
 
         CDB::TRI* _t = T_array + Res.id;
@@ -171,15 +171,15 @@ void CWalmarkManager::StartWorkflow()
     }
     /*
         Msg("----------------------------------");
-        Msg("tri count=%d",						XRC.r_count());
-        Msg("far_dist=%d",						_not_dist);
-        Msg("RayTest = %d",						_ray_test);
-        Msg("c==tdBehind = %d",					_tri_behind);
-        Msg	("c!=tdPlane && dist>ndist = %d",	_tri_not_plane);
-        Msg("Wallmarks added = %d",				wm_count);
-        Msg("Time: %d",							T.GetElapsed_ms());
+        Msg("tri count=%d",                     XRC.r_count());
+        Msg("far_dist=%d",                      _not_dist);
+        Msg("RayTest = %d",                     _ray_test);
+        Msg("c==tdBehind = %d",                 _tri_behind);
+        Msg ("c!=tdPlane && dist>ndist = %d",   _tri_not_plane);
+        Msg("Wallmarks added = %d",             wm_count);
+        Msg("Time: %d",                         T.GetElapsed_ms());
 
-        DBG_ClosedCashedDraw	(10000);
+        DBG_ClosedCashedDraw    (10000);
     */
 }
 
@@ -219,7 +219,7 @@ float Distance(
     //.    float fB0 = kDiff.Dot(rkTri.Edge0());
     float fB0 = kDiff.dotproduct(Edge0);
 
-    //.	float fB1 = kDiff.Dot(rkTri.Edge1());
+    //. float fB1 = kDiff.Dot(rkTri.Edge1());
     float fB1 = kDiff.dotproduct(Edge1);
 
     //.    float fC = kDiff.SquaredLength();

@@ -76,7 +76,7 @@ private:
 public:
     //дополнительные параметры патронов
     //для подствольника
-    //-	CWeaponAmmo*			m_pAmmo2;
+    //- CWeaponAmmo*            m_pAmmo2;
     xr_vector<shared_str> m_ammoTypes2;
     u8 m_ammoType2;
 

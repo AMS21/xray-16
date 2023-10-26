@@ -54,7 +54,7 @@ inline float sin_and_cos(float x, float alpha, float beta)
 //
 // A class representing the equation alpha*cos(psi) + beta*sin(psi) + xi
 // where alpha,beta,xi are such that
-//	-1 <= alpha*cos(psi) + beta*sin(psi) + xi <= 1
+//  -1 <= alpha*cos(psi) + beta*sin(psi) + xi <= 1
 // and
 //      -Pi <= psi <= Pi
 //

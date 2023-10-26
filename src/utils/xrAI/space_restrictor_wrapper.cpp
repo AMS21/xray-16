@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: space_restrictor_wrapper.cpp
-//	Created 	: 28.11.2005
-//  Modified 	: 28.11.2005
-//	Author		: Dmitriy Iassenev
-//	Description : space restrictor wrapper
+//  Module      : space_restrictor_wrapper.cpp
+//  Created     : 28.11.2005
+//  Modified    : 28.11.2005
+//  Author      : Dmitriy Iassenev
+//  Description : space restrictor wrapper
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"

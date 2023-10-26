@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_animation_script.cpp
-//	Created 	: 25.02.2003
-//  Modified 	: 19.11.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker animation manager : script animations
+//  Module      : stalker_animation_script.cpp
+//  Created     : 25.02.2003
+//  Modified    : 19.11.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker animation manager : script animations
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -24,7 +24,7 @@ void CStalkerAnimationManager::script_play_callback(CBlend* blend)
     const SCRIPT_ANIMATIONS& animations = animation_manager.script_animations();
 
 #if 0
-    Msg							(
+    Msg                         (
         "%6d Script callback [%s]",
         Device.dwTimeGlobal,
         animations.empty()
@@ -55,12 +55,12 @@ void CStalkerAnimationManager::add_script_animation(
         return;
     }
 
-    //	Msg("add_script_animation %f,%f,%f %f,%f,%f local=%s [%s]",
-    //		position.x,position.y,position.z,
-    //		rotation.x,rotation.y,rotation.z,
-    //		local_animation ? "true" : "false",
-    //		m_object->animation_movement() ? "true" : "false"
-    //	);
+    //  Msg("add_script_animation %f,%f,%f %f,%f,%f local=%s [%s]",
+    //      position.x,position.y,position.z,
+    //      rotation.x,rotation.y,rotation.z,
+    //      local_animation ? "true" : "false",
+    //      m_object->animation_movement() ? "true" : "false"
+    //  );
 
     Fmatrix transform;
     rotation.mul(PI / 180.f);

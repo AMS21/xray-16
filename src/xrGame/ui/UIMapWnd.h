@@ -48,8 +48,8 @@ private:
     CMapLocation* m_cur_location;
 
 #ifdef DEBUG
-//	CUIStatic*					m_dbg_text_hint;
-//	CUIStatic*					m_dbg_info;
+//  CUIStatic*                  m_dbg_text_hint;
+//  CUIStatic*                  m_dbg_info;
 #endif // DEBUG
 
     enum EBtnPos

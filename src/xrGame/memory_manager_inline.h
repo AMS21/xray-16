@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: memory_manager_inline.h
-//	Created 	: 02.10.2001
-//  Modified 	: 19.11.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Memory manager inline functions
+//  Module      : memory_manager_inline.h
+//  Created     : 02.10.2001
+//  Modified    : 19.11.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Memory manager inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -29,8 +29,8 @@ template <typename _predicate>
 IC void CMemoryManager::fill_enemies(const _predicate& predicate) const
 {
     fill_enemies(visual().objects(), predicate);
-    //	fill_enemies			(sound().objects(),predicate);
-    //	fill_enemies			(hit().objects(),predicate);
+    //  fill_enemies            (sound().objects(),predicate);
+    //  fill_enemies            (hit().objects(),predicate);
 }
 
 IC CVisualMemoryManager& CMemoryManager::visual() const

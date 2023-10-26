@@ -24,7 +24,7 @@ CUICellItem::CUICellItem()
     m_pData = NULL;
     m_custom_draw = NULL;
     m_text = NULL;
-    //-	m_mark				= NULL;
+    //- m_mark              = NULL;
     m_upgrade = NULL;
     m_pConditionState = NULL;
     m_drawn_frame = 0;
@@ -58,11 +58,11 @@ void CUICellItem::init()
     CUIXmlInit::InitStatic(uiXml, "cell_item_text", 0, m_text);
     m_text->Show(false);
 
-    /*	m_mark					= new CUIStatic("Mark");
-        m_mark->SetAutoDelete	( true );
-        AttachChild				( m_mark );
-        CUIXmlInit::InitStatic	( uiXml, "cell_item_mark", 0, m_mark );
-        m_mark->Show			( false );*/
+    /*  m_mark                  = new CUIStatic("Mark");
+        m_mark->SetAutoDelete   ( true );
+        AttachChild             ( m_mark );
+        CUIXmlInit::InitStatic  ( uiXml, "cell_item_mark", 0, m_mark );
+        m_mark->Show            ( false );*/
 
     m_upgrade = xr_new<CUIStatic>("Upgrade");
     m_upgrade->SetAutoDelete(true);
@@ -118,9 +118,9 @@ void CUICellItem::Update()
     {
         if (item)
         {
-            //		Fvector2 size      = GetWndSize();
-            //		Fvector2 up_size = m_upgrade->GetWndSize();
-            //		pos.x = size.x - up_size.x - 4.0f;
+            //      Fvector2 size      = GetWndSize();
+            //      Fvector2 up_size = m_upgrade->GetWndSize();
+            //      pos.x = size.x - up_size.x - 4.0f;
             Fvector2 pos;
             pos.set(m_upgrade_pos);
             if (ChildsCount())

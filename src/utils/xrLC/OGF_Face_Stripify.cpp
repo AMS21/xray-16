@@ -69,24 +69,24 @@ void OGF::Stripify()
     if (fast_path_data.vertices.size() && fast_path_data.faces.size())
     /*
 try {
-    xr_vector<u16>	indices,permute;
+    xr_vector<u16>  indices,permute;
 
     // Stripify
-    u16* F			= (u16*)&x_faces.front();
-    indices.assign	(F,F+(x_faces.size()*3)	);
-    permute.resize	(x_vertices.size()		);
-    xrStripify		(indices,permute,c_vCacheSize,0);
+    u16* F          = (u16*)&x_faces.front();
+    indices.assign  (F,F+(x_faces.size()*3) );
+    permute.resize  (x_vertices.size()      );
+    xrStripify      (indices,permute,c_vCacheSize,0);
 
     // Copy faces
-    CopyMemory		(&x_faces.front(), &indices.front(), indices.size()*sizeof(u16));
+    CopyMemory      (&x_faces.front(), &indices.front(), indices.size()*sizeof(u16));
 
     // Permute vertices
     vec_XV temp_list = x_vertices;
     for(u32 i=0; i<temp_list.size(); i++)
         x_vertices[i]=temp_list[permute[i]];
-} catch (...)	{
-    clMsg		("ERROR: [fast-vert] Stripifying failed. Dump below.");
-    DumpFaces	();
+} catch (...)   {
+    clMsg       ("ERROR: [fast-vert] Stripifying failed. Dump below.");
+    DumpFaces   ();
     */
     {
         // alternative stripification - faces

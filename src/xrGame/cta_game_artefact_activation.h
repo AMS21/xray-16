@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////////
-//	Module		:	cta_game_artefact.h
-//	Created		:	19.12.2007
-//	Modified	:	19.12.2007
-//	Autor		:	Alexander Maniluk
-//	Description	:	Artefact object for Capture The Artefact game mode
+//  Module      :   cta_game_artefact.h
+//  Created     :   19.12.2007
+//  Modified    :   19.12.2007
+//  Autor       :   Alexander Maniluk
+//  Description :   Artefact object for Capture The Artefact game mode
 ////////////////////////////////////////////////////////////////////////////////
 #ifndef CTA_GAME_ARTEFACT_ACTIVATION
 #define CTA_GAME_ARTEFACT_ACTIVATION

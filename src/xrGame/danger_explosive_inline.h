@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: danger_explosive_inline.h
-//	Created 	: 24.05.2004
-//  Modified 	: 14.01.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Danger explosive class inline functions
+//  Module      : danger_explosive_inline.h
+//  Created     : 24.05.2004
+//  Modified    : 14.01.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Danger explosive class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

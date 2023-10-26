@@ -272,7 +272,7 @@ NET_Compressor::~NET_Compressor()
 }
 
 /*
-void NET_Compressor::Initialize	()
+void NET_Compressor::Initialize ()
 {
     pcs->Enter();
 

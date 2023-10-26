@@ -226,7 +226,7 @@ void CControlAnimationBase::select_animation(bool anim_end)
     // Заполнить текущую анимацию
     string64 st, tmp;
     strconcat(sizeof(st), st, *anim_it->target_name, xr_itoa(index, tmp, 10));
-    //	xr_sprintf		(st, "%s%d", *anim_it->second.target_name, index);
+    //  xr_sprintf      (st, "%s%d", *anim_it->second.target_name, index);
     m_cur_anim.name = st;
     m_cur_anim.index = u8(index);
     m_cur_anim.time_started = Device.dwTimeGlobal;
@@ -419,7 +419,7 @@ EAction CControlAnimationBase::VelocityIndex2Action(u32 velocity_index)
     case MonsterMovement::eVelocityParameterWalkGrowl:
         return ACT_HOME_WALK_GROWL;
     // jump
-    // case MonsterMovement::eBloodsuckerVelocityParameterJumpGround:	return ACT_JUMP;
+    // case MonsterMovement::eBloodsuckerVelocityParameterJumpGround:   return ACT_JUMP;
     case MonsterMovement::eVelocityParameterInvisible: return ACT_RUN;
     }
 
@@ -634,7 +634,7 @@ MotionID CControlAnimationBase::get_motion_id(EMotionAnim a, u32 index)
 void CControlAnimationBase::stop_now()
 {
     m_object->move().stop();
-    //	m_object->path().disable_path	();
+    //  m_object->path().disable_path   ();
 }
 
 void CControlAnimationBase::set_animation_speed()

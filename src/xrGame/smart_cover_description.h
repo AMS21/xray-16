@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_description.h
-//	Created 	: 16.08.2007
-//	Author		: Alexander Dudin
-//	Description : Smart cover description class
+//  Module      : smart_cover_description.h
+//  Created     : 16.08.2007
+//  Author      : Alexander Dudin
+//  Description : Smart cover description class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

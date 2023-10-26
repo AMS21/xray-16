@@ -52,44 +52,44 @@ xrLC_GlobalData::xrLC_GlobalData() : _b_nosun(false), _gl_linear(false), b_vert_
     read_faces = xr_new<tread_faces>(&_g_faces);
 }
 
-// void xrLC_GlobalData	::create_write_faces() const
+// void xrLC_GlobalData ::create_write_faces() const
 //{
-//	VERIFY(!write_faces);
-//	//write_faces = new twrite_faces( &_g_faces );
+//  VERIFY(!write_faces);
+//  //write_faces = new twrite_faces( &_g_faces );
 //}
 // void xrLC_GlobalData::destroy_write_faces() const
 //{
 //
-//	//xr_delete(write_faces);
+//  //xr_delete(write_faces);
 //}
 
-// twrite_faces*	xrLC_GlobalData::get_write_faces()
+// twrite_faces*    xrLC_GlobalData::get_write_faces()
 //{
-//	return write_faces;
+//  return write_faces;
 //}
 
-// void xrLC_GlobalData	::create_read_faces()
+// void xrLC_GlobalData ::create_read_faces()
 //{
-//	//VERIFY(!read_faces);
-//	//read_faces = new tread_faces( &_g_faces );
+//  //VERIFY(!read_faces);
+//  //read_faces = new tread_faces( &_g_faces );
 //}
 // void xrLC_GlobalData::destroy_read_faces()
 //{
 //
-//	//xr_delete(read_faces);
+//  //xr_delete(read_faces);
 //}
-// tread_faces	*	xrLC_GlobalData::get_read_faces()
+// tread_faces  *   xrLC_GlobalData::get_read_faces()
 //{
-//	return read_faces;
+//  return read_faces;
 //}
 /*
-poolVertices &xrLC_GlobalData	::VertexPool	()
+poolVertices &xrLC_GlobalData   ::VertexPool    ()
 {
-    return	_VertexPool;
+    return  _VertexPool;
 }
-poolFaces &xrLC_GlobalData	::FacePool			()
+poolFaces &xrLC_GlobalData  ::FacePool          ()
 {
-    return	_FacePool;
+    return  _FacePool;
 }
 */
 
@@ -97,7 +97,7 @@ void xrLC_GlobalData::destroy_rcmodel() { xr_delete(_cl_globs._RCAST_Model); }
 void xrLC_GlobalData::clear_build_textures_surface()
 {
     Logger.clLog("mem usage before clear build textures surface: %u", Memory.mem_usage());
-    // xr_vector<b_BuildTexture>		_textures;
+    // xr_vector<b_BuildTexture>        _textures;
     xr_vector<b_BuildTexture>::iterator i = textures().begin();
     xr_vector<b_BuildTexture>::const_iterator e = textures().end();
     for (; i != e; ++i)
@@ -135,28 +135,28 @@ void xrLC_GlobalData::initialize()
 }
 
 /*
-        xr_vector<b_BuildTexture>		_textures;
-        xr_vector<b_material>			_materials;
-        Shader_xrLC_LIB					_shaders;
-        CMemoryWriter					_err_invalid;
-        b_params						_g_params;
-        vecVertex						_g_vertices;
-        vecFace							_g_faces;
-        vecDefl							_g_deflectors;
-        base_lighting					_L_static;
-        CDB::MODEL*						_RCAST_Model;
-        bool							_b_nosun;
-        bool							_gl_linear;
+        xr_vector<b_BuildTexture>       _textures;
+        xr_vector<b_material>           _materials;
+        Shader_xrLC_LIB                 _shaders;
+        CMemoryWriter                   _err_invalid;
+        b_params                        _g_params;
+        vecVertex                       _g_vertices;
+        vecFace                         _g_faces;
+        vecDefl                         _g_deflectors;
+        base_lighting                   _L_static;
+        CDB::MODEL*                     _RCAST_Model;
+        bool                            _b_nosun;
+        bool                            _gl_linear;
 */
 
-// void			xrLC_GlobalData	::				cdb_read_create	()
+// void         xrLC_GlobalData ::              cdb_read_create ()
 //{
-//	VERIFY(!_RCAST_Model);
-//	_RCAST_Model = new CDB::MODEL ();
-//	_RCAST_Model->build( &*verts.begin(), (int)verts.size(), &*tris.begin(), (int)tris.size() );
+//  VERIFY(!_RCAST_Model);
+//  _RCAST_Model = new CDB::MODEL ();
+//  _RCAST_Model->build( &*verts.begin(), (int)verts.size(), &*tris.begin(), (int)tris.size() );
 //}
 
-// base_Face* F		= (base_Face*)(*((void**)&T.dummy));
+// base_Face* F     = (base_Face*)(*((void**)&T.dummy));
 
 //*((u32*)&F)
 
@@ -235,7 +235,7 @@ void write(IWriter& w, const CDB::MODEL& m)
     for (u32 i = 0; i < tris_count; ++i)
         ::write(w, m.get_tris()[i]);
 
-    //	w.w( m.get_tris(), m.get_tris_count() * sizeof(CDB::TRI) );
+    //  w.w( m.get_tris(), m.get_tris_count() * sizeof(CDB::TRI) );
 }
 
 void write(IWriter& w, const CDB::MODEL& m, const xrLC_GlobalData& lc_global_data)
@@ -248,7 +248,7 @@ void write(IWriter& w, const CDB::MODEL& m, const xrLC_GlobalData& lc_global_dat
     for (u32 i = 0; i < tris_count; ++i)
         ::write(w, m.get_tris()[i], lc_global_data);
 
-    //	w.w( m.get_tris(), m.get_tris_count() * sizeof(CDB::TRI) );
+    //  w.w( m.get_tris(), m.get_tris_count() * sizeof(CDB::TRI) );
 }
 
 void xrLC_GlobalData::read_base(INetReader& r)
@@ -262,7 +262,7 @@ void xrLC_GlobalData::read_base(INetReader& r)
     r_vector(r, _cl_globs._textures);
     r_pod_vector(r, _cl_globs._materials);
     r_pod_vector(r, _cl_globs._shaders.Library());
-    //	CMemoryWriter					_err_invalid;
+    //  CMemoryWriter                   _err_invalid;
 
     read_lightmaps = xr_new<tread_lightmaps>(&_g_lightmaps);
     read_lightmaps->read(r);
@@ -283,7 +283,7 @@ void xrLC_GlobalData::write_base(IWriter& w) const
     w_vector(w, _cl_globs._textures);
     w_pod_vector(w, _cl_globs._materials);
     w_pod_vector(w, _cl_globs._shaders.Library());
-    //	CMemoryWriter					_err_invalid;
+    //  CMemoryWriter                   _err_invalid;
     write_lightmaps = xr_new<twrite_lightmaps>(&_g_lightmaps);
     write_lightmaps->write(w);
 
@@ -412,9 +412,9 @@ void xrLC_GlobalData::write_mu_model_refs(IWriter& w) const
 }
 
 bool xrLC_GlobalData::b_r_vertices() { return !!::read_vertices; }
-// bool			xrLC_GlobalData	::			b_r_faces		()
+// bool         xrLC_GlobalData ::          b_r_faces       ()
 //{
-//	return !!read_faces;
+//  return !!read_faces;
 //}
 
 void xrLC_GlobalData::close_models_read()
@@ -456,14 +456,14 @@ std::pair<u32, u32> get_id(const xr_vector<xrMU_Model*>& mu_models, const T* v)
     return std::pair<u32, u32>(u32(ii - mu_models.begin()), face_id);
 }
 
-// std::pair<u32,u32>			xrLC_GlobalData	::		get_id		( const _face * v ) const
+// std::pair<u32,u32>           xrLC_GlobalData ::      get_id      ( const _face * v ) const
 //{
-//	return ::get_id( _mu_models, v );
+//  return ::get_id( _mu_models, v );
 //}
 //
-// std::pair<u32,u32>			xrLC_GlobalData	::		get_id		( const _vertex * v ) const
+// std::pair<u32,u32>           xrLC_GlobalData ::      get_id      ( const _vertex * v ) const
 //{
-//	return ::get_id( _mu_models, v );
+//  return ::get_id( _mu_models, v );
 //}
 enum serialize_mesh_item_type
 {
@@ -569,8 +569,8 @@ void xrLC_GlobalData::clear()
     vec_spetial_clear(_cl_globs._textures);
     _cl_globs._materials.clear();
     _cl_globs._shaders.Unload();
-    //	CMemoryWriter					_err_invalid;
-    //	b_params						_g_params;
+    //  CMemoryWriter                   _err_invalid;
+    //  b_params                        _g_params;
     close_models_read();
     close_models_write();
 
@@ -582,12 +582,12 @@ void xrLC_GlobalData::clear()
     // VertexPool;
     // FacePool;
 
-    //	vecVertex						_g_vertices;
-    //	vecFace							_g_faces;
+    //  vecVertex                       _g_vertices;
+    //  vecFace                         _g_faces;
     gl_mesh_clear();
     vec_clear(_g_deflectors);
 
-    // base_lighting					_L_static;
+    // base_lighting                    _L_static;
     xr_delete(_cl_globs._RCAST_Model);
 
     xr_delete(write_lightmaps);
@@ -599,19 +599,19 @@ void xrLC_GlobalData::clear()
     xr_delete(::read_vertices);
     // xr_delete( read_faces );
     xr_delete(read_deflectors);
-    //		bool							_b_nosun;
-    //		bool							_gl_linear;
+    //      bool                            _b_nosun;
+    //      bool                            _gl_linear;
 }
 
 void xrLC_GlobalData::set_faces_indexses()
 {
-    // const u32 number = g_faces		().size();
-    // for( u32 i=0; i< number; ++i	)
-    //	g_faces()[i]->set_index( i );
+    // const u32 number = g_faces       ().size();
+    // for( u32 i=0; i< number; ++i )
+    //  g_faces()[i]->set_index( i );
 }
 void xrLC_GlobalData::set_vertices_indexses()
 {
-    //	const u32 number = g_vertices().size();
-    //	for( u32 i=0; i< number; ++i	)
-    //		g_vertices()[i]->set_index( i );
+    //  const u32 number = g_vertices().size();
+    //  for( u32 i=0; i< number; ++i    )
+    //      g_vertices()[i]->set_index( i );
 }

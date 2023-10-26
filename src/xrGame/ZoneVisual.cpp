@@ -34,7 +34,7 @@ void CVisualZone::SwitchZoneState(EZoneState new_state)
 {
     if (m_eZoneState == eZoneStateBlowout && new_state != eZoneStateBlowout)
     {
-        //	IKinematicsAnimated*	SA=smart_cast<IKinematicsAnimated*>(Visual());
+        //  IKinematicsAnimated*    SA=smart_cast<IKinematicsAnimated*>(Visual());
         smart_cast<IKinematicsAnimated*>(Visual())->PlayCycle(m_idle_animation);
     }
 

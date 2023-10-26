@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: UIHint.h
-//	Created 	: 16.04.2008
-//	Author		: Evgeniy Sokolov
-//	Description : UI Hint (for UIHintWindow) window class
+//  Module      : UIHint.h
+//  Created     : 16.04.2008
+//  Author      : Evgeniy Sokolov
+//  Description : UI Hint (for UIHintWindow) window class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef UI_HINT_H_INCLUDED
@@ -32,7 +32,7 @@ public:
     void set_text(LPCSTR text);
     LPCSTR get_text() const;
 
-    //	virtual void	Update		();
+    //  virtual void    Update      ();
     virtual void Draw();
 
     pcstr GetDebugType() override { return "UIHint"; }

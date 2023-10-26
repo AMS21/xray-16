@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_boolean.cpp
-//	Created 	: 10.12.2007
-//  Modified 	: 10.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : boolean property implementation class
+//  Module      : property_boolean.cpp
+//  Created     : 10.12.2007
+//  Modified    : 10.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : boolean property implementation class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

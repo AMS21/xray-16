@@ -43,7 +43,7 @@ BOOL OGF_Vertex::similar(OGF* ogf, OGF_Vertex& V)
 }
 void OGF_Vertex::dump(u32 id)
 {
-    //	Msg	("%d: ");
+    //  Msg ("%d: ");
 }
 BOOL x_vertex::similar(OGF* ogf, x_vertex& V) { return P.similar(V.P); }
 u16 OGF::x_BuildVertex(x_vertex& V1)
@@ -211,23 +211,23 @@ void OGF::Optimize()
                 Fvector2 Tmin,Tmax;
                 Tmin.set(flt_max,flt_max);
                 Tmax.set(flt_min,flt_min);
-                for (size_t j=0; j<x_vertices.size(); j++)			{
+                for (size_t j=0; j<x_vertices.size(); j++)          {
                     x_vertex& V = x_vertices[j];
-                    //Tmin.min	(V.UV);
-                    //Tmax.max	(V.UV);
+                    //Tmin.min  (V.UV);
+                    //Tmax.max  (V.UV);
                 }
                 Tdelta.x = floorf((Tmax.x-Tmin.x)/2+Tmin.x);
                 Tdelta.y = floorf((Tmax.y-Tmin.y)/2+Tmin.y);
             } catch(...) {
-                Msg	("* ERROR: optimize: x-geom : bounds: failed");
+                Msg ("* ERROR: optimize: x-geom : bounds: failed");
             }
 
             // 2. Recalc UV mapping
             try {
                 for (size_t i=0; i<x_vertices.size(); i++)
-                    x_vertices[i].UV.sub	(Tdelta);
+                    x_vertices[i].UV.sub    (Tdelta);
             } catch(...) {
-                Msg	("* ERROR: optimize: x-geom : recalc : failed");
+                Msg ("* ERROR: optimize: x-geom : recalc : failed");
             }
             */
         }
@@ -254,13 +254,13 @@ void OGF::Optimize()
 
     // Build p-rep
     /*
-    typedef xr_vector<u32>	flist	;
-    xr_vector<flist>		prep	;	prep.resize(vertices.size());
-    for (u32 fit=0; fit<faces.size(); fit++)	{
-        OGF_Face&	F		= faces	[fit];
-        prep[F.v[0]].push_back		(fit);
-        prep[F.v[1]].push_back		(fit);
-        prep[F.v[2]].push_back		(fit);
+    typedef xr_vector<u32>  flist   ;
+    xr_vector<flist>        prep    ;   prep.resize(vertices.size());
+    for (u32 fit=0; fit<faces.size(); fit++)    {
+        OGF_Face&   F       = faces [fit];
+        prep[F.v[0]].push_back      (fit);
+        prep[F.v[1]].push_back      (fit);
+        prep[F.v[2]].push_back      (fit);
     }
     */
 
@@ -461,8 +461,8 @@ void OGF::MakeProgressive(float metric_limit)
         {
             // Convert
             /*
-            VIPM_Result*	VR		= VIPM_Convert		(u32(25),1.f,1);
-            VERIFY			(VR->swr_records.size()>0)	;
+            VIPM_Result*    VR      = VIPM_Convert      (u32(25),1.f,1);
+            VERIFY          (VR->swr_records.size()>0)  ;
             */
 
             // test metric

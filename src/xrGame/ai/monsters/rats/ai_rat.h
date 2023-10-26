@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_rat.h
-//	Created 	: 23.04.2002
-//  Modified 	: 27.07.2004
-//	Author		: Dmitriy Iassenev
-//	Description : AI Behaviour for monster "Rat"
+//  Module      : ai_rat.h
+//  Created     : 23.04.2002
+//  Modified    : 27.07.2004
+//  Author      : Dmitriy Iassenev
+//  Description : AI Behaviour for monster "Rat"
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

@@ -11,11 +11,11 @@ private:
 
 public:
     /*
-    virtual	void	UpdateCL			();
-    virtual void	renderable_Render	();
-    virtual void	spatial_move		();
-    virtual void	spatial_register	();
-    virtual void	spatial_unregister	();
+    virtual void    UpdateCL            ();
+    virtual void    renderable_Render   ();
+    virtual void    spatial_move        ();
+    virtual void    spatial_register    ();
+    virtual void    spatial_unregister  ();
     */
 
     CWeaponLR300();

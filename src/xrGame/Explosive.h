@@ -86,7 +86,7 @@ protected:
     // ID персонажа который иницировал действие
     u16 m_iCurrentParentID;
 
-    // bool						m_bReadyToExplode;
+    // bool                     m_bReadyToExplode;
     Fvector m_vExplodePos;
     Fvector m_vExplodeSize;
     Fvector m_vExplodeDir;
@@ -132,8 +132,8 @@ protected:
     BOOL m_bHideInExplosion;
     bool m_bAlreadyHidden;
     virtual void HideExplosive();
-    // bool						m_bExploding;
-    // bool						m_bExplodeEventSent;
+    // bool                     m_bExploding;
+    // bool                     m_bExplodeEventSent;
 
     //////////////////////////////////////////////
     //для разлета осколков

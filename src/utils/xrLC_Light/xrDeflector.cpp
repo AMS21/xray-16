@@ -101,7 +101,7 @@ void blit_r(lm_layer& dst, u32 ds_x, u32 ds_y, lm_layer& src, u32 ss_x, u32 ss_y
 
 //-------------------------------------
 
-// CDeflector*				Deflector = 0;
+// CDeflector*              Deflector = 0;
 
 IC BOOL UVpointInside(Fvector2& P, UVtri& T)
 {
@@ -111,7 +111,7 @@ IC BOOL UVpointInside(Fvector2& P, UVtri& T)
 
 CDeflector::CDeflector() : _net_session(0)
 {
-    // Deflector		= this;
+    // Deflector        = this;
     normal.set(0, 1, 0);
     Sphere.P.set(flt_max, flt_max, flt_max);
     Sphere.R = 0;
@@ -356,12 +356,12 @@ void CDeflector::L_Calculate(CDB::COLLIDER* DB, base_lighting* LightsSelected, H
 
 u16 CDeflector::GetBaseMaterial() { return UVpolys.front().owner->dwMaterial; }
 /*
-xr_vector<UVtri>			UVpolys;
-Fvector						normal;
-lm_layer					layer;
-Fsphere						Sphere;
+xr_vector<UVtri>            UVpolys;
+Fvector                     normal;
+lm_layer                    layer;
+Fsphere                     Sphere;
 
-BOOL						bMerged;
+BOOL                        bMerged;
 */
 
 void CDeflector::receive_result(INetReader& r)

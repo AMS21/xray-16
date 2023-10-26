@@ -6,7 +6,7 @@ class XR_NOVTABLE IPHStaticGeomShell
 protected:
     virtual ~IPHStaticGeomShell() = 0;
 
-    //	virtual void						set_ObjectContactCallback	(ObjectContactCallbackFun* callback);
+    //  virtual void                        set_ObjectContactCallback   (ObjectContactCallbackFun* callback);
 };
 
 inline IPHStaticGeomShell::~IPHStaticGeomShell() = default;
@@ -21,5 +21,5 @@ XRPHYSICS_API void DestroyStaticGeomShell(IPHStaticGeomShell*& p);
 
 // CPHStaticGeomShell* P_BuildStaticGeomShell(CGameObject* obj,ObjectContactCallbackFun* object_contact_callback,Fobb
 // &b);
-// void				P_BuildStaticGeomShell(CPHStaticGeomShell* shell,CGameObject* obj,ObjectContactCallbackFun*
+// void             P_BuildStaticGeomShell(CPHStaticGeomShell* shell,CGameObject* obj,ObjectContactCallbackFun*
 // object_contact_callback,Fobb &b);

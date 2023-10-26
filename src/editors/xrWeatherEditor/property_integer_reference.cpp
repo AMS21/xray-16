@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_integer_reference.cpp
-//	Created 	: 17.12.2007
-//  Modified 	: 17.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : integer property reference implementation class
+//  Module      : property_integer_reference.cpp
+//  Created     : 17.12.2007
+//  Modified    : 17.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : integer property reference implementation class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

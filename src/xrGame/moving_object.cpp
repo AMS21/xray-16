@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: moving_objects.cpp
-//	Created 	: 28.03.2007
-//  Modified 	: 28.03.2007
-//	Author		: Dmitriy Iassenev
-//	Description : moving objects
+//  Module      : moving_objects.cpp
+//  Created     : 28.03.2007
+//  Modified    : 28.03.2007
+//  Author      : Dmitriy Iassenev
+//  Description : moving objects
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

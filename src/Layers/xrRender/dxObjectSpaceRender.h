@@ -26,4 +26,4 @@ private:
 
 #endif // DEBUG
 
-#endif //	ObjectSpaceRender_included
+#endif //   ObjectSpaceRender_included

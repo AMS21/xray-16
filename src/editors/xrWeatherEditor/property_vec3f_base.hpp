@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_vec3f_base.hpp
-//	Created 	: 29.12.2007
-//  Modified 	: 29.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property vec3f base class
+//  Module      : property_vec3f_base.hpp
+//  Created     : 29.12.2007
+//  Modified    : 29.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property vec3f base class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_VEC3F_BASE_HPP_INCLUDED

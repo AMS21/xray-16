@@ -217,7 +217,7 @@ System::Void window_view::ViewPanel_MouseMove(System::Object ^ sender, System::W
 
 System::Void window_view::ViewPanel_MouseLeave(System::Object ^ sender, System::EventArgs ^ e)
 {
-    //	m_property_grid				= nullptr;
+    //  m_property_grid             = nullptr;
 }
 
 System::Void window_view::ViewPanel_MouseClick(Object ^ sender, MouseEventArgs ^ e)

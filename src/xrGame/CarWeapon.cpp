@@ -73,7 +73,7 @@ CCarWeapon::CCarWeapon(CPhysicsShellHolder* obj)
 CCarWeapon::~CCarWeapon()
 {
     delete_data(m_Ammo);
-    //.	m_object->processing_deactivate		();
+    //. m_object->processing_deactivate     ();
 }
 
 void CCarWeapon::Load(LPCSTR section)
@@ -129,7 +129,7 @@ void CCarWeapon::UpdateFire()
 void CCarWeapon::Render_internal() { RenderLight(); }
 void CCarWeapon::SetBoneCallbacks()
 {
-    //	m_object->PPhysicsShell()->EnabledCallbacks(FALSE);
+    //  m_object->PPhysicsShell()->EnabledCallbacks(FALSE);
 
     CBoneInstance& biX = smart_cast<IKinematics*>(m_object->Visual())->LL_GetBoneInstance(m_rotate_x_bone);
     biX.set_callback(bctCustom, BoneCallbackX, this);
@@ -144,7 +144,7 @@ void CCarWeapon::ResetBoneCallbacks()
     CBoneInstance& biY = smart_cast<IKinematics*>(m_object->Visual())->LL_GetBoneInstance(m_rotate_y_bone);
     biY.reset_callback();
 
-    //	m_object->PPhysicsShell()->EnabledCallbacks(TRUE);
+    //  m_object->PPhysicsShell()->EnabledCallbacks(TRUE);
 }
 
 void CCarWeapon::UpdateBarrelDir()
@@ -222,7 +222,7 @@ void CCarWeapon::OnShot()
 
     StartFlameParticles();
     StartSmokeParticles(m_fire_pos, zero_vel);
-    //	OnShellDrop				(m_fire_pos, zero_vel);
+    //  OnShellDrop             (m_fire_pos, zero_vel);
 
     HUD_SOUND_ITEM::PlaySound(m_sndShot, m_fire_pos, m_object, false);
 }

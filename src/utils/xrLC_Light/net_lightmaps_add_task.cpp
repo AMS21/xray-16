@@ -20,10 +20,10 @@ void net_lightmaps_add_task(u32 from, u32 to)
     {
         //
 
-        u32	stride			= u32(-1);
+        u32 stride          = u32(-1);
 
-        u32 threads			= u32(-1);
-        u32 rest			= u32(-1);
+        u32 threads         = u32(-1);
+        u32 rest            = u32(-1);
 
 
         u32 size = inlc_global_data()->g_deflectors().size();

@@ -90,8 +90,8 @@ private:
     u32 m_dwSM_LastSwitchTime;
     u32 m_dwSM_CurViewEntity;
     IGameObject* m_pSM_CurViewEntity;
-    // static const float			spectr_cam_inert_value;
-    // float							prev_cam_inert_value;
+    // static const float           spectr_cam_inert_value;
+    // float                            prev_cam_inert_value;
     void SM_SwitchOnNextActivePlayer();
     void SM_SwitchOnPlayer(IGameObject* pNewObject);
     void SM_CheckViewSwitching();
@@ -146,7 +146,7 @@ private:
     void SetReadyToSpawnPlayer(xrClientData const* pclient);
 
     void OnPlayerBuyFinished(ClientID id_who, NET_Packet& P);
-    // void DestroyAllPlayerItems(ClientID id_who);	//except rukzak and artefact :)
+    // void DestroyAllPlayerItems(ClientID id_who); //except rukzak and artefact :)
 
     // void DestroyGameItem(CSE_Abstract* entity);
     // void RejectGameItem(CSE_Abstract* entity);

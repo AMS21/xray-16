@@ -16,13 +16,13 @@ public:
     virtual const Fsphere& GetDropBounds() const;
 
 private:
-    // Visualization	(rain)
+    // Visualization    (rain)
     ref_shader SH_Rain;
     ref_geom hGeom_Rain;
 
-    // Visualization	(drops)
+    // Visualization    (drops)
     IRender_DetailModel* DM_Drop;
     ref_geom hGeom_Drops;
 };
 
-#endif //	RainRender_included
+#endif //   RainRender_included

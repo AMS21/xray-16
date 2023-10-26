@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_holder.cpp
-//	Created 	: 06.12.2007
-//  Modified 	: 06.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property holder implementation class
+//  Module      : property_holder.cpp
+//  Created     : 06.12.2007
+//  Modified    : 06.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property holder implementation class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

@@ -374,28 +374,28 @@ public:
     virtual ~IRender() {}
 
 public:
-    //	Gamma correction functions
+    //  Gamma correction functions
     virtual void setGamma(float fGamma) = 0;
     virtual void setBrightness(float fGamma) = 0;
     virtual void setContrast(float fGamma) = 0;
     virtual void updateGamma() = 0;
 
-    //	Destroy
+    //  Destroy
     virtual void OnDeviceDestroy(bool bKeepTextures) = 0;
     virtual void Destroy() = 0;
     virtual void Reset(SDL_Window* hWnd, u32& dwWidth, u32& dwHeight, float& fWidth_2, float& fHeight_2) = 0;
 
-    //	Init
+    //  Init
     virtual void ObtainRequiredWindowFlags(u32& windowFlags) = 0;
     virtual void SetupStates() = 0;
     virtual void OnDeviceCreate(pcstr shName) = 0;
     virtual void Create(SDL_Window* hWnd, u32& dwWidth, u32& dwHeight, float& fWidth_2, float& fHeight_2) = 0;
 
-    //	Overdraw
+    //  Overdraw
     virtual void overdrawBegin() = 0;
     virtual void overdrawEnd() = 0;
 
-    //	Resources control
+    //  Resources control
     virtual void DeferredLoad(bool E) = 0;
     virtual void ResourcesDeferredUpload() = 0;
     virtual void ResourcesDeferredUnload() = 0;
@@ -404,10 +404,10 @@ public:
     virtual void ResourcesStoreNecessaryTextures() = 0;
     virtual void ResourcesDumpMemoryUsage() = 0;
 
-    //	HWSupport
+    //  HWSupport
     virtual bool HWSupportsShaderYUV2RGB() = 0;
 
-    //	Device state
+    //  Device state
     virtual DeviceState GetDeviceState() = 0;
     virtual bool GetForceGPU_REF() = 0;
     virtual u32 GetCacheStatPolys() = 0;

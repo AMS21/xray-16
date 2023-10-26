@@ -75,7 +75,7 @@ void CActor::detach_Vehicle()
 
     // CPHShellSplitterHolder*sh= car->PPhysicsShell()->SplitterHolder();
     // if(sh)
-    //	sh->Deactivate();
+    //  sh->Deactivate();
     car->PPhysicsShell()->SplitterHolderDeactivate();
 
     if (!character_physics_support()->movement()->ActivateBoxDynamic(0))
@@ -85,7 +85,7 @@ void CActor::detach_Vehicle()
         return;
     }
     // if(sh)
-    //	sh->Activate();
+    //  sh->Activate();
     car->PPhysicsShell()->SplitterHolderActivate();
     m_holder->detach_Actor(); //
 
@@ -106,13 +106,13 @@ void CActor::detach_Vehicle()
     V->PlayCycle(m_anims->m_normal.m_torso_idle);
     m_holderID = u16(-1);
 
-    //.	SetWeaponHideState(whs_CAR, FALSE);
+    //. SetWeaponHideState(whs_CAR, FALSE);
     SetWeaponHideState(INV_STATE_CAR, false);
 }
 
 bool CActor::use_Vehicle(CHolderCustom* object)
 {
-    //	CHolderCustom* vehicle=smart_cast<CHolderCustom*>(object);
+    //  CHolderCustom* vehicle=smart_cast<CHolderCustom*>(object);
     CHolderCustom* vehicle = object;
     Fvector center;
     Center(center);

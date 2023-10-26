@@ -588,7 +588,7 @@ void Image_DXTC::DecompressDXT3()
     col_0.a = 0;
     col_0.r = col_0.g = col_0.b = 0xff;
     u32 alphazero = *((u32*)&col_0);
-    //	//TRACE("blocks: x: %d    y: %d\n", xblocks, yblocks );
+    //  //TRACE("blocks: x: %d    y: %d\n", xblocks, yblocks );
     for (int j = 0; j < yblocks; j++)
     {
         // 8 bytes per block
@@ -636,7 +636,7 @@ void Image_DXTC::DecompressDXT5()
     col_0.r = col_0.g = col_0.b = 0xff;
     u32 alphazero = *(u32*)&col_0;
     u16 wrd;
-    //	//TRACE("blocks: x: %d    y: %d\n", xblocks, yblocks );
+    //  //TRACE("blocks: x: %d    y: %d\n", xblocks, yblocks );
     for (int j = 0; j < yblocks; j++)
     {
         // 8 bytes per block
@@ -664,7 +664,7 @@ void Image_DXTC::DecompressDXT5()
 //-----------------------------------------------------------------------------
 // Name: PixelFormatToString()
 // Desc: Creates a string describing a pixel format.
-//	adapted from microsoft mssdk D3DIM Compress example
+//  adapted from microsoft mssdk D3DIM Compress example
 //  PixelFormatToString()
 //-----------------------------------------------------------------------------
 void Image_DXTC::DecodePixelFormat(char* strPixelFormat, DDS_PIXELFORMAT* pddpf)
@@ -974,7 +974,7 @@ DXTColBlock* pBlock, Color8888* col_0, Color8888* col_1, Color8888* col_2, Color
 //-----------------------------------------------------------------------------
 // Name: GetNumberOfBits()
 // Desc: Returns the number of bits set in a DWORD mask
-//	from microsoft mssdk d3dim sample "Compress"
+//  from microsoft mssdk d3dim sample "Compress"
 //-----------------------------------------------------------------------------
 u16 GetNumberOfBits(u32 dwMask)
 {

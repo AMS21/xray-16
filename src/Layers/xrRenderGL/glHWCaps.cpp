@@ -39,10 +39,10 @@ void CHWCaps::Update()
     raster.bNonPow2 = TRUE;
     raster.bCubemap = TRUE;
     raster.dwMRT_count = 4;
-    // raster.b_MRT_mixdepth		= FALSE;
+    // raster.b_MRT_mixdepth        = FALSE;
     raster.b_MRT_mixdepth = TRUE;
     raster.dwInstructions = 256;
-    //	TODO: GL: Find a way to detect cache size
+    //  TODO: GL: Find a way to detect cache size
     geometry.dwVertexCache = 24;
 
     // *******1********** Compatibility : vertex shader
@@ -50,7 +50,7 @@ void CHWCaps::Update()
         geometry_major = 0; // Disable VS if no PS
 
     //
-    bTableFog = FALSE; // BOOL	(caps.RasterCaps&D3DPRASTERCAPS_FOGTABLE);
+    bTableFog = FALSE; // BOOL  (caps.RasterCaps&D3DPRASTERCAPS_FOGTABLE);
 
     // Detect if stencil available
     bStencil = TRUE;

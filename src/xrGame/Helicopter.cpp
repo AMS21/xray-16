@@ -327,7 +327,7 @@ void CHelicopter::MoveStep()
             m_movement.currP.mad(dir, vp);
             m_movement.curLinearSpeed += m_movement.curLinearAcc * STEP;
             clamp(m_movement.curLinearSpeed, 0.0f, 1000.0f);
-            //			clamp(m_movement.curLinearSpeed,0.0f,m_movement.maxLinearSpeed);
+            //          clamp(m_movement.curLinearSpeed,0.0f,m_movement.maxLinearSpeed);
         }
         else
         {
@@ -406,7 +406,7 @@ void CHelicopter::UpdateCL()
     {
         CGameFont* F = UI().Font().pFontDI;
         F->SetAligment(CGameFont::alCenter);
-        //		F->SetSizeI			(0.02f);
+        //      F->SetSizeI         (0.02f);
         F->OutSetI(0.f, -0.8f);
         F->SetColor(0xffffffff);
         F->OutNext("Heli: speed=%4.4f acc=%4.4f dist=%4.4f", m_movement.curLinearSpeed, m_movement.curLinearAcc,

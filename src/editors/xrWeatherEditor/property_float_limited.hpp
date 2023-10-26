@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_float_limited.hpp
-//	Created 	: 12.12.2007
-//  Modified 	: 12.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : limited float property implementation class
+//  Module      : property_float_limited.hpp
+//  Created     : 12.12.2007
+//  Modified    : 12.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : limited float property implementation class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_FLOAT_LIMITED_HPP_INCLUDED

@@ -234,9 +234,9 @@ void MxStdModel::compute_vertex_normal(MxVertexID v, float* n)
         compute_face_normal(star(i), fn, false);
         //
         // Weight normals by angle around vertex
-        // 		unsigned int c = face(star[i]).find_vertex(v);
-        // 		compute_face_normal(star[i], fn);
-        // 		mxv_scale(fn, compute_corner_angle(star[i], c), 3);
+        //      unsigned int c = face(star[i]).find_vertex(v);
+        //      compute_face_normal(star[i], fn);
+        //      mxv_scale(fn, compute_corner_angle(star[i], c), 3);
 
         mxv_addinto(n, fn, 3);
     }

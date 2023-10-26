@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_monster_movement_manager.h
-//	Created 	: 31.10.2005
-//  Modified 	: 22.11.2005
-//	Author		: Dmitriy Iassenev
-//	Description : ALife monster movement manager class
+//  Module      : alife_monster_movement_manager.h
+//  Created     : 31.10.2005
+//  Modified    : 22.11.2005
+//  Author      : Dmitriy Iassenev
+//  Description : ALife monster movement manager class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

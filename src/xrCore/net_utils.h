@@ -111,7 +111,7 @@ public:
         W_guard(bool* b) noexcept : guarded(b) { *b = true; }
         ~W_guard() { *guarded = false; }
     };
-	void w(const void* p, u32 count);
+    void w(const void* p, u32 count);
     void w_seek(u32 pos, const void* p, u32 count);
     IC u32 w_tell() { return B.count; }
     // writing - utilities
@@ -200,10 +200,10 @@ public:
     void w_clientID(ClientID& C) { w_u32(C.value()); }
 
     void w_chunk_open8(u32& position);
-	void w_chunk_close8(u32 position);
+    void w_chunk_close8(u32 position);
 
-	void w_chunk_open16(u32& position);
-	void w_chunk_close16(u32 position);
+    void w_chunk_open16(u32& position);
+    void w_chunk_close16(u32 position);
 
     // reading
     void read_start();

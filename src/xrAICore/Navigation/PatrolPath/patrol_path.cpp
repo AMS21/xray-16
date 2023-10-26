@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: patrol_path.cpp
-//	Created 	: 15.06.2004
-//  Modified 	: 15.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Patrol path
+//  Module      : patrol_path.cpp
+//  Created     : 15.06.2004
+//  Modified    : 15.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Patrol path
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

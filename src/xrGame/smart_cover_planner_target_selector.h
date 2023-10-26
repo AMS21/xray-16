@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_planner_target_selector.h
-//	Created 	: 18.09.2007
-//	Author		: Alexander Dudin
-//	Description : Target selector for smart covers animation planner
+//  Module      : smart_cover_planner_target_selector.h
+//  Created     : 18.09.2007
+//  Author      : Alexander Dudin
+//  Description : Target selector for smart covers animation planner
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef SMART_COVER_PLANNER_TARGET_SELECTOR_H_INCLUDED

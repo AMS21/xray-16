@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: path_manager.h
-//	Created 	: 21.03.2002
-//  Modified 	: 03.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Path manager
+//  Module      : path_manager.h
+//  Created     : 21.03.2002
+//  Modified    : 03.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Path manager
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -17,7 +17,7 @@ class CPathManager
 {
 };
 
-//		path manager parameters
+//      path manager parameters
 #include "xrAICore/Navigation/PathManagers/path_manager_params.h"
 #include "xrAICore/Navigation/PathManagers/path_manager_params_flooder.h"
 #include "xrAICore/Navigation/PathManagers/path_manager_params_straight_line.h"
@@ -25,7 +25,7 @@ class CPathManager
 #include "xrAICore/Navigation/PathManagers/path_manager_params_nearest_vertex.h"
 #endif
 
-//		path manager specializations
+//      path manager specializations
 #include "xrAICore/Navigation/PathManagers/path_manager_game.h"
 
 #ifndef AI_COMPILER

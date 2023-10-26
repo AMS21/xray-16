@@ -83,7 +83,7 @@ bool CUIXmlInitBase::InitWindow(CUIXml& xml_doc, LPCSTR path, int index, CUIWind
         pWnd->SetWindowName(xml_doc.Read(buf, index, nullptr));
 
     InitAutoStaticGroup(xml_doc, path, index, pWnd);
-    //.	InitAutoFrameLineGroup		(xml_doc, path, index, pWnd);
+    //. InitAutoFrameLineGroup      (xml_doc, path, index, pWnd);
 
     return true;
 }
@@ -632,17 +632,17 @@ void CUIXmlInitBase::InitAutoStaticGroup(CUIXml& xml_doc, LPCSTR path, int index
         node = node->NextSibling();
     }
     /*
-        CUIStatic* pUIStatic				= NULL;
-        string64							sname;
+        CUIStatic* pUIStatic                = NULL;
+        string64                            sname;
         for(int i=0; i<items_num; i++)
         {
-            pUIStatic						= xr_new<CUIStatic>();
-            InitStatic						(xml_doc, "auto_static", i, pUIStatic);
-            xr_sprintf						(sname,"auto_static_%d", i);
-            pUIStatic->SetWindowName		(sname);
-            pUIStatic->SetAutoDelete		(true);
-            pParentWnd->AttachChild			(pUIStatic);
-            pUIStatic						= NULL;
+            pUIStatic                       = xr_new<CUIStatic>();
+            InitStatic                      (xml_doc, "auto_static", i, pUIStatic);
+            xr_sprintf                      (sname,"auto_static_%d", i);
+            pUIStatic->SetWindowName        (sname);
+            pUIStatic->SetAutoDelete        (true);
+            pParentWnd->AttachChild         (pUIStatic);
+            pUIStatic                       = NULL;
         }
     */
     xml_doc.SetLocalRoot(_stored_root);
@@ -799,7 +799,7 @@ bool CUIXmlInitBase::InitFrameLine(CUIXml& xml_doc, LPCSTR path, int index, CUIF
     if (stretch_flag)
     {
         Msg("~ [%s] stretch attribute is unsupported for [%s]", xml_doc.m_xml_file_name, path);
-        //.	pWnd->SetStretchTexture( stretch_flag );
+        //. pWnd->SetStretchTexture( stretch_flag );
     }
 
     Fvector2 pos, size;
@@ -1348,7 +1348,7 @@ bool CUIXmlInitBase::InitComboBox(CUIXml& xml_doc, LPCSTR path, int index, CUICo
     string512 _path;
     strconcat(sizeof(_path), _path, path, ":list_font");
     InitFont(xml_doc, _path, index, color, pFont);
-    //.	pWnd->SetFont				(pFont);
+    //. pWnd->SetFont               (pFont);
     pWnd->m_list_box.SetFont(pFont);
     pWnd->m_list_box.SetTextColor(color);
 

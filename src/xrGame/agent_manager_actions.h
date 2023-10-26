@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: agent_manager_actions.h
-//	Created 	: 25.05.2004
-//  Modified 	: 25.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Agent manager actions
+//  Module      : agent_manager_actions.h
+//  Created     : 25.05.2004
+//  Modified    : 25.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Agent manager actions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

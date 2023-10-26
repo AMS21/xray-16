@@ -110,7 +110,7 @@ void CMonsterSquad::InformSquadAboutEnemy(CEntityAlive const* const enemy)
         if (monster)
         {
             monster->EnemyMan.add_enemy(enemy);
-            //			monster->memory().make_object_visible_somewhen(enemy);
+            //          monster->memory().make_object_visible_somewhen(enemy);
         }
     }
 }

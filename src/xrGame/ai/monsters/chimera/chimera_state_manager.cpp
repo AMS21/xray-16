@@ -27,9 +27,9 @@ CStateManagerChimera::CStateManagerChimera(CChimera* obj) : inherited(obj)
     add_state(eStateEat, xr_new<CStateMonsterEat<CChimera>>(obj));
     add_state(eStateHearInterestingSound, xr_new<CStateMonsterHearInterestingSound<CChimera>>(obj));
     add_state(eStateHearDangerousSound, xr_new<CStateMonsterHearDangerousSound<CChimera>>(obj));
-    // 	add_state(eStateHitted,					new CStateMonsterHitted<CChimera>(obj));
-    // 	add_state(eStateThreaten,				new CStateChimeraThreaten<CChimera>(obj));
-    // 	add_state(eStateCustom,					new CStateMonsterTestState<CChimera>(obj));
+    //  add_state(eStateHitted,                 new CStateMonsterHitted<CChimera>(obj));
+    //  add_state(eStateThreaten,               new CStateChimeraThreaten<CChimera>(obj));
+    //  add_state(eStateCustom,                 new CStateMonsterTestState<CChimera>(obj));
 }
 
 CStateManagerChimera::~CStateManagerChimera() {}
@@ -47,8 +47,8 @@ void CStateManagerChimera::execute()
         case eStrong: state_id = eStatePanic; break;
         case eWeak: state_id = eStateAttack; break;
         }
-        // 	else if (object->HitMemory.is_hit()) {
-        // 		state_id = eStateHitted;
+        //  else if (object->HitMemory.is_hit()) {
+        //      state_id = eStateHitted;
     }
     else if (object->hear_dangerous_sound)
     {

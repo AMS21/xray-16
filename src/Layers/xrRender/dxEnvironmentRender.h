@@ -57,4 +57,4 @@ private:
     u32 tonemap_tstage_clouds{ u32(-1) };
 };
 
-#endif //	EnvironmentRender_included
+#endif //   EnvironmentRender_included

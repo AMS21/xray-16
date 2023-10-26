@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_torso_animation.cpp
-//	Created 	: 19.11.2004
-//  Modified 	: 19.11.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Torso animations for monster "Stalker"
+//  Module      : stalker_torso_animation.cpp
+//  Created     : 19.11.2004
+//  Modified    : 19.11.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Torso animations for monster "Stalker"
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -221,11 +221,11 @@ MotionID CStalkerAnimationManager::missile_animation(u32 slot, const EBodyState&
 {
     VERIFY(m_missile);
 
-    //	if (body_state == eBodyStateCrouch)
-    //		slot						= 0;
+    //  if (body_state == eBodyStateCrouch)
+    //      slot                        = 0;
 
     const xr_vector<CAniVector>& animation = m_data_storage->m_part_animations.A[body_state].m_torso.A[slot].A;
-    //	const xr_vector<CAniVector>		&animation =
+    //  const xr_vector<CAniVector>     &animation =
     // m_data_storage->m_part_animations.A[eBodyStateStand].m_torso.A[slot].A;
 
     switch (m_missile->GetState())
@@ -250,7 +250,7 @@ MotionID CStalkerAnimationManager::missile_animation(u32 slot, const EBodyState&
     }
     case CMissile::eThrowStart:
     {
-//			Msg						("CMissile::eThrowStart");
+//          Msg                     ("CMissile::eThrowStart");
 #ifdef DEBUG
         if (animation[1].A.empty())
         {
@@ -261,7 +261,7 @@ MotionID CStalkerAnimationManager::missile_animation(u32 slot, const EBodyState&
     }
     case CMissile::eReady:
     {
-//			Msg						("CMissile::eReady");
+//          Msg                     ("CMissile::eReady");
 #ifdef DEBUG
         if (animation[1].A.size() < 2)
         {
@@ -272,7 +272,7 @@ MotionID CStalkerAnimationManager::missile_animation(u32 slot, const EBodyState&
     }
     case CMissile::eThrow:
     {
-//			Msg						("CMissile::eThrow");
+//          Msg                     ("CMissile::eThrow");
 #ifdef DEBUG
         if (animation[1].A.size() < 3)
         {
@@ -288,7 +288,7 @@ MotionID CStalkerAnimationManager::missile_animation(u32 slot, const EBodyState&
             Msg("! visual %s", object().cNameVisual().c_str());
         }
 #endif // #ifdef DEBUG
-        //			Msg						("CMissile::eThrowEnd");
+        //          Msg                     ("CMissile::eThrowEnd");
         return (animation[6].A[0]);
     }
     case CMissile::eBore: {

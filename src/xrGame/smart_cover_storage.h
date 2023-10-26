@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover.h
-//	Created 	: 16.08.2007
-//	Author		: Alexander Dudin
-//	Description : Smart cover storage class
+//  Module      : smart_cover.h
+//  Created     : 16.08.2007
+//  Author      : Alexander Dudin
+//  Description : Smart cover storage class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef SMART_COVER_STORAGE_H_INCLUDED

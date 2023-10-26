@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: autosave_manager_inline.h
-//	Created 	: 04.11.2004
-//  Modified 	: 04.11.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Autosave manager inline functions
+//  Module      : autosave_manager_inline.h
+//  Created     : 04.11.2004
+//  Modified    : 04.11.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Autosave manager inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

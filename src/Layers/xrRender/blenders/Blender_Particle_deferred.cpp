@@ -100,13 +100,13 @@ void CBlender_Particle::Compile(CBlender_Compile& C)
             u32 hSampler = C.r_dx11Sampler("smp_base");
             if (oClamp.value && (hSampler != (u32)-1))
                 C.i_Address(hSampler, D3DTADDRESS_CLAMP);
-            //	Igor: soft particles
+            //  Igor: soft particles
             C.r_dx11Texture("s_position", "$user$position");
             C.r_dx11Sampler("smp_nofilter");
         }
 #else
         C.r_Sampler("s_base", C.L_textures[0], false, oClamp.value ? D3DTADDRESS_CLAMP : D3DTADDRESS_WRAP);
-        //	Igor: soft particles
+        //  Igor: soft particles
         C.r_Sampler("s_position", "$user$position");
 #endif
         C.r_End();
@@ -145,13 +145,13 @@ void CBlender_Particle::Compile(CBlender_Compile& C)
             u32 hSampler = C.r_dx11Sampler("smp_base");
             if (oClamp.value && (hSampler != (u32)-1))
                 C.i_Address(hSampler, D3DTADDRESS_CLAMP);
-            //	Igor: soft particles
+            //  Igor: soft particles
             C.r_dx11Texture("s_position", "$user$position");
             C.r_dx11Sampler("smp_nofilter");
         }
 #else
         C.r_Sampler("s_base", C.L_textures[0], false, oClamp.value ? D3DTADDRESS_CLAMP : D3DTADDRESS_WRAP);
-        //	Igor: soft particles
+        //  Igor: soft particles
         C.r_Sampler("s_position", "$user$position");
 #endif
         C.r_End();

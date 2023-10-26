@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ef_pattern.cpp
-//	Created 	: 25.03.2002
-//  Modified 	: 11.10.2002
-//	Author		: Dmitriy Iassenev
-//	Description : Pattern based evaluation functions trained by supervised learning
+//  Module      : ef_pattern.cpp
+//  Created     : 25.03.2002
+//  Modified    : 11.10.2002
+//  Author      : Dmitriy Iassenev
+//  Description : Pattern based evaluation functions trained by supervised learning
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -112,7 +112,7 @@ void CPatternFunction::vfLoadEF(LPCSTR caFileName)
 
     _splitpath(caPath, 0, 0, m_caName, 0);
 
-    // Msg			("* Evaluation function \"%s\" is successfully loaded",m_caName);
+    // Msg          ("* Evaluation function \"%s\" is successfully loaded",m_caName);
 }
 
 float CPatternFunction::ffEvaluate()

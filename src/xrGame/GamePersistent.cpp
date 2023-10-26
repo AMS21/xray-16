@@ -879,7 +879,7 @@ void CGamePersistent::SetEffectorDOF(const Fvector& needed_dof)
 void CGamePersistent::RestoreEffectorDOF() { SetEffectorDOF(m_dof[3]); }
 #include "HUDManager.h"
 
-//	m_dof		[4];	// 0-dest 1-current 2-from 3-original
+//  m_dof       [4];    // 0-dest 1-current 2-from 3-original
 void CGamePersistent::UpdateDof()
 {
     if (m_bPickableDOF)

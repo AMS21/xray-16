@@ -28,7 +28,7 @@ Flags32 ph_dbg_draw_mask;
 Flags32 ph_dbg_draw_mask1;
 bool draw_frame = 0;
 
-// LPCSTR	dbg_trace_object_name					=NULL;
+// LPCSTR   dbg_trace_object_name                   =NULL;
 string64 s_dbg_trace_obj_name = "none";
 IGameObject* trace_object = NULL;
 u32 dbg_bodies_num = 0;
@@ -84,11 +84,11 @@ struct SPHContactDBGDraw : public SPHDBGDrawAbsract
     {
         // if(dGeomGetBody(c.geom.g1))
         //{
-        //	geomClass =dGeomGetClass(retrieveGeom(c.geom.g1));
+        //  geomClass =dGeomGetClass(retrieveGeom(c.geom.g1));
         //}
         // else
         //{
-        //	geomClass=dGeomGetClass(retrieveGeom(c.geom.g2));
+        //  geomClass=dGeomGetClass(retrieveGeom(c.geom.g2));
         //}
 
         // is_cyl= (geomClass==dCylinderClassUser);
@@ -690,11 +690,11 @@ bool CFunctionGraph::IsActive()
 }
 
 LPCSTR PH_DBG_ObjectTrackName() { return s_dbg_trace_obj_name; }
-// extern ENGINE_API	IGame_Level*	g_pGameLevel;
+// extern ENGINE_API    IGame_Level*    g_pGameLevel;
 void PH_DBG_SetTrackObject()
 {
-    //	xr_strcpy( s_dbg_trace_obj_name,obj);
-    //	dbg_trace_object_name=s_dbg_trace_obj_name;
+    //  xr_strcpy( s_dbg_trace_obj_name,obj);
+    //  dbg_trace_object_name=s_dbg_trace_obj_name;
     if (g_pGameLevel)
         trace_object = Level().Objects.FindObjectByName(PH_DBG_ObjectTrackName());
 }
@@ -714,23 +714,23 @@ static LPCSTR name_blend_type(CBlend::ECurvature blend)
 /*
 enum
 {
-    dbg_track_obj_blends_bp_0			= 1<< 0,
-    dbg_track_obj_blends_bp_1			= 1<< 1,
-    dbg_track_obj_blends_bp_2			= 1<< 2,
-    dbg_track_obj_blends_bp_3			= 1<< 3,
-    dbg_track_obj_blends_motion_name	= 1<< 4,
-    dbg_track_obj_blends_time			= 1<< 5,
-    dbg_track_obj_blends_ammount		= 1<< 6,
-    dbg_track_obj_blends_mix_params		= 1<< 7
-    dbg_track_obj_blends_flags			= 1<< 8,
-    dbg_track_obj_blends_state			= 1<< 9,
-    dbg_track_obj_blends_dump			= 1<< 10
+    dbg_track_obj_blends_bp_0           = 1<< 0,
+    dbg_track_obj_blends_bp_1           = 1<< 1,
+    dbg_track_obj_blends_bp_2           = 1<< 2,
+    dbg_track_obj_blends_bp_3           = 1<< 3,
+    dbg_track_obj_blends_motion_name    = 1<< 4,
+    dbg_track_obj_blends_time           = 1<< 5,
+    dbg_track_obj_blends_ammount        = 1<< 6,
+    dbg_track_obj_blends_mix_params     = 1<< 7
+    dbg_track_obj_blends_flags          = 1<< 8,
+    dbg_track_obj_blends_state          = 1<< 9,
+    dbg_track_obj_blends_dump           = 1<< 10
 };
 */
 Flags32 dbg_track_obj_flags = {u32(-1) & ~dbg_track_obj_blends_dump};
 void DBG_AnimBlend(IKinematicsAnimated& ka, const CBlend& B)
 {
-    // UI().Font().pFontStat->SetHeight	(20.0f);
+    // UI().Font().pFontStat->SetHeight (20.0f);
 
     DBG_OutText("-------------------------------------");
     if (dbg_track_obj_flags.test(dbg_track_obj_blends_motion_name))
@@ -934,7 +934,7 @@ void DBG_ObjBeforeStep(CPHObject* obj)
     if (is_trace_obj(obj))
     {
         DBG_OpenCashedDraw();
-        // dbg_draw_velocity	( 0.1f, color_xrgb( 255, 0, 0 ) );
+        // dbg_draw_velocity    ( 0.1f, color_xrgb( 255, 0, 0 ) );
         if (obj->ref_object()->ObjectPPhysicsShell())
         {
             obj->ref_object()->ObjectPPhysicsShell()->dbg_draw_force(0.1f, color_xrgb(0, 0, 255));
@@ -953,7 +953,7 @@ void DBG_ObjAfterStep(CPHObject* obj)
         {
             obj->ref_object()->ObjectPPhysicsShell()->dbg_draw_velocity(0.1f, color_xrgb(255, 0, 0));
         }
-        // dbg_draw_force		( 0.1f, color_xrgb( 0, 0, 255 ) );
+        // dbg_draw_force       ( 0.1f, color_xrgb( 0, 0, 255 ) );
     }
 }
 
@@ -977,10 +977,10 @@ class CPHDebugOutput : public IDebugOutput
     virtual const Flags32& ph_dbg_draw_mask1() const { return ::ph_dbg_draw_mask1; }
     virtual void DBG_DrawStatBeforeFrameStep() { ::DBG_DrawStatBeforeFrameStep(); }
     virtual void DBG_DrawStatAfterFrameStep() { ::DBG_DrawStatAfterFrameStep(); }
-    // virtual	void DBG_RenderUpdate( )												=0;
+    // virtual  void DBG_RenderUpdate( )                                                =0;
     virtual void DBG_OpenCashedDraw() { ::DBG_OpenCashedDraw(); }
     virtual void DBG_ClosedCashedDraw(u32 remove_time) { ::DBG_ClosedCashedDraw(remove_time); }
-    // virtual	void DBG_DrawPHAbstruct( SPHDBGDrawAbsract*	a )							=0;
+    // virtual  void DBG_DrawPHAbstruct( SPHDBGDrawAbsract* a )                         =0;
     virtual void DBG_DrawPHObject(const CPHObject* obj) { ::DBG_DrawPHObject(obj); }
     virtual void DBG_DrawContact(const dContact& c) { ::DBG_DrawContact(c); }
     virtual void DBG_DrawTri(CDB::RESULT* T, u32 c) { ::DBG_DrawTri(T, c); }
@@ -990,13 +990,13 @@ class CPHDebugOutput : public IDebugOutput
     virtual void DBG_DrawOBB(const Fmatrix& m, const Fvector h, u32 c) { ::DBG_DrawOBB(m, h, c); }
     virtual void DBG_DrawPoint(const Fvector& p, float size, u32 c) { ::DBG_DrawPoint(p, size, c); }
     virtual void DBG_DrawMatrix(const Fmatrix& m, float size, u8 a = 255) { ::DBG_DrawMatrix(m, size, a); }
-    // virtual	void DBG_DrawRotationX( const Fmatrix &m, float ang0, float ang1, float size, u32 ac, bool solid =
+    // virtual  void DBG_DrawRotationX( const Fmatrix &m, float ang0, float ang1, float size, u32 ac, bool solid =
     // false,
     // u32 tessel = 7 ) = 0;
-    // virtual	void DBG_DrawRotationY( const Fmatrix &m, float ang0, float ang1, float size, u32 ac, bool solid =
+    // virtual  void DBG_DrawRotationY( const Fmatrix &m, float ang0, float ang1, float size, u32 ac, bool solid =
     // false,
     // u32 tessel = 7 ) = 0;
-    // virtual	void DBG_DrawRotationZ( const Fmatrix &m, float ang0, float ang1, float size, u32 ac, bool solid =
+    // virtual  void DBG_DrawRotationZ( const Fmatrix &m, float ang0, float ang1, float size, u32 ac, bool solid =
     // false,
     // u32 tessel = 7 ) = 0;
     virtual void _cdecl DBG_OutText(LPCSTR s, ...)
@@ -1008,26 +1008,26 @@ class CPHDebugOutput : public IDebugOutput
         va_end(marker);
         DBG_DrawPHAbstruct(xr_new<SPHDBGOutText>(t));
     }
-    // virtual	void DBG_TextOutSet( float x, float y )									=0;
-    // virtual	void DBG_TextSetColor( u32 color )										=0;
-    // virtual	void DBG_DrawBind( IGameObject &O )											=0;
-    // virtual	void DBG_PhysBones( IGameObject &O )										=0;
-    // virtual	void DBG_DrawBones( IGameObject &O )										=0;
+    // virtual  void DBG_TextOutSet( float x, float y )                                 =0;
+    // virtual  void DBG_TextSetColor( u32 color )                                      =0;
+    // virtual  void DBG_DrawBind( IGameObject &O )                                         =0;
+    // virtual  void DBG_PhysBones( IGameObject &O )                                        =0;
+    // virtual  void DBG_DrawBones( IGameObject &O )                                        =0;
     virtual void DBG_DrawFrameStart() { ::DBG_DrawFrameStart(); }
     virtual void PH_DBG_Render() { ::PH_DBG_Render(); }
     virtual void PH_DBG_Clear() { ::PH_DBG_Clear(); }
     virtual LPCSTR PH_DBG_ObjectTrackName() { return ::PH_DBG_ObjectTrackName(); }
-    // virtual	bool			draw_frame								()=0;
+    // virtual  bool            draw_frame                              ()=0;
     virtual u32& dbg_tries_num()
     {
         return ::dbg_tries_num;
-        //	make_string( "%s, _14_=%f \n", dump_string( make_string( "%s.i, ", name ).c_str(), form.i ).c_str( ) ,
-        // form._14_ )	+
-        //	make_string( "%s, _24_=%f \n", dump_string( make_string( "%s.j, ", name ).c_str(), form.j ).c_str( ) ,
-        // form._24_ )	+
-        //	make_string( "%s, _34_=%f \n", dump_string( make_string( "%s.k, ", name ).c_str(), form.k ).c_str( ) ,
+        //  make_string( "%s, _14_=%f \n", dump_string( make_string( "%s.i, ", name ).c_str(), form.i ).c_str( ) ,
+        // form._14_ )  +
+        //  make_string( "%s, _24_=%f \n", dump_string( make_string( "%s.j, ", name ).c_str(), form.j ).c_str( ) ,
+        // form._24_ )  +
+        //  make_string( "%s, _34_=%f \n", dump_string( make_string( "%s.k, ", name ).c_str(), form.k ).c_str( ) ,
         // form._34_  ) +
-        //	make_string( "%s, _44_=%f \n", dump_string( make_string( "%s.c, ", name ).c_str(), form.c ).c_str( ) ,
+        //  make_string( "%s, _44_=%f \n", dump_string( make_string( "%s.c, ", name ).c_str(), form.c ).c_str( ) ,
         // form._44_ );
     }
     virtual u32& dbg_saved_tries_for_active_objects() { return ::dbg_saved_tries_for_active_objects; }

@@ -31,7 +31,7 @@ int GetGameDistribution()
 
     long res = RegOpenKeyEx(REGISTRY_BASE, REGISTRY_PATH, 0, KEY_READ, &KeyCDKey);
 
-    //	char	KeyValue[1024] = "";
+    //  char    KeyValue[1024] = "";
 
     DWORD KeyValueSize = 1024;
     DWORD KeyValueType = REG_DWORD;

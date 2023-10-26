@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: game_path_manager.h
-//	Created 	: 02.10.2001
-//  Modified 	: 12.11.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Game path manager
+//  Module      : game_path_manager.h
+//  Created     : 02.10.2001
+//  Modified    : 12.11.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Game path manager
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

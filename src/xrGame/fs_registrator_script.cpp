@@ -199,12 +199,12 @@ SCRIPT_EXPORT(fs_registrator, (),
             .def("Free", &FS_file_list::Free),
 
         // XXX: uncomment
-        /*		class_<FS_Path>("FS_Path")
-                    .def_readonly("m_Path",						&FS_Path::m_Path)
-                    .def_readonly("m_Root",						&FS_Path::m_Root)
-                    .def_readonly("m_Add",						&FS_Path::m_Add)
-                    .def_readonly("m_DefExt",					&FS_Path::m_DefExt)
-                    .def_readonly("m_FilterCaption",			&FS_Path::m_FilterCaption),
+        /*      class_<FS_Path>("FS_Path")
+                    .def_readonly("m_Path",                     &FS_Path::m_Path)
+                    .def_readonly("m_Root",                     &FS_Path::m_Root)
+                    .def_readonly("m_Add",                      &FS_Path::m_Add)
+                    .def_readonly("m_DefExt",                   &FS_Path::m_DefExt)
+                    .def_readonly("m_FilterCaption",            &FS_Path::m_FilterCaption),
         */
         class_<CLocatorAPI::file>("fs_file")
             .def_readonly("name", &CLocatorAPI::file::name)

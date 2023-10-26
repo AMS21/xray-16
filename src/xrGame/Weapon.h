@@ -439,14 +439,14 @@ public:
     /*
         struct SScopes
         {
-            shared_str			m_sScopeName;
-            int					m_iScopeX;
-            int					m_iScopeY;
+            shared_str          m_sScopeName;
+            int                 m_iScopeX;
+            int                 m_iScopeY;
         };
         DEFINE_VECTOR(SScopes*, SCOPES_VECTOR, SCOPES_VECTOR_IT);
-        SCOPES_VECTOR			m_scopes;
+        SCOPES_VECTOR           m_scopes;
 
-        u8						cur_scope;
+        u8                      cur_scope;
     */
 
     using SCOPES_VECTOR = xr_vector<shared_str>;
@@ -455,7 +455,7 @@ public:
 
     CWeaponAmmo* m_pCurrentAmmo;
     u8 m_ammoType;
-    //-	shared_str				m_ammoName; <== deleted
+    //- shared_str              m_ammoName; <== deleted
     bool m_bHasTracers;
     u8 m_u8TracerColorID;
     u8 m_set_next_ammoType_on_reload;

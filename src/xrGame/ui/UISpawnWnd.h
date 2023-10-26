@@ -7,7 +7,7 @@ class CUIStatic;
 class CUI3tButton;
 class CUIScrollView;
 
-// typedef	void (*ButtonClickCallback) (int);
+// typedef  void (*ButtonClickCallback) (int);
 typedef enum { TEAM_MENU_BACK = 0, TEAM_MENU_SPECTATOR, TEAM_MENU_AUTOSELECT } ETEAMMENU_BTN;
 
 class CUISpawnWnd final : public CUIDialogWnd
@@ -30,12 +30,12 @@ protected:
     void InitTeamLogo();
 
     // Установка нового режима отображения
-    //	void SetDisplayMode(bool bDual = false);
+    //  void SetDisplayMode(bool bDual = false);
 
     // -1 - еще не нажималась, 0 - primary (левая), 1 - secondary (правая)
-    //	int GetPressingResult() { return 1; }
+    //  int GetPressingResult() { return 1; }
 
-    //	void	SetCallbackFunc (ButtonClickCallback pFunc);
+    //  void    SetCallbackFunc (ButtonClickCallback pFunc);
 
 protected:
     CUIStatic* m_pCaption;

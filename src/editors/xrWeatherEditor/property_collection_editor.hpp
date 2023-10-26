@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_collection_editor.hpp
-//	Created 	: 24.12.2007
-//  Modified 	: 25.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : collection property editor implementation class
+//  Module      : property_collection_editor.hpp
+//  Created     : 24.12.2007
+//  Modified    : 25.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : collection property editor implementation class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

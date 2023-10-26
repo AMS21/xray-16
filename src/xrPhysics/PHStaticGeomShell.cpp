@@ -69,7 +69,7 @@ IPHStaticGeomShell* P_BuildStaticGeomShell(IPhysicsShellHolder* obj, ObjectConta
     R_ASSERT2(K, "need visual to build");
     K->CalculateBones(TRUE); //. bForce - was TRUE
 
-    // V->getVisData().box.getradius	(b.m_halfsize);
+    // V->getVisData().box.getradius    (b.m_halfsize);
     K->GetBox().getradius(b.m_halfsize);
 
     b.xform_set(Fidentity);

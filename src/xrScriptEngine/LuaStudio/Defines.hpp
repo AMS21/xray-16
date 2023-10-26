@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: defines.h
-//	Created 	: 23.04.2008
-//  Modified 	: 23.04.2008
-//	Author		: Dmitriy Iassenev
-//	Description : important macro definitions
+//  Module      : defines.h
+//  Created     : 23.04.2008
+//  Modified    : 23.04.2008
+//  Author      : Dmitriy Iassenev
+//  Description : important macro definitions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

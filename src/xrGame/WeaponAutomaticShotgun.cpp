@@ -224,7 +224,7 @@ u8 CWeaponAutomaticShotgun::AddCartridge(u8 cnt)
         ++iAmmoElapsed;
         l_cartridge.m_LocalAmmoType = m_ammoType;
         m_magazine.push_back(l_cartridge);
-        //		m_fCurrentCartirdgeDisp = l_cartridge.m_kDisp;
+        //      m_fCurrentCartirdgeDisp = l_cartridge.m_kDisp;
     }
 
     VERIFY((u32)iAmmoElapsed == m_magazine.size());

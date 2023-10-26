@@ -11,7 +11,7 @@
 void CRender::RenderMenu()
 {
     PIX_EVENT(render_menu);
-    //	Globals
+    //  Globals
     RCache.set_CullMode(CULL_CCW);
     RCache.set_Stencil(FALSE);
     RCache.set_ColorWriteEnable();
@@ -99,7 +99,7 @@ void CRender::Render()
         return;
     }
 
-    //.	VERIFY					(g_pGameLevel && g_pGameLevel->pHUD);
+    //. VERIFY                  (g_pGameLevel && g_pGameLevel->pHUD);
     auto& dsgraph = get_imm_context();
 
     //******* Z-prefill calc - DEFERRER RENDERER
@@ -163,7 +163,7 @@ void CRender::Render()
     if (ps_r2_ls_flags.test(R2FLAG_EXP_SPLIT_SCENE))
         split_the_scene_to_minimize_wait = TRUE;
 
-    //******* Main render :: PART-0	-- first
+    //******* Main render :: PART-0 -- first
 #ifdef USE_OGL
     if (psDeviceFlags.test(rsWireframe))
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -393,7 +393,7 @@ void CRender::render_forward()
     //******* Main render - second order geometry (the one, that doesn't support deffering)
     //.todo: should be done inside "combine" with estimation of of luminance, tone-mapping, etc.
     {
-        //	Igor: we don't want to render old lods on next frame.
+        //  Igor: we don't want to render old lods on next frame.
         dsgraph.mapLOD.clear();
         dsgraph.render_graph(1); // normal level, secondary priority
         dsgraph.PortalTraverser.fade_render(); // faded-portals

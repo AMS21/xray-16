@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: problem_solver.h
-//	Created 	: 24.02.2004
-//  Modified 	: 10.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Problem solver
+//  Module      : problem_solver.h
+//  Created     : 24.02.2004
+//  Modified    : 10.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Problem solver
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

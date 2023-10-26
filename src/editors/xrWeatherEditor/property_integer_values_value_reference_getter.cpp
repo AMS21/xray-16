@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_integer_values_value_reference_getter.cpp
-//	Created 	: 09.01.2008
-//  Modified 	: 09.01.2008
-//	Author		: Dmitriy Iassenev
-//	Description : property integer values value getter class
+//  Module      : property_integer_values_value_reference_getter.cpp
+//  Created     : 09.01.2008
+//  Modified    : 09.01.2008
+//  Author      : Dmitriy Iassenev
+//  Description : property integer values value getter class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

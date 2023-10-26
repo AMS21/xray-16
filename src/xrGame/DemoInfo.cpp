@@ -15,7 +15,7 @@ void stream_read_demostring(CStreamReader* stream, shared_str & dest_result, u32
 {
     R_ASSERT(stream);
     R_ASSERT(max_size > 0);
-    char* dest_str		= static_cast<char*>(xr_alloca(max_size));
+    char* dest_str      = static_cast<char*>(xr_alloca(max_size));
     u32 string_size = stream->r_u32();
     if (string_size > max_size)
     {
@@ -34,8 +34,8 @@ void stream_write_demostring(IWriter* writer, shared_str const & string_to_write
 {
     R_ASSERT(writer);
     R_ASSERT(string_to_write.size() < max_size);
-    writer->w_u32		(string_to_write.size() + 1);//with zero end
-    writer->w_stringZ	(string_to_write);
+    writer->w_u32       (string_to_write.size() + 1);//with zero end
+    writer->w_stringZ   (string_to_write);
 }*/
 
 demo_player_info::demo_player_info() {}

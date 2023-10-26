@@ -37,7 +37,7 @@ void xrLC_GlobalData::vertices_isolate_and_pool_reload()
     u32 not_empty_verts = 0;
     // for(u32 i = 0; i < inital_verts_count; ++i )
     // if(!_g_vertices[i]->m_adjacents.empty())
-    //	++not_empty_verts;
+    //  ++not_empty_verts;
     /////////////////////////////////////////////////////////
 
     string_path path_name;

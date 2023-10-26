@@ -18,7 +18,7 @@ int dCylinderClassUser = -1;
 // takes two circles as normals to planes n1,n2, center points cp1,cp2,and radiuses r1,r2
 // finds line on which circles' planes intersect
 // finds four points O1,O2 - intersection between the line and sphere with center cp1 radius r1
-//					O3,O4 - intersection between the line and sphere with center cp2 radius r2
+//                  O3,O4 - intersection between the line and sphere with center cp2 radius r2
 // returns false if there is no intersection
 // computes distances O1-O3, O1-O4, O2-O3, O2-O4
 // in "point" returns mean point between intersection points with smallest distance
@@ -53,7 +53,7 @@ inline bool circleIntersection(
         // when their edges approach
         t1 = -B_A + dSqrt(-D);
         t2 = -B_A - dSqrt(-D);
-        //	return false;
+        //  return false;
     }
     else
     {
@@ -70,7 +70,7 @@ inline bool circleIntersection(
     {
         t3 = -B_A + dSqrt(-D);
         t4 = -B_A - dSqrt(-D);
-        //	return false;
+        //  return false;
     }
     else
     {
@@ -587,9 +587,9 @@ extern "C" int dCylBox(const dVector3 p1, const dMatrix3 R1, const dReal radius,
             switch (*code)
             {
             // case 1:
-            //	centerDepth=*depth-radius*sQ21;
-            //	Q1=Q11;Q3=Q31;
-            //	break;
+            //  centerDepth=*depth-radius*sQ21;
+            //  Q1=Q11;Q3=Q31;
+            //  break;
             case 2:
                 sQ2 = sQ22;
                 Q1 = Q12;

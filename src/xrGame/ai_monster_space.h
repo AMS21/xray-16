@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_monster_space.h
-//	Created 	: 06.10.2003
-//  Modified 	: 06.10.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Monster types and structures
+//  Module      : ai_monster_space.h
+//  Created     : 06.10.2003
+//  Modified    : 06.10.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Monster types and structures
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: patrol_point.cpp
-//	Created 	: 15.06.2004
-//  Modified 	: 15.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Patrol point
+//  Module      : patrol_point.cpp
+//  Created     : 15.06.2004
+//  Modified    : 15.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Patrol point
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

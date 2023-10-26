@@ -12,7 +12,7 @@
 #include "game_cl_base.h"
 #include "Include/xrRender/Kinematics.h"
 #include "xrPhysics/IPHWorld.h"
-// extern CPHWorld*	ph_world;
+// extern CPHWorld* ph_world;
 #define CHOOSE_MAX(x, inst_x, y, inst_y, z, inst_z) \
     if (x > y)                                      \
         if (x > z)                                  \
@@ -48,7 +48,7 @@ void CGraviArtefact::Load(LPCSTR section)
 
     if (pSettings->line_exist(section, "jump_height"))
         m_fJumpHeight = pSettings->r_float(section, "jump_height");
-    //	m_fEnergy = pSettings->r_float(section,"energy");
+    //  m_fEnergy = pSettings->r_float(section,"energy");
 }
 
 void CGraviArtefact::UpdateCLChild()

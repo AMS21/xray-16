@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: detail_path_builder.h
-//  Modified 	: 21.02.2005
-//  Modified 	: 21.02.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Detail path builder
+//  Module      : detail_path_builder.h
+//  Modified    : 21.02.2005
+//  Modified    : 21.02.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Detail path builder
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

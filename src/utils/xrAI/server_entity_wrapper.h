@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: server_entity_wrapper.h
-//	Created 	: 16.10.2004
-//  Modified 	: 16.10.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Server entity wrapper
+//  Module      : server_entity_wrapper.h
+//  Created     : 16.10.2004
+//  Modified    : 16.10.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Server entity wrapper
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

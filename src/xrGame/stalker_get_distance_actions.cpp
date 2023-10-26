@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_get_distance_actions.cpp
-//	Created 	: 25.07.2007
-//  Modified 	: 25.07.2007
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker get distance action classes
+//  Module      : stalker_get_distance_actions.cpp
+//  Created     : 25.07.2007
+//  Modified    : 25.07.2007
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker get distance action classes
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

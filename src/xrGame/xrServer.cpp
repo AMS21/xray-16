@@ -124,7 +124,7 @@ u32 g_sv_Client_Reconnect_Time = 3;
 void xrServer::client_Destroy(IClient* C)
 {
     // Delete assosiated entity
-    // xrClientData*	D = (xrClientData*)C;
+    // xrClientData*    D = (xrClientData*)C;
     // CSE_Abstract* E = D->owner;
     IClient* alife_client = net_players.FindAndEraseClient(std::bind(std::equal_to<IClient*>(), C, std::placeholders::_1));
     // VERIFY(alife_client);
@@ -162,7 +162,7 @@ void xrServer::client_Destroy(IClient* C)
             game->CleanDelayedEventFor(pOwner->ID);
         }
 
-        //.		if (!alife_client->flags.bVerified)
+        //.     if (!alife_client->flags.bVerified)
         xrClientData* xr_client = static_cast<xrClientData*>(alife_client);
         m_disconnected_clients.Add(xr_client); // xr_delete(alife_client);
     }
@@ -368,11 +368,11 @@ u32 xrServer::OnDelayedMessage(NET_Packet& P, ClientID sender) // Non-Zero means
     u16 type;
     P.r_begin(type);
 
-    // csPlayers.Enter			();
+    // csPlayers.Enter          ();
 
     VERIFY(verify_entities());
     xrClientData* CL = ID_to_client(sender);
-    // R_ASSERT2						(CL, make_string("packet type [%d]",type).c_str());
+    // R_ASSERT2                        (CL, make_string("packet type [%d]",type).c_str());
 
     switch (type)
     {
@@ -381,7 +381,7 @@ u32 xrServer::OnDelayedMessage(NET_Packet& P, ClientID sender) // Non-Zero means
         IClient* tmp_client = net_players.GetFoundClient(ClientIdSearchPredicate(sender));
         VERIFY(tmp_client);
         OnCL_Connected(tmp_client);
-        // OnCL_Connected				(CL);
+        // OnCL_Connected               (CL);
     }
     break;
     case M_REMOTE_CONTROL_CMD:
@@ -423,7 +423,7 @@ u32 xrServer::OnDelayedMessage(NET_Packet& P, ClientID sender) // Non-Zero means
     }
     VERIFY(verify_entities());
 
-    // csPlayers.Leave					();
+    // csPlayers.Leave                  ();
     return 0;
 }
 
@@ -525,7 +525,7 @@ u32 xrServer::OnMessage(NET_Packet& P, ClientID sender) // Non-Zero means broadc
     case M_CLIENTREADY:
     {
         game->OnPlayerConnectFinished(sender);
-        // game->signal_Syncronize	();
+        // game->signal_Syncronize  ();
         VERIFY(verify_entities());
     }
     break;
@@ -628,7 +628,7 @@ u32 xrServer::OnMessage(NET_Packet& P, ClientID sender) // Non-Zero means broadc
                 Msg("! ERROR: SV: update respond received from unknown sender");
             }
         }
-        // if (SV_Client) SendTo	(SV_Client->ID, P, net_flags(TRUE, TRUE));
+        // if (SV_Client) SendTo    (SV_Client->ID, P, net_flags(TRUE, TRUE));
     }
     break;
     case M_PLAYER_FIRE:
@@ -988,7 +988,7 @@ void xrServer::ProceedDelayedPackets()
     {
         DelayedPacket& DPacket = *m_aDelayedPackets.begin();
         OnDelayedMessage(DPacket.Packet, DPacket.SenderID);
-        //		OnMessage(DPacket.Packet, DPacket.SenderID);
+        //      OnMessage(DPacket.Packet, DPacket.SenderID);
         m_aDelayedPackets.pop_front();
     }
     DelayedPackestCS.Leave();
@@ -1075,7 +1075,7 @@ void xrServer::GetServerInfo(CServerInfo* si)
         InventoryUtilities::GetTimeAsString(Device.dwTimeGlobal, InventoryUtilities::etpTimeToSecondsAndDay).c_str();
     si->AddItem("Uptime", time, RGB(255, 228, 0));
 
-    //	xr_strcpy( tmp256, get_token_name(game_types, game->Type() ) );
+    //  xr_strcpy( tmp256, get_token_name(game_types, game->Type() ) );
     xr_strcpy(tmp256, GameTypeToString(game->Type(), true));
     if (game->Type() == eGameIDDeathmatch || game->Type() == eGameIDTeamDeathmatch)
     {

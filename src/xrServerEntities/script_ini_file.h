@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_ini_file.h
-//	Created 	: 21.05.2004
-//  Modified 	: 21.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script ini file class
+//  Module      : script_ini_file.h
+//  Created     : 21.05.2004
+//  Modified    : 21.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script ini file class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

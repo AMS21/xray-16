@@ -9,7 +9,7 @@ class xrServer;
 class xrClientData;
 
 typedef bool(__cdecl* InitSrv_t)(char* pstrGameVersion,
-    //		int		iAutoUpdate,
+    //      int     iAutoUpdate,
     // in func pointers
     void(__cdecl* pfnPrintMessage)(char*), void(__cdecl* pfnSendPacket)(int, void*, int),
     void(__cdecl* pfnKickPlayer)(int, char*),

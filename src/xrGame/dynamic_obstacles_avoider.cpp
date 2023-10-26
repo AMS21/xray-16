@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: dynamic_obstacles_avoider.cpp
-//	Created 	: 16.05.2007
-//  Modified 	: 16.05.2007
-//	Author		: Dmitriy Iassenev
-//	Description : dynamic obstacles avoider
+//  Module      : dynamic_obstacles_avoider.cpp
+//  Created     : 16.05.2007
+//  Modified    : 16.05.2007
+//  Author      : Dmitriy Iassenev
+//  Description : dynamic obstacles avoider
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

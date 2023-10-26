@@ -25,10 +25,10 @@
 
 //-------------------------------------------------------------
 u32 g_sv_cta_dwInvincibleTime = 5; // 5 seconds
-// u32			g_sv_cta_dwAnomalySetLengthTime	=		3;	//3 seconds
+// u32          g_sv_cta_dwAnomalySetLengthTime =       3;  //3 seconds
 u32 g_sv_cta_artefactReturningTime = 45; // 45 seconds
 u32 g_sv_cta_activatedArtefactRet = 0;
-// s32			g_sv_cta_ScoreLimit				=		3;
+// s32          g_sv_cta_ScoreLimit             =       3;
 u32 g_sv_cta_PlayerScoresDelayTime = 3; // 3 seconds
 float g_sv_cta_artefactsBaseRadius = 1.0f;
 u32 g_sv_cta_rankUpToArtsCountDiv = 1;
@@ -368,7 +368,7 @@ BOOL game_sv_CaptureTheArtefact::CheckForAllPlayersReady()
                 {
                     return;
                 }
-                //++ready;	in this case we shoud kick player with voting...
+                //++ready;  in this case we shoud kick player with voting...
             };
             if (ps->team == etSpectatorsTeam)
             {
@@ -413,9 +413,9 @@ void game_sv_CaptureTheArtefact::OnPlayerConnect(ClientID id_who)
     }
 
     /*if (!xrCData->flags.bReconnect)
-        Money_SetStart				(id_who);
+        Money_SetStart              (id_who);
 
-    SetPlayersDefItems				(ps_who);*/
+    SetPlayersDefItems              (ps_who);*/
 }
 void game_sv_CaptureTheArtefact::OnPlayerConnectFinished(ClientID id_who)
 {
@@ -933,7 +933,7 @@ void game_sv_CaptureTheArtefact::LoadTeamData(ETeam eteam, const shared_str& caS
 
     NewTeam.caSection = caSection;
 
-    // LoadWeaponsForTeam	(caSection, &NewTeam.aWeapons);
+    // LoadWeaponsForTeam   (caSection, &NewTeam.aWeapons);
     LoadSkinsForTeam(caSection, &NewTeam.aSkins);
     LoadDefItemsForTeam(caSection, /*&NewTeam.aWeapons, */ &NewTeam.aDefaultItems);
 
@@ -1186,7 +1186,7 @@ void game_sv_CaptureTheArtefact::LoadArtefactRPoints()
                     "Problem with team indexes. In Editor green team id = 1, blue team id = 2, but in game - 0, 1.");
 
                 // res
-                // O->r_u8	();
+                // O->r_u8  ();
                 switch (type)
                 {
                 case rptArtefactSpawn:
@@ -1321,7 +1321,7 @@ bool game_sv_CaptureTheArtefact::OnKillResult(KILL_RES KillResult, game_PlayerSt
     break;
     case KR_SELF:
     {
-        // pKiller->m_iRivalKills		-= 1;
+        // pKiller->m_iRivalKills       -= 1;
         pKiller->m_iSelfKills++;
         pKiller->m_iKillsInRowMax = 0;
         if (pTeam)
@@ -1594,9 +1594,9 @@ void game_sv_CaptureTheArtefact::ProcessPlayerDeath(game_PlayerState* playerStat
         /*
         VERIFY2(childArtefactTeam->second.artefactOwner, "dead player hasn't an artefact");
         VERIFY2(childArtefactTeam->second.artefact, "trying to reject not existing team artefact");
-        NET_Packet				P;
-        u_EventGen				(P,GE_OWNERSHIP_REJECT, childArtefactTeam->second.artefactOwner->ID);
-        P.w_u16					(childArtefactTeam->second.artefact->ID);
+        NET_Packet              P;
+        u_EventGen              (P,GE_OWNERSHIP_REJECT, childArtefactTeam->second.artefactOwner->ID);
+        P.w_u16                 (childArtefactTeam->second.artefact->ID);
         //m_server->SendBroadcast(BroadcastCID, P, net_flags(TRUE, TRUE));
         m_server->Process_event_reject(P, m_server->GetServerClient()->ID, 0,
             childArtefactTeam->second.artefactOwner->ID,
@@ -1649,7 +1649,7 @@ BOOL game_sv_CaptureTheArtefact::OnTouch(u16 eid_who, u16 eid_target, BOOL bForc
     game_PlayerState* ps_who = xrCData->ps;
     VERIFY(ps_who);
     // CSE_Abstract *e_what = m_server->ID_to_entity(eid_target);
-    /*VERIFY(e_what	); // <- not used because IMHO next code work faster...*/
+    /*VERIFY(e_what ); // <- not used because IMHO next code work faster...*/
     TeamsMap::iterator te = teams.end();
     TeamsMap::iterator artefactOfTeam =
         std::find_if(teams.begin(), te, [&](const TeamPair& tp) { return SearchArtefactIdFunctor()(tp, eid_target); });
@@ -1888,7 +1888,7 @@ void game_sv_CaptureTheArtefact::FillDeathActorRejectItems(CSE_ActorMP* actor, x
         {
             return;
         }
-// R_ASSERT		(server_item);
+// R_ASSERT     (server_item);
 #ifdef MP_LOGGING
         Msg("--- SV: to_reject [%d]", server_item->ID);
 #endif

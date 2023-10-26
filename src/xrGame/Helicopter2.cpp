@@ -177,7 +177,7 @@ float CHelicopter::GetRealAltitude()
 
 void CHelicopter::Hit(SHit* pHDS)
 {
-    //	inherited::Hit(pHDS);
+    //  inherited::Hit(pHDS);
 
     if (GetfHealth() < 0.005f)
         return;
@@ -267,7 +267,7 @@ void CHelicopter::DieHelicopter()
             K->LL_SetBoneVisible(bone_id, FALSE, TRUE);
         }
 
-        /// PPhysicsShell()=P_build_Shell	(this,false);
+        /// PPhysicsShell()=P_build_Shell   (this,false);
         PPhysicsShell()->EnabledCallbacks(TRUE);
         PPhysicsShell()->set_ObjectContactCallback(CollisionCallbackDead);
         PPhysicsShell()->set_ContactCallback(ContactShotMark);

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: game_graph_space.h
-//	Created 	: 18.02.2003
-//  Modified 	: 11.12.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Game graph namespace
+//  Module      : game_graph_space.h
+//  Created     : 18.02.2003
+//  Modified    : 11.12.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Game graph namespace
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

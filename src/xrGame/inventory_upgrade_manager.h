@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: inventory_upgrade_manager.h
-//	Created 	: 19.10.2007
-//  Modified 	: 27.11.2007
-//	Author		: Dmitriy Iassenev, Evgeniy Sokolov
-//	Description : inventory upgrade manager class
+//  Module      : inventory_upgrade_manager.h
+//  Created     : 19.10.2007
+//  Modified    : 27.11.2007
+//  Author      : Dmitriy Iassenev, Evgeniy Sokolov
+//  Description : inventory upgrade manager class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef INVENTORY_UPGRADE_MANAGER_H_INCLUDED
@@ -58,7 +58,7 @@ public:
     bool make_known_upgrade(shared_str const& upgrade_id);
     bool is_known_upgrade(CInventoryItem& item, shared_str const& upgrade_id);
     bool is_known_upgrade(shared_str const& upgrade_id);
-    //*			bool		is_disabled_upgrade( CInventoryItem& item, shared_str const& upgrade_id );
+    //*         bool        is_disabled_upgrade( CInventoryItem& item, shared_str const& upgrade_id );
 
     bool can_install_upgrade(CInventoryItem& item, shared_str const& upgrade_id);
     bool can_add_upgrade(CInventoryItem& item, shared_str const& upgrade_id);

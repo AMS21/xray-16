@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_trader.cpp
-//	Created 	: 13.05.2002
-//  Modified 	: 13.05.2002
-//	Author		: Jim
-//	Description : AI Behaviour for monster "Trader"
+//  Module      : ai_trader.cpp
+//  Created     : 13.05.2002
+//  Modified    : 13.05.2002
+//  Author      : Jim
+//  Description : AI Behaviour for monster "Trader"
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -33,15 +33,15 @@ CAI_Trader::~CAI_Trader()
 
 void CAI_Trader::Load(LPCSTR section)
 {
-    //	setEnabled						(FALSE);
+    //  setEnabled                      (FALSE);
     inherited::Load(section);
 
-    // fHealth							= pSettings->r_float	(section,"Health");
+    // fHealth                          = pSettings->r_float    (section,"Health");
     SetfHealth(pSettings->r_float(section, "Health"));
 
     float max_weight = pSettings->r_float(section, "max_item_mass");
     inventory().SetMaxWeight(max_weight * 1000);
-    //	inventory().SetMaxRuck(1000000);
+    //  inventory().SetMaxRuck(1000000);
     inventory().CalcTotalWeight();
 }
 
@@ -67,11 +67,11 @@ bool CAI_Trader::bfAssignSound(CScriptEntityAction* tpEntityAction)
 {
     if (!CScriptEntity::bfAssignSound(tpEntityAction))
     {
-        // m_cur_head_anim_type	= MonsterSpace::eHeadAnimNone;
+        // m_cur_head_anim_type = MonsterSpace::eHeadAnimNone;
         return (false);
     }
 
-    // CScriptSoundAction	&l_tAction	= tpEntityAction->m_tSoundAction;
+    // CScriptSoundAction   &l_tAction  = tpEntityAction->m_tSoundAction;
     // m_cur_head_anim_type = l_tAction.m_tHeadAnimType;
 
     return (true);
@@ -144,8 +144,8 @@ void CAI_Trader::net_Export(NET_Packet& P)
 {
     R_ASSERT(Local());
 
-    //	P.w_float						(inventory().TotalWeight());
-    //	P.w_u32							(m_dwMoney);
+    //  P.w_float                       (inventory().TotalWeight());
+    //  P.w_u32                         (m_dwMoney);
 }
 
 void CAI_Trader::net_Import(NET_Packet& P)
@@ -198,7 +198,7 @@ void CAI_Trader::OnEvent(NET_Packet& P, u16 type)
         Obj->SetTmpPreDestroy(just_before_destroy);
         inventory().DropItem(smart_cast<CGameObject*>(Obj), just_before_destroy, dont_create_shell);
         // if(inventory().DropItem(smart_cast<CGameObject*>(Obj), just_before_destroy))
-        //	Obj->H_SetParent(0, just_before_destroy); //moved to DropItem
+        //  Obj->H_SetParent(0, just_before_destroy); //moved to DropItem
     }
     break;
     case GE_TRANSFER_AMMO: break;

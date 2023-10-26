@@ -36,8 +36,8 @@ CUIServerInfo::CUIServerInfo()
     m_text_desc->SetAutoDelete(true);
 
     m_text_body = xr_new<CUITextWnd>();
-    // m_text_desc->AttachChild		(m_text_body);
-    // m_text_body->SetAutoDelete		(true);
+    // m_text_desc->AttachChild     (m_text_body);
+    // m_text_body->SetAutoDelete       (true);
 
     m_btn_spectator = xr_new<CUI3tButton>();
     AttachChild(m_btn_spectator);
@@ -87,7 +87,7 @@ void CUIServerInfo::InitCallbacks()
     AddCallback(m_btn_next, BUTTON_CLICKED, CUIWndCallback::void_function(this, &CUIServerInfo::OnNextBtnClick));
     AddCallback(
         m_btn_spectator, BUTTON_CLICKED, CUIWndCallback::void_function(this, &CUIServerInfo::OnSpectatorBtnClick));
-    // AddCallback	(this,				WINDOW_KEY_PRESSED,	CUIWndCallback::void_function(this,
+    // AddCallback  (this,              WINDOW_KEY_PRESSED, CUIWndCallback::void_function(this,
     // &CUIServerInfo::OnNextBtnClick));
 }
 

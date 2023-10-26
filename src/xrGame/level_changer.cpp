@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: level_changer.cpp
-//	Created 	: 10.07.2003
-//  Modified 	: 10.07.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Level change object
+//  Module      : level_changer.cpp
+//  Created     : 10.07.2003
+//  Modified    : 10.07.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Level change object
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -136,9 +136,9 @@ bool CLevelChanger::get_reject_pos(Fvector& p, Fvector& r)
 {
     p.set(0, 0, 0);
     r.set(0, 0, 0);
-    //--		db.actor:set_actor_position(patrol("t_way"):point(0))
-    //--		local dir = patrol("t_look"):point(0):sub(patrol("t_way"):point(0))
-    //--		db.actor:set_actor_direction(-dir:getH())
+    //--        db.actor:set_actor_position(patrol("t_way"):point(0))
+    //--        local dir = patrol("t_look"):point(0):sub(patrol("t_way"):point(0))
+    //--        db.actor:set_actor_direction(-dir:getH())
 
     if (m_ini_file && m_ini_file->section_exist("pt_move_if_reject"))
     {

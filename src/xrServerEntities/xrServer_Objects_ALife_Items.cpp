@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: xrServer_Objects_ALife_Items.cpp
-//	Created 	: 19.09.2002
-//  Modified 	: 04.06.2003
-//	Author		: Oles Shyshkovtsov, Alexander Maksimchuk, Victor Reutskiy and Dmitriy Iassenev
-//	Description : Server objects items for ALife simulator
+//  Module      : xrServer_Objects_ALife_Items.cpp
+//  Created     : 19.09.2002
+//  Modified    : 04.06.2003
+//  Author      : Oles Shyshkovtsov, Alexander Maksimchuk, Victor Reutskiy and Dmitriy Iassenev
+//  Description : Server objects items for ALife simulator
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -71,7 +71,7 @@ CSE_Abstract* CSE_ALifeInventoryItem::init()
 {
     m_self = smart_cast<CSE_ALifeObject*>(this);
     R_ASSERT(m_self);
-    //	m_self->m_flags.set			(CSE_ALifeObject::flSwitchOffline,TRUE);
+    //  m_self->m_flags.set         (CSE_ALifeObject::flSwitchOffline,TRUE);
     return (base());
 }
 
@@ -146,13 +146,13 @@ void CSE_ALifeInventoryItem::UPDATE_Write(NET_Packet& tNetPacket)
         num_items.mask |= inventory_item_angular_null;
     if (fis_zero(State.linear_vel.square_magnitude()))
         num_items.mask |= inventory_item_linear_null;
-    // if (anim_use)										num_items.mask |= animated;
+    // if (anim_use)                                        num_items.mask |= animated;
 
     tNetPacket.w_u8(num_items.common);
 
     /*if(check_mask(num_items.mask,animated))
     {
-        tNetPacket.w_float				(m_blend_timeCurrent);
+        tNetPacket.w_float              (m_blend_timeCurrent);
     }*/
 
     {
@@ -412,8 +412,8 @@ BOOL CSE_ALifeItem::Net_Relevant()
         return (TRUE);
 
 #ifdef XRGAME_EXPORTS
-//	if (Device.dwTimeGlobal < (m_last_update_time + update_rate()))
-//		return					(FALSE);
+//  if (Device.dwTimeGlobal < (m_last_update_time + update_rate()))
+//      return                  (FALSE);
 #endif // XRGAME_EXPORTS
 
     return (FALSE);
@@ -426,7 +426,7 @@ void CSE_ALifeItem::OnEvent(NET_Packet& tNetPacket, u16 type, u32 time, ClientID
     if (type != GE_FREEZE_OBJECT)
         return;
 
-    //	R_ASSERT					(!m_physics_disabled);
+    //  R_ASSERT                    (!m_physics_disabled);
     m_physics_disabled = true;
 }
 
@@ -585,11 +585,11 @@ void CSE_ALifeItemWeapon::OnEvent(NET_Packet& tNetPacket, u16 type, u32 time, Cl
     case GE_WPN_STATE_CHANGE:
     {
         tNetPacket.r_u8(wpn_state);
-        //				u8 sub_state =
+        //              u8 sub_state =
         tNetPacket.r_u8();
-        //				u8 NewAmmoType =
+        //              u8 NewAmmoType =
         tNetPacket.r_u8();
-        //				u8 AmmoElapsed =
+        //              u8 AmmoElapsed =
         tNetPacket.r_u8();
     }
     break;
@@ -922,7 +922,7 @@ void CSE_ALifeItemDocument::UPDATE_Write(NET_Packet& tNetPacket) { inherited::UP
 void CSE_ALifeItemDocument::FillProps(LPCSTR pref, PropItemVec& items)
 {
     inherited::FillProps(pref, items);
-    //	PHelper().CreateU16			(items, PrepareKey(pref, *s_name, "Document index :"), &m_wDocIndex, 0, 65535);
+    //  PHelper().CreateU16         (items, PrepareKey(pref, *s_name, "Document index :"), &m_wDocIndex, 0, 65535);
     PHelper().CreateRText(items, PrepareKey(pref, *s_name, "Info portion :"), &m_wDoc);
 }
 #endif // #ifndef MASTER_GOLD

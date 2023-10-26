@@ -183,8 +183,8 @@ bool CIKLimbsController::PredictObjectShift(const SCalculateData cd[max_size])
     else
         return false;
     //{
-    //	predict_shift = 0;
-    //	predict_time_shift = Device.fTimeDelta;
+    //  predict_shift = 0;
+    //  predict_time_shift = Device.fTimeDelta;
     //}
 
     if (predict_time_shift < EPS_S)
@@ -215,7 +215,7 @@ void CIKLimbsController::ShiftObject(const SCalculateData cd[max_size])
 {
     IKinematics* skeleton_animated = m_object->Visual()->dcast_PKinematics();
     VERIFY(skeleton_animated);
-    //	u16 root = skeleton_animated->LL_GetBoneRoot( ) ;
+    //  u16 root = skeleton_animated->LL_GetBoneRoot( ) ;
 
     // CBoneData &BD=skeleton_animated->LL_GetData(root);
 
@@ -231,8 +231,8 @@ void CIKLimbsController::ShiftObject(const SCalculateData cd[max_size])
             bi.callback()(&bi);
         skeleton_animated->LL_GetTransform_R(i).c.y += y_shift;
     }
-    //	skeleton_animated->LL_GetTransform(root).c.y += _object_shift.shift();
-    //	skeleton_animated->Bone_Calculate(&BD, &Fidentity );
+    //  skeleton_animated->LL_GetTransform(root).c.y += _object_shift.shift();
+    //  skeleton_animated->Bone_Calculate(&BD, &Fidentity );
 }
 
 int ik_shift_object = 1;
@@ -315,7 +315,7 @@ void CIKLimbsController::Destroy(CGameObject* O)
 void CIKLimbsController::IKVisualCallback(IKinematics* K)
 {
 // if (Device.Paused())
-//	return;
+//  return;
 
 #ifdef DEBUG
     if (ph_dbg_draw_mask1.test(phDbgIKOff))

@@ -101,13 +101,13 @@ void CUIMpTradeWnd::Init(const shared_str& sectionName, const shared_str& sectio
     m_btn_reset = UIHelper::Create3tButton(xml_doc, "btn_reset", this);
     m_btn_sell = UIHelper::Create3tButton(xml_doc, "btn_sell", this);
 
-    m_btn_pistol_ammo = NULL; // UIHelper::Create3tButton( xml_doc, "btn_pistol_ammo",		this );
+    m_btn_pistol_ammo = NULL; // UIHelper::Create3tButton( xml_doc, "btn_pistol_ammo",      this );
     m_btn_pistol_silencer = UIHelper::Create3tButton(xml_doc, "btn_pistol_silencer", this);
-    m_btn_rifle_ammo = NULL; // UIHelper::Create3tButton( xml_doc, "btn_rifle_ammo",		this );
+    m_btn_rifle_ammo = NULL; // UIHelper::Create3tButton( xml_doc, "btn_rifle_ammo",        this );
     m_btn_rifle_silencer = UIHelper::Create3tButton(xml_doc, "btn_rifle_silencer", this);
     m_btn_rifle_scope = UIHelper::Create3tButton(xml_doc, "btn_rifle_scope", this);
     m_btn_rifle_glauncher = UIHelper::Create3tButton(xml_doc, "btn_rifle_glauncher", this);
-    m_btn_rifle_ammo2 = NULL; // UIHelper::Create3tButton( xml_doc, "btn_rifle_ammo2",		this );
+    m_btn_rifle_ammo2 = NULL; // UIHelper::Create3tButton( xml_doc, "btn_rifle_ammo2",      this );
 
     Register(m_btn_ok);
     Register(m_btn_cancel);
@@ -125,13 +125,13 @@ void CUIMpTradeWnd::Init(const shared_str& sectionName, const shared_str& sectio
     Register(m_btn_reset);
     Register(m_btn_sell);
 
-    //	Register							(m_btn_pistol_ammo		);
+    //  Register                            (m_btn_pistol_ammo      );
     Register(m_btn_pistol_silencer);
-    //	Register							(m_btn_rifle_ammo		);
+    //  Register                            (m_btn_rifle_ammo       );
     Register(m_btn_rifle_silencer);
     Register(m_btn_rifle_scope);
     Register(m_btn_rifle_glauncher);
-    //	Register							(m_btn_rifle_ammo2		);
+    //  Register                            (m_btn_rifle_ammo2      );
 
     AddCallback(m_btn_ok, BUTTON_CLICKED, CUIWndCallback::void_function(this, &CUIMpTradeWnd::OnBtnOkClicked));
     AddCallback(m_btn_cancel, BUTTON_CLICKED, CUIWndCallback::void_function(this, &CUIMpTradeWnd::OnBtnCancelClicked));
@@ -161,23 +161,23 @@ void CUIMpTradeWnd::Init(const shared_str& sectionName, const shared_str& sectio
     AddCallback(m_btn_reset, BUTTON_CLICKED, CUIWndCallback::void_function(this, &CUIMpTradeWnd::OnBtnResetClicked));
     AddCallback(m_btn_sell, BUTTON_CLICKED, CUIWndCallback::void_function(this, &CUIMpTradeWnd::OnBtnSellClicked));
 
-    //	AddCallback							("btn_pistol_ammo",	BUTTON_CLICKED,		CUIWndCallback::void_function
+    //  AddCallback                         ("btn_pistol_ammo", BUTTON_CLICKED,     CUIWndCallback::void_function
     //(this,
-    //&CUIMpTradeWnd::OnBtnPistolAmmoClicked		));
+    //&CUIMpTradeWnd::OnBtnPistolAmmoClicked        ));
     AddCallback(m_btn_pistol_silencer, BUTTON_CLICKED,
         CUIWndCallback::void_function(this, &CUIMpTradeWnd::OnBtnPistolSilencerClicked));
-    //	AddCallback							("btn_rifle_ammo",	BUTTON_CLICKED,		CUIWndCallback::void_function
+    //  AddCallback                         ("btn_rifle_ammo",  BUTTON_CLICKED,     CUIWndCallback::void_function
     //(this,
-    //&CUIMpTradeWnd::OnBtnRifleAmmoClicked		));
+    //&CUIMpTradeWnd::OnBtnRifleAmmoClicked     ));
     AddCallback(m_btn_rifle_silencer, BUTTON_CLICKED,
         CUIWndCallback::void_function(this, &CUIMpTradeWnd::OnBtnRifleSilencerClicked));
     AddCallback(
         m_btn_rifle_scope, BUTTON_CLICKED, CUIWndCallback::void_function(this, &CUIMpTradeWnd::OnBtnRifleScopeClicked));
     AddCallback(m_btn_rifle_glauncher, BUTTON_CLICKED,
         CUIWndCallback::void_function(this, &CUIMpTradeWnd::OnBtnRifleGLClicked));
-    //	AddCallback							("btn_rifle_ammo2",	BUTTON_CLICKED,		CUIWndCallback::void_function
+    //  AddCallback                         ("btn_rifle_ammo2", BUTTON_CLICKED,     CUIWndCallback::void_function
     //(this,
-    //&CUIMpTradeWnd::OnBtnRifleAmmo2Clicked		));
+    //&CUIMpTradeWnd::OnBtnRifleAmmo2Clicked        ));
 
     m_static_player_money = UIHelper::CreateTextWnd(xml_doc, "static_player_money", this);
     m_static_curr_items_money = UIHelper::CreateTextWnd(xml_doc, "static_curr_items_money", this);

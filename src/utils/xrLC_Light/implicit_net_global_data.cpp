@@ -14,8 +14,8 @@ void net_global_data_impl<gl_implicit_cl_data>::init()
 
 void net_global_data_impl<gl_implicit_cl_data>::create_data_file(LPCSTR path)
 {
-    // FPU::m64r			();
-    // Memory.mem_compact	();
+    // FPU::m64r            ();
+    // Memory.mem_compact   ();
     // if(!write_faces)
     // inlc_global_data()->create_write_faces();
     Logger.clMsg("create_implicit_data_write:  start");

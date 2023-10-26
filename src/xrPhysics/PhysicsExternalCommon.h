@@ -21,7 +21,7 @@ typedef void ObjectContactCallbackFun(
 typedef void BoneCallbackFun(CBoneInstance* B);
 
 typedef void PhysicsStepTimeCallback(u32 step_start, u32 step_end);
-// extern			PhysicsStepTimeCallback		*physics_step_time_callback;
+// extern           PhysicsStepTimeCallback     *physics_step_time_callback;
 struct dxGeomUserData;
 struct dContactGeom;
 XRPHYSICS_API bool ContactShotMarkGetEffectPars(

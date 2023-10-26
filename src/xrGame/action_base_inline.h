@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: action_base_inline.h
-//	Created 	: 28.01.2004
-//  Modified 	: 10.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Base action inline function
+//  Module      : action_base_inline.h
+//  Created     : 28.01.2004
+//  Modified    : 10.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Base action inline function
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -29,8 +29,8 @@ void CBaseAction::init(_object_type* object, LPCSTR action_name)
     m_use_log = false;
     m_action_name = action_name;
     m_switched = false;
-//	if (xr_strlen(m_action_name))
-//		debug_log		(eActionStateConstructed);
+//  if (xr_strlen(m_action_name))
+//      debug_log       (eActionStateConstructed);
 #endif
 }
 

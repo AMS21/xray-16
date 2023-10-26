@@ -11,10 +11,10 @@ protected:
     CInifileEx* priquel_config;
     CInifileEx* patch_config;
 
-    /*CInifileEx*		work_mp_weapons;
-    CInifileEx*		work_mp_ammo;
-    CInifileEx*		work_mp_items;
-    CInifileEx*		work_mp_outfits;*/
+    /*CInifileEx*       work_mp_weapons;
+    CInifileEx*     work_mp_ammo;
+    CInifileEx*     work_mp_items;
+    CInifileEx*     work_mp_outfits;*/
 
     CInifileEx* settings;
 

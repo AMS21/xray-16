@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_movement_manager_smart_cover_loopholes.cpp
-//	Created 	: 14.02.2008
-//	Modified	: 14.02.2008
-//	Author		: Dmitriy Iassenev
-//	Description : stalker movement manager class with smart covers loopholes stuff
+//  Module      : stalker_movement_manager_smart_cover_loopholes.cpp
+//  Created     : 14.02.2008
+//  Modified    : 14.02.2008
+//  Author      : Dmitriy Iassenev
+//  Description : stalker movement manager class with smart covers loopholes stuff
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -279,7 +279,7 @@ void stalker_movement_manager_smart_cover::build_exit_path()
 
         Fvector exit_position;
         u32 exit_vertex_id;
-        //		transition_action const&	action =
+        //      transition_action const&    action =
         nearest_action(cur_cover, exitable_loophole_id, smart_cover::transform_vertex("", false), target_position,
             exit_position, exit_vertex_id, &m_target.m_body_state);
 
@@ -496,7 +496,7 @@ void stalker_movement_manager_smart_cover::go_next_loophole()
 
     VERIFY(!m_path.empty());
 
-    //	VERIFY						(m_path.size() > 1);
+    //  VERIFY                      (m_path.size() > 1);
     if (m_path.size() == 1)
     {
         VERIFY(m_current.cover());

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: verify_level_graph.cpp
-//	Created 	: 25.05.2004
-//  Modified 	: 25.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Verifying level graph
+//  Module      : verify_level_graph.cpp
+//  Created     : 25.05.2004
+//  Modified    : 25.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Verifying level graph
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"

@@ -29,7 +29,7 @@ void xrServer::Process_update(NET_Packet& P, ClientID sender)
 
         if (E)
         {
-            // Msg				("sv_import: %d '%s'",E->ID,E->name_replace());
+            // Msg              ("sv_import: %d '%s'",E->ID,E->name_replace());
             E->net_Ready = TRUE;
             E->UPDATE_Read(P);
 

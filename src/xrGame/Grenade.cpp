@@ -147,7 +147,7 @@ void CGrenade::SendHiddenItem()
 {
     if (GetState() == eThrow)
     {
-        //		Msg("MotionMarks !!![%d][%d]", ID(), Device.dwFrame);
+        //      Msg("MotionMarks !!![%d][%d]", ID(), Device.dwFrame);
         Throw();
     }
     CActor* pActor = smart_cast<CActor*>(m_pInventory->GetOwner());

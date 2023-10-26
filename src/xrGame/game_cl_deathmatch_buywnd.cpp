@@ -41,7 +41,7 @@ void game_cl_Deathmatch::OnBuyMenu_Ok()
     l_pPlayer->u_EventGen(P, GE_GAME_EVENT, l_pPlayer->ID());
     P.w_u16(GAME_EVENT_PLAYER_BUY_FINISHED);
     //-------------------------------------------------------------------------------
-    //	pCurPresetItems->clear();
+    //  pCurPresetItems->clear();
     PRESET_ITEMS tmpItems;
     tmpItems.clear();
 
@@ -66,7 +66,7 @@ void game_cl_Deathmatch::OnBuyMenu_Ok()
             u8 Addons = _pitem.addon_state;
 
             s16 ID = GetBuyMenuItemIndex(Addons, ItemID);
-            //			pCurPresetItems->push_back(ID);
+            //          pCurPresetItems->push_back(ID);
             tmpItems.push_back(ID);
         }
     }
@@ -87,14 +87,14 @@ void game_cl_Deathmatch::OnBuyMenu_Ok()
     else
     {
         s32 MoneyDiff = pCurBuyMenu->GetPresetCost(_preset_idx_origin) - pCurBuyMenu->GetPresetCost(_preset_idx_last);
-        //		P.w_s32		(s32(pCurBuyMenu->GetMoneyAmount()) - Pl->money_for_round);
+        //      P.w_s32     (s32(pCurBuyMenu->GetMoneyAmount()) - Pl->money_for_round);
         P.w_s32(MoneyDiff);
     }
-    //	P.w_u8		(u8(pCurPresetItems->size()));
-    //	for (u8 s=0; s<pCurPresetItems->size(); s++)
-    //	{
-    //		P.w_s16((*pCurPresetItems)[s].BigID);
-    //	}
+    //  P.w_u8      (u8(pCurPresetItems->size()));
+    //  for (u8 s=0; s<pCurPresetItems->size(); s++)
+    //  {
+    //      P.w_s16((*pCurPresetItems)[s].BigID);
+    //  }
 
     P.w_u16(u16(tmpItems.size()));
     for (u8 s = 0; s < tmpItems.size(); s++)
@@ -117,14 +117,14 @@ void game_cl_Deathmatch::OnBuyMenu_Ok()
 void game_cl_Deathmatch::OnBuyMenu_DefaultItems()
 {
     //---------------------------------------------------------
-    /*	auto It = PlayerDefItems.begin();
-	auto Et = PlayerDefItems.end();
-	for ( ; It != Et; ++It) 
-	{
-		s16	ItemID = (*It);
+    /*  auto It = PlayerDefItems.begin();
+    auto Et = PlayerDefItems.end();
+    for ( ; It != Et; ++It) 
+    {
+        s16 ItemID = (*It);
 
-		pCurBuyMenu->SectionToSlot(u8((ItemID&0xff00)>>0x08), u8(ItemID&0x00ff), false);
-	};
+        pCurBuyMenu->SectionToSlot(u8((ItemID&0xff00)>>0x08), u8(ItemID&0x00ff), false);
+    };
 */ //---------------------------------------------------------
     SetBuyMenuItems(&PlayerDefItems, TRUE);
 };
@@ -159,7 +159,7 @@ void game_cl_Deathmatch::SetBuyMenuItems(PRESET_ITEMS* pItems, BOOL OnlyPreset)
             PIItem pItem = pCurActor->inventory().ItemFromSlot(ISlot);
             if (!pItem)
                 continue;
-            // if (pItem->IsInvalid() || pItem->object().CLS_ID == CLSID_OBJECT_W_KNIFE)	continue;
+            // if (pItem->IsInvalid() || pItem->object().CLS_ID == CLSID_OBJECT_W_KNIFE)    continue;
             if (pItem->IsInvalid() || smart_cast<CWeaponKnife*>(&pItem->object()))
                 continue;
             if (!pItem->CanTrade())
@@ -400,7 +400,7 @@ void game_cl_Deathmatch::LoadTeamDefaultPresetItems(
         pBuyMenu->GetWeaponIndexByName(ItemName, SlotID, ItemID);
         if (SlotID == 0xff || ItemID == 0xff)
             continue;
-        //		s16 ID = GetBuyMenuItemIndex(SlotID, ItemID);
+        //      s16 ID = GetBuyMenuItemIndex(SlotID, ItemID);
         s16 ID = GetBuyMenuItemIndex(0, ItemID);
         pPresetItems->push_back(ID);
     };
@@ -424,8 +424,8 @@ void game_cl_Deathmatch::LoadDefItemsForRank(IBuyWnd* pBuyMenu)
             continue;
         for (u32 it = 0; it < PlayerDefItems.size(); it++)
         {
-            //			s16* pItemID = &(PlayerDefItems[it]);
-            //			char* ItemName = pBuyMenu->GetWeaponNameByIndex(u8(((*pItemID)&0xff00)>>0x08),
+            //          s16* pItemID = &(PlayerDefItems[it]);
+            //          char* ItemName = pBuyMenu->GetWeaponNameByIndex(u8(((*pItemID)&0xff00)>>0x08),
             // u8((*pItemID)&0x00ff));
             PresetItem* pDefItem = &(PlayerDefItems[it]);
             const shared_str& ItemName = pBuyMenu->GetWeaponNameByIndex(pDefItem->SlotID, pDefItem->ItemID);
@@ -442,18 +442,18 @@ void game_cl_Deathmatch::LoadDefItemsForRank(IBuyWnd* pBuyMenu)
             if (SlotID == 0xff || ItemID == 0xff)
                 continue;
 
-            //			s16 ID = GetBuyMenuItemIndex(SlotID, ItemID);
+            //          s16 ID = GetBuyMenuItemIndex(SlotID, ItemID);
             s16 ID = GetBuyMenuItemIndex(0, ItemID);
 
-            //			*pItemID = ID;
+            //          *pItemID = ID;
             pDefItem->set(ID);
         }
     }
     //---------------------------------------------------------
     for (u32 it = 0; it < PlayerDefItems.size(); it++)
     {
-        //		s16* pItemID = &(PlayerDefItems[it]);
-        //		char* ItemName = pBuyMenu->GetWeaponNameByIndex(u8(((*pItemID)&0xff00)>>0x08), u8((*pItemID)&0x00ff));
+        //      s16* pItemID = &(PlayerDefItems[it]);
+        //      char* ItemName = pBuyMenu->GetWeaponNameByIndex(u8(((*pItemID)&0xff00)>>0x08), u8((*pItemID)&0x00ff));
         PresetItem* pDefItem = &(PlayerDefItems[it]);
         const shared_str& ItemName = pBuyMenu->GetWeaponNameByIndex(pDefItem->SlotID, pDefItem->ItemID);
         if (!ItemName.size())
@@ -472,7 +472,7 @@ void game_cl_Deathmatch::LoadDefItemsForRank(IBuyWnd* pBuyMenu)
         if (SlotID == 0xff || ItemID == 0xff)
             continue;
 
-        //		s16 ID = GetBuyMenuItemIndex(SlotID, ItemID);
+        //      s16 ID = GetBuyMenuItemIndex(SlotID, ItemID);
 
         s16 ID = GetBuyMenuItemIndex(0, ItemID);
 

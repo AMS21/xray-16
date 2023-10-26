@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: action_planner_script.h
-//	Created 	: 28.03.2004
-//  Modified 	: 28.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Action planner with script support
+//  Module      : action_planner_script.h
+//  Created     : 28.03.2004
+//  Modified    : 28.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Action planner with script support
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

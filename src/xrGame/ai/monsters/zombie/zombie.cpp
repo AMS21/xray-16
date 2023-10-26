@@ -31,10 +31,10 @@ void CZombie::Load(LPCSTR section)
     SVelocityParam& velocity_turn = move().get_velocity(MonsterMovement::eVelocityParameterStand);
     SVelocityParam& velocity_walk = move().get_velocity(MonsterMovement::eVelocityParameterWalkNormal);
     SVelocityParam& velocity_run = move().get_velocity(MonsterMovement::eVelocityParameterRunNormal);
-    // SVelocityParam &velocity_walk_dmg	= move().get_velocity(MonsterMovement::eVelocityParameterWalkDamaged);
-    // SVelocityParam &velocity_run_dmg	= move().get_velocity(MonsterMovement::eVelocityParameterRunDamaged);
-    // SVelocityParam &velocity_steal		= move().get_velocity(MonsterMovement::eVelocityParameterSteal);
-    // SVelocityParam &velocity_drag		= move().get_velocity(MonsterMovement::eVelocityParameterDrag);
+    // SVelocityParam &velocity_walk_dmg    = move().get_velocity(MonsterMovement::eVelocityParameterWalkDamaged);
+    // SVelocityParam &velocity_run_dmg = move().get_velocity(MonsterMovement::eVelocityParameterRunDamaged);
+    // SVelocityParam &velocity_steal       = move().get_velocity(MonsterMovement::eVelocityParameterSteal);
+    // SVelocityParam &velocity_drag        = move().get_velocity(MonsterMovement::eVelocityParameterDrag);
 
     anim().AddAnim(eAnimStandIdle, "stand_idle_", -1, &velocity_none, PS_STAND, "fx_stand_f", "fx_stand_b",
         "fx_stand_l", "fx_stand_r");
@@ -144,7 +144,7 @@ bool CZombie::net_Spawn(CSE_Abstract* DC)
 // ALife::EHitType hit_type)
 void CZombie::Hit(SHit* pHDS)
 {
-    //	inherited::Hit(P,dir,who,element,p_in_object_space,impulse,hit_type);
+    //  inherited::Hit(P,dir,who,element,p_in_object_space,impulse,hit_type);
     inherited::Hit(pHDS);
 
     if (!g_Alive())

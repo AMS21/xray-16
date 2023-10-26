@@ -30,7 +30,7 @@ const u32 CULL_CCW = D3DCULL_CCW;
 const u32 CULL_CW = D3DCULL_CW;
 const u32 CULL_NONE = D3DCULL_NONE;
 
-///		detailed statistic
+///     detailed statistic
 struct R_statistics_element
 {
     u32 verts, dips;
@@ -87,9 +87,9 @@ public:
 
     D3D_PRIMITIVE_TOPOLOGY m_PrimitiveTopology;
     ID3DInputLayout* m_pInputLayout;
-    u32 dummy0; // Padding to avoid warning	
-    u32 dummy1; // Padding to avoid warning	
-    u32 dummy2; // Padding to avoid warning	
+    u32 dummy0; // Padding to avoid warning 
+    u32 dummy1; // Padding to avoid warning 
+    u32 dummy2; // Padding to avoid warning 
 #endif
 private:
     // Render-targets
@@ -602,7 +602,7 @@ private:
 
 #if defined(USE_DX11)
 private:
-    //	DirectX 11+ internal functionality
+    //  DirectX 11+ internal functionality
     // void CreateConstantBuffers();
     // void DestroyConstantBuffers();
     void ApplyVertexLayout();

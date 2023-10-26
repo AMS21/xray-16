@@ -48,7 +48,7 @@ CSpectator::CSpectator() : CGameObject()
     cameras[eacFixedLookAt] = xr_new<CCameraFixedLook>(this);
     cameras[eacFixedLookAt]->Load("actor_look_cam");
 
-    //	cam_active				= eacFreeFly;
+    //  cam_active              = eacFreeFly;
     cam_active = eacFreeLook;
     m_last_camera = eacFreeLook;
     look_idx = 0;
@@ -169,7 +169,7 @@ void CSpectator::UpdateCL()
 void CSpectator::shedule_Update(u32 DT)
 {
     inherited::shedule_Update(DT);
-    //	if (!getEnabled())	return;
+    //  if (!getEnabled())  return;
     if (!Ready())
         return;
 }
@@ -199,7 +199,7 @@ void CSpectator::IR_OnKeyboardPress(int cmd)
         if (cam_active == eacFreeFly && SelectNextPlayerToLook(false))
             cam_Set(eacFreeLook);
         break;
-    // case kCAM_4:	cam_Set			(eacFreeFly);	m_pActorToLookAt = NULL;	break;
+    // case kCAM_4: cam_Set         (eacFreeFly);   m_pActorToLookAt = NULL;    break;
     case kWPN_FIRE:
     {
         if ((cam_active != eacFreeFly) || (!m_pActorToLookAt))
@@ -480,7 +480,7 @@ void CSpectator::cam_Update(CActor* A)
         dangle.set(0, 0, 0);
 
         cam->Update(point, dangle);
-        //		cam->vPosition.set(point0);
+        //      cam->vPosition.set(point0);
         if (Device.Paused())
         {
             Device.fTimeDelta = m_fTimeDelta; // fake, to update cam (problem with fov)
@@ -658,7 +658,7 @@ void CSpectator::GetSpectatorString(string1024& pStr)
         SpectatorMsg += " ";
         SpectatorMsg += *StringTable().translate("mp_first_eye");
         SpectatorMsg += " ";
-        //			SpectatorMsg = "SPECTATOR (First-Eye): ";
+        //          SpectatorMsg = "SPECTATOR (First-Eye): ";
         SpectatorMsg += m_pActorToLookAt ? m_pActorToLookAt->Name() : "";
         break;
     }
@@ -668,7 +668,7 @@ void CSpectator::GetSpectatorString(string1024& pStr)
         SpectatorMsg += " ";
         SpectatorMsg += *StringTable().translate("mp_free_look");
         SpectatorMsg += " ";
-        //			SpectatorMsg = "SPECTATOR (Free-Look):";
+        //          SpectatorMsg = "SPECTATOR (Free-Look):";
         SpectatorMsg += m_pActorToLookAt ? m_pActorToLookAt->Name() : "";
         break;
     }
@@ -678,7 +678,7 @@ void CSpectator::GetSpectatorString(string1024& pStr)
         SpectatorMsg += " ";
         SpectatorMsg += *StringTable().translate("mp_look_at");
         SpectatorMsg += " ";
-        //			SpectatorMsg = "SPECTATOR (Look-At):";
+        //          SpectatorMsg = "SPECTATOR (Look-At):";
         SpectatorMsg += m_pActorToLookAt ? m_pActorToLookAt->Name() : "";
         break;
     }

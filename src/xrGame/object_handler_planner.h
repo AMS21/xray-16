@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: object_handler_planner.h
-//	Created 	: 11.03.2004
-//  Modified 	: 01.12.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Object handler action planner
+//  Module      : object_handler_planner.h
+//  Created     : 11.03.2004
+//  Modified    : 01.12.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Object handler action planner
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

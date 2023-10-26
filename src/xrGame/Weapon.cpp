@@ -556,7 +556,7 @@ bool CWeapon::net_Spawn(CSE_Abstract* DC)
     CSE_Abstract* e = (CSE_Abstract*)(DC);
     CSE_ALifeItemWeapon* E = smart_cast<CSE_ALifeItemWeapon*>(e);
 
-    // iAmmoCurrent					= E->a_current;
+    // iAmmoCurrent                 = E->a_current;
     iAmmoElapsed = E->a_elapsed;
     m_flagsAddOnState = E->m_addon_flags.get();
     m_ammoType = E->ammo_type;
@@ -724,7 +724,7 @@ void CWeapon::OnEvent(NET_Packet& P, u16 type)
         u8 state;
         P.r_u8(state);
         P.r_u8(m_sub_state);
-        //			u8 NewAmmoType =
+        //          u8 NewAmmoType =
         P.r_u8();
         u8 AmmoElapsed = P.r_u8();
         u8 NextAmmo = P.r_u8();
@@ -747,8 +747,8 @@ void CWeapon::OnEvent(NET_Packet& P, u16 type)
 void CWeapon::shedule_Update(u32 dT)
 {
     // Queue shrink
-    //	u32	dwTimeCL		= Level().timeServer()-NET_Latency;
-    //	while ((NET.size()>2) && (NET[1].dwTimeStamp<dwTimeCL)) NET.pop_front();
+    //  u32 dwTimeCL        = Level().timeServer()-NET_Latency;
+    //  while ((NET.size()>2) && (NET[1].dwTimeStamp<dwTimeCL)) NET.pop_front();
 
     // Inherited
     inherited::shedule_Update(dT);
@@ -795,8 +795,8 @@ void CWeapon::OnActiveItem()
 
     inherited::OnActiveItem();
     //если мы занружаемся и оружие было в руках
-    //.	SetState					(eIdle);
-    //.	SetNextState				(eIdle);
+    //. SetState                    (eIdle);
+    //. SetNextState                (eIdle);
 }
 
 void CWeapon::OnHiddenItem()
@@ -1101,7 +1101,7 @@ void CWeapon::SpawnAmmo(u32 boxCurr, LPCSTR ammoSect, u32 ParentID)
         l_pA->m_boxSize = (u16)pSettings->r_s32(ammoSect, "box_size");
         D->s_name = ammoSect;
         D->set_name_replace("");
-        //.		D->s_gameid					= u8(GameID());
+        //.     D->s_gameid                 = u8(GameID());
         D->s_RP = 0xff;
         D->ID = 0xffff;
         if (ParentID == 0xffffffff)
@@ -1285,7 +1285,7 @@ void CWeapon::UpdateHUDAddonsVisibility()
     if (!GetHUDmode())
         return;
 
-    //.	return;
+    //. return;
 
     if (ScopeAttachable())
     {
@@ -1349,7 +1349,7 @@ void CWeapon::UpdateAddonsVisibility()
     if (m_eScopeStatus == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
     {
         pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
-        //		Log("scope", pWeaponVisual->LL_GetBoneVisible		(bone_id));
+        //      Log("scope", pWeaponVisual->LL_GetBoneVisible       (bone_id));
     }
     bone_id = pWeaponVisual->LL_BoneID(wpn_silencer);
     if (SilencerAttachable())
@@ -1368,7 +1368,7 @@ void CWeapon::UpdateAddonsVisibility()
     if (m_eSilencerStatus == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
     {
         pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
-        //		Log("silencer", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+        //      Log("silencer", pWeaponVisual->LL_GetBoneVisible    (bone_id));
     }
 
     bone_id = pWeaponVisual->LL_BoneID(wpn_grenade_launcher);
@@ -1389,7 +1389,7 @@ void CWeapon::UpdateAddonsVisibility()
         pWeaponVisual->LL_GetBoneVisible(bone_id))
     {
         pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
-        //		Log("gl", pWeaponVisual->LL_GetBoneVisible			(bone_id));
+        //      Log("gl", pWeaponVisual->LL_GetBoneVisible          (bone_id));
     }
 
     pWeaponVisual->CalculateBones_Invalidate();
@@ -1443,7 +1443,7 @@ void CWeapon::OnZoomOut()
     m_zoom_params.m_fCurrentZoomFactor = g_fov;
 
     // Включаем инерцию (также заменено  GetInertionFactor())
-    // EnableHudInertion	(TRUE);
+    // EnableHudInertion    (TRUE);
 
     GamePersistent().RestoreEffectorDOF();
 
@@ -1688,7 +1688,7 @@ void CWeapon::UpdateHudAdditonal(Fmatrix& trans)
         (!IsZoomed() && m_zoom_params.m_fZoomRotationFactor > 0.f))
     {
         u8 idx = GetCurrentHudOffsetIdx();
-        //		if(idx==0)					return;
+        //      if(idx==0)                  return;
 
         attachable_hud_item* hi = HudItemData();
         R_ASSERT(hi);

@@ -156,7 +156,7 @@ void CSoundStream::OnMove()
 {
 
 #if defined(WINDOWS)
-	VERIFY(pBuffer);
+    VERIFY(pBuffer);
 
     pBuffer->GetStatus(u32*(&dwStatus));
 #endif
@@ -178,7 +178,7 @@ void CSoundStream::OnMove()
             delta = dsBufferSize - (writepos - currpos);
         if (isPresentData
 #if defined(WINDOWS)
-        		&& (delta > stream.cbDstLengthUsed)
+                && (delta > stream.cbDstLengthUsed)
 #endif
         )
         {

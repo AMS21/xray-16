@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_action_planner_action_wrapper.cpp
-//	Created 	: 29.03.2004
-//  Modified 	: 29.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script action planner action wrapper
+//  Module      : script_action_planner_action_wrapper.cpp
+//  Created     : 29.03.2004
+//  Modified    : 29.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script action planner action wrapper
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

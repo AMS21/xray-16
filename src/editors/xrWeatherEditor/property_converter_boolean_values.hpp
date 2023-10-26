@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_converter_boolean_values.hpp
-//	Created 	: 07.12.2007
-//  Modified 	: 07.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property converter boolean values class
+//  Module      : property_converter_boolean_values.hpp
+//  Created     : 07.12.2007
+//  Modified    : 07.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property converter boolean values class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_CONVERTER_BOOLEAN_VALUES_HPP_INCLUDED

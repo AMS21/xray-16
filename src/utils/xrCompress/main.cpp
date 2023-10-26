@@ -22,18 +22,18 @@ int __cdecl main(int argc, char* argv[])
         {
             printf("ERROR: u must pass folder name as parameter.\n");
             printf("-diff /? option to get information about creating difference.\n");
-            printf("-xdb	- pack files into .xdb format\n");
-            printf("-fast	- fast compression.\n");
-            printf("-store	- store files. No compression.\n");
+            printf("-xdb    - pack files into .xdb format\n");
+            printf("-fast   - fast compression.\n");
+            printf("-store  - store files. No compression.\n");
             printf("-max_size <MB>       - set maximum archive size. Default: [%zu MB]\n", xrCompressor::XRP_MAX_SIZE);
             printf("-filename <file_name.xdb> - full name of the archive (with extension) to be created by the compressor");
             printf("-ltx <file_name.ltx> - pathes to compress.\n");
             printf("\n");
             printf("LTX format:\n");
-            printf("	[config]\n");
-            printf("	;<path>     = <recurse>\n");
-            printf("	.\\         = false\n");
-            printf("	textures    = true\n");
+            printf("    [config]\n");
+            printf("    ;<path>     = <recurse>\n");
+            printf("    .\\         = false\n");
+            printf("    textures    = true\n");
 
             Core._destroy();
             return 3;

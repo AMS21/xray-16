@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_ini_file.cpp
-//	Created 	: 21.05.2004
-//  Modified 	: 21.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script ini file class
+//  Module      : script_ini_file.cpp
+//  Created     : 21.05.2004
+//  Modified    : 21.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script ini file class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

@@ -13,7 +13,7 @@ void CMonsterSquad::ProcessAttack()
     // Выделить элементы с общими врагами и состянием атаки
     for (auto it_goal = m_goals.begin(); it_goal != m_goals.end(); ++it_goal)
     {
-        //		CEntity *member = it_goal->first;
+        //      CEntity *member = it_goal->first;
         SMemberGoal goal = it_goal->second;
 
         if (goal.type == MG_AttackEnemy)
@@ -45,14 +45,14 @@ void CMonsterSquad::ProcessAttack()
         Attack_AssignTargetDir(it_enemy->second, it_enemy->first);
 
         // a squad of CBaseMonster-s ?
-        // 		if ( smart_cast<CBaseMonster*>(*(monsters->begin())) )
-        // 		{
-        // 			assign_monsters_target_dirs(it_enemy->second, it_enemy->first);
-        // 		}
-        // 		else
-        // 		{
-        // 			Attack_AssignTargetDir(it_enemy->second, it_enemy->first);
-        // 		}
+        //      if ( smart_cast<CBaseMonster*>(*(monsters->begin())) )
+        //      {
+        //          assign_monsters_target_dirs(it_enemy->second, it_enemy->first);
+        //      }
+        //      else
+        //      {
+        //          Attack_AssignTargetDir(it_enemy->second, it_enemy->first);
+        //      }
     }
 }
 

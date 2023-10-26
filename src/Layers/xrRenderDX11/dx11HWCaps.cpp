@@ -19,7 +19,7 @@ u32 GetNVGpuNum()
     NvPhysicalGpuHandle physicalGPUs[NVAPI_MAX_PHYSICAL_GPUS];
     NvU32 physicalGPUCount;
 
-    //	int result = NVAPI_OK;
+    //  int result = NVAPI_OK;
 
     int iGpuNum = 0;
 
@@ -52,7 +52,7 @@ u32 GetNVGpuNum()
 
     Msg("* NVidia MGPU: Logical(%d), Physical(%d)", physicalGPUCount, logicalGPUCount);
 
-    //	Assume that we are running on logical GPU with most physical GPUs connected.
+    //  Assume that we are running on logical GPU with most physical GPUs connected.
     for (u32 i = 0; i < logicalGPUCount; ++i)
     {
         status = NvAPI_GetPhysicalGPUsFromLogicalGPU(logicalGPUs[i], physicalGPUs, &physicalGPUCount);
@@ -208,10 +208,10 @@ void CHWCaps::Update()
     raster.bNonPow2 = TRUE;
     raster.bCubemap = TRUE;
     raster.dwMRT_count = 4;
-    // raster.b_MRT_mixdepth		= FALSE;
+    // raster.b_MRT_mixdepth        = FALSE;
     raster.b_MRT_mixdepth = TRUE;
     raster.dwInstructions = 256;
-    //	TODO: DX11: Find a way to detect cache size
+    //  TODO: DX11: Find a way to detect cache size
     geometry.dwVertexCache = 24;
 
     // ***************** Info
@@ -222,7 +222,7 @@ void CHWCaps::Update()
     Msg("* GPU vertex cache: %s, %d", "unrecognized", u32(geometry.dwVertexCache));
 
     //
-    bTableFog = FALSE; // BOOL	(caps.RasterCaps&D3DPRASTERCAPS_FOGTABLE);
+    bTableFog = FALSE; // BOOL  (caps.RasterCaps&D3DPRASTERCAPS_FOGTABLE);
 
     // Detect if stencil available
     bStencil = TRUE;

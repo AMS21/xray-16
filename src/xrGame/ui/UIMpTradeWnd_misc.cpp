@@ -384,7 +384,7 @@ u32 CUIMpTradeWnd::GetRank() const { return g_mp_restrictions.GetRank(); }
 shared_str _fake;
 const shared_str& CUIMpTradeWnd::GetWeaponNameByIndex(u8 grpNum, u8 idx)
 {
-    //	return _fake;
+    //  return _fake;
     if (idx >= m_item_mngr->GetItemsCount())
         return _fake;
     return m_item_mngr->GetItemName(u32(idx));

@@ -31,9 +31,9 @@ IC void CPHElement::ActivatingPos(const Fmatrix& BoneTransform)
         m_shell->SetObjVsShellTransform(BoneTransform);
 
     //{
-    //	m_shell->m_object_in_root.set( B->mTransform );
-    //	m_shell->m_object_in_root.invert( );
-    //	m_shell->SetNotActivating( );
+    //  m_shell->m_object_in_root.set( B->mTransform );
+    //  m_shell->m_object_in_root.invert( );
+    //  m_shell->SetNotActivating( );
     //}
     // VERIFY2(fsimilar(DET(B->mTransform),1.f,DET_CHECK_EPS),"Bones callback returns 0 matrix");
 

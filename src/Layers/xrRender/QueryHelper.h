@@ -2,7 +2,7 @@
 #define QueryHelper_included
 #pragma once
 
-//	Interface
+//  Interface
 #if defined(USE_DX9) || defined(USE_DX11)
 IC HRESULT CreateQuery(ID3DQuery** ppQuery);
 IC HRESULT GetData(ID3DQuery* pQuery, void* pData, u32 DataSize);
@@ -19,7 +19,7 @@ IC HRESULT ReleaseQuery(GLuint pQuery);
 #   error No graphics API selected or enabled!
 #endif
 
-//	Implementation
+//  Implementation
 
 #if defined(USE_DX9) // USE_DX9
 
@@ -50,7 +50,7 @@ IC HRESULT CreateQuery(ID3DQuery** ppQuery, D3D_QUERY type)
 
 IC HRESULT GetData(ID3DQuery* pQuery, void* pData, u32 DataSize)
 {
-    //	Use D3Dxx_ASYNC_GETDATA_DONOTFLUSH for prevent flushing
+    //  Use D3Dxx_ASYNC_GETDATA_DONOTFLUSH for prevent flushing
     return HW.get_context(CHW::IMM_CTX_ID)->GetData(pQuery, pData, DataSize, 0); // we can fetch data on imm only
 }
 

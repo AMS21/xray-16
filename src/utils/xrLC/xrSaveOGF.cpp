@@ -33,7 +33,7 @@ u16 RegisterShader(LPCSTR T)
 
 void geom_batch_average(u32 verts, u32 faces)
 {
-    // clMsg			("* batch[%d], %d verts, %d faces",g_batch_count,verts,faces);
+    // clMsg            ("* batch[%d], %d verts, %d faces",g_batch_count,verts,faces);
     g_batch_count++;
     g_batch_verts += verts;
     g_batch_faces += faces;
@@ -102,7 +102,7 @@ void CBuild::SaveTREE(IWriter& fs)
     for (u32 sid = 0; sid < remap.size(); sid++)
     {
         u32 id = remap[sid];
-        // clMsg			("%3d: subdiv: %d",sid,id);
+        // clMsg            ("%3d: subdiv: %d",sid,id);
         g_tree[id]->PreSave(id);
     }
 
@@ -133,5 +133,5 @@ void CBuild::SaveTREE(IWriter& fs)
     for (xr_vector<LPCSTR>::iterator T = g_Shaders.begin(); T != g_Shaders.end(); ++T)
         fs.w_stringZ(*T);
     fs.close_chunk();
-    // mem_Compact			();
+    // mem_Compact          ();
 }

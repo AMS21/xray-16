@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: UIHint.cpp
-//	Created 	: 16.04.2008
-//	Author		: Evgeniy Sokolov
-//	Description : UI Hint (for UIHintWindow) window class implementation
+//  Module      : UIHint.cpp
+//  Created     : 16.04.2008
+//  Author      : Evgeniy Sokolov
+//  Description : UI Hint (for UIHintWindow) window class implementation
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"
@@ -78,7 +78,7 @@ void UIHintWindow::disable_hint()
 {
     if (!m_hint_wnd)
     {
-        //		Msg( "! class <UIHintWindow> has not <hint_wnd>!" );
+        //      Msg( "! class <UIHintWindow> has not <hint_wnd>!" );
         return;
     }
     m_hint_wnd->set_text(NULL);

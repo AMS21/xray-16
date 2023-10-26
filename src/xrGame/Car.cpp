@@ -31,7 +31,7 @@
 #include "xrPhysics/IPHWorld.h"
 BONE_P_MAP CCar::bone_map = BONE_P_MAP();
 
-// extern CPHWorld*	ph_world;
+// extern CPHWorld* ph_world;
 
 CCar::CCar()
 {
@@ -105,7 +105,7 @@ CCar::~CCar(void)
     xr_delete(inventory);
     xr_delete(m_car_weapon);
     xr_delete(m_memory);
-    //	xr_delete			(l_tpEntityAction);
+    //  xr_delete           (l_tpEntityAction);
 }
 
 void CCar::reinit()
@@ -404,7 +404,7 @@ void CCar::UpdateEx(float fov)
     DbgUbdateCl();
 #endif
 
-    //	Log("UpdateCL",Device.dwFrame);
+    //  Log("UpdateCL",Device.dwFrame);
     // XFORM().set(m_pPhysicsShell->mXFORM);
     VisualUpdate(fov);
     if (OwnerActor() && OwnerActor()->IsMyCamera())
@@ -430,7 +430,7 @@ void CCar::UpdateCL()
     ASCUpdate();
     if (Owner())
         return;
-    //	UpdateEx			(g_fov);
+    //  UpdateEx            (g_fov);
     VisualUpdate(90);
     if (GetScriptControl())
         ProcessScripts();
@@ -455,14 +455,14 @@ void CCar::VisualUpdate(float fov)
             Owner()->XFORM().mul_43(XFORM(), m_sits_transforms[0]);
         }
         //
-        // 		if(OwnerActor() && OwnerActor()->IsMyCamera())
-        // 		{
-        // 			cam_Update(Device.fTimeDelta, fov);
-        // 			OwnerActor()->Cameras().Update(Camera());
-        // 			OwnerActor()->Cameras().ApplyDevice();
-        // 		}
+        //      if(OwnerActor() && OwnerActor()->IsMyCamera())
+        //      {
+        //          cam_Update(Device.fTimeDelta, fov);
+        //          OwnerActor()->Cameras().Update(Camera());
+        //          OwnerActor()->Cameras().ApplyDevice();
+        //      }
         //
-        /*		if(CurrentGameUI())//
+        /*      if(CurrentGameUI())//
                 {
                     CurrentGameUI()->UIMainIngameWnd->CarPanel().Show(true);
                     CurrentGameUI()->UIMainIngameWnd->CarPanel().SetCarHealth(GetfHealth());
@@ -486,17 +486,17 @@ void CCar::renderable_Render(u32 context_id, IRenderable* root)
 void CCar::net_Export(NET_Packet& P)
 {
     inherited::net_Export(P);
-    //	P.w_u32 (Level().timeServer());
-    //	P.w_u16 (0);
+    //  P.w_u32 (Level().timeServer());
+    //  P.w_u16 (0);
 }
 
 void CCar::net_Import(NET_Packet& P)
 {
     inherited::net_Import(P);
-    //	u32 TimeStamp = 0;
-    //	P.w_u32 (TimeStamp);
-    //	u16 NumItems = 0;
-    //	P.w_u32 (NumItems);
+    //  u32 TimeStamp = 0;
+    //  P.w_u32 (TimeStamp);
+    //  u16 NumItems = 0;
+    //  P.w_u32 (NumItems);
 }
 
 void CCar::OnHUDDraw(u32 context_id, CCustomHUD* /*hud*/, IRenderable* /*root*/)
@@ -518,12 +518,12 @@ void CCar::Hit(SHit* pHDS)
     SHit HDS = *pHDS;
     // if(CDelayedActionFuse::isActive()||Initiator()==u16(-1)&&HDS.hit_type==ALife::eHitTypeStrike)
     //{
-    //	HDS.power=0.f;
+    //  HDS.power=0.f;
     //}
 
     // if(HDS.who->ID()!=ID())
     //{
-    //	CExplosive::SetInitiator(HDS.who->ID());
+    //  CExplosive::SetInitiator(HDS.who->ID());
     //}
     WheelHit(HDS.damage(), HDS.bone(), HDS.hit_type);
     DoorHit(HDS.damage(), HDS.bone(), HDS.hit_type);
@@ -538,8 +538,8 @@ void CCar::Hit(SHit* pHDS)
         CDelayedActionFuse::CheckCondition(GetfHealth());
     }
     CDamagableItem::HitEffect();
-    //	if(Owner()&&Owner()->ID()==Level().CurrentEntity()->ID())
-    //		CurrentGameUI()->UIMainIngameWnd->CarPanel().SetCarHealth(GetfHealth());
+    //  if(Owner()&&Owner()->ID()==Level().CurrentEntity()->ID())
+    //      CurrentGameUI()->UIMainIngameWnd->CarPanel().SetCarHealth(GetfHealth());
 }
 
 void CCar::ChangeCondition(float fDeltaCondition)
@@ -548,8 +548,8 @@ void CCar::ChangeCondition(float fDeltaCondition)
     CDamagableItem::HitEffect();
     if (Local() && !g_Alive() && !AlreadyDie())
         KillEntity(Initiator());
-    //	if(Owner()&&Owner()->ID()==Level().CurrentEntity()->ID())
-    //		CurrentGameUI()->UIMainIngameWnd->CarPanel().SetCarHealth(GetfHealth());
+    //  if(Owner()&&Owner()->ID()==Level().CurrentEntity()->ID())
+    //      CurrentGameUI()->UIMainIngameWnd->CarPanel().SetCarHealth(GetfHealth());
 }
 
 void CCar::PHHit(SHit& H)
@@ -606,7 +606,7 @@ void CCar::detach_Actor()
     Unclutch();
     ResetKeys();
     m_current_rpm = m_min_rpm;
-    //	CurrentGameUI()->UIMainIngameWnd->CarPanel().Show(false);
+    //  CurrentGameUI()->UIMainIngameWnd->CarPanel().Show(false);
     /// Break();
     // H_SetParent(NULL);
     HandBreak();
@@ -637,13 +637,13 @@ bool CCar::attach_Actor(CGameObject* actor)
     OnCameraChange(ectFirst);
     PPhysicsShell()->Enable();
     PPhysicsShell()->add_ObjectContactCallback(ActorObstacleCallback);
-    //	VisualUpdate();
+    //  VisualUpdate();
     processing_activate();
     ReleaseHandBreak();
-    //	CurrentGameUI()->UIMainIngameWnd->CarPanel().Show(true);
-    //	CurrentGameUI()->UIMainIngameWnd->CarPanel().SetCarHealth(fEntityHealth/100.f);
+    //  CurrentGameUI()->UIMainIngameWnd->CarPanel().Show(true);
+    //  CurrentGameUI()->UIMainIngameWnd->CarPanel().SetCarHealth(fEntityHealth/100.f);
     // CurrentGameUI()->UIMainIngameWnd.ShowBattery(true);
-    // CBoneData&	bone_data=K->LL_GetData(id);
+    // CBoneData&   bone_data=K->LL_GetData(id);
     // Fmatrix driver_pos_tranform;
     // driver_pos_tranform.setHPB(bone_data.bind_hpb.x,bone_data.bind_hpb.y,bone_data.bind_hpb.z);
     // driver_pos_tranform.c.set(bone_data.bind_translate);
@@ -1301,7 +1301,7 @@ void CCar::Transmission(size_t num)
     {
         if (CurrentTransmission() != num)
         {
-            // m_car_sound					->TransmissionSwitch()		;
+            // m_car_sound                  ->TransmissionSwitch()      ;
             AscCall(ascSndTransmission);
             m_current_transmission_num = num;
             m_current_gear_ratio = m_gear_ratious[num][0];
@@ -1387,8 +1387,8 @@ void CCar::UpdateBack()
     }
     // else
     //{
-    //	UpdatePower();
-    //	if(b_engine_on&&!b_starting && m_current_rpm<m_min_rpm)Stall();
+    //  UpdatePower();
+    //  if(b_engine_on&&!b_starting && m_current_rpm<m_min_rpm)Stall();
     //}
 }
 
@@ -1610,7 +1610,7 @@ float CCar::EngineDriveSpeed()
         return (1.f - m_rpm_decrement_factor) * m_current_rpm + m_rpm_decrement_factor * calc_rpm;
 
     // if(drive_speed<phInfinity) return dFabs(drive_speed*m_current_gear_ratio);
-    // else					  return 0.f;
+    // else                   return 0.f;
 }
 
 void CCar::UpdateFuel(float time_delta)
@@ -1687,7 +1687,7 @@ void CCar::OnEvent(NET_Packet& P, u16 type)
         GetInventory()->DropItem(smart_cast<CGameObject*>(O), just_before_destroy, just_before_destroy);
         // if(GetInventory()->DropItem(smart_cast<CGameObject*>(O), just_before_destroy))
         //{
-        //	O->H_SetParent(0, just_before_destroy);
+        //  O->H_SetParent(0, just_before_destroy);
         //}
         // moved to DropItem
     }
@@ -1769,48 +1769,48 @@ void CCar::CarExplode()
 // void CCar::object_contactCallbackFun(bool& do_colide,dContact& c,SGameMtl * ,SGameMtl * )
 //{
 //
-//	dxGeomUserData *l_pUD1 = NULL;
-//	dxGeomUserData *l_pUD2 = NULL;
-//	l_pUD1 = PHRetrieveGeomUserData(c.geom.g1);
-//	l_pUD2 = PHRetrieveGeomUserData(c.geom.g2);
+//  dxGeomUserData *l_pUD1 = NULL;
+//  dxGeomUserData *l_pUD2 = NULL;
+//  l_pUD1 = PHRetrieveGeomUserData(c.geom.g1);
+//  l_pUD2 = PHRetrieveGeomUserData(c.geom.g2);
 //
-//	if(! l_pUD1) return;
-//	if(!l_pUD2) return;
+//  if(! l_pUD1) return;
+//  if(!l_pUD2) return;
 //
-//	CEntityAlive* capturer=smart_cast<CEntityAlive*>(l_pUD1->ph_ref_object);
-//	if(capturer)
-//	{
-//		CPHCapture* capture=capturer->m_PhysicMovementControl->PHCapture();
-//		if(capture)
-//		{
-//			if(capture->m_taget_element->PhysicsRefObject()==l_pUD2->ph_ref_object)
-//			{
-//				do_colide = false;
-//				capture->m_taget_element->Enable();
-//				if(capture->e_state==CPHCapture::cstReleased) capture->ReleaseInCallBack();
-//			}
+//  CEntityAlive* capturer=smart_cast<CEntityAlive*>(l_pUD1->ph_ref_object);
+//  if(capturer)
+//  {
+//      CPHCapture* capture=capturer->m_PhysicMovementControl->PHCapture();
+//      if(capture)
+//      {
+//          if(capture->m_taget_element->PhysicsRefObject()==l_pUD2->ph_ref_object)
+//          {
+//              do_colide = false;
+//              capture->m_taget_element->Enable();
+//              if(capture->e_state==CPHCapture::cstReleased) capture->ReleaseInCallBack();
+//          }
 //
-//		}
+//      }
 //
 //
-//	}
+//  }
 //
-//	capturer=smart_cast<CEntityAlive*>(l_pUD2->ph_ref_object);
-//	if(capturer)
-//	{
-//		CPHCapture* capture=capturer->m_PhysicMovementControl->PHCapture();
-//		if(capture)
-//		{
-//			if(capture->m_taget_element->PhysicsRefObject()==l_pUD1->ph_ref_object)
-//			{
-//				do_colide = false;
-//				capture->m_taget_element->Enable();
-//				if(capture->e_state==CPHCapture::cstReleased) capture->ReleaseInCallBack();
-//			}
+//  capturer=smart_cast<CEntityAlive*>(l_pUD2->ph_ref_object);
+//  if(capturer)
+//  {
+//      CPHCapture* capture=capturer->m_PhysicMovementControl->PHCapture();
+//      if(capture)
+//      {
+//          if(capture->m_taget_element->PhysicsRefObject()==l_pUD1->ph_ref_object)
+//          {
+//              do_colide = false;
+//              capture->m_taget_element->Enable();
+//              if(capture->e_state==CPHCapture::cstReleased) capture->ReleaseInCallBack();
+//          }
 //
-//		}
+//      }
 //
-//	}
+//  }
 //}
 
 template <class T>
@@ -2037,7 +2037,7 @@ void CCar::ChangefHealth(float health)
 
     if(health < 1 - current_health)
         SetfHealth(current_health + health);
-	else
+    else
         SetfHealth(1);
 }
 

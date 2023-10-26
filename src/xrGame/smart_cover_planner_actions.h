@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_planner_actions.h
-//	Created 	: 04.09.2007
-//	Author		: Alexander Dudin
-//	Description : Smart cover planner action classes
+//  Module      : smart_cover_planner_actions.h
+//  Created     : 04.09.2007
+//  Author      : Alexander Dudin
+//  Description : Smart cover planner action classes
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef SMART_COVER_PLANNER_ACTIONS_H_INCLUDED

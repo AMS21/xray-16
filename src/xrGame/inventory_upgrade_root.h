@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: inventory_upgrade_root.h
-//	Created 	: 19.10.2007
-//  Modified 	: 27.11.2007
-//	Author		: Evgeniy Sokolov
-//	Description : inventory upgrade root class
+//  Module      : inventory_upgrade_root.h
+//  Created     : 19.10.2007
+//  Modified    : 27.11.2007
+//  Author      : Evgeniy Sokolov
+//  Description : inventory upgrade root class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef INVENTORY_UPGRADE_ROOT_H_INCLUDED

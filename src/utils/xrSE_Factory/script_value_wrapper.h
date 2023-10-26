@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_value_wrapper.h
-//	Created 	: 16.07.2004
-//  Modified 	: 16.07.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script value wrapper
+//  Module      : script_value_wrapper.h
+//  Created     : 16.07.2004
+//  Modified    : 16.07.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script value wrapper
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

@@ -13,8 +13,8 @@ public:
         BT_DomainBuffer
     };
 
-    //	ALIGN(16)	R_constant_array	a_pixel;
-    //	ALIGN(16)	R_constant_array	a_vertex;
+    //  ALIGN(16)   R_constant_array    a_pixel;
+    //  ALIGN(16)   R_constant_array    a_vertex;
 
     explicit R_constants(CBackend& cmd_list_in) : cmd_list(cmd_list_in) {}
     void flush_cache();
@@ -27,28 +27,28 @@ public:
         if (C->destination & RC_dest_pixel)
         {
             set<BT_PixelBuffer>(C, C->ps, std::forward<Args>(args)...);
-        } // a_pixel.b_dirty=TRUE;		}
+        } // a_pixel.b_dirty=TRUE;      }
         if (C->destination & RC_dest_vertex)
         {
             set<BT_VertexBuffer>(C, C->vs, std::forward<Args>(args)...);
-        } //  a_vertex.b_dirty=TRUE;		}
+        } //  a_vertex.b_dirty=TRUE;        }
         if (C->destination & RC_dest_geometry)
         {
             set<BT_GeometryBuffer>(C, C->gs, std::forward<Args>(args)...);
-        } //  a_vertex.b_dirty=TRUE;		}
+        } //  a_vertex.b_dirty=TRUE;        }
 #ifdef USE_DX11
         if (C->destination & RC_dest_hull)
         {
             set<BT_HullBuffer>(C, C->hs, std::forward<Args>(args)...);
-        } //  a_vertex.b_dirty=TRUE;		}
+        } //  a_vertex.b_dirty=TRUE;        }
         if (C->destination & RC_dest_domain)
         {
             set<BT_DomainBuffer>(C, C->ds, std::forward<Args>(args)...);
-        } //  a_vertex.b_dirty=TRUE;		}
+        } //  a_vertex.b_dirty=TRUE;        }
         if (C->destination & RC_dest_compute)
         {
             set<BT_ComputeBuffer>(C, C->cs, std::forward<Args>(args)...);
-        } //  a_vertex.b_dirty=TRUE;		}
+        } //  a_vertex.b_dirty=TRUE;        }
 #endif
     }
 
@@ -67,28 +67,28 @@ public:
         if (C->destination & RC_dest_pixel)
         {
             seta<BT_PixelBuffer>(C, C->ps, e, std::forward<Args>(args)...);
-        } //  a_pixel.b_dirty=TRUE;	}
+        } //  a_pixel.b_dirty=TRUE; }
         if (C->destination & RC_dest_vertex)
         {
             seta<BT_VertexBuffer>(C, C->vs, e, std::forward<Args>(args)...);
-        } //  a_vertex.b_dirty=TRUE;	}
+        } //  a_vertex.b_dirty=TRUE;    }
         if (C->destination & RC_dest_geometry)
         {
             seta<BT_GeometryBuffer>(C, C->gs, e, std::forward<Args>(args)...);
-        } //  a_vertex.b_dirty=TRUE;	}
+        } //  a_vertex.b_dirty=TRUE;    }
 #ifdef USE_DX11
         if (C->destination & RC_dest_hull)
         {
             seta<BT_HullBuffer>(C, C->hs, e, std::forward<Args>(args)...);
-        } //  a_vertex.b_dirty=TRUE;		}
+        } //  a_vertex.b_dirty=TRUE;        }
         if (C->destination & RC_dest_domain)
         {
             seta<BT_DomainBuffer>(C, C->ds, e, std::forward<Args>(args)...);
-        } //  a_vertex.b_dirty=TRUE;		}
+        } //  a_vertex.b_dirty=TRUE;        }
         if (C->destination & RC_dest_compute)
         {
             seta<BT_ComputeBuffer>(C, C->cs, e, std::forward<Args>(args)...);
-        } //  a_vertex.b_dirty=TRUE;		}
+        } //  a_vertex.b_dirty=TRUE;        }
 #endif
     }
 
@@ -103,7 +103,7 @@ public:
     //
     ICF void flush()
     {
-        // if (a_pixel.b_dirty || a_vertex.b_dirty)	flush_cache();
+        // if (a_pixel.b_dirty || a_vertex.b_dirty) flush_cache();
         flush_cache();
     }
 

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: agent_manager_planner.cpp
-//	Created 	: 24.05.2004
-//  Modified 	: 02.12.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Agent manager planner
+//  Module      : agent_manager_planner.cpp
+//  Created     : 24.05.2004
+//  Modified    : 02.12.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Agent manager planner
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

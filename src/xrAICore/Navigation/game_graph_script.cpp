@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: game_graph_script.cpp
-//	Created 	: 02.11.2005
-//  Modified 	: 02.11.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Game graph class script export
+//  Module      : game_graph_script.cpp
+//  Created     : 02.11.2005
+//  Modified    : 02.11.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Game graph class script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

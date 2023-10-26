@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: inventory_upgrade.h
-//	Created 	: 01.11.2007
-//  Modified 	: 27.11.2007
-//	Author		: Evgeniy Sokolov
-//	Description : inventory upgrade class
+//  Module      : inventory_upgrade.h
+//  Created     : 01.11.2007
+//  Modified    : 27.11.2007
+//  Author      : Evgeniy Sokolov
+//  Description : inventory upgrade class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef INVENTORY_UPGRADE_H_INCLUDED
@@ -138,7 +138,7 @@ protected:
     IntFunctor m_preconditions;
     VoidFunctor3 m_effects;
     StrFunctor m_prerequisites;
-    //	VoidFunctor			m_tooltip;
+    //  VoidFunctor         m_tooltip;
 
     bool m_highlight;
 };

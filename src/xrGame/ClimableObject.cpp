@@ -102,7 +102,7 @@ bool CClimableObject::net_Spawn(CSE_Abstract* DC)
         m_axis.invert();
         m_side.invert();
     }
-    //	shedule_unregister();
+    //  shedule_unregister();
     processing_deactivate();
     // m_pStaticShell->set_ObjectContactCallback(ObjectContactCallback);
     return ret;

@@ -244,7 +244,7 @@ void game_sv_TeamDeathmatch::OnPlayerConnect(ClientID id_who)
 
     xrClientData* xrCData = m_server->ID_to_client(id_who);
     game_PlayerState* ps_who = get_id(id_who);
-    //	LPCSTR	options				=	get_name_id	(id_who);
+    //  LPCSTR  options             =   get_name_id (id_who);
     ps_who->team = AutoTeam(); // u8(get_option_i(options,"team",AutoTeam()));
 
     if (ps_who->IsSkip())
@@ -338,7 +338,7 @@ void game_sv_TeamDeathmatch::OnPlayerChangeTeam(ClientID id_who, s16 team)
     /////////////////////////////////////////////////////////
     // Send Switch team message
     NET_Packet P;
-    //	P.w_begin			(M_GAMEMESSAGE);
+    //  P.w_begin           (M_GAMEMESSAGE);
     GenerateGameMessage(P);
     P.w_u32(PLAYER_CHANGE_TEAM);
     P.w_u16(ps_who->GameID);
@@ -358,13 +358,13 @@ void game_sv_TeamDeathmatch::OnPlayerKillPlayer(game_PlayerState* ps_killer, gam
 
     if (ps_killer)
     {
-        //.		OldKillsKiller = ps_killer->kills;
+        //.     OldKillsKiller = ps_killer->kills;
         OldKillsKiller = ps_killer->frags();
     }
 
     if (ps_killed)
     {
-        //.		OldKillsVictim = ps_killed->kills;
+        //.     OldKillsVictim = ps_killed->kills;
         OldKillsVictim = ps_killed->frags();
     }
 
@@ -380,7 +380,7 @@ void game_sv_TeamDeathmatch::OnPlayerKillPlayer(game_PlayerState* ps_killer, gam
     {
         if (ps_killed != ps_killer && ps_killer->team == ps_killed->team)
         {
-            //.			ps_killer->m_iTeamKills++;
+            //.         ps_killer->m_iTeamKills++;
 
             // Check for TeamKill
             if (Get_TeamKillPunishment())
@@ -448,7 +448,7 @@ bool game_sv_TeamDeathmatch::OnKillResult(KILL_RES KillResult, game_PlayerState*
     {
     case KR_TEAMMATE:
     {
-        //.			pKiller->kills -= 1;
+        //.         pKiller->kills -= 1;
         pKiller->m_iTeamKills++;
         if (pTeam)
             Player_AddMoney(pKiller, pTeam->m_iM_KillTeam);

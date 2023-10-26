@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: game_location_selector.h
-//	Created 	: 02.10.2001
-//  Modified 	: 18.11.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Game location selector
+//  Module      : game_location_selector.h
+//  Created     : 02.10.2001
+//  Modified    : 18.11.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Game location selector
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

@@ -26,8 +26,8 @@ void CKinematics::CalculateBones(BOOL bForceExact)
 
     _DBG_SINGLE_USE_MARKER;
     // here we have either:
-    //	1:	timeout elapsed
-    //	2:	exact computation required
+    //  1:  timeout elapsed
+    //  2:  exact computation required
     UCalc_Time = Device.dwTimeGlobal;
 
 // exact computation
@@ -246,7 +246,7 @@ void CKinematics::Bone_Calculate(CBoneData* bd, Fmatrix* parent)
 void CKinematics::BoneChain_Calculate(const CBoneData* bd, CBoneInstance& bi, u8 mask_channel, bool ignore_callbacks)
 {
     u16 SelfID = bd->GetSelfID();
-    // CBlendInstance& BLEND_INST	= LL_GetBlendInstance(SelfID);
+    // CBlendInstance& BLEND_INST   = LL_GetBlendInstance(SelfID);
     // CBlendInstance::BlendSVec &Blend = BLEND_INST.blend_vector();
     // ignore callbacks
     BoneCallback bc = bi.callback();

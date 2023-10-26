@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_anomaly_actions.h
-//	Created 	: 25.03.2004
-//  Modified 	: 26.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker anomaly action classes
+//  Module      : stalker_anomaly_actions.h
+//  Created     : 25.03.2004
+//  Modified    : 26.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker anomaly action classes
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

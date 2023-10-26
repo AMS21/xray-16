@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_description_inline.h
-//	Created 	: 29.08.2007
-//	Author		: Alexander Dudin
-//	Description : Smart cover description class inline functions
+//  Module      : smart_cover_description_inline.h
+//  Created     : 29.08.2007
+//  Author      : Alexander Dudin
+//  Description : Smart cover description class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef SMART_COVER_DESCRIPTION_INLINE_H_INCLUDED

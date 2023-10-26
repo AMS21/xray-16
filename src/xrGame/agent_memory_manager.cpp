@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: agent_memory_manager.cpp
-//	Created 	: 24.05.2004
-//  Modified 	: 14.01.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Agent memory manager
+//  Module      : agent_memory_manager.cpp
+//  Created     : 24.05.2004
+//  Modified    : 14.01.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Agent memory manager
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

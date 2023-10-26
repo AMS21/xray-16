@@ -6,7 +6,7 @@
 
 void LightThread::Execute()
 {
-    //		DetailSlot::verify	();
+    //      DetailSlot::verify  ();
     CDB::COLLIDER DB;
     base_lighting Selected;
 

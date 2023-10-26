@@ -56,7 +56,7 @@ void CWeapon::FireTrace(const Fvector& P, const Fvector& D)
     VERIFY(m_magazine.size());
 
     CCartridge& l_cartridge = m_magazine.back();
-    //	Msg("ammo - %s", l_cartridge.m_ammoSect.c_str());
+    //  Msg("ammo - %s", l_cartridge.m_ammoSect.c_str());
     VERIFY(u16(-1) != l_cartridge.bullet_material_idx);
     //-------------------------------------------------------------
     bool is_tracer = m_bHasTracers && !!l_cartridge.m_flags.test(CCartridge::cfTracer);
@@ -68,8 +68,8 @@ void CWeapon::FireTrace(const Fvector& P, const Fvector& D)
         l_cartridge.param_s.u8ColorID = m_u8TracerColorID;
     //-------------------------------------------------------------
     //повысить изношенность оружия с учетом влияния конкретного патрона
-    //	float Deterioration = GetWeaponDeterioration();
-    //	Msg("Deterioration = %f", Deterioration);
+    //  float Deterioration = GetWeaponDeterioration();
+    //  Msg("Deterioration = %f", Deterioration);
     ChangeCondition(-GetWeaponDeterioration() * l_cartridge.param_s.impair);
 
     float fire_disp = 0.f;
@@ -126,7 +126,7 @@ void CWeapon::FireTrace(const Fvector& P, const Fvector& D)
 
 void CWeapon::StopShooting()
 {
-    //	SetPending			(TRUE);
+    //  SetPending          (TRUE);
 
     //принудительно останавливать зацикленные партиклы
     if (m_pFlameParticles && m_pFlameParticles->IsLooped())

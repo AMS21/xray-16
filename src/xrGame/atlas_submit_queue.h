@@ -42,7 +42,7 @@ private:
         } m_data_type;
         gamespy_profile::enum_awards_t m_award_id;
         u32 m_awards_count;
-        // gamespy_profile::all_best_scores_t*	m_best_scores_ptr;
+        // gamespy_profile::all_best_scores_t*  m_best_scores_ptr;
     }; // struct submit_task
     typedef xr_deque<submit_task> reward_tasks_t;
     reward_tasks_t m_reward_tasks;

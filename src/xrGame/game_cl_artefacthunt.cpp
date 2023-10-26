@@ -58,9 +58,9 @@ game_cl_ArtefactHunt::game_cl_ArtefactHunt()
 
 void game_cl_ArtefactHunt::Init()
 {
-    //	pInventoryMenu	= new CUIInventoryWnd();
-    //	pPdaMenu = new CUIPdaWnd();
-    //	pMapDesc = new CUIMapDesc();
+    //  pInventoryMenu  = new CUIInventoryWnd();
+    //  pPdaMenu = new CUIPdaWnd();
+    //  pMapDesc = new CUIMapDesc();
 
     LoadTeamData(::detail::mp::ahunt::TEAM1_MENU);
     LoadTeamData(::detail::mp::ahunt::TEAM2_MENU);
@@ -69,29 +69,29 @@ void game_cl_ArtefactHunt::Init()
     old_artefactID = 0;
     old_teamInPossession = 0;
     //---------------------------------------------------
-    /*	string_path	fn_game;
+    /*  string_path fn_game;
         if (FS.exist(fn_game, "$level$", "level.game"))
         {
-            IReader *F = FS.r_open	(fn_game);
+            IReader *F = FS.r_open  (fn_game);
             IReader *O = 0;
 
             // Load RPoints
-            if (0!=(O = F->open_chunk	(RPOINT_CHUNK)))
+            if (0!=(O = F->open_chunk   (RPOINT_CHUNK)))
             {
                 for (int id=0; O->find_chunk(id); ++id)
                 {
-                    RPoint					R;
-                    u8						RP_team;
-                    u8						RP_type;
-                    u16						RP_GameType;
+                    RPoint                  R;
+                    u8                      RP_team;
+                    u8                      RP_type;
+                    u16                     RP_GameType;
 
-                    O->r_fvector3			(R.P);
-                    O->r_fvector3			(R.A);
-                    RP_team					= O->r_u8	();	VERIFY(RP_team>=0 && RP_team<4);
-                    RP_type					= O->r_u8	();
-                    RP_GameType				= O->r_u16	();
-                    //u16 res					=
-                    //O->r_u8	();
+                    O->r_fvector3           (R.P);
+                    O->r_fvector3           (R.A);
+                    RP_team                 = O->r_u8   (); VERIFY(RP_team>=0 && RP_team<4);
+                    RP_type                 = O->r_u8   ();
+                    RP_GameType             = O->r_u16  ();
+                    //u16 res                   =
+                    //O->r_u8   ();
 
                     if (RP_GameType != GAME_ANY && RP_GameType != GAME_ARTEFACTHUNT)
                     {
@@ -105,15 +105,15 @@ void game_cl_ArtefactHunt::Init()
                             xr_sprintf(ParticleStr, "teambase_particle_%d", RP_team);
                             if (pSettings->line_exist("artefacthunt_gamedata", ParticleStr))
                             {
-                                Fmatrix			transform;
+                                Fmatrix         transform;
                                 transform.identity();
                                 transform.setXYZ(R.A);
                                 transform.translate_over(R.P);
-                                CParticlesObject* pStaticParticles			=
+                                CParticlesObject* pStaticParticles          =
        CParticlesObject::Create(pSettings->r_string("artefacthunt_gamedata", ParticleStr),FALSE,false);
-                                pStaticParticles->UpdateParent	(transform,zero_vel);
-                                pStaticParticles->Play			();
-                                Level().m_StaticParticles.push_back		(pStaticParticles);
+                                pStaticParticles->UpdateParent  (transform,zero_vel);
+                                pStaticParticles->Play          ();
+                                Level().m_StaticParticles.push_back     (pStaticParticles);
                             };
                         }break;
                     };
@@ -121,7 +121,7 @@ void game_cl_ArtefactHunt::Init()
                 O->close();
             }
 
-            FS.r_close	(F);
+            FS.r_close  (F);
         }*/
     //-------------------------------------------------------
     if (pSettings->line_exist("artefacthunt_gamedata", "artefact_spawn_effect"))
@@ -170,10 +170,10 @@ void game_cl_ArtefactHunt::TranslateGameMessage(u32 msg, NET_Packet& P)
     CStringTable& st = StringTable();
     string512 Text;
     string512 tmp;
-    //	LPSTR	Color_Teams[3]		= {"%c[255,255,255,255]", "%c[255,64,255,64]", "%c[255,64,64,255]"};
+    //  LPSTR   Color_Teams[3]      = {"%c[255,255,255,255]", "%c[255,64,255,64]", "%c[255,64,64,255]"};
     char Color_Main[] = "%c[255,192,192,192]";
     char Color_Artefact[] = "%c[255,255,255,0]";
-    //	LPSTR	TeamsNames[3]		= {"Zero Team", "Team Green", "Team Blue"};
+    //  LPSTR   TeamsNames[3]       = {"Zero Team", "Team Green", "Team Blue"};
 
     switch (msg)
     {
@@ -227,7 +227,7 @@ void game_cl_ArtefactHunt::TranslateGameMessage(u32 msg, NET_Packet& P)
         if (CurrentGameUI())
             CurrentGameUI()->CommonMessageOut(Text);
 
-        //			pMessageSounds[0].play_at_pos(NULL, Fvector().set(0,0,0), sm_2D, 0);
+        //          pMessageSounds[0].play_at_pos(NULL, Fvector().set(0,0,0), sm_2D, 0);
         PlaySndMessage(ID_AF_LOST);
     }
     break;
@@ -501,7 +501,7 @@ void game_cl_ArtefactHunt::shedule_Update(u32 dt)
 void game_cl_ArtefactHunt::SetScore()
 {
     game_cl_TeamDeathmatch::SetScore();
-    //	game_cl_Deathmatch::SetScore();
+    //  game_cl_Deathmatch::SetScore();
     if (Level().CurrentViewEntity() && m_game_ui)
     {
         game_PlayerState* ps = GetPlayerByGameID(Level().CurrentViewEntity()->ID());
@@ -574,7 +574,7 @@ bool game_cl_ArtefactHunt::CanBeReady()
         ClearBuyMenu();
 
     m_bMenuCalledFromReady = FALSE;
-    //	return inherited::CanBeReady();
+    //  return inherited::CanBeReady();
     return true;
 };
 
@@ -645,7 +645,7 @@ void game_cl_ArtefactHunt::UpdateMapLocations()
                     CActor* pActor = smart_cast<CActor*>(Level().Objects.net_Find(artefactBearerID));
                     if (pActor)
                     {
-                        CCustomOutfit* pOutfit			= pActor->GetOutfit();
+                        CCustomOutfit* pOutfit          = pActor->GetOutfit();
                         if (pOutfit && pOutfit->CLS_ID == CLSID_EQUIPMENT_SCIENTIFIC)
                         {
                             if (!pActor->AnyAction())

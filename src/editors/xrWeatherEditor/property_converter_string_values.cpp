@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_converter_string_values.cpp
-//	Created 	: 11.12.2007
-//  Modified 	: 11.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property converter string values class
+//  Module      : property_converter_string_values.cpp
+//  Created     : 11.12.2007
+//  Modified    : 11.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property converter string values class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

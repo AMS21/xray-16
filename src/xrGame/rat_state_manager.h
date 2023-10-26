@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: rat_state_manager.h
-//	Created 	: 31.08.2007
-//  Modified 	: 31.08.2007
-//	Author		: Dmitriy Iassenev
-//	Description : rat state manager class
+//  Module      : rat_state_manager.h
+//  Created     : 31.08.2007
+//  Modified    : 31.08.2007
+//  Author      : Dmitriy Iassenev
+//  Description : rat state manager class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef RAT_STATE_MANAGER_H_INCLUDED

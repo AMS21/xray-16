@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_obstacle_inline.h
-//	Created 	: 02.04.2007
-//  Modified 	: 06.04.2007
-//	Author		: Dmitriy Iassenev
-//	Description : ai obstacle class inline functions
+//  Module      : ai_obstacle_inline.h
+//  Created     : 02.04.2007
+//  Modified    : 06.04.2007
+//  Author      : Dmitriy Iassenev
+//  Description : ai obstacle class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef AI_OBSTACLE_INLINE_H
@@ -35,7 +35,7 @@ IC const ai_obstacle::AREA& ai_obstacle::area()
 
 IC const ai_obstacle::AREA& ai_obstacle::danger_area()
 {
-    //	compute_danger			();
+    //  compute_danger          ();
     return (m_danger_area);
 }
 
@@ -47,7 +47,7 @@ IC const u32& ai_obstacle::crc()
 
 IC const MagicBox3 ai_obstacle::min_box()
 {
-    //	compute					();
+    //  compute                 ();
     return (m_min_box);
 }
 

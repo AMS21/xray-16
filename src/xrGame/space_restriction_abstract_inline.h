@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: space_restriction_abstract_inline.h
-//	Created 	: 10.08.2005
-//  Modified 	: 10.08.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Space restriction abstract inline functions
+//  Module      : space_restriction_abstract_inline.h
+//  Created     : 10.08.2005
+//  Modified    : 10.08.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Space restriction abstract inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

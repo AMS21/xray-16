@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_rat_animations.cpp
-//	Created 	: 21.06.2002
-//  Modified 	: 06.11.2002
-//	Author		: Dmitriy Iassenev
-//	Description : Animations, Bone transformations and Sounds for monster "Rat"
+//  Module      : ai_rat_animations.cpp
+//  Created     : 21.06.2002
+//  Modified    : 06.11.2002
+//  Author      : Dmitriy Iassenev
+//  Description : Animations, Bone transformations and Sounds for monster "Rat"
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -85,10 +85,10 @@ void CAI_Rat::SelectAnimation(const Fvector& /**_view**/, const Fvector& /**_mov
         else
         {
             if (left_angle(-movement().m_body.target.yaw, -movement().m_body.current.yaw))
-                //					tpGlobalAnimation = m_tRatAnimations.tNormal.tGlobal.tpaIdle[0];
+                //                  tpGlobalAnimation = m_tRatAnimations.tNormal.tGlobal.tpaIdle[0];
                 tpGlobalAnimation = m_tRatAnimations.tNormal.tGlobal.tpTurnLeft;
             else
-                //					tpGlobalAnimation = m_tRatAnimations.tNormal.tGlobal.tpaIdle[0];
+                //                  tpGlobalAnimation = m_tRatAnimations.tNormal.tGlobal.tpaIdle[0];
                 tpGlobalAnimation = m_tRatAnimations.tNormal.tGlobal.tpTurnRight;
         }
     }

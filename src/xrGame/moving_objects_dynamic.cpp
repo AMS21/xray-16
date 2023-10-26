@@ -1,9 +1,9 @@
 
-//	Module 		: moving_objects_dynamic.cpp
-//	Created 	: 27.03.2007
-//  Modified 	: 14.05.2007
-//	Author		: Dmitriy Iassenev
-//	Description : moving objects with dynamic objects, i.e. objects with predictable behaviour
+//  Module      : moving_objects_dynamic.cpp
+//  Created     : 27.03.2007
+//  Modified    : 14.05.2007
+//  Author      : Dmitriy Iassenev
+//  Description : moving objects with dynamic objects, i.e. objects with predictable behaviour
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -121,14 +121,14 @@ void moving_objects::fill_nearest_moving(moving_object* object)
     float radius = (max_linear_velocity + linear_velocity) * time_to_check;
     m_tree->nearest(object->position(), radius, m_nearest_moving);
 #if 0
-	Msg							("%6d nearest moving[%d] object[%s]", Device.dwFrame, m_nearest_moving.size(),object->object().cName().c_str());
-	{
-		NEAREST_MOVING::const_iterator	I = m_nearest_moving.begin();
-		NEAREST_MOVING::const_iterator	E = m_nearest_moving.end();
-		for ( ; I != E; ++I) {
-			Msg					("    %s",(*I)->object().cName().c_str());
-		}
-	}
+    Msg                         ("%6d nearest moving[%d] object[%s]", Device.dwFrame, m_nearest_moving.size(),object->object().cName().c_str());
+    {
+        NEAREST_MOVING::const_iterator  I = m_nearest_moving.begin();
+        NEAREST_MOVING::const_iterator  E = m_nearest_moving.end();
+        for ( ; I != E; ++I) {
+            Msg                 ("    %s",(*I)->object().cName().c_str());
+        }
+    }
 #endif // 0
 
     if (m_nearest_moving.empty())
@@ -166,7 +166,7 @@ void moving_objects::generate_emitters()
     std::sort(m_collision_emitters.begin(), m_collision_emitters.end());
 
 // it should be alredy sorted here
-//	std::sort					(m_nearest_moving.begin(),m_nearest_moving.end());
+//  std::sort                   (m_nearest_moving.begin(),m_nearest_moving.end());
 #ifdef DEBUG
     if (!m_nearest_moving.empty())
     {
@@ -458,7 +458,7 @@ void moving_objects::resolve_collisions()
                     std::find_if(decisions, decisions + decision_count, decision_predicate((*I).second.second.first));
                 VERIFY(object != (decisions + decision_count));
                 *object = std::make_pair(object->first, moving_object::action_wait);
-                //					(*I).second.second.second->dynamic_query().merge((*I).second.second.first->dynamic_query());
+                //                  (*I).second.second.second->dynamic_query().merge((*I).second.second.first->dynamic_query());
                 (*I).second.second.second->dynamic_query().add(&object->first->object());
                 continue;
             }
@@ -468,7 +468,7 @@ void moving_objects::resolve_collisions()
                     std::find_if(decisions, decisions + decision_count, decision_predicate((*I).second.second.second));
                 VERIFY(object != (decisions + decision_count));
                 *object = std::make_pair(object->first, moving_object::action_wait);
-                //					(*I).second.second.first->dynamic_query().merge((*I).second.second.second->dynamic_query());
+                //                  (*I).second.second.first->dynamic_query().merge((*I).second.second.second->dynamic_query());
                 (*I).second.second.first->dynamic_query().add(&object->first->object());
                 continue;
             }
@@ -520,7 +520,7 @@ void moving_objects::query_action_dynamic(moving_object* object)
     }
 
 #if 0 // def DEBUG
-	Msg							("%6d end of iteration", Device.dwFrame);
+    Msg                         ("%6d end of iteration", Device.dwFrame);
 #endif // DEBUG
 
     if (!m_collisions.empty())
@@ -532,13 +532,13 @@ void moving_objects::query_action_dynamic(moving_object* object)
     m_previous_collisions = m_collisions;
 
 #if 0 // def DEBUG
-	{
-		Msg							("Frame[%d], collisions[%d]",Device.dwFrame, m_visited_emitters.size());
-		NEAREST_MOVING::iterator	I = m_visited_emitters.begin();
-		NEAREST_MOVING::iterator	E = m_visited_emitters.end();
-		for ( ; I != E; ++I)
-			Msg						("  %s",*(*I)->object().cName());
-	}
+    {
+        Msg                         ("Frame[%d], collisions[%d]",Device.dwFrame, m_visited_emitters.size());
+        NEAREST_MOVING::iterator    I = m_visited_emitters.begin();
+        NEAREST_MOVING::iterator    E = m_visited_emitters.end();
+        for ( ; I != E; ++I)
+            Msg                     ("  %s",*(*I)->object().cName());
+    }
 #endif // DEBUG
 
     NEAREST_MOVING::iterator I = m_visited_emitters.begin();

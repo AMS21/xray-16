@@ -6,13 +6,13 @@
 
 #pragma once
 
-// T_ITEM		-	тип элемента таблицы
+// T_ITEM       -   тип элемента таблицы
 //
-// T_INI_LOADER	-	тип класса CIni_IdToIndex,
-//					откуда будет браться информация размерах таблицы
-// TABLE_INDEX		-	порядковый номер таблицы, нужен только в том случае
-//					если мы хотим сгененрировать несколько таблиц с одинаковыми
-//					T_ITEM и T_INI_LOADER
+// T_INI_LOADER -   тип класса CIni_IdToIndex,
+//                  откуда будет браться информация размерах таблицы
+// TABLE_INDEX      -   порядковый номер таблицы, нужен только в том случае
+//                  если мы хотим сгененрировать несколько таблиц с одинаковыми
+//                  T_ITEM и T_INI_LOADER
 
 #define TEMPLATE_SPECIALIZATION template <typename T_ITEM, typename T_INI_LOADER, u16 TABLE_INDEX>
 #define TEMPLATE_SPECIALIZATION_D template <typename T_ITEM, typename T_INI_LOADER, u16 TABLE_INDEX = 0>
@@ -82,7 +82,7 @@ CSIni_Table::~CIni_Table() { xr_delete(m_pTable); }
 TEMPLATE_SPECIALIZATION
 typename CSIni_Table::ITEM_TABLE& CSIni_Table::table()
 {
-    //	T_INI_LOADER::InitIdToIndex ();
+    //  T_INI_LOADER::InitIdToIndex ();
 
     if (m_pTable)
         return *m_pTable;

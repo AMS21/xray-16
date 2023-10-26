@@ -1,8 +1,8 @@
 //=============================================================================
 //  Filename:   UIAnimatedStatic.cpp
-//	Created by Roman E. Marchenko, vortex@gsc-game.kiev.ua
-//	Copyright 2004. GSC Game World
-//	---------------------------------------------------------------------------
+//  Created by Roman E. Marchenko, vortex@gsc-game.kiev.ua
+//  Copyright 2004. GSC Game World
+//  ---------------------------------------------------------------------------
 //  Статик для отображения анимированной иконки
 //=============================================================================
 
@@ -13,7 +13,7 @@
 
 CUIAnimatedStatic::CUIAnimatedStatic() : CUIStatic("CUIAnimatedStatic")
 {
-    //.	ClipperOn();
+    //. ClipperOn();
 }
 
 //////////////////////////////////////////////////////////////////////////

@@ -74,7 +74,7 @@ void CUIAchievements::SetHint(LPCSTR hint) { m_hint->set_text(StringTable().tran
 void CUIAchievements::SetIcon(LPCSTR icon) { m_icon->InitTexture(icon); }
 void CUIAchievements::SetFunctor(LPCSTR func)
 {
-    //	string128 str = "xr_statistic.";
+    //  string128 str = "xr_statistic.";
     xr_sprintf(m_functor_str, sizeof(m_functor_str), "%s", func);
 }
 

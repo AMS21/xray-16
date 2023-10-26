@@ -132,9 +132,9 @@ void animation_movement_controller::InitalPositionBlending(const Fmatrix& to)
 #endif
 // if( !inital_position_blending )
 //{
-//	if( m_control_blend->stop_at_end_callback && !IsBlending() )
-//	m_pObjXForm.set( to );
-//	return ;
+//  if( m_control_blend->stop_at_end_callback && !IsBlending() )
+//  m_pObjXForm.set( to );
+//  return ;
 //}
 
 #ifdef DEBUG
@@ -200,11 +200,11 @@ void animation_movement_controller::animation_root_position(Fmatrix& pos)
 void animation_movement_controller::OnFrame()
 {
     // if( !isActive() )
-    //	return;
+    //  return;
     VERIFY(IsActive());
     DBG_verify_position_not_chaged();
-//		ka->CalculateBones_Invalidate( );
-//	ka->CalculateBones( TRUE );
+//      ka->CalculateBones_Invalidate( );
+//  ka->CalculateBones( TRUE );
 
 #ifdef DEBUG
     if (dbg_draw_animation_movement_controller && dbg_frame_count < 3)
@@ -227,7 +227,7 @@ void animation_movement_controller::OnFrame()
     DBG_previous_position = m_pObjXForm;
 #endif
 
-//	UpdateVisBox( Fvector().sub(m_pObjXForm.c,prv_pos).square_magnitude()  );
+//  UpdateVisBox( Fvector().sub(m_pObjXForm.c,prv_pos).square_magnitude()  );
 
 /*
     if( IsActive() && IsBlending() )
@@ -238,7 +238,7 @@ void animation_movement_controller::OnFrame()
         {
             const CBlend &m_control_blend;
             scb( const CBlend &B ): m_control_blend( B ){}
-            virtual	void	operator () ( CBlend &B )
+            virtual void    operator () ( CBlend &B )
             {
                 if(B.motionID == m_control_blend.motionID )
                     B.timeCurrent  = m_control_blend.timeCurrent;
@@ -257,13 +257,13 @@ void animation_movement_controller::OnFrame()
 void animation_movement_controller::NewBlend(CBlend* B, const Fmatrix& new_matrix, bool local_animation)
 {
     /*
-#ifdef	DEBUG
-    LPCSTR old_anim_name	= m_pKinematicsC->dcast_PKinematicsAnimated( )->LL_MotionDefName_dbg( ControlBlend(
+#ifdef  DEBUG
+    LPCSTR old_anim_name    = m_pKinematicsC->dcast_PKinematicsAnimated( )->LL_MotionDefName_dbg( ControlBlend(
 )->motionID ).first;
-    LPCSTR old_anim_set		= m_pKinematicsC->dcast_PKinematicsAnimated( )->LL_MotionDefName_dbg( ControlBlend(
+    LPCSTR old_anim_set     = m_pKinematicsC->dcast_PKinematicsAnimated( )->LL_MotionDefName_dbg( ControlBlend(
 )->motionID ).second;
-    LPCSTR new_anim_name	= m_pKinematicsC->dcast_PKinematicsAnimated( )->LL_MotionDefName_dbg( B->motionID ).first;
-    LPCSTR new_anim_set		= m_pKinematicsC->dcast_PKinematicsAnimated( )->LL_MotionDefName_dbg( B->motionID ).second;
+    LPCSTR new_anim_name    = m_pKinematicsC->dcast_PKinematicsAnimated( )->LL_MotionDefName_dbg( B->motionID ).first;
+    LPCSTR new_anim_set     = m_pKinematicsC->dcast_PKinematicsAnimated( )->LL_MotionDefName_dbg( B->motionID ).second;
 
     if( ControlBlend( )->playing )
         Msg( " ! obj movement anim not yet ended anim: %s anim set: %s \n and already another started anim: %s anim set:
@@ -281,7 +281,7 @@ anim: %s anim set: %s",
             new_anim_name,new_anim_set,old_anim_name,old_anim_set
             );
 #endif
-    //	VERIFY(  );
+    //  VERIFY(  );
         ControlBlend( )->blendAmount = 0;// B->blendPower;
         B->blendAmount = B->blendPower;
         m_control_blend = B;
@@ -350,15 +350,15 @@ void animation_movement_controller::RootBoneCallback(CBoneInstance* B)
 
     // if( O->m_control_blend->stop_at_end_callback && !O->IsBlending() )
     //{
-    //	O->m_pObjXForm.mul_43( O->m_startObjXForm, B->mTransform );
+    //  O->m_pObjXForm.mul_43( O->m_startObjXForm, B->mTransform );
     //}
 
     // else
-    //	Msg("blending");
+    //  Msg("blending");
     B->mTransform.set(Fidentity);
 
 #if 0
-	VERIFY( cmp_matrix( O->DBG_previous_position, O->m_pObjXForm, 1.f, 1.f ) );
+    VERIFY( cmp_matrix( O->DBG_previous_position, O->m_pObjXForm, 1.f, 1.f ) );
 #endif
     R_ASSERT2(_valid(B->mTransform), "animation_movement_controller::RootBoneCallback");
 }
@@ -392,22 +392,22 @@ void animation_movement_controller::SetPosesBlending()
 
 float change_pos_delta = 0.02f;
 
-// void	animation_movement_controller::UpdateVisBox	( float pos_sq_delta )
+// void animation_movement_controller::UpdateVisBox ( float pos_sq_delta )
 //{
-//	VERIFY( m_pKinematicsC );
-//	const Fbox &b = m_pKinematicsC->GetBox();
-//	Fsphere		sphere; b.getsphere( sphere.P, sphere.R );
-//	float sq_diff = Fvector().sub( m_pObjXForm.c,m_update_vis_pos).magnitude();
+//  VERIFY( m_pKinematicsC );
+//  const Fbox &b = m_pKinematicsC->GetBox();
+//  Fsphere     sphere; b.getsphere( sphere.P, sphere.R );
+//  float sq_diff = Fvector().sub( m_pObjXForm.c,m_update_vis_pos).magnitude();
 //
-//	float change_pos_sq_delta = change_pos_delta * change_pos_delta * (( Device.fTimeDelta/0.01f )*(
+//  float change_pos_sq_delta = change_pos_delta * change_pos_delta * (( Device.fTimeDelta/0.01f )*(
 // Device.fTimeDelta/0.01f ));
 //
-//	if(  pos_sq_delta > change_pos_sq_delta || sphere.P.square_magnitude() + change_pos_sq_delta + pos_sq_delta >
+//  if(  pos_sq_delta > change_pos_sq_delta || sphere.P.square_magnitude() + change_pos_sq_delta + pos_sq_delta >
 // sphere.R*sphere.R )
-//	{
-//		m_update_vis_pos = m_pObjXForm.c;
-//		m_pKinematicsC->LL_VisBoxInvalidate();
-//		m_pKinematicsC->CalculateBones_Invalidate( );
-//		m_pKinematicsC->CalculateBones(TRUE);// TRUE
-//	}
+//  {
+//      m_update_vis_pos = m_pObjXForm.c;
+//      m_pKinematicsC->LL_VisBoxInvalidate();
+//      m_pKinematicsC->CalculateBones_Invalidate( );
+//      m_pKinematicsC->CalculateBones(TRUE);// TRUE
+//  }
 //}

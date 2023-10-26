@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_monster_detail_path_manager_inline.h
-//	Created 	: 01.11.2005
-//  Modified 	: 22.11.2005
-//	Author		: Dmitriy Iassenev
-//	Description : ALife monster detail path manager class inline functions
+//  Module      : alife_monster_detail_path_manager_inline.h
+//  Created     : 01.11.2005
+//  Modified    : 22.11.2005
+//  Author      : Dmitriy Iassenev
+//  Description : ALife monster detail path manager class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

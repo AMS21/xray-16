@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_monster_brain.cpp
-//	Created 	: 06.10.2005
-//  Modified 	: 22.11.2005
-//	Author		: Dmitriy Iassenev
-//	Description : ALife monster brain class
+//  Module      : alife_monster_brain.cpp
+//  Created     : 06.10.2005
+//  Modified    : 22.11.2005
+//  Author      : Dmitriy Iassenev
+//  Description : ALife monster brain class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -134,13 +134,13 @@ void CALifeMonsterBrain::update(const bool forced)
 {
 #if 0 // def DEBUG
     if (!Level().MapManager().HasMapLocation("debug_stalker",object().ID)) {
-        CMapLocation				*map_location =
+        CMapLocation                *map_location =
             Level().MapManager().AddMapLocation(
                 "debug_stalker",
                 object().ID
             );
 
-        map_location->SetHint		(object().name_replace());
+        map_location->SetHint       (object().name_replace());
     }
 #endif
 

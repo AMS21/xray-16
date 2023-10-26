@@ -13,7 +13,7 @@ struct SCartridgeParam
     IC void Init()
     {
         kDist = kDisp = kHit = kImpulse = 1.0f;
-        //		kCritical = 0.0f;
+        //      kCritical = 0.0f;
         kAP = 0.0f;
         kAirRes = 0.0f;
         buckShot = 1;

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_boolean.hpp
-//	Created 	: 10.12.2007
-//  Modified 	: 10.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : boolean property implementation class
+//  Module      : property_boolean.hpp
+//  Created     : 10.12.2007
+//  Modified    : 10.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : boolean property implementation class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_BOOLEAN_HPP_INCLUDED

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_planner.h
-//	Created 	: 26.03.2004
-//  Modified 	: 26.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker planner class
+//  Module      : stalker_planner.h
+//  Created     : 26.03.2004
+//  Modified    : 26.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker planner class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

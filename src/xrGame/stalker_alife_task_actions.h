@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_alife_task_actions.h
-//	Created 	: 25.10.2004
-//  Modified 	: 25.10.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker alife task action classes
+//  Module      : stalker_alife_task_actions.h
+//  Created     : 25.10.2004
+//  Modified    : 25.10.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker alife task action classes
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

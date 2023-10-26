@@ -45,7 +45,7 @@ bool CPhysicObject::net_Spawn(CSE_Abstract* DC)
 
     // if (PPhysicsShell()->Animated())
     //{
-    //	processing_activate();
+    //  processing_activate();
     //}
     bones_snd_player = create_moving_bones_snd_player(*this);
     if (bones_snd_player)
@@ -99,7 +99,7 @@ void CPhysicObject::create_collision_model()
         case epotBox:
         case epotFixedChain:
         case epotFreeChain :
-        case epotSkeleton  :	collidable.model = new CCF_Skeleton(this);	break;
+        case epotSkeleton  :    collidable.model = new CCF_Skeleton(this);  break;
 
         default: NODEFAULT;
 
@@ -186,7 +186,7 @@ void CPhysicObject::RunStartupAnim(CSE_Abstract* D)
 {
     if (Visual() && smart_cast<IKinematics*>(Visual()))
     {
-        //		CSE_PHSkeleton	*po	= smart_cast<CSE_PHSkeleton*>(D);
+        //      CSE_PHSkeleton  *po = smart_cast<CSE_PHSkeleton*>(D);
         IKinematicsAnimated* PKinematicsAnimated = NULL;
         R_ASSERT(Visual() && smart_cast<IKinematics*>(Visual()));
         PKinematicsAnimated = smart_cast<IKinematicsAnimated*>(Visual());
@@ -271,7 +271,7 @@ void CPhysicObject::net_Destroy()
 {
     // if (PPhysicsShell()->Animated())
     //{
-    //	processing_deactivate();
+    //  processing_deactivate();
     //}
 
     inherited::net_Destroy();
@@ -474,19 +474,19 @@ void CPhysicObject::set_collision_hit_callback(ICollisionHitCallback* cc)
 
 //////////////////////////////////////////////////////////////////////////
 /*
-DEFINE_MAP_PRED	(LPCSTR,	CPhysicsJoint*,	JOINT_P_MAP,	JOINT_P_PAIR_IT,	pred_str);
+DEFINE_MAP_PRED (LPCSTR,    CPhysicsJoint*, JOINT_P_MAP,    JOINT_P_PAIR_IT,    pred_str);
 
-JOINT_P_MAP			*l_tpJointMap = new JOINT_P_MAP();
+JOINT_P_MAP         *l_tpJointMap = new JOINT_P_MAP();
 
 l_tpJointMap->insert(std::make_pair(bone_name,joint*));
-JOINT_P_PAIR_IT		I = l_tpJointMap->find(bone_name);
+JOINT_P_PAIR_IT     I = l_tpJointMap->find(bone_name);
 if (l_tpJointMap->end()!=I){
 //bone_name is found and is an pair_iterator
 (*I).second
 }
 
-JOINT_P_PAIR_IT		I = l_tpJointMap->begin();
-JOINT_P_PAIR_IT		E = l_tpJointMap->end();
+JOINT_P_PAIR_IT     I = l_tpJointMap->begin();
+JOINT_P_PAIR_IT     E = l_tpJointMap->end();
 for ( ; I != E; ++I) {
 (*I).second->joint_method();
 Msg("%s",(*I).first);
@@ -538,7 +538,7 @@ void CPhysicObject::net_Export(NET_Packet& P)
         num_items.mask |= CSE_ALifeObjectPhysic::inventory_item_angular_null;
     if (fis_zero(State.linear_vel.square_magnitude()))
         num_items.mask |= CSE_ALifeObjectPhysic::inventory_item_linear_null;
-    // if (m_pPhysicsShell->PPhysicsShellAnimator())		{num_items.mask |= CSE_ALifeObjectPhysic::animated;}
+    // if (m_pPhysicsShell->PPhysicsShellAnimator())        {num_items.mask |= CSE_ALifeObjectPhysic::animated;}
 
     P.w_u8(num_items.common);
 
@@ -580,17 +580,17 @@ void CPhysicObject::net_Export_PH_Params(NET_Packet& P, SPHNetState& State, mask
     }
     else
     {
-        /*		float				invert_magnitude = 1.f/magnitude;
+        /*      float               invert_magnitude = 1.f/magnitude;
 
-        State.quaternion.x	*= invert_magnitude;
-        State.quaternion.y	*= invert_magnitude;
-        State.quaternion.z	*= invert_magnitude;
-        State.quaternion.w	*= invert_magnitude;
+        State.quaternion.x  *= invert_magnitude;
+        State.quaternion.y  *= invert_magnitude;
+        State.quaternion.z  *= invert_magnitude;
+        State.quaternion.w  *= invert_magnitude;
 
-        clamp				(State.quaternion.x,-1.f,1.f);
-        clamp				(State.quaternion.y,-1.f,1.f);
-        clamp				(State.quaternion.z,-1.f,1.f);
-        clamp				(State.quaternion.w,-1.f,1.f);*/
+        clamp               (State.quaternion.x,-1.f,1.f);
+        clamp               (State.quaternion.y,-1.f,1.f);
+        clamp               (State.quaternion.z,-1.f,1.f);
+        clamp               (State.quaternion.w,-1.f,1.f);*/
     }
 
     P.w_float(State.quaternion.x);
@@ -600,9 +600,9 @@ void CPhysicObject::net_Export_PH_Params(NET_Packet& P, SPHNetState& State, mask
 
     if (!(num_items.mask & CSE_ALifeObjectPhysic::inventory_item_angular_null))
     {
-        /*	clamp				(State.angular_vel.x,-10.f*PI_MUL_2,10.f*PI_MUL_2);
-        clamp				(State.angular_vel.y,-10.f*PI_MUL_2,10.f*PI_MUL_2);
-        clamp				(State.angular_vel.z,-10.f*PI_MUL_2,10.f*PI_MUL_2);*/
+        /*  clamp               (State.angular_vel.x,-10.f*PI_MUL_2,10.f*PI_MUL_2);
+        clamp               (State.angular_vel.y,-10.f*PI_MUL_2,10.f*PI_MUL_2);
+        clamp               (State.angular_vel.z,-10.f*PI_MUL_2,10.f*PI_MUL_2);*/
 
         P.w_float(State.angular_vel.x);
         P.w_float(State.angular_vel.y);
@@ -611,9 +611,9 @@ void CPhysicObject::net_Export_PH_Params(NET_Packet& P, SPHNetState& State, mask
 
     if (!(num_items.mask & CSE_ALifeObjectPhysic::inventory_item_linear_null))
     {
-        /*clamp				(State.linear_vel.x,-32.f,32.f);
-        clamp				(State.linear_vel.y,-32.f,32.f);
-        clamp				(State.linear_vel.z,-32.f,32.f);*/
+        /*clamp             (State.linear_vel.x,-32.f,32.f);
+        clamp               (State.linear_vel.y,-32.f,32.f);
+        clamp               (State.linear_vel.z,-32.f,32.f);*/
 
         P.w_float(State.linear_vel.x);
         P.w_float(State.linear_vel.y);
@@ -656,15 +656,15 @@ void CPhysicObject::net_Import(NET_Packet& P)
 
     net_updatePhData* p = NetSync();
 
-    //	if (!p->NET_IItem.empty() && (p->NET_IItem.back().dwTimeStamp>=N.dwTimeStamp))
-    //		return;
+    //  if (!p->NET_IItem.empty() && (p->NET_IItem.back().dwTimeStamp>=N.dwTimeStamp))
+    //      return;
 
     // if (!p->NET_IItem.empty())
-    // m_flags.set							(FInInterpolate, TRUE);
+    // m_flags.set                          (FInInterpolate, TRUE);
 
     Level().AddObject_To_Objects4CrPr(this);
-    // this->CrPr_SetActivated				(false);
-    // this->CrPr_SetActivationStep			(0);
+    // this->CrPr_SetActivated              (false);
+    // this->CrPr_SetActivationStep         (0);
 
     p->NET_IItem.push_back(N);
 
@@ -684,8 +684,8 @@ void CPhysicObject::net_Import(NET_Packet& P)
 
 void CPhysicObject::net_Import_PH_Params(NET_Packet& P, net_update_PItem& N, mask_num_items& num_items)
 {
-    // N.State.force.set			(0.f,0.f,0.f);
-    // N.State.torque.set			(0.f,0.f,0.f);
+    // N.State.force.set            (0.f,0.f,0.f);
+    // N.State.torque.set           (0.f,0.f,0.f);
     // UI().Font().pFontStat->OutSet(100.0f,100.0f);
     P.r_vec3(N.State.force);
     // Msg("Import N.State.force.y:%4.6f",N.State.force.y);
@@ -749,8 +749,8 @@ void CPhysicObject::PH_A_CrPr()
         K->CalculateBones_Invalidate();
         K->CalculateBones(TRUE);
 #if 0
-        Fbox bb= BoundingBox	();
-        DBG_OpenCashedDraw		();
+        Fbox bb= BoundingBox    ();
+        DBG_OpenCashedDraw      ();
         Fvector c,r,p;
         bb.get_CD(c,r );
         XFORM().transform_tiny(p,c);
@@ -760,7 +760,7 @@ void CPhysicObject::PH_A_CrPr()
         PPhysicsShell()->GetGlobalTransformDynamic(&mm);
         mm.transform_tiny(p,c);
         DBG_DrawAABB( p, r,color_xrgb(0, 255, 0));
-        DBG_ClosedCashedDraw	(50000);
+        DBG_ClosedCashedDraw    (50000);
 #endif
         spatial_move();
         m_just_after_spawn = false;
@@ -769,7 +769,7 @@ void CPhysicObject::PH_A_CrPr()
 
         PPhysicsShell()->get_ElementByStoreOrder(0)->Fix();
         PPhysicsShell()->SetIgnoreStatic();
-        // PPhysicsShell()->SetIgnoreDynamic	();
+        // PPhysicsShell()->SetIgnoreDynamic    ();
         // PPhysicsShell()->DisableCollision();
     }
     // CalculateInterpolationParams()
@@ -893,7 +893,7 @@ bool CPhysicObject::get_door_vectors(Fvector& closed, Fvector& open) const
     const Fvector2& limits = joint.limits[1].limit;
 
     // if( limits.y < EPS ) //limits.y - limits.x < EPS
-    //	return false;
+    //  return false;
 
     if (M_PI - limits.y < EPS && M_PI + limits.x < EPS)
         return false;

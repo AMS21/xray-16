@@ -1,8 +1,8 @@
 //=============================================================================
 //  Filename:   UIListWnd_inline.h
-//	Created by Roman E. Marchenko, vortex@gsc-game.kiev.ua
-//	Copyright 2004. GSC Game World
-//	---------------------------------------------------------------------------
+//  Created by Roman E. Marchenko, vortex@gsc-game.kiev.ua
+//  Copyright 2004. GSC Game World
+//  ---------------------------------------------------------------------------
 //  Реализация темплейтовых функций листбокса
 //=============================================================================
 
@@ -64,7 +64,7 @@ bool CUIListWnd::AddItem(Element* pItem, int insertBeforeIdx)
     m_ScrollBar->SetRange(0, s16(m_ItemList.size() - 1));
     m_ScrollBar->SetPageSize((m_iRowNum < (int)m_ItemList.size()) ? m_iRowNum : (int)m_ItemList.size());
     m_ScrollBar->SetScrollPos(s16(m_iFirstShownIndex));
-    //	m_ScrollBar.Refresh();
+    //  m_ScrollBar.Refresh();
 
     UpdateScrollBar();
 

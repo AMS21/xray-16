@@ -463,18 +463,18 @@ float angle_between_vectors(float u[3], float v[3], float n[3])
     // Vectors are parallel at 0 or 180 
     if (mag*mag < 1e-8)
     {
-	if (DOT(up,vp) < 0)
-	    return M_PI;
-	else
-	    return 0;
+    if (DOT(up,vp) < 0)
+        return M_PI;
+    else
+        return 0;
     }
 
     int sign = (mag > 0) ? 1 : -1;
     float t = DOT(up,vp); 
     if (t > 1.0)
-	t = 1.0;
+    t = 1.0;
     else if (t < -1.0)
-	t = -1.0;
+    t = -1.0;
     return sign*acos(t);
 #else
 
@@ -753,9 +753,9 @@ void rotation_principal_axis_to_matrix(char axis, float angle, Matrix m)
 //
 // To extract axis and angle from R use the formulas (murray, pg 414)
 //
-//	2 * cos(theta) - 1 = trace(R)
+//  2 * cos(theta) - 1 = trace(R)
 // and
-//	axis = vector associated with skew symmetric matrix (R-R')/(2*sin(theta))
+//  axis = vector associated with skew symmetric matrix (R-R')/(2*sin(theta))
 //
 //
 // By our convention always return 0 <= angle < M_PI

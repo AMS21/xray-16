@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: material_manager.cpp
-//	Created 	: 27.12.2003
-//  Modified 	: 27.12.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Material manager
+//  Module      : material_manager.cpp
+//  Created     : 27.12.2003
+//  Modified    : 27.12.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Material manager
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -66,10 +66,10 @@ void CMaterialManager::reinit()
         // VERIFY( entity_alive->character_physics_support()->movement()->CharacterExist() );
         entity_alive->character_physics_support()->movement()->SetPLastMaterialIDX(&m_last_material_idx);
 
-        //		if (entity_alive->use_simplified_visual()) {
-        //			IKinematics			*kinematics = smart_cast<IKinematics*>(entity_alive->Visual());
-        //			m_my_material_idx	= kinematics->LL_GetData(kinematics->LL_GetBoneRoot()).game_mtl_idx;
-        //		}
+        //      if (entity_alive->use_simplified_visual()) {
+        //          IKinematics         *kinematics = smart_cast<IKinematics*>(entity_alive->Visual());
+        //          m_my_material_idx   = kinematics->LL_GetData(kinematics->LL_GetBoneRoot()).game_mtl_idx;
+        //      }
 
         entity_alive->character_physics_support()->movement()->SetMaterial(m_my_material_idx);
 #ifdef DEBUG

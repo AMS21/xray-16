@@ -26,18 +26,18 @@ void CRenderTarget::phase_smap_direct(CBackend& cmd_list, light* L, u32 sub_phas
         cmd_list.ClearZB(rt_smap_depth, 1.0f);
     }
 
-    // Stencil	- disable
+    // Stencil  - disable
     cmd_list.set_Stencil(FALSE);
 
-    // Misc		- draw only front/back-faces
+    // Misc     - draw only front/back-faces
     /*
-    if (SE_SUN_NEAR==sub_phase)			RCache.set_CullMode			( CULL_CCW	);	// near
-    else								{
-        if (RImplementation.o.HW_smap)	RCache.set_CullMode			( CULL_CW	);	// far, reversed
-        else							RCache.set_CullMode			( CULL_CCW	);	// far, front-faces
+    if (SE_SUN_NEAR==sub_phase)         RCache.set_CullMode         ( CULL_CCW  );  // near
+    else                                {
+        if (RImplementation.o.HW_smap)  RCache.set_CullMode         ( CULL_CW   );  // far, reversed
+        else                            RCache.set_CullMode         ( CULL_CCW  );  // far, front-faces
     }
     */
-    //	Cull always CCW. If you want to revert to previouse solution, please, revert bias setup/
+    //  Cull always CCW. If you want to revert to previouse solution, please, revert bias setup/
     cmd_list.set_CullMode(CULL_CCW); // near
     if (RImplementation.o.HW_smap)
         cmd_list.set_ColorWriteEnable(FALSE);

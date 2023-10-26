@@ -188,9 +188,9 @@ void CElevatorState::UpdateStClimbingDown()
         m_character->ApplyForce(0.f, -m_character->Mass() * ph_world->Gravity(), 0.f);
     }
     // if(to_ax-m_character->FootRadius()>out_dist)
-    //														SwitchState((clbNone));
+    //                                                      SwitchState((clbNone));
     // if(fis_zero(control_a))
-    //	m_character->ApplyForce(d,m_character->Mass());
+    //  m_character->ApplyForce(d,m_character->Mass());
 }
 
 void CElevatorState::UpdateStClimbingUp()
@@ -212,9 +212,9 @@ void CElevatorState::UpdateStClimbingUp()
 
     UpdateClimbingCommon(d, to_ax, ca, control_a);
     // if(to_ax-m_character->FootRadius()>out_dist)
-    //										SwitchState((clbNone));
+    //                                      SwitchState((clbNone));
     // if(fis_zero(control_a))
-    //	m_character->ApplyForce(d,m_character->Mass());
+    //  m_character->ApplyForce(d,m_character->Mass());
 }
 void CElevatorState::UpdateClimbingCommon(const Fvector& d_to_ax, float to_ax, const Fvector& control_accel, float ca)
 {
@@ -226,7 +226,7 @@ void CElevatorState::UpdateClimbingCommon(const Fvector& d_to_ax, float to_ax, c
 #ifdef DEBUG
         if (debug_output().ph_dbg_draw_mask().test(phDbgLadder))
         {
-            //.			Msg("force applied");
+            //.         Msg("force applied");
         }
 #endif
         m_character->ApplyForce(d_to_ax, m_character->Mass() * ph_world->Gravity()); //
@@ -304,8 +304,8 @@ void CElevatorState::UpdateDepart()
 
     // Fvector p;m_character->GetFootCenter(p);
     // p.sub(m_start_position);
-    // if(	p.magnitude()>depart_dist ||
-    //	Device.dwTimeGlobal-m_start_time>depart_time)
+    // if(  p.magnitude()>depart_dist ||
+    //  Device.dwTimeGlobal-m_start_time>depart_time)
     SwitchState(clbNoLadder);
 }
 

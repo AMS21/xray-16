@@ -355,4 +355,4 @@ IC void CBackend::set_pass_targets(const ref_rt &_1, const ref_rt &_2, const ref
     SetViewport(viewport);
 }
 
-#endif //	dx9R_Backend_Runtime_included
+#endif //   dx9R_Backend_Runtime_included

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_integer_enum_value.cpp
-//	Created 	: 12.12.2007
-//  Modified 	: 12.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property integer enum value class
+//  Module      : property_integer_enum_value.cpp
+//  Created     : 12.12.2007
+//  Modified    : 12.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property integer enum value class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

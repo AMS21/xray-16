@@ -133,14 +133,14 @@ void ConvertAlphaToNormalMap_4x(NVI_Image* pSrc, float scale, bool wrap)
     // Do the conversion using a 4 sample nearest neighbor pattern
     //
     // d height / du kernel:
-    //  0		0		0
-    //	-1/2	0		1/2
-    //	0		0		0
+    //  0       0       0
+    //  -1/2    0       1/2
+    //  0       0       0
     //
     // d height / dv kernel:
-    //	0	1/2		0
-    //	0	0		0
-    //	0	-1/2	0
+    //  0   1/2     0
+    //  0   0       0
+    //  0   -1/2    0
     int numelem = 2; // num elements in each kernel
     ConvolutionKernelElement du_elem[] = {{-1, 0, -1.0f / 2.0f}, {1, 0, 1.0f / 2.0f}};
     ConvolutionKernelElement dv_elem[] = {{0, 1, 1.0f / 2.0f}, {0, -1, -1.0f / 2.0f}};
@@ -157,22 +157,22 @@ void ConvertAlphaToNormalMap_3x3(NVI_Image* pSrc, float scale, bool wrap)
     // Uses Anders' 3x3 kernels for transforming height into a normal map vector.
     // Either wraps or does not wrap.
     // The convolver class memcopies to larger surface (width + kernel width-1,
-    //		height + kernel heigh - 1 ) to make wrap code easy for arbitrary
-    //		kernels.  Edge texels are duplicated into the border regions or
+    //      height + kernel heigh - 1 ) to make wrap code easy for arbitrary
+    //      kernels.  Edge texels are duplicated into the border regions or
     //      copied from the other side of the source image if wrapping is on.
     int numelem = 6; // num elements in each kernel
     float wt = 1.0f / 6.0f;
     // Kernel for change of height in u axis:
-    //  -1/6	0	1/6
-    //  -1/6	0	1/6
-    //  -1/6	0	1/6
+    //  -1/6    0   1/6
+    //  -1/6    0   1/6
+    //  -1/6    0   1/6
     ConvolutionKernelElement du_elem[] = {
         {-1, 1, -wt}, {1, 1, wt}, {-1, 0, -wt}, {1, 0, wt}, {-1, -1, -wt}, {1, -1, wt}};
     // Kernel for change of height in v axis:
-    //						 1,1
-    //   1/6	 1/6	 1/6
-    //     0	   0	   0
-    //  -1/6	-1/6	-1/6
+    //                       1,1
+    //   1/6     1/6     1/6
+    //     0       0       0
+    //  -1/6    -1/6    -1/6
     // 0,0
     ConvolutionKernelElement dv_elem[] = {
         {-1, 1, wt}, {0, 1, wt}, {1, 1, wt}, {-1, -1, -wt}, {0, -1, -wt}, {1, -1, -wt}};
@@ -188,8 +188,8 @@ void ConvertAlphaToNormalMap_5x5(NVI_Image* pSrc, float scale, bool wrap)
 {
     // Either wraps or does not wrap.
     // The convolver class memcopies to larger surface (width + kernel width-1,
-    //		height + kernel heigh - 1 ) to make wrap code easy for arbitrary
-    //		kernels.  Edge texels are duplicated into the border regions or
+    //      height + kernel heigh - 1 ) to make wrap code easy for arbitrary
+    //      kernels.  Edge texels are duplicated into the border regions or
     //      copied from the other side of the source image if wrapping is on.
     int numelem; // num elements in each kernel
     float wt1 = 1.0f / 6.0f;
@@ -203,14 +203,14 @@ void ConvertAlphaToNormalMap_5x5(NVI_Image* pSrc, float scale, bool wrap)
     //  a region of 4 mounds, when they should instead become a
     //  smooth blob.
 
-    //	1/48	-1/6	0	1/6		-1/48
-    //	1/48	-1/6	0	1/6		-1/48
-    //	0		0		0	0		0
-    //	1/48	-1/6	0	1/6		-1/48
-    //	1/48	-1/6	0	1/6		-1/48
+    //  1/48    -1/6    0   1/6     -1/48
+    //  1/48    -1/6    0   1/6     -1/48
+    //  0       0       0   0       0
+    //  1/48    -1/6    0   1/6     -1/48
+    //  1/48    -1/6    0   1/6     -1/48
 
     numelem = 16;
-    ConvolutionKernelElement	du_elem[] =	{
+    ConvolutionKernelElement    du_elem[] = {
     {-2, 2, wt2}, {-1,2,-wt1},    {1,2,wt1}, {2,2,-wt2},
     {-2, 1, wt2}, {-1,1,-wt1},    {1,1,wt1}, {2,1,-wt2},
 
@@ -220,7 +220,7 @@ void ConvertAlphaToNormalMap_5x5(NVI_Image* pSrc, float scale, bool wrap)
     // Kernel for change of height in v axis:
     // This is same as u kernel above - just rotated 90 degrees
 
-    ConvolutionKernelElement	dv_elem[] = {
+    ConvolutionKernelElement    dv_elem[] = {
     {-2, 2,-wt2}, {-1,2,-wt2},    {1,2,-wt2}, {2,2,-wt2},
     {-2, 1, wt1}, {-1,1, wt1},    {1,1, wt1}, {2,1, wt1},
 
@@ -385,8 +385,8 @@ void ConvertAlphaToNormalMap_9x9(NVI_Image* pSrc, float scale, bool wrap)
 {
     // Either wraps or does not wrap.
     // The convolver class memcopies to larger surface (width + kernel width-1,
-    //		height + kernel heigh - 1 ) to make wrap code easy for arbitrary
-    //		kernels.  Edge texels are duplicated into the border regions or
+    //      height + kernel heigh - 1 ) to make wrap code easy for arbitrary
+    //      kernels.  Edge texels are duplicated into the border regions or
     //      copied from the other side of the source image if wrapping is on.
     int numelem; // num elements in each kernel
     // Kernel for change of height in u axis:
@@ -442,7 +442,7 @@ IC u32 it_gloss_rev(u32 d, u32 s)
 {
     gloss_power += float(color_get_A(s)) / 255.f;
     return color_rgba(
-        //.	color_get_A(s)+1, // gloss
+        //. color_get_A(s)+1, // gloss
         clampr(color_get_A(s) + 1, u32(0), u32(255)), color_get_B(d), color_get_G(d), color_get_R(d));
 }
 

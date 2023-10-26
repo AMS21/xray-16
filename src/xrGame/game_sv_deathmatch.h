@@ -115,7 +115,7 @@ public:
 
     // Events
     virtual void OnRoundStart(); // старт раунда
-    virtual void OnRoundEnd(); // round_end_reason							// конец раунда
+    virtual void OnRoundEnd(); // round_end_reason                          // конец раунда
     virtual void OnDelayedRoundEnd(ERoundEnd_Result reason);
     virtual void OnDelayedTeamEliminated();
 
@@ -164,7 +164,7 @@ public:
     virtual void OnRender();
 #endif
 
-    virtual void SetSkin(CSE_Abstract* E, u16 Team, u16 ID); //	{};
+    virtual void SetSkin(CSE_Abstract* E, u16 Team, u16 ID); // {};
 
     virtual void SpawnWeaponsForActor(CSE_Abstract* pE, game_PlayerState* ps);
 

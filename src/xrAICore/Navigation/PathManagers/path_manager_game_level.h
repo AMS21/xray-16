@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: path_manager_game_level.h
-//	Created 	: 04.10.2004
-//  Modified 	: 04.10.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Game level path manager
+//  Module      : path_manager_game_level.h
+//  Created     : 04.10.2004
+//  Modified    : 04.10.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Game level path manager
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

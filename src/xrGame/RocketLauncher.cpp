@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////
-// RocketLauncher.cpp:	интерфейс для семейства объектов
-//						стреляющих гранатами и ракетами
+// RocketLauncher.cpp:  интерфейс для семейства объектов
+//                      стреляющих гранатами и ракетами
 //////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -14,7 +14,7 @@
 
 CRocketLauncher::CRocketLauncher()
 {
-    //	m_pRocket =  NULL;
+    //  m_pRocket =  NULL;
 }
 CRocketLauncher::~CRocketLauncher() {}
 void CRocketLauncher::Load(LPCSTR section) { m_fLaunchSpeed = pSettings->r_float(section, "launch_speed"); }
@@ -31,7 +31,7 @@ void CRocketLauncher::SpawnRocket(const shared_str& rocket_section, CGameObject*
     D->s_name = rocket_section;
     D->set_name_replace("");
 
-    //.	D->s_gameid			=	u8(GameID());
+    //. D->s_gameid         =   u8(GameID());
     D->s_RP = 0xff;
     D->ID = 0xffff;
     D->ID_Parent = parent_rocket_launcher->ID();

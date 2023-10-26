@@ -143,18 +143,18 @@ void CActor::IR_OnKeyboardPress(int cmd)
                 PIItem fl_active = inventory().ItemFromSlot(FLARE_SLOT);
                 if(fl_active)
                 {
-                    CFlare* fl			= smart_cast<CFlare*>(fl_active);
-                    fl->DropFlare		();
-                    return				;
+                    CFlare* fl          = smart_cast<CFlare*>(fl_active);
+                    fl->DropFlare       ();
+                    return              ;
                 }
 
                 PIItem fli = inventory().Get(CLSID_DEVICE_FLARE, true);
-                if(!fli)			return;
+                if(!fli)            return;
 
-                CFlare* fl			= smart_cast<CFlare*>(fli);
+                CFlare* fl          = smart_cast<CFlare*>(fli);
 
                 if(inventory().Slot(fl))
-                    fl->ActivateFlare	();
+                    fl->ActivateFlare   ();
             }break;
     */
     case kUSE: ActorUse(); break;

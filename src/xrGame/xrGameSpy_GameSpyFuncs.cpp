@@ -4,7 +4,7 @@
 #include "gamespy/GameSpy_QR2_callbacks.h"
 
 /////////////////////// QR2 ///////////////////////////////////////
-// void			xrGameSpyServer::QR2_Init			(u32 PortID)
+// void         xrGameSpyServer::QR2_Init           (u32 PortID)
 void xrGameSpyServer::QR2_Init(int PortID)
 {
     CGameSpy_QR2::SInitConfig ctx;

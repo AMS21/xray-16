@@ -41,8 +41,8 @@ void CIKFoot::Create(IKinematics* K, LPCSTR section, u16 bones[4])
         m_foot_direction.bone = 3;
     }
 
-    //	m_foot_normal.v			.set( 1, 0, 0 );//2
-    //	m_foot_normal.bone		= 2;
+    //  m_foot_normal.v         .set( 1, 0, 0 );//2
+    //  m_foot_normal.bone      = 2;
 
     // load settings
     if (section)
@@ -94,7 +94,7 @@ void CIKFoot::set_toe(u16 bones[4])
     const Fmatrix bind2 = binds[bones[2]];
     const Fmatrix ibind2 = Fmatrix().invert(bind2);
 
-    // const Fmatrix ref_to_b2	= Fmatrix().mul_43( ibind2, bind_ref );
+    // const Fmatrix ref_to_b2  = Fmatrix().mul_43( ibind2, bind_ref );
     const Fmatrix b2to_ref = Fmatrix().mul_43(ibind_ref, bind2);
 
     const Fmatrix bind3 = binds[bones[3]];
@@ -313,7 +313,7 @@ bool CIKFoot::GetFootStepMatrix(ik_goal_matrix& m, const Fmatrix& g_anim, const 
 #ifdef DEBUG
 // if( ph_dbg_draw_mask.test( phDbgDrawIKGoal ) )
 //{
-//	DBG_DrawLine( global_point, Fvector().add( global_point, foot_normal ), color_xrgb( 0, 255, 255) );
+//  DBG_DrawLine( global_point, Fvector().add( global_point, foot_normal ), color_xrgb( 0, 255, 255) );
 //}
 #endif
     if (cld.m_collide_point == ik_foot_geom::heel || cld.m_collide_point == ik_foot_geom::side)

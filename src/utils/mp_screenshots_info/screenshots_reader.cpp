@@ -70,7 +70,7 @@ shared_str const reader::player_cdkey_digest()
     return m_info_section->r_string(ss_info_secion, ss_player_digest_key);
 }
 
-/*shared_str const reader::admin_name			()
+/*shared_str const reader::admin_name           ()
 {
     VERIFY(is_valid());
     return m_info_section->r_string(ss_info_secion, ss_admin_name_key);

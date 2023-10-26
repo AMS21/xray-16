@@ -103,8 +103,8 @@ bool CEffectorBobbing::ProcessCam(SCamEffectorInfo& info)
         info.d.set(mR.k);
         info.n.set(mR.j);
     }
-    //	else{
-    //		fTime		= 0;
-    //	}
+    //  else{
+    //      fTime       = 0;
+    //  }
     return TRUE;
 }

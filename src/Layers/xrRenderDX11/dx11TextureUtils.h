@@ -12,4 +12,4 @@ DXGI_FORMAT ConvertTextureFormat(D3DFORMAT dx9FMT);
 D3DFORMAT ConvertTextureFormat(DXGI_FORMAT dx11FMT);
 }
 
-#endif //	dx11TextureUtils_included
+#endif //   dx11TextureUtils_included

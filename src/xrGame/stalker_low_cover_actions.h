@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_low_cover_actions.h
-//	Created 	: 05.09.2007
-//  Modified 	: 05.09.2007
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker low cover actions
+//  Module      : stalker_low_cover_actions.h
+//  Created     : 05.09.2007
+//  Modified    : 05.09.2007
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker low cover actions
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef STALKER_LOW_COVER_ACTIONS_H_INCLUDED

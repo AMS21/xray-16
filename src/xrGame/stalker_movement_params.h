@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_movement_params.h
-//	Created 	: 23.12.2005
-//  Modified 	: 23.12.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker movement parameters class
+//  Module      : stalker_movement_params.h
+//  Created     : 23.12.2005
+//  Modified    : 23.12.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker movement parameters class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

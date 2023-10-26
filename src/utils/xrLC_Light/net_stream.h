@@ -25,8 +25,8 @@ public:
     void r(void* p, size_t cnt) const;
     size_t count() const { return file_size - position; }
     void* pdata() const { return (void*)_buffer; }
-    // IC	void			reset_file_size	( size_t new_size ){file_size = new_size ;}
-    // IC	size_t				get_file_size	( )				{return file_size; }
+    // IC   void            reset_file_size ( size_t new_size ){file_size = new_size ;}
+    // IC   size_t              get_file_size   ( )             {return file_size; }
     void free_buff() const
     {
         file_size = 0;
@@ -51,21 +51,21 @@ public:
     virtual void* pdata() const = 0;
 };
 
-// class	CMemoryReadBlock
-//	//:
-//	//public IReadBlock
+// class    CMemoryReadBlock
+//  //:
+//  //public IReadBlock
 //{
-//	CReadMemoryBlock mem_reader;
+//  CReadMemoryBlock mem_reader;
 // public:
-//	CMemoryReadBlock	( const size_t	file_size_, u8*	&buff ):mem_reader(file_size_, buff ){};
-//	virtual	void			r				( void *p, size_t cnt )const	{ mem_reader.r(p,cnt); }
-//	virtual	size_t				count			()const						{ return mem_reader.count(); }
-//	virtual	void			*pdata			()const						{ return mem_reader.pdata(); }
+//  CMemoryReadBlock    ( const size_t  file_size_, u8* &buff ):mem_reader(file_size_, buff ){};
+//  virtual void            r               ( void *p, size_t cnt )const    { mem_reader.r(p,cnt); }
+//  virtual size_t              count           ()const                     { return mem_reader.count(); }
+//  virtual void            *pdata          ()const                     { return mem_reader.pdata(); }
 //
-//	void					free_buff		()const						{ mem_reader.free_buff(); }
-//	void					alloc			(size_t _file_size)const		{ mem_reader.alloc(_file_size); }
-//	bool					allocated		()const						{ return mem_reader.allocated(); }
-//	bool					empty			()const						{ return mem_reader.empty(); }
+//  void                    free_buff       ()const                     { mem_reader.free_buff(); }
+//  void                    alloc           (size_t _file_size)const        { mem_reader.alloc(_file_size); }
+//  bool                    allocated       ()const                     { return mem_reader.allocated(); }
+//  bool                    empty           ()const                     { return mem_reader.empty(); }
 //};
 
 class IWriteBlock
@@ -76,29 +76,29 @@ protected:
 public:
     IWriteBlock(size_t _size) : size(_size) {}
     virtual bool save_to(LPCSTR fn) = 0;
-    //	virtual size_t		tell		() 								=0;
-    //	virtual	u8*		pointer		()								=0;
+    //  virtual size_t      tell        ()                              =0;
+    //  virtual u8*     pointer     ()                              =0;
     virtual void w(const void* ptr, size_t count) = 0;
     virtual void send(IGenericStream* _stream) = 0;
     virtual size_t rest() = 0;
 };
 
 class CMemoryWriteBlock
-//:	public IWriteBlock
+//: public IWriteBlock
 {
-    // CMemoryWriter	mem_writer;
+    // CMemoryWriter    mem_writer;
     u8* buffer;
     const size_t buffer_size;
 
-    //	u8*				data;
+    //  u8*             data;
     size_t position;
 
-    //	size_t				mem_size;
-    //	size_t				file_size;
+    //  size_t              mem_size;
+    //  size_t              file_size;
 
 public:
     CMemoryWriteBlock(u8* _buffer, size_t _size) : buffer(_buffer), buffer_size(_size), position(0) {}
-    //	 bool			save_to				(LPCSTR fn)						{ return mem_writer.save_to(fn); }
+    //   bool           save_to             (LPCSTR fn)                     { return mem_writer.save_to(fn); }
     void send(IGenericStream* _stream);
     size_t rest() { return buffer_size - tell(); }
     void w(const void* ptr, size_t count);
@@ -113,10 +113,10 @@ private:
 
 class CFileWriteBlock : public IWriteBlock
 {
-    //	IWriter								*file;
+    //  IWriter                             *file;
     FILE* file;
     FILE* file_map;
-    //	CVirtualFileRW						*file_map					;
+    //  CVirtualFileRW                      *file_map                   ;
     LPCSTR file_name;
     bool reopen;
 
@@ -127,8 +127,8 @@ public:
     void send(IGenericStream* _stream) override;
     size_t rest() override;
     void w_close();
-    //	virtual size_t		tell			() 							;
-    //	virtual	u8*		pointer			()							;
+    //  virtual size_t      tell            ()                          ;
+    //  virtual u8*     pointer         ()                          ;
     void w(const void* ptr, size_t count) override;
 };
 
@@ -152,13 +152,13 @@ public:
         VERIFY(false);
         return 0;
     };
-    // IC void			seek		(size_t ptr)		{	VERIFY(false); }
+    // IC void          seek        (size_t ptr)        {   VERIFY(false); }
     IC size_t length() const
     {
         VERIFY(false);
         return 0;
     };
-    //	IC void*		pointer		()	const		{	VERIFY(false); return 0; 	};
+    //  IC void*        pointer     ()  const       {   VERIFY(false); return 0;    };
     IC void advance(size_t cnt) { VERIFY(false); }
     void r(void* p, size_t cnt) override = 0;
 
@@ -188,7 +188,7 @@ class XRLC_LIGHT_API INetBuffWriter : public IWriter, public byte_count
 {
 protected:
     IWriteBlock* mem_writter;
-    // CMemoryWriteBlock		mem_writter;
+    // CMemoryWriteBlock        mem_writter;
 private:
     virtual void seek(size_t pos) { VERIFY(false); }
 
@@ -212,7 +212,7 @@ public:
     virtual void save_buffer(LPCSTR fn) const;
 };
 class XRLC_LIGHT_API INetMemoryBuffWriter : public IWriter, public byte_count
-//	public INetBuffWriter
+//  public INetBuffWriter
 {
     IGenericStream* stream;
     size_t net_block_write_data_size;
@@ -227,7 +227,7 @@ public:
     ~INetMemoryBuffWriter();
 
 private:
-    //	void					create_block			();
+    //  void                    create_block            ();
     void w(const void* ptr, size_t count);
     void send_and_clear();
 
@@ -293,8 +293,8 @@ public:
     virtual ~INetBlockReader();
 
 private:
-    //	size_t				_block_size;
-    //	u8				*&_buffer;
+    //  size_t              _block_size;
+    //  u8              *&_buffer;
     void create_block(size_t size);
     typedef INetReader inherited;
 };
@@ -303,7 +303,7 @@ private:
 
 class CGenStreamOnFile : public IGenericStream
 {
-    // FILE					*file;
+    // FILE                 *file;
     CVirtualFileRW* file;
 
 public:

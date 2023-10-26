@@ -8,7 +8,7 @@ class XRUICORE_API CUIProgressBar final : public CUIWindow
     typedef CUIWindow inherited;
 
 protected:
-    //	bool				m_bIsHorizontal;
+    //  bool                m_bIsHorizontal;
     enum EOrientMode
     {
         om_horz = 0,

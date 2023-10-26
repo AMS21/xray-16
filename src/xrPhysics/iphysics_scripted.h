@@ -10,7 +10,7 @@ public:
     virtual ~iphysics_game_scripted() = default;
     virtual iphysics_scripted& iphysics_impl() = 0;
     // protected:
-    //	virtual						~iphysics_game_scripted ()	=0 {}
+    //  virtual                     ~iphysics_game_scripted ()  =0 {}
 };
 
 class XR_NOVTABLE iphysics_scripted
@@ -24,7 +24,7 @@ public:
 class XR_NOVTABLE iphysics_scripted_class
 {
 public:
-    // virtual	~iphysics_scripted_class		()	= 0;
+    // virtual  ~iphysics_scripted_class        ()  = 0;
     virtual iphysics_scripted& get_scripted() = 0;
 
 protected:

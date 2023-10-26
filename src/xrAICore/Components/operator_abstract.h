@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: operator_abstract.h
-//	Created 	: 24.02.2004
-//  Modified 	: 24.02.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Operator abstract
+//  Module      : operator_abstract.h
+//  Created     : 24.02.2004
+//  Modified    : 24.02.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Operator abstract
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

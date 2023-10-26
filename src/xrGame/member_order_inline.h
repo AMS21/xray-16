@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: member_order_inline.h
-//	Created 	: 26.05.2004
-//  Modified 	: 26.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Member order inline functions
+//  Module      : member_order_inline.h
+//  Created     : 26.05.2004
+//  Modified    : 26.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Member order inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

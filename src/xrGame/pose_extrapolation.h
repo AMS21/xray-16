@@ -51,7 +51,7 @@ private:
 private:
 private:
     static const u16 point_num = 2;
-    // typedef boost::array<pose,3>	container;
+    // typedef boost::array<pose,3> container;
     typedef CCycleConstStorage<extrapolation::point, point_num> container;
 
 private:

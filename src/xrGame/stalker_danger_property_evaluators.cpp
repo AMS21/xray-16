@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_danger_property_evaluators.cpp
-//	Created 	: 31.05.2005
-//  Modified 	: 31.05.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker danger property evaluators classes
+//  Module      : stalker_danger_property_evaluators.cpp
+//  Created     : 31.05.2005
+//  Modified    : 31.05.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker danger property evaluators classes
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -90,9 +90,9 @@ _value_type CStalkerPropertyEvaluatorDangerInDirection::evaluate()
     case CDangerObject::eDangerTypeEntityAttacked:
     case CDangerObject::eDangerTypeAttacked:
     // fakes, temporarily
-    //		case CDangerObject::eDangerTypeBulletRicochet :
-    //		case CDangerObject::eDangerTypeEntityDeath :
-    //		case CDangerObject::eDangerTypeFreshEntityCorpse :
+    //      case CDangerObject::eDangerTypeBulletRicochet :
+    //      case CDangerObject::eDangerTypeEntityDeath :
+    //      case CDangerObject::eDangerTypeFreshEntityCorpse :
     case CDangerObject::eDangerTypeEnemySound: return (true);
     default: return (false);
     };
@@ -132,7 +132,7 @@ _value_type CStalkerPropertyEvaluatorDangerBySound::evaluate()
         return (false);
 
     return (false);
-    //	return				(CDangerObject::eDangerTypeEnemySound == m_object->memory().danger().selected()->type());
+    //  return              (CDangerObject::eDangerTypeEnemySound == m_object->memory().danger().selected()->type());
 }
 
 //////////////////////////////////////////////////////////////////////////

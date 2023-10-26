@@ -55,7 +55,7 @@ public:
     BattlEyeClient* client;
     BattlEyeServer* server;
 
-    //-	int					auto_update;
+    //- int                 auto_update;
 
 }; // class BattlEyeSystem
 

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: state_adapter.h
-//	Created 	: 23.04.2008
-//  Modified 	: 23.04.2008
-//	Author		: Lain
-//	Description : encircle state
+//  Module      : state_adapter.h
+//  Created     : 23.04.2008
+//  Modified    : 23.04.2008
+//  Author      : Lain
+//  Description : encircle state
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef GROUP_STATE_ADAPTER_H_INCLUDED

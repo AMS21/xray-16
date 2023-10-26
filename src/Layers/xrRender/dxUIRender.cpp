@@ -36,8 +36,8 @@ void dxUIRender::StartTriList(u32 iMaxVerts)
     VERIFY(PrimitiveType==ptNone);
     m_PointType = pttLIT;
     m_iMaxVerts = iMaxVerts;
-    start_pv	= (FVF::LIT*)RImplementation.Vertex.Lock	(m_iMaxVerts,hGeom_fan.stride(),vOffset);
-    pv			= start_pv;
+    start_pv    = (FVF::LIT*)RImplementation.Vertex.Lock    (m_iMaxVerts,hGeom_fan.stride(),vOffset);
+    pv          = start_pv;
     PrimitiveType = ptTriList;
 }
 
@@ -46,10 +46,10 @@ void dxUIRender::FlushTriList()
     VERIFY(PrimitiveType==ptTriList);
     VERIFY(u32(pv-start_pv)<=m_iMaxVerts);
 
-    std::ptrdiff_t p_cnt		= (pv-start_pv)/3;
-    RImplementation.Vertex.Unlock		(u32(pv-start_pv),hGeom_fan.stride());
-    RCache.set_Geometry			(hGeom_fan);
-    if (p_cnt!=0)RCache.Render	(D3DPT_TRIANGLELIST,vOffset,u32(p_cnt));
+    std::ptrdiff_t p_cnt        = (pv-start_pv)/3;
+    RImplementation.Vertex.Unlock       (u32(pv-start_pv),hGeom_fan.stride());
+    RCache.set_Geometry         (hGeom_fan);
+    if (p_cnt!=0)RCache.Render  (D3DPT_TRIANGLELIST,vOffset,u32(p_cnt));
 
     PrimitiveType = ptNone;
 }
@@ -58,10 +58,10 @@ void dxUIRender::StartTriFan(u32 iMaxVerts)
 {
     VERIFY(PrimitiveType==ptNone);
     m_iMaxVerts = iMaxVerts;
-    start_pv	= (FVF::LIT*)RImplementation.Vertex.Lock	(m_iMaxVerts,hGeom_fan.stride(),vOffset);
-    pv			= start_pv;
+    start_pv    = (FVF::LIT*)RImplementation.Vertex.Lock    (m_iMaxVerts,hGeom_fan.stride(),vOffset);
+    pv          = start_pv;
     PrimitiveType = ptTriFan;
-    m_PointType	= pttLIT;
+    m_PointType = pttLIT;
 
 }
 
@@ -70,10 +70,10 @@ void dxUIRender::FlushTriFan()
     VERIFY(PrimitiveType==ptTriFan);
     VERIFY(u32(pv-start_pv)<=m_iMaxVerts);
 
-    std::ptrdiff_t p_cnt		= pv-start_pv;
-    RImplementation.Vertex.Unlock		(u32(p_cnt),hGeom_fan.stride());
-    RCache.set_Geometry	 		(hGeom_fan);
-    if (p_cnt>2) RCache.Render	(D3DPT_TRIANGLEFAN,vOffset,u32(p_cnt-2));
+    std::ptrdiff_t p_cnt        = pv-start_pv;
+    RImplementation.Vertex.Unlock       (u32(p_cnt),hGeom_fan.stride());
+    RCache.set_Geometry         (hGeom_fan);
+    if (p_cnt>2) RCache.Render  (D3DPT_TRIANGLEFAN,vOffset,u32(p_cnt-2));
 
     PrimitiveType = ptNone;
 }
@@ -82,8 +82,8 @@ void dxUIRender::StartTriStrip(u32 iMaxVerts)
 {
     VERIFY(PrimitiveType==ptNone);
     m_iMaxVerts = iMaxVerts;
-    start_pv	= (FVF::TL*)RImplementation.Vertex.Lock	(m_iMaxVerts,hGeom_fan.stride(),vOffset);
-    pv			= start_pv;
+    start_pv    = (FVF::TL*)RImplementation.Vertex.Lock (m_iMaxVerts,hGeom_fan.stride(),vOffset);
+    pv          = start_pv;
     PrimitiveType = ptTriStrip;
 }
 
@@ -96,8 +96,8 @@ void dxUIRender::StartLineStrip(u32 iMaxVerts)
 {
     VERIFY(PrimitiveType==ptNone);
     m_iMaxVerts = iMaxVerts;
-    start_pv	= (FVF::LIT*)RImplementation.Vertex.Lock	(m_iMaxVerts,hGeom_fan.stride(),vOffset);
-    pv			= start_pv;
+    start_pv    = (FVF::LIT*)RImplementation.Vertex.Lock    (m_iMaxVerts,hGeom_fan.stride(),vOffset);
+    pv          = start_pv;
     PrimitiveType = ptLineStrip;
     m_PointType = pttLIT;
 }
@@ -107,10 +107,10 @@ void dxUIRender::FlushLineStrip()
     VERIFY(PrimitiveType==ptLineStrip);
     VERIFY(u32(pv-start_pv)<=m_iMaxVerts);
 
-    std::ptrdiff_t p_cnt		= pv-start_pv;
-    RImplementation.Vertex.Unlock		(u32(p_cnt),hGeom_fan.stride());
-    RCache.set_Geometry	 		(hGeom_fan);
-    if (p_cnt>1) RCache.Render	(D3DPT_LINESTRIP,vOffset,u32(p_cnt-1));
+    std::ptrdiff_t p_cnt        = pv-start_pv;
+    RImplementation.Vertex.Unlock       (u32(p_cnt),hGeom_fan.stride());
+    RCache.set_Geometry         (hGeom_fan);
+    if (p_cnt>1) RCache.Render  (D3DPT_LINESTRIP,vOffset,u32(p_cnt-1));
 
     PrimitiveType = ptNone;
 }
@@ -119,8 +119,8 @@ void dxUIRender::StartLineList(u32 iMaxVerts)
 {
     VERIFY(PrimitiveType==ptNone);
     m_iMaxVerts = iMaxVerts;
-    start_pv	= (FVF::LIT*)RImplementation.Vertex.Lock	(m_iMaxVerts,hGeom_fan.stride(),vOffset);
-    pv			= start_pv;
+    start_pv    = (FVF::LIT*)RImplementation.Vertex.Lock    (m_iMaxVerts,hGeom_fan.stride(),vOffset);
+    pv          = start_pv;
     PrimitiveType = ptLineList;
 }
 
@@ -129,10 +129,10 @@ void dxUIRender::FlushLineList()
     VERIFY(PrimitiveType==ptLineList);
     VERIFY(u32(pv-start_pv)<=m_iMaxVerts);
 
-    std::ptrdiff_t p_cnt		= pv-start_pv;
-    RImplementation.Vertex.Unlock		(u32(p_cnt),hGeom_fan.stride());
-    RCache.set_Geometry	 		(hGeom_fan);
-    if (p_cnt>1) RCache.Render	(D3DPT_LINELIST,vOffset,u32(p_cnt)/2);
+    std::ptrdiff_t p_cnt        = pv-start_pv;
+    RImplementation.Vertex.Unlock       (u32(p_cnt),hGeom_fan.stride());
+    RCache.set_Geometry         (hGeom_fan);
+    if (p_cnt>1) RCache.Render  (D3DPT_LINELIST,vOffset,u32(p_cnt)/2);
 
     PrimitiveType = ptNone;
 }
@@ -142,9 +142,9 @@ void dxUIRender::SetScissor(Irect* rect)
 #if (RENDER == R_R3) || (RENDER == R_R4)
     RCache.set_Scissor(rect);
     RCache.StateManager.OverrideScissoring(rect ? true : false, TRUE);
-#else //	(RENDER == R_R3) || (RENDER == R_R4)
+#else //    (RENDER == R_R3) || (RENDER == R_R4)
     RCache.set_Scissor(rect);
-#endif //	(RENDER == R_R3) || (RENDER == R_R4)
+#endif //   (RENDER == R_R3) || (RENDER == R_R4)
 }
 
 void dxUIRender::GetActiveTextureResolution(Fvector2& res)
@@ -185,7 +185,7 @@ void dxUIRender::PushPoint(int x, int y, u32 c, float u, float v)
 
 void dxUIRender::PushPoint(float x, float y, float z, u32 C, float u, float v)
 {
-    //.	VERIFY(m_PointType==pttLIT);
+    //. VERIFY(m_PointType==pttLIT);
     switch (m_PointType)
     {
     case pttLIT:
@@ -203,7 +203,7 @@ void dxUIRender::StartPrimitive(u32 iMaxVerts, ePrimitiveType primType, ePointTy
 {
     VERIFY(PrimitiveType == ptNone);
     VERIFY(m_PointType == pttNone);
-    //.	R_ASSERT(pointType==pttLIT);
+    //. R_ASSERT(pointType==pttLIT);
 
     m_iMaxVerts = iMaxVerts;
     PrimitiveType = primType;
@@ -247,7 +247,7 @@ void dxUIRender::FlushPrimitive()
     default: NODEFAULT;
     }
 
-    //	Update data for primitive type
+    //  Update data for primitive type
     switch (PrimitiveType)
     {
     case ptTriStrip:

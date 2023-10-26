@@ -72,8 +72,8 @@ CParticlesObject::~CParticlesObject()
 {
     VERIFY(0 == mt_dt);
 
-    //	we do not need this since CPS_Instance does it
-    //	shedule_unregister		();
+    //  we do not need this since CPS_Instance does it
+    //  shedule_unregister      ();
 }
 
 void CParticlesObject::UpdateSpatial()
@@ -81,7 +81,7 @@ void CParticlesObject::UpdateSpatial()
     if (GEnv.isDedicatedServer)
         return;
 
-    // spatial	(+ workaround occasional bug inside particle-system)
+    // spatial  (+ workaround occasional bug inside particle-system)
     vis_data& vis = renderable.visual->getVisData();
     if (_valid(vis.sphere))
     {
@@ -182,7 +182,7 @@ void CParticlesObject::shedule_Update(u32 _dt)
     if (dt)
     {
         if (0)
-        { //.psDeviceFlags.test(mtParticles))	{    //. AlexMX comment this line// NO UNCOMMENT - DON'T WORK PROPERLY
+        { //.psDeviceFlags.test(mtParticles))   {    //. AlexMX comment this line// NO UNCOMMENT - DON'T WORK PROPERLY
             mt_dt = dt;
             fastdelegate::FastDelegate0<> delegate(this, &CParticlesObject::PerformAllTheWork_mt);
             Device.seqParallel.push_back(delegate);

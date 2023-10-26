@@ -79,8 +79,8 @@ void CUITextBanner::Out(float x, float y, const char* fmt, ...)
     R_ASSERT(m_pFont);
     m_pFont->SetColor(m_Cl);
     m_pFont->SetAligment(aligment);
-    //	if(fontSize>0.0f)
-    //		m_pFont->SetHeight(fontSize);
+    //  if(fontSize>0.0f)
+    //      m_pFont->SetHeight(fontSize);
 
     Fvector2 pos;
     UI()->ClientToScreenScaled(pos, x, y);

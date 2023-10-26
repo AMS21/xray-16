@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_editor_file_name.cpp
-//	Created 	: 07.12.2007
-//  Modified 	: 11.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property editor file name class
+//  Module      : property_editor_file_name.cpp
+//  Created     : 07.12.2007
+//  Modified    : 11.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property editor file name class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"
@@ -71,7 +71,7 @@ Object ^
     String ^ default_extension = real_value->default_extension()->ToLower();
     m_dialog->DefaultExt = default_extension;
     m_dialog->Filter = real_value->filter();
-    //	m_dialog->InitialDirectory				= real_value->initial_directory();
+    //  m_dialog->InitialDirectory              = real_value->initial_directory();
     m_dialog->Title = real_value->title();
     String ^ initial_directory = System::IO::Path::GetFullPath(real_value->initial_directory()->ToLower());
     String ^ string_value = safe_cast<System::String ^>(value);

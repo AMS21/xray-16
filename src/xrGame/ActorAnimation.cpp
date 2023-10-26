@@ -231,7 +231,7 @@ void SActorMotions::Create(IKinematicsAnimated* V)
 
     m_normal.Create(V, "norm");
     m_crouch.Create(V, "cr");
-    // m_climb.Create	(V,"cr");
+    // m_climb.Create   (V,"cr");
     m_climb.CreateClimb(V);
     m_sprint.Create(V);
 }
@@ -615,7 +615,7 @@ void CActor::g_SetAnimation(u32 mstate_rl)
 
         IKinematicsAnimated* ka = smart_cast<IKinematicsAnimated*>(Visual());
         m_current_legs_blend = PlayMotionByParts(ka, M_legs, TRUE, legs_play_callback, this);
-        //		m_current_legs_blend		=
+        //      m_current_legs_blend        =
         // smart_cast<IKinematicsAnimated*>(Visual())->PlayCycle(M_legs,TRUE,legs_play_callback,this);
 
         if ((!(mstate_old & mcAnyMove)) && (mstate_real & mcAnyMove))

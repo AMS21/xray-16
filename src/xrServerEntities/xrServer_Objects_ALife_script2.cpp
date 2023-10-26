@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: xrServer_Objects_ALife_script2.cpp
-//	Created 	: 19.09.2002
-//  Modified 	: 04.06.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Server objects for ALife simulator, script export, the second part
+//  Module      : xrServer_Objects_ALife_script2.cpp
+//  Created     : 19.09.2002
+//  Modified    : 04.06.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Server objects for ALife simulator, script export, the second part
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

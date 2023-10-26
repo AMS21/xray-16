@@ -116,26 +116,26 @@ struct OGF : public OGF_Base
     u32 material;
     vecOGF_T textures;
     /*
-        vecOGF_V			vertices	;
-        vecOGF_F			faces		;
+        vecOGF_V            vertices    ;
+        vecOGF_F            faces       ;
 
         // fast-vertices
-        vec_XV				x_vertices	;
-        vecOGF_F			x_faces		;
+        vec_XV              x_vertices  ;
+        vecOGF_F            x_faces     ;
 
         // Progressive
-        FSlideWindowItem	m_SWI		;		// The records of the collapses.
-        FSlideWindowItem	x_SWI		;		// The records of the collapses / fast-path
+        FSlideWindowItem    m_SWI       ;       // The records of the collapses.
+        FSlideWindowItem    x_SWI       ;       // The records of the collapses / fast-path
     */
     // for build only
     u32 dwRelevantUV;
     u32 dwRelevantUVMASK;
     /*
-        u32					vb_id	,	xvb_id;
-        u32					vb_start,	xvb_start;
-        u32					ib_id	,	xib_id;
-        u32					ib_start,	xib_start;
-        u32					sw_id	,	xsw_id;
+        u32                 vb_id   ,   xvb_id;
+        u32                 vb_start,   xvb_start;
+        u32                 ib_id   ,   xib_id;
+        u32                 ib_start,   xib_start;
+        u32                 sw_id   ,   xsw_id;
     */
 
     template <typename t_vertices>
@@ -194,12 +194,12 @@ struct OGF : public OGF_Base
     virtual void PreSave(u32 tree_id);
     virtual void Save(IWriter& fs);
 
-    //	void				Save_Cached		(IWriter &fs, ogf_header& H, BOOL bColors);
+    //  void                Save_Cached     (IWriter &fs, ogf_header& H, BOOL bColors);
 
     void Save_Normal_PM(IWriter& fs, ogf_header& H, BOOL bColors);
     void Load_Normal_PM(IReader& fs, ogf_header& H, BOOL bColors);
 
-    //	void				Save_Progressive(IWriter &fs, ogf_header& H, BOOL bColors);
+    //  void                Save_Progressive(IWriter &fs, ogf_header& H, BOOL bColors);
 
     virtual void GetGeometry(xr_vector<Fvector>& R)
     {

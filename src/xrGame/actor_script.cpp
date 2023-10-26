@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: actor_script.cpp
-//	Created 	: 17.01.2008
-//  Modified 	: 17.01.2008
-//	Author		: Dmitriy Iassenev
-//	Description : actor script export
+//  Module      : actor_script.cpp
+//  Created     : 17.01.2008
+//  Modified    : 17.01.2008
+//  Author      : Dmitriy Iassenev
+//  Description : actor script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

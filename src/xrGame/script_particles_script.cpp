@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_sound_script.cpp
-//	Created 	: 06.02.2004
-//  Modified 	: 06.02.2004
-//	Author		: Dmitriy Iassenev
-//	Description : XRay Script sound class script export
+//  Module      : script_sound_script.cpp
+//  Created     : 06.02.2004
+//  Modified    : 06.02.2004
+//  Author      : Dmitriy Iassenev
+//  Description : XRay Script sound class script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -31,9 +31,9 @@ SCRIPT_EXPORT(CScriptParticles, (),
 
             .def("move_to", &CScriptParticles::MoveTo)
 
-            .def("set_direction",	 &CScriptParticles::SetDirection)
+            .def("set_direction",    &CScriptParticles::SetDirection)
             .def("set_orientation", &CScriptParticles::SetOrientation)
-            .def("last_position",	 &CScriptParticles::LastPosition)	
+            .def("last_position",    &CScriptParticles::LastPosition)   
 
             .def("load_path", &CScriptParticles::LoadPath)
             .def("start_path", &CScriptParticles::StartPath)

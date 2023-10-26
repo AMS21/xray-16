@@ -152,7 +152,7 @@ void profile_store::load_profile(store_operation_cb progress_indicator_cb)
     merge_fields(m_best_scores_store->get_field_names(), m_awards_store->get_field_names());
 
     m_progress_indicator(true, "mp_loading_awards");
-    // m_progress_indicator		(true, "mp_loading_best_scores"); - merged
+    // m_progress_indicator     (true, "mp_loading_best_scores"); - merged
     Engine.Sheduler.Register(this, FALSE);
     load_profile_fields();
 }

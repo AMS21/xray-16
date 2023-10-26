@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_simulator_base2.cpp
-//	Created 	: 25.12.2002
-//  Modified 	: 12.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALife Simulator base class
+//  Module      : alife_simulator_base2.cpp
+//  Created     : 25.12.2002
+//  Modified    : 12.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALife Simulator base class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -78,7 +78,7 @@ void CALifeSimulatorBase::unregister_object(CSE_ALifeDynamicObject* object, bool
     }
     else if (object->ID_Parent == 0xffff)
     {
-        //			if (object->used_ai_locations())
+        //          if (object->used_ai_locations())
         graph().level().remove(object, !object->used_ai_locations());
     }
 }

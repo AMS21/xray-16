@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Created		: 27.03.2009
-//	Author		: Konstantin Slipchenko
-//	Copyright (C) GSC Game World - 2009
+//  Created     : 27.03.2009
+//  Author      : Konstantin Slipchenko
+//  Copyright (C) GSC Game World - 2009
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
@@ -18,8 +18,8 @@ void net_global_data_impl<gl_detail_cl_data>::init()
 
 void net_global_data_impl<gl_detail_cl_data>::create_data_file(LPCSTR path)
 {
-    // FPU::m64r			();
-    // Memory.mem_compact	();
+    // FPU::m64r            ();
+    // Memory.mem_compact   ();
     // if(!write_faces)
     // inlc_global_data()->create_write_faces();
     Logger.clMsg("gl_detail_cl_data:  start");
@@ -36,8 +36,8 @@ bool net_global_data_impl<gl_detail_cl_data>::create_data(LPCSTR path)
     INetReaderFile r_global(path);
 
     gl_data.read(r_global);
-    // FPU::m64r			();
-    // Memory.mem_compact	();
+    // FPU::m64r            ();
+    // Memory.mem_compact   ();
     return true;
 }
 void net_global_data_impl<gl_detail_cl_data>::destroy_data()

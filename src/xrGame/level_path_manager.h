@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: level_path_manager.h
-//	Created 	: 02.10.2001
-//  Modified 	: 12.11.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Level path manager
+//  Module      : level_path_manager.h
+//  Created     : 02.10.2001
+//  Modified    : 12.11.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Level path manager
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

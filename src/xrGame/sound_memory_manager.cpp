@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: sound_memory_manager.cpp
-//	Created 	: 02.10.2001
-//  Modified 	: 19.11.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Sound memory manager
+//  Module      : sound_memory_manager.cpp
+//  Created     : 02.10.2001
+//  Modified    : 19.11.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Sound memory manager
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -182,11 +182,11 @@ void CSoundMemoryManager::feel_sound_new(
         {
             if (object)
             {
-                //				bool		is_shooting = is_sound_type(sound_type,SOUND_TYPE_WEAPON_SHOOTING);
-                //				bool		is_colliding = is_sound_type(sound_type,SOUND_TYPE_WORLD_OBJECT_COLLIDING);
-                //				bool		very_close = m_stalker->Position().distance_to_sqr(object->Position()) <=
+                //              bool        is_shooting = is_sound_type(sound_type,SOUND_TYPE_WEAPON_SHOOTING);
+                //              bool        is_colliding = is_sound_type(sound_type,SOUND_TYPE_WORLD_OBJECT_COLLIDING);
+                //              bool        very_close = m_stalker->Position().distance_to_sqr(object->Position()) <=
                 // COMBAT_SOUND_PERCEIVE_RADIUS_SQR;
-                //				if (is_shooting || is_colliding || very_close)
+                //              if (is_shooting || is_colliding || very_close)
                 add(object, sound_type, position, sound_power);
             }
         }

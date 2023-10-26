@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: static_obstacles_avoider.h
-//	Created 	: 16.05.2007
-//  Modified 	: 16.05.2007
-//	Author		: Dmitriy Iassenev
-//	Description : static obstacles avoider
+//  Module      : static_obstacles_avoider.h
+//  Created     : 16.05.2007
+//  Modified    : 16.05.2007
+//  Author      : Dmitriy Iassenev
+//  Description : static obstacles avoider
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

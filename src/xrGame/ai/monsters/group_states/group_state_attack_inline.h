@@ -340,10 +340,10 @@ TEMPLATE_SPECIALIZATION
 bool CStateGroupAttackAbstract::check_home_point()
 {
     // Lain: intentionally
-    // 	if ( object->Home->is_aggressive() )
-    // 	{
-    // 		return false;
-    // 	}
+    //  if ( object->Home->is_aggressive() )
+    //  {
+    //      return false;
+    //  }
 
     if (this->prev_substate != eStateAttack_MoveToHomePoint)
     {

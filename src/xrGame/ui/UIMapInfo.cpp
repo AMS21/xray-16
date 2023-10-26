@@ -16,7 +16,7 @@ void CUIMapInfo::InitMapInfo(Fvector2 pos, Fvector2 size)
 {
     SetWndPos(pos);
     SetWndSize(size);
-    //.	m_view->SetWndPos(pos);
+    //. m_view->SetWndPos(pos);
     m_view->SetWndSize(size);
     m_view->InitScrollView();
     m_view->SetFixedScrollBar(false);

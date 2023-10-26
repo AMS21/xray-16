@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: path_manager_solver.h
-//	Created 	: 21.03.2002
-//  Modified 	: 03.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Solver path manager
+//  Module      : path_manager_solver.h
+//  Created     : 21.03.2002
+//  Modified    : 03.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Solver path manager
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

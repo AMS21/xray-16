@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ef_pattern.h
-//	Created 	: 25.03.2002
-//  Modified 	: 11.10.2002
-//	Author		: Dmitriy Iassenev
-//	Description : Pattern based evaluation functions trained by supervised learning
+//  Module      : ef_pattern.h
+//  Created     : 25.03.2002
+//  Modified    : 11.10.2002
+//  Author      : Dmitriy Iassenev
+//  Description : Pattern based evaluation functions trained by supervised learning
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

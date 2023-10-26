@@ -37,7 +37,7 @@
 #define EFFECTOR_RADIUS 30.f
 const u16 TEST_RAYS_PER_OBJECT = 5;
 const u16 BLASTED_OBJ_PROCESSED_PER_FRAME = 3;
-const float exp_dist_extinction_factor = 3.f; //(>1.f, 1.f -means no dist change of exp effect)	on the dist of
+const float exp_dist_extinction_factor = 3.f; //(>1.f, 1.f -means no dist change of exp effect) on the dist of
 // m_fBlastRadius exp. wave effect in exp_dist_extinction_factor times less
 // than maximum
 
@@ -57,9 +57,9 @@ CExplosive::CExplosive(void)
 
     m_iCurrentParentID = 0xffff;
 
-    //	m_bReadyToExplode		= false;
-    //	m_bExploding			= false;
-    //	m_bExplodeEventSent		= false;
+    //  m_bReadyToExplode       = false;
+    //  m_bExploding            = false;
+    //  m_bExplodeEventSent     = false;
     m_explosion_flags.assign(0);
     m_vExplodeSize.set(0.001f, 0.001f, 0.001f);
 
@@ -115,17 +115,17 @@ void CExplosive::Load(CInifile const* ini, LPCSTR section)
     //трассы для разлета осколков
     m_fFragmentSpeed = ini->r_float(section, "fragment_speed");
 
-	//Alundaio: LAYERED_SND_SHOOT
-	m_layered_sounds.LoadSound(ini, section, "snd_explode", "sndExplode", false, m_eSoundExplode);
+    //Alundaio: LAYERED_SND_SHOOT
+    m_layered_sounds.LoadSound(ini, section, "snd_explode", "sndExplode", false, m_eSoundExplode);
 
     m_fExplodeDurationMax = ini->r_float(section, "explode_duration");
 
     effector.effect_sect_name = ini->r_string("explode_effector", "effect_sect_name");
-    //	if( ini->line_exist(section,"wallmark_section") )
-    //	{
+    //  if( ini->line_exist(section,"wallmark_section") )
+    //  {
     m_wallmark_manager.m_owner = cast_game_object();
-    //		m_wallmark_manager.Load(pSettings,ini->r_string(section,"wallmark_section"));
-    //	}
+    //      m_wallmark_manager.Load(pSettings,ini->r_string(section,"wallmark_section"));
+    //  }
 
     m_bHideInExplosion = TRUE;
     if (ini->line_exist(section, "hide_in_explosion"))
@@ -339,7 +339,7 @@ void CExplosive::Explode()
         DBG_DrawPoint(pos, 0.3f, color_xrgb(255, 0, 0));
     }
 #endif
-    //	Msg("---------CExplosive Explode [%d] frame[%d]",cast_game_object()->ID(), Device.dwFrame);
+    //  Msg("---------CExplosive Explode [%d] frame[%d]",cast_game_object()->ID(), Device.dwFrame);
     OnBeforeExplosion();
 
     //играем звук взрыва
@@ -388,7 +388,7 @@ void CExplosive::Explode()
         CCartridge cartridge;
         cartridge.param_s.kDist = 1.f;
         cartridge.param_s.kHit = 1.f;
-        //.		cartridge.param_s.kCritical			= 1.f;
+        //.     cartridge.param_s.kCritical         = 1.f;
         cartridge.param_s.kImpulse = 1.f;
         cartridge.param_s.kAP = 1.f;
         cartridge.param_s.fWallmarkSize = fWallmarkSize;
@@ -413,7 +413,7 @@ void CExplosive::Explode()
     for (u32 o_it = 0; o_it < ISpatialResult.size(); o_it++)
     {
         ISpatial* spatial = ISpatialResult[o_it];
-        //		feel_touch_new(spatial->dcast_GameObject());
+        //      feel_touch_new(spatial->dcast_GameObject());
 
         CPhysicsShellHolder* pGameObject = smart_cast<CPhysicsShellHolder*>(spatial->dcast_GameObject());
         if (pGameObject && cast_game_object()->ID() != pGameObject->ID())
@@ -432,7 +432,7 @@ void CExplosive::Explode()
     }
 #endif
     //////////////////////////////////////////////////////////////////////////
-    // Explode Effector	//////////////
+    // Explode Effector //////////////
     CGameObject* GO = smart_cast<CGameObject*>(Level().CurrentEntity());
     CActor* pActor = smart_cast<CActor*>(GO);
     if (pActor)
@@ -486,7 +486,7 @@ void CExplosive::UpdateCL()
 
         StopLight();
 
-        //		Msg("---------CExplosive OnAfterExplosion [%d] frame[%d]",cast_game_object()->ID(), Device.dwFrame);
+        //      Msg("---------CExplosive OnAfterExplosion [%d] frame[%d]",cast_game_object()->ID(), Device.dwFrame);
     }
     else
     {
@@ -528,10 +528,10 @@ void CExplosive::OnAfterExplosion()
     if (cast_game_object()->Local())
         cast_game_object()->DestroyObject();
 
-    //	NET_Packet			P;
-    //	cast_game_object()->u_EventGen			(P,GE_DESTROY,cast_game_object()->ID());
-    //	//		Msg					("ge_destroy: [%d] - %s",ID(),*cName());
-    //	if (cast_game_object()->Local()) cast_game_object()->u_EventSend			(P);
+    //  NET_Packet          P;
+    //  cast_game_object()->u_EventGen          (P,GE_DESTROY,cast_game_object()->ID());
+    //  //      Msg                 ("ge_destroy: [%d] - %s",ID(),*cName());
+    //  if (cast_game_object()->Local()) cast_game_object()->u_EventSend            (P);
 }
 void CExplosive::OnBeforeExplosion()
 {
@@ -539,7 +539,7 @@ void CExplosive::OnBeforeExplosion()
     if (m_bHideInExplosion)
     {
         HideExplosive();
-        //	Msg("---------CExplosive OnBeforeExplosion setVisible(false) [%d] frame[%d]",cast_game_object()->ID(),
+        //  Msg("---------CExplosive OnBeforeExplosion setVisible(false) [%d] frame[%d]",cast_game_object()->ID(),
         // Device.dwFrame);
     }
 }
@@ -595,8 +595,8 @@ void CExplosive::GenExplodeEvent(const Fvector& pos, const Fvector& normal)
     if (OnClient() || cast_game_object()->Remote())
         return;
 
-    //	if( m_bExplodeEventSent )
-    //		return;
+    //  if( m_bExplodeEventSent )
+    //      return;
     VERIFY(!m_explosion_flags.test(flExplodEventSent)); //! m_bExplodeEventSent
     VERIFY(0xffff != Initiator());
 
@@ -639,7 +639,7 @@ void CExplosive::StartLight()
     VERIFY(!physics_world()->Processing());
     if (m_fLightTime > 0)
     {
-        //		VERIFY					(!m_pLight);
+        //      VERIFY                  (!m_pLight);
         LightCreate();
 
         m_pLight->set_color(m_LightColor.r, m_LightColor.g, m_LightColor.b);
@@ -703,15 +703,15 @@ void CExplosive::ExplodeWaveProcessObject(collide::rq_results& storage, CPhysics
         l_dir.mul(1.f / rmag); //перенормировка
         NET_Packet P;
         SHit HS;
-        HS.GenHeader(GE_HIT, l_pGO->ID()); //		cast_game_object()->u_EventGen		(P,GE_HIT,l_pGO->ID());
-        HS.whoID = Initiator(); //		P.w_u16			(Initiator());
-        HS.weaponID = cast_game_object()->ID(); //		P.w_u16			(cast_game_object()->ID());
-        HS.dir = l_dir; //		P.w_dir			(l_dir);
-        HS.power = l_hit; //		P.w_float		(l_hit);
-        HS.p_in_bone_space = l_goPos; //		P.w_vec3		(l_goPos);
-        HS.impulse = l_impuls; //		P.w_float		(l_impuls);
-        HS.hit_type = (m_eHitTypeBlast); //		P.w_u16			(u16(m_eHitTypeBlast));
-        HS.boneID = 0; //		P.w_s16			(0);
+        HS.GenHeader(GE_HIT, l_pGO->ID()); //       cast_game_object()->u_EventGen      (P,GE_HIT,l_pGO->ID());
+        HS.whoID = Initiator(); //      P.w_u16         (Initiator());
+        HS.weaponID = cast_game_object()->ID(); //      P.w_u16         (cast_game_object()->ID());
+        HS.dir = l_dir; //      P.w_dir         (l_dir);
+        HS.power = l_hit; //        P.w_float       (l_hit);
+        HS.p_in_bone_space = l_goPos; //        P.w_vec3        (l_goPos);
+        HS.impulse = l_impuls; //       P.w_float       (l_impuls);
+        HS.hit_type = (m_eHitTypeBlast); //     P.w_u16         (u16(m_eHitTypeBlast));
+        HS.boneID = 0; //       P.w_s16         (0);
         HS.Write_Packet(P);
         cast_game_object()->u_EventSend(P);
     }

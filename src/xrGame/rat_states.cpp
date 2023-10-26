@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: rat_states.cpp
-//	Created 	: 31.08.2007
-//  Modified 	: 24.10.2007
-//	Author		: Dmitriy Iassenev
-//	Developer	: Ivan Andrushchenko
-//	Description : rat states classes
+//  Module      : rat_states.cpp
+//  Created     : 31.08.2007
+//  Modified    : 24.10.2007
+//  Author      : Dmitriy Iassenev
+//  Developer   : Ivan Andrushchenko
+//  Description : rat states classes
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

@@ -22,7 +22,7 @@ public:
     };
 
 private:
-    //	string16	m_SecretKey;
+    //  string16    m_SecretKey;
 
 public:
     bool Init(int PortID, int Public, SInitConfig& ctx);

@@ -345,7 +345,7 @@ bool CInventory::Slot(u16 slot_id, PIItem pIItem, bool bNotActivate, bool strict
         }
     }
 
-    //.	Msg("To Slot %s[%d]", *pIItem->object().cName(), pIItem->object().ID());
+    //. Msg("To Slot %s[%d]", *pIItem->object().cName(), pIItem->object().ID());
 
     if (!strict_placement && !CanPutInSlot(pIItem, slot_id))
     {
@@ -354,8 +354,8 @@ bool CInventory::Slot(u16 slot_id, PIItem pIItem, bool bNotActivate, bool strict
         //    ItemFromSlot(pIItem->GetSlot())->object().ID(), ItemFromSlot(pIItem->GetSlot()), pIItem->GetSlot(),
         //    pIItem->object().ID(), pIItem);
 //#endif
-        //.		if(m_slots[pIItem->GetSlot()].m_pIItem == pIItem && !bNotActivate )
-        //.			Activate(pIItem->GetSlot());
+        //.     if(m_slots[pIItem->GetSlot()].m_pIItem == pIItem && !bNotActivate )
+        //.         Activate(pIItem->GetSlot());
 
         return false;
     }
@@ -542,10 +542,10 @@ bool CInventory::Ruck(PIItem pIItem, bool strict_placement)
     return true;
 }
 /*
-void CInventory::Activate_deffered	(u32 slot, u32 _frame)
+void CInventory::Activate_deffered  (u32 slot, u32 _frame)
 {
-     m_iLoadActiveSlot			= slot;
-     m_iLoadActiveSlotFrame		= _frame;
+     m_iLoadActiveSlot          = slot;
+     m_iLoadActiveSlotFrame     = _frame;
 }*/
 
 void CInventory::Activate(u16 slot, bool bForce)
@@ -570,7 +570,7 @@ void CInventory::Activate(u16 slot, bool bForce)
     {
         m_iNextActiveSlot = slot;
 #ifdef DEBUG
-//		Msg("--- There's no need to activate slot [%d], next active slot is [%d]", slot, m_iNextActiveSlot);
+//      Msg("--- There's no need to activate slot [%d], next active slot is [%d]", slot, m_iNextActiveSlot);
 #endif
         return;
     }
@@ -581,7 +581,7 @@ void CInventory::Activate(u16 slot, bool bForce)
         return;
 
 #ifdef DEBUG
-//	Msg("--- Activating slot [%d], inventory owner: [%s], Frame[%d]", slot, m_pOwner->Name(), Device.dwFrame);
+//  Msg("--- Activating slot [%d], inventory owner: [%s], Frame[%d]", slot, m_pOwner->Name(), Device.dwFrame);
 #endif // #ifdef DEBUG
 
     //активный слот не выбран
@@ -612,7 +612,7 @@ void CInventory::Activate(u16 slot, bool bForce)
 
             tempItem->SendDeactivateItem();
 #ifdef DEBUG
-//			Msg("--- Inventory owner [%s]: send deactivate item [%s]", m_pOwner->Name(), active_item->NameItem());
+//          Msg("--- Inventory owner [%s]: send deactivate item [%s]", m_pOwner->Name(), active_item->NameItem());
 #endif // #ifdef DEBUG
         }
         else // in case where weapon is going to destroy

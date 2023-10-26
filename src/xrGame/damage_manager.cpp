@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: damage_manager.cpp
-//	Created 	: 02.10.2001
-//  Modified 	: 19.11.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Damage manager
+//  Module      : damage_manager.cpp
+//  Created     : 02.10.2001
+//  Modified    : 19.11.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Damage manager
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

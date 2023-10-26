@@ -120,7 +120,7 @@ void CRenderTarget::build_textures()
         CHK_GL(glTexSubImage3D(GL_TEXTURE_3D, 0, 0, 0, 0, TEX_material_LdotN, TEX_material_LdotH, TEX_material_Count
             , GL_RG, GL_UNSIGNED_BYTE, pBits));
         // #ifdef DEBUG
-        // R_CHK	(D3DXSaveTextureToFile	("x:" DELIMITER "r2_material.dds",D3DXIFF_DDS,t_material_surf,0));
+        // R_CHK    (D3DXSaveTextureToFile  ("x:" DELIMITER "r2_material.dds",D3DXIFF_DDS,t_material_surf,0));
         // #endif
     }
 
@@ -201,23 +201,23 @@ void CRenderTarget::build_textures()
                 *(p + 2) = (float)dist;
                 *(p + 3) = 0;
 
-                //generate_hbao_jitter	(data,TEX_jitter*TEX_jitter);
+                //generate_hbao_jitter  (data,TEX_jitter*TEX_jitter);
             }
         }
         CHK_GL(glBindTexture(GL_TEXTURE_2D, t_noise_surf[it3]));
         CHK_GL(glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, TEX_jitter, TEX_jitter, GL_RGBA, GL_FLOAT, tempDataHBAO));
 
 
-        //	Create noise mipped
+        //  Create noise mipped
         {
-            //	Autogen mipmaps
+            //  Autogen mipmaps
             glGenTextures(1, &t_noise_surf_mipped);
             CHK_GL(glBindTexture(GL_TEXTURE_2D, t_noise_surf_mipped));
             CHK_GL(glTexStorage2D(GL_TEXTURE_2D, 1, GL_RGBA8, TEX_jitter, TEX_jitter));
             t_noise_mipped = RImplementation.Resources->_CreateTexture(r2_jitter_mipped);
             t_noise_mipped->surface_set(GL_TEXTURE_2D, t_noise_surf_mipped);
 
-            //	Update texture. Generate mips.
+            //  Update texture. Generate mips.
             glBindTexture(GL_TEXTURE_2D, t_noise_surf_mipped);
             CHK_GL(glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, TEX_jitter, TEX_jitter, GL_RGBA, GL_UNSIGNED_BYTE, tempData[0]));
             CHK_GL(glGenerateMipmap(GL_TEXTURE_2D));

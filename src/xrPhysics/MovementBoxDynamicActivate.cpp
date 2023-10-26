@@ -310,7 +310,7 @@ bool ActivateBoxDynamic(IPHMovementControl* mov_control, bool character_exist, u
 
     // saved_callback=ObjectContactCallback();
 
-    /*	ObjectContactCallbackFun* CPHMovementControl::ObjectContactCallback()
+    /*  ObjectContactCallbackFun* CPHMovementControl::ObjectContactCallback()
     {
         if(m_character)
             return m_character->ObjectContactCallBack();
@@ -319,29 +319,29 @@ bool ActivateBoxDynamic(IPHMovementControl* mov_control, bool character_exist, u
 
     saved_callback = mov_control->character()->ObjectContactCallBack();
 
-    //	SetOjectContactCallback(TestDepthCallback);
+    //  SetOjectContactCallback(TestDepthCallback);
 
-    //	void		CPHMovementControl::		SetOjectContactCallback (ObjectContactCallbackFun* callback)
+    //  void        CPHMovementControl::        SetOjectContactCallback (ObjectContactCallbackFun* callback)
     //{
-    //	if(m_character)
-    //		m_character->SetObjectContactCallback(callback);
+    //  if(m_character)
+    //      m_character->SetObjectContactCallback(callback);
     //}
     mov_control->character()->SetObjectContactCallback(TestDepthCallback);
 
     // SetFootCallBack(TestFootDepthCallback);
-    // void		CPHMovementControl::		SetFootCallBack			(ObjectContactCallbackFun* callback)
+    // void     CPHMovementControl::        SetFootCallBack         (ObjectContactCallbackFun* callback)
     //{
-    //	VERIFY(m_character);
-    //	m_character->SetWheelContactCallback(callback);
+    //  VERIFY(m_character);
+    //  m_character->SetWheelContactCallback(callback);
     //}
     mov_control->character()->SetWheelContactCallback(TestFootDepthCallback);
 
     max_depth = 0.f;
 
     //////////////////////////////////pars///////////////////////////////////////////
-    //	int		num_it=8;
-    //	int		num_steps=5;
-    //	float	resolve_depth=0.01f;
+    //  int     num_it=8;
+    //  int     num_steps=5;
+    //  float   resolve_depth=0.01f;
 
     if (!character_exist)
     {
@@ -382,10 +382,10 @@ bool ActivateBoxDynamic(IPHMovementControl* mov_control, bool character_exist, u
         mov_control->actor_calculate(Fvector().set(0, 0, 0), Fvector().set(1, 0, 0), 0, 0, 0, 0);
 
         // EnableCharacter();
-        // void		CPHMovementControl::EnableCharacter			()
+        // void     CPHMovementControl::EnableCharacter         ()
         //{
-        //	if( m_character && m_character->b_exist )
-        //		m_character->Enable();
+        //  if( m_character && m_character->b_exist )
+        //      m_character->Enable();
         //}
         VERIFY(mov_control->character()->b_exist);
         mov_control->character()->Enable();
@@ -435,10 +435,10 @@ bool ActivateBoxDynamic(IPHMovementControl* mov_control, bool character_exist, u
     ph_world->UnFreeze();
 
     // SetOjectContactCallback(saved_callback);
-    // void		CPHMovementControl::		SetOjectContactCallback (ObjectContactCallbackFun* callback)
+    // void     CPHMovementControl::        SetOjectContactCallback (ObjectContactCallbackFun* callback)
     //{
-    //	if(m_character)
-    //		m_character->SetObjectContactCallback(callback);
+    //  if(m_character)
+    //      m_character->SetObjectContactCallback(callback);
     //}
     mov_control->character()->SetObjectContactCallback(saved_callback);
     saved_callback = 0;

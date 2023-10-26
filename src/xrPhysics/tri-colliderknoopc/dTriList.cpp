@@ -84,8 +84,8 @@ int dCollideCTL(dxGeom* TriList, dxGeom* Cyl, int Flags, dContactGeom* Contact, 
 
 dColliderFn* dTriListColliderFn(int num)
 {
-    //	Log("in dTriListColliderFn ");
-    //	Msg("num=%d",num);
+    //  Log("in dTriListColliderFn ");
+    //  Msg("num=%d",num);
     if (num == dBoxClass)
     {
         return (dColliderFn*)&dCollideBTL;
@@ -147,7 +147,7 @@ dxGeom* dCreateTriList(dSpaceID space, dTriCallback* Callback, dTriArrayCallback
 
         c.aabb_test = &dAABBTestTL;
 
-        //	c.aabb_test=NULL;
+        //  c.aabb_test=NULL;
         c.dtor = &dDestroyTriList;
 
         dTriListClass = dCreateGeomClass(&c);

@@ -27,26 +27,26 @@ class CPHElement : public CPhysicsElement,
 {
     friend class CPHFracturesHolder;
 
-    // float						m_start_time;				//uu ->to shell ??	//aux
-    dMass m_mass; // e ??				//bl
-    dBodyID m_body; // e					//st
-    dReal m_l_scale; // ->to shell ??	//bl
-    dReal m_w_scale; // ->to shell ??	//bl
-    CPHElement* m_parent_element; // bool !			//bl
-    CPHShell* m_shell; // e					//bl
-    CPHInterpolation m_body_interpolation; // e					//bl
-    CPHFracturesHolder* m_fratures_holder; // e					//bl
+    // float                        m_start_time;               //uu ->to shell ??  //aux
+    dMass m_mass; // e ??               //bl
+    dBodyID m_body; // e                    //st
+    dReal m_l_scale; // ->to shell ??   //bl
+    dReal m_w_scale; // ->to shell ??   //bl
+    CPHElement* m_parent_element; // bool !         //bl
+    CPHShell* m_shell; // e                 //bl
+    CPHInterpolation m_body_interpolation; // e                 //bl
+    CPHFracturesHolder* m_fratures_holder; // e                 //bl
 
-    dReal m_w_limit; //->to shell ??		//bl
-    dReal m_l_limit; //->to shell ??		//bl
-    //	dVector3					m_safe_position;			//e					//st
-    //	dQuaternion					m_safe_quaternion;
-    //	dVector3					m_safe_velocity;			//e					//st
-    //	Fmatrix						m_inverse_local_transform;	//e				//bt
-    dReal k_w; //->to shell ??		//st
-    dReal k_l; //->to shell ??		//st
-    // ObjectContactCallbackFun*	temp_for_push_out;			//->to shell ??		//aux
-    // u32							push_untill;				//->to shell ??		//st
+    dReal m_w_limit; //->to shell ??        //bl
+    dReal m_l_limit; //->to shell ??        //bl
+    //  dVector3                    m_safe_position;            //e                 //st
+    //  dQuaternion                 m_safe_quaternion;
+    //  dVector3                    m_safe_velocity;            //e                 //st
+    //  Fmatrix                     m_inverse_local_transform;  //e             //bt
+    dReal k_w; //->to shell ??      //st
+    dReal k_l; //->to shell ??      //st
+    // ObjectContactCallbackFun*    temp_for_push_out;          //->to shell ??     //aux
+    // u32                          push_untill;                //->to shell ??     //st
     Flags8 m_flags; //
     enum
     {
@@ -58,9 +58,9 @@ class CPHElement : public CPhysicsElement,
         flFixed = 1 << 5,
         flAnimated = 1 << 6
     };
-    //	bool						was_enabled_before_freeze;
-    //	bool						bUpdate;					//->to shell ??		//st
-    //	bool						b_enabled_onstep;
+    //  bool                        was_enabled_before_freeze;
+    //  bool                        bUpdate;                    //->to shell ??     //st
+    //  bool                        b_enabled_onstep;
 private:
     ////////////////////////////////////////////Interpolation/////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -118,7 +118,7 @@ private:
     void calculate_it_data(const Fvector& mc, float mass); // aux
     void calculate_it_data_use_density(const Fvector& mc, float density); // aux
     void calc_it_fract_data_use_density(
-        const Fvector& mc, float density); // sets element mass and fractures parts mass	//aux
+        const Fvector& mc, float density); // sets element mass and fractures parts mass    //aux
     dMass recursive_mass_summ(u16 start_geom, FRACTURE_I cur_fracture); // aux
 public: //
     virtual const Fvector& mass_Center() const; // aux
@@ -157,7 +157,7 @@ public: //
     ////////////////////////////////////////////////Updates///////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     bool AnimToVel(float dt, float l_limit, float a_limit);
-    // void						BoneGlPos								(Fmatrix &m, const CBoneInstance* B)const;
+    // void                     BoneGlPos                               (Fmatrix &m, const CBoneInstance* B)const;
     void BoneGlPos(Fmatrix& m, const Fmatrix& BoneTransform) const;
     void ToBonePos(const CBoneInstance* B, motion_history_state history_state);
     void ToBonePos(const Fmatrix& BoneTransform, motion_history_state history_state);
@@ -270,7 +270,7 @@ public: //
     // //aux
     void SetBoneCallback();
     void ClearBoneCallback();
-    void CreateSimulBase(); // create body & cpace																//aux
+    void CreateSimulBase(); // create body & cpace                                                              //aux
     void ReInitDynamics(const Fmatrix& shift_pivot, float density); // set body & geom positions
     void PresetActive(); //
     void build(); // aux
@@ -281,7 +281,7 @@ public: //
     void RunSimulation(const Fmatrix& start_from); //
     void ClearDestroyInfo();
     void GetAnimBonePos(Fmatrix& bp);
-    //		bool						CheckBreakConsistent					()
+    //      bool                        CheckBreakConsistent                    ()
     CPHElement(); // aux
     virtual ~CPHElement(); // aux
 private:

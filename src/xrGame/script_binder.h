@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_binder.h
-//	Created 	: 26.03.2004
-//  Modified 	: 26.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script objects binder
+//  Module      : script_binder.h
+//  Created     : 26.03.2004
+//  Modified    : 26.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script objects binder
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: debug_text_tree.h
-//	Created 	: 02.04.2008
-//  Modified 	: 03.04.2008
-//	Author		: Lain
-//	Description : Text tree for onscreen debugging
+//  Module      : debug_text_tree.h
+//  Created     : 02.04.2008
+//  Modified    : 03.04.2008
+//  Author      : Lain
+//  Description : Text tree for onscreen debugging
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef AI_DEBUG_TEXT_TREE_H_INCLUDED

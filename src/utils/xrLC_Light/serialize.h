@@ -239,7 +239,7 @@ public:
     {
         return id_type::get_id(f, vec);
         // if( f == 0 )
-        //	return id_none;
+        //  return id_none;
         // xr_vector<type*>::const_iterator F = std::find( vec.begin(), vec.end(), f );
         // VERIFY( F != vec.end() );
         // return u32( F - vec.begin() );

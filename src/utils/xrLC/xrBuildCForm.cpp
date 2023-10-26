@@ -29,8 +29,8 @@ int bCriticalErrCnt = 0;
 
 int getTriByEdge(Vertex *V1, Vertex *V2, Face* parent, vecFace &ids)
 {
-    Face*	found	= 0;
-    int		f_count = 0;
+    Face*   found   = 0;
+    int     f_count = 0;
 
     for (vecFaceIt I=V1->m_adjacents.begin(); I!=V1->m_adjacents.end(); ++I)
     {
@@ -44,7 +44,7 @@ int getTriByEdge(Vertex *V1, Vertex *V2, Face* parent, vecFace &ids)
     }
     if (f_count>1)
     {
-        bCriticalErrCnt	++;
+        bCriticalErrCnt ++;
         pBuild->err_multiedge.w_fvector3(V1->P);
         pBuild->err_multiedge.w_fvector3(V2->P);
     }

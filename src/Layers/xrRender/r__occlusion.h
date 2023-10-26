@@ -6,11 +6,11 @@ constexpr u32 occq_size = 2 * 768 * R__NUM_PARALLEL_CONTEXTS; // // queue for oc
 // a(A), a(B), a(C), a(D), ....
 // f(A), f(B), f(C), f(D), ....
 // a(A), a(B), a(C), a(D), ....
-//	this mean:
-//		use as litle of queries as possible
-//		first try to use queries allocated first
-//	assumption:
-//		used queries number is much smaller than total count
+//  this mean:
+//      use as litle of queries as possible
+//      first try to use queries allocated first
+//  assumption:
+//      used queries number is much smaller than total count
 
 class R_occlusion
 {

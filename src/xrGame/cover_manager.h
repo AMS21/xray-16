@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: cover_manager.h
-//	Created 	: 24.03.2004
-//  Modified 	: 24.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Cover manager class
+//  Module      : cover_manager.h
+//  Created     : 24.03.2004
+//  Modified    : 24.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Cover manager class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

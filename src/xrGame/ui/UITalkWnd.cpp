@@ -59,8 +59,8 @@ void CUITalkWnd::InitTalkDialog()
     UITalkDialogWnd->UICharacterInfoLeft.InitCharacter(m_pOurInvOwner->object_id());
     UITalkDialogWnd->UICharacterInfoRight.InitCharacter(m_pOthersInvOwner->object_id());
 
-    //.	UITalkDialogWnd->UIDialogFrame.UITitleText.SetText		(m_pOthersInvOwner->Name());
-    //.	UITalkDialogWnd->UIOurPhrasesFrame.UITitleText.SetText	(m_pOurInvOwner->Name());
+    //. UITalkDialogWnd->UIDialogFrame.UITitleText.SetText      (m_pOthersInvOwner->Name());
+    //. UITalkDialogWnd->UIOurPhrasesFrame.UITitleText.SetText  (m_pOurInvOwner->Name());
 
     //очистить лог сообщений
     UITalkDialogWnd->ClearAll();
@@ -421,7 +421,7 @@ void CUITalkWnd::PlaySnd(LPCSTR text)
     strncat_s(fn, sizeof(fn), text, text_len);
     strncat_s(fn, sizeof(fn), ext, xr_strlen(ext));
 
-    //	strconcat( sizeof(fn), fn, "characters_voice" DELIMITER "dialogs" DELIMITER, text2, ".ogg" );
+    //  strconcat( sizeof(fn), fn, "characters_voice" DELIMITER "dialogs" DELIMITER, text2, ".ogg" );
 
     StopSnd();
     if (FS.exist("$game_sounds$", fn))

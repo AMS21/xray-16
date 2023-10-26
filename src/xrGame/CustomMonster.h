@@ -83,7 +83,7 @@ public:
 
     float m_fTimeUpdateDelta;
     u32 m_dwLastUpdateTime;
-    //	Fmatrix				m_tServerTransform;
+    //  Fmatrix             m_tServerTransform;
 
     u32 m_dwCurrentTime; // time updated in UpdateCL
 
@@ -170,7 +170,7 @@ public:
     virtual float ffGetRange() const { return eye_range; }
     void set_fov(float new_fov);
     void set_range(float new_range);
-    //	virtual	void				feel_touch_new			(IGameObject	*O);
+    //  virtual void                feel_touch_new          (IGameObject    *O);
     virtual BOOL feel_visible_isRelevant(IGameObject* O);
     virtual Feel::Sound* dcast_FeelSound() { return this; }
     virtual void Hit(SHit* pHDS);

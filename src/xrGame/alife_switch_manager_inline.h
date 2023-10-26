@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_switch_manager_inline.h
-//	Created 	: 25.12.2002
-//  Modified 	: 12.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALife Simulator switch manager inline functions
+//  Module      : alife_switch_manager_inline.h
+//  Created     : 25.12.2002
+//  Modified    : 12.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALife Simulator switch manager inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

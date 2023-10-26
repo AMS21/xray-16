@@ -11,7 +11,7 @@ TEMPLATE_SPECIALIZATION
 CStateControllerPanicAbstract::CStateControllerPanic(_Object* obj) : inherited(obj)
 {
     // state_ptr state_run;
-    // add_state	(eStateRun,	state_run);
+    // add_state    (eStateRun, state_run);
 }
 
 TEMPLATE_SPECIALIZATION

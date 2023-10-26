@@ -146,7 +146,7 @@ void global_claculation_data::xrLoad()
                     // version
                     u32 version = 0;
                     R_ASSERT(THM->r_chunk(THM_CHUNK_VERSION, &version));
-                    // if( version!=THM_CURRENT_VERSION )	FATAL	("Unsupported version of THM file.");
+                    // if( version!=THM_CURRENT_VERSION )   FATAL   ("Unsupported version of THM file.");
 
                     // analyze thumbnail information
                     R_ASSERT(THM->find_chunk(THM_CHUNK_TEXTUREPARAM));
@@ -214,17 +214,17 @@ void global_claculation_data::read(INetReader& r)
     r_pod_vector(r, g_rc_faces);
 }
 
-// base_lighting					g_lights; /////////////////////lc
-// Shader_xrLC_LIB*				g_shaders_xrlc;////////////////lc
-// b_params						g_params;//////////////////////lc
-// xr_vector<b_material>			g_materials;///////////////////lc
-// xr_vector<b_BuildTexture>		g_textures;////////////////////lc
-// CDB::MODEL						RCAST_Model;///////////////////lc
+// base_lighting                    g_lights; /////////////////////lc
+// Shader_xrLC_LIB*             g_shaders_xrlc;////////////////lc
+// b_params                     g_params;//////////////////////lc
+// xr_vector<b_material>            g_materials;///////////////////lc
+// xr_vector<b_BuildTexture>        g_textures;////////////////////lc
+// CDB::MODEL                       RCAST_Model;///////////////////lc
 
-// Fbox							LevelBB;//-----------============
-// global_slots_data				slots_data;//-------=============
-// xr_vector<b_shader>				g_shader_compile;//-----==========
-// xr_vector<b_rc_face>			g_rc_faces;//---------===============
+// Fbox                         LevelBB;//-----------============
+// global_slots_data                slots_data;//-------=============
+// xr_vector<b_shader>              g_shader_compile;//-----==========
+// xr_vector<b_rc_face>         g_rc_faces;//---------===============
 
 void write(IWriter& w, const CDB::MODEL& m);
 void global_claculation_data::write(IWriter& w) const

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_communication_manager.h
-//	Created 	: 03.09.2003
-//  Modified 	: 14.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALife communication manager
+//  Module      : alife_communication_manager.h
+//  Created     : 03.09.2003
+//  Modified    : 14.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALife communication manager
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -17,19 +17,19 @@ class CALifeInteractionManager : public CALifeCombatManager, public CALifeCommun
     /**
         friend class CCheckForInteractionPredicate;
     protected:
-        u32								m_inventory_slot_count;
+        u32                             m_inventory_slot_count;
 
     public:
-        xr_vector<bool>					m_temp_marks;
-        ALife::WEAPON_P_VECTOR			m_temp_weapons;
+        xr_vector<bool>                 m_temp_marks;
+        ALife::WEAPON_P_VECTOR          m_temp_weapons;
 
     **/
 public:
     CALifeInteractionManager(IPureServer* server, LPCSTR section);
     /**
-        virtual							~CALifeInteractionManager	();
-                void					check_for_interaction		(CSE_ALifeSchedulable		*tpALifeSchedulable);
-                void					check_for_interaction		(CSE_ALifeSchedulable		*tpALifeSchedulable,
-    GameGraph::_GRAPH_ID		tGraphID);
+        virtual                         ~CALifeInteractionManager   ();
+                void                    check_for_interaction       (CSE_ALifeSchedulable       *tpALifeSchedulable);
+                void                    check_for_interaction       (CSE_ALifeSchedulable       *tpALifeSchedulable,
+    GameGraph::_GRAPH_ID        tGraphID);
     **/
 };

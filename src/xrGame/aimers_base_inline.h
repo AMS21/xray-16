@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: aimers_base_inline.h
-//	Created 	: 04.04.2008
-//  Modified 	: 08.04.2008
-//	Author		: Dmitriy Iassenev
-//	Description : aimers base class inline functions
+//  Module      : aimers_base_inline.h
+//  Created     : 04.04.2008
+//  Modified    : 08.04.2008
+//  Author      : Dmitriy Iassenev
+//  Description : aimers base class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef AIMERS_BASE_INLINE_H_INCLUDED

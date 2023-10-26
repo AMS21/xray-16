@@ -4,7 +4,7 @@
 #include "xrEngine/IGame_Persistent.h"
 #include "xrEngine/Rain.h"
 
-//	Warning: duplicated in rain.cpp
+//  Warning: duplicated in rain.cpp
 static const int max_desired_items = 2500;
 static const float source_radius = 12.5f;
 static const float source_offset = 40.f;
@@ -90,8 +90,8 @@ void dxRainRender::Render(CEffect_Rain& owner)
             owner.Born(one, source_radius);
 
         // последняя дельта ??
-        //.		float xdt		= float(one.dwTime_Hit-Device.dwTimeGlobal)/1000.f;
-        //.		float dt		= Device.fTimeDelta;//xdt<Device.fTimeDelta?xdt:Device.fTimeDelta;
+        //.     float xdt       = float(one.dwTime_Hit-Device.dwTimeGlobal)/1000.f;
+        //.     float dt        = Device.fTimeDelta;//xdt<Device.fTimeDelta?xdt:Device.fTimeDelta;
         float dt = Device.fTimeDelta;
         one.P.mad(one.D, one.fSpeed * dt);
         Fvector wdir;
@@ -100,7 +100,7 @@ void dxRainRender::Render(CEffect_Rain& owner)
         if (wlen > b_radius_wrap_sqr)
         {
             wlen = _sqrt(wlen);
-            //.			Device.Statistic->TEST3.Begin();
+            //.         Device.Statistic->TEST3.Begin();
             if ((one.P.y - vEye.y) < sink_offset)
             {
                 // need born
@@ -121,28 +121,28 @@ void dxRainRender::Render(CEffect_Rain& owner)
                         if (_sqr(height) <= dist_sqr)
                         {
                             one.invalidate(); // need born
-                            //							Log("1");
+                            //                          Log("1");
                         }
                         else
                         {
                             owner.RenewItem(one, height - _sqrt(dist_sqr), TRUE); // fly to point
-                            //							Log("2",height-dist);
+                            //                          Log("2",height-dist);
                         }
                     }
                     else
                     {
                         owner.RenewItem(one, max_distance - _sqrt(dist_sqr), FALSE); // fly ...
-                        //						Log("3",1.5f*b_height-dist);
+                        //                      Log("3",1.5f*b_height-dist);
                     }
                 }
                 else
                 {
                     // need born
                     one.invalidate();
-                    //					Log("4");
+                    //                  Log("4");
                 }
             }
-            //.			Device.Statistic->TEST3.End();
+            //.         Device.Statistic->TEST3.End();
         }
         // Build line
         Fvector& pos_head = one.P;
@@ -188,13 +188,13 @@ void dxRainRender::Render(CEffect_Rain& owner)
     // Render if needed
     if (vCount)
     {
-        // HW.pDevice->SetRenderState	(D3DRS_CULLMODE,D3DCULL_NONE);
+        // HW.pDevice->SetRenderState   (D3DRS_CULLMODE,D3DCULL_NONE);
         RCache.set_CullMode(CULL_NONE);
         RCache.set_xform_world(Fidentity);
         RCache.set_Shader(SH_Rain);
         RCache.set_Geometry(hGeom_Rain);
         RCache.Render(D3DPT_TRIANGLELIST, vOffset, 0, vCount, 0, vCount / 2);
-        // HW.pDevice->SetRenderState	(D3DRS_CULLMODE,D3DCULL_CCW);
+        // HW.pDevice->SetRenderState   (D3DRS_CULLMODE,D3DCULL_CCW);
         RCache.set_CullMode(CULL_CCW);
     }
 

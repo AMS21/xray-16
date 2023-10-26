@@ -928,7 +928,7 @@ typedef struct _NV_DISPLAYCONFIG_SOURCE_MODE_INFO_V1
 typedef struct _NV_DISPLAYCONFIG_PATH_INFO_V1
 {
     NvU32                                   version;
-    NvU32                                   reserved_sourceId;     	//!< This field is reserved. There is ongoing debate if we need this field.
+    NvU32                                   reserved_sourceId;      //!< This field is reserved. There is ongoing debate if we need this field.
                                                                         //!< Identifies sourceIds used by Windows. If all sourceIds are 0, 
                                                                         //!< these will be computed automatically.
     NvU32                                   targetInfoCount;            //!< Number of elements in targetInfo array
@@ -945,7 +945,7 @@ typedef struct _NV_DISPLAYCONFIG_PATH_INFO_V2
 {
     NvU32                                   version;
     union {
-        NvU32                                   sourceId;            	//!< Identifies sourceId used by Windows CCD. This can be optionally set.
+        NvU32                                   sourceId;               //!< Identifies sourceId used by Windows CCD. This can be optionally set.
         NvU32                                   reserved_sourceId;      //!< Only for compatibility
     };
 
@@ -2313,7 +2313,7 @@ typedef struct
 } NV_GPU_CLOCK_FREQUENCIES_V1;
 
 #ifndef NV_GPU_MAX_CLOCK_FREQUENCIES
-	#define NV_GPU_MAX_CLOCK_FREQUENCIES 3
+    #define NV_GPU_MAX_CLOCK_FREQUENCIES 3
 #endif
 
 //! \ingroup gpuclock
@@ -7763,11 +7763,11 @@ NVAPI_INTERFACE NvAPI_GSync_EnumSyncDevices(__out NvGSyncDeviceHandle nvGSyncHan
 
 
 // GSync boardId values
-#define NVAPI_GSYNC_BOARD_ID_P358 856		//!< GSync board ID 0x358, see NV_GSYNC_CAPABILITIES
-#define NVAPI_GSYNC_BOARD_ID_P2060 8288		//!< GSync board ID 0x2060, see NV_GSYNC_CAPABILITIES 
+#define NVAPI_GSYNC_BOARD_ID_P358 856       //!< GSync board ID 0x358, see NV_GSYNC_CAPABILITIES
+#define NVAPI_GSYNC_BOARD_ID_P2060 8288     //!< GSync board ID 0x2060, see NV_GSYNC_CAPABILITIES 
 
 //! \since Release: 375
-#define NVAPI_GSYNC_BOARD_ID_P2061 8289		//!< GSync board ID 0x2061, see NV_GSYNC_CAPABILITIES 
+#define NVAPI_GSYNC_BOARD_ID_P2061 8289     //!< GSync board ID 0x2061, see NV_GSYNC_CAPABILITIES 
 
 
 //! Used in NvAPI_GSync_QueryCapabilities().
@@ -7917,17 +7917,17 @@ NVAPI_INTERFACE NvAPI_GSync_GetTopology(__in NvGSyncDeviceHandle hNvGSyncDevice,
 //!
 //! \since Release: 313
 //!
-//! \param [in]  gsyncDisplayCount-			The number of displays in gsyncDisplays.
-//! \param [in]  pGsyncDisplays-			The caller provides the structure containing all displays that need to be synchronized in the system. 
-//!											The displays that are not part of pGsyncDisplays, will be un-synchronized.
-//! \param [in]  flags-						Reserved for future use.
+//! \param [in]  gsyncDisplayCount-         The number of displays in gsyncDisplays.
+//! \param [in]  pGsyncDisplays-            The caller provides the structure containing all displays that need to be synchronized in the system. 
+//!                                         The displays that are not part of pGsyncDisplays, will be un-synchronized.
+//! \param [in]  flags-                     Reserved for future use.
 //!
 //!
 //! \return  This API can return any of the error codes enumerated in #NvAPI_Status. 
 //!          If there are return error codes with specific meaning for this API, they are listed below.
 //!
-//! \retval ::NVAPI_INVALID_ARGUMENT			If the display topology or count not valid.
-//! \retval ::NVAPI_NVIDIA_DEVICE_NOT_FOUND		The queried Graphics system does not have any Sync Device.
+//! \retval ::NVAPI_INVALID_ARGUMENT            If the display topology or count not valid.
+//! \retval ::NVAPI_NVIDIA_DEVICE_NOT_FOUND     The queried Graphics system does not have any Sync Device.
 //! \retval ::NVAPI_INVALID_SYNC_TOPOLOGY       1.If any mosaic grid is partial.
 //!                                             2.If timing(HVisible/VVisible/refreshRate) applied of any display is different. 
 //!                                             3.If There is a across GPU mosaic grid in system and that is not a part of pGsyncDisplays.
@@ -7971,7 +7971,7 @@ typedef struct _NV_GSYNC_DELAY
     NvU32        numLines;         //!< delay to be induced in number of horizontal lines.
     NvU32        numPixels;        //!< delay to be induced in number of pixels.
     NvU32        maxLines;         //!< maximum number of lines supported at current display mode to induce delay. Updated by NvAPI_GSync_GetControlParameters(). Read only.
-	NvU32        minPixels;        //!< minimum number of pixels required at current display mode to induce delay. Updated by NvAPI_GSync_GetControlParameters(). Read only.
+    NvU32        minPixels;        //!< minimum number of pixels required at current display mode to induce delay. Updated by NvAPI_GSync_GetControlParameters(). Read only.
 } NV_GSYNC_DELAY;
 
 #define NV_GSYNC_DELAY_VER  MAKE_NVAPI_VERSION(NV_GSYNC_DELAY,1)
@@ -7988,7 +7988,7 @@ typedef struct _NV_GSYNC_CONTROL_PARAMS
     NvU32                       syncSourceIsOutput:1; //!< Set this to make house sync as an output; valid only when NV_GSYNC_CONTROL_PARAMS::source is NVAPI_GSYNC_SYNC_SOURCE_VSYNC on P2061 boards. 
                                                       //!< syncSourceIsOutput should always be NVAPI_GSYNC_SYNC_SOURCE_HOUSESYNC i.e. 0 on P2060 boards or when NV_GSYNC_CONTROL_PARAMS::source is set to NVAPI_GSYNC_SYNC_SOURCE_HOUSESYNC.
     NvU32                       reserved:30;        //!< should be set zero
-	NV_GSYNC_DELAY              syncSkew;           //!< The time delay between the frame sync signal and the GPUs signal. 
+    NV_GSYNC_DELAY              syncSkew;           //!< The time delay between the frame sync signal and the GPUs signal. 
     NV_GSYNC_DELAY              startupDelay;       //!< Sync start delay for master. 
 } NV_GSYNC_CONTROL_PARAMS;
 
@@ -8050,9 +8050,9 @@ NVAPI_INTERFACE NvAPI_GSync_SetControlParameters(__in NvGSyncDeviceHandle hNvGSy
 //! Used in NvAPI_GSync_AdjustSyncDelay()
 typedef enum _NVAPI_GSYNC_DELAY_TYPE
 {
-	NVAPI_GSYNC_DELAY_TYPE_UNKNOWN			= 0,
-    NVAPI_GSYNC_DELAY_TYPE_SYNC_SKEW     	= 1,
-    NVAPI_GSYNC_DELAY_TYPE_STARTUP     		= 2
+    NVAPI_GSYNC_DELAY_TYPE_UNKNOWN          = 0,
+    NVAPI_GSYNC_DELAY_TYPE_SYNC_SKEW        = 1,
+    NVAPI_GSYNC_DELAY_TYPE_STARTUP          = 2
 } NVAPI_GSYNC_DELAY_TYPE;
 
 //////////////////////////////////////////////////////////////////////////////
@@ -8066,10 +8066,10 @@ typedef enum _NVAPI_GSYNC_DELAY_TYPE
 //!
 //! \since Release: 319
 //!
-//! \param [in]  hNvGSyncDevice-   	The caller provides the handle of the Sync device for which to get parameters
-//! \param [in]  delayType-   		Specifies whether the delay is syncSkew or startupDelay. 
-//! \param [inout]  *pGsyncDelay-  	The caller provides NV_GSYNC_DELAY. skew and startDelay will be adjusted and updated to the closest values.
-//! \param [out]  *syncSteps-  		This parameter is optional. It returns the sync delay in unit steps. If 0, it means either the NV_GSYNC_DELAY::numPixels is less than NV_GSYNC_DELAY::minPixels or NV_GSYNC_DELAY::numOfLines exceeds the NV_GSYNC_DELAY::maxLines.
+//! \param [in]  hNvGSyncDevice-    The caller provides the handle of the Sync device for which to get parameters
+//! \param [in]  delayType-         Specifies whether the delay is syncSkew or startupDelay. 
+//! \param [inout]  *pGsyncDelay-   The caller provides NV_GSYNC_DELAY. skew and startDelay will be adjusted and updated to the closest values.
+//! \param [out]  *syncSteps-       This parameter is optional. It returns the sync delay in unit steps. If 0, it means either the NV_GSYNC_DELAY::numPixels is less than NV_GSYNC_DELAY::minPixels or NV_GSYNC_DELAY::numOfLines exceeds the NV_GSYNC_DELAY::maxLines.
 //!
 //! \return  This API can return any of the error codes enumerated in #NvAPI_Status. 
 //!          If there are return error codes with specific meaning for this API, they are listed below.
@@ -12795,7 +12795,7 @@ typedef struct _NVVIOCOMPOSITERANGE
 #define NVVIOCONFIG_RESERVED_SDIOUTPUTENABLE         0x00800000      //!< fields: bEnableSDIOutput
 #define NVVIOCONFIG_STREAMS                 0x01000000      //!< fields: streams
 #define NVVIOCONFIG_ANC_PARITY_COMPUTATION  0x02000000      //!< fields: ancParityComputation
-#define NVVIOCONFIG_ANC_AUDIO_REPEAT		0x04000000      //!< fields: enableAudioBlanking
+#define NVVIOCONFIG_ANC_AUDIO_REPEAT        0x04000000      //!< fields: enableAudioBlanking
  
 
 // Don't forget to update NVVIOCONFIG_VALIDFIELDS in nvapi.spec when NVVIOCONFIG_ALLFIELDS changes.
@@ -12825,7 +12825,7 @@ typedef struct _NVVIOCOMPOSITERANGE
                                   NVVIOCONFIG_RESERVED_SDIOUTPUTENABLE | \
                                   NVVIOCONFIG_STREAMS               | \
                                   NVVIOCONFIG_ANC_PARITY_COMPUTATION | \
-								  NVVIOCONFIG_ANC_AUDIO_REPEAT )
+                                  NVVIOCONFIG_ANC_AUDIO_REPEAT )
 
 #define NVVIOCONFIG_VALIDFIELDS  ( NVVIOCONFIG_SIGNALFORMAT          | \
                                    NVVIOCONFIG_DATAFORMAT            | \
@@ -12854,7 +12854,7 @@ typedef struct _NVVIOCOMPOSITERANGE
                                    NVVIOCONFIG_RESERVED_SDIOUTPUTENABLE | \
                                    NVVIOCONFIG_STREAMS               | \
                                    NVVIOCONFIG_ANC_PARITY_COMPUTATION | \
-								   NVVIOCONFIG_ANC_AUDIO_REPEAT)
+                                   NVVIOCONFIG_ANC_AUDIO_REPEAT)
 
 #define NVVIOCONFIG_DRIVERFIELDS ( NVVIOCONFIG_OUTPUTREGION          | \
                                    NVVIOCONFIG_OUTPUTAREA            | \
@@ -12895,8 +12895,8 @@ typedef struct _NVVIOCOMPOSITERANGE
                                         NVVIOCONFIG_DATAFORMAT           | \
                                         NVVIOCONFIG_SYNCSOURCEENABLE     | \
                                         NVVIOCONFIG_FRAMELOCKENABLE      | \
-                                        NVVIOCONFIG_COMPOSITESYNCTYPE	 | \
-										NVVIOCONFIG_ANC_AUDIO_REPEAT)                                            
+                                        NVVIOCONFIG_COMPOSITESYNCTYPE    | \
+                                        NVVIOCONFIG_ANC_AUDIO_REPEAT)                                            
                                              
 
 //! Output device configuration 
@@ -12986,7 +12986,7 @@ typedef struct _NVVIOOUTPUTCONFIG_V3
     NvU32                enableFullColorRange;                 //!< Flag indicating Full Color Range
     NvU32                enableRGBData;                        //!< Indicates data is in RGB format
     NVVIOANCPARITYCOMPUTATION ancParityComputation;            //!< Enable HW ANC parity bit computation (auto/on/off)
-	NvU32				 enableAudioBlanking;				   //!< Enable HANC audio blanking on repeat frames
+    NvU32                enableAudioBlanking;                  //!< Enable HANC audio blanking on repeat frames
 } NVVIOOUTPUTCONFIG_V3;
 
 //! Stream configuration
@@ -14095,7 +14095,7 @@ NVAPI_INTERFACE NvAPI_Stereo_CaptureJpegImage(StereoHandle stereoHandle, NvU32 q
 // FUNCTION NAME: NvAPI_Stereo_InitActivation
 //
 //! DESCRIPTION:   This API allows an application to enable stereo viewing, without the need of a GUID/Key pair
-//!				   This API cannot be used to enable stereo viewing on 3DTV.
+//!                This API cannot be used to enable stereo viewing on 3DTV.
 //!
 //! HOW TO USE:    Call this function immediately after device creation, then follow with a reset. \n 
 //!                Very generically:
@@ -14106,7 +14106,7 @@ NVAPI_INTERFACE NvAPI_Stereo_CaptureJpegImage(StereoHandle stereoHandle, NvU32 q
 //! \since Release: 302
 //!
 //! \param [in]   stereoHandle            Stereo handle corresponding to the device interface.
-//! \param [in]   bDelayed				  Use delayed activation
+//! \param [in]   bDelayed                Use delayed activation
 //!
 //! \return This API can return any of the error codes enumerated in #NvAPI_Status. 
 //!         If there are return error codes with specific meaning for this API, 
@@ -14122,7 +14122,7 @@ NVAPI_INTERFACE NvAPI_Stereo_CaptureJpegImage(StereoHandle stereoHandle, NvU32 q
 //! InitActivation Flags
 typedef enum _NVAPI_STEREO_INIT_ACTIVATION_FLAGS
 {
-	NVAPI_STEREO_INIT_ACTIVATION_IMMEDIATE = 0X00,
+    NVAPI_STEREO_INIT_ACTIVATION_IMMEDIATE = 0X00,
     NVAPI_STEREO_INIT_ACTIVATION_DELAYED = 0x01,
 } NVAPI_STEREO_INIT_ACTIVATION_FLAGS;
 
@@ -14135,7 +14135,7 @@ NVAPI_INTERFACE NvAPI_Stereo_InitActivation(__in StereoHandle hStereoHandle, __i
 // FUNCTION NAME: NvAPI_Stereo_Trigger_Activation
 //
 //! DESCRIPTION:   This API allows an application to trigger creation of a stereo desktop, 
-//!				   in case the creation was stopped on application launch. 
+//!                in case the creation was stopped on application launch. 
 //!
 //! SUPPORTED OS:  Windows Vista and higher
 //!

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: detailed_path_manager.h
-//	Created 	: 02.10.2001
-//  Modified 	: 12.11.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Detail path manager
+//  Module      : detailed_path_manager.h
+//  Created     : 02.10.2001
+//  Modified    : 12.11.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Detail path manager
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -52,7 +52,7 @@ bool CDetailPathManager::valid() const
         b = b && (fis_zero(m_path[m_last_patrol_point].position.distance_to_xz_sqr(m_corrected_dest_position)));
     else
         b = b && fis_zero(m_path.back().position.distance_to_xz_sqr(m_corrected_dest_position));
-    //		b					= b && fis_zero(m_path.back().position.distance_to_xz_sqr(m_dest_position));
+    //      b                   = b && fis_zero(m_path.back().position.distance_to_xz_sqr(m_dest_position));
     return (b);
 }
 
@@ -129,8 +129,8 @@ void CDetailPathManager::build_path(const xr_vector<u32>& level_path, u32 interm
             for (; I != E; ++I)
                 Msg("[%d] : [%f][%f]", (*I).index, (*I).linear_velocity, (*I).angular_velocity);
 
-//			for (;;)
-//				build_smooth_path(level_path,intermediate_index);
+//          for (;;)
+//              build_smooth_path(level_path,intermediate_index);
 #endif
         }
 

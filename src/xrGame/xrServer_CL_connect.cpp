@@ -12,7 +12,7 @@ void xrServer::Perform_connect_spawn(CSE_Abstract* E, xrClientData* CL, NET_Pack
     xr_vector<u16>::iterator it = std::find(conn_spawned_ids.begin(), conn_spawned_ids.end(), E->ID);
     if (it != conn_spawned_ids.end())
     {
-        //.		Msg("Rejecting redundant SPAWN data [%d]", E->ID);
+        //.     Msg("Rejecting redundant SPAWN data [%d]", E->ID);
         return;
     }
 
@@ -23,7 +23,7 @@ void xrServer::Perform_connect_spawn(CSE_Abstract* E, xrClientData* CL, NET_Pack
     if (E->s_flags.is(M_SPAWN_OBJECT_PHANTOM))
         return;
 
-    //.	Msg("Perform connect spawn [%d][%s]", E->ID, E->s_name.c_str());
+    //. Msg("Perform connect spawn [%d][%s]", E->ID, E->s_name.c_str());
 
     // Connectivity order
     CSE_Abstract* Parent = ID_to_entity(E->ID_Parent);
@@ -58,9 +58,9 @@ void xrServer::Perform_connect_spawn(CSE_Abstract* E, xrClientData* CL, NET_Pack
     {
         E->Spawn_Write(P, FALSE);
         E->UPDATE_Write(P);
-        //		CSE_ALifeObject*	object = smart_cast<CSE_ALifeObject*>(E);
-        //		VERIFY				(object);
-        //		VERIFY				(object->client_data.empty());
+        //      CSE_ALifeObject*    object = smart_cast<CSE_ALifeObject*>(E);
+        //      VERIFY              (object);
+        //      VERIFY              (object->client_data.empty());
     }
     //-----------------------------------------------------
     E->s_flags = save;
@@ -110,8 +110,8 @@ void xrServer::OnCL_Connected(IClient* _CL)
         Level().StartPlayDemo();
         return;
     };*/
-    ///	Server_Client_Check(CL);
-    // csPlayers.Enter					();	//sychronized by a parent call
+    /// Server_Client_Check(CL);
+    // csPlayers.Enter                  (); //sychronized by a parent call
     Export_game_type(CL);
     Perform_game_export();
     SendConnectionData(CL);

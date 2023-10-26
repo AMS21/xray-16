@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_editor_tree_values.cpp
-//	Created 	: 20.12.2007
-//  Modified 	: 20.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property editor tree values class
+//  Module      : property_editor_tree_values.cpp
+//  Created     : 20.12.2007
+//  Modified    : 20.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property editor tree values class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

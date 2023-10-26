@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_default_behaviour_planner_inline.hpp
-//	Created 	: 15.11.2007
-//	Author		: Alexander Dudin
-//	Description : Default behaviour planner for target selector inline functions
+//  Module      : smart_cover_default_behaviour_planner_inline.hpp
+//  Created     : 15.11.2007
+//  Author      : Alexander Dudin
+//  Description : Default behaviour planner for target selector inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef SMART_COVER_DEFAULT_BEHAVIOUR_PLANNER_INLINE_HPP_INCLUDED

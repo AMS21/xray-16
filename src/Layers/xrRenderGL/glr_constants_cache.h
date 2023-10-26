@@ -44,7 +44,7 @@ private:
 
         default:
 #ifdef DEBUG
-			xrDebug::Fatal(DEBUG_INFO, "Invalid constant run-time-type for '%s'", *C->name);
+            xrDebug::Fatal(DEBUG_INFO, "Invalid constant run-time-type for '%s'", *C->name);
 #else
             NODEFAULT;
 #endif
@@ -79,7 +79,7 @@ private:
 
         default:
 #ifdef DEBUG
-			xrDebug::Fatal(DEBUG_INFO, "Invalid constant run-time-type for '%s'", *C->name);
+            xrDebug::Fatal(DEBUG_INFO, "Invalid constant run-time-type for '%s'", *C->name);
 #else
             NODEFAULT;
 #endif
@@ -114,7 +114,7 @@ private:
 
         default:
 #ifdef DEBUG
-			xrDebug::Fatal(DEBUG_INFO, "Invalid constant run-time-type for '%s'", *C->name);
+            xrDebug::Fatal(DEBUG_INFO, "Invalid constant run-time-type for '%s'", *C->name);
 #else
             NODEFAULT;
 #endif
@@ -222,4 +222,4 @@ public:
     // TODO: OGL: Implement constant caching through UBOs
     ICF void flush() { }
 };
-#endif	//	glr_constants_cacheH
+#endif  //  glr_constants_cacheH

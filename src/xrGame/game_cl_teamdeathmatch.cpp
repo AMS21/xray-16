@@ -57,9 +57,9 @@ game_cl_TeamDeathmatch::game_cl_TeamDeathmatch()
 }
 void game_cl_TeamDeathmatch::Init()
 {
-    //	pInventoryMenu	= new CUIInventoryWnd();
-    //	pPdaMenu = new CUIPdaWnd();
-    //	pMapDesc = new CUIMapDesc();
+    //  pInventoryMenu  = new CUIInventoryWnd();
+    //  pPdaMenu = new CUIPdaWnd();
+    //  pMapDesc = new CUIMapDesc();
     //-----------------------------------------------------------
     LoadTeamData(GetTeamMenu(1));
     LoadTeamData(GetTeamMenu(2));
@@ -73,7 +73,7 @@ game_cl_TeamDeathmatch::~game_cl_TeamDeathmatch()
     xr_delete(pCurBuyMenu);
     xr_delete(pCurSkinMenu);
 
-    //	xr_delete(pInventoryMenu);
+    //  xr_delete(pInventoryMenu);
 }
 
 void game_cl_TeamDeathmatch::net_import_state(NET_Packet& P)
@@ -115,9 +115,9 @@ void game_cl_TeamDeathmatch::net_import_state(NET_Packet& P)
 void game_cl_TeamDeathmatch::TranslateGameMessage(u32 msg, NET_Packet& P)
 {
     string512 Text;
-    //	LPSTR	Color_Teams[3]	= {"%c[255,255,255,255]", "%c[255,64,255,64]", "%c[255,64,64,255]"};
+    //  LPSTR   Color_Teams[3]  = {"%c[255,255,255,255]", "%c[255,64,255,64]", "%c[255,64,64,255]"};
     char Color_Main[] = "%c[255,192,192,192]";
-    //	LPSTR	TeamsNames[3]	= {"Zero Team", "Team Green", "Team Blue"};
+    //  LPSTR   TeamsNames[3]   = {"Zero Team", "Team Green", "Team Blue"};
 
     switch (msg)
     {
@@ -216,7 +216,7 @@ void game_cl_TeamDeathmatch::OnMapInfoAccept()
 {
     if (CanCallTeamSelectMenu())
         m_game_ui->m_pUITeamSelectWnd->ShowDialog(true);
-    //.		m_game_ui->StartStopMenu(m_game_ui->m_pUITeamSelectWnd, true);
+    //.     m_game_ui->StartStopMenu(m_game_ui->m_pUITeamSelectWnd, true);
 };
 
 void game_cl_TeamDeathmatch::OnTeamMenuBack()
@@ -224,21 +224,21 @@ void game_cl_TeamDeathmatch::OnTeamMenuBack()
     if (local_player->testFlag(GAME_PLAYER_FLAG_SPECTATOR))
     {
         m_game_ui->ShowServerInfo();
-        //.		m_game_ui->StartStopMenu(m_game_ui->m_pMapDesc, true);
+        //.     m_game_ui->StartStopMenu(m_game_ui->m_pMapDesc, true);
     }
 };
 
 void game_cl_TeamDeathmatch::OnTeamMenu_Cancel()
 {
     m_game_ui->m_pUITeamSelectWnd->HideDialog();
-    //.	m_game_ui->StartStopMenu(m_game_ui->m_pUITeamSelectWnd, true);
+    //. m_game_ui->StartStopMenu(m_game_ui->m_pUITeamSelectWnd, true);
 
     if (!m_bTeamSelected && !m_bSpectatorSelected)
     {
         if (CanCallTeamSelectMenu() && !m_game_ui->m_pUITeamSelectWnd->IsShown())
         {
             m_game_ui->m_pUITeamSelectWnd->ShowDialog(true);
-            //.			m_game_ui->StartStopMenu(m_game_ui->m_pUITeamSelectWnd, true);
+            //.         m_game_ui->StartStopMenu(m_game_ui->m_pUITeamSelectWnd, true);
             return;
         }
     }
@@ -249,7 +249,7 @@ void game_cl_TeamDeathmatch::OnSkinMenuBack()
 {
     if (CanCallTeamSelectMenu())
         m_game_ui->m_pUITeamSelectWnd->ShowDialog(true);
-    //.		m_game_ui->StartStopMenu(m_game_ui->m_pUITeamSelectWnd, true);
+    //.     m_game_ui->StartStopMenu(m_game_ui->m_pUITeamSelectWnd, true);
 };
 
 void game_cl_TeamDeathmatch::OnSpectatorSelect()
@@ -285,7 +285,7 @@ void game_cl_TeamDeathmatch::OnTeamSelect(int Team)
         P.w_u8(PLAYER_CHANGE_TEAM);
 
         P.w_s16(s16(Team + 1));
-        // P.w_u32			(0);
+        // P.w_u32          (0);
         l_pPlayer->u_EventSend(P);
         //-----------------------------------------------------------------
         m_bSkinSelected = FALSE;
@@ -293,10 +293,10 @@ void game_cl_TeamDeathmatch::OnTeamSelect(int Team)
     //-----------------------------------------------------------------
     m_bTeamSelected = TRUE;
     //---------------------------
-    //	if (m_bMenuCalledFromReady)
-    //	{
-    //		OnKeyboardPress(kJUMP);
-    //	}
+    //  if (m_bMenuCalledFromReady)
+    //  {
+    //      OnKeyboardPress(kJUMP);
+    //  }
 };
 //-----------------------------------------------------------------
 void game_cl_TeamDeathmatch::SetCurrentBuyMenu()
@@ -355,7 +355,7 @@ void game_cl_TeamDeathmatch::SetCurrentSkinMenu()
     if (pCurSkinMenu && new_team != pCurSkinMenu->GetTeam())
         if (pCurSkinMenu->IsShown())
             pCurSkinMenu->HideDialog();
-    //.			m_game_ui->StartStopMenu(pCurSkinMenu,true);
+    //.         m_game_ui->StartStopMenu(pCurSkinMenu,true);
 
     xr_delete(pCurSkinMenu);
     pCurSkinMenu = InitSkinMenu(new_team);
@@ -373,7 +373,7 @@ bool game_cl_TeamDeathmatch::CanBeReady()
         m_bMenuCalledFromReady = FALSE;
         if (CanCallTeamSelectMenu())
             m_game_ui->m_pUITeamSelectWnd->ShowDialog(true);
-        //.			m_game_ui->StartStopMenu(m_game_ui->m_pUITeamSelectWnd,true);
+        //.         m_game_ui->StartStopMenu(m_game_ui->m_pUITeamSelectWnd,true);
 
         return false;
     }
@@ -404,7 +404,7 @@ void game_cl_TeamDeathmatch::shedule_Update(u32 dt)
     //---------------------------------------------------------
     if (m_game_ui->m_pUITeamSelectWnd && m_game_ui->m_pUITeamSelectWnd->IsShown() && !CanCallTeamSelectMenu())
         m_game_ui->m_pUITeamSelectWnd->HideDialog();
-    //.		m_game_ui->StartStopMenu(m_game_ui->m_pUITeamSelectWnd,true);
+    //.     m_game_ui->StartStopMenu(m_game_ui->m_pUITeamSelectWnd,true);
     //---------------------------------------------------------
 
     if (m_game_ui)
@@ -678,7 +678,7 @@ void game_cl_TeamDeathmatch::UpdateMapLocations()
 
 void game_cl_TeamDeathmatch::LoadSndMessages()
 {
-    //	LoadSndMessage("dm_snd_messages", "you_won", ID_YOU_WON);
+    //  LoadSndMessage("dm_snd_messages", "you_won", ID_YOU_WON);
     LoadSndMessage("tdm_snd_messages", "team1_win", ID_TEAM1_WIN);
     LoadSndMessage("tdm_snd_messages", "team2_win", ID_TEAM2_WIN);
     LoadSndMessage("tdm_snd_messages", "teams_equal", ID_TEAMS_EQUAL);
@@ -768,7 +768,7 @@ void game_cl_TeamDeathmatch::OnGameMenuRespond_ChangeTeam(NET_Packet& P)
         pCurSkinMenu->SetCurSkin(local_player->skin);
         if (CanCallSkinMenu())
             pCurSkinMenu->ShowDialog(true);
-        //.			m_game_ui->StartStopMenu(pCurSkinMenu, true);
+        //.         m_game_ui->StartStopMenu(pCurSkinMenu, true);
     }
 };
 

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_alife_planner.h
-//	Created 	: 25.03.2004
-//  Modified 	: 27.09.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker ALife planner
+//  Module      : stalker_alife_planner.h
+//  Created     : 25.03.2004
+//  Modified    : 27.09.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker ALife planner
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

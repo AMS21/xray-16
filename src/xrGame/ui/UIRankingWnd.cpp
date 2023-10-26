@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: UIRankingWnd.cpp
-//	Created 	: 17.01.2008
-//	Author		: Evgeniy Sokolov
-//	Description : UI Ranking window class implementation
+//  Module      : UIRankingWnd.cpp
+//  Created     : 17.01.2008
+//  Author      : Evgeniy Sokolov
+//  Description : UI Ranking window class implementation
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

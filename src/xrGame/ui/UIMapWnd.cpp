@@ -37,8 +37,8 @@ CUIMapWnd::CUIMapWnd(UIHint* hint)
     m_map_move_step = 10.0f;
     /*
     #ifdef DEBUG
-    //	m_dbg_text_hint			= NULL;
-    //	m_dbg_info				= NULL;
+    //  m_dbg_text_hint         = NULL;
+    //  m_dbg_info              = NULL;
     #endif // DEBUG
     */
 
@@ -350,7 +350,7 @@ void CUIMapWnd::SetTargetMap(CUICustomMap* m, const Fvector2& pos, bool bZoomIn)
         if (bZoomIn /* && fsimilar(GlobalMap()->GetCurrentZoom(), GlobalMap()->GetMinZoom(),EPS_L )*/)
             SetZoom(GlobalMap()->GetMaxZoom());
 
-        //		m_tgtCenter						= m->ConvertRealToLocalNoTransform(pos, m->BoundRect());
+        //      m_tgtCenter                     = m->ConvertRealToLocalNoTransform(pos, m->BoundRect());
         m_tgtCenter = m->ConvertRealToLocal(pos, true);
         m_tgtCenter.add(m->GetWndPos()).div(GlobalMap()->GetCurrentZoom());
     }
@@ -369,8 +369,8 @@ void CUIMapWnd::Draw()
     inherited::Draw();
     /*
     #ifdef DEBUG
-        m_dbg_text_hint->Draw	();
-        m_dbg_info->Draw		();
+        m_dbg_text_hint->Draw   ();
+        m_dbg_info->Draw        ();
     #endif // DEBUG */
 
     if (m_btn_nav_parent)
@@ -552,7 +552,7 @@ bool CUIMapWnd::UpdateZoom(bool b_zoom_in)
 
     if (!fsimilar(prev_zoom, GetZoom()))
     {
-        //		m_tgtCenter.set( 0, 0 );// = cursor_pos;
+        //      m_tgtCenter.set( 0, 0 );// = cursor_pos;
         Frect vis_rect = ActiveMapRect();
         vis_rect.getcenter(m_tgtCenter);
 
@@ -571,7 +571,7 @@ bool CUIMapWnd::UpdateZoom(bool b_zoom_in)
 
 void CUIMapWnd::SendMessage(CUIWindow* pWnd, s16 msg, void* pData)
 {
-    //	inherited::SendMessage( pWnd, msg, pData);
+    //  inherited::SendMessage( pWnd, msg, pData);
     CUIWndCallback::OnEvent(pWnd, msg, pData);
 
     if (pWnd == m_UIPropertiesBox && msg == PROPERTY_CLICKED && m_UIPropertiesBox->GetClickedItem())

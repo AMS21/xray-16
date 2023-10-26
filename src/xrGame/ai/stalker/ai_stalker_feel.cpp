@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_stalker_feel.cpp
-//	Created 	: 25.02.2003
-//  Modified 	: 25.02.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Feelings for monster "Stalker"
+//  Module      : ai_stalker_feel.cpp
+//  Created     : 25.02.2003
+//  Modified    : 25.02.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Feelings for monster "Stalker"
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -28,7 +28,7 @@ bool CAI_Stalker::feel_vision_isRelevant(IGameObject* O)
     CInventoryItem* I = smart_cast<CInventoryItem*>(O);
     if (!E && !I)
         return (false);
-    //	if (E && (E->g_Team() == g_Team()))			return false;
+    //  if (E && (E->g_Team() == g_Team()))         return false;
     return (true);
 }
 

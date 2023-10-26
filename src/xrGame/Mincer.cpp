@@ -84,10 +84,10 @@ bool CMincer::BlowoutState()
     // xr_set<IGameObject*>::iterator it=m_inZone.begin(),e=m_inZone.end();
     // for(;e!=it;++it)
     //{
-    //	CEntityAlive * EA = smart_cast<CEntityAlive *>(*it);
-    //	if(!EA)continue;
-    //	CPhysicsShellHolder * GO = smart_cast<CPhysicsShellHolder *>(*it);
-    //	Telekinesis().activate(GO,m_fThrowInImpulse, m_fTeleHeight, 100000);
+    //  CEntityAlive * EA = smart_cast<CEntityAlive *>(*it);
+    //  if(!EA)continue;
+    //  CPhysicsShellHolder * GO = smart_cast<CPhysicsShellHolder *>(*it);
+    //  Telekinesis().activate(GO,m_fThrowInImpulse, m_fTeleHeight, 100000);
 
     //}
 

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_string_shared_str.hpp
-//	Created 	: 19.12.2007
-//  Modified 	: 19.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : string property for shared_str implementation class
+//  Module      : property_string_shared_str.hpp
+//  Created     : 19.12.2007
+//  Modified    : 19.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : string property for shared_str implementation class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_STRING_SHARED_STR_HPP_INCLUDED

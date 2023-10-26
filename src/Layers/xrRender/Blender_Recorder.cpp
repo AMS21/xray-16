@@ -45,9 +45,9 @@ void CBlender_Compile::_cpp_Compile(ShaderElement* _SH)
     SH = _SH;
     RS.Invalidate();
 
-    //	TODO: Check if we need such wired system for
-    //	base texture name detection. Perhapse it's done for
-    //	optimization?
+    //  TODO: Check if we need such wired system for
+    //  base texture name detection. Perhapse it's done for
+    //  optimization?
 
     // Analyze possibility to detail this shader
     detail_texture = nullptr;
@@ -71,8 +71,8 @@ void CBlender_Compile::_cpp_Compile(ShaderElement* _SH)
     else
     {
         ////////////////////
-        //	Igor
-        //	Need this to correct base to detect steep parallax.
+        //  Igor
+        //  Need this to correct base to detect steep parallax.
         if (BT->canUseSteepParallax())
         {
             sh_list& lst = L_textures;
@@ -85,7 +85,7 @@ void CBlender_Compile::_cpp_Compile(ShaderElement* _SH)
                 base = *lst[id];
             }
         }
-        //	Igor
+        //  Igor
         ////////////////////
 
         bDetail = false;
@@ -108,7 +108,7 @@ void CBlender_Compile::_cpp_Compile(ShaderElement* _SH)
 
 #ifndef _EDITOR
 #if RENDER != R_R1
-        //	Detect the alowance of detail bump usage here.
+        //  Detect the alowance of detail bump usage here.
         if (!(RImplementation.o.advancedpp && ps_r2_ls_flags.test(R2FLAG_DETAIL_BUMP)))
         {
             bDetail_Diffuse |= bDetail_Bump;
@@ -152,7 +152,7 @@ void CBlender_Compile::SetParams(int iPriority, bool bStrictB2F)
         VERIFY(1 == (SH->flags.iPriority / 2));
 #endif
     }
-    // SH->Flags.bLighting		= FALSE;
+    // SH->Flags.bLighting      = FALSE;
 }
 
 //
@@ -241,8 +241,8 @@ void CBlender_Compile::PassSET_ZB(BOOL bZTest, BOOL bZWrite, BOOL bInvertZTest)
     RS.SetRS(D3DRS_ZFUNC, bZTest ? (bInvertZTest ? D3DCMP_GREATER : D3DCMP_LESSEQUAL) : D3DCMP_ALWAYS);
     RS.SetRS(D3DRS_ZWRITEENABLE, BC(bZWrite));
     /*
-    if (bZWrite || bZTest)				RS.SetRS	(D3DRS_ZENABLE,	D3DZB_TRUE);
-    else								RS.SetRS	(D3DRS_ZENABLE,	D3DZB_FALSE);
+    if (bZWrite || bZTest)              RS.SetRS    (D3DRS_ZENABLE, D3DZB_TRUE);
+    else                                RS.SetRS    (D3DRS_ZENABLE, D3DZB_FALSE);
     */
 }
 
@@ -255,10 +255,10 @@ void CBlender_Compile::PassSET_ablend_mode(BOOL bABlend, u32 abSRC, u32 abDST)
     RS.SetRS(D3DRS_DESTBLEND, bABlend ? abDST : D3DBLEND_ZERO);
 
 #if defined(USE_DX11) || defined(USE_OGL)
-    //	Since in our engine D3DRS_SEPARATEALPHABLENDENABLE state is
-    //	always set to false and in DirectX 10 blend functions for
-    //	color and alpha are always independent, assign blend options for
-    //	alpha in DX11 identical to color.
+    //  Since in our engine D3DRS_SEPARATEALPHABLENDENABLE state is
+    //  always set to false and in DirectX 10 blend functions for
+    //  color and alpha are always independent, assign blend options for
+    //  alpha in DX11 identical to color.
     RS.SetRS(D3DRS_SRCBLENDALPHA, bABlend ? abSRC : D3DBLEND_ONE);
     RS.SetRS(D3DRS_DESTBLENDALPHA, bABlend ? abDST : D3DBLEND_ZERO);
 #endif // !USE_DX9
@@ -288,7 +288,7 @@ void CBlender_Compile::PassSET_LightFog(BOOL bLight, BOOL bFog)
 {
     RS.SetRS(D3DRS_LIGHTING, BC(bLight));
     RS.SetRS(D3DRS_FOGENABLE, BC(bFog));
-    // SH->Flags.bLighting				|= !!bLight;
+    // SH->Flags.bLighting              |= !!bLight;
 }
 
 //
@@ -337,7 +337,7 @@ void CBlender_Compile::Stage_Texture(LPCSTR name, u32, u32 fmin, u32 fmip, u32 f
         N = *lst[id];
     }
     passTextures.emplace_back(Stage(), ref_texture(RImplementation.Resources->_CreateTexture(N)));
-    //	i_Address				(Stage(),address);
+    //  i_Address               (Stage(),address);
     i_Filter(Stage(), fmin, fmip, fmag);
 }
 void CBlender_Compile::Stage_Matrix(LPCSTR name, int iChannel)

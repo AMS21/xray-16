@@ -19,7 +19,7 @@
 #include "GamePersistent.h"
 
 //////////////////////////////////////////////////////////////////////////
-#define PREFETCHED_ARTEFACTS_NUM 1	//количество предварительно проспавненых артефактов
+#define PREFETCHED_ARTEFACTS_NUM 1  //количество предварительно проспавненых артефактов
 #define WIND_RADIUS (4 * Radius()) //расстояние до актера, когда появляется ветер
 #define FASTMODE_DISTANCE (50.f) // distance to camera from sphere, when zone switches to fast update sequence
 
@@ -379,7 +379,7 @@ bool CCustomZone::net_Spawn(CSE_Abstract* DC)
 
         if (m_zone_flags.test(eIdleLightVolumetric))
         {
-            // m_pIdleLight->set_type				(IRender_Light::SPOT);
+            // m_pIdleLight->set_type               (IRender_Light::SPOT);
             m_pIdleLight->set_volumetric(true);
         }
     }
@@ -612,8 +612,8 @@ void CCustomZone::CheckForAwaking()
 
 void CCustomZone::feel_touch_new(IGameObject* O)
 {
-    //	if(smart_cast<CActor*>(O) && O == Level().CurrentEntity())
-    //					m_pLocalActor	= smart_cast<CActor*>(O);
+    //  if(smart_cast<CActor*>(O) && O == Level().CurrentEntity())
+    //                  m_pLocalActor   = smart_cast<CActor*>(O);
 
     CGameObject* pGameObject = smart_cast<CGameObject*>(O);
     CEntityAlive* pEntityAlive = smart_cast<CEntityAlive*>(pGameObject);
@@ -1044,7 +1044,7 @@ void CCustomZone::UpdateBlowoutLight()
     {
         float time_k = m_fLightTimeLeft - (float)Device.dwTimeGlobal;
 
-        //		m_fLightTimeLeft -= Device.fTimeDelta;
+        //      m_fLightTimeLeft -= Device.fTimeDelta;
         clamp(time_k, 0.0f, m_fLightTime * 1000.0f);
 
         float scale = time_k / (m_fLightTime * 1000.0f);
@@ -1567,13 +1567,13 @@ void CCustomZone::CalcDistanceTo(const Fvector& P, float& dist, float& radius)
     }
     /*
         //2nd quick test
-        Fvector				SC;
-        float				dist2;
-        XF.transform_tiny	(SC,CFORM()->getSphere().P);
-        dist2				= P.distance_to(SC);
+        Fvector             SC;
+        float               dist2;
+        XF.transform_tiny   (SC,CFORM()->getSphere().P);
+        dist2               = P.distance_to(SC);
         if(dist2>sr)
         {
-            radius		= sr;
+            radius      = sr;
             return;
         }
     */

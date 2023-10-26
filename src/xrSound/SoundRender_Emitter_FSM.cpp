@@ -148,11 +148,11 @@ void CSoundRender_Emitter::update(float fTime, float dt)
                 // switch to: PLAY
                 m_current_state = stPlaying;
                 /*
-                                u32 ptr						= calc_cursor(	fTimeStarted,
+                                u32 ptr                     = calc_cursor(  fTimeStarted,
                                                                             fTime,
                                                                             get_length_sec(),
                                                                             source()->m_wformat);
-                                set_cursor					(ptr);
+                                set_cursor                  (ptr);
                 */
                 SoundRender->i_start(this);
             }
@@ -201,7 +201,7 @@ void CSoundRender_Emitter::update(float fTime, float dt)
         break;
     }
 
-	//--#SM+# Begin--
+    //--#SM+# Begin--
     // hard rewind
     switch (m_current_state)
     {

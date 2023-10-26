@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_color.hpp
-//	Created 	: 10.12.2007
-//  Modified 	: 10.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : color property implementation class
+//  Module      : property_color.hpp
+//  Created     : 10.12.2007
+//  Modified    : 10.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : color property implementation class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_COLOR_HPP_INCLUDED

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_danger_property_evaluators.h
-//	Created 	: 31.05.2005
-//  Modified 	: 31.05.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker danger property evaluators classes
+//  Module      : stalker_danger_property_evaluators.h
+//  Created     : 31.05.2005
+//  Modified    : 31.05.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker danger property evaluators classes
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_obstacle.cpp
-//	Created 	: 02.04.2007
-//  Modified 	: 06.04.2007
-//	Author		: Dmitriy Iassenev
-//	Description : ai obstacle class inline functions
+//  Module      : ai_obstacle.cpp
+//  Created     : 02.04.2007
+//  Modified    : 06.04.2007
+//  Author      : Dmitriy Iassenev
+//  Description : ai obstacle class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -206,7 +206,7 @@ void ai_obstacle::correct_position(Fvector& position)
 
 void ai_obstacle::compute_impl()
 {
-    //	VERIFY						(m_object->is_ai_obstacle());
+    //  VERIFY                      (m_object->is_ai_obstacle());
 
     typedef CLevelGraph::CPosition CPosition;
     typedef CLevelGraph::const_vertex_iterator const_iterator;
@@ -255,7 +255,7 @@ void ai_obstacle::compute_impl()
         }
     }
 
-    //	VERIFY						(m_area.empty());
+    //  VERIFY                      (m_area.empty());
     if (m_area.empty())
     {
         m_crc = 0;

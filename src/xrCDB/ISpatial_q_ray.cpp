@@ -20,7 +20,7 @@ struct alignas(16) vec_t : public Fvector3
 {
     float pad;
 };
-// static vec_t	vec_c	( float _x, float _y, float _z)	{ vec_t v; v.x=_x;v.y=_y;v.z=_z;v.pad=0; return v; }
+// static vec_t vec_c   ( float _x, float _y, float _z) { vec_t v; v.x=_x;v.y=_y;v.z=_z;v.pad=0; return v; }
 
 struct alignas(16) aabb_t
 {
@@ -192,7 +192,7 @@ ICF bool isect_sse(const aabb_t& box, const ray_t& ray, float& dist)
     const bool ret = _mm_comige_ss(lmax, _mm_setzero_ps()) & _mm_comige_ss(lmax, lmin);
 
     storess(lmin, &dist);
-    // storess	(lmax, &rs.t_far);
+    // storess  (lmax, &rs.t_far);
 
     return ret;
 }
@@ -262,9 +262,9 @@ public:
     {
         aabb_t box;
         /*
-            float		n_vR	=		2*n_R;
-            box.min.set	(n_C.x-n_vR, n_C.y-n_vR, n_C.z-n_vR);	box.min.pad = 0;
-            box.max.set	(n_C.x+n_vR, n_C.y+n_vR, n_C.z+n_vR);	box.max.pad = 0;
+            float       n_vR    =       2*n_R;
+            box.min.set (n_C.x-n_vR, n_C.y-n_vR, n_C.z-n_vR);   box.min.pad = 0;
+            box.max.set (n_C.x+n_vR, n_C.y+n_vR, n_C.z+n_vR);   box.max.pad = 0;
         */
         __m128 NR = _mm_load_ss((float*)&n_R);
         __m128 NC = _mm_unpacklo_ps(_mm_load_ss((float*)&n_C.x), _mm_load_ss((float*)&n_C.y));

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: path_manager_level.h
-//	Created 	: 21.03.2002
-//  Modified 	: 03.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Level path manager
+//  Module      : path_manager_level.h
+//  Created     : 21.03.2002
+//  Modified    : 03.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Level path manager
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -24,16 +24,16 @@ protected:
 
 protected:
     int x1;
-    //	float				y1;
+    //  float               y1;
     int z1;
     int x2;
-    //	float				y2;
+    //  float               y2;
     int z2;
     int x3;
-    //	float				y3;
+    //  float               y3;
     int z3;
-    //	float				square_size_y;
-    //	float				size_y;
+    //  float               square_size_y;
+    //  float               size_y;
     float m_sqr_distance_xz;
     float m_distance_xz;
     _Graph::CLevelVertex* best_node;

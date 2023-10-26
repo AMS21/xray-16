@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: trade_action_parameters.h
-//	Created 	: 13.01.2006
-//  Modified 	: 13.01.2006
-//	Author		: Dmitriy Iassenev
-//	Description : trade action parameters class
+//  Module      : trade_action_parameters.h
+//  Created     : 13.01.2006
+//  Modified    : 13.01.2006
+//  Author      : Dmitriy Iassenev
+//  Description : trade action parameters class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

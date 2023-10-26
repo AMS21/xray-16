@@ -115,7 +115,7 @@ void dx113DFluidRenderer::DestroyShaders()
 {
     for (size_t i = 0; i < RS_NumShaders; ++i)
     {
-        //	Release shader's element.
+        //  Release shader's element.
         m_RendererTechnique[i] = nullptr;
     }
 }
@@ -244,8 +244,8 @@ void dx113DFluidRenderer::CreateHHGGTexture()
         data[4 * i + 3] = g0(a);
     }
 
-    //	Min value is -1
-    //	Max value is +1
+    //  Min value is -1
+    //  Max value is +1
     PackedVector::XMConvertFloatToHalfStream(converted, sizeof(PackedVector::HALF), data, sizeof(float), std::size(data));
 
     D3D_TEXTURE1D_DESC desc;
@@ -317,7 +317,7 @@ void dx113DFluidRenderer::CreateRayDataResources(int width, int height)
 
 void dx113DFluidRenderer::Draw(const dx113DFluidData& FluidData)
 {
-    //	We don't need ZB anyway
+    //  We don't need ZB anyway
     RCache.set_ZB(nullptr);
 
     CRenderTarget* pTarget = RImplementation.Target;
@@ -328,8 +328,8 @@ void dx113DFluidRenderer::Draw(const dx113DFluidData& FluidData)
 
     CalculateLighting(FluidData, LightData);
 
-    //	Set shader element to set up all necessary constants to constant buffer
-    //	If you change constant buffer layout make sure this hack works ok.
+    //  Set shader element to set up all necessary constants to constant buffer
+    //  If you change constant buffer layout make sure this hack works ok.
     RCache.set_Element(m_RendererTechnique[RS_CompRayData_Back]);
 
     // Ray cast and render to a temporary buffer
@@ -496,7 +496,7 @@ void dx113DFluidRenderer::CalculateLighting(const dx113DFluidData& FluidData, Fo
         // LightIntencity.mul(0.5f);
 
         // if (!pLight->flags.bStatic)
-        //	LightIntencity.mul(0.5f);
+        //  LightIntencity.mul(0.5f);
 
         float r = pLight->range;
         float a = clampr(1.f - d / (r + EPS), 0.f, 1.f) * (pLight->flags.bStatic ? 1.f : 2.f);

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_game_object_script2.cpp
-//	Created 	: 25.09.2003
-//  Modified 	: 29.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : XRay Script game object script export
+//  Module      : script_game_object_script2.cpp
+//  Created     : 25.09.2003
+//  Modified    : 29.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : XRay Script game object script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -68,12 +68,12 @@ luabind::class_<CScriptGameObject>& script_register_game_object1(luabind::class_
             value("alifeMovementTypeRandom", int(eSelectionTypeRandomBranching))
         ]
 
-        //		.property("visible",				&CScriptGameObject::getVisible,
+        //      .property("visible",                &CScriptGameObject::getVisible,
         //&CScriptGameObject::setVisible)
-        //		.property("enabled",				&CScriptGameObject::getEnabled,
+        //      .property("enabled",                &CScriptGameObject::getEnabled,
         //&CScriptGameObject::setEnabled)
 
-        //		.def_readonly("health",				&CScriptGameObject::GetHealth, &CScriptGameObject::SetHealth)
+        //      .def_readonly("health",             &CScriptGameObject::GetHealth, &CScriptGameObject::SetHealth)
         .property("health", &CScriptGameObject::GetHealth, &CScriptGameObject::SetHealth)
         .property("psy_health", &CScriptGameObject::GetPsyHealth, &CScriptGameObject::SetPsyHealth)
         .property("power", &CScriptGameObject::GetPower, &CScriptGameObject::SetPower)
@@ -82,7 +82,7 @@ luabind::class_<CScriptGameObject>& script_register_game_object1(luabind::class_
         .property("morale", &CScriptGameObject::GetMorale, &CScriptGameObject::SetMorale)
         .property("bleeding", &CScriptGameObject::GetBleeding, &CScriptGameObject::SetBleeding)
 
-        //		.def("get_bleeding",				&CScriptGameObject::GetBleeding)
+        //      .def("get_bleeding",                &CScriptGameObject::GetBleeding)
         .def("center", &CScriptGameObject::Center)
         .def("position", &CScriptGameObject::Position)
         .def("direction", &CScriptGameObject::Direction)
@@ -97,7 +97,7 @@ luabind::class_<CScriptGameObject>& script_register_game_object1(luabind::class_
         .def("condition", &CScriptGameObject::GetCondition)
         .def("set_condition", &CScriptGameObject::SetCondition)
         .def("death_time", &CScriptGameObject::DeathTime)
-        //		.def("armor",						&CScriptGameObject::Armor)
+        //      .def("armor",                       &CScriptGameObject::Armor)
         .def("max_health", &CScriptGameObject::MaxHealth)
         .def("accuracy", &CScriptGameObject::Accuracy)
         .def("alive", &CScriptGameObject::Alive)
@@ -175,19 +175,19 @@ luabind::class_<CScriptGameObject>& script_register_game_object1(luabind::class_
         .def("set_weight", &CScriptGameObject::SetWeight)
         //-Alundaio
         .def("set_queue_size", &CScriptGameObject::SetQueueSize)
-        //		.def("best_hit",					&CScriptGameObject::GetBestHit)
-        //		.def("best_sound",					&CScriptGameObject::GetBestSound)
+        //      .def("best_hit",                    &CScriptGameObject::GetBestHit)
+        //      .def("best_sound",                  &CScriptGameObject::GetBestSound)
         .def("best_danger", &CScriptGameObject::GetBestDanger)
         .def("best_enemy", &CScriptGameObject::GetBestEnemy)
         .def("best_item", &CScriptGameObject::GetBestItem)
         .def("action_count", &CScriptGameObject::GetActionCount)
         .def("action_by_index", &CScriptGameObject::GetActionByIndex)
 
-        //.def("set_hear_callback",			(void (CScriptGameObject::*)(const luabind::object &,
+        //.def("set_hear_callback",         (void (CScriptGameObject::*)(const luabind::object &,
         // LPCSTR))(&CScriptGameObject::SetSoundCallback))
-        //.def("set_hear_callback",			(void (CScriptGameObject::*)(const luabind::functor<void>
+        //.def("set_hear_callback",         (void (CScriptGameObject::*)(const luabind::functor<void>
         //&))(&CScriptGameObject::SetSoundCallback))
-        //.def("clear_hear_callback",		&CScriptGameObject::ClearSoundCallback)
+        //.def("clear_hear_callback",       &CScriptGameObject::ClearSoundCallback)
 
         .def("memory_time", &CScriptGameObject::memory_time)
         .def("memory_position", &CScriptGameObject::memory_position)

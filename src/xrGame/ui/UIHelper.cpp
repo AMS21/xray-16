@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: UIHelper.cpp
-//	Created 	: 17.01.2008
-//	Author		: Evgeniy Sokolov
-//	Description : UI Helper class implementation
+//  Module      : UIHelper.cpp
+//  Created     : 17.01.2008
+//  Author      : Evgeniy Sokolov
+//  Description : UI Helper class implementation
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

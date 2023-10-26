@@ -65,11 +65,11 @@ void CRT::create(LPCSTR Name, u32 w, u32 h, D3DFORMAT f, u32 SampleCount /*= 1*/
         }
     }
 
-    //	DirectX 10 supports non-power of two textures
+    //  DirectX 10 supports non-power of two textures
     // Pow2
     // if (!btwIsPow2(w) || !btwIsPow2(h))
     //{
-    //	if (!HW.Caps.raster.bNonPow2)	return;
+    //  if (!HW.Caps.raster.bNonPow2)   return;
     //}
 
     // Check width-and-height of render target surface
@@ -169,7 +169,7 @@ void CRT::create(LPCSTR Name, u32 w, u32 h, D3DFORMAT f, u32 SampleCount /*= 1*/
 #endif
 
         CHK_DX(HW.pDevice->CreateTexture2D(&desc, NULL, &pSurface));
-        // R_CHK		(pSurface->GetSurfaceLevel	(0,&pRT)); // TODO: DX11: check if texture is created?
+        // R_CHK        (pSurface->GetSurfaceLevel  (0,&pRT)); // TODO: DX11: check if texture is created?
 #ifdef DEBUG
         Msg("* created RT(%s), %dx%d, format = %d samples = %d", Name, w, h, dx11FMT, SampleCount);
 #endif // DEBUG
@@ -339,92 +339,92 @@ void resptrcode_crt::create(LPCSTR Name, u32 w, u32 h, D3DFORMAT f, u32 SampleCo
 }
 
 //////////////////////////////////////////////////////////////////////////
-/*	DX10 cut
-CRTC::CRTC			()
+/*  DX10 cut
+CRTC::CRTC          ()
 {
-    if (pSurface)	return;
+    if (pSurface)   return;
 
-    pSurface									= NULL;
-    pRT[0]=pRT[1]=pRT[2]=pRT[3]=pRT[4]=pRT[5]	= NULL;
-    dwSize										= 0;
-    fmt											= D3DFMT_UNKNOWN;
+    pSurface                                    = NULL;
+    pRT[0]=pRT[1]=pRT[2]=pRT[3]=pRT[4]=pRT[5]   = NULL;
+    dwSize                                      = 0;
+    fmt                                         = D3DFMT_UNKNOWN;
 }
-CRTC::~CRTC			()
+CRTC::~CRTC         ()
 {
-    destroy			();
+    destroy         ();
 
     // release external reference
-    DEV->_DeleteRTC	(this);
+    DEV->_DeleteRTC (this);
 }
 
-void CRTC::create	(LPCSTR Name, u32 size,	D3DFORMAT f)
+void CRTC::create   (LPCSTR Name, u32 size, D3DFORMAT f)
 {
-    R_ASSERT	(HW.pDevice && Name && Name[0] && size && btwIsPow2(size));
-    _order		= CPU::QPC();	//Device.GetTimerGlobal()->GetElapsed_clk();
+    R_ASSERT    (HW.pDevice && Name && Name[0] && size && btwIsPow2(size));
+    _order      = CPU::QPC();   //Device.GetTimerGlobal()->GetElapsed_clk();
 
-    HRESULT		_hr;
+    HRESULT     _hr;
 
-    dwSize		= size;
-    fmt			= f;
+    dwSize      = size;
+    fmt         = f;
 
     // Get caps
-    //D3DCAPS9	caps;
-    //R_CHK		(HW.pDevice->GetDeviceCaps(&caps));
+    //D3DCAPS9  caps;
+    //R_CHK     (HW.pDevice->GetDeviceCaps(&caps));
 
-    //	DirectX 10 supports non-power of two textures
+    //  DirectX 10 supports non-power of two textures
     // Pow2
     //if (!btwIsPow2(size))
     //{
-    //	if (!HW.Caps.raster.bNonPow2)	return;
+    //  if (!HW.Caps.raster.bNonPow2)   return;
     //}
 
     // Check width-and-height of render target surface
-    if (size>D3Dxx_REQ_TEXTURECUBE_DIMENSION)		return;
+    if (size>D3Dxx_REQ_TEXTURECUBE_DIMENSION)       return;
 
-    //	TODO: DX11: Validate cube texture format
+    //  TODO: DX11: Validate cube texture format
     // Validate render-target usage
     //_hr = HW.pD3D->CheckDeviceFormat(
-    //	HW.DevAdapter,
-    //	HW.m_DriverType,
-    //	HW.Caps.fTarget,
-    //	D3DUSAGE_RENDERTARGET,
-    //	D3DRTYPE_CUBETEXTURE,
-    //	f
-    //	);
-    //if (FAILED(_hr))					return;
+    //  HW.DevAdapter,
+    //  HW.m_DriverType,
+    //  HW.Caps.fTarget,
+    //  D3DUSAGE_RENDERTARGET,
+    //  D3DRTYPE_CUBETEXTURE,
+    //  f
+    //  );
+    //if (FAILED(_hr))                  return;
 
     // Try to create texture/surface
-    DEV->Evict					();
-    _hr = HW.pDevice->CreateCubeTexture	(size, 1, D3DUSAGE_RENDERTARGET, f, D3DPOOL_DEFAULT, &pSurface,NULL);
-    if (FAILED(_hr) || (0==pSurface))	return;
+    DEV->Evict                  ();
+    _hr = HW.pDevice->CreateCubeTexture (size, 1, D3DUSAGE_RENDERTARGET, f, D3DPOOL_DEFAULT, &pSurface,NULL);
+    if (FAILED(_hr) || (0==pSurface))   return;
 
     // OK
-    Msg			("* created RTc(%s), 6(%d)",Name,size);
+    Msg         ("* created RTc(%s), 6(%d)",Name,size);
     for (u32 face=0; face<6; face++)
-        R_CHK	(pSurface->GetCubeMapSurface	((D3DCUBEMAP_FACES)face, 0, pRT+face));
-    pTexture	= DEV->_CreateTexture	(Name);
-    pTexture->surface_set						(pSurface);
+        R_CHK   (pSurface->GetCubeMapSurface    ((D3DCUBEMAP_FACES)face, 0, pRT+face));
+    pTexture    = DEV->_CreateTexture   (Name);
+    pTexture->surface_set                       (pSurface);
 }
 
-void CRTC::destroy		()
+void CRTC::destroy      ()
 {
-    pTexture->surface_set	(0);
-    pTexture				= NULL;
+    pTexture->surface_set   (0);
+    pTexture                = NULL;
     for (u32 face=0; face<6; face++)
-        _RELEASE	(pRT[face]	);
-    _RELEASE	(pSurface	);
+        _RELEASE    (pRT[face]  );
+    _RELEASE    (pSurface   );
 }
-void CRTC::reset_begin	()
+void CRTC::reset_begin  ()
 {
-    destroy		();
+    destroy     ();
 }
-void CRTC::reset_end	()
+void CRTC::reset_end    ()
 {
-    create		(*cName,dwSize,fmt);
+    create      (*cName,dwSize,fmt);
 }
 
 void resptrcode_crtc::create(LPCSTR Name, u32 size, D3DFORMAT f)
 {
-    _set		(DEV->_CreateRTC(Name,size,f));
+    _set        (DEV->_CreateRTC(Name,size,f));
 }
 */

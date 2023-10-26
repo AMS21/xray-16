@@ -56,11 +56,11 @@ public:
     item_respawn_manager();
     ~item_respawn_manager();
 
-    // void load_respawn_items		(shared_str const section);
+    // void load_respawn_items      (shared_str const section);
     // this method will be called only during level initialization.
     void add_new_rpoint(shared_str profile_sect, RPoint const& point);
     void clear_respawns();
-    // void check_to_spawn			(CSE_Abstract* item);
+    // void check_to_spawn          (CSE_Abstract* item);
     void respawn_all_items();
     void check_to_delete(u16 item_id);
     void update(u32 current_time);

@@ -12,10 +12,10 @@ void CRenderTarget::phase_ssao()
 
     RCache.set_Stencil(FALSE);
 
-    /*RCache.set_Stencil					(TRUE,D3DCMP_LESSEQUAL,0x01,0xff,0x00);	// stencil should be >= 1
-    if (RImplementation.o.nvstencil)	{
-        u_stencil_optimize				(CRenderTarget::SO_Combine);
-        RCache.set_ColorWriteEnable		();
+    /*RCache.set_Stencil                    (TRUE,D3DCMP_LESSEQUAL,0x01,0xff,0x00); // stencil should be >= 1
+    if (RImplementation.o.nvstencil)    {
+        u_stencil_optimize              (CRenderTarget::SO_Combine);
+        RCache.set_ColorWriteEnable     ();
     }*/
 
     // Compute params
@@ -63,21 +63,21 @@ void CRenderTarget::phase_ssao()
     {
         RCache.Render(D3DPT_TRIANGLELIST, Offset, 0, 4, 0, 2);
         /*RCache.set_Stencil( TRUE, D3DCMP_EQUAL, 0x01, 0x81, 0 );
-        RCache.Render		( D3DPT_TRIANGLELIST,Offset,0,4,0,2);
+        RCache.Render       ( D3DPT_TRIANGLELIST,Offset,0,4,0,2);
         if( RImplementation.o.msaa_opt )
         {
-            RCache.set_Element( s_ssao_msaa[0]->E[0]	);
+            RCache.set_Element( s_ssao_msaa[0]->E[0]    );
             RCache.set_Stencil( TRUE, D3DCMP_EQUAL, 0x81, 0x81, 0 );
-            RCache.Render	  ( D3DPT_TRIANGLELIST,Offset,0,4,0,2);
+            RCache.Render     ( D3DPT_TRIANGLELIST,Offset,0,4,0,2);
         }
         else
         {
             for( u32 i = 0; i < RImplementation.o.msaa_samples; ++i )
             {
-                RCache.set_Element			( s_ssao_msaa[i]->E[0]	);
-                StateManager.SetSampleMask	( u32(1) << i  );
-                RCache.set_Stencil			( TRUE, D3DCMP_EQUAL, 0x81, 0x81, 0 );
-                RCache.Render				( D3DPT_TRIANGLELIST,Offset,0,4,0,2);
+                RCache.set_Element          ( s_ssao_msaa[i]->E[0]  );
+                StateManager.SetSampleMask  ( u32(1) << i  );
+                RCache.set_Stencil          ( TRUE, D3DCMP_EQUAL, 0x81, 0x81, 0 );
+                RCache.Render               ( D3DPT_TRIANGLELIST,Offset,0,4,0,2);
             }
             StateManager.SetSampleMask( 0xffffffff );
         }*/
@@ -97,7 +97,7 @@ void CRenderTarget::phase_downsamp()
     // rt_half_depth->pSurface->GetSurfaceLevel(0, &dest);
     // HW.pDevice->StretchRect(source, NULL, dest, NULL, D3DTEXF_POINT);
 
-    // Fvector2	p0,p1;
+    // Fvector2 p0,p1;
     u32 Offset = 0;
 
     u_setrt(RCache, rt_half_depth, nullptr, nullptr, nullptr /*rt_MSAADepth*/);

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: game_sv_base_script.cpp
-//	Created 	: 28.06.2004
-//  Modified 	: 28.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Base server game script export
+//  Module      : game_sv_base_script.cpp
+//  Created     : 28.06.2004
+//  Modified    : 28.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Base server game script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -22,9 +22,9 @@ SCRIPT_EXPORT(game_sv_GameState, (game_GameState),
         class_<game_sv_GameState, game_GameState>("game_sv_GameState")
             .def("get_eid", &game_sv_GameState::get_eid)
             .def("get_id", &game_sv_GameState::get_id)
-            //.def("get_it",				&game_sv_GameState::get_it)
-            //.def("get_it_2_id",			&game_sv_GameState::get_it_2_id)
-            //.def("get_name_it",			&game_sv_GameState::get_name_it)
+            //.def("get_it",                &game_sv_GameState::get_it)
+            //.def("get_it_2_id",           &game_sv_GameState::get_it_2_id)
+            //.def("get_name_it",           &game_sv_GameState::get_name_it)
             .def("get_name_id", &game_sv_GameState::get_name_id)
             .def("get_player_name_id", &game_sv_GameState::get_player_name_id)
         

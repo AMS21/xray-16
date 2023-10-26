@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: obstacles_query_inline.h
-//	Created 	: 10.04.2007
-//  Modified 	: 10.04.2007
-//	Author		: Dmitriy Iassenev
-//	Description : obstacles query inline functions
+//  Module      : obstacles_query_inline.h
+//  Created     : 10.04.2007
+//  Modified    : 10.04.2007
+//  Author      : Dmitriy Iassenev
+//  Description : obstacles query inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef OBSTACLES_QUERY_INLINE_H
@@ -65,8 +65,8 @@ IC bool obstacles_query::operator==(const obstacles_query& object) const
     if (!equal(area(), object.area()))
         return (false);
 
-    //	if (!equal(obstacles(),object.obstacles()))
-    //		return				(false);
+    //  if (!equal(obstacles(),object.obstacles()))
+    //      return              (false);
 
     return (true);
 }

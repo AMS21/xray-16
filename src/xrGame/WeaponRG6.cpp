@@ -31,7 +31,7 @@ bool CWeaponRG6::net_Spawn(CSE_Abstract* DC)
                 inheritedRL::SpawnRocket(*fake_grenade_name, this);
             }
         }
-        //			inheritedRL::SpawnRocket(*fake_grenade_name, this);
+        //          inheritedRL::SpawnRocket(*fake_grenade_name, this);
     }
 
     return l_res;
@@ -87,12 +87,12 @@ void CWeaponRG6::FireStart()
 
             if (HasPick)
             {
-                //			collide::rq_result& RQ = HUD().GetCurrentRayQuery();
+                //          collide::rq_result& RQ = HUD().GetCurrentRayQuery();
                 Fvector Transference;
                 // Transference.add(p1, Fvector().mul(d, RQ.range));
                 Transference.mul(d, RQ.range);
                 Fvector res[2];
-                /*#ifdef		DEBUG
+                /*#ifdef        DEBUG
                                 DBG_OpenCashedDraw();
                                 DBG_DrawLine(p1,Fvector().add(p1,d),color_xrgb(255,0,0));
                 #endif*/
@@ -105,7 +105,7 @@ void CWeaponRG6::FireStart()
                 #endif*/
                 if (canfire0 != 0)
                 {
-                    //					Msg ("d[%f,%f,%f] - res [%f,%f,%f]", d.x, d.y, d.z, res[0].x, res[0].y,
+                    //                  Msg ("d[%f,%f,%f] - res [%f,%f,%f]", d.x, d.y, d.z, res[0].x, res[0].y,
                     // res[0].z);
                     d = res[0];
                 };

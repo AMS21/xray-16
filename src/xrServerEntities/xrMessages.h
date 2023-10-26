@@ -1,7 +1,7 @@
 #pragma once
 
-// CL	== client 2 server message
-// SV	== server 2 client message
+// CL   == client 2 server message
+// SV   == server 2 client message
 
 enum : u32
 {
@@ -202,7 +202,7 @@ enum EGameMessages : u32
     GAME_EVENT_VOTE_STOP,
     GAME_EVENT_VOTE_END,
     GAME_EVENT_GET_ACTIVE_VOTE,
-    //	GAME_EVENT_VOTE_PLAYER_VOTED,
+    //  GAME_EVENT_VOTE_PLAYER_VOTED,
 
     GAME_EVENT_PLAYER_AUTH,
     GAME_EVENT_PLAYER_NAME,

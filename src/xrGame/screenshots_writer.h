@@ -31,7 +31,7 @@ public:
     static u32 const info_max_size = 1024;
     void set_player_name(shared_str const& pname);
     void set_player_cdkey_digest(shared_str const& cdkeydigest);
-    // void	set_admin_name			(shared_str const & admin_name);
+    // void set_admin_name          (shared_str const & admin_name);
 
     u32 write_info(crypto::yielder_t* yielder = NULL);
 

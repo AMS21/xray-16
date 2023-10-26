@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: attachment_owner.cpp
-//	Created 	: 12.02.2004
-//  Modified 	: 12.02.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Attachment owner
+//  Module      : attachment_owner.cpp
+//  Created     : 12.02.2004
+//  Modified    : 12.02.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Attachment owner
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -37,10 +37,10 @@ void CAttachmentOwner::net_Destroy()
     if (!attached_objects().empty())
     {
         Msg("Object %s has attached items :", *smart_cast<CGameObject*>(this)->cName());
-        //		xr_vector<CAttachableItem*>::const_iterator	I = attached_objects().begin();
-        //		xr_vector<CAttachableItem*>::const_iterator	E = attached_objects().end();
-        //		for ( ; I != E; ++I)
-        //			Msg					("* %s",*(*I)->item().object().cName());
+        //      xr_vector<CAttachableItem*>::const_iterator I = attached_objects().begin();
+        //      xr_vector<CAttachableItem*>::const_iterator E = attached_objects().end();
+        //      for ( ; I != E; ++I)
+        //          Msg                 ("* %s",*(*I)->item().object().cName());
     }
 #endif
     R_ASSERT(attached_objects().empty());
@@ -83,7 +83,7 @@ void CAttachmentOwner::attach(CInventoryItem* inventory_item)
     {
         if ((*I)->item().object().ID() == inventory_item->object().ID())
             return; // already attached, fake, I'll repair It
-        //		VERIFY								((*I)->ID() != inventory_item->object().ID());
+        //      VERIFY                              ((*I)->ID() != inventory_item->object().ID());
     }
 
     if (can_attach(inventory_item))

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: purchase_list.h
-//	Created 	: 12.01.2006
-//  Modified 	: 12.01.2006
-//	Author		: Dmitriy Iassenev
-//	Description : purchase list class
+//  Module      : purchase_list.h
+//  Created     : 12.01.2006
+//  Modified    : 12.01.2006
+//  Author      : Dmitriy Iassenev
+//  Description : purchase list class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

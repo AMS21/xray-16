@@ -21,7 +21,7 @@ private:
 #ifdef DEBUG
     Fmatrix DBG_previous_position;
 #endif
-    // Fmatrix			m_startAnimPose;
+    // Fmatrix          m_startAnimPose;
     IKinematics* m_pKinematicsC;
     IKinematicsAnimated* m_pKinematicsA;
     CBlend* m_control_blend;

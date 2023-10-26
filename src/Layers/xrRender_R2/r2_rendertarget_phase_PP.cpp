@@ -75,7 +75,7 @@ bool CRenderTarget::u_need_PP()
     bool _noise = (param_noise > 0.001f);
     bool _dual = (param_duality_h > 0.001f) || (param_duality_v > 0.001f);
 
-    // bool	_menu_pp= g_pGamePersistent?g_pGamePersistent->OnRenderPPUI_query():false;
+    // bool _menu_pp= g_pGamePersistent?g_pGamePersistent->OnRenderPPUI_query():false;
 
     bool _cbase = false;
     {
@@ -90,10 +90,10 @@ bool CRenderTarget::u_need_PP()
     }
     bool _cadd = false;
     {
-        // int		_r	= color_get_R(param_color_add)	;
-        // int		_g	= color_get_G(param_color_add)	;
-        // int		_b	= color_get_B(param_color_add)	;
-        // if (_r>2 || _g>2 || _b>2)	_cadd	= true	;
+        // int      _r  = color_get_R(param_color_add)  ;
+        // int      _g  = color_get_G(param_color_add)  ;
+        // int      _b  = color_get_B(param_color_add)  ;
+        // if (_r>2 || _g>2 || _b>2)    _cadd   = true  ;
         int _r = _abs((int)(param_color_add.x * 255));
         int _g = _abs((int)(param_color_add.y * 255));
         int _b = _abs((int)(param_color_add.z * 255));
@@ -130,8 +130,8 @@ void CRenderTarget::phase_pp()
 {
     // combination/postprocess
     u_setrt(RCache, Device.dwWidth, Device.dwHeight, get_base_rt(), 0, 0, get_base_zb());
-    //	Element 0 for for normal post-process
-    //	Element 4 for color map post-process
+    //  Element 0 for for normal post-process
+    //  Element 4 for color map post-process
     bool bCMap = u_need_CM();
     RCache.set_Element(s_postprocess_msaa->E[bCMap ? 4 : 0]);
 
@@ -140,10 +140,10 @@ void CRenderTarget::phase_pp()
     u32 p_color = subst_alpha(param_color_base, nblend);
     u32 p_gray = subst_alpha(param_color_gray, gblend);
     Fvector p_brightness = param_color_add;
-    // Msg				("param_gray:%f(%d),param_noise:%f(%d)",param_gray,gblend,param_noise,nblend);
-    // Msg				("base: %d,%d,%d",	color_get_R(p_color),		color_get_G(p_color),		color_get_B(p_color));
-    // Msg				("gray: %d,%d,%d",	color_get_R(p_gray),		color_get_G(p_gray),		color_get_B(p_gray));
-    // Msg				("add:  %d,%d,%d",	color_get_R(p_brightness),	color_get_G(p_brightness),	color_get_B(p_brightness));
+    // Msg              ("param_gray:%f(%d),param_noise:%f(%d)",param_gray,gblend,param_noise,nblend);
+    // Msg              ("base: %d,%d,%d",  color_get_R(p_color),       color_get_G(p_color),       color_get_B(p_color));
+    // Msg              ("gray: %d,%d,%d",  color_get_R(p_gray),        color_get_G(p_gray),        color_get_B(p_gray));
+    // Msg              ("add:  %d,%d,%d",  color_get_R(p_brightness),  color_get_G(p_brightness),  color_get_B(p_brightness));
 
     // Draw full-screen quad textured with our scene image
     u32 Offset;

@@ -69,15 +69,15 @@ GHTTPBool __cdecl CompletedHandler(
         break;
     }
 
-    //	CGameSpy_HTTP* pGSHTTP = (CGameSpy_HTTP*) param;
-    //	if (pGSHTTP) pGSHTTP->StopDownload();
+    //  CGameSpy_HTTP* pGSHTTP = (CGameSpy_HTTP*) param;
+    //  if (pGSHTTP) pGSHTTP->StopDownload();
     return GHTTPTrue;
 }
 
 void CGameSpy_HTTP::DownloadFile(LPCSTR URL, LPCSTR FileName, CompletionCallback& completed, ProgressCallback& progress)
 {
     DownloadContext ctx(completed, progress);
-    //	GHTTPRequest res = xrGS_ghttpSaveA(URL, FileName, GHTTPFalse, CompletedCallBack, this);
+    //  GHTTPRequest res = xrGS_ghttpSaveA(URL, FileName, GHTTPFalse, CompletedCallBack, this);
     Msg("URL:  %s", URL);
     Msg("File: %s", FileName);
     m_LastRequest =

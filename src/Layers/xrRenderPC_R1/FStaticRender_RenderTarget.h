@@ -49,7 +49,7 @@ private:
     float param_noise_scale;
     float param_noise_fps;
 
-    //	Color mapping
+    //  Color mapping
     float param_color_map_influence{};
     float param_color_map_interpolate{};
     ColorMapManager color_map_manager;
@@ -63,8 +63,8 @@ private:
 public:
     ref_rt rt_temp_zb;
 
-    //	Igor: for async screenshots
-    ref_rt rt_async_ss; // 32bit		(r,g,b,a) is situated in the system memory
+    //  Igor: for async screenshots
+    ref_rt rt_async_ss; // 32bit        (r,g,b,a) is situated in the system memory
 
 private:
     [[nodiscard]]

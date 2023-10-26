@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: agent_location_manager.cpp
-//	Created 	: 24.05.2004
-//  Modified 	: 14.01.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Agent location manager
+//  Module      : agent_location_manager.cpp
+//  Created     : 24.05.2004
+//  Modified    : 14.01.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Agent location manager
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -90,7 +90,7 @@ bool CAgentLocationManager::suitable(CAI_Stalker* object, const CCoverPoint* loc
         // check if member cover is too close
         if ((*I)->cover()->m_position.distance_to_sqr(location->position()) <= _sqr(5.f))
             // so member cover is too close
-            //			if ((*I)->object().Position().distance_to_sqr(location->position()) <=
+            //          if ((*I)->object().Position().distance_to_sqr(location->position()) <=
             // object->Position().distance_to_sqr(location->position()))
             // check if member to its cover is more close than we to our cover
             if ((*I)->object().Position().distance_to_sqr((*I)->cover()->m_position) <=
@@ -130,7 +130,7 @@ void CAgentLocationManager::make_suitable(CAI_Stalker* object, const CCoverPoint
         // check if member cover is too close
         if ((*I)->cover()->m_position.distance_to_sqr(location->position()) <= _sqr(5.f))
         {
-            //			Msg						("%6d : object [%s] disabled cover for object
+            //          Msg                     ("%6d : object [%s] disabled cover for object
             //[%s]",Device.dwFrame,*object->cName(),*(*I)->object().cName());
             (*I)->object().on_cover_blocked((*I)->cover());
             (*I)->cover(0);

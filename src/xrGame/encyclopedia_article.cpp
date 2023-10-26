@@ -37,9 +37,9 @@ CEncyclopediaArticle::~CEncyclopediaArticle()
 }
 
 /*
-void CEncyclopediaArticle::Load	(ARTICLE_STR_ID str_id)
+void CEncyclopediaArticle::Load (ARTICLE_STR_ID str_id)
 {
-    Load	(id_to_index::IdToIndex(str_id));
+    Load    (id_to_index::IdToIndex(str_id));
 }
 */
 void CEncyclopediaArticle::Load(shared_str id)

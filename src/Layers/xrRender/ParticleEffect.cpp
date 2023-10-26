@@ -83,7 +83,7 @@ void PS::OnEffectParticleBirth(void* owner, u32, PAPI::Particle& m, u32)
 }
 void PS::OnEffectParticleDead(void*, u32, PAPI::Particle&, u32)
 {
-    //	CPEDef* PE = static_cast<CPEDef*>(owner);
+    //  CPEDef* PE = static_cast<CPEDef*>(owner);
 }
 //------------------------------------------------------------------------------
 // class CParticleEffect
@@ -105,7 +105,7 @@ CParticleEffect::CParticleEffect()
 }
 CParticleEffect::~CParticleEffect()
 {
-    // Log					("--- destroy PE");
+    // Log                  ("--- destroy PE");
     OnDeviceDestroy();
     ParticleManager()->DestroyEffect(m_HandleEffect);
     ParticleManager()->DestroyActionList(m_HandleActionList);

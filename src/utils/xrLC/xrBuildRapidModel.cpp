@@ -108,7 +108,7 @@ void CBuild::BuildRapid(BOOL bSaveForOtherCompilers)
     }
 
     /*
-    clMsg					("Faces: original(%d), model(%d), ratio(%f)",
+    clMsg                   ("Faces: original(%d), model(%d), ratio(%f)",
         g_faces.size(),CL.getTS(),float(CL.getTS())/float(g_faces.size()));
     */
 

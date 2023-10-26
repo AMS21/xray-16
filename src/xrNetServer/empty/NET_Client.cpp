@@ -349,7 +349,7 @@ bool IPureClient::Connect(pcstr options)
             HRESULT res = S_FALSE;
             while (res != S_OK) {
                 if (res != S_OK) {
-                    //			xr_string res =
+                    //          xr_string res =
                     // xrDebug::ErrorToString(HostSuccess);
 
                     if (bPortWasSet) {
@@ -367,7 +367,7 @@ bool IPureClient::Connect(pcstr options)
                 }
             }
 
-            //		R_CHK(res);
+            //      R_CHK(res);
             if (res != S_OK)
                 return false;
 
@@ -417,16 +417,16 @@ bool IPureClient::Connect(pcstr options)
 
         // Caps
         /*
-    GUID			sp_guid;
-    DPN_SP_CAPS		sp_caps;
+    GUID            sp_guid;
+    DPN_SP_CAPS     sp_caps;
 
     net_Address_device->GetSP(&sp_guid);
-    ZeroMemory		(&sp_caps,sizeof(sp_caps));
-    sp_caps.dwSize	= sizeof(sp_caps);
-    R_CHK			(NET->GetSPCaps(&sp_guid,&sp_caps,0));
-    sp_caps.dwSystemBufferSize	= 0;
-    R_CHK			(NET->SetSPCaps(&sp_guid,&sp_caps,0));
-    R_CHK			(NET->GetSPCaps(&sp_guid,&sp_caps,0));
+    ZeroMemory      (&sp_caps,sizeof(sp_caps));
+    sp_caps.dwSize  = sizeof(sp_caps);
+    R_CHK           (NET->GetSPCaps(&sp_guid,&sp_caps,0));
+    sp_caps.dwSystemBufferSize  = 0;
+    R_CHK           (NET->SetSPCaps(&sp_guid,&sp_caps,0));
+    R_CHK           (NET->GetSPCaps(&sp_guid,&sp_caps,0));
     */
     } // psNET_direct_connect
     // Sync
@@ -493,7 +493,7 @@ void IPureClient::SendTo_LL(void* data, u32 size, u32 dwFlags, u32 dwTimeout)
 
     // verify
 
-    //	Msg("- Client::SendTo_LL [%d]", size);
+    //  Msg("- Client::SendTo_LL [%d]", size);
 }
 
 void IPureClient::Send(NET_Packet& packet, u32 dwFlags, u32 dwTimeout)

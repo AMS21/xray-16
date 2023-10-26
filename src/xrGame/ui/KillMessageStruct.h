@@ -1,7 +1,7 @@
-// File:		KillMessageStruct.h
-// Description:	storage for HUD message about player death
-// Created:		10.03.2005
-// Mail:		narrator@gsc-game.kiev.ua
+// File:        KillMessageStruct.h
+// Description: storage for HUD message about player death
+// Created:     10.03.2005
+// Mail:        narrator@gsc-game.kiev.ua
 //
 // Copyright 2005 GSC Game World
 

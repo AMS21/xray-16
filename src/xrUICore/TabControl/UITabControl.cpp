@@ -264,7 +264,7 @@ void CUITabControl::Enable(bool status)
     for (u32 i = 0; i < m_TabsArr.size(); ++i)
         m_TabsArr[i]->Enable(status);
 
-    //	m_sPushedId		= "";
-    //	m_sPrevPushedId	= "";
+    //  m_sPushedId     = "";
+    //  m_sPrevPushedId = "";
     inherited::Enable(status);
 }

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_string_values_value_getter.hpp
-//	Created 	: 09.01.2008
-//  Modified 	: 09.01.2008
-//	Author		: Dmitriy Iassenev
-//	Description : property string values value getter class
+//  Module      : property_string_values_value_getter.hpp
+//  Created     : 09.01.2008
+//  Modified    : 09.01.2008
+//  Author      : Dmitriy Iassenev
+//  Description : property string values value getter class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_STRING_VALUES_VALUE_GETTER_HPP_INCLUDED

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: agent_manager_actions.cpp
-//	Created 	: 25.05.2004
-//  Modified 	: 25.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Agent manager actions
+//  Module      : agent_manager_actions.cpp
+//  Created     : 25.05.2004
+//  Modified    : 25.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Agent manager actions
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -62,7 +62,7 @@ void CAgentManagerActionKillEnemy::finalize()
 {
     inherited::finalize();
 
-    //	m_object->enemy().distribute_enemies		();
+    //  m_object->enemy().distribute_enemies        ();
 }
 
 void CAgentManagerActionKillEnemy::execute()

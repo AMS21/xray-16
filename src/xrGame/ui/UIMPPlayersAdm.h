@@ -25,8 +25,8 @@ class CUIMpPlayersAdm final : public CUIWindow, public CUIWndCallback
     CUI3tButton* m_pKickPlayerBtn;
     CUI3tButton* m_pBanPlayerBtn;
     CUIComboBox* m_pBanPlayerCombo;
-    // CUITrackBar*		m_pBanTimeTrack;
-    // CUITextWnd*			m_pBanTimeText;
+    // CUITrackBar*     m_pBanTimeTrack;
+    // CUITextWnd*          m_pBanTimeText;
 public:
     CUIMpPlayersAdm();
     ~CUIMpPlayersAdm() override;
@@ -40,6 +40,6 @@ public:
     void GetSelPlayerConfig();
     void KickSelPlayer();
     void BanSelPlayer();
-    //				void		SetBanSelPlayerText();
+    //              void        SetBanSelPlayerText();
     pcstr GetDebugType() override { return "CUIMpPlayersAdm"; }
 };

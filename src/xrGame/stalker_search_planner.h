@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_search_planner.h
-//	Created 	: 03.10.2007
-//  Modified 	: 03.10.2007
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker search planner
+//  Module      : stalker_search_planner.h
+//  Created     : 03.10.2007
+//  Modified    : 03.10.2007
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker search planner
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef STALKER_SEARCH_PLANNER_H_INCLUDED

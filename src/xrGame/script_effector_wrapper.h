@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_effector_wrapper.h
-//	Created 	: 06.02.2004
-//  Modified 	: 06.02.2004
-//	Author		: Dmitriy Iassenev
-//	Description : XRay Script effector wrapper class
+//  Module      : script_effector_wrapper.h
+//  Created     : 06.02.2004
+//  Modified    : 06.02.2004
+//  Author      : Dmitriy Iassenev
+//  Description : XRay Script effector wrapper class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

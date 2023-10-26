@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: UIInvUpgrade.h
-//	Created 	: 08.11.2007
-//  Modified 	: 13.03.2009
-//	Author		: Evgeniy Sokolov, Prishchepa Sergey
-//	Description : inventory upgrade UI class
+//  Module      : UIInvUpgrade.h
+//  Created     : 08.11.2007
+//  Modified    : 13.03.2009
+//  Author      : Evgeniy Sokolov, Prishchepa Sergey
+//  Description : inventory upgrade UI class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef UI_INVENTORY_UPGRADE_H_INCLUDED

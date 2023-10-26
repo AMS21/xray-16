@@ -54,15 +54,15 @@ IC void FillSprite_Circle(const Fvector& pos, const float width, const float len
     t_crcl.min.set(32.0f / 64.0f, 0.0f);
     t_crcl.max.set(1.0f, 32.0f / 512.0f);
 
-    //	TODO: return code back to indexed rendering since we use quads
-    //	Tri 1
+    //  TODO: return code back to indexed rendering since we use quads
+    //  Tri 1
     GEnv.UIRender->PushPoint(
         d.x + pos.x, d.y + pos.y, d.z + pos.z, color, t_crcl.min.x, t_crcl.max.y); // 0.f,1.f);
     GEnv.UIRender->PushPoint(
         a.x + pos.x, a.y + pos.y, a.z + pos.z, color, t_crcl.min.x, t_crcl.min.y); // 0.f,0.f);
     GEnv.UIRender->PushPoint(
         c.x + pos.x, c.y + pos.y, c.z + pos.z, color, t_crcl.max.x, t_crcl.max.y); // 1.f,1.f);
-    //	Tri 2
+    //  Tri 2
     GEnv.UIRender->PushPoint(
         c.x + pos.x, c.y + pos.y, c.z + pos.z, color, t_crcl.max.x, t_crcl.max.y); // 1.f,1.f);
     GEnv.UIRender->PushPoint(
@@ -101,12 +101,12 @@ IC void FillSprite_Line(const Fvector& pos, const Fvector& dir, const float widt
     t_tracer.min.set(0.0f, 1.0f);
     t_tracer.max.set(16.0f / 64.0f, 0.0f);
 
-    //	TODO: return code back to indexed rendering since we use quads
-    //	Tri 1
+    //  TODO: return code back to indexed rendering since we use quads
+    //  Tri 1
     GEnv.UIRender->PushPoint(d.x + pos.x, d.y + pos.y, d.z + pos.z, color, t_tracer.min.x, t_tracer.max.y);
     GEnv.UIRender->PushPoint(a.x + pos.x, a.y + pos.y, a.z + pos.z, color, t_tracer.min.x, t_tracer.min.y);
     GEnv.UIRender->PushPoint(c.x + pos.x, c.y + pos.y, c.z + pos.z, color, t_tracer.max.x, t_tracer.max.y);
-    //	Tri 2
+    //  Tri 2
     GEnv.UIRender->PushPoint(c.x + pos.x, c.y + pos.y, c.z + pos.z, color, t_tracer.max.x, t_tracer.max.y);
     GEnv.UIRender->PushPoint(a.x + pos.x, a.y + pos.y, a.z + pos.z, color, t_tracer.min.x, t_tracer.min.y);
     GEnv.UIRender->PushPoint(b.x + pos.x, b.y + pos.y, b.z + pos.z, color, t_tracer.max.x, t_tracer.min.y);
@@ -127,7 +127,7 @@ void CTracer::Render(const Fvector& pos, const Fvector& center, const Fvector& d
         if (bActor)
         {
             float k_speed = speed / 1000.0f;
-            //			float f_distance	= Device.vCameraPosition.distance_to(pos);
+            //          float f_distance    = Device.vCameraPosition.distance_to(pos);
 
             FillSprite_Circle(
                 pos, k_speed * width * m_circle_size_k, k_speed * width * m_circle_size_k, m_aColors[colorID]);

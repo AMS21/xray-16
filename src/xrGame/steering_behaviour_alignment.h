@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: steering_behaviour_alignment.h
-//	Created 	: 07.11.2007
-//  Modified 	: 07.11.2007
-//	Author		: Dmitriy Iassenev
-//	Description : steering behaviour alignment class
+//  Module      : steering_behaviour_alignment.h
+//  Created     : 07.11.2007
+//  Modified    : 07.11.2007
+//  Author      : Dmitriy Iassenev
+//  Description : steering behaviour alignment class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef STEERING_BEHAVIOUR_ALIGNMENT_H_INCLUDED

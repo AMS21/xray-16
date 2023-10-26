@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_sound.h
-//	Created 	: 06.02.2004
-//  Modified 	: 06.02.2004
-//	Author		: Dmitriy Iassenev
-//	Description : XRay Script sound class
+//  Module      : script_sound.h
+//  Created     : 06.02.2004
+//  Modified    : 06.02.2004
+//  Author      : Dmitriy Iassenev
+//  Description : XRay Script sound class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

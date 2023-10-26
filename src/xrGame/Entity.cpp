@@ -91,12 +91,12 @@ float CEntity::CalcCondition(float hit)
     return hit;
 }
 
-// void CEntity::Hit			(float perc, Fvector &dir, IGameObject* who, s16 element,Fvector position_in_object_space,
+// void CEntity::Hit            (float perc, Fvector &dir, IGameObject* who, s16 element,Fvector position_in_object_space,
 // float
 // impulse, ALife::EHitType hit_type)
 void CEntity::Hit(SHit* pHDS)
 {
-    //	if (bDebug)				Log("Process HIT: ", *cName());
+    //  if (bDebug)             Log("Process HIT: ", *cName());
 
     // *** process hit calculations
     // Calc impulse
@@ -221,7 +221,7 @@ bool CEntity::net_Spawn(CSE_Abstract* DC)
     if (!inherited::net_Spawn(DC))
         return (FALSE);
 
-    //	SetfHealth			(E->fHealth);
+    //  SetfHealth          (E->fHealth);
     IKinematics* pKinematics = smart_cast<IKinematics*>(Visual());
     CInifile* ini = NULL;
 
@@ -310,8 +310,8 @@ void CEntity::KillEntity(u16 whoID, bool bypass_actor_check)
 
 // void CEntity::KillEntity(IGameObject* who)
 //{
-//	VERIFY			(who);
-//	if (who) KillEntity(who->ID());
+//  VERIFY          (who);
+//  if (who) KillEntity(who->ID());
 //}
 
 void CEntity::reinit() { inherited::reinit(); }

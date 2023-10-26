@@ -301,7 +301,7 @@ HRESULT CRender::shader_compile(
     sh_name[len] = '0' + char(4 == m_skinning);
     ++len;
 
-    //	Igor: need restart options
+    //  Igor: need restart options
     if (RImplementation.o.advancedpp && ps_r2_ls_flags.test(R2FLAG_SOFT_WATER))
     {
         defines[def_it].Name = "USE_SOFT_WATER";

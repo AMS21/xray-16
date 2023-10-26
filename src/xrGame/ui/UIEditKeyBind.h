@@ -48,5 +48,5 @@ protected:
 
     bool m_isEditMode;
 
-    //.	CUIColorAnimatorWrapper*				m_pAnimation;
+    //. CUIColorAnimatorWrapper*                m_pAnimation;
 };

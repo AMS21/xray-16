@@ -218,8 +218,8 @@ for( u8 i=0;i<3;++i){
         dFabs(dDOT14(axis,R+ix1)*hside[ix1])+
         dFabs(dDOT14(axis,R+ix2)*hside[ix2]);
 
-    dReal	dist_ax=dDOT(vax,axis)-dDOT(p,axis);
-    dReal	dist_ox=dDOT(vox,axis)-dDOT(p,axis);
+    dReal   dist_ax=dDOT(vax,axis)-dDOT(p,axis);
+    dReal   dist_ox=dDOT(vox,axis)-dDOT(p,axis);
 
     bool isPdistax=dist_ax>0.f;
     bool isPdistox=dist_ox>0.f;
@@ -446,7 +446,7 @@ CMP(sd, c)                                       \
         if(depth##ax<depth##ox){\
                 if(depth##ax>0.f){\
                 if(depth##ax<outDepth){ \
-                    if(dDOT(axis,triAx)*signum<0.f)	{\
+                    if(dDOT(axis,triAx)*signum<0.f) {\
                             outDepth=depth##ax;\
                             outAx[0]=axis[0];\
                             outAx[1]=axis[1];\
@@ -600,9 +600,9 @@ depth##ox = sidePr - dFabs(dist##ox);                                           
         dContactGeom *prc, *c = CONTACT(contact, ret * skip);
         prc = c;
 #define FOO(j, op, spoint)                                \
-	c->pos[0] = spoint[0] op 2.f * hside[j] * R[0 + j]; \
-	c->pos[1] = spoint[1] op 2.f * hside[j] * R[4 + j]; \
-	c->pos[2] = spoint[2] op 2.f * hside[j] * R[8 + j];
+    c->pos[0] = spoint[0] op 2.f * hside[j] * R[0 + j]; \
+    c->pos[1] = spoint[1] op 2.f * hside[j] * R[4 + j]; \
+    c->pos[2] = spoint[2] op 2.f * hside[j] * R[8 + j];
 #define BAR(side, sideinc, spos, sdepth)      \
     {                                         \
         pdepth = &(c->depth);                 \
@@ -656,20 +656,20 @@ depth##ox = sidePr - dFabs(dist##ox);                                           
 
 if (B1 < B2) {
   if (B3 < B1) goto use_side_3; else {
-    BAR(0,1,pos);	// use side 1
+    BAR(0,1,pos);   // use side 1
     if (maxc == 2) goto done;
     if (B2 < B3) goto contact2_2; else goto contact2_3;
   }
 }
 else {
   if (B3 < B2) {
-    use_side_3:	// use side 3
+    use_side_3: // use side 3
     BAR(2,3,pos);
     if (maxc == 2) goto done;
     if (B1 < B2) goto contact2_1; else goto contact2_2;
   }
   else {
-    BAR(1,2,pos);	// use side 2
+    BAR(1,2,pos);   // use side 2
     if (maxc == 2) goto done;
     if (B1 < B3) goto contact2_1; else goto contact2_3;
   }

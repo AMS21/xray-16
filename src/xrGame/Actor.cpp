@@ -285,7 +285,7 @@ void set_box(LPCSTR section, CPHMovementControl& mc, u32 box_num)
 }
 void CActor::Load(LPCSTR section)
 {
-    // Msg						("Loading actor: %s",section);
+    // Msg                      ("Loading actor: %s",section);
     inherited::Load(section);
     material().Load(section);
     CInventoryOwner::Load(section);
@@ -303,34 +303,34 @@ void CActor::Load(LPCSTR section)
     //////////////////////////////////////////////////////////////////////////
 
     // m_PhysicMovementControl: General
-    // m_PhysicMovementControl->SetParent		(this);
+    // m_PhysicMovementControl->SetParent       (this);
 
     /*
-    Fbox	bb;Fvector	vBOX_center,vBOX_size;
+    Fbox    bb;Fvector  vBOX_center,vBOX_size;
     // m_PhysicMovementControl: BOX
-    vBOX_center= pSettings->r_fvector3	(section,"ph_box2_center"	);
-    vBOX_size	= pSettings->r_fvector3	(section,"ph_box2_size"		);
-    bb.set	(vBOX_center,vBOX_center); bb.grow(vBOX_size);
-    character_physics_support()->movement()->SetBox		(2,bb);
+    vBOX_center= pSettings->r_fvector3  (section,"ph_box2_center"   );
+    vBOX_size   = pSettings->r_fvector3 (section,"ph_box2_size"     );
+    bb.set  (vBOX_center,vBOX_center); bb.grow(vBOX_size);
+    character_physics_support()->movement()->SetBox     (2,bb);
 
     // m_PhysicMovementControl: BOX
-    vBOX_center= pSettings->r_fvector3	(section,"ph_box1_center"	);
-    vBOX_size	= pSettings->r_fvector3	(section,"ph_box1_size"		);
-    bb.set	(vBOX_center,vBOX_center); bb.grow(vBOX_size);
-    character_physics_support()->movement()->SetBox		(1,bb);
+    vBOX_center= pSettings->r_fvector3  (section,"ph_box1_center"   );
+    vBOX_size   = pSettings->r_fvector3 (section,"ph_box1_size"     );
+    bb.set  (vBOX_center,vBOX_center); bb.grow(vBOX_size);
+    character_physics_support()->movement()->SetBox     (1,bb);
 
     // m_PhysicMovementControl: BOX
-    vBOX_center= pSettings->r_fvector3	(section,"ph_box0_center"	);
-    vBOX_size	= pSettings->r_fvector3	(section,"ph_box0_size"		);
-    bb.set	(vBOX_center,vBOX_center); bb.grow(vBOX_size);
-    character_physics_support()->movement()->SetBox		(0,bb);
+    vBOX_center= pSettings->r_fvector3  (section,"ph_box0_center"   );
+    vBOX_size   = pSettings->r_fvector3 (section,"ph_box0_size"     );
+    bb.set  (vBOX_center,vBOX_center); bb.grow(vBOX_size);
+    character_physics_support()->movement()->SetBox     (0,bb);
     */
 
     //// m_PhysicMovementControl: Foots
-    // Fvector	vFOOT_center= pSettings->r_fvector3	(section,"ph_foot_center"	);
-    // Fvector	vFOOT_size	= pSettings->r_fvector3	(section,"ph_foot_size"		);
-    // bb.set	(vFOOT_center,vFOOT_center); bb.grow(vFOOT_size);
-    ////m_PhysicMovementControl->SetFoots	(vFOOT_center,vFOOT_size);
+    // Fvector  vFOOT_center= pSettings->r_fvector3 (section,"ph_foot_center"   );
+    // Fvector  vFOOT_size  = pSettings->r_fvector3 (section,"ph_foot_size"     );
+    // bb.set   (vFOOT_center,vFOOT_center); bb.grow(vFOOT_size);
+    ////m_PhysicMovementControl->SetFoots   (vFOOT_center,vFOOT_size);
 
     // m_PhysicMovementControl: Crash speed and mass
     float cs_min = pSettings->r_float(section, "ph_crash_speed_min");
@@ -922,7 +922,7 @@ void CActor::SwitchOutBorder(bool new_border_state)
     }
     else
     {
-        //.		Msg("enter level border");
+        //.     Msg("enter level border");
         callback(GameObject::eEnterLevelBorder)(lua_game_object());
     }
     m_bOutBorder = new_border_state;
@@ -973,16 +973,16 @@ void CActor::g_Physics(Fvector& _accel, float jump, float dt)
             Fvector hdir;
             di->HitDir(hdir);
             SetHitInfo(this, NULL, 0, Fvector().set(0, 0, 0), hdir);
-            //				Hit
+            //              Hit
             //(m_PhysicMovementControl->gcontact_HealthLost,hdir,di->DamageInitiator(),m_PhysicMovementControl->ContactBone(),di->HitPos(),0.f,ALife::eHitTypeStrike);//s16(6
             //+ 2*::Random.randI(0,2))
             if (Level().CurrentControlEntity() == this)
             {
                 SHit HDS = SHit(character_physics_support()->movement()->gcontact_HealthLost,
-                    //.								0.0f,
+                    //.                             0.0f,
                     hdir, di->DamageInitiator(), character_physics_support()->movement()->ContactBone(), di->HitPos(),
                     0.f, di->HitType(), 0.0f, b_hit_initiated);
-                //				Hit(&HDS);
+                //              Hit(&HDS);
 
                 NET_Packet l_P;
                 HDS.GenHeader(GE_HIT, ID());
@@ -1199,7 +1199,7 @@ void CActor::set_state_box(u32 mstate)
 void CActor::shedule_Update(u32 DT)
 {
     setSVU(OnServer());
-    //.	UpdateInventoryOwner			(DT);
+    //. UpdateInventoryOwner            (DT);
 
     if (IsFocused())
     {
@@ -1248,7 +1248,7 @@ void CActor::shedule_Update(u32 DT)
     // Check controls, create accel, prelimitary setup "mstate_real"
 
     //----------- for E3 -----------------------------
-    //	if (Local() && (OnClient() || Level().CurrentEntity()==this))
+    //  if (Local() && (OnClient() || Level().CurrentEntity()==this))
     if (Level().CurrentControlEntity() == this && !Level().IsDemoPlay())
     //------------------------------------------------
     {
@@ -1257,7 +1257,7 @@ void CActor::shedule_Update(u32 DT)
             /*
             if (mstate_real & mcJump)
             {
-                NET_Packet	P;
+                NET_Packet  P;
                 u_EventGen(P, GE_ACTOR_JUMPING, ID());
                 P.w_sdir(NET_SavedAccel);
                 P.w_float(NET_Jump);
@@ -1276,7 +1276,7 @@ void CActor::shedule_Update(u32 DT)
         // Check for game-contacts
         Fvector C;
         float R;
-        // m_PhysicMovementControl->GetBoundingSphere	(C,R);
+        // m_PhysicMovementControl->GetBoundingSphere   (C,R);
 
         Center(C);
         R = Radius();
@@ -1313,8 +1313,8 @@ void CActor::shedule_Update(u32 DT)
 
         if (NET.size())
         {
-            //			NET_SavedAccel = NET_Last.p_accel;
-            //			mstate_real = mstate_wishful = NET_Last.mstate;
+            //          NET_SavedAccel = NET_Last.p_accel;
+            //          mstate_real = mstate_wishful = NET_Last.mstate;
 
             g_sv_Orientate(mstate_real, dt);
             g_Orientate(mstate_real, dt);
@@ -1397,7 +1397,7 @@ void CActor::shedule_Update(u32 DT)
                 m_DangerSnd.set_position(snd_pos);
 
             float v = bs + 0.25f;
-            //			Msg( "bs            = %.2f", bs );
+            //          Msg( "bs            = %.2f", bs );
 
             m_DangerSnd.set_volume(v);
         }
@@ -1486,7 +1486,7 @@ void CActor::shedule_Update(u32 DT)
         m_pInvBoxWeLookingAt = NULL;
     }
 
-    //	UpdateSleep									();
+    //  UpdateSleep                                 ();
 
     //для свойст артефактов, находящихся на поясе
     UpdateArtefactsOnBeltAndOutfit();
@@ -1584,15 +1584,15 @@ void CActor::RenderIndicator(Fvector dpos, float r1, float r2, const ui_shader& 
     // pv->set         (c.x+pos.x,c.y+pos.y,c.z+pos.z, 0xffffffff, 1.f,1.f);        pv++;
     // pv->set         (b.x+pos.x,b.y+pos.y,b.z+pos.z, 0xffffffff, 1.f,0.f);        pv++;
     // render
-    // dwCount 				= u32(pv-pv_start);
-    // RCache.Vertex.Unlock	(dwCount,hFriendlyIndicator->vb_stride);
+    // dwCount              = u32(pv-pv_start);
+    // RCache.Vertex.Unlock (dwCount,hFriendlyIndicator->vb_stride);
 
     GEnv.UIRender->CacheSetXformWorld(Fidentity);
-    // RCache.set_xform_world		(Fidentity);
+    // RCache.set_xform_world       (Fidentity);
     GEnv.UIRender->SetShader(*IndShader);
-    // RCache.set_Shader			(IndShader);
-    // RCache.set_Geometry			(hFriendlyIndicator);
-    // RCache.Render	   			(D3DPT_TRIANGLESTRIP,dwOffset,0, dwCount, 0, 2);
+    // RCache.set_Shader            (IndShader);
+    // RCache.set_Geometry          (hFriendlyIndicator);
+    // RCache.Render                (D3DPT_TRIANGLESTRIP,dwOffset,0, dwCount, 0, 2);
     GEnv.UIRender->FlushPrimitive();
 };
 
@@ -1623,7 +1623,7 @@ void CActor::RenderText(LPCSTR Text, Fvector dpos, float* pdup, u32 color)
     CGameFont* pFont = UI().Font().pFontArial14;
     if (!pFont)
         return;
-    //	float OldFontSize = pFont->GetHeight	();
+    //  float OldFontSize = pFont->GetHeight    ();
     float delta_up = 0.0f;
     if (size < mid_size)
         delta_up = upsize;
@@ -1632,7 +1632,7 @@ void CActor::RenderText(LPCSTR Text, Fvector dpos, float* pdup, u32 color)
     dpos.y += delta_up;
     if (size > mid_size)
         size = mid_size;
-    //	float NewFontSize = size/mid_size * fontsize;
+    //  float NewFontSize = size/mid_size * fontsize;
     //------------------------------------------------
     M.c.y += dpos.y;
 
@@ -1649,10 +1649,10 @@ void CActor::RenderText(LPCSTR Text, Fvector dpos, float* pdup, u32 color)
 
     pFont->SetAligment(CGameFont::alCenter);
     pFont->SetColor(color);
-    //	pFont->SetHeight	(NewFontSize);
+    //  pFont->SetHeight    (NewFontSize);
     pFont->Out(x, y, Text);
     //-------------------------------------------------
-    //	pFont->SetHeight(OldFontSize);
+    //  pFont->SetHeight(OldFontSize);
     *pdup = delta_up;
 };
 
@@ -1668,11 +1668,11 @@ void CActor::SetPhPosition(const Fmatrix& transform)
 void CActor::ForceTransform(const Fmatrix& m)
 {
     // if( !g_Alive() )
-    //			return;
+    //          return;
     // VERIFY(_valid(m));
     // XFORM().set( m );
     // if( character_physics_support()->movement()->CharacterExist() )
-    //		character_physics_support()->movement()->EnableCharacter();
+    //      character_physics_support()->movement()->EnableCharacter();
     // character_physics_support()->set_movement_position( m.c );
     // character_physics_support()->movement()->SetVelocity( 0, 0, 0 );
 

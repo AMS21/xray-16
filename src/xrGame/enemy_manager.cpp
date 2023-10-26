@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: enemy_manager.cpp
-//	Created 	: 30.12.2003
-//  Modified 	: 30.12.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Enemy manager
+//  Module      : enemy_manager.cpp
+//  Created     : 30.12.2003
+//  Modified    : 30.12.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Enemy manager
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -77,7 +77,7 @@ bool CEnemyManager::useful(const CEntityAlive* entity_alive) const
 float CEnemyManager::do_evaluate(const CEntityAlive* object) const { return (m_object->evaluate(this, object)); }
 float CEnemyManager::evaluate(const CEntityAlive* object) const
 {
-    //	Msg						("[%6d] enemy manager %s evaluates
+    //  Msg                     ("[%6d] enemy manager %s evaluates
     //%s",Device.dwTimeGlobal,*m_object->cName(),*object->cName());
 
     bool actor = (!!smart_cast<CActor const*>(object));
@@ -111,16 +111,16 @@ float CEnemyManager::evaluate(const CEntityAlive* object) const
         penalty -= 1000.f;
 
 // if object is actor and he/she sees us
-//	if (actor) {
-//		if (smart_cast<const CActor*>(object)->memory().visual().visible_now(m_object))
-//			penalty			-= 900.f;
-//	}
-//	else {
-//		// if object is npc and it sees us
-//		const CCustomMonster	*monster = smart_cast<const CCustomMonster*>(object);
-//		if (monster && monster->memory().visual().visible_now(m_object))
-//			penalty			-= 300.f;
-//	}
+//  if (actor) {
+//      if (smart_cast<const CActor*>(object)->memory().visual().visible_now(m_object))
+//          penalty         -= 900.f;
+//  }
+//  else {
+//      // if object is npc and it sees us
+//      const CCustomMonster    *monster = smart_cast<const CCustomMonster*>(object);
+//      if (monster && monster->memory().visual().visible_now(m_object))
+//          penalty         -= 300.f;
+//  }
 
 #ifdef USE_EVALUATOR
     ai().ef_storage().non_alife().member_item() = 0;
@@ -166,7 +166,7 @@ void CEnemyManager::set_ready_to_save()
     if (m_ready_to_save)
         return;
 
-    //	Msg							("%6d %s DEcreased enemy counter for player (%d ->
+    //  Msg                         ("%6d %s DEcreased enemy counter for player (%d ->
     //%d)",Device.dwTimeGlobal,*m_object->cName(),Level().autosave_manager().not_ready_count(),Level().autosave_manager().not_ready_count()-1);
     Level().autosave_manager().dec_not_ready();
     m_ready_to_save = true;
@@ -310,8 +310,8 @@ void CEnemyManager::process_wounded(bool& only_wounded)
     if (only_wounded)
     {
 #if 0 // def _DEBUG
-		if (g_enemy_manager_second_update)
-			Msg					("%6d ONLY WOUNDED LEFT %s",Device.dwTimeGlobal,*m_object->cName());
+        if (g_enemy_manager_second_update)
+            Msg                 ("%6d ONLY WOUNDED LEFT %s",Device.dwTimeGlobal,*m_object->cName());
 #endif // _DEBUG
         return;
     }
@@ -352,8 +352,8 @@ bool CEnemyManager::need_update(const bool& only_wounded) const
             return (true);
     }
 
-    //	if (Actor() && m_object->memory().visual().visible_now(Actor()))
-    //		return					(true);
+    //  if (Actor() && m_object->memory().visual().visible_now(Actor()))
+    //      return                  (true);
 
     return (false);
 }
@@ -387,7 +387,7 @@ void CEnemyManager::update()
 
     if (!m_ready_to_save)
     {
-        //		Msg						("%6d %s DEcreased enemy counter for player (%d ->
+        //      Msg                     ("%6d %s DEcreased enemy counter for player (%d ->
         //%d)",Device.dwTimeGlobal,*m_object->cName(),Level().autosave_manager().not_ready_count(),Level().autosave_manager().not_ready_count()-1);
         Level().autosave_manager().dec_not_ready();
     }
@@ -404,14 +404,14 @@ void CEnemyManager::update()
 
     if (!m_ready_to_save)
     {
-        //		Msg						("%6d %s INcreased enemy counter for player (%d ->
+        //      Msg                     ("%6d %s INcreased enemy counter for player (%d ->
         //%d)",Device.dwTimeGlobal,*m_object->cName(),Level().autosave_manager().not_ready_count(),Level().autosave_manager().not_ready_count()+1);
         Level().autosave_manager().inc_not_ready();
     }
 
 #if 0 // def _DEBUG
-	if (g_enemy_manager_second_update && selected() && smart_cast<const CAI_Stalker*>(selected()) && smart_cast<const CAI_Stalker*>(selected())->wounded())
-		Msg						("%6d WOUNDED CHOOSED %s",Device.dwTimeGlobal,*m_object->cName());
+    if (g_enemy_manager_second_update && selected() && smart_cast<const CAI_Stalker*>(selected()) && smart_cast<const CAI_Stalker*>(selected())->wounded())
+        Msg                     ("%6d WOUNDED CHOOSED %s",Device.dwTimeGlobal,*m_object->cName());
 #endif // _DEBUG
 
     STOP_PROFILE

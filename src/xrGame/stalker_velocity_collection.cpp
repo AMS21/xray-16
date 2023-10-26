@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_velocity_collection.cpp
-//	Created 	: 23.12.2005
-//  Modified 	: 23.12.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker velocity collection
+//  Module      : stalker_velocity_collection.cpp
+//  Created     : 23.12.2005
+//  Modified    : 23.12.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker velocity collection
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

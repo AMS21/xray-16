@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: UILogsWnd.h
-//	Created 	: 25.04.2008
-//	Author		: Evgeniy Sokolov
-//	Description : UI Logs (PDA) window class
+//  Module      : UILogsWnd.h
+//  Created     : 25.04.2008
+//  Author      : Evgeniy Sokolov
+//  Description : UI Logs (PDA) window class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef UI_PDA_LOGS_WND_H_INCLUDED
@@ -66,7 +66,7 @@ private:
 
     CUIWindow* CreateItem();
     CUIWindow* ItemFromCache();
-    //	void				ItemToCache			(CUIWindow* w);
+    //  void                ItemToCache         (CUIWindow* w);
     CUIXml m_uiXml;
 
 public:
@@ -99,9 +99,9 @@ protected:
 
     /*
     protected:
-        void		add_faction			( CUIXml& xml, shared_str const& faction_id );
-        void		clear_all_factions		();
-        bool		SortingLessFunction		( CUIWindow* left, CUIWindow* right );
+        void        add_faction         ( CUIXml& xml, shared_str const& faction_id );
+        void        clear_all_factions      ();
+        bool        SortingLessFunction     ( CUIWindow* left, CUIWindow* right );
     */
 }; // class CUILogsWnd
 

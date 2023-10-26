@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_converter_vec3f.hpp
-//	Created 	: 29.12.2007
-//  Modified 	: 29.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property converter vec3f class
+//  Module      : property_converter_vec3f.hpp
+//  Created     : 29.12.2007
+//  Modified    : 29.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property converter vec3f class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_CONVERTER_VEC3F_HPP_INCLUDED

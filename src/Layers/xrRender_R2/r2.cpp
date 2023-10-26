@@ -235,17 +235,17 @@ void CRender::create()
 #   error No graphics API selected or enabled!
 #endif
     /*
-    if (o.nullrt)		{
-    Msg				("* NULLRT supported and used");
+    if (o.nullrt)       {
+    Msg             ("* NULLRT supported and used");
     };
     */
     if (o.nullrt)
     {
         Msg("* NULLRT supported");
 
-        //.	    _tzset			();
-        //.		??? _strdate	( date, 128 );	???
-        //.		??? if (date < 22-march-07)
+        //.     _tzset          ();
+        //.     ??? _strdate    ( date, 128 );  ???
+        //.     ??? if (date < 22-march-07)
         if (0)
         {
             u32 device_id = HW.Caps.id_device;
@@ -309,7 +309,7 @@ void CRender::create()
     if (o.HW_smap)
     {
 #if defined(USE_DX11)
-        //	For ATI it's much faster on DX11 to use D32F format
+        //  For ATI it's much faster on DX11 to use D32F format
         if (HW.Caps.id_vendor == 0x1002)
             o.HW_smap_FORMAT = D3DFMT_D32F_LOCKABLE;
         else
@@ -371,7 +371,7 @@ void CRender::create()
 #ifdef USE_DX9
     if ((HW.Caps.id_vendor == 0x10DE) && (HW.Caps.id_device >= 0x40))
     {
-        // o.nvstencil = HW.support	((D3DFORMAT)MAKEFOURCC('R','A','W','Z'), D3DRTYPE_SURFACE, 0);
+        // o.nvstencil = HW.support ((D3DFORMAT)MAKEFOURCC('R','A','W','Z'), D3DRTYPE_SURFACE, 0);
         // o.nvstencil = TRUE;
         o.nvstencil = (S_OK ==
             HW.pD3D->CheckDeviceFormat(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, D3DFMT_X8R8G8B8, 0, D3DRTYPE_TEXTURE,
@@ -427,7 +427,7 @@ void CRender::create()
     // options
     o.bug = (strstr(Core.Params, "-bug")) ? TRUE : FALSE;
     o.sunfilter = (strstr(Core.Params, "-sunfilter")) ? TRUE : FALSE;
-    //.	o.sunstatic			= (strstr(Core.Params,"-sunstatic"))?	TRUE	:FALSE	;
+    //. o.sunstatic         = (strstr(Core.Params,"-sunstatic"))?   TRUE    :FALSE  ;
     o.sunstatic = ps_r2_sun_static;
     o.advancedpp = ps_r2_advanced_pp;
 #if defined(USE_DX11) || defined(USE_OGL)
@@ -475,7 +475,7 @@ void CRender::create()
         o.ssao_hbao = false;
     }
 #elif defined(USE_DX11) || defined(USE_OGL)
-    //	TODO: fix hbao shader to allow to perform per-subsample effect!
+    //  TODO: fix hbao shader to allow to perform per-subsample effect!
     o.hbao_vectorized = false;
     if (o.ssao_hdao)
         o.ssao_opt_data = false;
@@ -497,7 +497,7 @@ void CRender::create()
 #   error No graphics API selected or enabled!
 #   endif
 
-    //	MSAA option dependencies
+    //  MSAA option dependencies
 #   if defined(USE_DX11)
     o.msaa = !!ps_r3_msaa;
     o.msaa_samples = (1 << ps_r3_msaa);
@@ -506,7 +506,7 @@ void CRender::create()
     o.msaa_opt = o.msaa_opt && o.msaa && (HW.FeatureLevel >= D3D_FEATURE_LEVEL_10_1) ||
         o.msaa && (HW.FeatureLevel >= D3D_FEATURE_LEVEL_11_0);
 
-    // o.msaa_hybrid	= ps_r2_ls_flags.test(R3FLAG_MSAA_HYBRID);
+    // o.msaa_hybrid    = ps_r2_ls_flags.test(R3FLAG_MSAA_HYBRID);
     o.msaa_hybrid = ps_r2_ls_flags.test((u32)R3FLAG_USE_DX10_1);
     o.msaa_hybrid &= !o.msaa_opt && o.msaa && (HW.FeatureLevel >= D3D_FEATURE_LEVEL_10_1);
 #   elif defined(USE_OGL)
@@ -518,7 +518,7 @@ void CRender::create()
 #else
 #   error No graphics API selected or enabled!
 #   endif
-    //	Allow alpha test MSAA for DX10.0
+    //  Allow alpha test MSAA for DX10.0
 
     // o.msaa_alphatest= ps_r2_ls_flags.test((u32)R3FLAG_MSAA_ALPHATEST);
     // o.msaa_alphatest= o.msaa_alphatest && o.msaa;
@@ -559,7 +559,7 @@ void CRender::create()
     {
         o.minmax_sm = MMSM_OFF;
 
-        //	AMD device
+        //  AMD device
         if (HW.Caps.id_vendor == 0x1002)
         {
             if (ps_r_sun_quality >= 3)
@@ -567,18 +567,18 @@ void CRender::create()
             else if (ps_r_sun_shafts >= 2)
             {
                 o.minmax_sm = MMSM_AUTODETECT;
-                //	Check resolution in runtime in use_minmax_sm_this_frame
+                //  Check resolution in runtime in use_minmax_sm_this_frame
                 o.minmax_sm_screenarea_threshold = 1600 * 1200;
             }
         }
 
-        //	NVidia boards
+        //  NVidia boards
         if (HW.Caps.id_vendor == 0x10DE)
         {
             if (ps_r_sun_shafts >= 2)
             {
                 o.minmax_sm = MMSM_AUTODETECT;
-                //	Check resolution in runtime in use_minmax_sm_this_frame
+                //  Check resolution in runtime in use_minmax_sm_this_frame
                 o.minmax_sm_screenarea_threshold = 1280 * 1024;
             }
         }
@@ -611,10 +611,10 @@ void CRender::create()
 #endif
     q_sync_point.Create();
 
-    //	TODO: OGL: Implement FluidManager.
+    //  TODO: OGL: Implement FluidManager.
 #if defined(USE_DX11)
     FluidManager.Initialize(70, 70, 70);
-    //	FluidManager.Initialize( 100, 100, 100 );
+    //  FluidManager.Initialize( 100, 100, 100 );
     FluidManager.SetScreenSize(Device.dwWidth, Device.dwHeight);
 #endif
 }

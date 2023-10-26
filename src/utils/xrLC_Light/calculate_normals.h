@@ -40,7 +40,7 @@ public:
         }
 
         // remark:
-        //	we use Face's bSplitted value to indicate that face is processed
+        //  we use Face's bSplitted value to indicate that face is processed
         //  so bSplitted means bUsed
         for (u32 I = 0; I < Vcount; I++)
         {

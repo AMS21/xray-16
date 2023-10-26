@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////
-// script_game_object_inventory_owner.сpp :	функции для inventory owner
+// script_game_object_inventory_owner.сpp :    функции для inventory owner
 //////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -637,11 +637,11 @@ int CScriptGameObject::GetAttitude(CScriptGameObject* pToWho)
 {
     CInventoryOwner* pInventoryOwner = smart_cast<CInventoryOwner*>(&object());
     //VERIFY(pInventoryOwner);
-	if (!pInventoryOwner)
-	{
-		GEnv.ScriptEngine->script_log(LuaMessageType::Error, "GetAttitude available only for InventoryOwner");
-		return 0;
-	}
+    if (!pInventoryOwner)
+    {
+        GEnv.ScriptEngine->script_log(LuaMessageType::Error, "GetAttitude available only for InventoryOwner");
+        return 0;
+    }
     CInventoryOwner* pOthersInventoryOwner = smart_cast<CInventoryOwner*>(&pToWho->object());
     VERIFY(pOthersInventoryOwner);
     return RELATION_REGISTRY().GetAttitude(pInventoryOwner, pOthersInventoryOwner);
@@ -873,7 +873,7 @@ void CScriptGameObject::AllowBreakTalkDialog(bool b)
 void CScriptGameObject::RunTalkDialog(CScriptGameObject* pToWho, bool disable_break)
 {
     CActor* pActor = smart_cast<CActor*>(&object());
-    //	R_ASSERT2(pActor, "RunTalkDialog applicable only for actor");
+    //  R_ASSERT2(pActor, "RunTalkDialog applicable only for actor");
 
     if (!pActor)
     {
@@ -919,7 +919,7 @@ void CScriptGameObject::add_restrictions(LPCSTR out, LPCSTR in)
         return;
     }
 
-    //	Msg	( "object[%s] add_restrictions( \"%s\", \"%s\" )", monster->cName().c_str(), out, in );
+    //  Msg ( "object[%s] add_restrictions( \"%s\", \"%s\" )", monster->cName().c_str(), out, in );
     monster->movement().restrictions().add_restrictions(out, in);
 }
 
@@ -933,7 +933,7 @@ void CScriptGameObject::remove_restrictions(LPCSTR out, LPCSTR in)
         return;
     }
 
-    //	Msg	( "object[%s] remove_restrictions( \"%s\", \"%s\" )", monster->cName().c_str(), out, in );
+    //  Msg ( "object[%s] remove_restrictions( \"%s\", \"%s\" )", monster->cName().c_str(), out, in );
     monster->movement().restrictions().remove_restrictions(out, in);
 }
 
@@ -947,7 +947,7 @@ void CScriptGameObject::remove_all_restrictions()
         return;
     }
 
-    //	Msg	( "object[%s] remove_all_restrictions( )", monster->cName().c_str() );
+    //  Msg ( "object[%s] remove_all_restrictions( )", monster->cName().c_str() );
     monster->movement().restrictions().remove_all_restrictions();
 }
 
@@ -1706,13 +1706,13 @@ void CScriptGameObject::register_door()
 {
     VERIFY2(!m_door, make_string("object %s has been registered as a door already", m_game_object->cName().c_str()));
     m_door = ai().doors().register_door(*smart_cast<CPhysicObject*>(m_game_object));
-    //	Msg									( "registering door 0x%-08x", m_door );
+    //  Msg                                 ( "registering door 0x%-08x", m_door );
 }
 
 void CScriptGameObject::unregister_door()
 {
     VERIFY2(m_door, make_string("object %s is not a door", m_game_object->cName().c_str()));
-    //	Msg									( "UNregistering door 0x%-08x", m_door );
+    //  Msg                                 ( "UNregistering door 0x%-08x", m_door );
     ai().doors().unregister_door(m_door);
     m_door = 0;
 }

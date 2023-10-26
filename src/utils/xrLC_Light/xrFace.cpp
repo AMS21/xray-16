@@ -26,7 +26,7 @@ void base_Face::CacheOpacity()
         flags.bOpaque = false;
     else
         flags.bOpaque = true;
-    if (!flags.bOpaque && !(T.THM.HasSurface())) //(0==T.pSurface)//	pSurface was possible deleted
+    if (!flags.bOpaque && !(T.THM.HasSurface())) //(0==T.pSurface)//    pSurface was possible deleted
     {
         flags.bOpaque = true;
         Logger.clMsg("Strange face detected... Has alpha without texture...");
@@ -43,15 +43,15 @@ Face* Face::read_create()
 }
 
 //
-// const int	edge2idx	[3][2]	= { {0,1},		{1,2},		{2,0}	};
-// const int	edge2idx3	[3][3]	= { {0,1,2},	{1,2,0},	{2,0,1}	};
-// const int	idx2edge	[3][3]  = {
-//	{-1,  0,  2},
-//	{ 0, -1,  1},
-//	{ 2,  1, -1}
+// const int    edge2idx    [3][2]  = { {0,1},      {1,2},      {2,0}   };
+// const int    edge2idx3   [3][3]  = { {0,1,2},    {1,2,0},    {2,0,1} };
+// const int    idx2edge    [3][3]  = {
+//  {-1,  0,  2},
+//  { 0, -1,  1},
+//  { 2,  1, -1}
 //};
 
-// extern CBuild*	pBuild;
+// extern CBuild*   pBuild;
 
 bool g_bUnregister = true;
 
@@ -70,11 +70,11 @@ void destroy_face(Face*& v, bool unregister)
     inlc_global_data()->destroy_face(v);
     g_bUnregister = tmp_unregister;
 }
-// vecVertex		g_vertices;
-// vecFace			g_faces;
+// vecVertex        g_vertices;
+// vecFace          g_faces;
 
-// poolVertices	VertexPool;
-// poolFaces		FacePool;
+// poolVertices VertexPool;
+// poolFaces        FacePool;
 
 Tvertex<DataVertex>::Tvertex()
 {
@@ -232,7 +232,7 @@ BOOL DataFace::RenderEqualTo(Face* F)
 {
     if (F->dwMaterial != dwMaterial)
         return FALSE;
-    // if (F->tc.size()	!= F->tc.size()		)	return FALSE;	// redundant???
+    // if (F->tc.size() != F->tc.size()     )   return FALSE;   // redundant???
     return TRUE;
 }
 
@@ -259,28 +259,28 @@ BOOL DataFace::hasImplicitLighting()
 }
 
 /*
-    Fvector					N;				// face normal
+    Fvector                 N;              // face normal
 
-    svector<_TCF,2>			tc;				// TC
+    svector<_TCF,2>         tc;             // TC
 
-    void*					pDeflector;		// does the face has LM-UV map?
-    CLightmap*				lmap_layer;
-    u32						sm_group;
+    void*                   pDeflector;     // does the face has LM-UV map?
+    CLightmap*              lmap_layer;
+    u32                     sm_group;
 */
 
 /*
-BOOL	exact_normalize	(Fvector3& a)	{	return exact_normalize(&a.x);	}
-BOOL	exact_normalize (float* a)
+BOOL    exact_normalize (Fvector3& a)   {   return exact_normalize(&a.x);   }
+BOOL    exact_normalize (float* a)
 {
-    double	sqr_magnitude	= a[0]*a[0] + a[1]*a[1] + a[2]*a[2];
-    double	epsilon			= 1.192092896e-05F;
-    if		(sqr_magnitude > epsilon)
+    double  sqr_magnitude   = a[0]*a[0] + a[1]*a[1] + a[2]*a[2];
+    double  epsilon         = 1.192092896e-05F;
+    if      (sqr_magnitude > epsilon)
     {
-        double	l	=	rsqrt(sqr_magnitude);
-        a[0]		*=	l;
-        a[1]		*=	l;
-        a[2]		*=	l;
-        return		TRUE;
+        double  l   =   rsqrt(sqr_magnitude);
+        a[0]        *=  l;
+        a[1]        *=  l;
+        a[2]        *=  l;
+        return      TRUE;
     }
 
     double a0,a1,a2,aa0,aa1,aa2,l;
@@ -294,7 +294,7 @@ BOOL	exact_normalize (float* a)
         if (aa2 > aa1) {
             goto aa2_largest;
         }
-        else {		// aa1 is largest
+        else {      // aa1 is largest
             a0 /= aa1;
             a2 /= aa1;
             l = rsqrt (a0*a0 + a2*a2 + 1);
@@ -305,7 +305,7 @@ BOOL	exact_normalize (float* a)
     }
     else {
         if (aa2 > aa0) {
-aa2_largest:	// aa2 is largest
+aa2_largest:    // aa2 is largest
             a0 /= aa2;
             a1 /= aa2;
             l = rsqrt (a0*a0 + a1*a1 + 1);
@@ -313,13 +313,13 @@ aa2_largest:	// aa2 is largest
             a[1] = a1*l;
             a[2] = (double)_copysign(l,a2);
         }
-        else {		// aa0 is largest
+        else {      // aa0 is largest
             if (aa0 <= 0) {
                 // dDEBUGMSG ("vector has zero size"); ... this messace is annoying
-                a[0] = 0;	// if all a's are zero, this is where we'll end up.
-                a[1] = 1;	// return a default unit length vector.
+                a[0] = 0;   // if all a's are zero, this is where we'll end up.
+                a[1] = 1;   // return a default unit length vector.
                 a[2] = 0;
-                return	FALSE;
+                return  FALSE;
             }
             a1 /= aa0;
             a2 /= aa0;
@@ -329,7 +329,7 @@ aa2_largest:	// aa2 is largest
             a[2] = a2*l;
         }
     }
-    return	TRUE;
+    return  TRUE;
 }
 */
 
@@ -374,24 +374,24 @@ void Face::read(INetReader& r)
 {
     DataFace::read(r);
 
-    //	read_vertices( r );
+    //  read_vertices( r );
 }
 
 void Face::write(IWriter& w) const
 {
     DataFace::write(w);
 
-    //	write_vertices( w );
+    //  write_vertices( w );
 }
 
 void Vertex::read(INetReader& r)
 {
-    //	v_faces							m_adjacents; !
+    //  v_faces                         m_adjacents; !
     DataVertex::read(r);
 }
 void Vertex::write(IWriter& w) const
 {
-    //	v_faces							m_adjacents; !
+    //  v_faces                         m_adjacents; !
     DataVertex::write(w);
 }
 

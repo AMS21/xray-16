@@ -61,7 +61,7 @@ float fCurrentPickPower;
 ICF static bool pick_trace_callback(collide::rq_result& result, LPVOID params)
 {
     SPickParam* pp = (SPickParam*)params;
-    //	collide::rq_result* RQ	= pp->RQ;
+    //  collide::rq_result* RQ  = pp->RQ;
     ++pp->pass;
 
     if (result.O)
@@ -80,8 +80,8 @@ ICF static bool pick_trace_callback(collide::rq_result& result, LPVOID params)
         {
             return TRUE;
         }
-        //.		if (mtl->Flags.is(SGameMtl::flPassable))
-        //.			return TRUE;
+        //.     if (mtl->Flags.is(SGameMtl::flPassable))
+        //.         return TRUE;
     }
     pp->RQ = result;
     return FALSE;
@@ -281,12 +281,12 @@ void CHUDTarget::Render()
         float cx = (pt.x + 1) * w_2;
         float cy = (pt.y + 1) * h_2;
 
-        //	TODO: return code back to indexed rendering since we use quads
-        //	Tri 1
+        //  TODO: return code back to indexed rendering since we use quads
+        //  Tri 1
         GEnv.UIRender->PushPoint(cx - size_x, cy + size_y, 0, C, 0, 1);
         GEnv.UIRender->PushPoint(cx - size_x, cy - size_y, 0, C, 0, 0);
         GEnv.UIRender->PushPoint(cx + size_x, cy + size_y, 0, C, 1, 1);
-        //	Tri 2
+        //  Tri 2
         GEnv.UIRender->PushPoint(cx + size_x, cy + size_y, 0, C, 1, 1);
         GEnv.UIRender->PushPoint(cx - size_x, cy - size_y, 0, C, 0, 0);
         GEnv.UIRender->PushPoint(cx + size_x, cy - size_y, 0, C, 1, 0);

@@ -44,7 +44,7 @@ protected:
 // Специфика: опасное аномальное образование, хранить только в защищенном контейнере,
 // например в капсуле R1.
 class CMercuryBall : public CGameObject {
-typedef	CGameObject	inherited;
+typedef CGameObject inherited;
 public:
     CMercuryBall(void);
     virtual ~CMercuryBall(void);
@@ -53,6 +53,6 @@ public:
     virtual void OnH_B_Independent(bool just_before_destroy);
 
 
-    virtual BOOL			net_Spawn			(CSE_Abstract* DC);
+    virtual BOOL            net_Spawn           (CSE_Abstract* DC);
 };
 */

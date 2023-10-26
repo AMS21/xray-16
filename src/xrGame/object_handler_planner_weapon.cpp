@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: object_handler_planner_weapon.cpp
-//	Created 	: 11.03.2004
-//  Modified 	: 01.12.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Object handler action planner weapon handling
+//  Module      : object_handler_planner_weapon.cpp
+//  Created     : 11.03.2004
+//  Modified    : 01.12.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Object handler action planner weapon handling
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -21,7 +21,7 @@ void CObjectHandlerPlanner::add_evaluators(CWeapon* weapon)
 {
     u16 id = weapon->ID();
     // dynamic state properties
-    //.	add_evaluator		(uid(id,eWorldPropertyHidden)			,new
+    //. add_evaluator       (uid(id,eWorldPropertyHidden)           ,new
     // CObjectPropertyEvaluatorState(weapon,m_object,CWeapon::eHidden));
     add_evaluator(uid(id, eWorldPropertyHidden), xr_new<CObjectPropertyEvaluatorWeaponHidden>(weapon, m_object));
 
@@ -213,10 +213,10 @@ void CObjectHandlerPlanner::add_operators(CWeapon* weapon)
     action = xr_new<CObjectActionFireNoReload>(
         weapon, m_object, &m_storage, uid(id, eWorldPropertyQueueWait1), "fire_no_reload");
     add_condition(action, id, eWorldPropertyHidden, false);
-    //	add_condition		(action,id,eWorldPropertyEmpty1,	false);
-    //	add_condition		(action,id,eWorldPropertyAimed1,	true);
+    //  add_condition       (action,id,eWorldPropertyEmpty1,    false);
+    //  add_condition       (action,id,eWorldPropertyAimed1,    true);
     add_condition(action, id, eWorldPropertySwitch1, true);
-    //	add_condition		(action,id,eWorldPropertyQueueWait1,true);
+    //  add_condition       (action,id,eWorldPropertyQueueWait1,true);
     add_condition(action, id, eWorldPropertyStrapped, false);
     add_condition(action, id, eWorldPropertyStrapped2Idle, false);
     add_effect(action, id, eWorldPropertyFiringNoReload1, true);
@@ -346,7 +346,7 @@ void CObjectHandlerPlanner::add_operators(CWeapon* weapon)
     add_condition(action, id, eWorldPropertyStrapped2Idle, false);
     add_effect(action, id, eWorldPropertyAimed1, true);
     add_effect(action, id, eWorldPropertyAimForceFull1, true);
-    //	add_effect			(action,id,eWorldPropertyAimingReady1,true);
+    //  add_effect          (action,id,eWorldPropertyAimingReady1,true);
     add_effect(action, id, eWorldPropertyAimed2, false);
     add_operator(uid(id, eWorldOperatorAimForceFull1), action);
 
@@ -360,7 +360,7 @@ void CObjectHandlerPlanner::add_operators(CWeapon* weapon)
     add_condition(action, id, eWorldPropertyStrapped2Idle, false);
     add_effect(action, id, eWorldPropertyAimed2, true);
     add_effect(action, id, eWorldPropertyAimForceFull2, true);
-    //	add_effect			(action,id,eWorldPropertyAimingReady2,true);
+    //  add_effect          (action,id,eWorldPropertyAimingReady2,true);
     add_effect(action, id, eWorldPropertyAimed1, false);
     add_operator(uid(id, eWorldOperatorAimForceFull2), action);
 

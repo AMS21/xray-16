@@ -37,17 +37,17 @@ CxrD3D9Null::CxrD3D9Null()
 IDirect3D9* WINAPI Direct3DCreate9(UINT SDKVersion)
 {
     UINT cSDKVersion = D3D_SDK_VERSION;
-//	LogOut_File("In %x out %x", cSDKVersion, SDKVersion);
-//	LogOut("In %d out %d", cSDKVersion, SDKVersion);
+//  LogOut_File("In %x out %x", cSDKVersion, SDKVersion);
+//  LogOut("In %d out %d", cSDKVersion, SDKVersion);
 #ifdef NDEBUG
     if (SDKVersion != cSDKVersion)
     {
-        //		LogOut_File("NULL");
+        //      LogOut_File("NULL");
         LogOut_File("cSDKVersion = %d, SDKVersion = %d", cSDKVersion, SDKVersion);
         return NULL;
     }
 #endif
     xrIDirect3D9* I = new xrIDirect3D9();
-    //	LogOut_File("%x", I);
+    //  LogOut_File("%x", I);
     return I;
 }

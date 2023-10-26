@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: game_graph_builder.h
-//	Created 	: 14.12.2005
-//  Modified 	: 14.12.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Game graph builder
+//  Module      : game_graph_builder.h
+//  Created     : 14.12.2005
+//  Modified    : 14.12.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Game graph builder
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

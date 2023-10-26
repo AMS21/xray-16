@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: object_property_evaluators.h
-//	Created 	: 12.03.2004
-//  Modified 	: 26.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Object property evaluators
+//  Module      : object_property_evaluators.h
+//  Created     : 12.03.2004
+//  Modified    : 26.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Object property evaluators
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

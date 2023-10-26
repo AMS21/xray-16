@@ -373,7 +373,7 @@ protected:
     shared_str m_sInventoryItemUseAction;
     shared_str m_sInventoryBoxUseAction;
 
-    //	shared_str				m_quick_use_slots[4];
+    //  shared_str              m_quick_use_slots[4];
     //режим подбирания предметов
     bool m_bPickupMode;
     //расстояние (в метрах) на котором актер чувствует гранату (любую)
@@ -529,7 +529,7 @@ public:
     virtual void net_Export(NET_Packet& P); // export to server
     virtual void net_Import(NET_Packet& P); // import from server
     virtual void net_Destroy();
-    virtual bool net_Relevant(); //	{ return getSVU() | getLocal(); };		// relevant for export to server
+    virtual bool net_Relevant(); // { return getSVU() | getLocal(); };      // relevant for export to server
     virtual void net_Relcase(IGameObject* O); //
     virtual void on_requested_spawn(IGameObject* object);
     // object serialization
@@ -559,7 +559,7 @@ protected:
     xr_deque<net_update_A> NET_A;
 
     //---------------------------------------------
-    //	bool					m_bHasUpdate;
+    //  bool                    m_bHasUpdate;
     /// spline coeff /////////////////////
     float SCoeff[3][4]; //коэффициэнты для сплайна Бизье
     float HCoeff[3][4]; //коэффициэнты для сплайна Эрмита
@@ -602,7 +602,7 @@ protected:
 //---------------------------------------------
 #endif
 
-    // Igor	ref_geom 				hFriendlyIndicator;
+    // Igor ref_geom                hFriendlyIndicator;
     //////////////////////////////////////////////////////////////////////////
     // Actor physics
     //////////////////////////////////////////////////////////////////////////
@@ -614,7 +614,7 @@ public:
     virtual void PH_B_CrPr(); // actions & operations before physic correction-prediction steps
     virtual void PH_I_CrPr(); // actions & operations after correction before prediction steps
     virtual void PH_A_CrPr(); // actions & operations after phisic correction-prediction steps
-    //	virtual void			UpdatePosStack	( u32 Time0, u32 Time1 );
+    //  virtual void            UpdatePosStack  ( u32 Time0, u32 Time1 );
     virtual void MoveActor(Fvector NewPos, Fvector NewDir);
 
     virtual void SpawnAmmoForWeapon(CInventoryItem* pIItem);
@@ -782,7 +782,7 @@ private:
 private:
     bool m_disabled_hitmarks;
     bool m_inventory_disabled;
-    // static CPhysicsShell		*actor_camera_shell;
+    // static CPhysicsShell     *actor_camera_shell;
 
     IC u32 get_state() const
     {

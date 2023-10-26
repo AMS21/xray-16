@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_human_brain.cpp
-//	Created 	: 06.10.2005
-//  Modified 	: 06.10.2005
-//	Author		: Dmitriy Iassenev
-//	Description : ALife human brain class
+//  Module      : alife_human_brain.cpp
+//  Created     : 06.10.2005
+//  Modified    : 06.10.2005
+//  Author      : Dmitriy Iassenev
+//  Description : ALife human brain class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

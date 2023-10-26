@@ -9,7 +9,7 @@ CUISleepStatic::CUISleepStatic() : CUIStatic("CUISleepStatic") {}
 
 void CUISleepStatic::Draw()
 {
-    //	inherited::Draw();
+    //  inherited::Draw();
     m_UIStaticItem.Render();
     m_UIStaticItem2.Render();
 }

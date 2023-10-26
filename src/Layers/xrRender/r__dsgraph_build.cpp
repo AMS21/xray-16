@@ -851,7 +851,7 @@ void R_dsgraph_structure::build_subspace()
                         VERIFY(renderable);
 
                         // Occlusion
-                        //	casting is faster then using getVis method
+                        //  casting is faster then using getVis method
                         vis_data& v_orig = ((dxRender_Visual*)renderable->GetRenderData().visual)->vis;
                         vis_data v_copy = v_orig;
                         v_copy.box.xform(renderable->GetRenderData().xform);

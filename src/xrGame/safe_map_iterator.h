@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: safe_map_iterator.h
-//	Created 	: 15.01.2003
-//  Modified 	: 12.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Safe map iterator template
+//  Module      : safe_map_iterator.h
+//  Created     : 15.01.2003
+//  Modified    : 12.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Safe map iterator template
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

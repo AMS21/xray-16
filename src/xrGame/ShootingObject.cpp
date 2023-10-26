@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////
 // ShootingObject.cpp:  интерфейс для семейства стреляющих объектов
-//						(оружие и осколочные гранаты)
+//                      (оружие и осколочные гранаты)
 //////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -24,7 +24,7 @@ CShootingObject::CShootingObject(void)
 {
     fShotTimeCounter = 0;
     fOneShotTime = 0;
-    // fHitPower						= 0.0f;
+    // fHitPower                        = 0.0f;
     fvHitPower.set(0.0f, 0.0f, 0.0f, 0.0f);
     fvHitPowerCritical.set(0.0f, 0.0f, 0.0f, 0.0f);
     m_fStartBulletSpeed = 1000.f;

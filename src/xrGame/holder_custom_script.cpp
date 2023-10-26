@@ -11,7 +11,7 @@ SCRIPT_EXPORT(CHolderCustom, (),
         class_<CHolderCustom>("holder")
             .def("engaged", &CHolderCustom::Engaged)
             .def("Action", &CHolderCustom::Action)
-            //			.def("SetParam",		(void (CHolderCustom::*)(int,Fvector2))
+            //          .def("SetParam",        (void (CHolderCustom::*)(int,Fvector2))
             //&CHolderCustom::SetParam)
             .def("SetParam", (void (CHolderCustom::*)(int, Fvector)) & CHolderCustom::SetParam)
     ];

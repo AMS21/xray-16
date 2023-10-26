@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: seniority_hierarchy_space.h
-//	Created 	: 12.11.2001
-//  Modified 	: 03.09.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Seniority hierarchy space
+//  Module      : seniority_hierarchy_space.h
+//  Created     : 12.11.2001
+//  Modified    : 03.09.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Seniority hierarchy space
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

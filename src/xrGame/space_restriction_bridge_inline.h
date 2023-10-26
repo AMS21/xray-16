@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: space_restriction_bridge_inline.h
-//	Created 	: 27.08.2004
-//  Modified 	: 27.08.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Space restriction bridge inline functions
+//  Module      : space_restriction_bridge_inline.h
+//  Created     : 27.08.2004
+//  Modified    : 27.08.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Space restriction bridge inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -62,9 +62,9 @@ IC u32 CSpaceRestrictionBridge::accessible_nearest(
             if (!level_graph.valid_vertex_id(current))
                 continue;
             // if (out_restriction)
-            //		check if node is completely inside
+            //      check if node is completely inside
             // else
-            //		check if node is completely outside
+            //      check if node is completely outside
             if (restriction->inside(current, !out_restriction) != out_restriction)
                 continue;
 

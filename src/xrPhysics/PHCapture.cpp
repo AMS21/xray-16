@@ -18,9 +18,9 @@
 IPHCapture* phcapture_create(CPHCharacter* ch, IPhysicsShellHolder* object, NearestToPointCallback* cb /*=0*/)
 {
     // m_capture=new CPHCapture(m_character,
-    //							 object,
-    //							 cb
-    //							 );
+    //                           object,
+    //                           cb
+    //                           );
     VERIFY(ch);
     // VERIFY( object );
     // VERIFY( cb );
@@ -73,9 +73,9 @@ void CPHCapture::PhTune(dReal /**step**/)
     if (e_state == cstFree)
         return;
 
-    // if(!m_taget_object->PPhysicsShell())	{
-    //	b_failed=true;
-    //	return;			//. hack
+    // if(!m_taget_object->PPhysicsShell()) {
+    //  b_failed=true;
+    //  return;         //. hack
     //}
     VERIFY(m_character && m_character->b_exist);
     VERIFY(m_taget_object);
@@ -301,7 +301,7 @@ void CPHCapture::ReleasedUpdate()
 
 void CPHCapture::ReleaseInCallBack()
 {
-    //	if(!b_failed) return;
+    //  if(!b_failed) return;
     b_collide = true;
 }
 

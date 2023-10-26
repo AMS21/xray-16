@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_game_object_smart_covers.cpp
-//	Created 	: 14.02.2008
-//  Modified 	: 14.02.2008
-//	Author		: Dmitriy Iassenev
-//	Description : script game object class smart covers stuff
+//  Module      : script_game_object_smart_covers.cpp
+//  Created     : 14.02.2008
+//  Modified    : 14.02.2008
+//  Author      : Dmitriy Iassenev
+//  Description : script game object class smart covers stuff
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

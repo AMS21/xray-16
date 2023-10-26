@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: motivation_action_manager_stalker.cpp
-//	Created 	: 26.03.2004
-//  Modified 	: 26.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker motivation action manager class
+//  Module      : motivation_action_manager_stalker.cpp
+//  Created     : 26.03.2004
+//  Modified    : 26.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker motivation action manager class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -151,7 +151,7 @@ void CStalkerPlanner::add_actions()
     add_operator(eWorldOperatorALifePlanner, planner);
 
     planner = xr_new<CStalkerCombatPlanner>(m_object, "combat_planner");
-    //	planner					= xr_new<CStalkerCombatPlannerNew>(m_object,"combat_planner_new");
+    //  planner                 = xr_new<CStalkerCombatPlannerNew>(m_object,"combat_planner_new");
     add_condition(planner, eWorldPropertyAlive, true);
     add_condition(planner, eWorldPropertyAnomaly, false);
     add_condition(planner, eWorldPropertyEnemy, true);

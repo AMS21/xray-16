@@ -68,7 +68,7 @@ void CRenderTarget::phase_ssao()
         // HBAO constants
         RCache.set_c("c1", _w * 0.5f, _h * 0.5f, 2.0f / _w, 2.0f / _h);
         RCache.set_c("c2", 1.12245429f, 1.49660575f, 0.890904903f, 0.668178618f);
-        // RCache.set_c				("c3", 8.f,               8.f,              1.5f,               0.0f);
+        // RCache.set_c             ("c3", 8.f,               8.f,              1.5f,               0.0f);
         RCache.set_c("c4", 0.400009334f, 0.160007462f, 2.49994159f, _h / _w);
 
         RCache.Render(D3DPT_TRIANGLELIST, Offset, 0, 4, 0, 2);

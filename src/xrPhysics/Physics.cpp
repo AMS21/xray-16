@@ -21,7 +21,7 @@ extern CPHWorld* ph_world;
 ///////////////////////////////////////////////////////////////////
 
 #include "ExtendedGeom.h"
-// PhysicsStepTimeCallback		*physics_step_time_callback				= 0;
+// PhysicsStepTimeCallback      *physics_step_time_callback             = 0;
 
 const float default_w_limit = 9.8174770f; //(M_PI/16.f/(fixed_step=0.02f));
 const float default_l_limit = 150.f; //(3.f/fixed_step=0.02f);
@@ -32,7 +32,7 @@ const float default_k_w = 0.05f;
 
 extern const u16 max_joint_allowed_for_exeact_integration = 30;
 
-// base	params
+// base params
 const float base_fixed_step = 0.02f;
 const float base_erp = 0.54545456f;
 const float base_cfm = 1.1363636e-006f;
@@ -49,11 +49,11 @@ const float default_world_gravity = 2 * 9.81f;
 
 int phIterations = 18;
 float phTimefactor = 1.f;
-// float		phBreakCommonFactor										= 0.01f;
-// float		phRigidBreakWeaponFactor								= 1.f;
+// float        phBreakCommonFactor                                     = 0.01f;
+// float        phRigidBreakWeaponFactor                                = 1.f;
 Fbox phBoundaries = {1000.f, 1000.f, -1000.f, -1000.f};
-// float		ph_tri_query_ex_aabb_rate								= 1.3f;
-// int			ph_tri_clear_disable_count								= 10;
+// float        ph_tri_query_ex_aabb_rate                               = 1.3f;
+// int          ph_tri_clear_disable_count                              = 10;
 dWorldID phWorld;
 
 /////////////////////////////////////
@@ -174,8 +174,8 @@ IC static int CollideIntoGroup(
             }
             if (material_1->Flags.test(SGameMtl::flPassable))
                 do_collide = false;
-            //	if(material_2->Flags.is(SGameMtl::flClimable))
-            //		do_collide=false;
+            //  if(material_2->Flags.is(SGameMtl::flClimable))
+            //      do_collide=false;
         }
         if (is_tri_2)
         {
@@ -292,7 +292,7 @@ void BodyCutForce(dBodyID body)
 {
 dReal linear_limit=l_limit;
 //applyed force
-const dReal* force=	dBodyGetForce(body);
+const dReal* force= dBodyGetForce(body);
 
 //body mass
 dMass m;

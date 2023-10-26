@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_integer_values_value_reference.cpp
-//	Created 	: 17.12.2007
-//  Modified 	: 17.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property integer values value reference class
+//  Module      : property_integer_values_value_reference.cpp
+//  Created     : 17.12.2007
+//  Modified    : 17.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property integer values value reference class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

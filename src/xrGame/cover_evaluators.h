@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: cover_evaluators.h
-//	Created 	: 24.04.2004
-//  Modified 	: 24.04.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Cover evaluators
+//  Module      : cover_evaluators.h
+//  Created     : 24.04.2004
+//  Modified    : 24.04.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Cover evaluators
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

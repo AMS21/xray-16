@@ -50,7 +50,7 @@ class CControlPathBuilderBase : public CControl_ComBase
             _node = vertex;
         }
         IC const Fvector& position() const { return _position; }
-        // IC		  Fvector	&position	()					{ return _position; }
+        // IC         Fvector   &position   ()                  { return _position; }
         IC u32 node() const { return _node; }
         IC void set_node(u32 node_) { _node = node_; }
         IC void set_position(const Fvector& p) { _position.set(p); }

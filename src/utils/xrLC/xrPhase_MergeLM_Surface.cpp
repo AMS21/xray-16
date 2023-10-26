@@ -73,7 +73,7 @@ bool Place_Perpixel(L_rect& R, lm_layer* D, BOOL bRotate)
             // accelerated part
             for (x = 0; x < s_x - 8; x += 8, P += 8, S += 8)
             {
-                // if ( (*P) && ( *S >= alpha_ref ) ) goto r_false;	// overlap
+                // if ( (*P) && ( *S >= alpha_ref ) ) goto r_false; // overlap
 #if defined(XR_ARCHITECTURE_X64) || defined(XR_ARCHITECTURE_E2K)
                 __m128i regS = _mm_set1_epi64x(*((__int64*)S));
                 __m128i regP = _mm_set1_epi64x(*((__int64*)P));

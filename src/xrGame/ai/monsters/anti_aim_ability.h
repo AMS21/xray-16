@@ -34,7 +34,7 @@ private:
     u32 m_effector_id;
     float m_last_angle;
     float m_detection_level;
-    //@bool						m_is_activated;
+    //@bool                     m_is_activated;
 
     hit_callback m_callback;
 
@@ -48,7 +48,7 @@ public:
     void set_callback(hit_callback callback) { m_callback = callback; }
     void on_monster_death();
     virtual bool check_start_condition();
-    //@	bool						is_active				() const { return m_is_activated; }
+    //@ bool                        is_active               () const { return m_is_activated; }
 
 private:
     bool can_detect();

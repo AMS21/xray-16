@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Created		: 27.03.2009
-//	Author		: Konstantin Slipchenko
-//	Copyright (C) GSC Game World - 2009
+//  Created     : 27.03.2009
+//  Author      : Konstantin Slipchenko
+//  Copyright (C) GSC Game World - 2009
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
@@ -29,8 +29,8 @@ float color_intensity(Fcolor& c)
     return ntsc * 0.5f + absolute * 0.5f;
 }
 
-// IC	u8	u8_clr				(float a)	{ s32 _a = iFloor(a*255.f); clamp(_a,0,255); return u8(_a);		};
-// IC	u8	u8_clr				(float a)	{ s32 _a = iFloor(a*255.f); clamp(_a,0,255); return u8(_a);		};
+// IC   u8  u8_clr              (float a)   { s32 _a = iFloor(a*255.f); clamp(_a,0,255); return u8(_a);     };
+// IC   u8  u8_clr              (float a)   { s32 _a = iFloor(a*255.f); clamp(_a,0,255); return u8(_a);     };
 
 //-----------------------------------------------------------------------------------------------------------------
 const int LIGHT_Count = 7;
@@ -80,7 +80,7 @@ float getLastRP_Scale(CDB::COLLIDER* DB, R_Light& L) //, Face* skip)
     float scale = 1.f;
     Fvector B;
 
-    //	X_TRY
+    //  X_TRY
     {
         for (u32 I = 0; I < tris_count; I++)
         {
@@ -88,18 +88,18 @@ float getLastRP_Scale(CDB::COLLIDER* DB, R_Light& L) //, Face* skip)
             // Access to texture
             CDB::TRI& clT = gl_data.RCAST_Model.get_tris()[rpinf.id];
             b_rc_face& F = gl_data.g_rc_faces[rpinf.id];
-            //			if (0==F)									continue;
-            //			if (skip==F)								continue;
+            //          if (0==F)                                   continue;
+            //          if (skip==F)                                continue;
 
             b_material& M = gl_data.g_materials[F.dwMaterial];
             b_texture& T = gl_data.g_textures[M.surfidx];
 
             const Shader_xrLC& SH = shader(F.dwMaterial, *(gl_data.g_shaders_xrlc), gl_data.g_materials);
-            //			Shader_xrLCVec&	LIB = 		gl_data.g_shaders_xrlc->Library	();
-            //			if (M.shader_xrlc>=LIB.size()) return		0;		//. hack - vy gonite rebyata - eto ne hack -
+            //          Shader_xrLCVec& LIB =       gl_data.g_shaders_xrlc->Library ();
+            //          if (M.shader_xrlc>=LIB.size()) return       0;      //. hack - vy gonite rebyata - eto ne hack -
             //eto
             // sledy zamesti - shader_xrlc - index ne togo masiva !!
-            //			Shader_xrLC& SH	= LIB						[M.shader_xrlc];
+            //          Shader_xrLC& SH = LIB                       [M.shader_xrlc];
 
             if (!SH.flags.bLIGHT_CastShadow)
                 continue;
@@ -146,10 +146,10 @@ float getLastRP_Scale(CDB::COLLIDER* DB, R_Light& L) //, Face* skip)
             scale *= opac;
         }
     }
-    //	X_CATCH
-    //	{
-    //		clMsg("* ERROR: getLastRP_Scale");
-    //	}
+    //  X_CATCH
+    //  {
+    //      clMsg("* ERROR: getLastRP_Scale");
+    //  }
 
     return scale;
 }

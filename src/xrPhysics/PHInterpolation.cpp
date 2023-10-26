@@ -11,7 +11,7 @@ CPHInterpolation::CPHInterpolation()
 {
     m_body = NULL;
 
-    //	fTimeDelta=0.f;
+    //  fTimeDelta=0.f;
 }
 
 void CPHInterpolation::SetBody(dBodyID body)
@@ -58,7 +58,7 @@ void CPHInterpolation::InterpolateRotation(Fmatrix& rot)
     VERIFY(t >= 0.f && t <= 1.f);
     // if(!b_udating_rotations)
     q.slerp(qRotations[0], qRotations[1], t);
-    //	else
+    //  else
     // q.slerp(*bkp_quat,bk_quat,t);
     rot.rotation(q);
 }

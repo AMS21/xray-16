@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: object_item_single.h
-//	Created 	: 27.05.2004
-//  Modified 	: 30.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Object item client or server class
+//  Module      : object_item_single.h
+//  Created     : 27.05.2004
+//  Modified    : 30.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Object item client or server class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef object_item_singleH

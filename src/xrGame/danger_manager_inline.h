@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: danger_manager_inline.h
-//	Created 	: 11.02.2005
-//  Modified 	: 11.02.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Danger manager inline functions
+//  Module      : danger_manager_inline.h
+//  Created     : 11.02.2005
+//  Modified    : 11.02.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Danger manager inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

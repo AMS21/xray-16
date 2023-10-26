@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Created		: 24.06.2009
-//	Author		: Dmitriy Iassenev
-//	Copyright (C) GSC Game World - 2009
+//  Created     : 24.06.2009
+//  Author      : Dmitriy Iassenev
+//  Copyright (C) GSC Game World - 2009
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -184,9 +184,9 @@ void door::change_state(actor* const initiator, door_state const start_state, do
             Msg("door[%s] added initiator[%s] to keep door %s", m_object.cName().c_str(), initiator->get_name(),
                 m_target_state == door_state_open ? "open" : "closed");
 #endif // #ifdef DEBUG
-        //		if ( !xr_strcmp( "sim_default_duty_28212", initiator->get_name()) ) {
-        //			int i=0; (void)i;
-        //		}
+        //      if ( !xr_strcmp( "sim_default_duty_28212", initiator->get_name()) ) {
+        //          int i=0; (void)i;
+        //      }
         change_state(initiator); //Alundaio: Pass the initiator! We need to know who is trying to open door!
         return;
     }
@@ -198,9 +198,9 @@ void door::change_state(actor* const initiator, door_state const start_state, do
             Msg("door[%s] added initiator[%s] to keep door %s", m_object.cName().c_str(), initiator->get_name(),
                 m_target_state == door_state_open ? "open" : "closed");
 #endif // #ifdef DEBUG
-        //		if ( !xr_strcmp( "sim_default_duty_28212", initiator->get_name()) ) {
-        //			int i=0; (void)i;
-        //		}
+        //      if ( !xr_strcmp( "sim_default_duty_28212", initiator->get_name()) ) {
+        //          int i=0; (void)i;
+        //      }
         VERIFY(std::find(m_initiators.begin(), m_initiators.end(), initiator) == m_initiators.end());
         m_initiators.push_back(initiator);
         return;
@@ -216,9 +216,9 @@ void door::change_state(actor* const initiator, door_state const start_state, do
             Msg("door[%s] removed initiator[%s] to keep door %s", m_object.cName().c_str(), initiator->get_name(),
                 m_target_state == door_state_open ? "open" : "closed");
 #endif // #ifdef DEBUG
-        //		if ( !xr_strcmp( "sim_default_duty_28212", initiator->get_name()) ) {
-        //			int i=0; (void)i;
-        //		}
+        //      if ( !xr_strcmp( "sim_default_duty_28212", initiator->get_name()) ) {
+        //          int i=0; (void)i;
+        //      }
         m_initiators.erase(found);
     }
 
@@ -233,9 +233,9 @@ void door::change_state(actor* const initiator, door_state const start_state, do
             Msg("door[%s] restores its state to %s", m_object.cName().c_str(),
                 m_target_state == door_state_open ? "open" : "closed");
 #endif // #ifdef DEBUG
-        //		if ( !xr_strcmp( "sim_default_duty_28212", initiator->get_name()) ) {
-        //			int i=0; (void)i;
-        //		}
+        //      if ( !xr_strcmp( "sim_default_duty_28212", initiator->get_name()) ) {
+        //          int i=0; (void)i;
+        //      }
         change_state(initiator); //Alundaio: Pass the initiator! We need to know who is trying to open door!
     }
     else
@@ -259,8 +259,8 @@ void door::on_change_state(door_state const state)
     VERIFY(valid(m_target_state));
     VERIFY(valid(m_previous_state));
 
-    //	this could happen when doors hasn't been open but is used to be closed already or vice versa
-    //	VERIFY						( m_state == door_state_open );
+    //  this could happen when doors hasn't been open but is used to be closed already or vice versa
+    //  VERIFY                      ( m_state == door_state_open );
     m_state = state;
 
     if (m_initiators.empty())

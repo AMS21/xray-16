@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: sight_manager_space.h
-//	Created 	: 27.12.2003
-//  Modified 	: 03.04.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Sight actiomanager spacen
+//  Module      : sight_manager_space.h
+//  Created     : 27.12.2003
+//  Modified    : 03.04.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Sight actiomanager spacen
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

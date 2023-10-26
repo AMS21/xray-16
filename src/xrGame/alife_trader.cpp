@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_trader.cpp
-//	Created 	: 03.09.2003
-//  Modified 	: 03.09.2003
-//	Author		: Dmitriy Iassenev
-//	Description : ALife trader class
+//  Module      : alife_trader.cpp
+//  Created     : 03.09.2003
+//  Modified    : 03.09.2003
+//  Author      : Dmitriy Iassenev
+//  Description : ALife trader class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

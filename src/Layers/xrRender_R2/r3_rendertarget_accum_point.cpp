@@ -16,7 +16,7 @@ void CRenderTarget::accum_point(CBackend& cmd_list, light* L)
     // Common
     Fvector L_pos;
     float L_spec;
-    // float		L_R					= L->range;
+    // float        L_R                 = L->range;
     float L_R = L->range * .95f;
     Fvector L_clr;
     L_clr.set(L->color.r, L->color.g, L->color.b);
@@ -31,15 +31,15 @@ void CRenderTarget::accum_point(CBackend& cmd_list, light* L)
     enable_scissor(L);
     enable_dbt_bounds(L);
 
-    // *****************************	Mask by stencil		*************************************
+    // *****************************    Mask by stencil     *************************************
     // *** similar to "Carmack's reverse", but assumes convex, non intersecting objects,
     // *** thus can cope without stencil clear with 127 lights
     // *** in practice, 'cause we "clear" it back to 0x1 it usually allows us to > 200 lights :)
     cmd_list.set_Element(s_accum_mask->E[SE_MASK_POINT]); // masker
-    //	Done in blender!
-    // RCache.set_ColorWriteEnable		(FALSE);
+    //  Done in blender!
+    // RCache.set_ColorWriteEnable      (FALSE);
 
-    // backfaces: if (1<=stencil && zfail)	stencil = light_id
+    // backfaces: if (1<=stencil && zfail)  stencil = light_id
     cmd_list.set_CullMode(CULL_CW);
     if (!RImplementation.o.msaa)
     {
@@ -53,7 +53,7 @@ void CRenderTarget::accum_point(CBackend& cmd_list, light* L)
     }
     draw_volume(cmd_list, L);
 
-    // frontfaces: if (1<=stencil && zfail)	stencil = 0x1
+    // frontfaces: if (1<=stencil && zfail) stencil = 0x1
     cmd_list.set_CullMode(CULL_CCW);
     if (!RImplementation.o.msaa)
     {
@@ -71,13 +71,13 @@ void CRenderTarget::accum_point(CBackend& cmd_list, light* L)
     if (RImplementation.o.nvstencil)
         u_stencil_optimize(cmd_list);
 
-    // *****************************	Minimize overdraw	*************************************
+    // *****************************    Minimize overdraw   *************************************
     // Select shader (front or back-faces), *** back, if intersect near plane
     cmd_list.set_ColorWriteEnable();
     cmd_list.set_CullMode(CULL_CW); // back
     /*
-    if (bIntersect)	RCache.set_CullMode		(CULL_CW);		// back
-    else			RCache.set_CullMode		(CULL_CCW);		// front
+    if (bIntersect) RCache.set_CullMode     (CULL_CW);      // back
+    else            RCache.set_CullMode     (CULL_CCW);     // front
     */
 
     // 2D texgens
@@ -103,7 +103,7 @@ void CRenderTarget::accum_point(CBackend& cmd_list, light* L)
         else
         {
             _id = SE_L_UNSHADOWED;
-            // m_Shadow				= m_Lmap;
+            // m_Shadow             = m_Lmap;
         }
         cmd_list.set_Element(shader->E[_id]);
 
@@ -113,11 +113,11 @@ void CRenderTarget::accum_point(CBackend& cmd_list, light* L)
         cmd_list.set_c("m_texgen", m_Texgen);
 
         // Fetch4 : enable
-        //		if (RImplementation.o.HW_smap_FETCH4)	{
+        //      if (RImplementation.o.HW_smap_FETCH4)   {
         //. we hacked the shader to force smap on S0
-        //#			define FOURCC_GET4  MAKEFOURCC('G','E','T','4')
-        //			HW.pDevice->SetSamplerState	( 0, D3DSAMP_MIPMAPLODBIAS, FOURCC_GET4 );
-        //		}
+        //#         define FOURCC_GET4  MAKEFOURCC('G','E','T','4')
+        //          HW.pDevice->SetSamplerState ( 0, D3DSAMP_MIPMAPLODBIAS, FOURCC_GET4 );
+        //      }
 
         cmd_list.set_CullMode(CULL_CW); // back
         // Render if (light_id <= stencil && z-pass)
@@ -162,11 +162,11 @@ void CRenderTarget::accum_point(CBackend& cmd_list, light* L)
         }
 
         // Fetch4 : disable
-        //		if (RImplementation.o.HW_smap_FETCH4)	{
+        //      if (RImplementation.o.HW_smap_FETCH4)   {
         //. we hacked the shader to force smap on S0
-        //#			define FOURCC_GET1  MAKEFOURCC('G','E','T','1')
-        //			HW.pDevice->SetSamplerState	( 0, D3DSAMP_MIPMAPLODBIAS, FOURCC_GET1 );
-        //		}
+        //#         define FOURCC_GET1  MAKEFOURCC('G','E','T','1')
+        //          HW.pDevice->SetSamplerState ( 0, D3DSAMP_MIPMAPLODBIAS, FOURCC_GET1 );
+        //      }
     }
 
     // blend-copy
@@ -218,7 +218,7 @@ void CRenderTarget::accum_point(CBackend& cmd_list, light* L)
 
     cmd_list.set_Scissor(0);
 
-    // dwLightMarkerID					+=	2;	// keep lowest bit always setted up
+    // dwLightMarkerID                  +=  2;  // keep lowest bit always setted up
     increment_light_marker(cmd_list);
 
     u_DBT_disable();

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_schedule_registry.сзз
-//	Created 	: 15.01.2003
-//  Modified 	: 12.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALife schedule registry
+//  Module      : alife_schedule_registry.сзз
+//  Created     : 15.01.2003
+//  Modified    : 12.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALife schedule registry
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

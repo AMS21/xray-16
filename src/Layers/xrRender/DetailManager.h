@@ -11,7 +11,7 @@
 #include "DetailModel.h"
 
 #ifdef _EDITOR
-//.	#include	"ESceneClassList.h"
+//. #include    "ESceneClassList.h"
 const int dm_max_decompress = 14;
 class CCustomObject;
 typedef u32 ObjClassID;

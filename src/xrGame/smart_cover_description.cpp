@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_description.cpp
-//	Created 	: 16.08.2007
-//	Author		: Alexander Dudin
-//	Description : Smart cover description class
+//  Module      : smart_cover_description.cpp
+//  Created     : 16.08.2007
+//  Author      : Alexander Dudin
+//  Description : Smart cover description class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

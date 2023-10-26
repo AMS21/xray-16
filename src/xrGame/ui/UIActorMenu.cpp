@@ -430,7 +430,7 @@ void CUIActorMenu::InfoCurItem(CUICellItem* cell_item)
             item_price = m_partner_trade->GetItemPrice(current_item, false);
 
         // if(item_price>500)
-        //	item_price = iFloor(item_price/10+0.5f)*10;
+        //  item_price = iFloor(item_price/10+0.5f)*10;
 
         CWeaponAmmo* ammo = smart_cast<CWeaponAmmo*>(current_item);
         if (ammo)
@@ -446,7 +446,7 @@ void CUIActorMenu::InfoCurItem(CUICellItem* cell_item)
                     tmp_price = m_partner_trade->GetItemPrice(jitem, false);
 
                 // if(tmp_price>500)
-                //	tmp_price = iFloor(tmp_price/10+0.5f)*10;
+                //  tmp_price = iFloor(tmp_price/10+0.5f)*10;
 
                 item_price += tmp_price;
             }
@@ -464,7 +464,7 @@ void CUIActorMenu::InfoCurItem(CUICellItem* cell_item)
     else
         m_ItemInfo->InitItem(cell_item, compare_item, u32(-1));
 
-    //	m_ItemInfo->InitItem	( current_item, compare_item );
+    //  m_ItemInfo->InitItem    ( current_item, compare_item );
     float dx_pos = GetWndRect().left;
     fit_in_rect(m_ItemInfo, Frect().set(0.0f, 0.0f, UI_BASE_WIDTH - dx_pos, UI_BASE_HEIGHT), 10.0f, dx_pos);
 }

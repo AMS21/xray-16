@@ -145,12 +145,12 @@ void CPHSkeleton::Update(u32 dt)
         if (obj->Local())
             obj->DestroyObject();
         /*
-                NET_Packet			P;
-                obj->u_EventGen		(P,GE_DESTROY,obj->ID());
+                NET_Packet          P;
+                obj->u_EventGen     (P,GE_DESTROY,obj->ID());
         #ifdef DEBUG
-                Msg					("ge_destroy: [%d] - %s",obj->ID(),*(obj->cName()));
+                Msg                 ("ge_destroy: [%d] - %s",obj->ID(),*(obj->cName()));
         #endif
-                if (obj->Local())	obj->u_EventSend			(P);
+                if (obj->Local())   obj->u_EventSend            (P);
         */
         b_removing = false;
     }
@@ -301,7 +301,7 @@ void CPHSkeleton::PHSplit()
     u16 spawned = u16(m_unsplited_shels.size());
     PPhysicsShellHolder()->PPhysicsShell()->SplitProcess(m_unsplited_shels);
     u16 i = u16(m_unsplited_shels.size()) - spawned;
-    //	Msg("%o, spawned, %u", this, i);
+    //  Msg("%o, spawned, %u", this, i);
     for (; i; --i)
         SpawnCopy();
 }
@@ -422,7 +422,7 @@ void CPHSkeleton::InitServerObject(CSE_Abstract* D)
     l_tpALifePhysicObject->startup_animation = m_startup_anim;
     D->s_name = "ph_skeleton_object"; //*cNameSect()
     D->set_name_replace("");
-    //.	D->s_gameid			=	u8(GameID());
+    //. D->s_gameid         =   u8(GameID());
     D->s_RP = 0xff;
     D->ID = 0xffff;
     D->ID_Parent = 0xffff; // u16(ID());//

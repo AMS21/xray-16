@@ -103,9 +103,9 @@ private:
     ref_geom m_GeomQuadVertex;
     VertexStagingBuffer m_pQuadVertexBuffer;
 
-    //	Cache vectors to avoid memory reallocations
-    //	TODO: DX11: Reserve memory on object creation
+    //  Cache vectors to avoid memory reallocations
+    //  TODO: DX11: Reserve memory on object creation
     xr_vector<ISpatial*> m_lstRenderables;
 };
 
-#endif //	dx113DFluidRenderer_included
+#endif //   dx113DFluidRenderer_included

@@ -35,10 +35,10 @@ template <typename Object>
 void CStateBurerAttackTele<Object>::execute()
 {
     HandleGrenades();
-    // 	if ( object->EnemyMan.see_enemy_now() )
-    // 	{
-    // 		m_last_saw_enemy_tick					=	xr_current_time();
-    // 	}
+    //  if ( object->EnemyMan.see_enemy_now() )
+    //  {
+    //      m_last_saw_enemy_tick                   =   xr_current_time();
+    //  }
 
     switch (m_action)
     {

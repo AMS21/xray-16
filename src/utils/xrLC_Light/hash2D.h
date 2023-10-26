@@ -20,14 +20,14 @@ public:
         size.set(0.f, 0.f);
 
         // for (u32 y=0; y<s_Y; y++)
-        //	for (u32 x=0; x<s_Y; x++)
-        //		table[y][x]	= new xr_vector<T>();
+        //  for (u32 x=0; x<s_Y; x++)
+        //      table[y][x] = new xr_vector<T>();
     }
     ~hash2D()
     {
         // for (u32 y=0; y<s_Y; y++)
-        //	for (u32 x=0; x<s_X; x++)
-        //		xr_delete	(table[y][x]);
+        //  for (u32 x=0; x<s_X; x++)
+        //      xr_delete   (table[y][x]);
     }
 
     void initialize(Fbox2& R, u32 faces)

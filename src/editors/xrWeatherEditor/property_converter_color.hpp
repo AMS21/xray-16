@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_converter_color.hpp
-//	Created 	: 11.12.2007
-//  Modified 	: 11.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property converter color class
+//  Module      : property_converter_color.hpp
+//  Created     : 11.12.2007
+//  Modified    : 11.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property converter color class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_CONVERTER_COLOR_HPP_INCLUDED

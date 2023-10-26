@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: memory_manager.cpp
-//	Created 	: 02.10.2001
-//  Modified 	: 19.11.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Memory manager
+//  Module      : memory_manager.cpp
+//  Created     : 02.10.2001
+//  Modified    : 19.11.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Memory manager
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -326,8 +326,8 @@ void CMemoryManager::on_restrictions_change()
     if (!m_object->g_Alive())
         return;
 
-    //	danger().on_restrictions_change	();
-    //	enemy().on_restrictions_change	();
+    //  danger().on_restrictions_change ();
+    //  enemy().on_restrictions_change  ();
     item().on_restrictions_change();
 }
 
@@ -335,18 +335,18 @@ void CMemoryManager::make_object_visible_somewhen(const CEntityAlive* enemy)
 {
     squad_mask_type mask = stalker().agent_manager().member().mask(&stalker());
     MemorySpace::CVisibleObject* obj = visual().visible_object(enemy);
-    //	if (obj) {
-    //		Msg						("------------------------------------------------------");
-    //		Msg						("[%6d] make_object_visible_somewhen [%s] =
+    //  if (obj) {
+    //      Msg                     ("------------------------------------------------------");
+    //      Msg                     ("[%6d] make_object_visible_somewhen [%s] =
     //%x",Device.dwTimeGlobal,*enemy->cName(),obj->m_squad_mask.get());
-    //	}
-    //	LogStackTrace				("-------------make_object_visible_somewhen-------------");
+    //  }
+    //  LogStackTrace               ("-------------make_object_visible_somewhen-------------");
     bool prev = obj ? obj->visible(mask) : false;
     visual().add_visible_object(enemy, .001f, true);
     MemorySpace::CVisibleObject* obj1 = object().memory().visual().visible_object(enemy);
     VERIFY(obj1);
-    //	if (obj1)
-    //		Msg						("[%6d] make_object_visible_somewhen [%s] =
+    //  if (obj1)
+    //      Msg                     ("[%6d] make_object_visible_somewhen [%s] =
     //%x",Device.dwTimeGlobal,*enemy->cName(),obj1->m_squad_mask.get());
     obj1->visible(mask, prev);
 }

@@ -11,8 +11,8 @@
 #include "xrPhysics/icollisiondamagereceiver.h"
 
 class IPHStaticGeomShell;
-// struct	dContact;
-// struct	SGameMtl;
+// struct   dContact;
+// struct   SGameMtl;
 
 class CBreakableObject : public CPhysicsShellHolder, public ICollisionDamageReceiver
 {
@@ -33,7 +33,7 @@ private:
     static u32 m_remove_time;
     u32 m_break_time;
     bool bRemoved;
-    //		Fbox				m_saved_box;
+    //      Fbox                m_saved_box;
 public:
     CBreakableObject();
     virtual ~CBreakableObject();
@@ -64,7 +64,7 @@ private:
     void ProcessDamage();
     void SendDestroy();
     void enable_notificate();
-    //	static 	void	ObjectContactCallback(bool& /**do_colide**/,bool bo1,dContact& c,SGameMtl *
+    //  static  void    ObjectContactCallback(bool& /**do_colide**/,bool bo1,dContact& c,SGameMtl *
     ///*material_1*/,SGameMtl * /*material_2*/);
 private:
     virtual ICollisionDamageReceiver* PHCollisionDamageReceiver() { return (this); }

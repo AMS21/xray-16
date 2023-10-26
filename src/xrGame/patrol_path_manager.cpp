@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: patrol_path_manager.cpp
-//	Created 	: 03.12.2003
-//  Modified 	: 03.12.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Patrol path manager
+//  Module      : patrol_path_manager.cpp
+//  Created     : 03.12.2003
+//  Modified    : 03.12.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Patrol path manager
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -174,16 +174,16 @@ void CPatrolPathManager::select_point(const Fvector& position, u32& dest_vertex_
         m_curr_point_index = vertex->vertex_id();
 
 #if 0
-		// если выбранная нода не соответствует текущей ноде - все ок
-		// иначе выбрать следующую вершину патрульного пути
-		if (vertex->data().level_vertex_id() != m_game_object->ai_location().level_vertex_id()) {
-			dest_vertex_id		= vertex->data().level_vertex_id();
-			m_dest_position		= vertex->data().position();
-			VERIFY				(accessible(m_dest_position) || show_restrictions(m_object));
-			m_actuality			= true;
-			m_completed			= false;
-			return;
-		}
+        // если выбранная нода не соответствует текущей ноде - все ок
+        // иначе выбрать следующую вершину патрульного пути
+        if (vertex->data().level_vertex_id() != m_game_object->ai_location().level_vertex_id()) {
+            dest_vertex_id      = vertex->data().level_vertex_id();
+            m_dest_position     = vertex->data().position();
+            VERIFY              (accessible(m_dest_position) || show_restrictions(m_object));
+            m_actuality         = true;
+            m_completed         = false;
+            return;
+        }
 #else
         if (!m_game_object->Position().similar(vertex->data().position(), .1f))
         {

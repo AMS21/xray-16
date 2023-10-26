@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_danger_in_direction_actions.h
-//	Created 	: 31.05.2005
-//  Modified 	: 31.05.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker danger in direction actions classes
+//  Module      : stalker_danger_in_direction_actions.h
+//  Created     : 31.05.2005
+//  Modified    : 31.05.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker danger in direction actions classes
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

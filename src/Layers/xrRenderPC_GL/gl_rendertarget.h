@@ -5,10 +5,10 @@
 class light;
 
 //#define DU_SPHERE_NUMVERTEX 92
-//#define DU_SPHERE_NUMFACES	180
-//#define DU_CONE_NUMVERTEX	18
-//#define DU_CONE_NUMFACES	32
-//	no less than 2
+//#define DU_SPHERE_NUMFACES    180
+//#define DU_CONE_NUMVERTEX 18
+//#define DU_CONE_NUMFACES  32
+//  no less than 2
 #define VOLUMETRIC_SLICES 100
 
 class CRenderTarget : public IRender_Target
@@ -20,8 +20,8 @@ class CRenderTarget : public IRender_Target
 public:
     enum eStencilOptimizeMode
     {
-        SO_Light = 0, //	Default
-        SO_Combine, //	Default
+        SO_Light = 0, //    Default
+        SO_Combine, //  Default
     };
 
     u32 dwLightMarkerID;
@@ -51,34 +51,34 @@ public:
     ref_rt rt_Generic_0_r; // MRT generic 0, if MSAA is disabled, just an alias of rt_Generic_0
     ref_rt rt_Generic_1_r; // MRT generic 1, if MSAA is disabled, just an alias of rt_Generic_1
     ref_rt rt_Generic;
-    ref_rt rt_Position; // 64bit,	fat	(x,y,z,?)				(eye-space)
-    ref_rt rt_Normal; // 64bit,	fat	(x,y,z,hemi)			(eye-space)
-    ref_rt rt_Color; // 64/32bit,fat	(r,g,b,specular-gloss)	(or decompressed MET-8-8-8-8)
+    ref_rt rt_Position; // 64bit,   fat (x,y,z,?)               (eye-space)
+    ref_rt rt_Normal; // 64bit, fat (x,y,z,hemi)            (eye-space)
+    ref_rt rt_Color; // 64/32bit,fat    (r,g,b,specular-gloss)  (or decompressed MET-8-8-8-8)
 
     //
-    ref_rt rt_Accumulator; // 64bit		(r,g,b,specular)
+    ref_rt rt_Accumulator; // 64bit     (r,g,b,specular)
     ref_rt rt_Accumulator_temp; // only for HW which doesn't feature fp16 blend
-    ref_rt rt_Generic_0; // 32bit		(r,g,b,a)				// post-process, intermidiate results, etc.
-    ref_rt rt_Generic_1; // 32bit		(r,g,b,a)				// post-process, intermidiate results, etc.
-    //	Igor: for volumetric lights
-    ref_rt rt_Generic_2; // 32bit		(r,g,b,a)				// post-process, intermidiate results, etc.
-    ref_rt rt_Bloom_1; // 32bit, dim/4	(r,g,b,?)
-    ref_rt rt_Bloom_2; // 32bit, dim/4	(r,g,b,?)
-    ref_rt rt_LUM_64; // 64bit, 64x64,	log-average in all components
-    ref_rt rt_LUM_8; // 64bit, 8x8,		log-average in all components
+    ref_rt rt_Generic_0; // 32bit       (r,g,b,a)               // post-process, intermidiate results, etc.
+    ref_rt rt_Generic_1; // 32bit       (r,g,b,a)               // post-process, intermidiate results, etc.
+    //  Igor: for volumetric lights
+    ref_rt rt_Generic_2; // 32bit       (r,g,b,a)               // post-process, intermidiate results, etc.
+    ref_rt rt_Bloom_1; // 32bit, dim/4  (r,g,b,?)
+    ref_rt rt_Bloom_2; // 32bit, dim/4  (r,g,b,?)
+    ref_rt rt_LUM_64; // 64bit, 64x64,  log-average in all components
+    ref_rt rt_LUM_8; // 64bit, 8x8,     log-average in all components
 
-    ref_rt rt_LUM_pool[CHWCaps::MAX_GPUS * 2]; // 1xfp32,1x1,		exp-result -> scaler
+    ref_rt rt_LUM_pool[CHWCaps::MAX_GPUS * 2]; // 1xfp32,1x1,       exp-result -> scaler
     ref_texture t_LUM_src; // source
     ref_texture t_LUM_dest; // destination & usage for current frame
 
     // smap
-    ref_rt rt_smap_surf; // 32bit,		color
-    ref_rt rt_smap_depth; // 24(32) bit,	depth
+    ref_rt rt_smap_surf; // 32bit,      color
+    ref_rt rt_smap_depth; // 24(32) bit,    depth
     ref_rt rt_smap_rain;
-    ref_rt rt_smap_depth_minmax; //	is used for min/max sm
+    ref_rt rt_smap_depth_minmax; // is used for min/max sm
 
-    //	Igor: for async screenshots
-    GLuint t_ss_async; // 32bit		(r,g,b,a) is situated in the system memory
+    //  Igor: for async screenshots
+    GLuint t_ss_async; // 32bit     (r,g,b,a) is situated in the system memory
 
     // Textures
     GLuint t_material_surf;
@@ -111,10 +111,10 @@ private:
     ref_shader s_accum_volume;
     ref_shader s_accum_volume_msaa[8];
 
-    //	generate min/max
+    //  generate min/max
     ref_shader s_create_minmax_sm;
 
-    //	DX11 Rain
+    //  DX11 Rain
     ref_shader s_rain;
     ref_shader s_rain_msaa[8]; // up to 8 shaders for DX10.0 support
 
@@ -197,12 +197,12 @@ private:
     u32 param_color_gray;
     Fvector param_color_add;
 
-    //	Color mapping
+    //  Color mapping
     float param_color_map_influence;
     float param_color_map_interpolate;
     ColorMapManager color_map_manager;
 
-    //	Igor: used for volumetric lights
+    //  Igor: used for volumetric lights
     bool m_bHasActiveVolumetric;
 
 public:
@@ -217,7 +217,7 @@ public:
     void accum_omnip_geom_destroy();
     void accum_spot_geom_create();
     void accum_spot_geom_destroy();
-    //	Igor: used for volumetric lights
+    //  Igor: used for volumetric lights
     void accum_volumetric_geom_create();
     void accum_volumetric_geom_destroy();
 
@@ -258,7 +258,7 @@ public:
     void phase_vol_accumulator(CBackend& cmd_list);
     void shadow_direct(CBackend& cmd_list, light* L, u32 dls_phase);
 
-    //	Generates min/max sm
+    //  Generates min/max sm
     void create_minmax_SM(CBackend& cmd_list);
 
     void phase_rain(CBackend& cmd_list);
@@ -284,7 +284,7 @@ public:
     void accum_point(CBackend& cmd_list, light* L);
     void accum_spot(CBackend& cmd_list, light* L);
     void accum_reflected(CBackend& cmd_list, light* L);
-    //	Igor: for volumetric lights
+    //  Igor: for volumetric lights
     void accum_volumetric(CBackend& cmd_list, light* L);
 
     void phase_bloom();
@@ -316,8 +316,8 @@ public:
         color_map_manager.SetTextures(tex0, tex1);
     }
 
-    //	Need to reset stencil only when marker overflows.
-    //	Don't clear when render for the first time
+    //  Need to reset stencil only when marker overflows.
+    //  Don't clear when render for the first time
     void reset_light_marker(CBackend& cmd_list, bool bResetStencil = false);
     void increment_light_marker(CBackend& cmd_list);
 

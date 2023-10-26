@@ -78,7 +78,7 @@ void CRender::create()
         o.distortion = FALSE;
     Msg("* distortion: %s, dev(%d),need(%d)", o.distortion ? "used" : "unavailable", v_dev, v_need);
 
-    //	Color mapping
+    //  Color mapping
     if (v_dev >= v_need)
         o.color_mapping = TRUE;
     else
@@ -108,13 +108,13 @@ void CRender::create()
     Models = xr_new<CModelPool>();
     L_Dynamic = xr_new<CLightR_Manager>();
     PSLibrary.OnCreate();
-    //.	HWOCC.occq_create			(occq_size);
+    //. HWOCC.occq_create           (occq_size);
 }
 
 void CRender::destroy()
 {
     m_bMakeAsyncSS = false;
-    //.	HWOCC.occq_destroy			();
+    //. HWOCC.occq_destroy          ();
     PSLibrary.OnDestroy();
 
     xr_delete(L_Dynamic);
@@ -143,7 +143,7 @@ void CRender::reset_begin()
 
 void CRender::reset_end()
 {
-    //.	HWOCC.occq_create			(occq_size);
+    //. HWOCC.occq_create           (occq_size);
     Target = xr_new<CRenderTarget>();
     if (L_Projector)
         L_Projector->invalidate();

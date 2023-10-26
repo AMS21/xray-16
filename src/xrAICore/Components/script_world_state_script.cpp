@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_world_state_script.cpp
-//	Created 	: 19.03.2004
-//  Modified 	: 19.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script world state script export
+//  Module      : script_world_state_script.cpp
+//  Created     : 19.03.2004
+//  Modified    : 19.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script world state script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

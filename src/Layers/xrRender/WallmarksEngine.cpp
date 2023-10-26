@@ -259,7 +259,7 @@ void CWallmarksEngine::AddWallmark_internal(
         bb.getsphere(W->bounds.P, W->bounds.R);
     }
 
-    //	if (W->bounds.R < 1.f)
+    //  if (W->bounds.R < 1.f)
     {
         // search if similar wallmark exists
         wm_slot* slot = FindSlot(hShader);
@@ -286,7 +286,7 @@ void CWallmarksEngine::AddWallmark_internal(
     }
     // else
     //{
-    //	static_wm_destroy(W);
+    //  static_wm_destroy(W);
     //}
 }
 
@@ -363,7 +363,7 @@ void CWallmarksEngine::Render()
     auto& dsgraph = RImplementation.get_imm_context();
     auto& cmd_list = dsgraph.cmd_list;
 
-    //	if (marks.empty())			return;
+    //  if (marks.empty())          return;
     // Projection and xform
     Fmatrix proj = Device.mProject;
     proj._43 -= ps_r__WallmarkSHIFT;

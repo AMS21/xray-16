@@ -224,23 +224,23 @@ void CWeaponMagazinedWGrenade::state_Fire(float dt)
     if (m_bGrenadeMode)
     {
         /*
-        fTime					-=dt;
+        fTime                   -=dt;
         while (fTime<=0 && (iAmmoElapsed>0) && (IsWorking() || m_bFireSingleShot))
         {
             ++m_iShotNum;
-            OnShot			();
+            OnShot          ();
 
             // Ammo
             if(Local())
             {
-                VERIFY				(m_magazine.size());
-                m_magazine.pop_back	();
+                VERIFY              (m_magazine.size());
+                m_magazine.pop_back ();
                 --iAmmoElapsed;
 
                 VERIFY((u32)iAmmoElapsed == m_magazine.size());
             }
         }
-        UpdateSounds				();
+        UpdateSounds                ();
         if(m_iShotNum == m_iQueueSize)
             FireEnd();
         */
@@ -330,15 +330,15 @@ void CWeaponMagazinedWGrenade::LaunchGrenade()
                 Transference.mul(d, RQ.range);
                 Fvector res[2];
 #ifdef DEBUG
-//.				DBG_OpenCashedDraw();
-//.				DBG_DrawLine(p1,Fvector().add(p1,d),color_xrgb(255,0,0));
+//.             DBG_OpenCashedDraw();
+//.             DBG_DrawLine(p1,Fvector().add(p1,d),color_xrgb(255,0,0));
 #endif
                 u8 canfire0 = TransferenceAndThrowVelToThrowDir(
                     Transference, CRocketLauncher::m_fLaunchSpeed, EffectiveGravity(), res);
 #ifdef DEBUG
-//.				if(canfire0>0)DBG_DrawLine(p1,Fvector().add(p1,res[0]),color_xrgb(0,255,0));
-//.				if(canfire0>1)DBG_DrawLine(p1,Fvector().add(p1,res[1]),color_xrgb(0,0,255));
-//.				DBG_ClosedCashedDraw(30000);
+//.             if(canfire0>0)DBG_DrawLine(p1,Fvector().add(p1,res[0]),color_xrgb(0,255,0));
+//.             if(canfire0>1)DBG_DrawLine(p1,Fvector().add(p1,res[1]),color_xrgb(0,0,255));
+//.             DBG_ClosedCashedDraw(30000);
 #endif
 
                 if (canfire0 != 0)
@@ -510,12 +510,12 @@ bool CWeaponMagazinedWGrenade::Detach(LPCSTR item_section_name, bool b_spawn_ite
         !xr_strcmp(*m_sGrenadeLauncherName, item_section_name))
     {
         m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonGrenadeLauncher;
-		
-		// Now we need to unload GL's magazine
-		if (!m_bGrenadeMode)
-			PerformSwitchGL();
-		UnloadMagazine();
-		PerformSwitchGL();        
+        
+        // Now we need to unload GL's magazine
+        if (!m_bGrenadeMode)
+            PerformSwitchGL();
+        UnloadMagazine();
+        PerformSwitchGL();        
 
         UpdateAddonsVisibility();
 
@@ -847,7 +847,7 @@ bool CWeaponMagazinedWGrenade::install_upgrade_ammo_class(LPCSTR section, bool t
     bool result = process_if_exists(section, "ammo_mag_size", &CInifile::r_s32, iMagazineSize2, test);
     iMagazineSize = m_bGrenadeMode ? 1 : iMagazineSize2;
 
-    //	ammo_class = ammo_5.45x39_fmj, ammo_5.45x39_ap  // name of the ltx-section of used ammo
+    //  ammo_class = ammo_5.45x39_fmj, ammo_5.45x39_ap  // name of the ltx-section of used ammo
     bool result2 = process_if_exists_set(section, "ammo_class", &CInifile::r_string, str, test);
     if (result2 && !test)
     {
@@ -873,7 +873,7 @@ bool CWeaponMagazinedWGrenade::install_upgrade_impl(LPCSTR section, bool test)
     LPCSTR str;
     bool result = inherited::install_upgrade_impl(section, test);
 
-    //	grenade_class = ammo_vog-25, ammo_vog-25p          // name of the ltx-section of used grenades
+    //  grenade_class = ammo_vog-25, ammo_vog-25p          // name of the ltx-section of used grenades
     bool result2 = process_if_exists_set(section, "grenade_class", &CInifile::r_string, str, test);
     if (result2 && !test)
     {

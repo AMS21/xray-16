@@ -4,10 +4,10 @@
 static char const* help_msg =
     "Format: mp_configs_verifyer.exe [--file | --unpack | --io_filter | --help] [file name]\n"
     "Keys:\n"
-    "	--file, -f		Checks file <file_name> only\n"
-    "	--unpack, -u		Unpacks packet file <file_name>\n"
-    "	--io_filter, -i		Starts as filter, (stdin receives file names)\n"
-    "	--help, -h		Prints this message\n";
+    "   --file, -f      Checks file <file_name> only\n"
+    "   --unpack, -u        Unpacks packet file <file_name>\n"
+    "   --io_filter, -i     Starts as filter, (stdin receives file names)\n"
+    "   --help, -h      Prints this message\n";
 
 void print_format() { printf(help_msg); };
 void xrcore_log_cb(void* context, LPCSTR log_string) { printf("%s\n", log_string); };

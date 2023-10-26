@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: base_monster_misc.cpp
-//	Created 	: 26.05.2003
-//  Modified 	: 26.05.2003
-//	Author		: Serge Zhem
-//	Description : Miscellanious functions for all the biting monsters
+//  Module      : base_monster_misc.cpp
+//  Created     : 26.05.2003
+//  Modified    : 26.05.2003
+//  Author      : Serge Zhem
+//  Description : Miscellanious functions for all the biting monsters
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

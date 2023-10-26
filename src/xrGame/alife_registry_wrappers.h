@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_registry_wrappers.h
-//	Created 	: 20.10.2004
-//  Modified 	: 20.10.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALife registry wrappers
+//  Module      : alife_registry_wrappers.h
+//  Created     : 20.10.2004
+//  Modified    : 20.10.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALife registry wrappers
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -60,7 +60,7 @@ class CGameTaskWrapper : public CALifeRegistryWrapperObject<CALifeRegistryWrappe
 {
 };
 
-//. class CFogOfWarWrapper :				public CALifeRegistryWrapperObject<CALifeRegistryWrapper<CFogOfWarRegistry>
+//. class CFogOfWarWrapper :                public CALifeRegistryWrapperObject<CALifeRegistryWrapper<CFogOfWarRegistry>
 //>
 //{};
 class CActorStatisticsWrapper : public CALifeRegistryWrapperObject<CALifeRegistryWrapper<CActorStatisticRegistry>>

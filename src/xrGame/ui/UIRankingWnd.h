@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: UIRankingWnd.h
-//	Created 	: 17.01.2008
-//	Author		: Evgeniy Sokolov
-//	Description : UI Ranking window class
+//  Module      : UIRankingWnd.h
+//  Created     : 17.01.2008
+//  Author      : Evgeniy Sokolov
+//  Description : UI Ranking window class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

@@ -9,7 +9,7 @@ dx11ConstantBuffer::~dx11ConstantBuffer()
     {
         RImplementation.Resources->_DeleteConstantBuffer(id, this);
     }
-    //	Flush();
+    //  Flush();
     _RELEASE(m_pBuffer);
     xr_free(m_pBufferData);
 }
@@ -24,7 +24,7 @@ dx11ConstantBuffer::dx11ConstantBuffer(ID3DShaderReflectionConstantBuffer* pTabl
     m_eBufferType = Desc.Type;
     m_uiBufferSize = Desc.Size;
 
-    //	Fill member list with variable descriptions
+    //  Fill member list with variable descriptions
     m_MembersList.resize(Desc.Variables);
     m_MembersNames.resize(Desc.Variables);
     for (u32 i = 0; i < Desc.Variables; ++i)
@@ -39,7 +39,7 @@ dx11ConstantBuffer::dx11ConstantBuffer(ID3DShaderReflectionConstantBuffer* pTabl
         pType = pVar->GetType();
         VERIFY(pType);
         pType->GetDesc(&m_MembersList[i]);
-        //	Buffers with the same layout can contain totally different members
+        //  Buffers with the same layout can contain totally different members
         CHK_DX(pVar->GetDesc(&var_desc));
         m_MembersNames[i] = var_desc.Name;
     }

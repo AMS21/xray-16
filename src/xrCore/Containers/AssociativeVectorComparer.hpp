@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: AssociativeVectorComparer.hpp
-//	Created 	: 14.10.2005
-//  Modified 	: 14.10.2005
-//	Author		: Dmitriy Iassenev
-//	Description : associative vector compare predicate template class
+//  Module      : AssociativeVectorComparer.hpp
+//  Created     : 14.10.2005
+//  Modified    : 14.10.2005
+//  Author      : Dmitriy Iassenev
+//  Description : associative vector compare predicate template class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

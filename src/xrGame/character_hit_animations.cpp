@@ -32,7 +32,7 @@ void character_hit_animation_controller::SetupHitMotions(IKinematicsAnimated& ca
 {
     // IKinematicsAnimated* ca = smart_cast<IKinematicsAnimated*>(m_EntityAlife.Visual());
     /*
-    bkhit_motion= ca.LL_MotionID("hitback");	//hitback2.skl
+    bkhit_motion= ca.LL_MotionID("hitback");    //hitback2.skl
     fvhit_motion= ca.LL_MotionID("hitfront");
     rthit_motion= ca.LL_MotionID("hitright");
     lthit_motion= ca.LL_MotionID("hitleft");
@@ -164,7 +164,7 @@ bool character_hit_animation_controller::IsEffected(u16 bi, IKinematics& ca) con
     u16 root = ca.LL_GetBoneRoot();
     for( ; bi != root && bi != BI_NONE ; )
     {
-        CBoneData &bd	= ca.LL_GetData(bi);
+        CBoneData &bd   = ca.LL_GetData(bi);
         if(bi == base_bone)
             return true;
         bi = bd.GetParentID();

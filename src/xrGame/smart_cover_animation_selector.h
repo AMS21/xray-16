@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_animation_selector.h
-//	Created 	: 07.09.2007
-//	Author		: Alexander Dudin
-//	Description : Animation selector for smart covers
+//  Module      : smart_cover_animation_selector.h
+//  Created     : 07.09.2007
+//  Author      : Alexander Dudin
+//  Description : Animation selector for smart covers
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef SMART_COVER_ANIMATION_SELECTOR_H_INCLUDED

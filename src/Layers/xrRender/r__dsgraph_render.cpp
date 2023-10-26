@@ -367,7 +367,7 @@ void R_dsgraph_structure::render_R1_box(IRender_Sector::sector_id_t sector_id, F
         case MT_SKELETON_ANIM:
         case MT_SKELETON_RIGID:
         {
-            // Add all children	(s)
+            // Add all children (s)
             CKinematics* pV = (CKinematics*)V;
             pV->CalculateBones(TRUE);
             for (auto& i : pV->children)

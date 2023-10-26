@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: cover_point.h
-//	Created 	: 24.03.2004
-//  Modified 	: 29.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Cover point class
+//  Module      : cover_point.h
+//  Created     : 24.03.2004
+//  Modified    : 29.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Cover point class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

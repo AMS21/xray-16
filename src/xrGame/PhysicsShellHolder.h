@@ -119,23 +119,23 @@ private: // IPhysicsShellHolder
     virtual u16 ObjectID() const;
     virtual IGameObject* IObject(); //--#SM+#--
     virtual ICollisionForm* ObjectCollisionModel();
-    // virtual	IRenderVisual*								ObjectVisual						() ;
+    // virtual  IRenderVisual*                              ObjectVisual                        () ;
     virtual IKinematics* ObjectKinematics();
     virtual IDamageSource* ObjectCastIDamageSource();
     virtual void ObjectProcessingDeactivate();
     virtual void ObjectProcessingActivate();
     virtual void ObjectSpatialMove();
     virtual CPhysicsShell*& ObjectPPhysicsShell();
-    //	virtual	void						enable_notificate					()						;
+    //  virtual void                        enable_notificate                   ()                      ;
     virtual bool has_parent_object();
-    //	virtual	void						on_physics_disable					()						;
+    //  virtual void                        on_physics_disable                  ()                      ;
     virtual IPHCapture* PHCapture();
     virtual bool IsInventoryItem();
     virtual bool IsActor();
     virtual bool IsStalker();
     virtual bool IsCollideWithBullets(); //--#SM+#--
     virtual bool IsCollideWithActorCamera(); //--#SM+#--
-    // virtual	void						SetWeaponHideState					( u16 State, bool bSet )=0;
+    // virtual  void                        SetWeaponHideState                  ( u16 State, bool bSet )=0;
     virtual void HideAllWeapons(bool v); //(SetWeaponHideState(INV_STATE_BLOCK_ALL,true))
     virtual void MovementCollisionEnable(bool enable);
     virtual CPHSoundPlayer* ObjectPhSoundPlayer() { return ph_sound_player(); }

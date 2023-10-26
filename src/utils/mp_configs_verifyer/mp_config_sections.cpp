@@ -54,9 +54,9 @@ mp_active_params::mp_active_params() {}
 mp_active_params::~mp_active_params() {}
 char const* active_params_section = "active_params_section";
 
-/*void mp_active_params::dump	(IAnticheatDumpable const * dumpable_obj, LPCSTR sect_name_key, CInifile & dest_dumper)
+/*void mp_active_params::dump   (IAnticheatDumpable const * dumpable_obj, LPCSTR sect_name_key, CInifile & dest_dumper)
 {
-    LPCSTR		obj_sect_name = "";
+    LPCSTR      obj_sect_name = "";
     if (dumpable_obj)
     {
         shared_str const tmp_obj_section = dumpable_obj->GetAnticheatSectionName();

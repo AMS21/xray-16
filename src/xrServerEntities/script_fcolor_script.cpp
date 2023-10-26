@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_Fcolor_script.cpp
-//	Created 	: 28.06.2004
-//  Modified 	: 28.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script float vector script export
+//  Module      : script_Fcolor_script.cpp
+//  Created     : 28.06.2004
+//  Modified    : 28.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script float vector script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: object_handler_planner_missile.cpp
-//	Created 	: 11.03.2004
-//  Modified 	: 01.12.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Object handler action planner missile handling
+//  Module      : object_handler_planner_missile.cpp
+//  Created     : 11.03.2004
+//  Modified    : 01.12.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Object handler action planner missile handling
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -23,7 +23,7 @@ void CObjectHandlerPlanner::add_evaluators(CMissile* missile)
     // dynamic state properties
     add_evaluator(uid(id, eWorldPropertyHidden), xr_new<CObjectPropertyEvaluatorMissileHidden>(missile, m_object));
     add_evaluator(uid(id, eWorldPropertyThrowStarted), xr_new<CObjectPropertyEvaluatorMissileStarted>(missile, m_object));
-    //	add_evaluator		(uid(id,eWorldPropertyThrowIdle)	,new
+    //  add_evaluator       (uid(id,eWorldPropertyThrowIdle)    ,new
     // CObjectPropertyEvaluatorMissile(missile,m_object,MS_THROW));
     add_evaluator(
         uid(id, eWorldPropertyThrow), xr_new<CObjectPropertyEvaluatorMissile>(missile, m_object, CMissile::eThrowEnd));
@@ -32,8 +32,8 @@ void CObjectHandlerPlanner::add_evaluators(CMissile* missile)
     add_evaluator(uid(id, eWorldPropertyDropped), xr_new<CObjectPropertyEvaluatorConst>(false));
     add_evaluator(uid(id, eWorldPropertyFiring1), xr_new<CObjectPropertyEvaluatorConst>(false));
     add_evaluator(uid(id, eWorldPropertyIdle), xr_new<CObjectPropertyEvaluatorConst>(false));
-    //	add_evaluator		(uid(id,eWorldPropertyAimingReady1)	,new CObjectPropertyEvaluatorConst(false));
-    //	add_evaluator		(uid(id,eWorldPropertyStrapped)		,new CObjectPropertyEvaluatorConst(false));
+    //  add_evaluator       (uid(id,eWorldPropertyAimingReady1) ,new CObjectPropertyEvaluatorConst(false));
+    //  add_evaluator       (uid(id,eWorldPropertyStrapped)     ,new CObjectPropertyEvaluatorConst(false));
 }
 
 void CObjectHandlerPlanner::add_operators(CMissile* missile)
@@ -68,10 +68,10 @@ void CObjectHandlerPlanner::add_operators(CMissile* missile)
     add_condition(action, id, eWorldPropertyHidden, false);
     add_effect(action, id, eWorldPropertyIdle, true);
     add_effect(action, id, eWorldPropertyThrowStarted, false);
-    //	add_effect			(action,id,eWorldPropertyThrowIdle,	false);
+    //  add_effect          (action,id,eWorldPropertyThrowIdle, false);
     add_effect(action, id, eWorldPropertyFiring1, false);
-    //	add_effect			(action,id,eWorldPropertyStrapped,	true);
-    //	add_effect			(action,id,eWorldPropertyAimingReady1,true);
+    //  add_effect          (action,id,eWorldPropertyStrapped,  true);
+    //  add_effect          (action,id,eWorldPropertyAimingReady1,true);
     add_operator(uid(id, eWorldOperatorIdle), action);
 
     // fire start

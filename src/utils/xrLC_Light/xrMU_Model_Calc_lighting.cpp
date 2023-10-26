@@ -41,16 +41,16 @@ union var
 };
 
 /*
-var		test;
+var     test;
 
-test	= 0.f;
-int	k	= test;
+test    = 0.f;
+int k   = test;
 
-test	= true;
+test    = true;
 float f = test;
 
 float x = 10.f;
-var _x	= var(x);
+var _x  = var(x);
 */
 
 //-----------------------------------------------------------------------
@@ -79,9 +79,9 @@ void xrMU_Model::calc_lighting(
 
     // Disable faces if needed
     /*
-    BOOL bDisableFaces			= flags&LP_UseFaceDisable;
-    if	(bDisableFaces)
-        for (I=0; I<m_faces.size(); I++)	m_faces[I]->flags.bDisableShadowCast	= true;
+    BOOL bDisableFaces          = flags&LP_UseFaceDisable;
+    if  (bDisableFaces)
+        for (I=0; I<m_faces.size(); I++)    m_faces[I]->flags.bDisableShadowCast    = true;
     */
 
     // Perform lighting
@@ -164,8 +164,8 @@ void xrMU_Model::calc_lighting(
 
     // Enable faces if needed
     /*
-    if	(bDisableFaces)
-        for (I=0; I<m_faces.size(); I++)	m_faces[I]->flags.bDisableShadowCast	= true;
+    if  (bDisableFaces)
+        for (I=0; I<m_faces.size(); I++)    m_faces[I]->flags.bDisableShadowCast    = true;
     */
 
     // Process all groups

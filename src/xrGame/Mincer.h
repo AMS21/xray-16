@@ -27,7 +27,7 @@ public:
 public:
     CMincer();
     virtual ~CMincer();
-    //	virtual void	SwitchZoneState				(EZoneState new_state);
+    //  virtual void    SwitchZoneState             (EZoneState new_state);
     virtual void OnStateSwitch(EZoneState new_state);
     virtual bool feel_touch_contact(IGameObject* O);
     virtual void feel_touch_new(IGameObject* O);

@@ -38,7 +38,7 @@ bool can_capture(CPHCharacter* a_character, IPhysicsShellHolder* a_taget_object,
         !a_taget_object->ObjectKinematics())
         return false;
 
-    // IKinematics* K=	smart_cast<IKinematics*>( a_taget_object->ObjectVisual( ) );
+    // IKinematics* K=  smart_cast<IKinematics*>( a_taget_object->ObjectVisual( ) );
     IKinematics* K = a_taget_object->ObjectKinematics();
 
     if (!K || !K->LL_GetBoneInstance(a_taget_element).callback_param())
@@ -64,27 +64,27 @@ static CBoneInstance* get_capture_bone(CPHCharacter* a_character)
 }
 
 /*
-CPHCharacter		*m_character;
-CPhysicsElement*	m_taget_element;
-IPhysicsShellHolder*	m_taget_object;
-dJointID			m_joint;
-dJointID			m_ajoint;
-dJointFeedback		m_joint_feedback;
-Fvector				m_capture_pos;
-float				m_back_force;
-float				m_pull_force;
-float				m_capture_force;
-float				m_capture_distance;
-float				m_pull_distance;
-u32					m_capture_time;
-u32					m_time_start;
-CBoneInstance		*m_capture_bone;
-dBodyID				m_body;
-CPHIsland			m_island;
-//bool				b_failed;
-bool				b_collide;
-bool				b_disabled;
-bool				b_character_feedback;
+CPHCharacter        *m_character;
+CPhysicsElement*    m_taget_element;
+IPhysicsShellHolder*    m_taget_object;
+dJointID            m_joint;
+dJointID            m_ajoint;
+dJointFeedback      m_joint_feedback;
+Fvector             m_capture_pos;
+float               m_back_force;
+float               m_pull_force;
+float               m_capture_force;
+float               m_capture_distance;
+float               m_pull_distance;
+u32                 m_capture_time;
+u32                 m_time_start;
+CBoneInstance       *m_capture_bone;
+dBodyID             m_body;
+CPHIsland           m_island;
+//bool              b_failed;
+bool                b_collide;
+bool                b_disabled;
+bool                b_character_feedback;
 */
 
 CPHCapture::CPHCapture(
@@ -93,10 +93,10 @@ CPHCapture::CPHCapture(
       b_disabled(false), b_character_feedback(false), e_state(cstFree),
       ///////////////////////////////////////////////////////////////
       m_taget_element(0),
-      // dJointFeedback		m_joint_feedback;								,
+      // dJointFeedback     m_joint_feedback;                               ,
       m_capture_pos(Fvector().set(0, 0, 0)), m_back_force(0), m_pull_force(0), m_capture_force(0),
       m_capture_distance(0), m_capture_time(0), m_time_start(0), m_capture_bone(0),
-      // CPHIsland			m_island;
+      // CPHIsland          m_island;
       b_collide(false)
 
 {
@@ -121,10 +121,10 @@ CPHCapture::CPHCapture(CPHCharacter* a_character, IPhysicsShellHolder* a_taget_o
 
       ///////////////////////////////////////////////////////////////
       m_taget_element(0),
-      // dJointFeedback		m_joint_feedback;								,
+      // dJointFeedback     m_joint_feedback;                               ,
       m_capture_pos(Fvector().set(0, 0, 0)), m_back_force(0), m_pull_force(0), m_capture_force(0),
       m_capture_distance(0), m_capture_time(0), m_time_start(0), m_capture_bone(0),
-      // CPHIsland			m_island;
+      // CPHIsland          m_island;
       b_collide(false)
 
 {
@@ -137,7 +137,7 @@ CPHCapture::CPHCapture(CPHCharacter* a_character, IPhysicsShellHolder* a_taget_o
     // IRenderVisual* V=m_taget_object->ObjectVisual( );
     // VERIFY( V );
 
-    // IKinematics* K=	smart_cast<IKinematics*>( m_taget_object->ObjectVisual( ) );
+    // IKinematics* K=  smart_cast<IKinematics*>( m_taget_object->ObjectVisual( ) );
     IKinematics* K = m_taget_object->ObjectKinematics();
     VERIFY(K);
 
@@ -243,7 +243,7 @@ void CPHCapture::Release()
     {
         A->HideAllWeapons(false);
         // A->SetWeaponHideState(INV_STATE_BLOCK_ALL,false);
-        //.		A->inventory().setSlotsBlocked(false);
+        //.     A->inventory().setSlotsBlocked(false);
     }
 
     e_state = cstReleased;
@@ -260,7 +260,7 @@ void CPHCapture::Deactivate()
     }
     // if(m_taget_object&&m_taget_element&&!m_taget_object->getDestroy()&&m_taget_object->m_pPhysicsShell&&m_taget_object->m_pPhysicsShell->isActive())
     //{
-    //	m_taget_element->set_ObjectContactCallback(0);
+    //  m_taget_element->set_ObjectContactCallback(0);
 
     //}
     if (m_character)

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_vec3f_reference.hpp
-//	Created 	: 29.12.2007
-//  Modified 	: 29.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : vec3f property reference implementation class
+//  Module      : property_vec3f_reference.hpp
+//  Created     : 29.12.2007
+//  Modified    : 29.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : vec3f property reference implementation class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_VEC3F_REFERENCE_HPP_INCLUDED

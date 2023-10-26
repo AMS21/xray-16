@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_loophole.cpp
-//	Created 	: 16.08.2007
-//	Author		: Alexander Dudin
-//	Description : Loophole class for smart cover
+//  Module      : smart_cover_loophole.cpp
+//  Created     : 16.08.2007
+//  Author      : Alexander Dudin
+//  Description : Loophole class for smart cover
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

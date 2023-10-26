@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: abstract_path_manager.h
-//	Created 	: 02.10.2001
-//  Modified 	: 19.11.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Abstract path manager inline functions
+//  Module      : abstract_path_manager.h
+//  Created     : 02.10.2001
+//  Modified    : 19.11.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Abstract path manager inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

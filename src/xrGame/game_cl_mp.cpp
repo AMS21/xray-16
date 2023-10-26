@@ -82,11 +82,11 @@ game_cl_mp::game_cl_mp()
     buffer_for_compress_size = 0;
     //-----------------------------------------------------------
     //-----------------------------------------------------------
-    /*	pBuySpawnMsgBox		= new CUIMessageBoxEx();
-    //.	pBuySpawnMsgBox->SetWorkPhase(GAME_PHASE_INPROGRESS);
+    /*  pBuySpawnMsgBox     = new CUIMessageBoxEx();
+    //. pBuySpawnMsgBox->SetWorkPhase(GAME_PHASE_INPROGRESS);
     pBuySpawnMsgBox->Init("message_box_buy_spawn");
     pBuySpawnMsgBox->AddCallback("msg_box", MESSAGE_BOX_YES_CLICKED, CUIWndCallback::void_function(this, &game_cl_mp::OnBuySpawn));
-    string1024	BuySpawnText;
+    string1024  BuySpawnText;
     xr_sprintf(BuySpawnText, "You can buy a spawn for %d $. Press Yes to pay.",
         abs(m_iSpawn_Cost));
     pBuySpawnMsgBox->SetText(BuySpawnText);
@@ -98,7 +98,7 @@ game_cl_mp::game_cl_mp()
 
 game_cl_mp::~game_cl_mp()
 {
-    /*	TODO: check if shaders are deleted automatically...
+    /*  TODO: check if shaders are deleted automatically...
     CL_TEAM_DATA_LIST_it it = TeamList.begin();
     for(;it!=TeamList.end();++it)
     {
@@ -109,7 +109,7 @@ game_cl_mp::~game_cl_mp()
     };
     */
     TeamList.clear();
-    /*	TODO: check if shaders are deleted automatically...
+    /*  TODO: check if shaders are deleted automatically...
         if (m_EquipmentIconsShader)
             m_EquipmentIconsShader.destroy();
 
@@ -128,10 +128,10 @@ game_cl_mp::~game_cl_mp()
 
     deinit_compress_buffer();
 
-    //	xr_delete(m_pSpeechMenu);
+    //  xr_delete(m_pSpeechMenu);
     DestroyMessagesMenus();
 
-    //	xr_delete(pBuySpawnMsgBox);
+    //  xr_delete(pBuySpawnMsgBox);
 
     m_pBonusList.clear();
 
@@ -586,7 +586,7 @@ void game_cl_mp::shedule_Update(u32 dt)
     {
         // CUIChatWnd* pChatWnd = CurrentGameUI()->m_pMessagesWnd->GetChatWnd();
         // if (pChatWnd && pChatWnd->IsShown())
-        //	StartStopMenu(pChatWnd, false);
+        //  StartStopMenu(pChatWnd, false);
 
         if (m_bJustRestarted)
         {
@@ -849,7 +849,7 @@ void game_cl_mp::OnPlayerKilled(NET_Packet& P)
     }
     R_ASSERT(pPlayer);
     game_PlayerState* pKiller = GetPlayerByGameID(KillerID);
-    //	R_ASSERT(pKiller);
+    //  R_ASSERT(pKiller);
     //-----------------------------------------------------------
     KillMessageStruct KMS;
     KMS.m_victim.m_name = pPlayer->getName();
@@ -1184,10 +1184,10 @@ bool game_cl_mp::Is_Spectator_Camera_Allowed(CSpectator::EActorCameras Camera)
     /*
     switch (Camera)
     {
-    case CSpectator::eacFreeFly		 : return m_bSpectator_FreeFly	;
-    case CSpectator::eacFirstEye	 : return m_bSpectator_FirstEye	;
-    case CSpectator::eacLookAt		 : return m_bSpectator_LookAt	;
-    case CSpectator::eacFreeLook	 : return m_bSpectator_FreeLook	;
+    case CSpectator::eacFreeFly      : return m_bSpectator_FreeFly  ;
+    case CSpectator::eacFirstEye     : return m_bSpectator_FirstEye ;
+    case CSpectator::eacLookAt       : return m_bSpectator_LookAt   ;
+    case CSpectator::eacFreeLook     : return m_bSpectator_FreeLook ;
     }
     return false;
     */
@@ -1307,7 +1307,7 @@ void game_cl_mp::OnSpectatorSelect()
 
     NET_Packet P;
     l_pPlayer->u_EventGen(P, GE_GAME_EVENT, l_pPlayer->ID());
-    //	P.w_u16(GAME_EVENT_PLAYER_SELECT_SPECTATOR);
+    //  P.w_u16(GAME_EVENT_PLAYER_SELECT_SPECTATOR);
     P.w_u16(GAME_EVENT_PLAYER_GAME_MENU);
     P.w_u8(PLAYER_SELECT_SPECTATOR);
     l_pPlayer->u_EventSend(P);
@@ -1334,7 +1334,7 @@ void game_cl_mp::OnGameMenuRespond(NET_Packet& P)
 
 void game_cl_mp::OnGameRoundStarted()
 {
-    //			xr_sprintf(Text, "%sRound started !!!",Color_Main);
+    //          xr_sprintf(Text, "%sRound started !!!",Color_Main);
     string512 Text;
     xr_sprintf(Text, "%s%s", Color_Main, *StringTable().translate("mp_match_started"));
     if (CurrentGameUI())

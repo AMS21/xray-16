@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_movement_manager_smart_cover_inline.h
-//	Created 	: 27.12.2003
-//	Modified	: 13.02.2008
-//	Author		: Dmitriy Iassenev
-//	Description : stalker movement manager class with smart covers inline functions
+//  Module      : stalker_movement_manager_smart_cover_inline.h
+//  Created     : 27.12.2003
+//  Modified    : 13.02.2008
+//  Author      : Dmitriy Iassenev
+//  Description : stalker movement manager class with smart covers inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef STALKER_MOVEMENT_MANAGER_SMART_COVER_INLINE_H_INCLUDED

@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: UIHelper.h
-//	Created 	: 17.01.2008
-//	Author		: Evgeniy Sokolov
-//	Description : UI Helper class
+//  Module      : UIHelper.h
+//  Created     : 17.01.2008
+//  Author      : Evgeniy Sokolov
+//  Description : UI Helper class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef UI_HELPER_H_INCLUDED

@@ -232,10 +232,10 @@ void CActor::cam_Lookout(const Fmatrix& xform, float camera_height)
         get_cam_oob(bc, bd, mat, xform, r_torso, alpha, radius, c);
 
         /*
-        xrXRC				xrc			;
-        xrc.box_options		(0)			;
-        xrc.box_query		(Level().ObjectSpace.GetStaticModel(), bc, bd)		;
-        u32 tri_count		= xrc.r_count();
+        xrXRC               xrc         ;
+        xrc.box_options     (0)         ;
+        xrc.box_query       (Level().ObjectSpace.GetStaticModel(), bc, bd)      ;
+        u32 tri_count       = xrc.r_count();
 
         */
         // if (tri_count)
@@ -408,7 +408,7 @@ void CActor::update_camera(CCameraShotEffector* effector)
 {
     if (!effector)
         return;
-    //	if (Level().CurrentViewEntity() != this) return;
+    //  if (Level().CurrentViewEntity() != this) return;
 
     CCameraBase* pACam = cam_FirstEye();
     if (!pACam)

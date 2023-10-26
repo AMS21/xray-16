@@ -3,8 +3,8 @@
 
 namespace file_transfer
 {
-u32 const data_max_chunk_size = 4096; // 4Kb on update ~	80		Kb/sec
-u32 const data_min_chunk_size = 128; //					2.5		Kb/sec
+u32 const data_max_chunk_size = 4096; // 4Kb on update ~    80      Kb/sec
+u32 const data_min_chunk_size = 128; //                 2.5     Kb/sec
 
 enum sending_status_t // state for callback
 {

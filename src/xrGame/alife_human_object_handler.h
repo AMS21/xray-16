@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_human_object_handler.h
-//	Created 	: 07.10.2005
-//  Modified 	: 07.10.2005
-//	Author		: Dmitriy Iassenev
-//	Description : ALife human object handler class
+//  Module      : alife_human_object_handler.h
+//  Created     : 07.10.2005
+//  Modified    : 07.10.2005
+//  Author      : Dmitriy Iassenev
+//  Description : ALife human object handler class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

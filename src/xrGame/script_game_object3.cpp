@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_game_object_script3.cpp
-//	Created 	: 17.11.2004
-//  Modified 	: 17.11.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script game object class script export
+//  Module      : script_game_object_script3.cpp
+//  Created     : 17.11.2004
+//  Modified    : 17.11.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script game object class script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -634,14 +634,14 @@ void CScriptGameObject::set_mental_state(EMentalState mental_state)
     else
     {
 #if 0 // def DEBUG
-		if (mental_state != eMentalStateDanger) {
-			if (stalker->brain().initialized()) {
-				if (stalker->brain().current_action_id() == StalkerDecisionSpace::eWorldOperatorCombatPlanner) {
-					GEnv.ScriptEngine->script_log	(LuaMessageType::Error,"CAI_Stalker : set_mental_state is used during universal combat!, object[%s]", stalker->cName().c_str());
-//					return;
-				}
-			}
-		}
+        if (mental_state != eMentalStateDanger) {
+            if (stalker->brain().initialized()) {
+                if (stalker->brain().current_action_id() == StalkerDecisionSpace::eWorldOperatorCombatPlanner) {
+                    GEnv.ScriptEngine->script_log   (LuaMessageType::Error,"CAI_Stalker : set_mental_state is used during universal combat!, object[%s]", stalker->cName().c_str());
+//                  return;
+                }
+            }
+        }
 #endif // DEBUG
         stalker->movement().set_mental_state(mental_state);
     }
@@ -996,7 +996,7 @@ bool CScriptGameObject::weapon_strapped() const
     }
 
     bool const result = stalker->weapon_strapped();
-    //	Msg					( "[%6d][%s] weapon_strapped = %s", Device.dwTimeGlobal, stalker->cName().c_str(), result ?
+    //  Msg                 ( "[%6d][%s] weapon_strapped = %s", Device.dwTimeGlobal, stalker->cName().c_str(), result ?
     //"true"
     //: "false" );
     return (result);
@@ -1012,7 +1012,7 @@ bool CScriptGameObject::weapon_unstrapped() const
         return (false);
     }
     bool const result = stalker->weapon_unstrapped();
-    //	Msg					( "[%6d][%s] weapon_unstrapped = %s", Device.dwTimeGlobal, stalker->cName().c_str(), result
+    //  Msg                 ( "[%6d][%s] weapon_unstrapped = %s", Device.dwTimeGlobal, stalker->cName().c_str(), result
     //?
     //"true" : "false" );
     return (result);

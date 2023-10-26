@@ -150,9 +150,9 @@ void attachable_hud_item::tune(Ivector values)
         if ((values.x) || (values.y) || (values.z))
         {
             Msg("[%s]", m_sect_name.c_str());
-            Msg("item_position				= %f,%f,%f", m_measures.m_item_attach[0].x, m_measures.m_item_attach[0].y,
+            Msg("item_position              = %f,%f,%f", m_measures.m_item_attach[0].x, m_measures.m_item_attach[0].y,
                 m_measures.m_item_attach[0].z);
-            Msg("item_orientation			= %f,%f,%f", m_measures.m_item_attach[1].x, m_measures.m_item_attach[1].y,
+            Msg("item_orientation           = %f,%f,%f", m_measures.m_item_attach[1].x, m_measures.m_item_attach[1].y,
                 m_measures.m_item_attach[1].z);
             Log("-----------");
         }
@@ -182,11 +182,11 @@ void attachable_hud_item::tune(Ivector values)
         if ((values.x) || (values.y) || (values.z))
         {
             Msg("[%s]", m_sect_name.c_str());
-            Msg("fire_point				= %f,%f,%f", m_measures.m_fire_point_offset.x, m_measures.m_fire_point_offset.y,
+            Msg("fire_point             = %f,%f,%f", m_measures.m_fire_point_offset.x, m_measures.m_fire_point_offset.y,
                 m_measures.m_fire_point_offset.z);
-            Msg("fire_point2			= %f,%f,%f", m_measures.m_fire_point2_offset.x,
+            Msg("fire_point2            = %f,%f,%f", m_measures.m_fire_point2_offset.x,
                 m_measures.m_fire_point2_offset.y, m_measures.m_fire_point2_offset.z);
-            Msg("shell_point			= %f,%f,%f", m_measures.m_shell_point_offset.x,
+            Msg("shell_point            = %f,%f,%f", m_measures.m_shell_point_offset.x,
                 m_measures.m_shell_point_offset.y, m_measures.m_shell_point_offset.z);
             Log("-----------");
         }
@@ -270,22 +270,22 @@ void player_hud::tune(Ivector _values)
             if (idx == 0)
             {
                 Msg("[%s]", m_attached_items[hud_adj_item_idx]->m_sect_name.c_str());
-                Msg("hands_position%s				= %f,%f,%f", (is_16x9) ? "_16x9" : "", pos_.x, pos_.y, pos_.z);
-                Msg("hands_orientation%s			= %f,%f,%f", (is_16x9) ? "_16x9" : "", rot_.x, rot_.y, rot_.z);
+                Msg("hands_position%s               = %f,%f,%f", (is_16x9) ? "_16x9" : "", pos_.x, pos_.y, pos_.z);
+                Msg("hands_orientation%s            = %f,%f,%f", (is_16x9) ? "_16x9" : "", rot_.x, rot_.y, rot_.z);
                 Log("-----------");
             }
             else if (idx == 1)
             {
                 Msg("[%s]", m_attached_items[hud_adj_item_idx]->m_sect_name.c_str());
-                Msg("aim_hud_offset_pos%s				= %f,%f,%f", (is_16x9) ? "_16x9" : "", pos_.x, pos_.y, pos_.z);
-                Msg("aim_hud_offset_rot%s				= %f,%f,%f", (is_16x9) ? "_16x9" : "", rot_.x, rot_.y, rot_.z);
+                Msg("aim_hud_offset_pos%s               = %f,%f,%f", (is_16x9) ? "_16x9" : "", pos_.x, pos_.y, pos_.z);
+                Msg("aim_hud_offset_rot%s               = %f,%f,%f", (is_16x9) ? "_16x9" : "", rot_.x, rot_.y, rot_.z);
                 Log("-----------");
             }
             else if (idx == 2)
             {
                 Msg("[%s]", m_attached_items[hud_adj_item_idx]->m_sect_name.c_str());
-                Msg("gl_hud_offset_pos%s				= %f,%f,%f", (is_16x9) ? "_16x9" : "", pos_.x, pos_.y, pos_.z);
-                Msg("gl_hud_offset_rot%s				= %f,%f,%f", (is_16x9) ? "_16x9" : "", rot_.x, rot_.y, rot_.z);
+                Msg("gl_hud_offset_pos%s                = %f,%f,%f", (is_16x9) ? "_16x9" : "", pos_.x, pos_.y, pos_.z);
+                Msg("gl_hud_offset_rot%s                = %f,%f,%f", (is_16x9) ? "_16x9" : "", rot_.x, rot_.y, rot_.z);
                 Log("-----------");
             }
         }

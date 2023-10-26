@@ -128,7 +128,7 @@ static const float actor_camera_hudge_mass_size = 10000000.f;
 CPhysicsShell* create_camera_shell(IPhysicsShellHolder* actor)
 {
     VERIFY(actor);
-    // CGameObject	*actor = smart_cast<CGameObject	*>( Level().CurrentEntity() );
+    // CGameObject  *actor = smart_cast<CGameObject *>( Level().CurrentEntity() );
     // VERIFY( Level().CurrentEntity() );
     CPhysicsShell* shell = P_build_SimpleShell(actor, actor_camera_hudge_mass, true);
     CPhysicsElement* roote = shell->get_ElementByStoreOrder(0);

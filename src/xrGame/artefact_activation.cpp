@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////////
-//	Module		:	artefact_activation.cpp
-//	Created		:	19.12.2007
-//	Modified	:	19.12.2007
-//	Autor		:	Alexander Maniluk
-//	Description	:	artefact activation class
+//  Module      :   artefact_activation.cpp
+//  Created     :   19.12.2007
+//  Modified    :   19.12.2007
+//  Autor       :   Alexander Maniluk
+//  Description :   artefact activation class
 ////////////////////////////////////////////////////////////////////////////////
 #include "StdAfx.h"
 #include "artefact_activation.h"

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: cover_evaluators_inline.h
-//	Created 	: 24.04.2004
-//  Modified 	: 24.04.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Cover evaluators inline functions
+//  Module      : cover_evaluators_inline.h
+//  Created     : 24.04.2004
+//  Modified    : 24.04.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Cover evaluators inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -77,7 +77,7 @@ IC void CCoverEvaluatorCloseToEnemy::setup(
 {
     inherited::setup();
 
-    //	m_actuality				= m_actuality && m_enemy_position.similar(enemy_position,10.f);
+    //  m_actuality             = m_actuality && m_enemy_position.similar(enemy_position,10.f);
     m_enemy_position = enemy_position;
 
     m_actuality = m_actuality && fsimilar(m_deviation, deviation);

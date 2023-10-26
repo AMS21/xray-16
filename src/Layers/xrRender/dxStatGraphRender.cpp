@@ -320,7 +320,7 @@ void dxStatGraphRender::RenderMarkers(CStatGraph& owner, FVF::L** ppv, CStatGrap
     float elem_factor = float(owner.rb.y - owner.lt.y) / float(owner.mx - owner.mn);
     float base_y = float(owner.rb.y) + (owner.mn * elem_factor);
 
-	for (CStatGraph::SMarker& CurMarker : pmarkers)
+    for (CStatGraph::SMarker& CurMarker : pmarkers)
     {
         float X0 = 0, Y0 = 0, X1 = 0, Y1 = 0;
         switch (CurMarker.m_eStyle)

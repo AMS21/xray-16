@@ -251,7 +251,7 @@ _DDS:
 
 _BUMP_from_base:
     {
-        //Msg			("! auto-generated bump map: %s",fname);
+        //Msg           ("! auto-generated bump map: %s",fname);
         Msg("! Fallback to default bump map: %s", fname);
         //////////////////
         if (strstr(fname, "_bump#"))

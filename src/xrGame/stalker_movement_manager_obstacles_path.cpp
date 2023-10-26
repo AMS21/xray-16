@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_movement_manager_obstacles_path.cpp
-//	Created 	: 18.04.2007
-//  Modified 	: 18.04.2007
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker movement manager: dynamic obstacles avoidance: build path
+//  Module      : stalker_movement_manager_obstacles_path.cpp
+//  Created     : 18.04.2007
+//  Modified    : 18.04.2007
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker movement manager: dynamic obstacles avoidance: build path
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -46,10 +46,10 @@ bool stalker_movement_manager_obstacles::simulate_path_navigation()
         if (m_static_obstacles.need_path_to_rebuild())
             return (false);
 
-        //		float						dist_to_target;
-        //		Fvector						dir_to_target;
-        //		float						distance;
-        //		current_position			=
+        //      float                       dist_to_target;
+        //      Fvector                     dir_to_target;
+        //      float                       distance;
+        //      current_position            =
         // path_position(1.f,current_position,check_time_delta,current_travel_point,distance,dist_to_target,dir_to_target);
         previous_position = current_position;
         current_position = predict_position(check_time_delta, current_position, current_travel_point, 1.f);
@@ -127,7 +127,7 @@ void stalker_movement_manager_obstacles::build_level_path()
     m_last_fail_time = 0;
 
     m_failed_to_build_path = false;
-    //	Msg								("[%6d] m_failed_to_build_path = %s
+    //  Msg                             ("[%6d] m_failed_to_build_path = %s
     //(stalker_movement_manager_obstacles::build_level_path)",Device.dwTimeGlobal,m_failed_to_build_path ? "true" :
     //"false");
 
@@ -177,6 +177,6 @@ void stalker_movement_manager_obstacles::build_level_path()
     } while (!simulate_path_navigation());
 
     m_last_dest_vertex_id = level_path().dest_vertex_id();
-    //	Msg								("[%6d][%6d][%s][%f]
+    //  Msg                             ("[%6d][%6d][%s][%f]
     // build_level_path",Device.dwFrame,Device.dwTimeGlobal,*object().cName(),timer.GetElapsed_sec()*1000.f);
 }

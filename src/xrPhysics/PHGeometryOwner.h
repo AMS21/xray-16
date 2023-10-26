@@ -18,14 +18,14 @@ protected:
     bool b_builded;
 
 private:
-    dSpaceID m_group; // e					//bl
+    dSpaceID m_group; // e                  //bl
 protected:
-    Fvector m_mass_center; // e ??				//bl
-    IPhysicsShellHolder* m_phys_ref_object; //->to shell ??		//bl
-    float m_volume; // e ??				//bl
-    u16 ul_material; // e ??				//bl
-    ContactCallbackFun* contact_callback; //->to shell ??		//bt
-    ObjectContactCallbackFun* object_contact_callback; //->to shell ??		//st
+    Fvector m_mass_center; // e ??              //bl
+    IPhysicsShellHolder* m_phys_ref_object; //->to shell ??     //bl
+    float m_volume; // e ??             //bl
+    u16 ul_material; // e ??                //bl
+    ContactCallbackFun* contact_callback; //->to shell ??       //bt
+    ObjectContactCallbackFun* object_contact_callback; //->to shell ??      //st
 public:
     ///
     void add_Sphere(const Fsphere& V); // aux

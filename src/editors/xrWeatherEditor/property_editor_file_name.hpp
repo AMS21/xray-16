@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_editor_file_name.hpp
-//	Created 	: 07.12.2007
-//  Modified 	: 07.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property editor file name class
+//  Module      : property_editor_file_name.hpp
+//  Created     : 07.12.2007
+//  Modified    : 07.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property editor file name class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_EDITOR_FILE_NAME_HPP_INCLUDED

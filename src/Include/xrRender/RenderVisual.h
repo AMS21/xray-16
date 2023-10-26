@@ -24,4 +24,4 @@ public:
     virtual IParticleCustom* dcast_ParticleCustom() { return nullptr; }
 };
 
-#endif //	RenderVisual_included
+#endif //   RenderVisual_included

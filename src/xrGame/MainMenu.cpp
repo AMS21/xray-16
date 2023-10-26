@@ -863,7 +863,7 @@ LPCSTR DelHyphens(LPCSTR c)
     return buf;
 }
 
-// extern	int VerifyClientCheck(const char *key, unsigned short cskey);
+// extern   int VerifyClientCheck(const char *key, unsigned short cskey);
 
 bool CMainMenu::IsCDKeyIsValid()
 {

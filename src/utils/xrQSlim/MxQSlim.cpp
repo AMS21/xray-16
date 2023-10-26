@@ -299,7 +299,7 @@ void MxEdgeQSlim::apply_mesh_penalties(MxQSlimEdge* info)
         bias += nfailed * meshing_penalty;
 
     static u32 a = 0;
-    //	if (a)
+    //  if (a)
     {
         double Nmin1 = check_local_inversion(info->v1, info->v2, info->vnew);
         double Nmin2 = check_local_inversion(info->v2, info->v1, info->vnew);
@@ -327,8 +327,8 @@ void MxEdgeQSlim::apply_mesh_penalties(MxQSlimEdge* info)
         if (c_min < compactness_ratio)
             _scale += float((compactness_ratio - c_min) / compactness_ratio);
 
-        //		if( c_min < compactness_ratio )
-        //			bias += (1-c_min);
+        //      if( c_min < compactness_ratio )
+        //          bias += (1-c_min);
     }
 
 #if USE_OLD_INVERSION_CHECK
@@ -339,7 +339,7 @@ void MxEdgeQSlim::apply_mesh_penalties(MxQSlimEdge* info)
 #endif
 
     info->heap_key(float((base_error - EDGE_BASE_ERROR) * _scale - bias));
-    //	info->heap_key(float(base_error - bias));
+    //  info->heap_key(float(base_error - bias));
 }
 
 void MxEdgeQSlim::compute_target_placement(MxQSlimEdge* info)
@@ -517,8 +517,8 @@ void MxEdgeQSlim::apply_contraction(const MxPairContraction& conx)
 
     // Must update edge info here so that the meshing penalties
     // will be computed with respect to the new mesh rather than the old
-    //.	for(unsigned int i=0; i<(unsigned int)edge_links(conx.v1).length(); i++)
-    //.		compute_edge_info(edge_links(conx.v1)[i]);
+    //. for(unsigned int i=0; i<(unsigned int)edge_links(conx.v1).length(); i++)
+    //.     compute_edge_info(edge_links(conx.v1)[i]);
     star.reset();
     m->collect_vertex_star(conx.v1, star);
     star.add(conx.v1);
@@ -528,12 +528,12 @@ void MxEdgeQSlim::apply_contraction(const MxPairContraction& conx)
         for (unsigned int i = 0; i < (unsigned int)edge_links(star(j)).length(); i++)
             edges.push_back(edge_links(star(j))[i]);
 
-    //	u32 r=edges.size();
+    //  u32 r=edges.size();
     std::sort(edges.begin(), edges.end());
     auto new_end = std::unique(edges.begin(), edges.end());
     edges.erase(new_end, edges.end());
-    //	u32 rr=edges.size();
-    //	Msg	("%d: %d/%d - %d",(unsigned int)edge_links(conx.v1).length(),r,rr,r-rr);
+    //  u32 rr=edges.size();
+    //  Msg ("%d: %d/%d - %d",(unsigned int)edge_links(conx.v1).length(),r,rr,r-rr);
     for (auto it = edges.begin(); it != edges.end(); ++it)
         compute_edge_info(*it);
 }
@@ -546,7 +546,7 @@ void MxEdgeQSlim::update_post_expand(const MxPairContraction& conx)
 
     star.reset();
     star2.reset();
-    //.	PRECAUTION(edge_links(conx.v2).reset());
+    //. PRECAUTION(edge_links(conx.v2).reset());
     m->collect_vertex_star(conx.v1, star);
     m->collect_vertex_star(conx.v2, star2);
 

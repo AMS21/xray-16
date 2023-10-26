@@ -4,14 +4,14 @@
 #include "alife_simulator_header.h"
 /*
 xr_token actor_stats_token[]={
-    {"total",				100},
-    {"stalkerkills",		1},
-    {"monsterkills",		2},
-    {"quests",				3},
-    {"artefacts",			4},
-    {"reputation",			5},
-    {"foo",					0},
-    {0,						0}
+    {"total",               100},
+    {"stalkerkills",        1},
+    {"monsterkills",        2},
+    {"quests",              3},
+    {"artefacts",           4},
+    {"reputation",          5},
+    {"foo",                 0},
+    {0,                     0}
 };
 */
 void SStatDetailBData::save(IWriter& stream)

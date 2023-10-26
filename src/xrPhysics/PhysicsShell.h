@@ -70,7 +70,7 @@ public:
     virtual const Fmatrix& XFORM() const { return mXFORM; }
     virtual void get_xform(Fmatrix& form) const { form.set(XFORM()); }
     virtual void InterpolateGlobalTransform(Fmatrix* m) = 0;
-    //	virtual		void			GetGlobalTransformDynamic				(Fmatrix* m) const
+    //  virtual     void            GetGlobalTransformDynamic               (Fmatrix* m) const
     //= 0;
     virtual void InterpolateGlobalPosition(Fvector* v) = 0;
 
@@ -110,9 +110,9 @@ public:
     virtual void set_CallbackData(void* cd) = 0;
     virtual void* get_CallbackData() = 0;
     virtual void set_PhysicsRefObject(IPhysicsShellHolder* ref_object) = 0;
-    //	virtual		void			get_LinearVel							(Fvector& velocity) const
+    //  virtual     void            get_LinearVel                           (Fvector& velocity) const
     //= 0;
-    //	virtual		void			get_AngularVel							(Fvector& velocity)	const
+    //  virtual     void            get_AngularVel                          (Fvector& velocity) const
     //= 0;
     virtual void set_LinearVel(const Fvector& velocity) = 0;
     virtual void set_AngularVel(const Fvector& velocity) = 0;
@@ -174,7 +174,7 @@ public:
     virtual CPHFracture& Fracture(u16 num) = 0;
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     virtual u16 numberOfGeoms() const = 0;
-    //	virtual				dBodyID					get_body								()
+    //  virtual             dBodyID                 get_body                                ()
     //= 0;
     virtual const Fvector& mass_Center() const = 0;
     virtual const Fvector& local_mass_Center() = 0;
@@ -188,14 +188,14 @@ public:
     virtual bool isFixed() = 0;
     ////////////////////////////////////////////////////////////////IPhysicsElement////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     virtual const Fmatrix& XFORM() const { return CPhysicsBase::XFORM(); }
-    // virtual		void						CalculateBoneTransform					( Fmatrix &bone_transform )const
+    // virtual      void                        CalculateBoneTransform                  ( Fmatrix &bone_transform )const
     // =
     // 0;
     virtual void GetPointVel(Fvector& res_vel, const Fvector& point) const = 0;
-    //	virtual			void						get_LinearVel							( Fvector& velocity )
+    //  virtual         void                        get_LinearVel                           ( Fvector& velocity )
     //const
     //{ get_LinearVel( velocity ); }
-    //	virtual			void						get_AngularVel							( Fvector& velocity )
+    //  virtual         void                        get_AngularVel                          ( Fvector& velocity )
     //const
     //{ get_AngularVel( velocity ); }
     virtual void get_Box(Fvector& sz, Fvector& c) const { return CPhysicsBase::get_Box(sz, c); }
@@ -275,7 +275,7 @@ public:
     virtual void GetMaxForceAndVelocity(float& force, float& velocity, int axis_num) = 0;
     virtual float GetAxisAngle(int axis_num) = 0;
     virtual float GetAxisAngleRate(int axis_num) = 0;
-    //	virtual		dJointID				GetDJoint					()
+    //  virtual     dJointID                GetDJoint                   ()
     //=0;
     virtual void GetAxisSDfactors(float& spring_factor, float& damping_factor, int axis_num) = 0;
     virtual void GetJointSDfactors(float& spring_factor, float& damping_factor) = 0;
@@ -308,7 +308,7 @@ public:
     virtual const Fmatrix& XFORM() const { return CPhysicsBase::XFORM(); }
     virtual const IPhysicsElement& Element(u16 index) const { return *get_ElementByStoreOrder(index); };
     virtual void GetGlobalTransformDynamic(Fmatrix* m) = 0;
-    // virtual			u16							get_ElementsNumber							( )																const
+    // virtual          u16                         get_ElementsNumber                          ( )                                                             const
     // =
     // 0;
 
@@ -332,7 +332,7 @@ public:
     virtual const _flags<CLClassBits>& collide_class_bits() const = 0;
     virtual void CreateShellAnimator(CInifile const* ini, LPCSTR section) = 0;
     virtual void SetIgnoreAnimated() = 0;
-    //	virtual			bool						Animated									()
+    //  virtual         bool                        Animated                                    ()
     //=
     // 0;
     virtual void AnimatorOnFrame() = 0;
@@ -416,7 +416,7 @@ public:
     virtual void ObjectToRootForm(const Fmatrix& form) = 0;
     virtual void SetPrefereExactIntegration() = 0;
     virtual ~CPhysicsShell();
-    // build_FromKinematics		in returns elements  & joint pointers according bone IDs;
+    // build_FromKinematics     in returns elements  & joint pointers according bone IDs;
 };
 
 struct dContact;

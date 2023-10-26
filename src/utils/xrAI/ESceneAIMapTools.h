@@ -37,7 +37,7 @@ struct SAINode // definition of "patch" or "node"
     {
         flSelected = (1 << 0),
         flHLSelected = (1 << 1),
-        //    	flHide		= (1<<2), 	// obsolette
+        //      flHide      = (1<<2),   // obsolette
 
         flN1 = (1 << 4),
         flN2 = (1 << 5),

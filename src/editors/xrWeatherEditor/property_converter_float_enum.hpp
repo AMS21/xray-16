@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_converter_float_enum.hpp
-//	Created 	: 12.12.2007
-//  Modified 	: 12.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property converter float enum class
+//  Module      : property_converter_float_enum.hpp
+//  Created     : 12.12.2007
+//  Modified    : 12.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property converter float enum class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_CONVERTER_FLOAT_ENUM_HPP_INCLUDED

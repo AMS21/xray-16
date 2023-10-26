@@ -276,7 +276,7 @@ void CTexture::Load()
                 pSurface = RImplementation.texture_load(buffer, mem, desc);
                 if (pSurface)
                 {
-                    // pSurface->SetPriority	(PRIORITY_LOW);
+                    // pSurface->SetPriority    (PRIORITY_LOW);
                     seqDATA.push_back(pSurface);
                     flags.MemoryUsage += mem;
                 }
@@ -294,7 +294,7 @@ void CTexture::Load()
         // Calc memory usage and preload into vid-mem
         if (pSurface)
         {
-            // pSurface->SetPriority	(PRIORITY_NORMAL);
+            // pSurface->SetPriority    (PRIORITY_NORMAL);
             flags.MemoryUsage = mem;
         }
     }
@@ -305,11 +305,11 @@ void CTexture::Load()
 void CTexture::Unload()
 {
 #ifdef DEBUG
-    string_path				msg_buff;
+    string_path             msg_buff;
     sprintf_s(msg_buff, sizeof(msg_buff), "* Unloading texture [%s] pSurface ID=%d", cName.c_str(), pSurface);
 #endif // DEBUG
 
-    //.	if (flags.bLoaded)		Msg		("* Unloaded: %s",cName.c_str());
+    //. if (flags.bLoaded)      Msg     ("* Unloaded: %s",cName.c_str());
 
     flags.bLoaded = FALSE;
     if (!seqDATA.empty())

@@ -89,14 +89,14 @@ void net_task_manager::create_global_data_write(LPCSTR save_path)
     // dbg_buf = xr_malloc( 560000000, "dbg_buf" );
     ////////////////
     /*{
-        string_path			 blfile_name;
-        FS.update_path		( blfile_name, "$level$", "btmp_global_data" );
+        string_path          blfile_name;
+        FS.update_path      ( blfile_name, "$level$", "btmp_global_data" );
 
-        string_path			 blfile_name_z;
-        FS.update_path		( blfile_name_z, "$level$", "btmp_global_data_z" );
+        string_path          blfile_name_z;
+        FS.update_path      ( blfile_name_z, "$level$", "btmp_global_data_z" );
 
-        string_path			 blfile_name_uz;
-        FS.update_path		( blfile_name_uz, "$level$", "btmp_global_data_uz" );
+        string_path          blfile_name_uz;
+        FS.update_path      ( blfile_name_uz, "$level$", "btmp_global_data_uz" );
         compress( blfile_name, blfile_name_z );
         decompress( blfile_name_z, blfile_name_uz );
         //"btmp_global_data"
@@ -228,8 +228,8 @@ void net_task_manager::receive(INetReader& r)
     if (it == pool.end())
     {
         send_receive_data_lock.Leave();
-        //		CDeflector temp;
-        //		temp.read( r );
+        //      CDeflector temp;
+        //      temp.read( r );
         return;
     }
     pool.erase(it);

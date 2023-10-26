@@ -103,17 +103,17 @@ void CStateZombieAttackRunAbstract::choose_action()
 
     //// check if its a strong monster
     // if (object->Rank() > 50) {
-    //	action = object->HitMemory.is_hit() ?  ACT_RUN : ACT_WALK_FWD;
-    //	return;
+    //  action = object->HitMemory.is_hit() ?  ACT_RUN : ACT_WALK_FWD;
+    //  return;
     //}
     //
     // if ((action == ACT_RUN) && (m_time_action_change + CHANGE_ACTION_FROM_RUN > time())) return;
 
     //// установка параметров функциональных блоков
     // if (object->HitMemory.is_hit() && (object->conditions().GetHealth() < 0.5f))
-    //	action = ACT_RUN;
+    //  action = ACT_RUN;
     // else
-    //	action = ACT_WALK_FWD;
+    //  action = ACT_WALK_FWD;
 
     // m_time_action_change = time();
 }

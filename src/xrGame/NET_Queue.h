@@ -24,7 +24,7 @@ public:
         case M_SPAWN:
         {
             P.read_start();
-            //				timestamp = P->
+            //              timestamp = P->
         }
         break;
         case M_EVENT:
@@ -76,7 +76,7 @@ IC bool operator<(const NET_Event& A, const NET_Event& B) { return A.timestamp <
 class NET_Queue_Event
 {
 public:
-    //	xr_multiset<NET_Event>	queue;
+    //  xr_multiset<NET_Event>  queue;
     xr_deque<NET_Event> queue;
 
 public:
@@ -84,7 +84,7 @@ public:
     {
         NET_Event E;
         E.import(P);
-        //		queue.insert	(E);
+        //      queue.insert    (E);
         queue.push_back(E);
         /*
         //-------------------------------------------
@@ -108,8 +108,8 @@ public:
     }
     IC BOOL available(u32 T)
     {
-        //		if (queue.empty()/* || (T<queue.begin()->timestamp)*/)	return FALSE;
-        //		else												return TRUE;
+        //      if (queue.empty()/* || (T<queue.begin()->timestamp)*/)  return FALSE;
+        //      else                                                return TRUE;
         if (queue.empty())
             return FALSE;
         /**
@@ -131,7 +131,7 @@ public:
         dest = E.destination;
         type = E.type;
         E.implication(P);
-        //		queue.erase			(queue.begin());
+        //      queue.erase         (queue.begin());
         queue.pop_front();
     }
 };

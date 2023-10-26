@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: condition_state_inline.h
-//	Created 	: 26.02.2004
-//  Modified 	: 26.02.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Condition state inline functions
+//  Module      : condition_state_inline.h
+//  Created     : 26.02.2004
+//  Modified    : 26.02.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Condition state inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -15,7 +15,7 @@
 TEMPLATE_SPECIALIZATION
 IC CConditionStateAbstract::CConditionState()
 {
-    //	m_conditions.reserve	(32);
+    //  m_conditions.reserve    (32);
     m_hash = 0;
 }
 

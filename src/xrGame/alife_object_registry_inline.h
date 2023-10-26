@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_object_registry_штдшту.h
-//	Created 	: 15.01.2003
-//  Modified 	: 12.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALife object registry inline functions
+//  Module      : alife_object_registry_штдшту.h
+//  Created     : 15.01.2003
+//  Modified    : 12.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALife object registry inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

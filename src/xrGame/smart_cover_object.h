@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_object.h
-//	Created 	: 28.08.2007
-//  Modified 	: 28.08.2007
-//	Author		: Dmitriy Iassenev
-//	Description : smart cover object class
+//  Module      : smart_cover_object.h
+//  Created     : 28.08.2007
+//  Modified    : 28.08.2007
+//  Author      : Dmitriy Iassenev
+//  Description : smart cover object class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

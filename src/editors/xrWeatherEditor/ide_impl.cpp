@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ide_impl.cpp
-//	Created 	: 04.12.2007
-//  Modified 	: 04.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : IDE implementation class
+//  Module      : ide_impl.cpp
+//  Created     : 04.12.2007
+//  Modified    : 04.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : IDE implementation class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

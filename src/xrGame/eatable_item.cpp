@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: eatable_item.cpp
-//	Created 	: 24.03.2003
-//  Modified 	: 29.01.2004
-//	Author		: Yuri Dobronravin
-//	Description : Eatable item
+//  Module      : eatable_item.cpp
+//  Created     : 24.03.2003
+//  Modified    : 29.01.2004
+//  Author      : Yuri Dobronravin
+//  Description : Eatable item
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

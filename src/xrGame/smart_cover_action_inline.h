@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_action_inline.h
-//	Created 	: 03.09.2007
-//	Author		: Alexander Dudin
-//	Description : Inline functions for action class
+//  Module      : smart_cover_action_inline.h
+//  Created     : 03.09.2007
+//  Author      : Alexander Dudin
+//  Description : Inline functions for action class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef SMART_COVER_ACTION_INLINE_H_INCLUDED

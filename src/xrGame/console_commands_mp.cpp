@@ -43,7 +43,7 @@ extern BOOL g_b_COD_PickUpMode;
 extern int g_iWeaponRemove;
 extern int g_iCorpseRemove;
 extern BOOL g_bCollectStatisticData;
-// extern	BOOL	g_bStatisticSaveAuto	;
+// extern   BOOL    g_bStatisticSaveAuto    ;
 extern BOOL g_SV_Disable_Auth_Check;
 extern BOOL g_sv_ignore_version_mismatch;
 
@@ -103,10 +103,10 @@ extern const xr_token g_ban_times[];
 
 extern int g_sv_adm_menu_ping_limit;
 extern u32 g_sv_cta_dwInvincibleTime;
-// extern	u32		g_sv_cta_dwAnomalySetLengthTime;
+// extern   u32     g_sv_cta_dwAnomalySetLengthTime;
 extern u32 g_sv_cta_artefactReturningTime;
 extern u32 g_sv_cta_activatedArtefactRet;
-// extern	s32		g_sv_cta_ScoreLimit;
+// extern   s32     g_sv_cta_ScoreLimit;
 extern u32 g_sv_cta_PlayerScoresDelayTime;
 extern u32 g_sv_cta_rankUpToArtsCountDiv;
 
@@ -1395,9 +1395,9 @@ public:
         if (!OnServer())
             return;
 
-        // string256			GameType;
-        // GameType[0]			=0;
-        // sscanf				(args,"%s", GameType);
+        // string256            GameType;
+        // GameType[0]          =0;
+        // sscanf               (args,"%s", GameType);
 
         string1024 argsNew;
         xr_sprintf(argsNew, "%s %s %s", Level().name().c_str(), Level().version().c_str(), args);
@@ -2088,7 +2088,7 @@ void register_mp_console_commands()
     CMD1(CCC_KickPlayerByName, "sv_kick"); // saved for backward compatibility
     CMD1(CCC_KickPlayerByID, "sv_kick_id");
 
-    // CMD1(CCC_BanPlayerByName,	"sv_banplayer"				);
+    // CMD1(CCC_BanPlayerByName,    "sv_banplayer"              );
     CMD1(CCC_BanPlayerByCDKEY, "sv_banplayer");
     CMD1(CCC_BanPlayerByCDKEYDirectly, "sv_banplayer_by_digest");
     CMD1(CCC_BanPlayerByIP, "sv_banplayer_ip");
@@ -2145,7 +2145,7 @@ void register_mp_console_commands()
 
     CMD4(CCC_Integer, "sv_statistic_collect", &g_bCollectStatisticData, 0, 1);
     CMD1(CCC_SaveStatistic, "sv_statistic_save");
-//	CMD4(CCC_Integer,		"sv_statistic_save_auto", &g_bStatisticSaveAuto, 0, 1);
+//  CMD4(CCC_Integer,       "sv_statistic_save_auto", &g_bStatisticSaveAuto, 0, 1);
 
 #ifndef MASTER_GOLD
     // Using CCC_AuthCheck twice, yes. It's not a mistake.
@@ -2170,7 +2170,7 @@ void register_mp_console_commands()
 
     CMD4(CCC_Integer, "sv_hail_to_winner_time", &G_DELAYED_ROUND_TIME, 0, 60);
 
-    //. CMD4(CCC_Integer,		"sv_pending_wait_time",		&g_sv_Pending_Wait_Time, 0, 60000);
+    //. CMD4(CCC_Integer,       "sv_pending_wait_time",     &g_sv_Pending_Wait_Time, 0, 60000);
 
     CMD4(CCC_Integer, "sv_client_reconnect_time", (int*)&g_sv_Client_Reconnect_Time, 0, 60);
 
@@ -2230,7 +2230,7 @@ void register_mp_console_commands()
     CMD3(CCC_Token, "sv_suspicious_actions_ban_time", &g_sv_suspicious_actions_ban_time, g_ban_times); // min
 
     CMD3(CCC_Token, "sv_adm_menu_ban_time", &g_sv_adm_menu_ban_time, g_ban_times); // min
-    //	CMD4(CCC_Integer,		"sv_adm_menu_ban_time",			(int*)&g_sv_adm_menu_ban_time, 1, 60); //min
+    //  CMD4(CCC_Integer,       "sv_adm_menu_ban_time",         (int*)&g_sv_adm_menu_ban_time, 1, 60); //min
     CMD4(CCC_Integer, "sv_adm_menu_ping_limit", (int*)&g_sv_adm_menu_ping_limit, 1, 200); // min
 
     CMD4(CCC_Integer, "sv_invincible_time", (int*)&g_sv_cta_dwInvincibleTime, 0, 60); // sec

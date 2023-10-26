@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_property_container.cpp
-//	Created 	: 11.12.2007
-//  Modified 	: 11.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property container property implementation class
+//  Module      : property_property_container.cpp
+//  Created     : 11.12.2007
+//  Modified    : 11.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property container property implementation class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

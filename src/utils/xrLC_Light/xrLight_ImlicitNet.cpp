@@ -16,7 +16,7 @@ namespace lc_net
 {
 static void AddImpImplicitNetTask(u32 from, u32 to)
 {
-    // tmanager.start		(new ImplicitThread (thID,&defl,thID*stride,thID*stride+stride));
+    // tmanager.start       (new ImplicitThread (thID,&defl,thID*stride,thID*stride+stride));
     if (from == to)
         return;
     R_ASSERT(from < to);
@@ -34,12 +34,12 @@ void RunImplicitnet(ImplicitDeflector& defl, const xr_vector<u32>& exept)
     WaitMuModelsLocalCalcLightening();
     inlc_global_data()->clear_build_textures_surface(exept);
 
-    // u32	num_tasks			= 1003;
-    // u32	stride				= defl.Height()/num_tasks;
+    // u32  num_tasks           = 1003;
+    // u32  stride              = defl.Height()/num_tasks;
     // if( stride == 0 )
     //{
-    //	num_tasks	= defl.Height();
-    //	stride		= 1;
+    //  num_tasks   = defl.Height();
+    //  stride      = 1;
     //}
 
     const u32 num_tasks = defl.Height();

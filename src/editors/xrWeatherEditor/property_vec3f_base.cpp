@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_vec3f_base.cpp
-//	Created 	: 29.12.2007
-//  Modified 	: 29.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property vec3f base class
+//  Module      : property_vec3f_base.cpp
+//  Created     : 29.12.2007
+//  Modified    : 29.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property vec3f base class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

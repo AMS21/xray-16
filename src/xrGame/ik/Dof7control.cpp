@@ -148,7 +148,7 @@ static int solve_R_angle(const float g[3], const float s[3], const float t[3], c
 // and the upper and lower lengths of the mechanism.
 //
 // Outputs
-//	c: center of circle
+//  c: center of circle
 //      u: local x axis
 //      v: local y axis
 //      n: normal to plane of circle = cross(u,v)
@@ -316,7 +316,7 @@ int SRS::SetGoal(const Matrix GG, float& rangle)
 
     EvaluateCircle(ee);
     // radius = get_circle_equation(ee, proj_axis, pos_axis,
-    //			 upper_len, lower_len, c, u, v, n);
+    //           upper_len, lower_len, c, u, v, n);
 
     //
     // Build rotation matrix about the R joint

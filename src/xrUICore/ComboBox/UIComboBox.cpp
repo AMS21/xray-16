@@ -138,10 +138,10 @@ void CUIComboBox::SetCurrentOptValue()
 {
     m_list_box.Clear();
     const xr_token* tok = GetOptToken();
-	
-	R_ASSERT3(tok, "Option token doesnt exist:", m_entry.c_str());
-	
-	while (tok->name)
+    
+    R_ASSERT3(tok, "Option token doesnt exist:", m_entry.c_str());
+    
+    while (tok->name)
     {
         if (m_disabled.end() == std::find(m_disabled.begin(), m_disabled.end(), tok->id))
         {

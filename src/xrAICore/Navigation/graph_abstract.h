@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: graph_abstract.h
-//	Created 	: 14.01.2004
-//  Modified 	: 19.02.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Graph class template
+//  Module      : graph_abstract.h
+//  Created     : 14.01.2004
+//  Modified    : 19.02.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Graph class template
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

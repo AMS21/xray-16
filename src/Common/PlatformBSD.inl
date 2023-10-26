@@ -459,10 +459,10 @@ inline int _mkdir(const char *dir) { return mkdir(dir, S_IRWXU); }
 #define S_FALSE 0x10000000
 #define E_FAIL 0x80004005
 
-#define _MAX_DRIVE	3
-#define _MAX_DIR	256
-#define _MAX_FNAME	256
-#define _MAX_EXT	256
+#define _MAX_DRIVE  3
+#define _MAX_DIR    256
+#define _MAX_FNAME  256
+#define _MAX_EXT    256
 
 #define SEM_FAILCRITICALERRORS 1
 #define SetErrorMode(x) {}
@@ -1054,10 +1054,10 @@ typedef struct _D3DRECT {
 typedef DWORD           FOURCC;
 
 typedef struct _AVIINDEXENTRY {
-    DWORD	ckid;
-    DWORD	dwFlags;
-    DWORD	dwChunkOffset;
-    DWORD	dwChunkLength;
+    DWORD   ckid;
+    DWORD   dwFlags;
+    DWORD   dwChunkOffset;
+    DWORD   dwChunkLength;
 } AVIINDEXENTRY;
 
 typedef void *HIC;

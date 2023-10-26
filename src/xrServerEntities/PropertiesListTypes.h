@@ -297,11 +297,11 @@ public:
     }
     /*
         template <class T1, class T2>
-        IC void				OnBeforeEdit	()
+        IC void             OnBeforeEdit    ()
         {
             for (auto it=values.begin(); values.end() != it; ++it){
-                T1* CV		= smart_cast<T1*>(*it); VERIFY(CV);
-                if (CV->OnChangeEvent) 		CV->OnChangeEvent(*it);
+                T1* CV      = smart_cast<T1*>(*it); VERIFY(CV);
+                if (CV->OnChangeEvent)      CV->OnChangeEvent(*it);
             }
         }
     */

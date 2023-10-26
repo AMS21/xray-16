@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_rat.cpp
-//	Created 	: 23.04.2002
-//  Modified 	: 07.11.2002
-//	Author		: Dmitriy Iassenev
-//	Description : AI Behaviour for monster "Rat"
+//  Module      : ai_rat.cpp
+//  Created     : 23.04.2002
+//  Modified    : 07.11.2002
+//  Author      : Dmitriy Iassenev
+//  Description : AI Behaviour for monster "Rat"
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -37,10 +37,10 @@ using namespace RatSpace;
 CAI_Rat::CAI_Rat() : m_behaviour_manager(0)
 {
     init();
-    //	m_behaviour_manager				= new steering_behaviour::manager(this);
-    //	m_behaviour_manager->add		(new steering_behaviour::cohesion(this),	.5f);
-    //	m_behaviour_manager->add		(new steering_behaviour::separation(this),	.5f);
-    //	m_behaviour_manager->add		(new steering_behaviour::alignment(this),	.5f);
+    //  m_behaviour_manager             = new steering_behaviour::manager(this);
+    //  m_behaviour_manager->add        (new steering_behaviour::cohesion(this),    .5f);
+    //  m_behaviour_manager->add        (new steering_behaviour::separation(this),  .5f);
+    //  m_behaviour_manager->add        (new steering_behaviour::alignment(this),   .5f);
 }
 
 CAI_Rat::~CAI_Rat() { delete_data(m_state_manager); }
@@ -248,8 +248,8 @@ bool CAI_Rat::net_Spawn(CSE_Abstract* DC)
     m_fAttackAngle = tpSE_Rat->fAttackAngle / 180.f * PI;
     m_fAttackSuccessProbability = tpSE_Rat->fAttackSuccessProbability;
 
-    //	m_tCurGP						= tpSE_Rat->m_tGraphID;
-    //	m_tNextGP						= tpSE_Rat->m_tNextGraphID;
+    //  m_tCurGP                        = tpSE_Rat->m_tGraphID;
+    //  m_tNextGP                       = tpSE_Rat->m_tNextGraphID;
     m_current_graph_point = m_next_graph_point = ai_location().game_vertex_id();
 
     int iPointCount = (int)movement().locations().vertex_types().size();
@@ -340,8 +340,8 @@ void CAI_Rat::net_Export(NET_Packet& P)
     GameGraph::_GRAPH_ID l_game_vertex_id = ai_location().game_vertex_id();
     P.w(&l_game_vertex_id, sizeof(l_game_vertex_id));
     P.w(&l_game_vertex_id, sizeof(l_game_vertex_id));
-    //	P.w						(&m_fGoingSpeed,			sizeof(m_fGoingSpeed));
-    //	P.w						(&m_fGoingSpeed,			sizeof(m_fGoingSpeed));
+    //  P.w                     (&m_fGoingSpeed,            sizeof(m_fGoingSpeed));
+    //  P.w                     (&m_fGoingSpeed,            sizeof(m_fGoingSpeed));
     float f1 = 0;
     if (ai().game_graph().valid_vertex_id(l_game_vertex_id))
     {
@@ -425,15 +425,15 @@ void CAI_Rat::CreateSkeleton()
         m_pPhysicsShell->applyHit(m_saved_hit_position, m_saved_hit_dir, m_saved_impulse, 0, m_saved_hit_type);
     }
     /*
-    IKinematics* M		= smart_cast<IKinematics*>(Visual());			VERIFY(M);
-    m_pPhysicsShell		= P_create_Shell();
+    IKinematics* M      = smart_cast<IKinematics*>(Visual());           VERIFY(M);
+    m_pPhysicsShell     = P_create_Shell();
 
     //get bone instance
     int id=M->LL_BoneID("bip01_pelvis");
-    CBoneInstance& instance=M->LL_GetBoneInstance				(id);
+    CBoneInstance& instance=M->LL_GetBoneInstance               (id);
 
     //create root element
-    CPhysicsElement* element=P_create_Element				();
+    CPhysicsElement* element=P_create_Element               ();
     element->mXFORM.identity();
     instance.set_callback(m_pPhysicsShell->GetBonesCallback(),element);
     Fobb box;
@@ -526,7 +526,7 @@ void CAI_Rat::UpdatePositionAnimation()
 // ALife::EHitType hit_type /*= ALife::eHitTypeWound*/)
 void CAI_Rat::Hit(SHit* pHDS)
 {
-    //	inherited::Hit				(P,dir,who,element,p_in_object_space,impulse, hit_type);
+    //  inherited::Hit              (P,dir,who,element,p_in_object_space,impulse, hit_type);
     inherited::Hit(pHDS);
     if (!m_pPhysicsShell)
     {
@@ -537,7 +537,7 @@ void CAI_Rat::Hit(SHit* pHDS)
     }
     else
     {
-        //		CEatableItem::Hit		(P,dir,who,element,p_in_object_space,impulse, hit_type);
+        //      CEatableItem::Hit       (P,dir,who,element,p_in_object_space,impulse, hit_type);
         CEatableItem::Hit(pHDS);
     }
 }
@@ -597,8 +597,8 @@ bool CAI_Rat::Useful() const
 #ifdef DEBUG
 void CAI_Rat::OnRender()
 {
-    //	inherited::OnRender();
-    //	CEatableItem::OnRender();
+    //  inherited::OnRender();
+    //  CEatableItem::OnRender();
 }
 #endif
 

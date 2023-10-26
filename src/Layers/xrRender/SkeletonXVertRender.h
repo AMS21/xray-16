@@ -11,4 +11,4 @@ struct vertRender // T&B are not skinned, because in R2 skinning occurs always i
 };
 #pragma pack(pop)
 
-#endif //	SkeletonXVertRender_h_included
+#endif //   SkeletonXVertRender_h_included

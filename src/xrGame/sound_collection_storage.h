@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: sound_collection_storage.h
-//	Created 	: 13.10.2005
-//  Modified 	: 13.10.2005
-//	Author		: Dmitriy Iassenev
-//	Description : sound collection storage
+//  Module      : sound_collection_storage.h
+//  Created     : 13.10.2005
+//  Modified    : 13.10.2005
+//  Author      : Dmitriy Iassenev
+//  Description : sound collection storage
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

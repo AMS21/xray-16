@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: config.h
-//	Created 	: 28.10.2006
-//  Modified 	: 14.04.2007
-//	Author		: Dmitriy Iassenev
-//	Description : configuration file
+//  Module      : config.h
+//  Created     : 28.10.2006
+//  Modified    : 14.04.2007
+//  Author      : Dmitriy Iassenev
+//  Description : configuration file
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

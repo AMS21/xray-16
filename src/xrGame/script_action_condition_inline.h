@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_action_condition_inline.h
-//	Created 	: 30.09.2003
-//  Modified 	: 29.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script action condition class inline functions
+//  Module      : script_action_condition_inline.h
+//  Created     : 30.09.2003
+//  Modified    : 29.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script action condition class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

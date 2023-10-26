@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_entity.cpp
-//	Created 	: 06.10.2003
-//  Modified 	: 14.12.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script entity class
+//  Module      : script_entity.cpp
+//  Created     : 06.10.2003
+//  Modified    : 14.12.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script entity class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -112,10 +112,10 @@ void CScriptEntity::SetScriptControl(const bool bScriptControl, shared_str caSci
     /*
     #ifdef DEBUG
         if (bScriptControl)
-            GEnv.ScriptEngine->script_log			(ScriptStorage::eLuaMessageTypeInfo,"Script %s set object %s
+            GEnv.ScriptEngine->script_log           (ScriptStorage::eLuaMessageTypeInfo,"Script %s set object %s
     under its control",*caSciptName,*object().cName());
         else
-            GEnv.ScriptEngine->script_log			(ScriptStorage::eLuaMessageTypeInfo,"Script %s freed object %s
+            GEnv.ScriptEngine->script_log           (ScriptStorage::eLuaMessageTypeInfo,"Script %s freed object %s
     from its control",*caSciptName,*object().cName());
     #endif
     */
@@ -233,8 +233,8 @@ void CScriptEntity::ProcessScripts()
         l_tpEntityAction = m_tpActionQueue.front();
         VERIFY(l_tpEntityAction);
 #ifdef _DEBUG
-//		if (!xr_strcmp("m_stalker_wounded",*object().cName()))
-//			Msg			("%6d Processing action :
+//      if (!xr_strcmp("m_stalker_wounded",*object().cName()))
+//          Msg         ("%6d Processing action :
 //%s",Device.dwTimeGlobal,*l_tpEntityAction->m_tAnimationAction.m_caAnimationToPlay);
 #endif
 
@@ -247,8 +247,8 @@ void CScriptEntity::ProcessScripts()
             break;
 
 #ifdef _DEBUG
-//		if (!xr_strcmp("m_stalker_wounded",*object().cName()))
-//			Msg			("%6d Action completed :
+//      if (!xr_strcmp("m_stalker_wounded",*object().cName()))
+//          Msg         ("%6d Action completed :
 //%s",Device.dwTimeGlobal,*l_tpEntityAction->m_tAnimationAction.m_caAnimationToPlay);
 #endif
 
@@ -382,7 +382,7 @@ bool CScriptEntity::bfAssignSound(CScriptEntityAction* tpEntityAction)
             if (!l_tSoundAction.m_bStartedToPlay)
             {
 #ifdef _DEBUG
-//				Msg									("%6d Starting sound
+//              Msg                                 ("%6d Starting sound
 //%s",Device.dwTimeGlobal,*l_tSoundAction.m_caSoundToPlay);
 #endif
                 const Fmatrix& l_tMatrix = GetUpdatedMatrix(
@@ -475,7 +475,7 @@ bool CScriptEntity::bfAssignMovement(CScriptEntityAction* tpEntityAction)
         R_ASSERT(l_tpGameObject);
 #endif
         m_monster->movement().set_path_type(MovementManager::ePathTypeLevelPath);
-        //			Msg			("%6d Object %s, position
+        //          Msg         ("%6d Object %s, position
         //[%f][%f][%f]",Device.dwTimeGlobal,*l_tpGameObject->cName(),VPUSH(l_tpGameObject->Position()));
         m_monster->movement().detail().set_dest_position(l_tpGameObject->Position());
         m_monster->movement().set_level_dest_vertex(l_tpGameObject->ai_location().level_vertex_id());
@@ -622,7 +622,7 @@ bool CScriptEntity::bfScriptAnimation()
 
 #ifdef DEBUG
 // if (!xr_strcmp("m_stalker_wounded",*object().cName()))
-//	Msg				("%6d Playing animation : %s , Object
+//  Msg             ("%6d Playing animation : %s , Object
 //%s",Device.dwTimeGlobal,*GetCurrentAction()->m_tAnimationAction.m_caAnimationToPlay, *object().cName());
 #endif
         m_tpScriptAnimation = m_tpNextAnimation;

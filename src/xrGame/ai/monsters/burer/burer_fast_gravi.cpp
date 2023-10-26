@@ -19,7 +19,7 @@ bool CBurerFastGravi::check_start_conditions()
 
 void CBurerFastGravi::activate()
 {
-    //	CBurer *burer = smart_cast<CBurer *>(m_object);
+    //  CBurer *burer = smart_cast<CBurer *>(m_object);
     m_man->subscribe(this, ControlCom::eventTAChange);
     m_object->dir().face_target(m_object->EnemyMan.get_enemy());
 }

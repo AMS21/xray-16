@@ -31,11 +31,11 @@ bool CMosquitoBald::BlowoutState()
 }
 // bool CMosquitoBald::SecondaryHitState()
 //{
-//	bool result = inherited::SecondaryHitState();
-//	if(!result)
-//		UpdateBlowout();
+//  bool result = inherited::SecondaryHitState();
+//  if(!result)
+//      UpdateBlowout();
 //
-//	return result;
+//  return result;
 //}
 
 void CMosquitoBald::Affect(SZoneObjectInfo* O)

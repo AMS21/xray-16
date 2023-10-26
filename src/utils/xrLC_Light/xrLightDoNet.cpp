@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Created		: 27.03.2009
-//	Author		: Konstantin Slipchenko
-//	Copyright (C) GSC Game World - 2009
+//  Created     : 27.03.2009
+//  Author      : Konstantin Slipchenko
+//  Copyright (C) GSC Game World - 2009
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
@@ -24,15 +24,15 @@ void xrNetDOLight()
     //////////////////////////////////////////////////////////////////////
     // for ( u32 _z=0; _z<gl_data.slots_data.size_z(); _z++ )
     //{
-    //	for (u32 _x=0; _x<gl_data.slots_data.size_x(); _x++)
-    //	{
-    //		DetailSlot&	DS = gl_data.slots_data.get_slot( _x, _z );
-    //		if( !detail_slot_process(  _x, _z, DS ) )
-    //			continue;
-    //		tnet_execution_base< et_detail_light > *el = lc_net::execution_factory.create<et_detail_light>();
-    //		el->implementation( ).construct( _x, _z );
-    //		get_task_manager().add_task( el );
-    //	}
+    //  for (u32 _x=0; _x<gl_data.slots_data.size_x(); _x++)
+    //  {
+    //      DetailSlot& DS = gl_data.slots_data.get_slot( _x, _z );
+    //      if( !detail_slot_process(  _x, _z, DS ) )
+    //          continue;
+    //      tnet_execution_base< et_detail_light > *el = lc_net::execution_factory.create<et_detail_light>();
+    //      el->implementation( ).construct( _x, _z );
+    //      get_task_manager().add_task( el );
+    //  }
     //}
 
     u32 start = 0;

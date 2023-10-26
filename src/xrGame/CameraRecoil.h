@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: CameraRecoil.h
-//	Created 	: 26.05.2008
-//	Author		: Evgeniy Sokolov
-//	Description : Camera Recoil struct
+//  Module      : CameraRecoil.h
+//  Created     : 26.05.2008
+//  Author      : Evgeniy Sokolov
+//  Description : Camera Recoil struct
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef CAMERA_RECOIL_H_INCLUDED

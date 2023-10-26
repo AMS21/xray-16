@@ -50,7 +50,7 @@ IC bool b_is_blending(const CBlend* current_blend, const CBlend* b)
 
 void ik_anim_state::update(IKinematicsAnimated* K, const CBlend* b, u16 i)
 {
-    // Andy	is_step = m && b && blend_in( *b, m->get_interval( i ) );
+    // Andy is_step = m && b && blend_in( *b, m->get_interval( i ) );
     VERIFY(K);
     is_step = false;
     is_idle = false;
@@ -102,7 +102,7 @@ bool ik_anim_state::time_step_begin(IKinematicsAnimated* K, const CBlend& B, u16
     if (marks.is_empty())
         return false;
     // if( blend_in( *current_blend, marks ) )
-    //	time = 0;
+    //  time = 0;
     time = time_to_next_mark(B, marks);
     VERIFY(time < FLT_MAX);
     return true;

@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////
-// inventory_owner_info.h:	для работы с сюжетной информацией
+// inventory_owner_info.h:  для работы с сюжетной информацией
 //
 //////////////////////////////////////////////////////////////////////
 
@@ -61,8 +61,8 @@ bool CInventoryOwner::OnReceiveInfo(shared_str info_id) const
     const CGameObject* pThisGameObject = smart_cast<const CGameObject*>(this);
     VERIFY(pThisGameObject);
 
-    //	SCRIPT_CALLBACK_EXECUTE_2(*m_pInfoCallback, pThisGameObject->lua_game_object(), info_index);
-    //	pThisGameObject->callback(GameObject::eInventoryInfo)(pThisGameObject->lua_game_object(), *info_id);
+    //  SCRIPT_CALLBACK_EXECUTE_2(*m_pInfoCallback, pThisGameObject->lua_game_object(), info_index);
+    //  pThisGameObject->callback(GameObject::eInventoryInfo)(pThisGameObject->lua_game_object(), *info_id);
 
     CInfoPortion info_portion;
     info_portion.Load(info_id);

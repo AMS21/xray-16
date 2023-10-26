@@ -14,7 +14,7 @@ SCRIPT_EXPORT(CUIPropertiesBox, (CUIFrameWindow),
             .def("RemoveAll", &CUIPropertiesBox::RemoveAll)
             .def("Show", (void (CUIPropertiesBox::*)(int, int)) &CUIPropertiesBox::Show)
             .def("Hide", &CUIPropertiesBox::Hide)
-            //		.def("GetClickedIndex",		&CUIPropertiesBox::GetClickedIndex)
+            //      .def("GetClickedIndex",     &CUIPropertiesBox::GetClickedIndex)
             .def("AutoUpdateSize", &CUIPropertiesBox::AutoUpdateSize)
             .def("AddItem", &CUIPropertiesBox::AddItem_script)
     ];

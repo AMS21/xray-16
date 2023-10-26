@@ -173,7 +173,7 @@ void CWeaponKnife::OnStateSwitch(u32 S, u32 oldState)
     {
         //-------------------------------------------
         m_eHitType = m_eHitType_1;
-        // fHitPower		= fHitPower_1;
+        // fHitPower        = fHitPower_1;
         if (ParentIsActor())
         {
             if (GameID() == eGameIDSingle)
@@ -198,7 +198,7 @@ void CWeaponKnife::OnStateSwitch(u32 S, u32 oldState)
     {
         //-------------------------------------------
         m_eHitType = m_eHitType_2;
-        // fHitPower		= fHitPower_2;
+        // fHitPower        = fHitPower_2;
         if (ParentIsActor())
         {
             if (GameID() == eGameIDSingle)
@@ -268,7 +268,7 @@ void CWeaponKnife::MakeShot(Fvector const& pos, Fvector const& dir, float const 
     cartridge.param_s.impair = 1.0f;
     cartridge.param_s.kDisp = 1.0f;
     cartridge.param_s.kHit = k_hit;
-    //.	cartridge.param_s.kCritical		= 1.0f;
+    //. cartridge.param_s.kCritical     = 1.0f;
     cartridge.param_s.kImpulse = 1.0f;
     cartridge.param_s.kAP = EPS_L;
     cartridge.m_flags.set(CCartridge::cfTracer, FALSE);
@@ -456,7 +456,7 @@ void CWeaponKnife::LoadFireParams(LPCSTR section)
     fHitImpulse_1 = fHitImpulse;
     m_eHitType_1 = ALife::g_tfString2HitType(pSettings->r_string(section, "hit_type"));
 
-    // fHitPower_2			= pSettings->r_float	(section,strconcat(full_name, prefix, "hit_power_2"));
+    // fHitPower_2          = pSettings->r_float    (section,strconcat(full_name, prefix, "hit_power_2"));
     s_sHitPower_2 = pSettings->r_string_wb(section, "hit_power_2");
     s_sHitPowerCritical_2 = READ_IF_EXISTS(pSettings, r_string_wb, section, "hit_power_critical_2", s_sHitPower_2);
 
@@ -531,16 +531,16 @@ void CWeaponKnife::OnRender()
             renderer.draw_ellipse(sphere, color_xrgb(100, 255, 0));
         }
         /*
-        Fmatrix	sphere				= Fmatrix().scale(.05f, .05f, .05f);
-        sphere.c					= m_dbg_data.m_pos;
-        renderer.draw_ellipse		(sphere, color_xrgb(255, 0, 0));
-        renderer.draw_line			(Fidentity, m_dbg_data.m_pos, m_dbg_data.m_endpos, color_xrgb(255, 255, 0));
+        Fmatrix sphere              = Fmatrix().scale(.05f, .05f, .05f);
+        sphere.c                    = m_dbg_data.m_pos;
+        renderer.draw_ellipse       (sphere, color_xrgb(255, 0, 0));
+        renderer.draw_line          (Fidentity, m_dbg_data.m_pos, m_dbg_data.m_endpos, color_xrgb(255, 255, 0));
 
-        sphere.c					= m_dbg_data.m_endpos;
-        renderer.draw_ellipse		(sphere, color_xrgb(100, 255, 0));*/
-        // Fvector victim_end			(m_dbg_data.m_pos);
-        // victim_end.add				(m_dbg_data.m_pick_vector);
-        // renderer.draw_line			(Fidentity, m_dbg_data.m_pos, victim_end, color_xrgb(0, 255, 255));
+        sphere.c                    = m_dbg_data.m_endpos;
+        renderer.draw_ellipse       (sphere, color_xrgb(100, 255, 0));*/
+        // Fvector victim_end           (m_dbg_data.m_pos);
+        // victim_end.add               (m_dbg_data.m_pick_vector);
+        // renderer.draw_line           (Fidentity, m_dbg_data.m_pos, victim_end, color_xrgb(0, 255, 255));
     }
     float hit_power = 1.f;
     for (dbg_draw_data::targets_t::const_iterator i = m_dbg_data.m_targets_vectors.begin(),
@@ -618,15 +618,15 @@ static bool intersect(Fcylinder const& bone, Fsphere const& query)
 void CWeaponKnife::GetVictimPos(CEntityAlive* victim, Fvector& pos_dest)
 {
     /*VERIFY(victim);
-    IKinematics*	tmp_kinem	= smart_cast<IKinematics*>(victim->Visual());
-    u16 hit_bone_id				= tmp_kinem->LL_BoneID(m_SplashHitBone);
+    IKinematics*    tmp_kinem   = smart_cast<IKinematics*>(victim->Visual());
+    u16 hit_bone_id             = tmp_kinem->LL_BoneID(m_SplashHitBone);
     if (hit_bone_id != BI_NONE)
     {
-        Fmatrix			tmp_matrix;
-        tmp_kinem->Bone_GetAnimPos	(tmp_matrix, hit_bone_id, u8(-1), true);
+        Fmatrix         tmp_matrix;
+        tmp_kinem->Bone_GetAnimPos  (tmp_matrix, hit_bone_id, u8(-1), true);
         pos_dest.set(tmp_matrix.c);
-        Fmatrix	& tmp_xform			= victim->XFORM();
-        tmp_xform.transform_tiny	(pos_dest);
+        Fmatrix & tmp_xform         = victim->XFORM();
+        tmp_xform.transform_tiny    (pos_dest);
     } else
     {
         Fbox const & tmp_box = tmp_kinem->GetBox();
@@ -635,9 +635,9 @@ void CWeaponKnife::GetVictimPos(CEntityAlive* victim, Fvector& pos_dest)
         pos_dest.add(victim->Position());
     }
 
-    CBoneData& tmp_bone_data	= tmp_kinem->LL_GetData(hit_bone_id);
-    Fmatrix	& tmp_xform			= victim->XFORM();
-    CBoneInstance &bi			= tmp_kinem->LL_GetBoneInstance();
+    CBoneData& tmp_bone_data    = tmp_kinem->LL_GetData(hit_bone_id);
+    Fmatrix & tmp_xform         = victim->XFORM();
+    CBoneInstance &bi           = tmp_kinem->LL_GetBoneInstance();
 
     switch (tmp_bone_data.shape.type)
     {
@@ -990,7 +990,7 @@ void CWeaponKnife::best_victim_selector::operator()(spartial_base_t::value_type 
 
     Fvector obj_pos;
     tmp_actor->Center(obj_pos);
-    // m_owner->GetVictimPos	(tmp_actor, obj_pos);
+    // m_owner->GetVictimPos    (tmp_actor, obj_pos);
 
     Fvector tmp_dir = Fvector(obj_pos).sub(m_start_pos);
     float const tmp_dist = tmp_dir.magnitude();

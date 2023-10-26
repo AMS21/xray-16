@@ -17,10 +17,10 @@ public:
     virtual void Release();
 
 private:
-    //	For debug purpose only
+    //  For debug purpose only
     ref_geom m_Geom;
 
     dx113DFluidData m_FluidData;
 };
 
-#endif //	dx113DFluidVolume_included
+#endif //   dx113DFluidVolume_included

@@ -28,9 +28,9 @@ void ImplicitDeflector::Bounds_Summary(Fbox2& bounds)
     }
 }
 
-// b_BuildTexture*			texture;
-// lm_layer					lmap;
-// vecFace					faces;
+// b_BuildTexture*          texture;
+// lm_layer                 lmap;
+// vecFace                  faces;
 
 void ImplicitDeflector::read(INetReader& r)
 {

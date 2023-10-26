@@ -631,7 +631,7 @@ void _STDCALL EncodeFileChunked(FILE* DecodedFile,int MaxOrder,int MaxSize)
     fseek(DecodedFile, 0, SEEK_END);
 
     long    src_sz      = ftell(DecodedFile);
-    u8*     src_data	= new u8 [src_sz];
+    u8*     src_data    = new u8 [src_sz];
 
     fseek(DecodedFile, 0, SEEK_SET);
     fread( src_data, src_sz, 1, DecodedFile);
@@ -653,10 +653,10 @@ void _STDCALL EncodeFileChunked(FILE* DecodedFile,int MaxOrder,int MaxSize)
     while( data < data_end )
     {
         FILE* tmp_file = fopen(tmp_filename, "wb");
-        u16	sz	= *((u16*)data);
-        data	+= sizeof(u16);
+        u16 sz  = *((u16*)data);
+        data    += sizeof(u16);
         fwrite(data, sz, 1, tmp_file);
-        data	+= sz;
+        data    += sz;
         fclose(tmp_file);
         FILE* tmp_r_file = fopen(tmp_filename, "rb");
         StartModelRare(MaxOrder);

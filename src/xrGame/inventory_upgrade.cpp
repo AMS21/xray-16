@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: inventory_upgrade.cpp
-//	Created 	: 01.11.2007
-//  Modified 	: 27.11.2007
-//	Author		: Evgeniy Sokolov
-//	Description : inventory upgrade class implementation
+//  Module      : inventory_upgrade.cpp
+//  Created     : 01.11.2007
+//  Modified    : 27.11.2007
+//  Author      : Evgeniy Sokolov
+//  Description : inventory upgrade class implementation
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -61,10 +61,10 @@ void Upgrade::construct(const shared_str& upgrade_id, Group& parental_group, Man
 
     // prereq_functor (1,2) : m_prerequisites, m_tooltip
     LPCSTR prereq_functor_str = pSettings->r_string(id(), "prereq_functor"); // prerequisites_functor
-    //	LPCSTR tooltip_functor_str	= pSettings->r_string( id(), "prereq_tooltip_functor" );
+    //  LPCSTR tooltip_functor_str  = pSettings->r_string( id(), "prereq_tooltip_functor" );
     m_prerequisites.parameter = pSettings->r_string(id(), "prereq_params"); // prerequisites_params
     m_prerequisites.parameter2 = m_section.c_str();
-    //	m_tooltip.parameter			= pSettings->r_string( id(), "prereq_params" );
+    //  m_tooltip.parameter         = pSettings->r_string( id(), "prereq_params" );
     R_ASSERT2(GEnv.ScriptEngine->functor(prereq_functor_str, m_prerequisites.functr),
         make_string("Failed to get prerequisites functor in section[%s], functor[%s]", id_str(), prereq_functor_str));
     m_prerequisites();

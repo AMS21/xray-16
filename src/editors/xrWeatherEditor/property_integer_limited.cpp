@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_integer_limited.cpp
-//	Created 	: 07.12.2007
-//  Modified 	: 07.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : limited integer property implementation class
+//  Module      : property_integer_limited.cpp
+//  Created     : 07.12.2007
+//  Modified    : 07.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : limited integer property implementation class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

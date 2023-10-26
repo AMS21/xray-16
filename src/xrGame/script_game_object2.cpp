@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_game_object_script2.cpp
-//	Created 	: 17.11.2004
-//  Modified 	: 17.11.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script game object class script export
+//  Module      : script_game_object_script2.cpp
+//  Created     : 17.11.2004
+//  Modified    : 17.11.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script game object class script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -151,23 +151,23 @@ void CScriptGameObject::Hit(CScriptHit* tpLuaHit)
     CScriptHit& tLuaHit = *tpLuaHit;
     NET_Packet P;
     SHit HS;
-    HS.GenHeader(GE_HIT, object().ID()); //	object().u_EventGen(P,GE_HIT,object().ID());
+    HS.GenHeader(GE_HIT, object().ID()); // object().u_EventGen(P,GE_HIT,object().ID());
     THROW2(tLuaHit.m_tpDraftsman,
-        "Where is hit initiator??!"); //	THROW2			(tLuaHit.m_tpDraftsman,"Where is hit initiator??!");
-    HS.whoID = u16(tLuaHit.m_tpDraftsman->ID()); //	P.w_u16			(u16(tLuaHit.m_tpDraftsman->ID()));
-    HS.weaponID = 0; //	P.w_u16			(0);
-    HS.dir = tLuaHit.m_tDirection; //	P.w_dir			(tLuaHit.m_tDirection);
-    HS.power = tLuaHit.m_fPower; //	P.w_float		(tLuaHit.m_fPower);
+        "Where is hit initiator??!"); //    THROW2          (tLuaHit.m_tpDraftsman,"Where is hit initiator??!");
+    HS.whoID = u16(tLuaHit.m_tpDraftsman->ID()); // P.w_u16         (u16(tLuaHit.m_tpDraftsman->ID()));
+    HS.weaponID = 0; // P.w_u16         (0);
+    HS.dir = tLuaHit.m_tDirection; //   P.w_dir         (tLuaHit.m_tDirection);
+    HS.power = tLuaHit.m_fPower; // P.w_float       (tLuaHit.m_fPower);
     IKinematics* V = smart_cast<IKinematics*>(
-        object().Visual()); //	IKinematics		*V = smart_cast<IKinematics*>(object().Visual());
-    VERIFY(V); //	VERIFY			(V);
-    if (xr_strlen(tLuaHit.m_caBoneName)) //	if (xr_strlen	(tLuaHit.m_caBoneName))
-        HS.boneID = (V->LL_BoneID(tLuaHit.m_caBoneName)); //		P.w_s16		(V->LL_BoneID(tLuaHit.m_caBoneName));
-    else //	else
-        HS.boneID = (s16(0)); //		P.w_s16		(s16(0));
-    HS.p_in_bone_space = Fvector().set(0, 0, 0); //	P.w_vec3		(Fvector().set(0,0,0));
-    HS.impulse = tLuaHit.m_fImpulse; //	P.w_float		(tLuaHit.m_fImpulse);
-    HS.hit_type = (ALife::EHitType)(tLuaHit.m_tHitType); //	P.w_u16			(u16(tLuaHit.m_tHitType));
+        object().Visual()); //  IKinematics     *V = smart_cast<IKinematics*>(object().Visual());
+    VERIFY(V); //   VERIFY          (V);
+    if (xr_strlen(tLuaHit.m_caBoneName)) // if (xr_strlen   (tLuaHit.m_caBoneName))
+        HS.boneID = (V->LL_BoneID(tLuaHit.m_caBoneName)); //        P.w_s16     (V->LL_BoneID(tLuaHit.m_caBoneName));
+    else // else
+        HS.boneID = (s16(0)); //        P.w_s16     (s16(0));
+    HS.p_in_bone_space = Fvector().set(0, 0, 0); // P.w_vec3        (Fvector().set(0,0,0));
+    HS.impulse = tLuaHit.m_fImpulse; // P.w_float       (tLuaHit.m_fImpulse);
+    HS.hit_type = (ALife::EHitType)(tLuaHit.m_tHitType); // P.w_u16         (u16(tLuaHit.m_tHitType));
     HS.Write_Packet(P);
 
     object().u_EventSend(P);
@@ -347,7 +347,7 @@ void CScriptGameObject::SetActorPosition(Fvector pos)
         Fmatrix F = actor->XFORM();
         F.c = pos;
         actor->ForceTransform(F);
-        //		actor->XFORM().c = pos;
+        //      actor->XFORM().c = pos;
     }
     else
         GEnv.ScriptEngine->script_log(
@@ -365,7 +365,7 @@ void CScriptGameObject::SetNpcPosition(Fvector pos)
         if (obj->animation_movement_controlled())
             obj->destroy_anim_mov_ctrl();
         obj->ForceTransform(F);
-        //		actor->XFORM().c = pos;
+        //      actor->XFORM().c = pos;
     }
     else
         GEnv.ScriptEngine->script_log(LuaMessageType::Error,
@@ -378,7 +378,7 @@ void CScriptGameObject::SetActorDirection(float dir)
     if (actor)
     {
         actor->cam_Active()->Set(dir, 0, 0);
-        //		actor->XFORM().setXYZ(0,dir,0);
+        //      actor->XFORM().setXYZ(0,dir,0);
     }
     else
         GEnv.ScriptEngine->script_log(

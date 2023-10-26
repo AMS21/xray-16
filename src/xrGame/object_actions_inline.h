@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: object_actions_inline.h
-//	Created 	: 12.03.2004
-//  Modified 	: 26.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Object actions inline functions
+//  Module      : object_actions_inline.h
+//  Created     : 12.03.2004
+//  Modified    : 26.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Object actions inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -48,9 +48,9 @@ IC CAI_Stalker& CObjectActionBase<_item_type>::object() const
 template <typename _item_type>
 void CObjectActionBase<_item_type>::prevent_weapon_state_switch_ugly()
 {
-    // smart_cast<CHudItem&>(object().inventory().ActiveItem()->object()).SetState		( CHUDState::eIdle );
-    // smart_cast<CHudItem&>(object().inventory().ActiveItem()->object()).SetNextState	( CHUDState::eIdle );
-    // object().inventory().SetActiveSlot												(
+    // smart_cast<CHudItem&>(object().inventory().ActiveItem()->object()).SetState      ( CHUDState::eIdle );
+    // smart_cast<CHudItem&>(object().inventory().ActiveItem()->object()).SetNextState  ( CHUDState::eIdle );
+    // object().inventory().SetActiveSlot                                               (
     // object().inventory().GetActiveSlot()
     // );
 }

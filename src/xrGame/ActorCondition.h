@@ -104,7 +104,7 @@ public:
     }
     virtual void save(NET_Packet& output_packet);
     virtual void load(IReader& input_packet);
-    //	IC		float const&	Satiety					()	{ return m_fSatiety; }
+    //  IC      float const&    Satiety                 ()  { return m_fSatiety; }
     IC float const& V_Satiety() { return m_fV_Satiety; }
     IC float const& V_SatietyPower() { return m_fV_SatietyPower; }
     IC float const& V_SatietyHealth() { return m_fV_SatietyHealth; }

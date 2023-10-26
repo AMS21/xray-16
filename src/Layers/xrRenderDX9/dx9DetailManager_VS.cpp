@@ -29,8 +29,8 @@ void CDetailManager::hw_Render(CBackend& cmd_list)
     using namespace detail_manager;
 
     // Render-prepare
-    //	Update timer
-    //	Can't use Device.fTimeDelta since it is smoothed! Don't know why, but smoothed value looks more choppy!
+    //  Update timer
+    //  Can't use Device.fTimeDelta since it is smoothed! Don't know why, but smoothed value looks more choppy!
     float fDelta = Device.fTimeGlobal - m_global_time_old;
     if ((fDelta < 0) || (fDelta > 1))
         fDelta = 0.03f;
@@ -40,8 +40,8 @@ void CDetailManager::hw_Render(CBackend& cmd_list)
     m_time_rot_2 += (PI_MUL_2 * fDelta / swing_current.rot2);
     m_time_pos += fDelta * swing_current.speed;
 
-    // float		tm_rot1		= (PI_MUL_2*Device.fTimeGlobal/swing_current.rot1);
-    // float		tm_rot2		= (PI_MUL_2*Device.fTimeGlobal/swing_current.rot2);
+    // float        tm_rot1     = (PI_MUL_2*Device.fTimeGlobal/swing_current.rot1);
+    // float        tm_rot2     = (PI_MUL_2*Device.fTimeGlobal/swing_current.rot2);
     float tm_rot1 = m_time_rot_1;
     float tm_rot2 = m_time_rot_2;
 
@@ -55,7 +55,7 @@ void CDetailManager::hw_Render(CBackend& cmd_list)
     // Wave0
     float scale = 1.f / float(quant);
     Fvector4 wave;
-    // wave.set				(1.f/5.f,		1.f/7.f,	1.f/3.f,	Device.fTimeGlobal*swing_current.speed);
+    // wave.set             (1.f/5.f,       1.f/7.f,    1.f/3.f,    Device.fTimeGlobal*swing_current.speed);
     wave.set(1.f / 5.f, 1.f / 7.f, 1.f / 3.f, m_time_pos);
     cmd_list.set_c(&*hwc_consts, scale, scale, ps_r__Detail_l_aniso, ps_r__Detail_l_ambient); // consts
     cmd_list.set_c(&*hwc_wave, wave.div(PI_MUL_2)); // wave
@@ -63,7 +63,7 @@ void CDetailManager::hw_Render(CBackend& cmd_list)
     hw_Render_dump(cmd_list, &*hwc_array, 1, 0, c_hdr);
 
     // Wave1
-    // wave.set				(1.f/3.f,		1.f/7.f,	1.f/5.f,	Device.fTimeGlobal*swing_current.speed);
+    // wave.set             (1.f/3.f,       1.f/7.f,    1.f/5.f,    Device.fTimeGlobal*swing_current.speed);
     wave.set(1.f / 3.f, 1.f / 7.f, 1.f / 5.f, m_time_pos);
     cmd_list.set_c(&*hwc_wave, wave.div(PI_MUL_2)); // wave
     cmd_list.set_c(&*hwc_wind, dir2); // wind-dir
@@ -139,7 +139,7 @@ void CDetailManager::hw_Render_dump(CBackend& cmd_list, ref_constant x_array, u3
 #if RENDER == R_R1
                     Fvector C;
                     C.set(c_ambient);
-                    //					C.mad					(c_lmap,Instance.c_rgb);
+                    //                  C.mad                   (c_lmap,Instance.c_rgb);
                     C.mad(c_hemi, Instance.c_hemi);
                     C.mad(c_sun, Instance.c_sun);
                     c_storage[base + 3].set(C.x, C.y, C.z, 1.f);

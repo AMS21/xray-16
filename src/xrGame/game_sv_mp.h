@@ -77,7 +77,7 @@ protected:
     void AllowDeadBodyRemove(ClientID id, u16 GameID);
     void SpawnWeapon4Actor(u16 actorId, LPCSTR N, u8 Addons, game_PlayerState::PLAYER_ITEMS_LIST& playerItems);
     virtual bool CanChargeFreeAmmo(char const* ammo_section) { return false; };
-    // void				SpawnWeaponForActor		(u16 actorId,  LPCSTR N, bool isScope, bool isGrenadeLauncher, bool
+    // void             SpawnWeaponForActor     (u16 actorId,  LPCSTR N, bool isScope, bool isGrenadeLauncher, bool
     // isSilencer);
     void SetCanOpenBuyMenu(ClientID id);
 
@@ -92,9 +92,9 @@ protected:
     void SpawnAmmoDifference(u16 actorId, ammo_diff_t const& ammo_diff);
     // ----------------
 
-    //	virtual		bool				GetTeamItem_ByID		(WeaponDataStruct** pRes, TEAM_WPN_LIST* pWpnList, u16
+    //  virtual     bool                GetTeamItem_ByID        (WeaponDataStruct** pRes, TEAM_WPN_LIST* pWpnList, u16
     // ItemID);
-    //	virtual		bool				GetTeamItem_ByName		(WeaponDataStruct** pRes,TEAM_WPN_LIST* pWpnList, LPCSTR
+    //  virtual     bool                GetTeamItem_ByName      (WeaponDataStruct** pRes,TEAM_WPN_LIST* pWpnList, LPCSTR
     // ItemName);
 
     virtual void Player_AddBonusMoney(game_PlayerState* ps, s32 MoneyAmount, SPECIAL_KILL_TYPE Reason, u8 Kill = 0);
@@ -132,7 +132,7 @@ public:
     virtual void net_Export_State(NET_Packet& P, ClientID id_to);
 
     virtual void OnRoundStart(); // старт раунда
-    virtual void OnRoundEnd(); // round_end_reason							// конец раунда
+    virtual void OnRoundEnd(); // round_end_reason                          // конец раунда
     virtual bool OnNextMap();
     virtual void OnPrevMap();
 

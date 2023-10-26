@@ -25,7 +25,7 @@ class points;
 class CIKLimb
 {
 private:
-    //			friend		class	ik_limb_state;
+    //          friend      class   ik_limb_state;
 public:
     CIKLimb();
     CIKLimb(const CIKLimb& l);

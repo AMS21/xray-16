@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_stalker.h
-//	Created 	: 25.02.2003
-//  Modified 	: 25.02.2003
-//	Author		: Dmitriy Iassenev
-//	Description : AI Behaviour for monster "Stalker"
+//  Module      : ai_stalker.h
+//  Created     : 25.02.2003
+//  Modified    : 25.02.2003
+//  Author      : Dmitriy Iassenev
+//  Description : AI Behaviour for monster "Stalker"
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -211,14 +211,14 @@ public:
     virtual bool useful(const CEnemyManager* manager, const CEntityAlive* object) const;
 
     // PDA && Dialogs
-    //	virtual void						ReceivePdaMessage					(u16 who, EPdaMsg msg, shared_str
+    //  virtual void                        ReceivePdaMessage                   (u16 who, EPdaMsg msg, shared_str
     // info_id);
     virtual void UpdateAvailableDialogs(CPhraseDialogManager* partner);
 
     // scripts
     virtual CWeapon* GetCurrentWeapon() const;
     virtual u32 GetWeaponAmmo() const;
-    //	virtual CInventoryItem				*GetCurrentEquipment	() const; <- moved to
+    //  virtual CInventoryItem              *GetCurrentEquipment    () const; <- moved to
     // InventoryOwner::GetCurrentOutfit
     virtual CInventoryItem* GetMedikit() const;
     virtual CInventoryItem* GetFood() const;
@@ -485,23 +485,23 @@ private:
     u32 m_auto_min_queue_interval_close;
     u32 m_auto_max_queue_interval_close;
 
-    //	float			m_pstl_queue_fire_dist_close;
+    //  float           m_pstl_queue_fire_dist_close;
     float m_pstl_queue_fire_dist_med;
     float m_pstl_queue_fire_dist_far;
 
-    //	float			m_shtg_queue_fire_dist_close;
+    //  float           m_shtg_queue_fire_dist_close;
     float m_shtg_queue_fire_dist_med;
     float m_shtg_queue_fire_dist_far;
 
-    //	float			m_snp_queue_fire_dist_close;
+    //  float           m_snp_queue_fire_dist_close;
     float m_snp_queue_fire_dist_med;
     float m_snp_queue_fire_dist_far;
 
-    //	float			m_mchg_queue_fire_dist_close;
+    //  float           m_mchg_queue_fire_dist_close;
     float m_mchg_queue_fire_dist_med;
     float m_mchg_queue_fire_dist_far;
 
-    //	float			m_auto_queue_fire_dist_close;
+    //  float           m_auto_queue_fire_dist_close;
     float m_auto_queue_fire_dist_med;
     float m_auto_queue_fire_dist_far;
 
@@ -581,23 +581,23 @@ public:
     IC u32 auto_min_queue_interval_close() const;
     IC u32 auto_max_queue_interval_close() const;
 
-    //	IC		float						pstl_queue_fire_dist_close		() const;
+    //  IC      float                       pstl_queue_fire_dist_close      () const;
     IC float pstl_queue_fire_dist_med() const;
     IC float pstl_queue_fire_dist_far() const;
 
-    //	IC		float						shtg_queue_fire_dist_close		() const;
+    //  IC      float                       shtg_queue_fire_dist_close      () const;
     IC float shtg_queue_fire_dist_med() const;
     IC float shtg_queue_fire_dist_far() const;
 
-    //	IC		float						snp_queue_fire_dist_close		() const;
+    //  IC      float                       snp_queue_fire_dist_close       () const;
     IC float snp_queue_fire_dist_med() const;
     IC float snp_queue_fire_dist_far() const;
 
-    //	IC		float						mchg_queue_fire_dist_close		() const;
+    //  IC      float                       mchg_queue_fire_dist_close      () const;
     IC float mchg_queue_fire_dist_med() const;
     IC float mchg_queue_fire_dist_far() const;
 
-    //	IC		float						auto_queue_fire_dist_close		() const;
+    //  IC      float                       auto_queue_fire_dist_close      () const;
     IC float auto_queue_fire_dist_med() const;
     IC float auto_queue_fire_dist_far() const;
 

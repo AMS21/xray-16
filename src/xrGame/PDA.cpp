@@ -191,7 +191,7 @@ void CPda::load(IReader& input_packet)
 
 IGameObject* CPda::GetOwnerObject() { return Level().Objects.net_Find(GetOriginalOwnerID()); }
 /* remove must
-LPCSTR		CPda::Name				()
+LPCSTR      CPda::Name              ()
 {
     if( !m_SpecificChracterOwner.size() )
         return inherited::Name();

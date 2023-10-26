@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_token_list.cpp
-//	Created 	: 21.05.2004
-//  Modified 	: 21.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script token list class
+//  Module      : script_token_list.cpp
+//  Created     : 21.05.2004
+//  Modified    : 21.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script token list class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

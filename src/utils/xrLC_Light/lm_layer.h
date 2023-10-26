@@ -12,8 +12,8 @@ struct XRLC_LIGHT_API lm_layer
     /*
         enum LMODE
         {
-            LMODE_RGBS			= 0,
-            LMODE_HS			= 1,
+            LMODE_RGBS          = 0,
+            LMODE_HS            = 1,
         };
     */
     u32 width;
@@ -22,7 +22,7 @@ struct XRLC_LIGHT_API lm_layer
     xr_vector<u8> marker;
 
 private:
-    //	LMODE					mode;
+    //  LMODE                   mode;
 public:
     void create(u32 w, u32 h)
     {

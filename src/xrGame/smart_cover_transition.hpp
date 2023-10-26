@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_transition.hpp
-//	Created 	: 20.12.2007
-//	Author		: Alexander Dudin
-//	Description : Transition class for smart_cover
+//  Module      : smart_cover_transition.hpp
+//  Created     : 20.12.2007
+//  Author      : Alexander Dudin
+//  Description : Transition class for smart_cover
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef SMART_COVER_TRANSITION_HPP_INCLUDED

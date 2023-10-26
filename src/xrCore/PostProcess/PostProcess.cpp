@@ -148,15 +148,15 @@ BOOL BasicPostProcessAnimator::Process(float dt, SPPInfo& PPInfo)
     Update(dt);
 
     // if(m_bStop)
-    //		m_factor			-=	dt*m_stop_speed;
+    //      m_factor            -=  dt*m_stop_speed;
 
     clamp(m_factor, 0.001f, 1.0f);
 
     PPInfo = m_EffectorParams;
-    //	PPInfo.lerp				(pp_identity, m_EffectorParams, m_factor);
+    //  PPInfo.lerp             (pp_identity, m_EffectorParams, m_factor);
 
-    //	if(fsimilar(m_factor,0.001f,EPS_S))
-    //		return FALSE;
+    //  if(fsimilar(m_factor,0.001f,EPS_S))
+    //      return FALSE;
 
     return TRUE;
 }

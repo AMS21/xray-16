@@ -207,7 +207,7 @@ void CBloodsuckerAlien::activate()
     if (!m_object->EnemyMan.get_enemy())
         m_object->EnemyMan.add_enemy(Actor());
 
-    //.	Actor()->inventory().setSlotsBlocked			(true);
+    //. Actor()->inventory().setSlotsBlocked            (true);
     Actor()->SetWeaponHideState(INV_STATE_BLOCK_ALL, true);
 
     // hide crosshair

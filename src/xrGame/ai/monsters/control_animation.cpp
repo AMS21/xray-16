@@ -116,7 +116,7 @@ void CControlAnimation::play_part(SAnimationPart& part, PlayCallback callback)
         pos = fmod(part.blend->timeCurrent, part.blend->timeTotal) / part.blend->timeTotal;
 #ifdef DEBUG
 // IKinematicsAnimated * K = m_object->Visual()->dcast_PKinematicsAnimated();
-// Msg				("%6d Playing animation : %s , %s , Object %s",Device.dwTimeGlobal,
+// Msg              ("%6d Playing animation : %s , %s , Object %s",Device.dwTimeGlobal,
 // K->LL_MotionDefName_dbg(part.motion).first,K->LL_MotionDefName_dbg(part.motion).second, *(m_object->cName()));
 #endif
 
@@ -124,7 +124,7 @@ void CControlAnimation::play_part(SAnimationPart& part, PlayCallback callback)
 
     ///////////////////////////////////////////////////////////////////////////////
     //#ifdef _DEBUG
-    //	Msg("Monster[%s] Time[%u] Anim[%s]",*(m_object->cName()),
+    //  Msg("Monster[%s] Time[%u] Anim[%s]",*(m_object->cName()),
     // Device.dwTimeGlobal,*(m_object->anim().GetAnimTranslation(part.motion)));
     //#endif
     ///////////////////////////////////////////////////////////////////////////////

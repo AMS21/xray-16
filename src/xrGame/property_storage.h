@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_storage.h
-//	Created 	: 29.03.2004
-//  Modified 	: 29.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Property storage class
+//  Module      : property_storage.h
+//  Created     : 29.03.2004
+//  Modified    : 29.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Property storage class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

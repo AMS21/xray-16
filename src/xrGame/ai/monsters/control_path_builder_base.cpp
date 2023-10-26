@@ -107,7 +107,7 @@ void CControlPathBuilderBase::set_target_accessible(STarget& target, const Fvect
     }
 }
 
-// обновит	ь информацию о построенном пути (m_failed)
+// обновит   ь информацию о построенном пути (m_failed)
 void CControlPathBuilderBase::on_path_built()
 {
     // проверка на конец пути

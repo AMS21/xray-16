@@ -28,12 +28,12 @@ CUITextVote::CUITextVote(){
 
 void CUITextVote::InitTextVote(CUIXml& xml_doc)
 {
-    CUIXmlInit::InitWindow(xml_doc,			"text_vote", 0, this);
-    CUIXmlInit::InitStatic(xml_doc,			"text_vote:header", 0, header);
-    CUIXmlInit::InitStatic(xml_doc,			"text_vote:background", 0, bkgrnd);
-    CUIXmlInit::InitEditBoxEx(xml_doc,		"text_vote:edit_box", 0, edit);
-    CUIXmlInit::Init3tButtonEx(xml_doc,		"text_vote:btn_ok", 0, btn_ok);
-    CUIXmlInit::Init3tButtonEx(xml_doc,		"text_vote:btn_cancel", 0, btn_cancel);
+    CUIXmlInit::InitWindow(xml_doc,         "text_vote", 0, this);
+    CUIXmlInit::InitStatic(xml_doc,         "text_vote:header", 0, header);
+    CUIXmlInit::InitStatic(xml_doc,         "text_vote:background", 0, bkgrnd);
+    CUIXmlInit::InitEditBoxEx(xml_doc,      "text_vote:edit_box", 0, edit);
+    CUIXmlInit::Init3tButtonEx(xml_doc,     "text_vote:btn_ok", 0, btn_ok);
+    CUIXmlInit::Init3tButtonEx(xml_doc,     "text_vote:btn_cancel", 0, btn_cancel);
 }
 
 void CUITextVote::SendMessage(CUIWindow* pWnd, s16 msg, void* pData){

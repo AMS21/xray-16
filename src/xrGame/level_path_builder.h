@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: level_path_builder.h
-//  Modified 	: 21.02.2005
-//  Modified 	: 21.02.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Level path builder
+//  Module      : level_path_builder.h
+//  Modified    : 21.02.2005
+//  Modified    : 21.02.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Level path builder
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

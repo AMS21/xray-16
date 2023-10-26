@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Created		: 24.06.2009
-//	Author		: Dmitriy Iassenev
-//	Copyright (C) GSC Game World - 2009
+//  Created     : 24.06.2009
+//  Author      : Dmitriy Iassenev
+//  Copyright (C) GSC Game World - 2009
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -207,9 +207,9 @@ bool actor::add_new_door(float const average_speed, door* const door, doors_type
 
 bool actor::update_doors(doors_type const& detected_doors, float const average_speed)
 {
-//	if ( !xr_strcmp( "sim_default_duty_28212", get_name()) ) {
-//		int i=0; (void)i;
-//	}
+//  if ( !xr_strcmp( "sim_default_duty_28212", get_name()) ) {
+//      int i=0; (void)i;
+//  }
 
 #ifdef DEBUG
     m_detected_doors = detected_doors;

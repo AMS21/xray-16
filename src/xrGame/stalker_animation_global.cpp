@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_animation_global.cpp
-//	Created 	: 25.02.2003
-//  Modified 	: 19.11.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker animation manager : global animations
+//  Module      : stalker_animation_global.cpp
+//  Created     : 25.02.2003
+//  Modified    : 19.11.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker animation manager : global animations
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -30,9 +30,9 @@ void CStalkerAnimationManager::global_play_callback(CBlend* blend)
     CStalkerAnimationPair& pair = manager.global();
     pair.on_animation_end();
 
-    //	std::pair<LPCSTR,LPCSTR>	pair_id =
+    //  std::pair<LPCSTR,LPCSTR>    pair_id =
     // smart_cast<IKinematicsAnimated*>(object->Visual())->LL_MotionDefName_dbg(blend->motionID);
-    //	Msg							("[%6d] global callback [%s][%s]", Device.dwTimeGlobal, pair_id.first,
+    //  Msg                         ("[%6d] global callback [%s][%s]", Device.dwTimeGlobal, pair_id.first,
     // pair_id.second);
 
     if (!manager.m_global_callback)

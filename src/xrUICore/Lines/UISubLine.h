@@ -1,8 +1,8 @@
-// File:		UISubLine.h
-// Description:	Text line. Owns color attribute
-// Created:		04.04.2005
-// Author:		Serge Vynnycheko
-// Mail:		narrator@gsc-game.kiev.ua
+// File:        UISubLine.h
+// Description: Text line. Owns color attribute
+// Created:     04.04.2005
+// Author:      Serge Vynnycheko
+// Mail:        narrator@gsc-game.kiev.ua
 //
 // Copyright 2005 GSC Game World
 

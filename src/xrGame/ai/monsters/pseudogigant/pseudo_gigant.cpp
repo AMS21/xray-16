@@ -35,14 +35,14 @@ void CPseudoGigant::Load(LPCSTR section)
 
     anim().AddReplacedAnim(&m_bDamaged, eAnimRun, eAnimRunDamaged);
     anim().AddReplacedAnim(&m_bDamaged, eAnimWalkFwd, eAnimWalkDamaged);
-    // anim().AddReplacedAnim(&m_bRunTurnLeft,		eAnimRun,		eAnimRunTurnLeft);
-    // anim().AddReplacedAnim(&m_bRunTurnRight,	eAnimRun,		eAnimRunTurnRight);
+    // anim().AddReplacedAnim(&m_bRunTurnLeft,      eAnimRun,       eAnimRunTurnLeft);
+    // anim().AddReplacedAnim(&m_bRunTurnRight, eAnimRun,       eAnimRunTurnRight);
 
     anim().accel_load(section);
-    // anim().accel_chain_add		(eAnimWalkFwd,		eAnimRun);
-    // anim().accel_chain_add		(eAnimWalkFwd,		eAnimRunTurnLeft);
-    // anim().accel_chain_add		(eAnimWalkFwd,		eAnimRunTurnRight);
-    // anim().accel_chain_add		(eAnimWalkDamaged,	eAnimRunDamaged);
+    // anim().accel_chain_add       (eAnimWalkFwd,      eAnimRun);
+    // anim().accel_chain_add       (eAnimWalkFwd,      eAnimRunTurnLeft);
+    // anim().accel_chain_add       (eAnimWalkFwd,      eAnimRunTurnRight);
+    // anim().accel_chain_add       (eAnimWalkDamaged,  eAnimRunDamaged);
 
     step_effector.time = pSettings->r_float(section, "step_effector_time");
     step_effector.amplitude = pSettings->r_float(section, "step_effector_amplitude");
@@ -53,7 +53,7 @@ void CPseudoGigant::Load(LPCSTR section)
     SVelocityParam& velocity_walk = move().get_velocity(MonsterMovement::eVelocityParameterWalkNormal);
     SVelocityParam& velocity_run = move().get_velocity(MonsterMovement::eVelocityParameterRunNormal);
     SVelocityParam& velocity_walk_dmg = move().get_velocity(MonsterMovement::eVelocityParameterWalkDamaged);
-    //	SVelocityParam &velocity_run_dmg	= move().get_velocity(MonsterMovement::eVelocityParameterRunDamaged);
+    //  SVelocityParam &velocity_run_dmg    = move().get_velocity(MonsterMovement::eVelocityParameterRunDamaged);
     SVelocityParam& velocity_steal = move().get_velocity(MonsterMovement::eVelocityParameterSteal);
 
     anim().AddAnim(eAnimStandIdle, "stand_idle_", -1, &velocity_none, PS_STAND, "fx_stand_f", "fx_stand_b",
@@ -91,57 +91,57 @@ void CPseudoGigant::Load(LPCSTR section)
     anim().AddAnim(eAnimLieToSleep, "lie_to_sleep_", -1, &velocity_none, PS_LIE, "fx_stand_f", "fx_stand_b",
         "fx_stand_l", "fx_stand_r");
 
-    // anim().AddAnim(eAnimStandIdle,		"stand_idle_",			-1, &velocity_none,		PS_STAND,	"fx_stand_f",
+    // anim().AddAnim(eAnimStandIdle,       "stand_idle_",          -1, &velocity_none,     PS_STAND,   "fx_stand_f",
     // "fx_stand_b",
     // "fx_stand_l", "fx_stand_r");
-    // anim().AddAnim(eAnimStandTurnLeft,	"stand_turn_ls_",		-1, &velocity_turn,		PS_STAND,	"fx_stand_f",
+    // anim().AddAnim(eAnimStandTurnLeft,   "stand_turn_ls_",       -1, &velocity_turn,     PS_STAND,   "fx_stand_f",
     // "fx_stand_b",
     // "fx_stand_l", "fx_stand_r");
-    // anim().AddAnim(eAnimStandTurnRight,	"stand_turn_rs_",		-1, &velocity_turn,		PS_STAND,	"fx_stand_f",
+    // anim().AddAnim(eAnimStandTurnRight,  "stand_turn_rs_",       -1, &velocity_turn,     PS_STAND,   "fx_stand_f",
     // "fx_stand_b",
     // "fx_stand_l", "fx_stand_r");
-    // anim().AddAnim(eAnimLieIdle,		"stand_sleep_",			-1, &velocity_none,		PS_LIE,		"fx_stand_f",
+    // anim().AddAnim(eAnimLieIdle,     "stand_sleep_",         -1, &velocity_none,     PS_LIE,     "fx_stand_f",
     // "fx_stand_b",
     // "fx_stand_l", "fx_stand_r");
-    // anim().AddAnim(eAnimSitIdle,		"sit_idle_",			-1, &velocity_none,		PS_SIT,		"fx_stand_f",
+    // anim().AddAnim(eAnimSitIdle,     "sit_idle_",            -1, &velocity_none,     PS_SIT,     "fx_stand_f",
     // "fx_stand_b",
     // "fx_stand_l", "fx_stand_r");
-    // anim().AddAnim(eAnimSleep,			"stand_sleep_",			-1, &velocity_none,		PS_LIE,		"fx_stand_f",
+    // anim().AddAnim(eAnimSleep,           "stand_sleep_",         -1, &velocity_none,     PS_LIE,     "fx_stand_f",
     // "fx_stand_b",
     // "fx_stand_l", "fx_stand_r");
-    // anim().AddAnim(eAnimWalkFwd,		"stand_walk_fwd_",		-1, &velocity_walk,		PS_STAND,	"fx_stand_f",
+    // anim().AddAnim(eAnimWalkFwd,     "stand_walk_fwd_",      -1, &velocity_walk,     PS_STAND,   "fx_stand_f",
     // "fx_stand_b",
     // "fx_stand_l", "fx_stand_r");
-    // anim().AddAnim(eAnimWalkDamaged,	"stand_walk_fwd_dmg_",	-1, &velocity_walk_dmg,	PS_STAND,	"fx_stand_f",
+    // anim().AddAnim(eAnimWalkDamaged, "stand_walk_fwd_dmg_",  -1, &velocity_walk_dmg, PS_STAND,   "fx_stand_f",
     // "fx_stand_b", "fx_stand_l", "fx_stand_r");
-    // anim().AddAnim(eAnimRun,			"stand_run_fwd_",		-1,	&velocity_run,		PS_STAND,	"fx_stand_f",
+    // anim().AddAnim(eAnimRun,         "stand_run_fwd_",       -1, &velocity_run,      PS_STAND,   "fx_stand_f",
     // "fx_stand_b",
     // "fx_stand_l", "fx_stand_r");
-    // anim().AddAnim(eAnimRunDamaged,		"stand_run_dmg_",		-1,	&velocity_run_dmg,	PS_STAND,	"fx_stand_f",
+    // anim().AddAnim(eAnimRunDamaged,      "stand_run_dmg_",       -1, &velocity_run_dmg,  PS_STAND,   "fx_stand_f",
     // "fx_stand_b",
     // "fx_stand_l", "fx_stand_r");
-    // anim().AddAnim(eAnimEat,			"stand_eat_",			-1, &velocity_none,		PS_STAND,	"fx_stand_f",
+    // anim().AddAnim(eAnimEat,         "stand_eat_",           -1, &velocity_none,     PS_STAND,   "fx_stand_f",
     // "fx_stand_b",
     // "fx_stand_l", "fx_stand_r");
-    // anim().AddAnim(eAnimAttack,			"stand_attack_",		-1, &velocity_turn,		PS_STAND,	"fx_stand_f",
+    // anim().AddAnim(eAnimAttack,          "stand_attack_",        -1, &velocity_turn,     PS_STAND,   "fx_stand_f",
     // "fx_stand_b",
     // "fx_stand_l", "fx_stand_r");
-    // anim().AddAnim(eAnimLookAround,		"stand_idle_",			-1, &velocity_none,		PS_STAND,	"fx_stand_f",
+    // anim().AddAnim(eAnimLookAround,      "stand_idle_",          -1, &velocity_none,     PS_STAND,   "fx_stand_f",
     // "fx_stand_b",
     // "fx_stand_l", "fx_stand_r");
-    // anim().AddAnim(eAnimSteal,			"stand_steal_",			-1, &velocity_steal,	PS_STAND,	"fx_stand_f",
+    // anim().AddAnim(eAnimSteal,           "stand_steal_",         -1, &velocity_steal,    PS_STAND,   "fx_stand_f",
     // "fx_stand_b",
     // "fx_stand_l", "fx_stand_r");
-    // anim().AddAnim(eAnimDie,			"stand_idle_",			-1, &velocity_none,		PS_STAND,	"fx_stand_f",
+    // anim().AddAnim(eAnimDie,         "stand_idle_",          -1, &velocity_none,     PS_STAND,   "fx_stand_f",
     // "fx_stand_b",
     // "fx_stand_l", "fx_stand_r");
-    // anim().AddAnim(eAnimStandLieDown,	"stand_lie_down_",		-1, &velocity_none,		PS_STAND,	"fx_stand_f",
+    // anim().AddAnim(eAnimStandLieDown,    "stand_lie_down_",      -1, &velocity_none,     PS_STAND,   "fx_stand_f",
     // "fx_stand_b",
     // "fx_stand_l", "fx_stand_r");
-    // anim().AddAnim(eAnimLieToSleep,		"lie_to_sleep_",		-1, &velocity_none,		PS_LIE,		"fx_stand_f",
+    // anim().AddAnim(eAnimLieToSleep,      "lie_to_sleep_",        -1, &velocity_none,     PS_LIE,     "fx_stand_f",
     // "fx_stand_b",
     // "fx_stand_l", "fx_stand_r");
-    // anim().AddAnim(eAnimThreaten,		"stand_kick_",			-1, &velocity_none,		PS_STAND,	"fx_stand_f",
+    // anim().AddAnim(eAnimThreaten,        "stand_kick_",          -1, &velocity_none,     PS_STAND,   "fx_stand_f",
     // "fx_stand_b",
     // "fx_stand_l", "fx_stand_r");
 
@@ -239,7 +239,7 @@ void CPseudoGigant::reinit()
 void CPseudoGigant::event_on_step()
 {
     //////////////////////////////////////////////////////////////////////////
-    // Earthquake Effector	//////////////
+    // Earthquake Effector  //////////////
     CActor* pActor = smart_cast<CActor*>(Level().CurrentEntity());
     if (pActor)
     {
@@ -347,17 +347,17 @@ void CPseudoGigant::on_threaten_execute()
     NET_Packet l_P;
     SHit HS;
 
-    HS.GenHeader(GE_HIT, pA->ID()); //	u_EventGen	(l_P,GE_HIT, pA->ID());
-    HS.whoID = (ID()); //	l_P.w_u16	(ID());
-    HS.weaponID = (ID()); //	l_P.w_u16	(ID());
-    HS.dir = (Fvector().set(0.f, 1.f, 0.f)); //	l_P.w_dir	(Fvector().set(0.f,1.f,0.f));
-    HS.power = (hit_value); //	l_P.w_float	(m_kick_damage);
+    HS.GenHeader(GE_HIT, pA->ID()); //  u_EventGen  (l_P,GE_HIT, pA->ID());
+    HS.whoID = (ID()); //   l_P.w_u16   (ID());
+    HS.weaponID = (ID()); //    l_P.w_u16   (ID());
+    HS.dir = (Fvector().set(0.f, 1.f, 0.f)); // l_P.w_dir   (Fvector().set(0.f,1.f,0.f));
+    HS.power = (hit_value); //  l_P.w_float (m_kick_damage);
     HS.boneID = (smart_cast<IKinematics*>(
-        pA->Visual())->LL_GetBoneRoot()); //	l_P.w_s16	(smart_cast<IKinematics*>(pA->Visual())->LL_GetBoneRoot());
-    HS.p_in_bone_space = (Fvector().set(0.f, 0.f, 0.f)); //	l_P.w_vec3	(Fvector().set(0.f,0.f,0.f));
-    HS.impulse = (80 * pA->character_physics_support()->movement()->GetMass()); //	l_P.w_float	(20 *
+        pA->Visual())->LL_GetBoneRoot()); //    l_P.w_s16   (smart_cast<IKinematics*>(pA->Visual())->LL_GetBoneRoot());
+    HS.p_in_bone_space = (Fvector().set(0.f, 0.f, 0.f)); // l_P.w_vec3  (Fvector().set(0.f,0.f,0.f));
+    HS.impulse = (80 * pA->character_physics_support()->movement()->GetMass()); //  l_P.w_float (20 *
                                                                                 //pA->movement_control()->GetMass());
-    HS.hit_type = (ALife::eHitTypeStrike); //	l_P.w_u16	( u16(ALife::eHitTypeWound) );
+    HS.hit_type = (ALife::eHitTypeStrike); //   l_P.w_u16   ( u16(ALife::eHitTypeWound) );
     HS.Write_Packet(l_P);
     u_EventSend(l_P);
 }

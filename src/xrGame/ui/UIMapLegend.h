@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: UIMapLegend.h
-//	Created 	: 03.06.2008
-//	Author		: Evgeniy Sokolov
-//	Description : UI Map Legend Wnd (PDA : Task) class
+//  Module      : UIMapLegend.h
+//  Created     : 03.06.2008
+//  Author      : Evgeniy Sokolov
+//  Description : UI Map Legend Wnd (PDA : Task) class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef UI_MAP_LEGEND_WND_H_INCLUDED
@@ -55,7 +55,7 @@ public:
     UIMapLegendItem();
 
     void init_from_xml(CUIXml& xml, int index);
-    //	virtual void	Update				();
+    //  virtual void    Update              ();
 
     pcstr GetDebugType() override { return "UIMapLegendItem"; }
 

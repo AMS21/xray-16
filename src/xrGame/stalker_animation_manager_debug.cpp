@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_animation_manager_debug.cpp
-//	Created 	: 25.02.2003
-//  Modified 	: 13.12.2006
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker animation manager debug functions
+//  Module      : stalker_animation_manager_debug.cpp
+//  Created     : 25.02.2003
+//  Modified    : 13.12.2006
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker animation manager debug functions
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -28,21 +28,21 @@ struct animation_id_predicate
     }
 };
 
-// IC	bool shared_str_predicate	(const shared_str &_1, const shared_str &_2)
+// IC   bool shared_str_predicate   (const shared_str &_1, const shared_str &_2)
 //{
-//	return		(_1._get() < _2._get());
+//  return      (_1._get() < _2._get());
 //}
 //
-// typedef xr_set<shared_str,shared_str_predicate>	VISUALS;
+// typedef xr_set<shared_str,shared_str_predicate>  VISUALS;
 
 struct animation_stats
 {
-    //	shared_str	m_visual_id;
+    //  shared_str  m_visual_id;
     u32 m_frame_count;
     u32 m_start_count;
 
     IC animation_stats(const shared_str& visual_id, const u32& frame_count, const u32& start_count)
-        : //		m_visual_id		(visual_id),
+        : //        m_visual_id     (visual_id),
           m_frame_count(frame_count),
           m_start_count(start_count)
     {
@@ -214,7 +214,7 @@ void CStalkerAnimationManager::add_animation_stats()
         return;
     }
 
-    //	add_animation_stats
+    //  add_animation_stats
     //(m_skeleton_animated->LL_MotionDefName_dbg(head().animation()),head().blend_id(m_skeleton_animated,blend),head().m_just_started);
     add_animation_stats(m_skeleton_animated->LL_MotionDefName_dbg(torso().animation()),
         torso().blend_id(m_skeleton_animated, blend), torso().m_just_started);

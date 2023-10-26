@@ -11,7 +11,7 @@ class BattlEyeClient
     bool m_succefull;
 
     typedef bool(__cdecl* InitCl_t)(
-        //		int		iAutoUpdate,
+        //      int     iAutoUpdate,
         // in func pointers
         void(__cdecl* pfnPrintMessage)(char*), void(__cdecl* pfnSendPacket)(void*, int),
         // out func pointers

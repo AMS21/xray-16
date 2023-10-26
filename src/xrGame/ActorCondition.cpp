@@ -47,7 +47,7 @@ CActorCondition::CActorCondition(CActor* object) : inherited(object)
     m_fAlcohol = 0.f;
     m_fSatiety = 1.0f;
 
-    //	m_vecBoosts.clear();
+    //  m_vecBoosts.clear();
 
     VERIFY(object);
     m_object = object;
@@ -265,8 +265,8 @@ void CActorCondition::UpdateCondition()
                     RemoveEffector(m_object, effPsyHealth);
             }
         }
-        //-		if(fis_zero(GetPsyHealth()))
-        //-			SetHealth( 0.0f );
+        //-     if(fis_zero(GetPsyHealth()))
+        //-         SetHealth( 0.0f );
     };
 
     UpdateSatiety();
@@ -369,7 +369,7 @@ void CActorCondition::AffectDamage_InjuriousMaterialAndMonstersInfluence()
             if (damage > EPS)
             {
                 SHit HDS = SHit(damage,
-                    //.								0.0f,
+                    //.                             0.0f,
                     Fvector().set(0, 1, 0), NULL, BI_NONE, Fvector().set(0, 0, 0), 0.0f, type, 0.0f, false);
 
                 HDS.GenHeader(GE_HIT, m_object->ID());
@@ -662,7 +662,7 @@ void CActorCondition::BoosterForEach(const luabind::functor<bool>& funct)
 
 bool CActorCondition::ApplyBooster_script(const SBooster& B, LPCSTR sect)
 {
-	return ApplyBooster(B, sect);
+    return ApplyBooster(B, sect);
 }
 
 void CActorCondition::ClearAllBoosters()
@@ -904,7 +904,7 @@ void CActorDeathEffector::OnPPEffectorReleased()
 {
     m_b_actual = false;
     Msg("111");
-    // m_pParent->health()		= -1.0f;
+    // m_pParent->health()      = -1.0f;
     m_pParent->SetHealth(-1.0f);
 }
 

@@ -24,9 +24,9 @@ private:
     float skel_ddelay;
     float skel_remain_time;
     /////////////////////////////////////////////////
-    // bool								b_death_anim_on
+    // bool                             b_death_anim_on
     // ;
-    // bool								b_skeleton_in_shell
+    // bool                             b_skeleton_in_shell
     // ;
     ///////////////////////////////////////////////////////////////////////////
     float m_shot_up_factor{};

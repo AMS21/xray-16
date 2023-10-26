@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_kill_wounded_planner.h
-//	Created 	: 25.05.2006
-//  Modified 	: 25.05.2006
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker kill wounded planner
+//  Module      : stalker_kill_wounded_planner.h
+//  Created     : 25.05.2006
+//  Modified    : 25.05.2006
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker kill wounded planner
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

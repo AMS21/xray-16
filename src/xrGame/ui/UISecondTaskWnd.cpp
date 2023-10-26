@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: UISecondTaskWnd.cpp
-//	Created 	: 30.05.2008
-//	Author		: Evgeniy Sokolov
-//	Description : UI Secondary Task Wnd class impl
+//  Module      : UISecondTaskWnd.cpp
+//  Created     : 30.05.2008
+//  Author      : Evgeniy Sokolov
+//  Description : UI Secondary Task Wnd class impl
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -44,7 +44,7 @@ void UITaskListWnd::init_from_xml(CUIXml& xml, LPCSTR path)
 
     m_background = UIHelper::CreateFrameWindow(xml, "background_frame", this);
     m_caption = UIHelper::CreateStatic(xml, "t_caption", this);
-    //	m_counter    = UIHelper::CreateStatic( xml, "t_counter", this );
+    //  m_counter    = UIHelper::CreateStatic( xml, "t_counter", this );
     m_bt_close = UIHelper::Create3tButton(xml, "btn_close", this);
 
     Register(m_bt_close);
@@ -112,7 +112,7 @@ void UITaskListWnd::OnFocusLost()
 void UITaskListWnd::Update()
 {
     inherited::Update();
-    //	UpdateCounter();
+    //  UpdateCounter();
 }
 
 void UITaskListWnd::SendMessage(CUIWindow* pWnd, s16 msg, void* pData)
@@ -127,7 +127,7 @@ void UITaskListWnd::OnBtnClose(CUIWindow* w, void* d)
     CUITaskWnd* wnd = smart_cast<CUITaskWnd*>(GetParent()->GetParent());
     if (wnd)
         wnd->Show_TaskListWnd(false);
-    //	Show( false );
+    //  Show( false );
     m_bt_close->SetButtonState(CUIButton::BUTTON_NORMAL);
 }
 

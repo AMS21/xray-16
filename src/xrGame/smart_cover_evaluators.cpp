@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_evaluators.cpp
-//	Created 	: 05.11.2007
-//	Author		: Alexander Dudin
-//	Description : Smart cover evaluators classes
+//  Module      : smart_cover_evaluators.cpp
+//  Created     : 05.11.2007
+//  Author      : Alexander Dudin
+//  Description : Smart cover evaluators classes
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

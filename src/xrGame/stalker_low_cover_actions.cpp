@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_low_cover_actions.cpp
-//	Created 	: 05.09.2007
-//  Modified 	: 05.09.2007
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker low cover actions
+//  Module      : stalker_low_cover_actions.cpp
+//  Created     : 05.09.2007
+//  Modified    : 05.09.2007
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker low cover actions
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

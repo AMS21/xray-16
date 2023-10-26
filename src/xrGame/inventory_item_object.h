@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: inventory_item_object.h
-//	Created 	: 24.03.2003
-//  Modified 	: 27.12.2004
-//	Author		: Victor Reutsky, Yuri Dobronravin
-//	Description : Inventory item object implementation
+//  Module      : inventory_item_object.h
+//  Created     : 24.03.2003
+//  Modified    : 27.12.2004
+//  Author      : Victor Reutsky, Yuri Dobronravin
+//  Description : Inventory item object implementation
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -30,8 +30,8 @@ public:
     virtual CGameObject* cast_game_object() { return this; };
 public:
     virtual void Load(LPCSTR section);
-    //*	virtual LPCSTR	Name					();
-    //*	virtual LPCSTR	NameShort				();
+    //* virtual LPCSTR  Name                    ();
+    //* virtual LPCSTR  NameShort               ();
     virtual void Hit(SHit* pHDS);
 
     virtual void OnH_B_Independent(bool just_before_destroy);

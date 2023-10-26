@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_monster_brain_script.cpp
-//	Created 	: 02.11.2005
-//  Modified 	: 02.11.2005
-//	Author		: Dmitriy Iassenev
-//	Description : ALife monster brain class script export
+//  Module      : alife_monster_brain_script.cpp
+//  Created     : 02.11.2005
+//  Modified    : 02.11.2005
+//  Author      : Dmitriy Iassenev
+//  Description : ALife monster brain class script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

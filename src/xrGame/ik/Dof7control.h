@@ -40,9 +40,9 @@
 // Given matrices G, S, T solve the equation
 //
 // G = R2*S*Ry*T*R1
-//	for R1,Ry,R2
+//  for R1,Ry,R2
 // where
-//	R1 and R2 represent general rotation matrices
+//  R1 and R2 represent general rotation matrices
 //      Ry represents a rotation about the y axis
 // and
 //      G is the desired goal matrix
@@ -51,8 +51,8 @@
 
 //
 // In the case of the arm:
-//	 R2 : Wrist joints
-//	 S  : Wrist to Elbow transformation
+//   R2 : Wrist joints
+//   S  : Wrist to Elbow transformation
 //       Ry : Elbow joint
 //       T  : Elbow to Shoulder transformation
 //       R1 : Shoulder joints

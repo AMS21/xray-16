@@ -124,7 +124,7 @@ void window_ide::load_on_create()
     RegistryKey ^ windows = product->OpenSubKey("windows");
     if (windows)
     {
-        //		m_weather_editor->load	(windows);
+        //      m_weather_editor->load  (windows);
 
         RegistryKey ^ ide = windows->OpenSubKey("ide");
         if (ide)

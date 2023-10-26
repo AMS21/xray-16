@@ -77,7 +77,7 @@ struct b_light_control // controller or "layer", 30fps
 {
     string64 name; // empty for base layer
     u32 count; // 0 for base layer
-    // u32				data[];
+    // u32              data[];
 };
 
 struct b_light
@@ -125,12 +125,12 @@ struct b_lod
 /*
     u32 NUMBER-OF-OBJECTS
 
-    stringZ		name
-    u32			vert_count
-    b_vertex	vertices[]
-    u32			face_count
-    b_faces		faces[]
-    u16			lod_id;			// u16(-1) = no lod, just static geometry
+    stringZ     name
+    u32         vert_count
+    b_vertex    vertices[]
+    u32         face_count
+    b_faces     faces[]
+    u16         lod_id;         // u16(-1) = no lod, just static geometry
 */
 struct b_mu_model
 {
@@ -158,12 +158,12 @@ struct b_mu_reference
 struct b_params
 {
     // Normals & optimization
-    float m_sm_angle; // normal smooth angle		- 89.0
-    float m_weld_distance; // by default 0.005f		- 5mm
+    float m_sm_angle; // normal smooth angle        - 89.0
+    float m_weld_distance; // by default 0.005f     - 5mm
 
     // Light maps
     float m_lm_pixels_per_meter; // LM - by default: 4 ppm
-    u32 m_lm_jitter_samples; // 1/4/9 - by default		- 4
+    u32 m_lm_jitter_samples; // 1/4/9 - by default      - 4
     u32 m_lm_rms_zero; // RMS - after what the lightmap will be shrinked to ZERO pixels
     u32 m_lm_rms; // RMS - shrink and recalc
 

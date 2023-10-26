@@ -128,7 +128,7 @@ private:
         CCF_Skeleton::SElement const* m_bone_element;
         u16 m_victim_id;
         u16 m_shots_count;
-    }; // struct	victim_bone_data
+    }; // struct    victim_bone_data
     typedef AssociativeVector<u16, u16> victims_hits_count_t;
     typedef buffer_vector<std::pair<victim_bone_data, float>> victims_shapes_list_t;
 

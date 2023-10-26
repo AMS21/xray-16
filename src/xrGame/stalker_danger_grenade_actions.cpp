@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_danger_grenade_actions.cpp
-//	Created 	: 31.05.2005
-//  Modified 	: 31.05.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker danger grenade actions classes
+//  Module      : stalker_danger_grenade_actions.cpp
+//  Created     : 31.05.2005
+//  Modified    : 31.05.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker danger grenade actions classes
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

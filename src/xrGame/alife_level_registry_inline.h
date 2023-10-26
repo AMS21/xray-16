@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_level_registry_inline.h
-//	Created 	: 15.01.2003
-//  Modified 	: 12.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALife level registry inline functions
+//  Module      : alife_level_registry_inline.h
+//  Created     : 15.01.2003
+//  Modified    : 12.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALife level registry inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -40,7 +40,7 @@ IC void CALifeLevelRegistry::remove(CSE_ALifeDynamicObject* object, bool no_asse
 template <typename _update_predicate>
 IC void CALifeLevelRegistry::update(const _update_predicate& predicate, bool const iterate_as_first_time_next_time)
 {
-    //	u32					object_count =
+    //  u32                 object_count =
     inherited::update(predicate, iterate_as_first_time_next_time);
 #ifdef FULL_LEVEL_UPDATE
     m_first_update = true;
@@ -48,7 +48,7 @@ IC void CALifeLevelRegistry::update(const _update_predicate& predicate, bool con
 #ifdef DEBUG
     if (psAI_Flags.test(aiALife))
     {
-        //		Msg				("[LSS][OOS][%d : %d]",object_count, objects().size());
+        //      Msg             ("[LSS][OOS][%d : %d]",object_count, objects().size());
     }
 #endif
 }

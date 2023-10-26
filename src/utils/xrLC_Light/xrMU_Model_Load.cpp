@@ -4,7 +4,7 @@
 #include "xrCore/xrPool.h"
 poolSS<_face, 8 * 1024>& mu_faces_pool();
 poolSS<_vertex, 8 * 1024>& mu_vertices_pool();
-// extern u32		version;
+// extern u32       version;
 
 void xrMU_Model::Load(IReader& F, u32 version)
 {
@@ -45,8 +45,8 @@ void xrMU_Model::Load(IReader& F, u32 version)
         // CONVERT and OPTIMIZE
         for (u32 it=0; it<b_faces.size(); it++)
         {
-            b_face&	F			= b_faces[it];
-            load_create_face	(b_vertices[F.v[0]],b_vertices[F.v[1]],b_vertices[F.v[2]],F);
+            b_face& F           = b_faces[it];
+            load_create_face    (b_vertices[F.v[0]],b_vertices[F.v[1]],b_vertices[F.v[2]],F);
         }
     */
     //

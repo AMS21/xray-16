@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_ini_file_script.cpp
-//	Created 	: 25.06.2004
-//  Modified 	: 25.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script ini file class export
+//  Module      : script_ini_file_script.cpp
+//  Created     : 25.06.2004
+//  Modified    : 25.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script ini file class export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

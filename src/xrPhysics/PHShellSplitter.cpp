@@ -344,7 +344,7 @@ shell_root CPHShellSplitterHolder::ElementSingleSplit(
                 dBodySetQuaternion(body2, safe_q2);
             }
         }
-        //	m_pShell->joints[split_elem.second.m_start_jt_num]->ReattachFirstElement(split_elem.first);
+        //  m_pShell->joints[split_elem.second.m_start_jt_num]->ReattachFirstElement(split_elem.first);
     }
 
     // the last new shell will have all splitted old elements end joints and one new element reattached to old joint

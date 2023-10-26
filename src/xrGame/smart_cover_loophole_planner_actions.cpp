@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_loophole_planner_actions.cpp
-//	Created 		: 04.09.2007
-//	Author		: Alexander Dudin
-//	Description 	: Smart cover loophole planner action classes
+//  Module      : smart_cover_loophole_planner_actions.cpp
+//  Created         : 04.09.2007
+//  Author      : Alexander Dudin
+//  Description     : Smart cover loophole planner action classes
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -130,8 +130,8 @@ void loophole_action_base::process_default(bool const& change_sight)
     VERIFY(movement.current_params().cover());
     VERIFY(movement.current_params().cover_loophole());
 
-    //	smart_cover::cover const&	cover = *movement.current_params().cover();
-    //	smart_cover::loophole const&loophole = *movement.current_params().cover_loophole();
+    //  smart_cover::cover const&   cover = *movement.current_params().cover();
+    //  smart_cover::loophole const&loophole = *movement.current_params().cover_loophole();
     object().sight().setup(CSightAction(SightManager::eSightTypeAnimationDirection, true, false));
     object().sight().update();
 
@@ -381,7 +381,7 @@ void loophole_fire::on_mark()
         return;
 
     u32 const magazine_size = best_weapon->GetAmmoMagSize();
-    //	Msg							( "started firing: %d", magazine_size );
+    //  Msg                         ( "started firing: %d", magazine_size );
     object().set_goal(eObjectActionFireNoReload, object().best_weapon(), magazine_size, magazine_size);
 }
 
@@ -413,7 +413,7 @@ void idle_2_fire_transition::initialize()
     object().animation().assign_bone_blend_callbacks(true);
     object().sight().bone_aiming(m_animation, CSightManager::animation_frame_end, CSightManager::aiming_weapon);
     setup_sight(true);
-    //	object().sight().enable							(false);
+    //  object().sight().enable                         (false);
 }
 
 void idle_2_fire_transition::finalize()
@@ -476,7 +476,7 @@ void idle_2_lookout_transition::initialize()
     object().animation().assign_bone_blend_callbacks(true);
     object().sight().bone_aiming(m_animation, CSightManager::animation_frame_end, CSightManager::aiming_head);
     setup_sight(true);
-    //	object().sight().enable							(false);
+    //  object().sight().enable                         (false);
 }
 
 void idle_2_lookout_transition::finalize()

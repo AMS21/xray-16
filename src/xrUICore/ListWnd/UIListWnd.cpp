@@ -3,9 +3,9 @@
 //.#include "uiscrollbar.h"
 #include "Windows/UIFrameLineWnd.h"
 
-//#define ACTIVE_BACKGROUND			"ui\\ui_pop_up_active_back"
-//#define ACTIVE_BACKGROUND_WIDTH	16
-//#define ACTIVE_BACKGROUND_HEIGHT	16
+//#define ACTIVE_BACKGROUND         "ui\\ui_pop_up_active_back"
+//#define ACTIVE_BACKGROUND_WIDTH   16
+//#define ACTIVE_BACKGROUND_HEIGHT  16
 
 // разделитель для интерактивных строк в листе
 static const char cSeparatorChar = '%';
@@ -42,7 +42,7 @@ CUIListWnd::~CUIListWnd()
 /*
 void CUIListWnd::Init(float x, float y, float width, float height)
 {
-	Init(x, y, width, height, m_iItemHeight);
+    Init(x, y, width, height, m_iItemHeight);
 }*/
 
 void CUIListWnd::InitListWnd(Fvector2 pos, Fvector2 size, float item_height)
@@ -253,7 +253,7 @@ void CUIListWnd::UpdateList()
          k < m_ItemList.size(); ++k, ++it)
     {
         (*it)->Show(false);
-        //		(*it)->Enable(false);
+        //      (*it)->Enable(false);
     }
 
 

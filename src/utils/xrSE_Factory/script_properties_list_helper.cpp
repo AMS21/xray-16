@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_properties_list_helper.cpp
-//	Created 	: 14.07.2004
-//  Modified 	: 14.07.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script properties list helper
+//  Module      : script_properties_list_helper.cpp
+//  Created     : 14.07.2004
+//  Modified    : 14.07.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script properties list helper
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
@@ -88,11 +88,11 @@ void CScriptPropertiesListHelper::FvectorRDOnBeforeEdit(PropValue* sender, Fvect
 }
 
 /*
-void CScriptPropertiesListHelper::FvectorRDOnDraw		(PropValue* sender)
+void CScriptPropertiesListHelper::FvectorRDOnDraw       (PropValue* sender)
 {
-    shared_str		temp;
+    shared_str      temp;
     PHelper().FvectorRDOnDraw(sender,temp);
-    draw_val	= *temp;
+    draw_val    = *temp;
 }
 */
 
@@ -107,11 +107,11 @@ void CScriptPropertiesListHelper::floatRDOnBeforeEdit(PropValue* sender, float& 
 }
 
 /*
-void CScriptPropertiesListHelper::floatRDOnDraw			(PropValue* sender,  LPCSTR& draw_val)
+void CScriptPropertiesListHelper::floatRDOnDraw         (PropValue* sender,  LPCSTR& draw_val)
 {
-    shared_str		temp;
+    shared_str      temp;
     PHelper().floatRDOnDraw(sender,temp);
-    draw_val	= *temp;
+    draw_val    = *temp;
 }
 */
 
@@ -131,11 +131,11 @@ void CScriptPropertiesListHelper::NameBeforeEdit(PropValue* sender, LPCSTR& edit
 }
 
 /*
-void CScriptPropertiesListHelper::NameDraw				(PropValue* sender,  LPCSTR& draw_val)
+void CScriptPropertiesListHelper::NameDraw              (PropValue* sender,  LPCSTR& draw_val)
 {
-    shared_str		temp;
+    shared_str      temp;
     PHelper().NameDraw(sender,temp);
-    draw_val	= *temp;
+    draw_val    = *temp;
 }
 */
 
@@ -179,31 +179,31 @@ ChooseValue* CScriptPropertiesListHelper::CreateChoose(
     return (PHelper().CreateChoose(*items, key, wrap_value<shared_str>(object, name), mode, nullptr));
 }
 
-// S8Value* CScriptPropertiesListHelper::CreateS8		(PropItemVec* items, LPCSTR key, luabind::object object, LPCSTR
+// S8Value* CScriptPropertiesListHelper::CreateS8       (PropItemVec* items, LPCSTR key, luabind::object object, LPCSTR
 // name,
 // s8 mn,  s8 mx,  s8 inc)
 //{
-//	return		(PHelper().CreateS8(*items,key,wrap_value<s8>(object,name),mn,mx,inc));
+//  return      (PHelper().CreateS8(*items,key,wrap_value<s8>(object,name),mn,mx,inc));
 //}
 //
-// S8Value* CScriptPropertiesListHelper::CreateS8		(PropItemVec* items, LPCSTR key, luabind::object object, LPCSTR
+// S8Value* CScriptPropertiesListHelper::CreateS8       (PropItemVec* items, LPCSTR key, luabind::object object, LPCSTR
 // name,
 // s8 mn,  s8 mx)
 //{
-//	return		(PHelper().CreateS8(*items,key,wrap_value<s8>(object,name),mn,mx));
+//  return      (PHelper().CreateS8(*items,key,wrap_value<s8>(object,name),mn,mx));
 //}
 //
-// S8Value* CScriptPropertiesListHelper::CreateS8		(PropItemVec* items, LPCSTR key, luabind::object object, LPCSTR
+// S8Value* CScriptPropertiesListHelper::CreateS8       (PropItemVec* items, LPCSTR key, luabind::object object, LPCSTR
 // name,
 // s8 mn)
 //{
-//	return		(PHelper().CreateS8(*items,key,wrap_value<s8>(object,name),mn));
+//  return      (PHelper().CreateS8(*items,key,wrap_value<s8>(object,name),mn));
 //}
 //
-// S8Value* CScriptPropertiesListHelper::CreateS8		(PropItemVec* items, LPCSTR key, luabind::object object, LPCSTR
+// S8Value* CScriptPropertiesListHelper::CreateS8       (PropItemVec* items, LPCSTR key, luabind::object object, LPCSTR
 // name)
 //{
-//	return		(PHelper().CreateS8(*items,key,wrap_value<s8>(object,name)));
+//  return      (PHelper().CreateS8(*items,key,wrap_value<s8>(object,name)));
 //}
 //
 S16Value* CScriptPropertiesListHelper::CreateS16(
@@ -478,22 +478,22 @@ Token32Value* CScriptPropertiesListHelper::CreateToken32(
 }
 
 /*
-RToken8Value*	CScriptPropertiesListHelper::CreateRToken8	(PropItemVec* items, LPCSTR key, luabind::object object,
+RToken8Value*   CScriptPropertiesListHelper::CreateRToken8  (PropItemVec* items, LPCSTR key, luabind::object object,
 LPCSTR name, xr_rtoken* token, u32 t_cnt)
 {
-    return		(PHelper().CreateRToken8(*items,key,wrap_value<shared_str>(object,name),token));
+    return      (PHelper().CreateRToken8(*items,key,wrap_value<shared_str>(object,name),token));
 }
 
-RToken16Value*	CScriptPropertiesListHelper::CreateRToken16	(PropItemVec* items, LPCSTR key, luabind::object
+RToken16Value*  CScriptPropertiesListHelper::CreateRToken16 (PropItemVec* items, LPCSTR key, luabind::object
 object, LPCSTR name, xr_vector<xr_rtoken>* token)
 {
-    return		(PHelper().CreateRToken16(*items,key,wrap_value<shared_str>(object,name),token));
+    return      (PHelper().CreateRToken16(*items,key,wrap_value<shared_str>(object,name),token));
 }
 
-RToken32Value*	CScriptPropertiesListHelper::CreateRToken32	(PropItemVec* items, LPCSTR key, luabind::object
+RToken32Value*  CScriptPropertiesListHelper::CreateRToken32 (PropItemVec* items, LPCSTR key, luabind::object
 object, LPCSTR name, xr_vector<xr_rtoken>* token)
 {
-    return		(PHelper().CreateRToken32(*items,key,wrap_value<shared_str>(object,name),token));
+    return      (PHelper().CreateRToken32(*items,key,wrap_value<shared_str>(object,name),token));
 }
 */
 

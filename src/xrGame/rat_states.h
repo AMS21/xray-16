@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: rat_states.h
-//	Created 	: 31.08.2007
-//  Modified 	: 31.08.2007
-//	Author		: Dmitriy Iassenev
-//	Description : rat states classes
+//  Module      : rat_states.h
+//  Created     : 31.08.2007
+//  Modified    : 31.08.2007
+//  Author      : Dmitriy Iassenev
+//  Description : rat states classes
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef RAT_STATES_H_INCLUDED

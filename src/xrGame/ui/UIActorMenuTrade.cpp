@@ -173,7 +173,7 @@ bool CUIActorMenu::ToActorTrade(CUICellItem* itm, bool b_use_cursor_pos)
         return false;
     }
 
-    //	if(m_pActorInvOwner->inventory().CanPutInRuck(iitem))
+    //  if(m_pActorInvOwner->inventory().CanPutInRuck(iitem))
     {
         CUIDragDropListEx* old_owner = itm->OwnerList();
         CUIDragDropListEx* new_owner = NULL;
@@ -453,7 +453,7 @@ void CUIActorMenu::OnBtnPerformTradeBuy(CUIWindow* w, void* d)
     {
         m_partner_trade->OnPerformTrade(partner_price, actor_price);
 
-        //		TransferItems( m_pLists[eTradeActorList],   m_pLists[eTradePartnerBagList], m_partner_trade, true );
+        //      TransferItems( m_pLists[eTradeActorList],   m_pLists[eTradePartnerBagList], m_partner_trade, true );
         TransferItems(m_pLists[eTradePartnerList], m_pLists[eTradeActorBagList], m_partner_trade, false);
     }
     else
@@ -464,7 +464,7 @@ void CUIActorMenu::OnBtnPerformTradeBuy(CUIWindow* w, void* d)
         }
         // else if ( partner_money < 0 )
         //{
-        //	ShowMessage( "not_enough_money_partner", "not_enough_money_other", 2.0f );
+        //  ShowMessage( "not_enough_money_partner", "not_enough_money_other", 2.0f );
         //}
         else
         {
@@ -496,15 +496,15 @@ void CUIActorMenu::OnBtnPerformTradeSell(CUIWindow* w, void* d)
         m_partner_trade->OnPerformTrade(partner_price, actor_price);
 
         TransferItems(m_pLists[eTradeActorList], m_pLists[eTradePartnerBagList], m_partner_trade, true);
-        //		TransferItems( m_pLists[eTradePartnerList],	m_pLists[eTradeActorBagList],	m_partner_trade, false );
+        //      TransferItems( m_pLists[eTradePartnerList], m_pLists[eTradeActorBagList],   m_partner_trade, false );
     }
     else
     {
-        /*		if ( actor_money < 0 )
-		{
-			ShowMessage( "not_enough_money_actor", "not_enough_money_mine", 2.0f );
-		}
-		else */ if (partner_money < 0)
+        /*      if ( actor_money < 0 )
+        {
+            ShowMessage( "not_enough_money_actor", "not_enough_money_mine", 2.0f );
+        }
+        else */ if (partner_money < 0)
         {
             ShowMessage("not_enough_money_partner", "not_enough_money_other", 2.0f);
         }

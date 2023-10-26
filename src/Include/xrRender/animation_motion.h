@@ -10,7 +10,7 @@ public:
             u16 idx : 16; // 14
             u16 slot : 16; // 2
         };
-        //.		u16			val;
+        //.     u16         val;
         u32 val{ u32(-1) };
     };
 

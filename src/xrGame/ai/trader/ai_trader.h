@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_trader.h
-//	Created 	: 16.04.2003
-//  Modified 	: 16.04.2003
-//	Author		: Jim
-//	Description : Trader class
+//  Module      : ai_trader.h
+//  Created     : 16.04.2003
+//  Modified    : 16.04.2003
+//  Author      : Jim
+//  Description : Trader class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

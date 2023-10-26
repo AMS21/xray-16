@@ -15,7 +15,7 @@ void OGF::Save(IWriter& fs)
 {
     OGF_Base::Save(fs);
 
-    // clMsg			("* %d faces",faces.size());
+    // clMsg            ("* %d faces",faces.size());
     geom_batch_average((u32)data.vertices.size(), (u32)data.faces.size());
 
     // Texture & shader
@@ -63,7 +63,7 @@ void OGF_Reference::Save(IWriter& fs)
 {
     OGF_Base::Save(fs);
 
-    // geom_batch_average	(vertices.size(),faces.size());	// don't use reference(s) as batch estimate
+    // geom_batch_average   (vertices.size(),faces.size()); // don't use reference(s) as batch estimate
 
     // Texture & shader
     std::string Tname;
@@ -125,7 +125,7 @@ void OGF_Reference::Save(IWriter& fs)
 
 void OGF::PreSave(u32 tree_id)
 {
-    // if (20==tree_id || 18==tree_id)	__asm int 3;	//.
+    // if (20==tree_id || 18==tree_id)  __asm int 3;    //.
     const Shader_xrLC* SH = pBuild->shaders().Get(pBuild->materials()[material].reserved);
     bool bVertexColored = (SH->flags.bLIGHT_Vertex);
 
@@ -206,7 +206,7 @@ void read_ogf_container(IReader& fs_, const ogf_data_type& ogf_cnt)
     ogf_cnt.ib_start = fs.r_u32();
     u32 faces_size = fs.r_u32(); //(u32)ogf_cnt.faces.size()*3
     // ogf_cnt.faces.resize( vertises_size );
-    // fs.close_chunk	( );
+    // fs.close_chunk   ( );
 }
 
 void write_ogf_swidata(IWriter& fs, const FSlideWindowItem& swi)
@@ -231,9 +231,9 @@ void read_ogf_swidata(IReader& fs_, FSlideWindowItem& swi)
     swi.reserved[3] = fs.r_u32();
     swi.count = fs.r_u32();
     VERIFY(!swi.sw);
-    // swi.sw				=
+    // swi.sw               =
     fs.r(swi.sw, swi.count * sizeof(FSlideWindow));
-    // fs.close_chunk		();
+    // fs.close_chunk       ();
 }
 
 void write_ogf_fastpath(IWriter& fs, const OGF& ogf, BOOL progresive)
@@ -252,7 +252,7 @@ void write_ogf_fastpath(IWriter& fs, const OGF& ogf, BOOL progresive)
 
 void OGF::Save_Normal_PM(IWriter& fs, ogf_header& H, BOOL bVertexColored)
 {
-    //	clMsg			("- saving: normal or clod");
+    //  clMsg           ("- saving: normal or clod");
 
     // Vertices
     write_ogf_container(fs, data);

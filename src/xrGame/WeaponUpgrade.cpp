@@ -39,7 +39,7 @@ bool CWeapon::install_upgrade_ammo_class(LPCSTR section, bool test)
 
     bool result = process_if_exists(section, "ammo_mag_size", &CInifile::r_s32, iMagazineSize, test);
 
-    //	ammo_class = ammo_5.45x39_fmj, ammo_5.45x39_ap  // name of the ltx-section of used ammo
+    //  ammo_class = ammo_5.45x39_fmj, ammo_5.45x39_ap  // name of the ltx-section of used ammo
     bool result2 = process_if_exists_set(section, "ammo_class", &CInifile::r_string, str, test);
     if (result2 && !test)
     {
@@ -204,7 +204,7 @@ bool CWeapon::install_upgrade_hit(LPCSTR section, bool test)
         result |= process_if_exists(section, "time_to_aim", &CInifile::r_float, m_fTimeToAim, test);
     }
 
-    //	LPCSTR weapon_section = cNameSect().c_str();
+    //  LPCSTR weapon_section = cNameSect().c_str();
     float rpm = 60.0f / fOneShotTime; // pSettings->r_float( weapon_section, "rpm" ); // fOneShotTime * 60.0f;
     result2 = process_if_exists(section, "rpm", &CInifile::r_float, rpm, test);
     if (result2 && !test)

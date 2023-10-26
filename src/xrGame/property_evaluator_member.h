@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_evaluator_member.h
-//	Created 	: 12.03.2004
-//  Modified 	: 26.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Property evaluator member
+//  Module      : property_evaluator_member.h
+//  Created     : 12.03.2004
+//  Modified    : 26.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Property evaluator member
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

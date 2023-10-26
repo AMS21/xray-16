@@ -121,8 +121,8 @@ void CLevel::StopPlayDemo()
     SetDemoPlaySpeed(1.0f);
     if (m_reader)
     {
-        // FS.r_close			(m_reader);
-        // m_reader			= NULL;
+        // FS.r_close           (m_reader);
+        // m_reader         = NULL;
         m_DemoPlayStarted = FALSE;
         m_DemoPlayStoped = TRUE;
     }
@@ -242,8 +242,8 @@ void CLevel::SpawnDemoSpectator()
     CSE_Spectator* specentity = smart_cast<CSE_Spectator*>(tmp_sv_game->spawn_begin("spectator"));
     R_ASSERT(specentity);
     R_ASSERT2(mp_cl_game->local_player, "player not spawned");
-    // mp_cl_game->local_player		= mp_cl_game->createPlayerState();
-    // xr_strcpy						(mp_cl_game->local_player->name, "demo_spectator");
+    // mp_cl_game->local_player     = mp_cl_game->createPlayerState();
+    // xr_strcpy                        (mp_cl_game->local_player->name, "demo_spectator");
     specentity->set_name_replace(mp_cl_game->local_player->getName());
     specentity->s_flags.assign(M_SPAWN_OBJECT_LOCAL | M_SPAWN_OBJECT_ASPLAYER |
         M_SPAWN_OBJECT_PHANTOM); // M_SPAWN_OBJECT_PHANTOM is ONLY to indicate thath this is a fake spectator
@@ -263,7 +263,7 @@ void CLevel::SetDemoSpectator(IGameObject* spectator)
 float CLevel::GetDemoPlayPos() const
 {
     // if (!m_reader)
-    //	return 1.f;
+    //  return 1.f;
     if (m_reader->eof())
         return 1.f;
 
@@ -306,25 +306,25 @@ void CLevel::SetDemoPlayPos(float const pos)
 
     u32 old_file_pos = m_reader->tell();
 
-    u32				file_pos = u32(float(m_reader->length()) * pos);
+    u32             file_pos = u32(float(m_reader->length()) * pos);
     if (file_pos <= old_file_pos)
     {
         Msg("! demo play position already at the current point");
         return;
     }
 
-    DemoPacket		tmp_hdr;
-    u32				time_shift = 0;
+    DemoPacket      tmp_hdr;
+    u32             time_shift = 0;
 
     while (m_reader->tell() < file_pos)
     {
-        m_reader->r		(&tmp_hdr, sizeof(DemoPacket));
-        m_reader->seek	(m_reader->tell() + tmp_hdr.m_packet_size);
-        time_shift		+= tmp_hdr.m_time_global_delta;
+        m_reader->r     (&tmp_hdr, sizeof(DemoPacket));
+        m_reader->seek  (m_reader->tell() + tmp_hdr.m_packet_size);
+        time_shift      += tmp_hdr.m_time_global_delta;
     }
-    m_StartGlobalTime	-= time_shift;
-    m_rewind			= TRUE;
-    m_reader->seek		(old_file_pos);
+    m_StartGlobalTime   -= time_shift;
+    m_rewind            = TRUE;
+    m_reader->seek      (old_file_pos);
 }*/
 
 float CLevel::GetDemoPlaySpeed() const { return Device.time_factor(); }

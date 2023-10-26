@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_game_object_script3.cpp
-//	Created 	: 25.09.2003
-//  Modified 	: 29.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : XRay Script game object script export
+//  Module      : script_game_object_script3.cpp
+//  Created     : 25.09.2003
+//  Modified    : 29.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : XRay Script game object script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -112,7 +112,7 @@ luabind::class_<CScriptGameObject>& script_register_game_object2(luabind::class_
                               bool fire_object))(&CScriptGameObject::set_sight))
         .def("set_sight", (void (CScriptGameObject::*)(CScriptGameObject * object_to_look, bool torso_look,
                               bool fire_object, bool no_pitch))(&CScriptGameObject::set_sight))
-        //		.def("set_sight",					(void (CScriptGameObject::*)(const MemorySpace::CMemoryInfo *memory_object,
+        //      .def("set_sight",                   (void (CScriptGameObject::*)(const MemorySpace::CMemoryInfo *memory_object,
         //bool
         // torso_look))(&CScriptGameObject::set_sight))
 
@@ -299,7 +299,7 @@ luabind::class_<CScriptGameObject>& script_register_game_object2(luabind::class_
         .enum_("CLSIDS")[value("no_pda_msg", int(ePdaMsgMax))]
 
         // CustomZone
-        .def("set_restrictor_type",	 &CScriptGameObject::SetRestrictionType) 
+        .def("set_restrictor_type",  &CScriptGameObject::SetRestrictionType) 
         .def("get_restrictor_type", &CScriptGameObject::GetRestrictionType)
         .def("enable_anomaly", &CScriptGameObject::EnableAnomaly)
         .def("disable_anomaly", &CScriptGameObject::DisableAnomaly)

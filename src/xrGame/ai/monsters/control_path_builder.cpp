@@ -99,7 +99,7 @@ void CControlPathBuilder::update_schedule()
         {
             // set target
             // TODO: make it VERIFY
-            //			VERIFY3(m_data.target_node != u32(-1), "Error: Object set wrong path params! Object
+            //          VERIFY3(m_data.target_node != u32(-1), "Error: Object set wrong path params! Object
             // name:",*inherited_com::m_object->cName());
             if (m_data.target_node == u32(-1))
                 return;
@@ -175,7 +175,7 @@ bool CControlPathBuilder::is_path_end(float dist_to_end)
 {
     if (!is_path_built())
         return false;
-    // if (path_completed())			return true;
+    // if (path_completed())            return true;
     if (!is_moving_on_path())
         return true;
 

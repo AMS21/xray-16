@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: danger_manager.cpp
-//	Created 	: 11.02.2005
-//  Modified 	: 11.02.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Danger manager
+//  Module      : danger_manager.cpp
+//  Created     : 11.02.2005
+//  Modified    : 11.02.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Danger manager
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -92,7 +92,7 @@ void CDangerManager::update()
     OBJECTS::const_iterator E = m_objects.end();
     for (; I != E; ++I)
     {
-        //		Msg					("%6d : Danger : [%d][%d]",(*I).time(),(*I).type(),(*I).perceive_type());
+        //      Msg                 ("%6d : Danger : [%d][%d]",(*I).time(),(*I).type(),(*I).perceive_type());
         float value = do_evaluate(*I);
         if (result > value)
         {

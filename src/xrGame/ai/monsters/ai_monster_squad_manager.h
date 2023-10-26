@@ -8,8 +8,8 @@ class CMonsterSquadManager
     //------------------------------------------------------------------------
     // Monster classification: Team -> Level -> Squad
     // Note: Its names differ from global ones, which are: Team -> Squad -> Group
-    //		 but nesting hierarchy logically means the same
-    //		 Team->Level->Squad used only for private members and functions
+    //       but nesting hierarchy logically means the same
+    //       Team->Level->Squad used only for private members and functions
     //------------------------------------------------------------------------
 
     using MONSTER_SQUAD_VEC = xr_vector<CMonsterSquad*>;

@@ -31,8 +31,8 @@ extern IGameObject* trace_object;
 /// ph_dbg_draw_mask
 
 // DEFINE_VECTOR( SPHObjDBGDraw, PHOBJ_DBG_V, PHOBJ_DBG_I );
-// extern PHOBJ_DBG_V	dbg_draw_objects0;
-// extern PHOBJ_DBG_V	dbg_draw_objects1;
+// extern PHOBJ_DBG_V   dbg_draw_objects0;
+// extern PHOBJ_DBG_V   dbg_draw_objects1;
 class CPHObject;
 
 struct SPHDBGDrawAbsract

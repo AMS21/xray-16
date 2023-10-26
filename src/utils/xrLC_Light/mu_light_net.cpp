@@ -29,10 +29,10 @@ void RunRefModelsNet()
     for (u32 thID = 0; thID < num_tasks; thID++)
     {
         // Light references
-        // u32	stride				= 0;
-        // u32	last				= 0;
-        // u32 tasks				= 0;
-        // const u32 max_tasks		= 32;
+        // u32  stride              = 0;
+        // u32  last                = 0;
+        // u32 tasks                = 0;
+        // const u32 max_tasks      = 32;
         // get_intervals( max_tasks, inlc_global_data()->mu_refs().size(), threads, stride, last );
 
         tnet_execution_base<et_mu_ref_light>* el = lc_net::execution_factory.create<et_mu_ref_light>();

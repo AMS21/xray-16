@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_file_name_value.hpp
-//	Created 	: 07.12.2007
-//  Modified 	: 07.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property file name value class
+//  Module      : property_file_name_value.hpp
+//  Created     : 07.12.2007
+//  Modified    : 07.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property file name value class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_FILE_NAME_VALUE_HPP_INCLUDED

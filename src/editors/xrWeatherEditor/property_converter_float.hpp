@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_converter_float.hpp
-//	Created 	: 23.06.2008
-//  Modified 	: 23.06.2008
-//	Author		: Dmitriy Iassenev
-//	Description : property converter float class
+//  Module      : property_converter_float.hpp
+//  Created     : 23.06.2008
+//  Modified    : 23.06.2008
+//  Author      : Dmitriy Iassenev
+//  Description : property converter float class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_CONVERTER_FLOAT_HPP_INCLUDED

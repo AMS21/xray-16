@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_collection_converter.hpp
-//	Created 	: 24.12.2007
-//  Modified 	: 25.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : collection property converter implementation class
+//  Module      : property_collection_converter.hpp
+//  Created     : 24.12.2007
+//  Modified    : 25.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : collection property converter implementation class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_COLLECTION_CONVERTER_HPP_INCLUDED

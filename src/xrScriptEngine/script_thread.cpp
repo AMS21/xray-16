@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_thread.cpp
-//	Created 	: 19.09.2003
-//  Modified 	: 29.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script thread class
+//  Module      : script_thread.cpp
+//  Created     : 19.09.2003
+//  Modified    : 29.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script thread class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"
@@ -22,9 +22,9 @@ const LPCSTR main_function = "console_command_run_string_main_thread_function";
 
 // void print_stack_(lua_State *L)
 //{
-//	Msg(" ");
-//	for (int i=0; lua_type(L, -i-1); i++)
-//		Msg("%2d : %s",-i-1,lua_typename(L, lua_type(L, -i-1)));
+//  Msg(" ");
+//  for (int i=0; lua_type(L, -i-1); i++)
+//      Msg("%2d : %s",-i-1,lua_typename(L, lua_type(L, -i-1)));
 //}
 
 // extern "C" XR_IMPORT lua_State *lua_newcthread(lua_State *OL, int cstacksize);

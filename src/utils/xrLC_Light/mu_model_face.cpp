@@ -13,7 +13,7 @@ Tface<data_vertex>::Tface() {}
 Tvertex<data_vertex>::Tvertex() {}
 _vertex* _vertex::CreateCopy_NOADJ(v_vertices& vertises_storage) const
 {
-    // xrMU_Model::_vertex* V	= create_vertex(Fvector().set(0,0,0));
+    // xrMU_Model::_vertex* V   = create_vertex(Fvector().set(0,0,0));
     _vertex* V = mu_vertices_pool().create();
     vertises_storage.push_back(V);
     V->P.set(P);
@@ -32,9 +32,9 @@ Tvertex<data_vertex>::~Tvertex()
 }
 
 void _face::Failure() {}
-// Fvector2	tc	[3];
-// Fvector		N;
-// u32			sm_group;
+// Fvector2 tc  [3];
+// Fvector      N;
+// u32          sm_group;
 void _face::read_vertices(INetReader& r) {}
 void _face::write_vertices(IWriter& w) const {}
 void _face::read(INetReader& r)

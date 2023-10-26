@@ -29,7 +29,7 @@ class XRUICORE_API CUIAnimatedStatic final : public CUIStatic
     u32 m_prevTime{};
 
     // Инициализация первого кадра
-    // Params:	frameNum	- номер кадра: [0..m_uFrameCount)
+    // Params:  frameNum    - номер кадра: [0..m_uFrameCount)
     void SetFrame(const u32 frameNum);
 
 public:

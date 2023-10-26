@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Created		: 19.05.2009
-//	Author		: Konstantin Slipchenko
-//	Copyright (C) GSC Game World - 2009
+//  Created     : 19.05.2009
+//  Author      : Konstantin Slipchenko
+//  Copyright (C) GSC Game World - 2009
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
@@ -16,7 +16,7 @@ void net_global_data_impl<gl_base_cl_data>::create_data_file(LPCSTR path)
 {
     FPU::m64r();
     Memory.mem_compact();
-    // std::random_shuffle	(inlc_global_data()->g_deflectors().begin(),inlc_global_data()->g_deflectors().end());
+    // std::random_shuffle  (inlc_global_data()->g_deflectors().begin(),inlc_global_data()->g_deflectors().end());
     Logger.clMsg("create_base_global_data_write:  start");
     IWriter* file = FS.w_open(path);
     inlc_global_data()->write_base(*file);

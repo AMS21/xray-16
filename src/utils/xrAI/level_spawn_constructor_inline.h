@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: level_spawn_constructor_inline.h
-//	Created 	: 16.10.2004
-//  Modified 	: 16.10.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Level spawn constructor inline functions
+//  Module      : level_spawn_constructor_inline.h
+//  Created     : 16.10.2004
+//  Modified    : 16.10.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Level spawn constructor inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

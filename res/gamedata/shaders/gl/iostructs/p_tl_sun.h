@@ -7,8 +7,8 @@ in int gl_SampleID;
 in vec4 gl_FragCoord;
 #endif
 
-layout(location = TEXCOORD0)	in float2	p_TL_Tex0	; // TEXCOORD0;
-layout(location = COLOR)		in float4	p_TL_Color	; // COLOR; 
+layout(location = TEXCOORD0)    in float2   p_TL_Tex0   ; // TEXCOORD0;
+layout(location = COLOR)        in float4   p_TL_Color  ; // COLOR; 
 
 #ifdef MSAA_OPTIMIZATION
 #ifdef GBUFFER_OPTIMIZATION
@@ -26,21 +26,21 @@ float4 _main ( p_TL I );
 
 void main()
 {
-	p_TL		I;
-	I.Tex0		= p_TL_Tex0;
-	I.Color 	= p_TL_Color;
+    p_TL        I;
+    I.Tex0      = p_TL_Tex0;
+    I.Color     = p_TL_Color;
 
 #ifdef MSAA_OPTIMIZATION
 #ifdef GBUFFER_OPTIMIZATION
-	SV_Target	= _main ( I, gl_FragCoord, gl_SampleID );
+    SV_Target   = _main ( I, gl_FragCoord, gl_SampleID );
 #else
-	SV_Target	= _main ( I, gl_SampleID );
+    SV_Target   = _main ( I, gl_SampleID );
 #endif
 #else
 #ifdef GBUFFER_OPTIMIZATION
-	SV_Target	= _main ( I, gl_FragCoord );
+    SV_Target   = _main ( I, gl_FragCoord );
 #else
-	SV_Target	= _main ( I );
+    SV_Target   = _main ( I );
 #endif
 #endif
 }

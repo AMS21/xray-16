@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_stalker.cpp
-//	Created 	: 25.02.2003
-//  Modified 	: 25.02.2003
-//	Author		: Dmitriy Iassenev
-//	Description : AI Behaviour for monster "Stalker"
+//  Module      : ai_stalker.cpp
+//  Created     : 25.02.2003
+//  Modified    : 25.02.2003
+//  Author      : Dmitriy Iassenev
+//  Description : AI Behaviour for monster "Stalker"
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -106,7 +106,7 @@ void CAI_Stalker::reinit()
     sight().reinit();
     CCustomMonster::reinit();
     animation().reinit();
-    //	movement().reinit				();
+    //  movement().reinit               ();
 
     //загрузка спецевической звуковой схемы для сталкера согласно m_SpecificCharacter
     sound().sound_prefix(SpecificCharacter().sound_voice_prefix());
@@ -170,7 +170,7 @@ void CAI_Stalker::reinit()
 
     {
         m_critical_wound_weights.clear();
-        //		LPCSTR							weights = pSettings->r_string(cNameSect(),"critical_wound_weights");
+        //      LPCSTR                          weights = pSettings->r_string(cNameSect(),"critical_wound_weights");
         LPCSTR weights = SpecificCharacter().critical_wound_weights();
         string16 temp;
         for (int i = 0, n = _GetItemCount(weights); i < n; ++i)
@@ -264,8 +264,8 @@ void CAI_Stalker::LoadSounds(LPCSTR section)
     sound().add(pSettings->r_string(section, "sound_running_in_danger"), 100, SOUND_TYPE_MONSTER_TALKING, 6,
         u32(eStalkerSoundMaskMovingInDanger), eStalkerSoundRunningInDanger, head_bone_name,
         xr_new<CStalkerSoundData>(this));
-    //	sound().add						(pSettings->r_string(section,"sound_walking_in_danger"),			100,
-    // SOUND_TYPE_MONSTER_TALKING,	6, u32(eStalkerSoundMaskMovingInDanger),			eStalkerSoundWalkingInDanger,
+    //  sound().add                     (pSettings->r_string(section,"sound_walking_in_danger"),            100,
+    // SOUND_TYPE_MONSTER_TALKING,  6, u32(eStalkerSoundMaskMovingInDanger),            eStalkerSoundWalkingInDanger,
     // head_bone_name, new CStalkerSoundData(this));
     sound().add(pSettings->r_string(section, "sound_kill_wounded"), 100, SOUND_TYPE_MONSTER_TALKING, 5,
         u32(eStalkerSoundMaskKillWounded), eStalkerSoundKillWounded, head_bone_name, xr_new<CStalkerSoundData>(this));
@@ -295,7 +295,7 @@ void CAI_Stalker::reload(LPCSTR section)
     if (!already_dead())
         CStepManager::reload(section);
 
-    //	if (!already_dead())
+    //  if (!already_dead())
     CObjectHandler::reload(section);
 
     if (!already_dead())
@@ -526,10 +526,10 @@ bool CAI_Stalker::net_Spawn(CSE_Abstract* DC)
     CSE_ALifeHumanStalker* tpHuman = smart_cast<CSE_ALifeHumanStalker*>(e);
     R_ASSERT(tpHuman);
 
-    // static bool first_time			= true;
+    // static bool first_time           = true;
     // if ( first_time ) {
-    //	tpHuman->o_Position.z		-= 3.f;
-    //	first_time					= false;
+    //  tpHuman->o_Position.z       -= 3.f;
+    //  first_time                  = false;
     //}
 
     m_group_behaviour = !!tpHuman->m_flags.test(CSE_ALifeObject::flGroupBehaviour);
@@ -668,8 +668,8 @@ void CAI_Stalker::net_Export(NET_Packet& P)
     // export last known packet
     R_ASSERT(!NET.empty());
     net_update& N = NET.back();
-    //	P.w_float						(inventory().TotalWeight());
-    //	P.w_u32							(m_dwMoney);
+    //  P.w_float                       (inventory().TotalWeight());
+    //  P.w_u32                         (m_dwMoney);
 
     P.w_float(GetfHealth());
 
@@ -688,8 +688,8 @@ void CAI_Stalker::net_Export(NET_Packet& P)
     GameGraph::_GRAPH_ID l_game_vertex_id = ai_location().game_vertex_id();
     P.w(&l_game_vertex_id, sizeof(l_game_vertex_id));
     P.w(&l_game_vertex_id, sizeof(l_game_vertex_id));
-    //	P.w						(&f1,						sizeof(f1));
-    //	P.w						(&f1,						sizeof(f1));
+    //  P.w                     (&f1,                       sizeof(f1));
+    //  P.w                     (&f1,                       sizeof(f1));
     if (ai().game_graph().valid_vertex_id(l_game_vertex_id))
     {
         f1 = Position().distance_to(ai().game_graph().vertex(l_game_vertex_id)->level_point());
@@ -719,7 +719,7 @@ void CAI_Stalker::net_Import(NET_Packet& P)
     float health;
     P.r_float(health);
     SetfHealth(health);
-    //	fEntityHealth = health;
+    //  fEntityHealth = health;
 
     P.r_u32(N.dwTimeStamp);
     P.r_u8(flags);
@@ -860,7 +860,7 @@ void CAI_Stalker::UpdateCL()
             }
             else
             {
-                //				sound().play	(eStalkerSoundWalkingInDanger);
+                //              sound().play    (eStalkerSoundWalkingInDanger);
             }
         }
     }
@@ -922,8 +922,8 @@ void CAI_Stalker::shedule_Update(u32 DT)
         update_object_handler();
         STOP_PROFILE
     }
-    //	if (Position().distance_to(Level().CurrentEntity()->Position()) <= 50.f)
-    //		Msg				("[%6d][SH][%s]",Device.dwTimeGlobal,*cName());
+    //  if (Position().distance_to(Level().CurrentEntity()->Position()) <= 50.f)
+    //      Msg             ("[%6d][SH][%s]",Device.dwTimeGlobal,*cName());
     // Queue shrink
     VERIFY(_valid(Position()));
     u32 dwTimeCL = Level().timeServer() - NET_Latency;
@@ -944,9 +944,9 @@ void CAI_Stalker::shedule_Update(u32 DT)
         agent_manager().update();
 #endif // USE_SCHEDULER_IN_AGENT_MANAGER
 
-//		bool			check = !!memory().enemy().selected();
+//      bool            check = !!memory().enemy().selected();
 #if 0 // def DEBUG
-		memory().visual().check_visibles();
+        memory().visual().check_visibles();
 #endif
         if (false && g_mt_config.test(mtAiVision))
             Device.seqParallel.push_back(fastdelegate::FastDelegate0<>(this, &CCustomMonster::Exec_Visibility));
@@ -1036,9 +1036,9 @@ void CAI_Stalker::shedule_Update(u32 DT)
     STOP_PROFILE
 
     //#ifdef DEBUG
-    //	if (psAI_Flags.test(aiALife)) {
-    //		smart_cast<CSE_ALifeHumanStalker*>(ai().alife().objects().object(ID()))->check_inventory_consistency();
-    //	}
+    //  if (psAI_Flags.test(aiALife)) {
+    //      smart_cast<CSE_ALifeHumanStalker*>(ai().alife().objects().object(ID()))->check_inventory_consistency();
+    //  }
     //#endif
 
     START_PROFILE("stalker/schedule_update/physics")
@@ -1071,61 +1071,61 @@ void CAI_Stalker::Think()
     u32 update_delta = Device.dwTimeGlobal - m_dwLastUpdateTime;
 
     START_PROFILE("stalker/schedule_update/think/brain")
-    //	try {
-    //		try {
+    //  try {
+    //      try {
     brain().update(update_delta);
-//		}
+//      }
 #ifdef DEBUG
-//		catch (const luabind::cast_failed &message) {
-//			Msg						("! Expression \"%s\" from luabind::object to
+//      catch (const luabind::cast_failed &message) {
+//          Msg                     ("! Expression \"%s\" from luabind::object to
 //%s",message.what(),message.info().name());
 // throw;
-//		}
+//      }
 #endif
-//		catch (const std::exception &message) {
-//			Msg						("! Expression \"%s\"",message.what());
-//			throw;
-//		}
-//		catch (...) {
-//			Msg						("! unknown exception occured");
-//			throw;
-//		}
-//	}
-//	catch(...) {
+//      catch (const std::exception &message) {
+//          Msg                     ("! Expression \"%s\"",message.what());
+//          throw;
+//      }
+//      catch (...) {
+//          Msg                     ("! unknown exception occured");
+//          throw;
+//      }
+//  }
+//  catch(...) {
 #ifdef DEBUG
-//		Msg						("! Last action being executed : %s",brain().current_action().m_action_name);
+//      Msg                     ("! Last action being executed : %s",brain().current_action().m_action_name);
 #endif
-    //		brain().setup			(this);
-    //		brain().update			(update_delta);
-    //	}
+    //      brain().setup           (this);
+    //      brain().update          (update_delta);
+    //  }
     STOP_PROFILE
 
     START_PROFILE("stalker/schedule_update/think/movement")
     if (!g_Alive())
         return;
 
-    //	try {
+    //  try {
     movement().update(update_delta);
-//	}
+//  }
 #if 0 // def DEBUG
-	catch (const luabind::cast_failed& message) {
-		Msg						("! Expression \"%s\" from luabind::object to %s",message.what(),message.info().name());
-		movement().initialize	();
-		movement().update		(update_delta);
-		throw;
-	}
-	catch (const std::exception& message) {
-		Msg						("! Expression \"%s\"",message.what());
-		movement().initialize	();
-		movement().update		(update_delta);
-		throw;
-	}
-	catch (...) {
-		Msg						("! unknown exception occured");
-		movement().initialize	();
-		movement().update		(update_delta);
-		throw;
-	}
+    catch (const luabind::cast_failed& message) {
+        Msg                     ("! Expression \"%s\" from luabind::object to %s",message.what(),message.info().name());
+        movement().initialize   ();
+        movement().update       (update_delta);
+        throw;
+    }
+    catch (const std::exception& message) {
+        Msg                     ("! Expression \"%s\"",message.what());
+        movement().initialize   ();
+        movement().update       (update_delta);
+        throw;
+    }
+    catch (...) {
+        Msg                     ("! unknown exception occured");
+        movement().initialize   ();
+        movement().update       (update_delta);
+        throw;
+    }
 #endif // DEBUG
 
     STOP_PROFILE
@@ -1270,8 +1270,8 @@ float CAI_Stalker::shedule_Scale() const
 
 void CAI_Stalker::aim_bone_id(shared_str const& bone_id)
 {
-    //	IKinematics				*kinematics = smart_cast<IKinematics*>(Visual());
-    //	VERIFY2					(kinematics->LL_BoneID(bone_id) != BI_NONE, make_string("Cannot find bone %s",bone_id));
+    //  IKinematics             *kinematics = smart_cast<IKinematics*>(Visual());
+    //  VERIFY2                 (kinematics->LL_BoneID(bone_id) != BI_NONE, make_string("Cannot find bone %s",bone_id));
     m_aim_bone_id = bone_id;
 }
 

@@ -26,24 +26,24 @@ struct net_updatePhData
 {
     xr_deque<net_update_PItem> NET_IItem;
     /// spline coeff /////////////////////
-    // float			SCoeff[3][4];
-    /*Fvector			IStartPos;
-    Fquaternion		IStartRot;
+    // float            SCoeff[3][4];
+    /*Fvector           IStartPos;
+    Fquaternion     IStartRot;
 
-    Fvector			IRecPos;
-    Fquaternion		IRecRot;
+    Fvector         IRecPos;
+    Fquaternion     IRecRot;
 
-    Fvector			IEndPos;
-    Fquaternion		IEndRot;	*/
+    Fvector         IEndPos;
+    Fquaternion     IEndRot;    */
 
-    //	SPHNetState		LastState;
-    //	SPHNetState		RecalculatedState;
+    //  SPHNetState     LastState;
+    //  SPHNetState     RecalculatedState;
 
-    //	SPHNetState		PredictedState;
+    //  SPHNetState     PredictedState;
 
     u32 m_dwIStartTime;
     u32 m_dwIEndTime;
-    // u32				m_dwILastUpdateTime;
+    // u32              m_dwILastUpdateTime;
 };
 
 class CPhysicObject : public CPhysicsShellHolder, public CPHSkeleton
@@ -81,7 +81,7 @@ public:
 public:
     CPhysicObject(void);
     virtual ~CPhysicObject(void);
-    // virtual void						make_Interpolation	(); // interpolation from last visible to corrected
+    // virtual void                     make_Interpolation  (); // interpolation from last visible to corrected
     // position/rotation
     virtual void Interpolate();
     float interpolate_states(net_update_PItem const& first, net_update_PItem const& last, SPHNetState& current);

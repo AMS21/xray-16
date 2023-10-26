@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_boolean_values_value_reference.cpp
-//	Created 	: 17.12.2007
-//  Modified 	: 17.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property boolean values value reference class
+//  Module      : property_boolean_values_value_reference.cpp
+//  Created     : 17.12.2007
+//  Modified    : 17.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property boolean values value reference class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

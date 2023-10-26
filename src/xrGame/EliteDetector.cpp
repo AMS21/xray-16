@@ -49,7 +49,7 @@ void CEliteDetector::render_item_3d_ui()
     R_ASSERT(HudItemData());
     inherited::render_item_3d_ui();
     ui().Draw();
-    //	Restore cull mode
+    //  Restore cull mode
     GEnv.UIRender->CacheSetCullMode(IUIRender::cmCCW);
 }
 
@@ -149,7 +149,7 @@ void CUIArtefactDetectorElite::Draw()
 
     CUIWindow::Draw();
 
-    //.	Frect r						= m_wrk_area->GetWndRect();
+    //. Frect r                     = m_wrk_area->GetWndRect();
     Fvector2 wrk_sz = m_wrk_area->GetWndSize();
     Fvector2 rp;
     m_wrk_area->GetAbsolutePos(rp);

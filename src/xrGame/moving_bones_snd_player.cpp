@@ -57,7 +57,7 @@ void moving_bones_snd_player::update(float time_delta, CGameObject& object)
     VERIFY(min_factor > 0.f);
     VERIFY(max_factor > 0.f);
 
-    //	clamp( factor, min_factor, max_factor );
+    //  clamp( factor, min_factor, max_factor );
     float frequency_factor = 1.f;
     if (factor > max_factor)
         frequency_factor = max_factor;
@@ -67,12 +67,12 @@ void moving_bones_snd_player::update(float time_delta, CGameObject& object)
 #ifdef DEBUG
     if (dbg_moving_bones_snd_player)
     {
-        DBG_OutText("smoothed angular speed							 : %f", smothed_velocity);
+        DBG_OutText("smoothed angular speed                          : %f", smothed_velocity);
         // DBG_OutText( "angular speed         : %f",  aw_speed );
         DBG_OutText("velocity factor = base_speed/smoothed speed=       : %f", factor);
-        DBG_OutText("min_factor=										 : %f", min_factor);
-        DBG_OutText("max_factor=										 : %f", max_factor);
-        DBG_OutText("frequency_factor=									 : %f", frequency_factor);
+        DBG_OutText("min_factor=                                         : %f", min_factor);
+        DBG_OutText("max_factor=                                         : %f", max_factor);
+        DBG_OutText("frequency_factor=                                   : %f", frequency_factor);
         // DBG_OutText( "time delta            : %f", time_delta );
         // Msg( "smoothed angular speed: %f, angular speed: %f, factor: %f time delta: %f ", smothed_velocity, aw_speed,
         // factor, time_delta );

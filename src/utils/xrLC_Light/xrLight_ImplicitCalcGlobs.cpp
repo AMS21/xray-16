@@ -9,7 +9,7 @@ void ImplicitCalcGlobs::read(INetReader& r)
     // bool create_rf = !read_faces;
     // if(!read_faces)
     //{
-    //	inlc_global_data()->create_read_faces();
+    //  inlc_global_data()->create_read_faces();
     //}
 
     R_ASSERT(read_faces);

@@ -102,7 +102,7 @@ void CAI_PseudoDog::Load(LPCSTR section)
     anim().AddAnim(eAnimRunTurnRight, "stand_run_turn_right_", -1, &velocity_run, PS_STAND);
 
     // define transitions
-    // order : 1. [anim -> anim]	2. [anim->state]	3. [state -> anim]		4. [state -> state]
+    // order : 1. [anim -> anim]    2. [anim->state]    3. [state -> anim]      4. [state -> state]
     anim().AddTransition(eAnimLieIdle, eAnimSleep, eAnimLieToSleep, false);
     anim().AddTransition(eAnimSleep, PS_STAND, eAnimSleepStandUp, false);
     anim().AddTransition(PS_SIT, PS_LIE, eAnimSitLieDown, false);

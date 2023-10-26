@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_planner_target_selector.cpp
-//	Created 	: 18.09.2007
-//	Author		: Alexander Dudin
-//	Description : Target selector for smart covers animation planner
+//  Module      : smart_cover_planner_target_selector.cpp
+//  Created     : 18.09.2007
+//  Author      : Alexander Dudin
+//  Description : Target selector for smart covers animation planner
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -25,8 +25,8 @@ using namespace StalkerDecisionSpace;
 void target_selector::setup(animation_planner* object, CPropertyStorage* storage)
 {
     inherited::setup(object, storage);
-    //	inherited_planner::m_use_log = true;
-    //	inherited_action::m_use_log = true;
+    //  inherited_planner::m_use_log = true;
+    //  inherited_action::m_use_log = true;
     CActionPlanner::m_storage.set_property(eWorldPropertyLookedOut, m_random.randF() <= .7f ? true : false);
     CActionPlanner::m_storage.set_property(eWorldPropertyLoopholeTooMuchTimeFiring, false);
     add_evaluators();
@@ -76,10 +76,10 @@ void target_selector::add_actions()
     CActionBase<animation_planner>* action;
 
     action = xr_new<target_idle>(&object(), "idle", eWorldPropertyLoopholeIdle, 0);
-    //	add_condition			(action, eWorldPropertyLoopholeCanFireAtEnemy,		true);
-    //	add_condition			(action, eWorldPropertyLoopholeCanFire,				true);
-    //	add_condition			(action, eWorldPropertyLookedOut,					true);
-    //	add_condition			(action, eWorldPropertyLoopholeLastHitWasLongAgo,	true);
+    //  add_condition           (action, eWorldPropertyLoopholeCanFireAtEnemy,      true);
+    //  add_condition           (action, eWorldPropertyLoopholeCanFire,             true);
+    //  add_condition           (action, eWorldPropertyLookedOut,                   true);
+    //  add_condition           (action, eWorldPropertyLoopholeLastHitWasLongAgo,   true);
     add_condition(action, eWorldPropertyLoopholeTooMuchTimeFiring, true);
     add_effect(action, eWorldPropertyLoopholeTooMuchTimeFiring, false);
     add_operator(eWorldOperatorLoopholeTargetIdle, action);

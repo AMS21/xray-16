@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: setup_manager_inline.h
-//	Created 	: 05.04.2004
-//  Modified 	: 05.04.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Setup manager inline functions
+//  Module      : setup_manager_inline.h
+//  Created     : 05.04.2004
+//  Modified    : 05.04.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Setup manager inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

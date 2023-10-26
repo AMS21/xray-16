@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_loophole_inline.h
-//	Created 	: 29.08.2007
-//	Author		: Alexander Dudin
-//	Description : Loophole class inline functions
+//  Module      : smart_cover_loophole_inline.h
+//  Created     : 29.08.2007
+//  Author      : Alexander Dudin
+//  Description : Loophole class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef SMART_COVER_LOOPHOLE_INLINE_H_INCLUDED

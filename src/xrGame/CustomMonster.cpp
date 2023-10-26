@@ -77,11 +77,11 @@ void CCustomMonster::SAnimState::Create(IKinematicsAnimated* K, LPCSTR base)
 
 // void CCustomMonster::TorsoSpinCallback(CBoneInstance* B)
 //{
-//	CCustomMonster*		M = static_cast<CCustomMonster*> (B->Callback_Param);
+//  CCustomMonster*     M = static_cast<CCustomMonster*> (B->Callback_Param);
 //
-//	Fmatrix					spin;
-//	spin.setXYZ				(0, M->NET_Last.o_torso.pitch, 0);
-//	B->mTransform.mulB_43	(spin);
+//  Fmatrix                 spin;
+//  spin.setXYZ             (0, M->NET_Last.o_torso.pitch, 0);
+//  B->mTransform.mulB_43   (spin);
 //}
 
 //////////////////////////////////////////////////////////////////////
@@ -141,57 +141,57 @@ void CCustomMonster::Load(LPCSTR section)
     ///////////
     // m_PhysicMovementControl: General
 
-    // Fbox	bb;
+    // Fbox bb;
 
     //// m_PhysicMovementControl: BOX
-    // Fvector	vBOX0_center= pSettings->r_fvector3	(section,"ph_box0_center"	);
-    // Fvector	vBOX0_size	= pSettings->r_fvector3	(section,"ph_box0_size"		);
-    // bb.set	(vBOX0_center,vBOX0_center); bb.grow(vBOX0_size);
-    // m_PhysicMovementControl->SetBox		(0,bb);
+    // Fvector  vBOX0_center= pSettings->r_fvector3 (section,"ph_box0_center"   );
+    // Fvector  vBOX0_size  = pSettings->r_fvector3 (section,"ph_box0_size"     );
+    // bb.set   (vBOX0_center,vBOX0_center); bb.grow(vBOX0_size);
+    // m_PhysicMovementControl->SetBox      (0,bb);
 
     //// m_PhysicMovementControl: BOX
-    // Fvector	vBOX1_center= pSettings->r_fvector3	(section,"ph_box1_center"	);
-    // Fvector	vBOX1_size	= pSettings->r_fvector3	(section,"ph_box1_size"		);
-    // bb.set	(vBOX1_center,vBOX1_center); bb.grow(vBOX1_size);
-    // m_PhysicMovementControl->SetBox		(1,bb);
+    // Fvector  vBOX1_center= pSettings->r_fvector3 (section,"ph_box1_center"   );
+    // Fvector  vBOX1_size  = pSettings->r_fvector3 (section,"ph_box1_size"     );
+    // bb.set   (vBOX1_center,vBOX1_center); bb.grow(vBOX1_size);
+    // m_PhysicMovementControl->SetBox      (1,bb);
 
     //// m_PhysicMovementControl: Foots
-    // Fvector	vFOOT_center= pSettings->r_fvector3	(section,"ph_foot_center"	);
-    // Fvector	vFOOT_size	= pSettings->r_fvector3	(section,"ph_foot_size"		);
-    // bb.set	(vFOOT_center,vFOOT_center); bb.grow(vFOOT_size);
-    // m_PhysicMovementControl->SetFoots	(vFOOT_center,vFOOT_size);
+    // Fvector  vFOOT_center= pSettings->r_fvector3 (section,"ph_foot_center"   );
+    // Fvector  vFOOT_size  = pSettings->r_fvector3 (section,"ph_foot_size"     );
+    // bb.set   (vFOOT_center,vFOOT_center); bb.grow(vFOOT_size);
+    // m_PhysicMovementControl->SetFoots    (vFOOT_center,vFOOT_size);
 
     //// m_PhysicMovementControl: Crash speed and mass
-    // float	cs_min		= pSettings->r_float	(section,"ph_crash_speed_min"	);
-    // float	cs_max		= pSettings->r_float	(section,"ph_crash_speed_max"	);
-    // float	mass		= pSettings->r_float	(section,"ph_mass"				);
-    // m_PhysicMovementControl->SetCrashSpeeds	(cs_min,cs_max);
-    // m_PhysicMovementControl->SetMass		(mass);
+    // float    cs_min      = pSettings->r_float    (section,"ph_crash_speed_min"   );
+    // float    cs_max      = pSettings->r_float    (section,"ph_crash_speed_max"   );
+    // float    mass        = pSettings->r_float    (section,"ph_mass"              );
+    // m_PhysicMovementControl->SetCrashSpeeds  (cs_min,cs_max);
+    // m_PhysicMovementControl->SetMass     (mass);
 
     // m_PhysicMovementControl: Frictions
     /*
     float af, gf, wf;
-    af					= pSettings->r_float	(section,"ph_friction_air"	);
-    gf					= pSettings->r_float	(section,"ph_friction_ground");
-    wf					= pSettings->r_float	(section,"ph_friction_wall"	);
-    m_PhysicMovementControl->SetFriction	(af,wf,gf);
+    af                  = pSettings->r_float    (section,"ph_friction_air"  );
+    gf                  = pSettings->r_float    (section,"ph_friction_ground");
+    wf                  = pSettings->r_float    (section,"ph_friction_wall" );
+    m_PhysicMovementControl->SetFriction    (af,wf,gf);
 
     // BOX activate
-    m_PhysicMovementControl->ActivateBox	(0);
+    m_PhysicMovementControl->ActivateBox    (0);
     */
     ////////
 
     Position().y += EPS_L;
 
-    //	m_current			= 0;
+    //  m_current           = 0;
 
     eye_fov = pSettings->r_float(section, "eye_fov");
     eye_range = pSettings->r_float(section, "eye_range");
 
     // Health & Armor
-    //	fArmor					= 0;
+    //  fArmor                  = 0;
 
-    // Msg				("! cmonster size: %d",sizeof(*this));
+    // Msg              ("! cmonster size: %d",sizeof(*this));
 }
 
 void CCustomMonster::reinit()
@@ -379,20 +379,20 @@ void CCustomMonster::shedule_Update(u32 DT)
         {
             Exec_Action(dt);
             VERIFY(_valid(Position()));
-            // Exec_Visibility		();
+            // Exec_Visibility      ();
             VERIFY(_valid(Position()));
             //////////////////////////////////////
             // Fvector C; float R;
             //////////////////////////////////////
             // С Олеся - ПИВО!!!! (Диме :-))))
-            // m_PhysicMovementControl->GetBoundingSphere	(C,R);
+            // m_PhysicMovementControl->GetBoundingSphere   (C,R);
             //////////////////////////////////////
             // Center(C);
             // R = Radius();
             //////////////////////////////////////
             /// #pragma todo("Oles to all AI guys: perf/logical problem: Only few objects needs 'feel_touch' why to call
             /// update for everybody?")
-            ///			feel_touch_update		(C,R);
+            ///         feel_touch_update       (C,R);
 
             net_update uNext;
             uNext.dwTimeStamp = Level().timeServer();
@@ -448,12 +448,12 @@ void CCustomMonster::UpdateCL()
 
     CScriptEntity::process_sound_callbacks();
 
-    /*	//. hack just to skip 'CalculateBones'
+    /*  //. hack just to skip 'CalculateBones'
     if (sound().need_bone_data()) {
         // we do this because we know here would be virtual function call
-        IKinematics					*kinematics = smart_cast<IKinematics*>(Visual());
-        VERIFY						(kinematics);
-        kinematics->CalculateBones	();
+        IKinematics                 *kinematics = smart_cast<IKinematics*>(Visual());
+        VERIFY                      (kinematics);
+        kinematics->CalculateBones  ();
     }
     */
 
@@ -480,12 +480,12 @@ void CCustomMonster::UpdateCL()
     net_update& N = NET.back();
     if ((dwTime > N.dwTimeStamp) || (NET.size() < 2))
     {
-        // BAD.	extrapolation
+        // BAD. extrapolation
         NET_Last = N;
     }
     else
     {
-        // OK.	interpolation
+        // OK.  interpolation
         NET_WasExtrapolating = FALSE;
         // Search 2 keyframes for interpolation
         int select = -1;
@@ -501,7 +501,7 @@ void CCustomMonster::UpdateCL()
             net_update& B = NET[select + 1];
             u32 d1 = dwTime - A.dwTimeStamp;
             u32 d2 = B.dwTimeStamp - A.dwTimeStamp;
-            //			VERIFY					(d2);
+            //          VERIFY                  (d2);
             float factor = d2 ? (float(d1) / float(d2)) : 1.f;
             Fvector l_tOldPosition = Position();
             NET_Last.lerp(A, B, factor);
@@ -665,7 +665,7 @@ void CCustomMonster::eye_pp_s2()
 
 void CCustomMonster::Exec_Visibility()
 {
-    // if (0==Sector())				return;
+    // if (0==Sector())             return;
     if (!g_Alive())
         return;
 
@@ -726,7 +726,7 @@ bool CCustomMonster::net_Spawn(CSE_Abstract* DC)
     if (!g_Alive())
     {
         set_death_time();
-        //		Msg						("%6d : Object [%d][%s][%s] is spawned
+        //      Msg                     ("%6d : Object [%d][%s][%s] is spawned
         // DEAD",Device.dwTimeGlobal,ID(),*cName(),*cNameSect());
     }
 
@@ -1023,16 +1023,16 @@ bool CCustomMonster::update_critical_wounded(const u16& bone_id, const float& po
     clamp(m_critical_wound_accumulator, 0.f, m_critical_wound_threshold);
 
 #if 0 // def _DEBUG
-	Msg								(
-		"%6d [%s] update_critical_wounded: %f[%f] (%f,%f) [%f]",
-		Device.dwTimeGlobal,
-		*cName(),
-		m_critical_wound_accumulator,
-		power,
-		m_critical_wound_threshold,
-		m_critical_wound_decrease_quant,
-		time_delta
-	);
+    Msg                             (
+        "%6d [%s] update_critical_wounded: %f[%f] (%f,%f) [%f]",
+        Device.dwTimeGlobal,
+        *cName(),
+        m_critical_wound_accumulator,
+        power,
+        m_critical_wound_threshold,
+        m_critical_wound_decrease_quant,
+        time_delta
+    );
 #endif // DEBUG
 
     m_last_hit_time = Device.dwTimeGlobal;
@@ -1066,7 +1066,7 @@ void draw_visiblity_rays(CCustomMonster* self, const IGameObject* object, collid
 void CCustomMonster::OnRender()
 {
     GEnv.DRender->OnFrameEnd();
-    // RCache.OnFrameEnd				();
+    // RCache.OnFrameEnd                ();
 
     {
         float const radius = .075f;
@@ -1173,45 +1173,45 @@ void CCustomMonster::OnRender()
         smart_cast<IKinematics*>(Visual())->DebugRender(XFORM());
 
 #if 0
-	DBG().get_text_tree().clear			();
-	debug::text_tree& text_tree		=	DBG().get_text_tree().find_or_add("ActorView");
+    DBG().get_text_tree().clear         ();
+    debug::text_tree& text_tree     =   DBG().get_text_tree().find_or_add("ActorView");
 
-	Fvector collide_position;
-	collide::rq_results	temp_rq_results;
-	Fvector sizes			=	{ 0.2f, 0.2f, 0.2f };
+    Fvector collide_position;
+    collide::rq_results temp_rq_results;
+    Fvector sizes           =   { 0.2f, 0.2f, 0.2f };
 
-	for ( u32 i=0; i<2; ++i )
-	{
-		Fvector start		=	{ -8.7, 1.6, -4.67 };
-		Fvector end			=	{ -9.45, 1.3, -0.24 };
+    for ( u32 i=0; i<2; ++i )
+    {
+        Fvector start       =   { -8.7, 1.6, -4.67 };
+        Fvector end         =   { -9.45, 1.3, -0.24 };
 
-		bool use_p2			=	false;
-		ai_dbg::get_var			("p2", use_p2);
+        bool use_p2         =   false;
+        ai_dbg::get_var         ("p2", use_p2);
 
-		if ( use_p2 ^ i )
-		{
-			start.x			+=	-1.f;
-			end.x			+=	-1.f;
-		}
+        if ( use_p2 ^ i )
+        {
+            start.x         +=  -1.f;
+            end.x           +=  -1.f;
+        }
 
-		Fvector velocity	=	end - start;
-		float const jump_time	=	0.3f;
-		TransferenceToThrowVel	(velocity,jump_time,physics_world()->Gravity());
+        Fvector velocity    =   end - start;
+        float const jump_time   =   0.3f;
+        TransferenceToThrowVel  (velocity,jump_time,physics_world()->Gravity());
 
-		bool const result	=	trajectory_intersects_geometry	(jump_time, 
-																 start,
-																 end,
-																 velocity,
-																 collide_position,
-																 this,
-																 NULL,
-																 temp_rq_results,
-																 & m_jump_picks,
-																 & m_jump_collide_tris,
-																 sizes);
+        bool const result   =   trajectory_intersects_geometry  (jump_time, 
+                                                                 start,
+                                                                 end,
+                                                                 velocity,
+                                                                 collide_position,
+                                                                 this,
+                                                                 NULL,
+                                                                 temp_rq_results,
+                                                                 & m_jump_picks,
+                                                                 & m_jump_collide_tris,
+                                                                 sizes);
 
-		text_tree.add_line(i ? "box1" : "box2", result);
-	}
+        text_tree.add_line(i ? "box1" : "box2", result);
+    }
 #endif // #if 0
 
     if (m_jump_picks.size() < 1)
@@ -1359,19 +1359,19 @@ void CCustomMonster::ForceTransform(const Fmatrix& m)
 Fvector CCustomMonster::spatial_sector_point()
 {
     // if ( g_Alive() )
-    //	return						inherited::spatial_sector_point( );
+    //  return                      inherited::spatial_sector_point( );
 
     // if ( !animation_movement() )
     return inherited::spatial_sector_point().add(Fvector().set(0.f, Radius() * .5f, 0.f));
 
-    // IKinematics* const kinematics	= smart_cast<IKinematics*>(Visual());
-    // VERIFY							(kinematics);
-    // u16 const root_bone_id			= kinematics->LL_BoneID("bip01_spine");
+    // IKinematics* const kinematics    = smart_cast<IKinematics*>(Visual());
+    // VERIFY                           (kinematics);
+    // u16 const root_bone_id           = kinematics->LL_BoneID("bip01_spine");
 
     // Fmatrix local;
-    // kinematics->Bone_GetAnimPos		( local, root_bone_id, u8(-1), false );
+    // kinematics->Bone_GetAnimPos      ( local, root_bone_id, u8(-1), false );
 
     // Fmatrix result;
-    // result.mul_43					( XFORM(), local );
-    // return							result.c;
+    // result.mul_43                    ( XFORM(), local );
+    // return                           result.c;
 }

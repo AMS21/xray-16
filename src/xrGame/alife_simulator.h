@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_simulator.h
-//	Created 	: 25.12.2002
-//  Modified 	: 13.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALife Simulator
+//  Module      : alife_simulator.h
+//  Created     : 25.12.2002
+//  Modified    : 13.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALife Simulator
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -27,7 +27,7 @@ public:
     IReader const* get_config(shared_str config) const;
 
 #if 0 // def DEBUG
-			void	validate			();
+            void    validate            ();
 #endif // DEBUG
 
 private:

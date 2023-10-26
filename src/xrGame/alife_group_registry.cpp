@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_group_registry.cpp
-//	Created 	: 28.10.2005
-//  Modified 	: 28.10.2005
-//	Author		: Dmitriy Iassenev
-//	Description : ALife group registry
+//  Module      : alife_group_registry.cpp
+//  Created     : 28.10.2005
+//  Modified    : 28.10.2005
+//  Author      : Dmitriy Iassenev
+//  Description : ALife group registry
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

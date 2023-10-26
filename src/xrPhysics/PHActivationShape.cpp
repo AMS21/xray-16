@@ -28,11 +28,11 @@ static float friction_factor = 0.f;
 static const float cfm = 1.e-10f;
 static const float erp = 1.f;
 /*
-static	const float static_cfm				=1.e-10f;
-static	const float static_erp				=1.f;
+static  const float static_cfm              =1.e-10f;
+static  const float static_erp              =1.f;
 
-static	const float dynamic_cfm				= 1.f;//static_cfm;//
-static	const float dynamic_erp				= 1.f / 1000.f;//static_erp;//
+static  const float dynamic_cfm             = 1.f;//static_cfm;//
+static  const float dynamic_erp             = 1.f / 1000.f;//static_erp;//
 */
 }
 
@@ -78,7 +78,7 @@ static void ActivateTestDepthCallback(
         {
             c.surface.soft_cfm=static_cfm;
             c.surface.soft_erp=static_erp;
-            dJointID contact_joint	= dJointCreateContactSpecial( 0, ContactGroup, &c );
+            dJointID contact_joint  = dJointCreateContactSpecial( 0, ContactGroup, &c );
             self->DActiveIsland()->ConnectJoint(contact_joint);
             dJointAttach(contact_joint, dGeomGetBody(c.geom.g1), dGeomGetBody(c.geom.g2));
             do_colide = false;
@@ -114,9 +114,9 @@ static void ActivateTestDepthCallback(
         if( max_contacts < 1 )
             return;
 
-        dJointID contact_joint	= dJointCreateContactSpecial( 0, ContactGroup, &c );
+        dJointID contact_joint  = dJointCreateContactSpecial( 0, ContactGroup, &c );
         obj1->DActiveIsland()->ConnectJoint(contact_joint);
-        dJointAttach			(contact_joint, dGeomGetBody(c.geom.g1), dGeomGetBody(c.geom.g2));
+        dJointAttach            (contact_joint, dGeomGetBody(c.geom.g1), dGeomGetBody(c.geom.g2));
 
         obj1->DActiveIsland()->Merge( obj2->DActiveIsland() );
         obj2->EnableObject( obj1 );
@@ -219,7 +219,7 @@ void CPHActivationShape::Destroy()
     m_body = nullptr;
 }
 bool CPHActivationShape::Activate(
-    const Fvector need_size, u16 steps, float max_displacement, float max_rotation, bool un_freeze_later /*	=false*/)
+    const Fvector need_size, u16 steps, float max_displacement, float max_rotation, bool un_freeze_later /* =false*/)
 {
     using namespace ::detail::activation_shape;
 
@@ -306,7 +306,7 @@ bool CPHActivationShape::Activate(
             attempts--;
         } while (!ret && attempts > 0);
 #ifdef DEBUG
-//		Msg("correction attempts %d",10-attempts);
+//      Msg("correction attempts %d",10-attempts);
 #endif
     }
     RestoreVelocityState(temp_state);

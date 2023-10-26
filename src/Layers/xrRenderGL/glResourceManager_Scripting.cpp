@@ -1,17 +1,17 @@
 #include "stdafx.h"
 #pragma hdrstop
 
-#include	"Layers/xrRender/ResourceManager.h"
-#include	"Layers/xrRender/tss.h"
-#include	"Layers/xrRender/Blender.h"
-#include	"Layers/xrRender/Blender_Recorder.h"
-//	adopt_compiler don't have = operator And it can't have = operator
-#include	"xrScriptEngine/script_engine.hpp"
-#include	"luabind/return_reference_to_policy.hpp"
+#include    "Layers/xrRender/ResourceManager.h"
+#include    "Layers/xrRender/tss.h"
+#include    "Layers/xrRender/Blender.h"
+#include    "Layers/xrRender/Blender_Recorder.h"
+//  adopt_compiler don't have = operator And it can't have = operator
+#include    "xrScriptEngine/script_engine.hpp"
+#include    "luabind/return_reference_to_policy.hpp"
 #include "xrCore/Threading/ScopeLock.hpp"
 
-#ifdef	DEBUG
-#define MDB	Memory.dbg_check()
+#ifdef  DEBUG
+#define MDB Memory.dbg_check()
 #else
 #define MDB
 #endif
@@ -163,7 +163,7 @@ public:
 
 #pragma warning( push )
 #pragma warning( disable : 4512)
-// wrapper																																					
+// wrapper                                                                                                                                                  
 class adopt_compiler
 {
     CBlender_Compile* C;
@@ -247,10 +247,10 @@ public:
         return adopt_sampler(C, s);
     }
 
-    //adopt_compiler&		_dx10texture	(LPCSTR _resname, LPCSTR _texname)		{	C->r_dx10Texture(_resname, _texname);		return	*this;		}
-    //adopt_dx10sampler		_dx10sampler	(LPCSTR _name)							{	u32 s = C->r_dx10Sampler(_name);			return	adopt_dx10sampler(C,s);	}
+    //adopt_compiler&       _dx10texture    (LPCSTR _resname, LPCSTR _texname)      {   C->r_dx10Texture(_resname, _texname);       return  *this;      }
+    //adopt_dx10sampler     _dx10sampler    (LPCSTR _name)                          {   u32 s = C->r_dx10Sampler(_name);            return  adopt_dx10sampler(C,s); }
 
-    //	DX10 specific
+    //  DX10 specific
     adopt_compiler& _dx10color_write_enable(bool cR, bool cG, bool cB, bool cA)
     {
         C->r_ColorWriteEnable(cR, cG, cB, cA);
@@ -281,7 +281,7 @@ public:
         return *this;
     }
 
-    //adopt_dx10texture		_dx10texture	(LPCSTR _name)							{	u32 s = C->r_dx10Texture(_name,0);			return	adopt_dx10sampler(C,s);	}
+    //adopt_dx10texture     _dx10texture    (LPCSTR _name)                          {   u32 s = C->r_dx10Texture(_name,0);          return  adopt_dx10sampler(C,s); }
 
     adopt_dx10options _dx10Options() { return adopt_dx10options(); };
 };
@@ -315,7 +315,7 @@ void CResourceManager::LS_Load()
         [
             class_<adopt_dx10options>("_dx10options")
                 .def("dx10_msaa_alphatest_atoc", &adopt_dx10options::_dx10_msaa_alphatest_atoc)
-            //.def("",					&adopt_dx10options::_dx10Options		),	// returns options-object
+            //.def("",                  &adopt_dx10options::_dx10Options        ),  // returns options-object
             ,
 
             class_<adopt_sampler>("_sampler")
@@ -354,7 +354,7 @@ void CResourceManager::LS_Load()
                 .def("zb",                     &adopt_compiler::_ZB,                     return_reference_to<1>())
                 .def("blend",                  &adopt_compiler::_blend,                  return_reference_to<1>())
                 .def("aref",                   &adopt_compiler::_aref,                   return_reference_to<1>())
-                //	For compatibility only
+                //  For compatibility only
                 .def("dx10color_write_enable", &adopt_compiler::_dx10color_write_enable, return_reference_to<1>())
                 .def("color_write_enable",     &adopt_compiler::_dx10color_write_enable, return_reference_to<1>())
                 .def("dx10stencil",            &adopt_compiler::_dx10Stencil,            return_reference_to<1>())
@@ -439,7 +439,7 @@ BOOL CResourceManager::_lua_HasShader(LPCSTR s_shader)
 
     ScopeLock scope(&ScriptEngineLock);
 #ifdef _EDITOR
-	return ScriptEngine.object(undercorated,"editor",LUA_TFUNCTION);
+    return ScriptEngine.object(undercorated,"editor",LUA_TFUNCTION);
 #else
     return ScriptEngine.object(undercorated, "normal",LUA_TFUNCTION) ||
         ScriptEngine.object(undercorated, "l_special",LUA_TFUNCTION);
@@ -468,7 +468,7 @@ Shader* CResourceManager::_lua_Create(LPCSTR d_shader, LPCSTR s_textures)
     C.detail_scaler = nullptr;
 
     ScriptEngineLock.Enter();
-    // Compile element	(LOD0 - HQ)
+    // Compile element  (LOD0 - HQ)
     if (ScriptEngine.object(s_shader, "normal_hq",LUA_TFUNCTION))
     {
         // Analyze possibility to detail this shader
@@ -488,7 +488,7 @@ Shader* CResourceManager::_lua_Create(LPCSTR d_shader, LPCSTR s_textures)
         }
     }
 
-    // Compile element	(LOD1)
+    // Compile element  (LOD1)
     if (ScriptEngine.object(s_shader, "normal",LUA_TFUNCTION))
     {
         C.iElement = 1;

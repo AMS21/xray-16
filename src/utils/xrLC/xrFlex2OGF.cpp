@@ -99,8 +99,8 @@ void CBuild::Flex2OGF()
 
             // Collect textures
             OGF_Texture T;
-            // pOGF->shader		= M->shader;
-            // pOGF->shader_xrlc	= &F->Shader();
+            // pOGF->shader     = M->shader;
+            // pOGF->shader_xrlc    = &F->Shader();
 
             TRY(T.name = textures()[M->surfidx].name);
             TRY(T.pBuildSurface = &(textures()[M->surfidx]));

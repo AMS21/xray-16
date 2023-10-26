@@ -42,7 +42,7 @@ void SimulatorStates::record(ID3DState*& state)
         // Update states
         switch (S.type)
         {
-        case 0:	state->UpdateRenderState(S.v1, S.v2); break;
+        case 0: state->UpdateRenderState(S.v1, S.v2); break;
         //case 1: VERIFY(!"Texture environment not supported"); break;
         case 2: state->UpdateSamplerState(S.v1, S.v2, S.v3); break;
         }

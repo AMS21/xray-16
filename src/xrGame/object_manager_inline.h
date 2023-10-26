@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: object_manager.h
-//	Created 	: 30.12.2003
-//  Modified 	: 30.12.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Object manager
+//  Module      : object_manager.h
+//  Created     : 30.12.2003
+//  Modified    : 30.12.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Object manager
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -17,7 +17,7 @@
 TEMPLATE_SPECIALIZATION
 CAbstractObjectManager::CObjectManager()
 {
-    //	m_objects.reserve		(100);
+    //  m_objects.reserve       (100);
 }
 
 TEMPLATE_SPECIALIZATION

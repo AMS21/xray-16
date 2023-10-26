@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: movement_manager_game.cpp
-//	Created 	: 03.12.2003
-//  Modified 	: 03.12.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Movement manager for game paths
+//  Module      : movement_manager_game.cpp
+//  Created     : 03.12.2003
+//  Modified    : 03.12.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Movement manager for game paths
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

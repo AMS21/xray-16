@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_death_planner.cpp
-//	Created 	: 25.03.2004
-//  Modified 	: 27.09.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker death planner
+//  Module      : stalker_death_planner.cpp
+//  Created     : 25.03.2004
+//  Modified    : 27.09.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker death planner
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

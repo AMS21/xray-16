@@ -43,11 +43,11 @@ void CBlender_accum_direct_cascade::Compile(CBlender_Compile& C)
             C.r_Sampler_rtf("s_smap", r2_RT_smap_surf);
 
         jitter(C);
-        // 		{
-        // 			u32 s = C.i_Sampler("s_smap");
-        // 			C.i_Address		(s, D3DTADDRESS_BORDER);
-        // 			C.i_BorderColor	(s, D3DCOLOR_ARGB(255, 255, 255, 255));
-        // 		}
+        //      {
+        //          u32 s = C.i_Sampler("s_smap");
+        //          C.i_Address     (s, D3DTADDRESS_BORDER);
+        //          C.i_BorderColor (s, D3DCOLOR_ARGB(255, 255, 255, 255));
+        //      }
         C.r_End();
         break;
     case SE_SUN_FAR: // far pass, only stencil clipping performed

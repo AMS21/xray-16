@@ -73,12 +73,12 @@ public:
         C.r_Sampler_clf("s_sky1", "$null");
         C.r_Sampler_rtf("s_tonemap", "$user$tonemap"); //. hack
 #elif defined(USE_DX11)
-        // C.r_Sampler_clf		("s_sky0",		"$null"			);
-        // C.r_Sampler_clf		("s_sky1",		"$null"			);
+        // C.r_Sampler_clf      ("s_sky0",      "$null"         );
+        // C.r_Sampler_clf      ("s_sky1",      "$null"         );
         C.r_dx11Texture("s_sky0", "$null");
         C.r_dx11Texture("s_sky1", "$null");
         C.r_dx11Sampler("smp_rtlinear");
-        // C.r_Sampler_rtf		("s_tonemap",	"$user$tonemap"	);	//. hack
+        // C.r_Sampler_rtf      ("s_tonemap",   "$user$tonemap" );  //. hack
         C.r_dx11Texture("s_tonemap", "$user$tonemap"); //. hack
         C.PassSET_ZB(FALSE, FALSE);
 #elif defined(USE_OGL)
@@ -198,7 +198,7 @@ void dxEnvironmentRender::lerp(CEnvDescriptorMixer& currentEnv, IEnvDescriptorRe
     CHK_DX(HW.pDevice->SetRenderState(D3DRS_FOGSTART, *(u32*)(&currentEnv.fog_near)));
     CHK_DX(HW.pDevice->SetRenderState(D3DRS_FOGEND, *(u32*)(&currentEnv.fog_far)));
 #else
-    //	TODO: DX11: Implement environment parameters setting for DX11 (if necessary)
+    //  TODO: DX11: Implement environment parameters setting for DX11 (if necessary)
 #endif
 }
 

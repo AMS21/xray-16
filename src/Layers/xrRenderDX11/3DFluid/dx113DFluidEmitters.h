@@ -19,16 +19,16 @@ public:
     {
         EmitterType m_eType;
 
-        Fvector m_vPosition; //	In fluid space
+        Fvector m_vPosition; // In fluid space
         float m_fRadius;
 
-        //	Distribution attributes
-        float m_InvSigma_2; //	1/Sigma^2 for gaussian distribution
+        //  Distribution attributes
+        float m_InvSigma_2; //  1/Sigma^2 for gaussian distribution
 
-        //	Flow attributes
-        Fvector m_vFlowVelocity; //	In fluid space
+        //  Flow attributes
+        Fvector m_vFlowVelocity; // In fluid space
 
-        //	Density attributes
+        //  Density attributes
         float m_fSaturation;
         float m_fDensity;
 
@@ -38,7 +38,7 @@ public:
             {
                 float m_fPeriod;
                 float m_fPhase;
-                float m_fAmp; //	Speed == [FlowSpeed*(1-m_fAmp)..FlowSpeed*(1+m_fAmp)]
+                float m_fAmp; //    Speed == [FlowSpeed*(1-m_fAmp)..FlowSpeed*(1+m_fAmp)]
             } m_DraughtParams;
         };
 
@@ -68,4 +68,4 @@ private:
     dx113DFluidGrid* m_pGrid;
 };
 
-#endif //	dx113DFluidEmitters_included
+#endif //   dx113DFluidEmitters_included

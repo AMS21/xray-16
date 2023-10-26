@@ -72,9 +72,9 @@ public:
     virtual void Spawn(){};
     virtual void Depart(){};
 
-    //	virtual	CKinematics*		dcast_PKinematics			()				{ return 0;	}
-    //	virtual	CKinematicsAnimated*dcast_PKinematicsAnimated	()				{ return 0;	}
-    //	virtual IParticleCustom*	dcast_ParticleCustom		()				{ return 0;	}
+    //  virtual CKinematics*        dcast_PKinematics           ()              { return 0; }
+    //  virtual CKinematicsAnimated*dcast_PKinematicsAnimated   ()              { return 0; }
+    //  virtual IParticleCustom*    dcast_ParticleCustom        ()              { return 0; }
 
     virtual vis_data& getVisData() { return vis; }
     u32 getType() const override { return Type; }

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_hit_inline.h
-//	Created 	: 06.02.2004
-//  Modified 	: 24.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : XRay Script hit class inline functions
+//  Module      : script_hit_inline.h
+//  Created     : 06.02.2004
+//  Modified    : 24.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : XRay Script hit class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

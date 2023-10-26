@@ -24,7 +24,7 @@
 /*
 [impulse_transition_to_parts]
 random_min              =1       ; х массу объекта = величина случайно направленного импульса
-; с случайн				о выбранной точкой приложения в пределах нового обекта
+; с случайн             о выбранной точкой приложения в пределах нового обекта
 random_hit_imp         =0.1     ; х величена хит - импульса =............
 
 ;ref_bone                       ; кость из по которой определяется скорость для частей у который связь не задана по
@@ -84,10 +84,10 @@ void CPHDestroyable::InitServerObject(CSE_Abstract* D)
     l_tpALifeDynamicObject->m_tGraphID = obj->ai_location().game_vertex_id();
     l_tpALifeDynamicObject->m_tNodeID = obj->ai_location().level_vertex_id();
 
-    //	l_tpALifePhysicObject->startup_animation=m_startup_anim;
+    //  l_tpALifePhysicObject->startup_animation=m_startup_anim;
 
     D->set_name_replace("");
-    //.	D->s_gameid			=	u8(GameID());
+    //. D->s_gameid         =   u8(GameID());
     D->s_RP = 0xff;
     D->ID = 0xffff;
 
@@ -261,8 +261,8 @@ void CPHDestroyable::NotificatePart(CPHDestroyableNotificate* dn)
 
     if (new_ini && new_ini->section_exist("impulse_transition_from_source_bone"))
     {
-        // random_min				=new_ini->r_float("impulse_transition_from_source_bone","random_min");
-        // random_hit_imp			=new_ini->r_float("impulse_transition_from_source_bone","random_hit_imp");
+        // random_min               =new_ini->r_float("impulse_transition_from_source_bone","random_min");
+        // random_hit_imp           =new_ini->r_float("impulse_transition_from_source_bone","random_hit_imp");
         ////////////////////////////////////////////////////////
         if (new_ini->line_exist("impulse_transition_from_source_bone", "ref_bone"))
             ref_bone = own_K->LL_BoneID(new_ini->r_string("impulse_transition_from_source_bone", "ref_bone"));
@@ -272,7 +272,7 @@ void CPHDestroyable::NotificatePart(CPHDestroyableNotificate* dn)
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // dBodyID own_body=own_shell->get_Element(ref_bone)->get_body()			;
+    // dBodyID own_body=own_shell->get_Element(ref_bone)->get_body()            ;
     CPhysicsElement* own_element = own_shell->get_Element(ref_bone);
     u16 new_el_number = new_shell->get_ElementsNumber();
 

@@ -160,8 +160,8 @@ void CMissile::OnH_A_Chield()
 {
     inherited::OnH_A_Chield();
 
-    //	if(!m_fake_missile && !smart_cast<CMissile*>(H_Parent()))
-    //		spawn_fake_missile	();
+    //  if(!m_fake_missile && !smart_cast<CMissile*>(H_Parent()))
+    //      spawn_fake_missile  ();
 }
 
 void CMissile::OnH_B_Independent(bool just_before_destroy)
@@ -304,10 +304,10 @@ void CMissile::State(u32 state, u32 oldState)
         SwitchState(eShowing);
     }
     break;
-        /*	case eBore:
+        /*  case eBore:
                 {
-                    PlaySound			(sndPlaying,Position());
-                    PlayHUDMotion		("anm_bore", TRUE, this, GetState());
+                    PlaySound           (sndPlaying,Position());
+                    PlayHUDMotion       ("anm_bore", TRUE, this, GetState());
                 } break;
         */
     }
@@ -466,8 +466,8 @@ void CMissile::Throw()
 
     m_fake_missile->m_throw_direction = m_throw_direction;
     m_fake_missile->m_throw_matrix = m_throw_matrix;
-    //.	m_fake_missile->m_throw				= true;
-    //.	Msg("fm %d",m_fake_missile->ID());
+    //. m_fake_missile->m_throw             = true;
+    //. Msg("fm %d",m_fake_missile->ID());
 
     CInventoryOwner* inventory_owner = smart_cast<CInventoryOwner*>(H_Parent());
     VERIFY(inventory_owner);
@@ -595,13 +595,13 @@ void CMissile::UpdateFireDependencies_internal()
             R_ASSERT(0); // implement this!!!
             /*
                         // 1st person view - skeletoned
-                        CKinematics* V			= smart_cast<CKinematics*>(GetHUD()->Visual());
-                        VERIFY					(V);
-                        V->CalculateBones		();
+                        CKinematics* V          = smart_cast<CKinematics*>(GetHUD()->Visual());
+                        VERIFY                  (V);
+                        V->CalculateBones       ();
 
                         // fire point&direction
-                        Fmatrix& parent			= GetHUD()->Transform	();
-                        m_throw_direction.set	(parent.k);
+                        Fmatrix& parent         = GetHUD()->Transform   ();
+                        m_throw_direction.set   (parent.k);
             */
         }
         else
@@ -659,11 +659,11 @@ void CMissile::activate_physic_shell()
     R_ASSERT(!m_pPhysicsShell);
     create_physic_shell();
     m_pPhysicsShell->Activate(m_throw_matrix, l_vel, a_vel);
-    //	m_pPhysicsShell->AddTracedGeom		();
+    //  m_pPhysicsShell->AddTracedGeom      ();
     m_pPhysicsShell->SetAllGeomTraced();
     m_pPhysicsShell->add_ObjectContactCallback(ExitContactCallback);
     m_pPhysicsShell->set_CallbackData(smart_cast<CPhysicsShellHolder*>(entity_alive));
-    //	m_pPhysicsShell->remove_ObjectContactCallback	(ExitContactCallback);
+    //  m_pPhysicsShell->remove_ObjectContactCallback   (ExitContactCallback);
     m_pPhysicsShell->SetAirResistance(0.f, 0.f);
     m_pPhysicsShell->set_DynamicScales(1.f, 1.f);
 

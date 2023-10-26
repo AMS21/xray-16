@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////////
-//	Module		:	cta_game_artefact.cpp
-//	Created		:	19.12.2007
-//	Modified	:	19.12.2007
-//	Autor		:	Alexander Maniluk
-//	Description	:	Artefact object for Capture The Artefact game mode
+//  Module      :   cta_game_artefact.cpp
+//  Created     :   19.12.2007
+//  Modified    :   19.12.2007
+//  Autor       :   Alexander Maniluk
+//  Description :   Artefact object for Capture The Artefact game mode
 ////////////////////////////////////////////////////////////////////////////////
 #include "StdAfx.h"
 #include "cta_game_artefact_activation.h"
@@ -39,7 +39,7 @@ void CtaArtefactActivation::UpdateActivation()
         if (m_cur_activation_state == eMax)
         {
             m_cur_activation_state = eNone;
-            // m_af->processing_deactivate			();
+            // m_af->processing_deactivate          ();
             // m_af->DestroyObject();
         }
 

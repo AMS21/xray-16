@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_registry_container_space.h
-//	Created 	: 01.07.2004
-//  Modified 	: 01.07.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALife registry container space
+//  Module      : alife_registry_container_space.h
+//  Created     : 01.07.2004
+//  Modified    : 01.07.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALife registry container space
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

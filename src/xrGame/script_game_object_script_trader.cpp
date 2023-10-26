@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_game_object_script3.cpp
-//	Created 	: 25.09.2003
-//  Modified 	: 29.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : XRay Script game object script export
+//  Module      : script_game_object_script3.cpp
+//  Created     : 25.09.2003
+//  Modified    : 29.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : XRay Script game object script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

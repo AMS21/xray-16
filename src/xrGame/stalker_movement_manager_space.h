@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_movement_manager_space.h
-//	Created 	: 10.06.2004
-//  Modified 	: 10.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker movement manager space
+//  Module      : stalker_movement_manager_space.h
+//  Created     : 10.06.2004
+//  Modified    : 10.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker movement manager space
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_animation_planner_inline.h
-//	Created 	: 04.09.2007
-//	Author		: Alexander Dudin
-//	Description : Smart cover animation planner class inline functions
+//  Module      : smart_cover_animation_planner_inline.h
+//  Created     : 04.09.2007
+//  Author      : Alexander Dudin
+//  Description : Smart cover animation planner class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef SMART_COVER_ANIMATION_PLANNER_INLINE_H_INCLUDED

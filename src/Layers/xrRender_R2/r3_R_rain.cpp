@@ -19,7 +19,7 @@ void XRMatrixInverse(Fmatrix* pout, float *pdeterminant, const Fmatrix& pm);
 const float tweak_rain_COP_initial_offs = 1200.f;
 const float tweak_rain_ortho_xform_initial_offs = 1000.f; //. ?
 
-//	Defined in r2_R_sun.cpp
+//  Defined in r2_R_sun.cpp
 Fvector3 wform(Fmatrix const& m, Fvector3 const& v);
 
 //////////////////////////////////////////////////////////////////////////
@@ -65,7 +65,7 @@ void render_rain::init()
 //////////////////////////////////////////////////////////////////////////
 void render_rain::calculate()
 {
-    // static const float	source_offset		= 40.f;
+    // static const float   source_offset       = 40.f;
 
     static const float source_offset = 10000.f;
     RainLight.direction.set(0.0f, -1.0f, 0.0f);
@@ -89,10 +89,10 @@ void render_rain::calculate()
 #   error No graphics API selected or enabled!
 #endif
 
-        //	Calculate view frustum were we can see dynamic rain radius
+        //  Calculate view frustum were we can see dynamic rain radius
         {
-            //	b^2 = 2RH, B - side enge of the pyramid, h = height
-            //	R = b^2/(2*H)
+            //  b^2 = 2RH, B - side enge of the pyramid, h = height
+            //  R = b^2/(2*H)
             const float H = fRainFar;
             const float a = tanf(deg2rad(Device.fFOV) / 2);
             const float c = tanf(deg2rad(Device.fFOV * Device.fASPECT) / 2);
@@ -131,7 +131,7 @@ void render_rain::calculate()
                     hull.polys.back().points.push_back(rain::facetable[plane][pt]);
             }
         }
-        // hull.compute_caster_model	(cull_planes,fuckingsun->direction);
+        // hull.compute_caster_model    (cull_planes,fuckingsun->direction);
         hull.compute_caster_model(cull_planes, RainLight.direction);
 #ifdef _DEBUG
         for (u32 it = 0; it < cull_planes.size(); it++)
@@ -162,27 +162,27 @@ void render_rain::calculate()
         mdir_View.build_camera_dir(L_pos, L_dir, L_up);
 
         // projection: box
-        //	Simple
+        //  Simple
         Fbox frustum_bb;
         frustum_bb.invalidate();
         for (int it = 0; it < 8; it++)
         {
-            // for (int it=0; it<9; it++)	{
+            // for (int it=0; it<9; it++)   {
             Fvector xf = wform(mdir_View, hull.points[it]);
             frustum_bb.modify(xf);
         }
         Fbox& bb = frustum_bb;
         bb.grow(EPS);
 
-        //	HACK
-        //	TODO: DX11: Calculate bounding sphere for view frustum
-        //	TODO: DX11: Reduce resolution.
+        //  HACK
+        //  TODO: DX11: Calculate bounding sphere for view frustum
+        //  TODO: DX11: Reduce resolution.
         // bb.vMin.x = -50;
         // bb.vMax.x = 50;
         // bb.vMin.y = -50;
         // bb.vMax.y = 50;
 
-        //	Offset RainLight position to center rain shadowmap
+        //  Offset RainLight position to center rain shadowmap
         Fvector3 vRectOffset =
         {
             fBoundingSphereRadius * Device.vCameraDirection.x,
@@ -245,7 +245,7 @@ void render_rain::calculate()
 #endif
 
         // snap view-position to pixel
-        //	snap zero point to pixel
+        //  snap zero point to pixel
         Fvector cam_proj = wform(cull_xform, Fvector().set(0, 0, 0));
         Fvector cam_pixel = wform(m_viewport, cam_proj);
         cam_pixel.x = floorf(cam_pixel.x);

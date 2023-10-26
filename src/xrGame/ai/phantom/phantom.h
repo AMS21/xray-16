@@ -57,7 +57,7 @@ private:
     Fmatrix XFORM_center();
 
     CParticlesObject* PlayParticles(const shared_str& name, BOOL bAutoRemove, const Fmatrix& xform);
-    //	void				PlayMotion					(MotionID);
+    //  void                PlayMotion                  (MotionID);
 
     void UpdatePosition(const Fvector& tgt_pos);
 

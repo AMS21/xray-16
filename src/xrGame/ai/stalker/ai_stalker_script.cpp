@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_stalker_script.cpp
-//	Created 	: 29.09.2003
-//  Modified 	: 29.09.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker script functions
+//  Module      : ai_stalker_script.cpp
+//  Created     : 29.09.2003
+//  Modified    : 29.09.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker script functions
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

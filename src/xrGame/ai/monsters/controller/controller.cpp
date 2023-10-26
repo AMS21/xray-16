@@ -72,15 +72,15 @@ void CController::Load(LPCSTR section)
     inherited::Load(section);
 
     // Load Control FX texture
-    //	m_UIControlFX.Init(pSettings->r_string(section, "control_fx_texture"), "hud" DELIMITER "default",0,0,0);
-    //	m_UIControlFX2.Init(pSettings->r_string(section, "control_fx_texture2"), "hud" DELIMITER "default",0,0,0);
+    //  m_UIControlFX.Init(pSettings->r_string(section, "control_fx_texture"), "hud" DELIMITER "default",0,0,0);
+    //  m_UIControlFX2.Init(pSettings->r_string(section, "control_fx_texture2"), "hud" DELIMITER "default",0,0,0);
 
     m_max_controlled_number = pSettings->r_u8(section, "Max_Controlled_Count");
     m_controlled_objects.reserve(m_max_controlled_number);
 
     anim().accel_load(section);
-    // anim().accel_chain_add		(eAnimWalkFwd,		eAnimRun);
-    // anim().accel_chain_add		(eAnimWalkDamaged,	eAnimRunDamaged);
+    // anim().accel_chain_add       (eAnimWalkFwd,      eAnimRun);
+    // anim().accel_chain_add       (eAnimWalkDamaged,  eAnimRunDamaged);
 
     GEnv.Sound->create(
         control_start_sound, pSettings->r_string(section, "sound_control_start"), st_Effect, SOUND_TYPE_WORLD);
@@ -120,11 +120,11 @@ void CController::Load(LPCSTR section)
     SVelocityParam& velocity_none = move().get_velocity(MonsterMovement::eVelocityParameterIdle);
     SVelocityParam& velocity_turn = move().get_velocity(MonsterMovement::eVelocityParameterStand);
     SVelocityParam& velocity_walk = move().get_velocity(MonsterMovement::eVelocityParameterWalkNormal);
-    // SVelocityParam &velocity_run		= move().get_velocity(MonsterMovement::eVelocityParameterRunNormal);
-    // SVelocityParam &velocity_walk_dmg	= move().get_velocity(MonsterMovement::eVelocityParameterWalkDamaged);
-    // SVelocityParam &velocity_run_dmg	= move().get_velocity(MonsterMovement::eVelocityParameterRunDamaged);
+    // SVelocityParam &velocity_run     = move().get_velocity(MonsterMovement::eVelocityParameterRunNormal);
+    // SVelocityParam &velocity_walk_dmg    = move().get_velocity(MonsterMovement::eVelocityParameterWalkDamaged);
+    // SVelocityParam &velocity_run_dmg = move().get_velocity(MonsterMovement::eVelocityParameterRunDamaged);
     SVelocityParam& velocity_steal = move().get_velocity(MonsterMovement::eVelocityParameterSteal);
-    // SVelocityParam &velocity_drag		= move().get_velocity(MonsterMovement::eVelocityParameterDrag);
+    // SVelocityParam &velocity_drag        = move().get_velocity(MonsterMovement::eVelocityParameterDrag);
 
     anim().AddAnim(eAnimStandIdle, "stand_idle_", -1, &velocity_none, PS_STAND);
     anim().AddAnim(eAnimStandTurnLeft, "stand_turn_ls_", -1, &velocity_turn, PS_STAND);
@@ -144,41 +144,41 @@ void CController::Load(LPCSTR section)
     anim().AddAnim(eAnimSitStandUp, "sit_stand_up_", -1, &velocity_none, PS_SIT);
     anim().AddAnim(eAnimSleep, "sit_sleep_", -1, &velocity_none, PS_SIT);
 
-    // anim().AddAnim(eAnimStandIdle,		"new_torso_steal_",			-1, &velocity_none,		PS_STAND);
-    // anim().AddAnim(eAnimStandTurnLeft,	"new_torso_steal_",			-1, &velocity_turn,		PS_STAND);
-    // anim().AddAnim(eAnimStandTurnRight,	"new_torso_steal_",			-1, &velocity_turn,		PS_STAND);
-    // anim().AddAnim(eAnimStandDamaged,	"new_torso_steal_",			-1, &velocity_none,		PS_STAND);
-    // anim().AddAnim(eAnimSitIdle,		"sit_idle_",			-1, &velocity_none,		PS_SIT);
-    // anim().AddAnim(eAnimEat,			"sit_eat_",				-1, &velocity_none,		PS_SIT);
-    // anim().AddAnim(eAnimWalkFwd,		"new_torso_steal_",			-1, &velocity_steal,	PS_STAND);
-    // anim().AddAnim(eAnimWalkDamaged,	"new_torso_steal_",			-1, &velocity_steal,	PS_STAND);
-    // anim().AddAnim(eAnimRun,			"new_torso_steal_",			-1,	&velocity_steal,	PS_STAND);
-    // anim().AddAnim(eAnimRunDamaged,		"new_torso_steal_",			-1, &velocity_steal,	PS_STAND);
-    // anim().AddAnim(eAnimAttack,			"stand_attack_",		-1, &velocity_turn,		PS_STAND);
-    // anim().AddAnim(eAnimSteal,			"new_torso_steal_",			-1, &velocity_steal,	PS_STAND);
-    // anim().AddAnim(eAnimCheckCorpse,	"stand_check_corpse_",	-1,	&velocity_none,		PS_STAND);
-    // anim().AddAnim(eAnimDie,			"stand_die_",			-1, &velocity_none,		PS_STAND);
-    // anim().AddAnim(eAnimStandSitDown,	"stand_sit_down_",		-1, &velocity_none,		PS_STAND);
-    // anim().AddAnim(eAnimSitStandUp,		"sit_stand_up_",		-1, &velocity_none,		PS_SIT);
-    // anim().AddAnim(eAnimSleep,			"sit_sleep_",			-1, &velocity_none,		PS_SIT);
+    // anim().AddAnim(eAnimStandIdle,       "new_torso_steal_",         -1, &velocity_none,     PS_STAND);
+    // anim().AddAnim(eAnimStandTurnLeft,   "new_torso_steal_",         -1, &velocity_turn,     PS_STAND);
+    // anim().AddAnim(eAnimStandTurnRight,  "new_torso_steal_",         -1, &velocity_turn,     PS_STAND);
+    // anim().AddAnim(eAnimStandDamaged,    "new_torso_steal_",         -1, &velocity_none,     PS_STAND);
+    // anim().AddAnim(eAnimSitIdle,     "sit_idle_",            -1, &velocity_none,     PS_SIT);
+    // anim().AddAnim(eAnimEat,         "sit_eat_",             -1, &velocity_none,     PS_SIT);
+    // anim().AddAnim(eAnimWalkFwd,     "new_torso_steal_",         -1, &velocity_steal,    PS_STAND);
+    // anim().AddAnim(eAnimWalkDamaged, "new_torso_steal_",         -1, &velocity_steal,    PS_STAND);
+    // anim().AddAnim(eAnimRun,         "new_torso_steal_",         -1, &velocity_steal,    PS_STAND);
+    // anim().AddAnim(eAnimRunDamaged,      "new_torso_steal_",         -1, &velocity_steal,    PS_STAND);
+    // anim().AddAnim(eAnimAttack,          "stand_attack_",        -1, &velocity_turn,     PS_STAND);
+    // anim().AddAnim(eAnimSteal,           "new_torso_steal_",         -1, &velocity_steal,    PS_STAND);
+    // anim().AddAnim(eAnimCheckCorpse, "stand_check_corpse_",  -1, &velocity_none,     PS_STAND);
+    // anim().AddAnim(eAnimDie,         "stand_die_",           -1, &velocity_none,     PS_STAND);
+    // anim().AddAnim(eAnimStandSitDown,    "stand_sit_down_",      -1, &velocity_none,     PS_STAND);
+    // anim().AddAnim(eAnimSitStandUp,      "sit_stand_up_",        -1, &velocity_none,     PS_SIT);
+    // anim().AddAnim(eAnimSleep,           "sit_sleep_",           -1, &velocity_none,     PS_SIT);
 
-    // anim().AddAnim(eAnimStandIdle,		"stand_idle_",			-1, &velocity_none,		PS_STAND);
-    // anim().AddAnim(eAnimStandTurnLeft,	"stand_turn_ls_",		-1, &velocity_turn,		PS_STAND);
-    // anim().AddAnim(eAnimStandTurnRight,	"stand_turn_rs_",		-1, &velocity_turn,		PS_STAND);
-    // anim().AddAnim(eAnimStandDamaged,	"stand_idle_dmg_",		-1, &velocity_none,		PS_STAND);
-    // anim().AddAnim(eAnimSitIdle,		"sit_idle_",			-1, &velocity_none,		PS_SIT);
-    // anim().AddAnim(eAnimEat,			"sit_eat_",				-1, &velocity_none,		PS_SIT);
-    // anim().AddAnim(eAnimWalkFwd,		"stand_walk_fwd_",		-1, &velocity_walk,		PS_STAND);
-    // anim().AddAnim(eAnimWalkDamaged,	"stand_walk_dmg_",		-1, &velocity_walk_dmg,	PS_STAND);
-    // anim().AddAnim(eAnimRun,			"run_scared_",			-1,	&velocity_run,		PS_STAND);
-    // anim().AddAnim(eAnimRunDamaged,		"stand_run_dmg_",		-1, &velocity_run_dmg,	PS_STAND);
-    // anim().AddAnim(eAnimAttack,			"stand_attack_",		-1, &velocity_turn,		PS_STAND);
-    // anim().AddAnim(eAnimSteal,			"stand_steal_",			-1, &velocity_steal,	PS_STAND);
-    // anim().AddAnim(eAnimCheckCorpse,	"stand_check_corpse_",	-1,	&velocity_none,		PS_STAND);
-    // anim().AddAnim(eAnimDie,			"stand_die_",			-1, &velocity_none,		PS_STAND);
-    // anim().AddAnim(eAnimStandSitDown,	"stand_sit_down_",		-1, &velocity_none,		PS_STAND);
-    // anim().AddAnim(eAnimSitStandUp,		"sit_stand_up_",		-1, &velocity_none,		PS_SIT);
-    // anim().AddAnim(eAnimSleep,			"sit_sleep_",			-1, &velocity_none,		PS_SIT);
+    // anim().AddAnim(eAnimStandIdle,       "stand_idle_",          -1, &velocity_none,     PS_STAND);
+    // anim().AddAnim(eAnimStandTurnLeft,   "stand_turn_ls_",       -1, &velocity_turn,     PS_STAND);
+    // anim().AddAnim(eAnimStandTurnRight,  "stand_turn_rs_",       -1, &velocity_turn,     PS_STAND);
+    // anim().AddAnim(eAnimStandDamaged,    "stand_idle_dmg_",      -1, &velocity_none,     PS_STAND);
+    // anim().AddAnim(eAnimSitIdle,     "sit_idle_",            -1, &velocity_none,     PS_SIT);
+    // anim().AddAnim(eAnimEat,         "sit_eat_",             -1, &velocity_none,     PS_SIT);
+    // anim().AddAnim(eAnimWalkFwd,     "stand_walk_fwd_",      -1, &velocity_walk,     PS_STAND);
+    // anim().AddAnim(eAnimWalkDamaged, "stand_walk_dmg_",      -1, &velocity_walk_dmg, PS_STAND);
+    // anim().AddAnim(eAnimRun,         "run_scared_",          -1, &velocity_run,      PS_STAND);
+    // anim().AddAnim(eAnimRunDamaged,      "stand_run_dmg_",       -1, &velocity_run_dmg,  PS_STAND);
+    // anim().AddAnim(eAnimAttack,          "stand_attack_",        -1, &velocity_turn,     PS_STAND);
+    // anim().AddAnim(eAnimSteal,           "stand_steal_",         -1, &velocity_steal,    PS_STAND);
+    // anim().AddAnim(eAnimCheckCorpse, "stand_check_corpse_",  -1, &velocity_none,     PS_STAND);
+    // anim().AddAnim(eAnimDie,         "stand_die_",           -1, &velocity_none,     PS_STAND);
+    // anim().AddAnim(eAnimStandSitDown,    "stand_sit_down_",      -1, &velocity_none,     PS_STAND);
+    // anim().AddAnim(eAnimSitStandUp,      "sit_stand_up_",        -1, &velocity_none,     PS_SIT);
+    // anim().AddAnim(eAnimSleep,           "sit_sleep_",           -1, &velocity_none,     PS_SIT);
 
     anim().LinkAction(ACT_STAND_IDLE, eAnimStandIdle);
     anim().LinkAction(ACT_SIT_IDLE, eAnimSitIdle);
@@ -405,8 +405,8 @@ void CController::control_hit()
 
     play_control_sound_hit();
     /*
-        active_control_fx			= true;
-        time_control_hit_started	= Device.dwTimeGlobal;
+        active_control_fx           = true;
+        time_control_hit_started    = Device.dwTimeGlobal;
     */
 }
 
@@ -538,13 +538,13 @@ void CController::draw_fire_particles()
     // check probability
     /*if (Random.randI(100) > 30)*/
     {
-        //		Hit_Psy						(enemy, m_tube_damage / 2.f);
+        //      Hit_Psy                     (enemy, m_tube_damage / 2.f);
         play_control_sound_hit();
     }
 
     // m_sound_hit_fx.set_volume(10.0f);
     // if(!m_sndShockEffector)
-    //	m_sndShockEffector = new SndShockEffector();
+    //  m_sndShockEffector = new SndShockEffector();
 
     // m_sndShockEffector->Start(m_sound_hit_fx._handle()->length_ms(), 10.f );
     // m_sound_hit_fx.play_at_pos(this, Level().CurrentEntity()->Position());
@@ -557,8 +557,8 @@ void CController::psy_fire()
 
     draw_fire_particles();
     /*
-        active_control_fx			= true;
-        time_control_hit_started	= Device.dwTimeGlobal;
+        active_control_fx           = true;
+        time_control_hit_started    = Device.dwTimeGlobal;
     */
 }
 
@@ -657,8 +657,8 @@ void CController::create_base_controls()
 void CController::TranslateActionToPathParams()
 {
     // if (m_mental_state == eStateIdle) {
-    //	inherited::TranslateActionToPathParams();
-    //	return;
+    //  inherited::TranslateActionToPathParams();
+    //  return;
     //}
     // custom_anim().set_path_params();
 
@@ -682,7 +682,7 @@ void CController::TranslateActionToPathParams()
 
 bool CController::is_relation_enemy(const CEntityAlive* tpEntityAlive) const
 {
-    //	MONSTER_COMMUNITY_ID
+    //  MONSTER_COMMUNITY_ID
     if (xr_strcmp(*(tpEntityAlive->cNameSect()), "stalker_zombied") == 0)
         return false;
     if (is_community_friend_overrides(tpEntityAlive))
@@ -767,18 +767,18 @@ void CController::debug_on_key(int key)
         {
             control().activate(ControlCom::eComCustom1);
         }
-        // P1.set		(Actor()->Position());
+        // P1.set       (Actor()->Position());
         //
-        // DBG().level_info(this).remove_item	(u32(0));
+        // DBG().level_info(this).remove_item   (u32(0));
         // DBG().level_info(this).add_item(P1,0.5f,COLOR_BLUE,0);
 
         // if (!fsimilar(P1.square_magnitude(),0.f) &&
-        //	!fsimilar(P2.square_magnitude(),0.f)) {
-        //	const CCoverPoint *cover = CoverMan->find_cover(P1,P2,10.f,40.f);
-        //	if (cover) {
-        //		DBG().level_info(this).remove_item	(3);
-        //		DBG().level_info(this).add_item		(cover->position(),0.8f,COLOR_RED,3);
-        //	}
+        //  !fsimilar(P2.square_magnitude(),0.f)) {
+        //  const CCoverPoint *cover = CoverMan->find_cover(P1,P2,10.f,40.f);
+        //  if (cover) {
+        //      DBG().level_info(this).remove_item  (3);
+        //      DBG().level_info(this).add_item     (cover->position(),0.8f,COLOR_RED,3);
+        //  }
         //}
 
         break;

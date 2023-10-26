@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: obstacles_query.h
-//	Created 	: 10.04.2007
-//  Modified 	: 10.04.2007
-//	Author		: Dmitriy Iassenev
-//	Description : obstacles query
+//  Module      : obstacles_query.h
+//  Created     : 10.04.2007
+//  Modified    : 10.04.2007
+//  Author      : Dmitriy Iassenev
+//  Description : obstacles query
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

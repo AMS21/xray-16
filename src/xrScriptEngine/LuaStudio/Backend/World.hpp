@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: world.h
-//	Created 	: 10.04.2008
-//  Modified 	: 10.04.2008
-//	Author		: Dmitriy Iassenev
-//	Description : lua studio backend world class
+//  Module      : world.h
+//  Created     : 10.04.2008
+//  Modified    : 10.04.2008
+//  Author      : Dmitriy Iassenev
+//  Description : lua studio backend world class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

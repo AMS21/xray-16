@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: path_manager_params_flooder.h
-//	Created 	: 21.03.2002
-//  Modified 	: 04.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Flooder path manager parameters
+//  Module      : path_manager_params_flooder.h
+//  Created     : 21.03.2002
+//  Modified    : 04.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Flooder path manager parameters
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

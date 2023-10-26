@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: intrusive_ptr.h
-//	Created 	: 30.07.2004
-//  Modified 	: 8.11.2016 by Im-Dex
-//	Author		: Dmitriy Iassenev
-//	Description : Intrusive pointer template
+//  Module      : intrusive_ptr.h
+//  Created     : 30.07.2004
+//  Modified    : 8.11.2016 by Im-Dex
+//  Author      : Dmitriy Iassenev
+//  Description : Intrusive pointer template
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

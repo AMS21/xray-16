@@ -115,14 +115,14 @@ void CCat::CheckSpecParams(u32 spec_params)
 
         // EMotionAnim anim = eAnimJumpLeft;
         // if (from_right(yaw,movement().m_body.current.yaw)) {
-        //	anim = eAnimJumpRight;
-        //	yaw = angle_normalize(yaw + PI / 20);
+        //  anim = eAnimJumpRight;
+        //  yaw = angle_normalize(yaw + PI / 20);
         //} else yaw = angle_normalize(yaw - PI / 20);
 
         // anim().Seq_Add(anim);
         // anim().Seq_Switch();
 
-        // movement().stop_linear		();
+        // movement().stop_linear       ();
         // movement().m_body.target.yaw = yaw;
 
         //// calculate angular speed

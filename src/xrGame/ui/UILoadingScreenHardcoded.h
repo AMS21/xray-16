@@ -5,11 +5,11 @@ pcstr GetLoadingScreenTexturesDescr();
 
 constexpr pcstr LoadingScreenXML =
 R"(<w>
-	<background width="1024" height="768">
+    <background width="1024" height="768">
         <auto_static width="1024" height="768">
             <texture>ui_mm_loading_screen</texture>
         </auto_static>
-	</background>
+    </background>
     <loading_logo x="0" y="173" width="1024" height="399">
     </loading_logo>
     <loading_progress x="260" y="599" width="506" height="4" horz="1" min="0" max="100" pos="0" inertion="5.0">
@@ -72,11 +72,11 @@ R"(<w>
 
 constexpr pcstr LoadingScreenXMLClearSky =
 R"(<w>
-	<background width="1024" height="768">
+    <background width="1024" height="768">
         <auto_static width="1024" height="768">
             <texture>ui_mm_loading_screen</texture>
         </auto_static>
-	</background>
+    </background>
     <background_rus width="1024" height="768">
         <auto_static width="1024" height="768">
             <texture>ui_mm_loading_screen_ru</texture>

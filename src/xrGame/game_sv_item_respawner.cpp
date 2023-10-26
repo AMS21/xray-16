@@ -58,16 +58,16 @@ item_respawn_manager::~item_respawn_manager()
 void item_respawn_manager::load_respawn_items(shared_str const section)
 {
     clear_respawns();
-    CInifile*	level_ini_file	= Level().pLevel;
-    R_ASSERT2	(level_ini_file, "level ini file not initialized");
+    CInifile*   level_ini_file  = Level().pLevel;
+    R_ASSERT2   (level_ini_file, "level ini file not initialized");
 
     if (!level_ini_file->section_exist(section.c_str()))
         return;
 
-    CInifile::Sect resp_sect	= level_ini_file->r_section(section.c_str());
+    CInifile::Sect resp_sect    = level_ini_file->r_section(section.c_str());
 
     typedef CInifile::Items::iterator sect_iter;
-    sect_iter ie				= resp_sect.Data.end();
+    sect_iter ie                = resp_sect.Data.end();
     u32 temp_int;
     for (sect_iter i = resp_sect.Data.begin(); i != ie; ++i)
     {
@@ -90,8 +90,8 @@ void item_respawn_manager::check_to_spawn(CSE_Abstract* item)
             temp_entity->Spawn_Read(clone_store);
             temp_iter->second.item_object = temp_entity;
         }
-        temp_iter->second.last_game_id		= item->ID;
-        temp_iter->second.last_spawn_time	= 0;
+        temp_iter->second.last_game_id      = item->ID;
+        temp_iter->second.last_spawn_time   = 0;
     }
 }*/
 

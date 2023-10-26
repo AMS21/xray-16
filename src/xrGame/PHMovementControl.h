@@ -159,7 +159,7 @@ public:
 #endif
 
     void SetPLastMaterialIDX(u16* p);
-    //	dBodyID				GetBody						( )		;
+    //  dBodyID             GetBody                     ( )     ;
     const Fvector& GetVelocity() { return vVelocity; }
     const Fvector& GetPathDir() { return _vPathDir; }
     void SetPathDir(const Fvector& v);
@@ -270,7 +270,7 @@ public:
     void CorrectPathDir(const Fvector& real_path_dir, const xr_vector<DetailPathManager::STravelPathPoint>& path,
         int index, Fvector& corrected_path_dir);
 
-    //	void				Move					(Fvector& Dest, Fvector& Motion, BOOL bDynamic=FALSE){};
+    //  void                Move                    (Fvector& Dest, Fvector& Motion, BOOL bDynamic=FALSE){};
     void SetApplyGravity(BOOL flag);
     void GetDeathPosition(Fvector& pos);
     void SetEnvironment(int enviroment, int old_enviroment);

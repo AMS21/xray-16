@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_evaluator_inline.h
-//	Created 	: 12.03.2004
-//  Modified 	: 12.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Property evaluator inline functions
+//  Module      : property_evaluator_inline.h
+//  Created     : 12.03.2004
+//  Modified    : 12.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Property evaluator inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

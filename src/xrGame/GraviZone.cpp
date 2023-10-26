@@ -114,7 +114,7 @@ void CBaseGraviZone::Affect(SZoneObjectInfo* O)
         return;
 
     //////////////////////////////////////////////////////////////////////////
-    //	затягиваем объет по направлению к центру зоны
+    //  затягиваем объет по направлению к центру зоны
 
     Fvector throw_in_dir;
     Fvector zone_center;

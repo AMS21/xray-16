@@ -10,7 +10,7 @@
 #include "Car.h"
 #include "Include/xrRender/Kinematics.h"
 
-// extern CPHWorld*	ph_world;
+// extern CPHWorld* ph_world;
 #include "xrPhysics/IPHWorld.h"
 
 SCarLight::SCarLight()
@@ -35,8 +35,8 @@ void SCarLight::ParseDefinitions(LPCSTR section)
     light_render->set_type(IRender_Light::SPOT);
     light_render->set_shadow(true);
     glow_render = GEnv.Render->glow_create();
-    //	lanim					= 0;
-    //	time2hide				= 0;
+    //  lanim                   = 0;
+    //  time2hide               = 0;
 
     // set bone id
     IKinematics* pKinematics = smart_cast<IKinematics*>(m_holder->PCar()->Visual());
@@ -44,8 +44,8 @@ void SCarLight::ParseDefinitions(LPCSTR section)
 
     Fcolor clr;
     clr.set(ini->r_fcolor(section, "color"));
-    // clr.mul_rgb				(torch->spot_brightness);
-    // fBrightness				= torch->spot_brightness;
+    // clr.mul_rgb              (torch->spot_brightness);
+    // fBrightness              = torch->spot_brightness;
     light_render->set_range(ini->r_float(section, "range"));
     light_render->set_color(clr);
     light_render->set_cone(deg2rad(ini->r_float(section, "cone_angle")));
@@ -60,7 +60,7 @@ void SCarLight::ParseDefinitions(LPCSTR section)
     light_render->set_active(false);
     pKinematics->LL_SetBoneVisible(bone_id, FALSE, TRUE);
 
-    // lanim					= LALib.FindItem(ini->r_string(section,"animator"));
+    // lanim                    = LALib.FindItem(ini->r_string(section,"animator"));
 }
 
 void SCarLight::Switch()

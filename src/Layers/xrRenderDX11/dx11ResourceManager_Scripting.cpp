@@ -4,7 +4,7 @@
 #include "Layers/xrRender/tss.h"
 #include "Layers/xrRender/blender.h"
 #include "Layers/xrRender/blender_recorder.h"
-//	adopt_compiler don't have = operator And it can't have = operator
+//  adopt_compiler don't have = operator And it can't have = operator
 #include "xrScriptEngine/script_engine.hpp"
 #include "luabind/return_reference_to_policy.hpp"
 #include "xrCore/Threading/ScopeLock.hpp"
@@ -265,7 +265,7 @@ public:
         return adopt_sampler(C, s);
     }
 
-    //	DX10 specific
+    //  DX10 specific
     adopt_dx10sampler _dx10sampler(LPCSTR _name)
     {
         u32 s = C->r_dx11Sampler(_name);
@@ -329,7 +329,7 @@ void CResourceManager::LS_Load()
         [
             class_<adopt_dx10options>("_dx10options")
                .def("dx10_msaa_alphatest_atoc", &adopt_dx10options::_dx10_msaa_alphatest_atoc)
-               //.def("",					&adopt_dx10options::_dx10Options		),	// returns options-object
+               //.def("",                   &adopt_dx10options::_dx10Options        ),  // returns options-object
             ,
 
             class_<adopt_dx10sampler>("_dx10sampler"),
@@ -368,7 +368,7 @@ void CResourceManager::LS_Load()
                 .def("zb",                     &adopt_compiler::_ZB,         return_reference_to<1>())
                 .def("blend",                  &adopt_compiler::_blend,      return_reference_to<1>())
                 .def("aref",                   &adopt_compiler::_aref,       return_reference_to<1>())
-                //	For compatibility only
+                //  For compatibility only
                 .def("dx10color_write_enable", &adopt_compiler::_color_write_enable, return_reference_to<1>())
                 .def("color_write_enable",     &adopt_compiler::_color_write_enable, return_reference_to<1>())
                 .def("dx10texture",            &adopt_compiler::_dx10texture,        return_reference_to<1>())
@@ -485,7 +485,7 @@ Shader* CResourceManager::_lua_Create(LPCSTR d_shader, LPCSTR s_textures)
     C.detail_scaler = NULL;
 
     ScriptEngineLock.Enter();
-    // Compile element	(LOD0 - HQ)
+    // Compile element  (LOD0 - HQ)
     if (ScriptEngine.object(s_shader, "normal_hq", LUA_TFUNCTION))
     {
         // Analyze possibility to detail this shader
@@ -507,7 +507,7 @@ Shader* CResourceManager::_lua_Create(LPCSTR d_shader, LPCSTR s_textures)
         }
     }
 
-    // Compile element	(LOD1)
+    // Compile element  (LOD1)
     if (ScriptEngine.object(s_shader, "normal", LUA_TFUNCTION))
     {
         C.iElement = 1;

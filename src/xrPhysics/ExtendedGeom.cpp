@@ -19,7 +19,7 @@ bool IsCyliderContact(const dContact& c)
 
 // dxGeomUserData* PHGeomGetUserData( dxGeom* geom )
 //{
-//	return dGeomGetUserData(geom);
+//  return dGeomGetUserData(geom);
 //}
 
 dxGeomUserData* PHRetrieveGeomUserData(dGeomID geom) { return retrieveGeomUserData(geom); }
@@ -37,10 +37,10 @@ void get_user_data(dxGeomUserData*& gd1, dxGeomUserData*& gd2, bool bo1, const d
     }
 }
 
-//  bool dGeomUserDataHasCallback(dxGeom* geom,ObjectContactCallbackFun	*obj_callback)
+//  bool dGeomUserDataHasCallback(dxGeom* geom,ObjectContactCallbackFun *obj_callback)
 //{
-//	geom=retrieveGeom(geom);
-//	if(geom&&dGeomGetUserData(geom)&&(dGeomGetUserData(geom))->object_callbacks)
-//				return (dGeomGetUserData(geom))->object_callbacks->HasCallback(obj_callback);
-//	else return false;
+//  geom=retrieveGeom(geom);
+//  if(geom&&dGeomGetUserData(geom)&&(dGeomGetUserData(geom))->object_callbacks)
+//              return (dGeomGetUserData(geom))->object_callbacks->HasCallback(obj_callback);
+//  else return false;
 //}

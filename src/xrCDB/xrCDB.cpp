@@ -45,8 +45,8 @@ void MODEL::syncronize_impl() const
 {
     Log("! WARNING: syncronized CDB::query");
     Lock* C = pcs;
-	C->Enter();
-	C->Leave();
+    C->Enter();
+    C->Leave();
 }
 
 struct BTHREAD_params
@@ -69,7 +69,7 @@ void MODEL::build_thread(void* params)
     P.M->build_internal(P.V, P.Vcnt, P.T, P.Tcnt, P.BC, P.BCP);
     P.M->status = S_READY;
     P.M->pcs->Leave();
-    // Msg						("* xrCDB: cform build completed, memory usage: %d K",P.M->memory()/1024);
+    // Msg                      ("* xrCDB: cform build completed, memory usage: %d K",P.M->memory()/1024);
 }
 
 void MODEL::build(Fvector* V, int Vcnt, TRI* T, int Tcnt, build_callback* bc, void* bcp)

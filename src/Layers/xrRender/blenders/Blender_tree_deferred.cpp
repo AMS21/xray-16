@@ -61,7 +61,7 @@ void CBlender_Tree::Compile(CBlender_Compile& C)
         uber_deffer(C, false, tvs, "base", oBlend.value);
         break;
     case SE_R2_SHADOW: // smap-spot
-        //	TODO: DX11: Use dumb shader for shadowmap since shadows are drawn using hardware PCF
+        //  TODO: DX11: Use dumb shader for shadowmap since shadows are drawn using hardware PCF
         if (oBlend.value)
             C.r_Pass(tvs_s, "shadow_direct_base_aref", FALSE, TRUE, TRUE, TRUE, D3DBLEND_ZERO, D3DBLEND_ONE, TRUE, 200);
         else
@@ -79,7 +79,7 @@ void CBlender_Tree::Compile(CBlender_Compile& C)
     //*************** codepath is the same, only shaders differ
     LPCSTR tvs;
     LPCSTR tvs_s;
-    if (oNotAnTree.value)	
+    if (oNotAnTree.value)   
     { 
         tvs="tree_s";
         if (oBlend.value)
@@ -107,7 +107,7 @@ void CBlender_Tree::Compile(CBlender_Compile& C)
             C.r_Stencil(TRUE, D3DCMP_ALWAYS, 0xff, 0x7f, D3DSTENCILOP_KEEP, D3DSTENCILOP_REPLACE, D3DSTENCILOP_KEEP);
             C.r_ColorWriteEnable(false, false, false, false);
             C.r_StencilRef(0x01);
-            //	Alpha to coverage.
+            //  Alpha to coverage.
             C.RS.SetRS(XRDX11RS_ALPHATOCOVERAGE, TRUE);
             C.r_End();
         }
@@ -128,7 +128,7 @@ void CBlender_Tree::Compile(CBlender_Compile& C)
             C.r_Stencil(TRUE, D3DCMP_ALWAYS, 0xff, 0x7f, D3DSTENCILOP_KEEP, D3DSTENCILOP_REPLACE, D3DSTENCILOP_KEEP);
             C.r_StencilRef(0x01);
             C.r_ColorWriteEnable(false, false, false, false);
-            //	Alpha to coverage.
+            //  Alpha to coverage.
             C.RS.SetRS(XRDX11RS_ALPHATOCOVERAGE, TRUE);
             C.r_End();
         }

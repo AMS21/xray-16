@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_value_container_impl.h
-//	Created 	: 16.07.2004
-//  Modified 	: 16.07.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script value container
+//  Module      : script_value_container_impl.h
+//  Created     : 16.07.2004
+//  Modified    : 16.07.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script value container
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

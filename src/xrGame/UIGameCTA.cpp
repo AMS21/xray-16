@@ -850,7 +850,7 @@ void CUIGameCTA::LoadTeamDefaultPresetItems(const shared_str& caSection)
         m_pCurBuyMenu->GetWeaponIndexByName(ItemName, SlotID, ItemID);
         if (SlotID == 0xff || ItemID == 0xff)
             continue;
-        //		s16 ID = GetBuyMenuItemIndex(SlotID, ItemID);
+        //      s16 ID = GetBuyMenuItemIndex(SlotID, ItemID);
         s16 ID = GetBuyMenuItemIndex(0, ItemID);
         PlayerDefItems.push_back(ID);
     };
@@ -876,8 +876,8 @@ void CUIGameCTA::LoadDefItemsForRank()
             continue;
         for (u32 it = 0; it < PlayerDefItems.size(); it++)
         {
-            //			s16* pItemID = &(PlayerDefItems[it]);
-            //			char* ItemName = pBuyMenu->GetWeaponNameByIndex(u8(((*pItemID)&0xff00)>>0x08),
+            //          s16* pItemID = &(PlayerDefItems[it]);
+            //          char* ItemName = pBuyMenu->GetWeaponNameByIndex(u8(((*pItemID)&0xff00)>>0x08),
             // u8((*pItemID)&0x00ff));
             PresetItem* pDefItem = &(PlayerDefItems[it]);
             const shared_str& ItemName = m_pCurBuyMenu->GetWeaponNameByIndex(pDefItem->SlotID, pDefItem->ItemID);
@@ -894,18 +894,18 @@ void CUIGameCTA::LoadDefItemsForRank()
             if (SlotID == 0xff || ItemID == 0xff)
                 continue;
 
-            //			s16 ID = GetBuyMenuItemIndex(SlotID, ItemID);
+            //          s16 ID = GetBuyMenuItemIndex(SlotID, ItemID);
             s16 ID = GetBuyMenuItemIndex(0, ItemID);
 
-            //			*pItemID = ID;
+            //          *pItemID = ID;
             pDefItem->set(ID);
         }
     }
     //---------------------------------------------------------
     for (u32 it = 0; it < PlayerDefItems.size(); it++)
     {
-        //		s16* pItemID = &(PlayerDefItems[it]);
-        //		char* ItemName = pBuyMenu->GetWeaponNameByIndex(u8(((*pItemID)&0xff00)>>0x08), u8((*pItemID)&0x00ff));
+        //      s16* pItemID = &(PlayerDefItems[it]);
+        //      char* ItemName = pBuyMenu->GetWeaponNameByIndex(u8(((*pItemID)&0xff00)>>0x08), u8((*pItemID)&0x00ff));
         PresetItem* pDefItem = &(PlayerDefItems[it]);
         const shared_str& ItemName = m_pCurBuyMenu->GetWeaponNameByIndex(pDefItem->SlotID, pDefItem->ItemID);
         if (!ItemName.size())
@@ -924,7 +924,7 @@ void CUIGameCTA::LoadDefItemsForRank()
         if (SlotID == 0xff || ItemID == 0xff)
             continue;
 
-        //		s16 ID = GetBuyMenuItemIndex(SlotID, ItemID);
+        //      s16 ID = GetBuyMenuItemIndex(SlotID, ItemID);
 
         s16 ID = GetBuyMenuItemIndex(0, ItemID);
         PlayerDefItems.push_back(ID);

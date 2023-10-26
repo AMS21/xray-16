@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: inventory_item_upgrade.cpp
-//	Created 	: 27.11.2007
-//  Modified 	: 27.11.2007
-//	Author		: Sokolov Evgeniy
-//	Description : Inventory item upgrades class impl
+//  Module      : inventory_item_upgrade.cpp
+//  Created     : 27.11.2007
+//  Modified    : 27.11.2007
+//  Author      : Sokolov Evgeniy
+//  Description : Inventory item upgrades class impl
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

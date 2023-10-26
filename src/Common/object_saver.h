@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: object_saver.h
-//	Created 	: 21.01.2003
-//  Modified 	: 09.07.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Object saver
+//  Module      : object_saver.h
+//  Created     : 21.01.2003
+//  Modified    : 09.07.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Object saver
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

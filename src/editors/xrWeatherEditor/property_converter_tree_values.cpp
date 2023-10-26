@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_converter_tree_values.cpp
-//	Created 	: 21.12.2007
-//  Modified 	: 21.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property converter color class
+//  Module      : property_converter_tree_values.cpp
+//  Created     : 21.12.2007
+//  Modified    : 21.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property converter color class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

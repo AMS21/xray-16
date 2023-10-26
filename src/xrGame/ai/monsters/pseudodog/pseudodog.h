@@ -34,7 +34,7 @@ public:
     virtual bool ability_can_drag() { return true; }
     virtual bool ability_psi_attack() { return true; }
     virtual void CheckSpecParams(u32 spec_params);
-    // virtual void	play_effect_sound	();
+    // virtual void play_effect_sound   ();
 
     virtual void HitEntityInJump(const CEntity* pEntity);
 

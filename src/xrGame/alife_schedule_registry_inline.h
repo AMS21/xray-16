@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_schedule_registry_inline.h
-//	Created 	: 15.01.2003
-//  Modified 	: 12.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : ALife schedule registry inline functions
+//  Module      : alife_schedule_registry_inline.h
+//  Created     : 15.01.2003
+//  Modified    : 12.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : ALife schedule registry inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -17,12 +17,12 @@ IC void CALifeScheduleRegistry::objects_per_update(const u32& objects_per_update
 
 IC void CALifeScheduleRegistry::update()
 {
-    //	u32							count =
+    //  u32                         count =
     objects().empty() ? 0 : inherited::update(CUpdatePredicate(m_objects_per_update), false);
 #ifdef DEBUG
     if (psAI_Flags.test(aiALife))
     {
-        //		Msg						("[LSS][SU][%d : %d]",count, objects().size());
+        //      Msg                     ("[LSS][SU][%d : %d]",count, objects().size());
     }
 #endif
 }

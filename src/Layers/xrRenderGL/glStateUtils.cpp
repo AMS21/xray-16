@@ -8,7 +8,7 @@ GLenum ConvertFillMode(u32 Mode)
     switch (Mode)
     {
     case D3DFILL_POINT:
-    	return GL_POINT;
+        return GL_POINT;
     case D3DFILL_WIREFRAME:
         return GL_LINE;
     case D3DFILL_SOLID:
@@ -24,7 +24,7 @@ GLenum ConvertCullMode(u32 Mode)
     switch (Mode)
     {
         //case D3DCULL_NONE:
-        //	return ;
+        //  return ;
     case D3DCULL_CW:
         return GL_BACK;
     case D3DCULL_CCW:
@@ -114,17 +114,17 @@ GLenum ConvertBlendArg(u32 Arg)
     case D3DBLEND_SRCALPHASAT:
         return GL_SRC_ALPHA_SATURATE;
         //case D3DBLEND_BOTHSRCALPHA:
-        //	return ;
+        //  return ;
         //case D3DBLEND_BOTHINVSRCALPHA:
-        //	return ;
+        //  return ;
         //case D3DBLEND_BLENDFACTOR:
-        //	return ;
+        //  return ;
         //case D3DBLEND_INVBLENDFACTOR:
-        //	return ;
+        //  return ;
         //case D3DBLEND_SRCCOLOR2:
-        //	return ;
+        //  return ;
         //case D3DBLEND_INVSRCCOLOR2:
-        //	return ;
+        //  return ;
     default:
         VERIFY(!"ConvertBlendArg can't convert argument!");
         return GL_ONE;
@@ -164,7 +164,7 @@ GLint ConvertTextureAddressMode(u32 Mode)
     case D3DTADDRESS_BORDER:
         return (GLint)GL_CLAMP_TO_BORDER;
         //case D3DTADDRESS_MIRRORONCE:
-        //	return ;
+        //  return ;
     default:
         VERIFY(!"ConvertTextureAddressMode can't convert argument!");
         return (GLint)GL_CLAMP_TO_EDGE;

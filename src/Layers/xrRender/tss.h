@@ -10,7 +10,7 @@ enum XRDX11SAMPLERSTATETYPE
     XRDX11SAMP_ANISOTROPICFILTER = 256,
     XRDX11SAMP_COMPARISONFILTER,
     XRDX11SAMP_COMPARISONFUNC,
-    XRDX11SAMP_MINLOD //	integer value. 0 - the most detailed level
+    XRDX11SAMP_MINLOD //    integer value. 0 - the most detailed level
 };
 enum XRDX11RENDERSTATETYPE
 {
@@ -71,7 +71,7 @@ class CSimulatorRS
 public:
     void Set(SimulatorStates& container, u32 N, u32 V)
     {
-        //	Igor: XBox has render states 400 and hire
+        //  Igor: XBox has render states 400 and hire
         // R_ASSERT(N<256);
         container.set_RS(N, V);
     }

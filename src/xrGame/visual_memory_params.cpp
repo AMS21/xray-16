@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: visual_memory_params.cpp
-//	Created 	: 09.12.2004
-//  Modified 	: 09.12.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Visual memory parameters
+//  Module      : visual_memory_params.cpp
+//  Created     : 09.12.2004
+//  Modified    : 09.12.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Visual memory parameters
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

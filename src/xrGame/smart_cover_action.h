@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_action.h
-//	Created 	: 16.08.2007
-//	Author		: Alexander Dudin
-//	Description : Action class for smart cover
+//  Module      : smart_cover_action.h
+//  Created     : 16.08.2007
+//  Author      : Alexander Dudin
+//  Description : Action class for smart cover
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef SMART_COVER_ACTION_H_INCLUDED

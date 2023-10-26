@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: location_selector_abstract_inline.h
-//	Created 	: 02.10.2001
-//  Modified 	: 19.11.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Abstract location selector inline functions
+//  Module      : location_selector_abstract_inline.h
+//  Created     : 02.10.2001
+//  Modified    : 19.11.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Abstract location selector inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

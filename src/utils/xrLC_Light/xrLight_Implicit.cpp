@@ -61,7 +61,7 @@ void ImplicitExecute::Execute(net_task_callback* net_callback)
 {
     R_ASSERT(y_start != (u32(-1)));
     R_ASSERT(y_end != (u32(-1)));
-    // R_ASSERT				(DATA);
+    // R_ASSERT             (DATA);
     ImplicitDeflector& defl = cl_globs.DATA();
     CDB::COLLIDER DB;
 
@@ -136,7 +136,7 @@ void ImplicitExecute::Execute(net_task_callback* net_callback)
                 defl.Marker(U, V) = 0;
             }
         }
-        //		thProgress	= float(V - y_start) / float(y_end-y_start);
+        //      thProgress  = float(V - y_start) / float(y_end-y_start);
     }
 }
 
@@ -277,8 +277,8 @@ void ImplicitLightingExec(BOOL b_net)
         // lmap
         Logger.Status("Saving lmap...");
         {
-            // xr_vector<u32>			packed;
-            // defl.lmap.Pack			(packed);
+            // xr_vector<u32>           packed;
+            // defl.lmap.Pack           (packed);
 
             string_path name, out_name;
             sscanf(strstr(GetCommandLine(), "-f") + 2, "%s", name);
@@ -298,7 +298,7 @@ void ImplicitLightingExec(BOOL b_net)
             fmt.flags.set(STextureParams::flBinaryAlpha, FALSE);
             DXTCompress(out_name, raw_data, 0, w, h, pitch, &fmt, 4);
         }
-        // defl.Deallocate				();
+        // defl.Deallocate              ();
     }
     not_clear.clear();
     cl_globs.Deallocate();

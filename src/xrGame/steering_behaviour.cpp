@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: steering_behaviour.cpp
-//	Created 	: 25.04.2008
-//  Modified 	: 25.04.2008
-//	Author		: Lain
-//	Description : steering behaviour classes
+//  Module      : steering_behaviour.cpp
+//  Created     : 25.04.2008
+//  Modified    : 25.04.2008
+//  Author      : Lain
+//  Description : steering behaviour classes
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

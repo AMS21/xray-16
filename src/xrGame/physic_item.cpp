@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: physic_item.cpp
-//	Created 	: 11.02.2004
-//  Modified 	: 11.02.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Physic item
+//  Module      : physic_item.cpp
+//  Created     : 11.02.2004
+//  Modified    : 11.02.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Physic item
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -91,15 +91,15 @@ bool CPhysicItem::net_Spawn(CSE_Abstract* DC)
 void CPhysicItem::net_Destroy() { inherited::net_Destroy(); }
 void CPhysicItem::UpdateCL()
 {
-    //	if (!xr_strcmp("bolt",cName()))
-    //		Log					("--- B - CBolt",renderable.xform);
+    //  if (!xr_strcmp("bolt",cName()))
+    //      Log                 ("--- B - CBolt",renderable.xform);
     if (!H_Parent() && m_pPhysicsShell && m_pPhysicsShell->isActive())
         m_pPhysicsShell->InterpolateGlobalTransform(&XFORM());
-    //	if (!xr_strcmp("bolt",cName()))
-    //		Log						("--- C - CBolt",renderable.xform);
+    //  if (!xr_strcmp("bolt",cName()))
+    //      Log                     ("--- C - CBolt",renderable.xform);
     inherited::UpdateCL();
-    //	if (!xr_strcmp("bolt",cName()))
-    //		Log						("--- D - CBolt",renderable.xform);
+    //  if (!xr_strcmp("bolt",cName()))
+    //      Log                     ("--- D - CBolt",renderable.xform);
 }
 
 void CPhysicItem::activate_physic_shell()
@@ -114,7 +114,7 @@ void CPhysicItem::activate_physic_shell()
         K->CalculateBones_Invalidate();
         K->CalculateBones(TRUE);
     }
-    /// m_pPhysicsShell->Update		();
+    /// m_pPhysicsShell->Update     ();
 }
 
 void CPhysicItem::setup_physic_shell()
@@ -127,7 +127,7 @@ void CPhysicItem::setup_physic_shell()
         K->CalculateBones(TRUE);
     }
 
-    // m_pPhysicsShell->Update		();
+    // m_pPhysicsShell->Update      ();
 }
 
 void CPhysicItem::create_box_physic_shell()

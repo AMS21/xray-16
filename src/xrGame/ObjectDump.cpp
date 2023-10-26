@@ -50,21 +50,21 @@ std::string get_string(bool v) { return v ? std::string("true") : std::string("f
 /*
         struct
         {
-            u32	net_ID			:	16;
-            u32	bActiveCounter	:	8;
-            u32	bEnabled		:	1;
-            u32	bVisible		:	1;
-            u32	bDestroy		:	1;
-            u32	net_Local		:	1;
-            u32	net_Ready		:	1;
-            u32 net_SV_Update	:	1;
-            u32 crow			:	1;
-            u32	bPreDestroy		:	1;
+            u32 net_ID          :   16;
+            u32 bActiveCounter  :   8;
+            u32 bEnabled        :   1;
+            u32 bVisible        :   1;
+            u32 bDestroy        :   1;
+            u32 net_Local       :   1;
+            u32 net_Ready       :   1;
+            u32 net_SV_Update   :   1;
+            u32 crow            :   1;
+            u32 bPreDestroy     :   1;
         };
-            u32									dbg_update_cl;
+            u32                                 dbg_update_cl;
 #endif
-    u32									dwFrame_UpdateCL;
-    u32									dwFrame_AsCrow;
+    u32                                 dwFrame_UpdateCL;
+    u32                                 dwFrame_AsCrow;
 */
 std::string dbg_object_props_dump_string(const CObject* obj)
 {

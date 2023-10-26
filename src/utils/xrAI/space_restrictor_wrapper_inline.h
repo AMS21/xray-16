@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: space_restrictor_wrapper_inline.h
-//	Created 	: 28.11.2005
-//  Modified 	: 28.11.2005
-//	Author		: Dmitriy Iassenev
-//	Description : space restrictor wrapper inline functions
+//  Module      : space_restrictor_wrapper_inline.h
+//  Created     : 28.11.2005
+//  Modified    : 28.11.2005
+//  Author      : Dmitriy Iassenev
+//  Description : space restrictor wrapper inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

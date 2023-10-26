@@ -38,7 +38,7 @@ void OGF::CalculateTB()
             MeshMender::DONT_CALCULATE_NORMALS, MeshMender::RESPECT_SPLITS, MeshMender::DONT_FIX_CYLINDRICAL))
     {
         xrDebug::Fatal(DEBUG_INFO, "NVMeshMender failed ");
-        // xrDebug::Fatal	(DEBUG_INFO,"NVMeshMender failed (%s)",mender.GetLastError().c_str());
+        // xrDebug::Fatal   (DEBUG_INFO,"NVMeshMender failed (%s)",mender.GetLastError().c_str());
     }
 
     // ************************************* Bind declarators

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_movement_manager_holder.h
-//	Created 	: 24.07.2009
-//  Modified 	: 24.07.2009
-//	Author		: Plichko Alexander
-//	Description : movement manager holder
+//  Module      : alife_movement_manager_holder.h
+//  Created     : 24.07.2009
+//  Modified    : 24.07.2009
+//  Author      : Plichko Alexander
+//  Description : movement manager holder
 ////////////////////////////////////////////////////////////////////////////
 #pragma once
 

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_converter_tree_values.hpp
-//	Created 	: 21.12.2007
-//  Modified 	: 21.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property converter tree values class
+//  Module      : property_converter_tree_values.hpp
+//  Created     : 21.12.2007
+//  Modified    : 21.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property converter tree values class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_CONVERTER_TREE_VALUES_HPP_INCLUDED

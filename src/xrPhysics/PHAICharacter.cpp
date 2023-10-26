@@ -87,13 +87,13 @@ bool CPHAICharacter::TryPosition(Fvector pos, bool exact_state)
     GetPosition(pos_new);
 
 #if 0
-	Fvector	dif;dif .sub( pos, pos_new );
-	float	dif_m = dif.magnitude();
-	if(ret&&dif_m>EPS_L)
-	{
-		Msg("dif vec %f,%f,%f \n",dif.x,dif.y,dif.z);
-		Msg("dif mag %f \n",dif_m);
-	}
+    Fvector dif;dif .sub( pos, pos_new );
+    float   dif_m = dif.magnitude();
+    if(ret&&dif_m>EPS_L)
+    {
+        Msg("dif vec %f,%f,%f \n",dif.x,dif.y,dif.z);
+        Msg("dif mag %f \n",dif_m);
+    }
 #endif
 
     SetPosition(pos_new);
@@ -106,7 +106,7 @@ bool CPHAICharacter::TryPosition(Fvector pos, bool exact_state)
     return ret;
 }
 /*
-void CPHAICharacter::		SetPosition	(const Fvector &pos)
+void CPHAICharacter::       SetPosition (const Fvector &pos)
 {
     //m_vDesiredPosition.set(pos);
     inherited::SetPosition(pos);
@@ -164,9 +164,9 @@ void CPHAICharacter::Jump(const Fvector& jump_velocity)
 void CPHAICharacter::ValidateWalkOn()
 {
     // if(b_on_object)
-    //	ValidateWalkOnObject();
+    //  ValidateWalkOnObject();
     // else
-    //	 b_clamb_jump=true;
+    //   b_clamb_jump=true;
     inherited::ValidateWalkOn();
 }
 void CPHAICharacter::InitContact(dContact* c, bool& do_collide, u16 material_idx_1, u16 material_idx_2)
@@ -204,22 +204,22 @@ void CPHAICharacter::OnRender()
 {
     inherited::OnRender();
 #if 0
-	if(!b_exist) return;
+    if(!b_exist) return;
 
-	Fvector pos;
-	GetDesiredPosition(pos);
-	pos.y+=m_radius;
-
-
-	Fvector scale;
-	scale.set(0.35f,0.35f,0.35f);
-	Fmatrix M;
-	M.identity();
-	M.scale(scale);
-	M.c.set(pos);
+    Fvector pos;
+    GetDesiredPosition(pos);
+    pos.y+=m_radius;
 
 
-	Level().debug_renderer().draw_ellipse(M, 0xffffffff);
+    Fvector scale;
+    scale.set(0.35f,0.35f,0.35f);
+    Fmatrix M;
+    M.identity();
+    M.scale(scale);
+    M.c.set(pos);
+
+
+    Level().debug_renderer().draw_ellipse(M, 0xffffffff);
 #endif
 }
 #endif

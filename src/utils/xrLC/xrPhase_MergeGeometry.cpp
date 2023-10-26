@@ -97,9 +97,9 @@ IC BOOL ValidateMerge(u32 f1, const Fbox& bb_base, const Fbox& bb_base_orig, u32
     bb_base_orig.getsize(orig1);
     Fvector orig2;
     bb.getsize(orig2);
-    //	if (sz.x>(4*c_SS_maxsize/3))			return FALSE;	// Don't exceed limits (4/3 GEOM)
-    //	if (sz.y>(4*c_SS_maxsize/3))			return FALSE;
-    //	if (sz.z>(4*c_SS_maxsize/3))			return FALSE;
+    //  if (sz.x>(4*c_SS_maxsize/3))            return FALSE;   // Don't exceed limits (4/3 GEOM)
+    //  if (sz.y>(4*c_SS_maxsize/3))            return FALSE;
+    //  if (sz.z>(4*c_SS_maxsize/3))            return FALSE;
 
     if (!ValidateMergeLinearSize(sz, orig1, orig2, 0))
         return FALSE; // Don't exceed limits (4/3 GEOM)
@@ -309,7 +309,7 @@ void CBuild::xrPhase_MergeGeometry()
         Fbox bb_base;
         while (NeedMerge(subdiv, bb_base))
         {
-            //	Save original AABB for later tests
+            //  Save original AABB for later tests
             if (!bb_base_orig_inited)
             {
                 bb_base_orig_inited = true;

@@ -18,7 +18,7 @@ int CDbgLuaHelper::PrepareLua(lua_State* l)
 {
     // call this function immediatly before calling lua_pcall.
     // returns index in stack for errorFunc
-    //	return 0;
+    //  return 0;
     lua_register(l, "DEBUGGER_ERRORMESSAGE", errormessageLua);
     lua_sethook(l, hookLua, LUA_MASKLINE | LUA_MASKCALL | LUA_MASKRET, 0);
     int top = lua_gettop(l);
@@ -274,9 +274,9 @@ void CDbgLuaHelper::DrawGlobalVariables()
     var[0] = 0;
     while (lua_next(L, -2))
     {
-        //!!!!	TRACE2("%s - %s\n",	lua_typename(L, lua_type(L, -2)), lua_typename(L, lua_type(L, -1)));
-        //		xr_sprintf(var, "%s-%s",	lua_typename(L, lua_type(L, -2)), lua_typename(L, lua_type(L, -1)) );
-        //		CScriptDebugger::GetDebugger()->AddLocalVariable(var, "global", "_g_");
+        //!!!!  TRACE2("%s - %s\n", lua_typename(L, lua_type(L, -2)), lua_typename(L, lua_type(L, -1)));
+        //      xr_sprintf(var, "%s-%s",    lua_typename(L, lua_type(L, -2)), lua_typename(L, lua_type(L, -1)) );
+        //      CScriptDebugger::GetDebugger()->AddLocalVariable(var, "global", "_g_");
         lua_pop(L, 1); // pop value, keep key for next iteration;
     }
     lua_pop(L, 1); // pop table of globals;

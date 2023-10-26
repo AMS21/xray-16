@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: object_handler_space.h
-//	Created 	: 08.05.2004
-//  Modified 	: 08.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Object handler space
+//  Module      : object_handler_space.h
+//  Created     : 08.05.2004
+//  Modified    : 08.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Object handler space
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

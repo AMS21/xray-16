@@ -9,9 +9,9 @@ dx11State::dx11State()
 
 dx11State::~dx11State()
 {
-    //	m_pRasterizerState is a weak link
-    //	m_pDepthStencilState is a weak link
-    //	m_pBlendState is a weak link
+    //  m_pRasterizerState is a weak link
+    //  m_pDepthStencilState is a weak link
+    //  m_pBlendState is a weak link
 }
 
 dx11State* dx11State::Create(SimulatorStates& state_code)
@@ -26,7 +26,7 @@ dx11State* dx11State::Create(SimulatorStates& state_code)
     pState->m_pDepthStencilState = DSSManager.GetState(state_code);
     pState->m_pBlendState        = BSManager.GetState(state_code);
 
-    //	Create samplers here
+    //  Create samplers here
     {
         InitSamplers(pState->m_VSSamplers, state_code, CTexture::rstVertex);
         InitSamplers(pState->m_PSSamplers, state_code, CTexture::rstPixel);
@@ -60,15 +60,15 @@ HRESULT dx11State::Apply(CBackend& cmd_list)
     SSManager.DSApplySamplers(context_id, m_DSSamplers);
     SSManager.CSApplySamplers(context_id, m_CSSamplers);
 
-    //	static const float BlendFactor[4] = {0.000f, 0.000f, 0.000f, 0.000f};
-    //	static const UINT SampleMask = 0xffffffff;
+    //  static const float BlendFactor[4] = {0.000f, 0.000f, 0.000f, 0.000f};
+    //  static const UINT SampleMask = 0xffffffff;
 
-    //	VERIFY(m_pRasterizerState);
-    //	HW.pDevice->RSSetState(m_pRasterizerState);
-    //	VERIFY(m_pDepthStencilState);
-    //	HW.pDevice->OMSetDepthStencilState(m_pDepthStencilState, m_uiStencilRef);
-    //	VERIFY(m_pBlendState);
-    //	HW.pDevice->OMSetBlendState(m_pBlendState, BlendFactor, SampleMask);
+    //  VERIFY(m_pRasterizerState);
+    //  HW.pDevice->RSSetState(m_pRasterizerState);
+    //  VERIFY(m_pDepthStencilState);
+    //  HW.pDevice->OMSetDepthStencilState(m_pDepthStencilState, m_uiStencilRef);
+    //  VERIFY(m_pBlendState);
+    //  HW.pDevice->OMSetBlendState(m_pBlendState, BlendFactor, SampleMask);
 
     return S_OK;
 }

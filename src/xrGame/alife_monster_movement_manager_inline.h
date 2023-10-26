@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_monster_movement_manager_inline.h
-//	Created 	: 31.10.2005
-//  Modified 	: 22.11.2005
-//	Author		: Dmitriy Iassenev
-//	Description : ALife monster movement manager class inline functions
+//  Module      : alife_monster_movement_manager_inline.h
+//  Created     : 31.10.2005
+//  Modified    : 22.11.2005
+//  Author      : Dmitriy Iassenev
+//  Description : ALife monster movement manager class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_flags_script.cpp
-//	Created 	: 19.07.2004
-//  Modified 	: 19.07.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script flags script export
+//  Module      : script_flags_script.cpp
+//  Created     : 19.07.2004
+//  Modified    : 19.07.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script flags script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

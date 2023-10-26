@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: steering_behaviour_separation.h
-//	Created 	: 07.11.2007
-//  Modified 	: 07.11.2007
-//	Author		: Dmitriy Iassenev
-//	Description : steering behaviour separation class
+//  Module      : steering_behaviour_separation.h
+//  Created     : 07.11.2007
+//  Modified    : 07.11.2007
+//  Author      : Dmitriy Iassenev
+//  Description : steering behaviour separation class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef STEERING_BEHAVIOUR_SEPARATION_H_INCLUDED

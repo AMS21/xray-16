@@ -185,10 +185,10 @@ void game_cl_CaptureTheArtefact::shedule_Update(u32 dt)
         /*if (Level().CurrentControlEntity()){
                 CGameObject* GO = smart_cast<CGameObject*>(Level().CurrentControlEntity());
                 Msg("---I'm ready (ID = %d) sending player ready packet !!!", GO->ID());
-                NET_Packet			P;
-                GO->u_EventGen		(P,GE_GAME_EVENT,GO->ID()	);
+                NET_Packet          P;
+                GO->u_EventGen      (P,GE_GAME_EVENT,GO->ID()   );
                 P.w_u16(GAME_EVENT_PLAYER_READY);
-                GO->u_EventSend			(P);
+                GO->u_EventSend         (P);
         }*/
     }
     break;
@@ -258,10 +258,10 @@ void game_cl_CaptureTheArtefact::TranslateGameMessage(u32 msg, NET_Packet& P)
     CStringTable& st = StringTable();
     string1024 Text;
     // string512 tmp;
-    //	LPSTR	Color_Teams[3]		= {"%c[255,255,255,255]", "%c[255,64,255,64]", "%c[255,64,64,255]"};
+    //  LPSTR   Color_Teams[3]      = {"%c[255,255,255,255]", "%c[255,64,255,64]", "%c[255,64,64,255]"};
     char Color_Main[] = "%c[255,192,192,192]";
     char Color_Artefact[] = "%c[255,255,255,0]";
-    //	LPSTR	TeamsNames[3]		= {"Zero Team", "Team Green", "Team Blue"};
+    //  LPSTR   TeamsNames[3]       = {"Zero Team", "Team Green", "Team Blue"};
 
     switch (msg)
     {
@@ -666,9 +666,9 @@ CUIGameCustom* game_cl_CaptureTheArtefact::createGameUI()
     m_game_ui = smart_cast<CUIGameCTA*>(NEW_INSTANCE(CLSID_GAME_UI_CAPTURETHEARTEFACT));
     VERIFY2(m_game_ui, "failed to create Capture The Artefact game UI");
     m_game_ui->Load();
-    // m_game_ui->Init		(0);
-    // m_game_ui->Init		(1);
-    // m_game_ui->Init		(2);
+    // m_game_ui->Init      (0);
+    // m_game_ui->Init      (1);
+    // m_game_ui->Init      (2);
     LoadMessagesMenu(::detail::mp::capture_the_artefact::MESSAGE_MENUS);
     return m_game_ui;
 }
@@ -705,8 +705,8 @@ void game_cl_CaptureTheArtefact::SpawnMe()
     if (!currActor)
         return;
 
-    /*CGameObject*	go = smart_cast<CGameObject*>(curr);
-    VERIFY			(go);*/
+    /*CGameObject*  go = smart_cast<CGameObject*>(curr);
+    VERIFY          (go);*/
 
     NET_Packet packet;
     currActor->u_EventGen(packet, GE_GAME_EVENT, currActor->ID());
@@ -1442,7 +1442,7 @@ void game_cl_CaptureTheArtefact::OnTeamSelect(int Team)
         P.w_u16(GAME_EVENT_PLAYER_GAME_MENU);
         P.w_u8(PLAYER_CHANGE_TEAM);
         P.w_s16(static_cast<s16>(Team));
-        // P.w_u32			(0);
+        // P.w_u32          (0);
         u_EventSend(P);
         //-----------------------------------------------------------------
         m_bSkinSelected = FALSE;

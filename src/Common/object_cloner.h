@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: object_cloner.h
-//	Created 	: 13.07.2004
-//  Modified 	: 13.07.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Object cloner
+//  Module      : object_cloner.h
+//  Created     : 13.07.2004
+//  Modified    : 13.07.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Object cloner
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

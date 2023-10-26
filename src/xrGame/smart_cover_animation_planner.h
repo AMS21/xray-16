@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_animation_planner.h
-//	Created 	: 04.09.2007
-//	Author		: Alexander Dudin
-//	Description : Smart cover animation planner class
+//  Module      : smart_cover_animation_planner.h
+//  Created     : 04.09.2007
+//  Author      : Alexander Dudin
+//  Description : Smart cover animation planner class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef SMART_COVER_ANIMATION_PLANNER_H_INCLUDED

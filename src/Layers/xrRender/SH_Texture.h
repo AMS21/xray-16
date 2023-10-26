@@ -20,35 +20,35 @@ public:
         + mtMaxVertexShaderTextures
     };
 #elif defined(USE_DX11) || defined(USE_OGL)
-    enum	MaxTextures
+    enum    MaxTextures
     {
-        //	Actually these values are 128
+        //  Actually these values are 128
         mtMaxPixelShaderTextures = 16,
         mtMaxVertexShaderTextures = 4,
         mtMaxGeometryShaderTextures = 16,
-#	ifdef USE_DX11
+#   ifdef USE_DX11
         mtMaxHullShaderTextures = 16,
         mtMaxDomainShaderTextures = 16,
         mtMaxComputeShaderTextures = 16,
-#	endif
+#   endif
         mtMaxCombinedShaderTextures =
         mtMaxPixelShaderTextures
         + mtMaxVertexShaderTextures
         + mtMaxGeometryShaderTextures
-#	ifdef USE_DX11
+#   ifdef USE_DX11
         + mtMaxHullShaderTextures
         + mtMaxDomainShaderTextures
         + mtMaxComputeShaderTextures
-#	endif
+#   endif
     };
 #else
 #   error No graphics API selected or enabled!
 #endif
 
 #if defined(USE_DX9) || defined(USE_DX11)
-    //	Since DX11 allows up to 128 unique textures,
-    //	distance between enum values should be at leas 128
-    enum ResourceShaderType //	Don't change this since it's hardware-dependent
+    //  Since DX11 allows up to 128 unique textures,
+    //  distance between enum values should be at leas 128
+    enum ResourceShaderType //  Don't change this since it's hardware-dependent
     {
         rstPixel = 0,
         // Default texture offset
@@ -60,11 +60,11 @@ public:
         rstInvalid = rstCompute + 256
     };
 #elif defined(USE_OGL)
-    //	Since OGL doesn't differentiate between stages,
-    //	distance between enum values should be the max for that stage.
+    //  Since OGL doesn't differentiate between stages,
+    //  distance between enum values should be the max for that stage.
     enum ResourceShaderType
     {
-        rstPixel = 0,	//	Default texture offset
+        rstPixel = 0,   //  Default texture offset
         rstVertex = rstPixel + mtMaxPixelShaderTextures,
         rstGeometry = rstVertex + mtMaxVertexShaderTextures,
     };
@@ -145,8 +145,8 @@ private:
     D3D_USAGE GetUsage();
 #endif
 
-    //	Class data
-public: //	Public class members (must be encapsulated further)
+    //  Class data
+public: //  Public class members (must be encapsulated further)
     struct
     {
         u32 bLoaded : 1;

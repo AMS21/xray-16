@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: hit_memory_manager_inline.h
-//	Created 	: 25.12.2003
-//  Modified 	: 25.12.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Hit memory manager inline functions
+//  Module      : hit_memory_manager_inline.h
+//  Created     : 25.12.2003
+//  Modified    : 25.12.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Hit memory manager inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

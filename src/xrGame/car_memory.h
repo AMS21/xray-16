@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: car_memory.h
-//	Created 	: 11.06.2007
-//  Modified 	: 11.06.2007
-//	Author		: Dmitriy Iassenev
-//	Description : car memory
+//  Module      : car_memory.h
+//  Created     : 11.06.2007
+//  Modified    : 11.06.2007
+//  Author      : Dmitriy Iassenev
+//  Description : car memory
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef CAR_MEMORY_H

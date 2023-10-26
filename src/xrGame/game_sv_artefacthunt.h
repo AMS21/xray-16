@@ -31,8 +31,8 @@ protected:
     bool m_bArtefactWasDropped;
 
     xr_vector<RPoint> Artefact_rpoints;
-    //.	xr_vector<u8>					ArtefactsRPoints_ID;
-    //.	u8								m_LastRespawnPointID;
+    //. xr_vector<u8>                   ArtefactsRPoints_ID;
+    //. u8                              m_LastRespawnPointID;
     CRandom ArtefactChooserRandom;
 
     u16 artefactBearerID; // ah,ZoneMap
@@ -63,7 +63,7 @@ protected:
     virtual void ConsoleCommands_Clear();
 
     virtual bool Player_Check_Rank(game_PlayerState* ps);
-    // virtual		void			DestroyAllPlayerItems(ClientID id_who);
+    // virtual      void            DestroyAllPlayerItems(ClientID id_who);
 
     bool assign_rp_tmp(game_PlayerState* ps_who, xr_vector<RPoint>& points_vec, xr_vector<u32>& dest,
         xr_vector<u32>& rpIDEnemy, xr_vector<ClientID>& EnemyIt, bool use_safe_dist);

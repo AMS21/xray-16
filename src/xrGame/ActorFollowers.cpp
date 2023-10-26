@@ -13,10 +13,10 @@ CActorFollowerMngr::CActorFollowerMngr()
     CUIXml uiXml;
     uiXml.Init(CONFIG_PATH, UI_PATH, "follower_panel.xml");
 
-    m_uiPanel = xr_new<CUIFollowerPanel>	();
-    m_uiPanel->Init							(&uiXml,"followers_panel",0);
+    m_uiPanel = xr_new<CUIFollowerPanel>    ();
+    m_uiPanel->Init                         (&uiXml,"followers_panel",0);
     HUD().GetUI()->UIGame()->AddDialogToRender(m_uiPanel);
-    m_uiPanel->Show							(false);
+    m_uiPanel->Show                         (false);
 }
 
 CActorFollowerMngr::~CActorFollowerMngr()
@@ -53,12 +53,12 @@ void CActorFollowerMngr::RemoveFollower(u16 id)
 
 void CActorFollowerMngr::SendCommand(int cmd)
 {
-    FOLLOWER_IT it		= m_followers.begin();
-    FOLLOWER_IT it_e	= m_followers.end();
+    FOLLOWER_IT it      = m_followers.begin();
+    FOLLOWER_IT it_e    = m_followers.end();
     CInventoryOwner* IO = NULL;
     for(;it!=it_e;++it){
         IO = smart_cast<CInventoryOwner*>(Level().Objects.net_Find(*it));
-        IO->OnFollowerCmd				(cmd);
+        IO->OnFollowerCmd               (cmd);
     }
 
 }
@@ -73,12 +73,12 @@ CActorFollowerMngr& CActor::Followers()
 
 void CActor::AddFollower(u16 id)
 {
-    Followers().AddFollower			(id);
+    Followers().AddFollower         (id);
 }
 
 void CActor::RemoveFollower(u16 id)
 {
-    Followers().RemoveFollower			(id);
+    Followers().RemoveFollower          (id);
 }
 
 void CActor::DestroyFollowerInternal()

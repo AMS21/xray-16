@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ef_storage_штдшту.h
-//	Created 	: 25.03.2002
-//  Modified 	: 11.10.2002
-//	Author		: Dmitriy Iassenev
-//	Description : Evaluation functions storage class inline functions
+//  Module      : ef_storage_штдшту.h
+//  Created     : 25.03.2002
+//  Modified    : 11.10.2002
+//  Author      : Dmitriy Iassenev
+//  Description : Evaluation functions storage class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

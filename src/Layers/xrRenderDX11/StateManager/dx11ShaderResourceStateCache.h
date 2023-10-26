@@ -52,4 +52,4 @@ private:
     bool m_bUpdateCSViews;
 };
 
-#endif //	dx11ShaderResourceStateCache_included
+#endif //   dx11ShaderResourceStateCache_included

@@ -1,4 +1,4 @@
-// Actor_Weapon.cpp:	 для работы с оружием
+// Actor_Weapon.cpp:     для работы с оружием
 //////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -300,8 +300,8 @@ void CActor::SpawnAmmoForWeapon(CInventoryItem* pIItem)
     if (!pWM || !pWM->AutoSpawnAmmo())
         return;
 
-    ///	CWeaponAmmo* pAmmo = smart_cast<CWeaponAmmo*>(inventory().GetAny( (pWM->m_ammoTypes[0].c_str()) ));
-    //	if (!pAmmo)
+    /// CWeaponAmmo* pAmmo = smart_cast<CWeaponAmmo*>(inventory().GetAny( (pWM->m_ammoTypes[0].c_str()) ));
+    //  if (!pAmmo)
     pWM->SpawnAmmo(0xffffffff, NULL, ID());
 };
 
@@ -339,7 +339,7 @@ void CActor::RemoveAmmoForWeapon(CInventoryItem* pIItem)
     if (!CanRemove) return;
     */
     pAmmo->DestroyObject();
-    //	NET_Packet			P;
-    //	u_EventGen			(P,GE_DESTROY,pAmmo->ID());
-    //	u_EventSend			(P);
+    //  NET_Packet          P;
+    //  u_EventGen          (P,GE_DESTROY,pAmmo->ID());
+    //  u_EventSend         (P);
 };

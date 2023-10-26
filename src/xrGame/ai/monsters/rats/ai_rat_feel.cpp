@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_rat_feel.cpp
-//	Created 	: 23.07.2002
-//  Modified 	: 07.11.2002
-//	Author		: Dmitriy Iassenev
-//	Description : Visibility and look for monster "Rat"
+//  Module      : ai_rat_feel.cpp
+//  Created     : 23.07.2002
+//  Modified    : 07.11.2002
+//  Author      : Dmitriy Iassenev
+//  Description : Visibility and look for monster "Rat"
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

@@ -48,7 +48,7 @@
 
 using namespace InventoryUtilities;
 
-// BOOL		g_old_style_ui_hud			= FALSE;
+// BOOL     g_old_style_ui_hud          = FALSE;
 
 static constexpr pcstr MAININGAME_XML = "maingame.xml";
 
@@ -78,21 +78,21 @@ void CUIMainIngameWnd::Init()
 
     Enable(false);
 
-    //	AttachChild					(&UIStaticHealth);	xml_init.InitStatic			(uiXml, "static_health", 0,
+    //  AttachChild                 (&UIStaticHealth);  xml_init.InitStatic         (uiXml, "static_health", 0,
     //&UIStaticHealth);
-    //	AttachChild					(&UIStaticArmor);	xml_init.InitStatic			(uiXml, "static_armor", 0,
+    //  AttachChild                 (&UIStaticArmor);   xml_init.InitStatic         (uiXml, "static_armor", 0,
     //&UIStaticArmor);
-    //	AttachChild					(&UIWeaponBack);
-    //	xml_init.InitStatic			(uiXml, "static_weapon", 0, &UIWeaponBack);
+    //  AttachChild                 (&UIWeaponBack);
+    //  xml_init.InitStatic         (uiXml, "static_weapon", 0, &UIWeaponBack);
 
-    /*	UIWeaponBack.AttachChild	(&UIWeaponSignAmmo);
-	xml_init.InitStatic			(uiXml, "static_ammo", 0, &UIWeaponSignAmmo);
-	UIWeaponSignAmmo.SetEllipsis	(CUIStatic::eepEnd, 2);
+    /*  UIWeaponBack.AttachChild    (&UIWeaponSignAmmo);
+    xml_init.InitStatic         (uiXml, "static_ammo", 0, &UIWeaponSignAmmo);
+    UIWeaponSignAmmo.SetEllipsis    (CUIStatic::eepEnd, 2);
 
-	UIWeaponBack.AttachChild	(&UIWeaponIcon);
-	xml_init.InitStatic			(uiXml, "static_wpn_icon", 0, &UIWeaponIcon);
-	UIWeaponIcon.SetShader		(GetEquipmentIconsShader());
-	UIWeaponIcon_rect			= UIWeaponIcon.GetWndRect();
+    UIWeaponBack.AttachChild    (&UIWeaponIcon);
+    xml_init.InitStatic         (uiXml, "static_wpn_icon", 0, &UIWeaponIcon);
+    UIWeaponIcon.SetShader      (GetEquipmentIconsShader());
+    UIWeaponIcon_rect           = UIWeaponIcon.GetWndRect();
 */ //---------------------------------------------------------
     UIPickUpItemIcon = UIHelper::CreateStatic(uiXml, "pick_up_item", this);
     UIPickUpItemIcon->SetShader(GetEquipmentIconsShader());
@@ -143,23 +143,23 @@ void CUIMainIngameWnd::Init()
         m_ind_boost_rad->Show(false);
 
     // Загружаем иконки
-    /*	if ( IsGameTypeSingle() )
+    /*  if ( IsGameTypeSingle() )
         {
-            xml_init.InitStatic		(uiXml, "starvation_static", 0, &UIStarvationIcon);
-            UIStarvationIcon.Show	(false);
+            xml_init.InitStatic     (uiXml, "starvation_static", 0, &UIStarvationIcon);
+            UIStarvationIcon.Show   (false);
 
-    //		xml_init.InitStatic		(uiXml, "psy_health_static", 0, &UIPsyHealthIcon);
-    //		UIPsyHealthIcon.Show	(false);
+    //      xml_init.InitStatic     (uiXml, "psy_health_static", 0, &UIPsyHealthIcon);
+    //      UIPsyHealthIcon.Show    (false);
         }
     */
     UIWeaponJammedIcon = UIHelper::CreateStatic(uiXml, "weapon_jammed_static", NULL);
     UIWeaponJammedIcon->Show(false);
 
-    //	xml_init.InitStatic			(uiXml, "radiation_static", 0, &UIRadiaitionIcon);
-    //	UIRadiaitionIcon.Show		(false);
+    //  xml_init.InitStatic         (uiXml, "radiation_static", 0, &UIRadiaitionIcon);
+    //  UIRadiaitionIcon.Show       (false);
 
-    //	xml_init.InitStatic			(uiXml, "wound_static", 0, &UIWoundIcon);
-    //	UIWoundIcon.Show			(false);
+    //  xml_init.InitStatic         (uiXml, "wound_static", 0, &UIWoundIcon);
+    //  UIWoundIcon.Show            (false);
 
     UIInvincibleIcon = UIHelper::CreateStatic(uiXml, "invincible_static", NULL);
     UIInvincibleIcon->Show(false);
@@ -327,7 +327,7 @@ void CUIMainIngameWnd::Update()
 
     UIZoneMap->Update();
 
-    //	UIHealthBar.SetProgressPos	(m_pActor->GetfHealth()*100.0f);
+    //  UIHealthBar.SetProgressPos  (m_pActor->GetfHealth()*100.0f);
     UIMotionIcon->SetPower(pActor->conditions().GetPower() * 100.0f);
 
     UpdatePickUpItem();
@@ -464,18 +464,18 @@ void CUIMainIngameWnd::SetWarningIconColor(EWarningIcons icon, const u32 cl)
             break;
         [[fallthrough]];
 
-    /*	case ewiRadiation:
-            SetWarningIconColorUI	(&UIRadiaitionIcon, cl);
+    /*  case ewiRadiation:
+            SetWarningIconColorUI   (&UIRadiaitionIcon, cl);
             if (bMagicFlag) break;
         case ewiWound:
-            SetWarningIconColorUI	(&UIWoundIcon, cl);
+            SetWarningIconColorUI   (&UIWoundIcon, cl);
             if (bMagicFlag) break;
 
         case ewiStarvation:
-            SetWarningIconColorUI	(&UIStarvationIcon, cl);
+            SetWarningIconColorUI   (&UIStarvationIcon, cl);
             if (bMagicFlag) break;
         case ewiPsyHealth:
-            SetWarningIconColorUI	(&UIPsyHealthIcon, cl);
+            SetWarningIconColorUI   (&UIPsyHealthIcon, cl);
             if (bMagicFlag) break;
     */
     case ewiInvincible:
@@ -799,7 +799,7 @@ void CUIMainIngameWnd::UpdateMainIndicators()
             if (cur_weight > max_weight)
                 m_ind_overweight->InitTexture("ui_inGame2_circle_Overweight_red");
             // else if(cur_weight>max_weight-10.0f)
-            //	m_ind_overweight->InitTexture("ui_inGame2_circle_Overweight_yellow");
+            //  m_ind_overweight->InitTexture("ui_inGame2_circle_Overweight_yellow");
             else
                 m_ind_overweight->InitTexture("ui_inGame2_circle_Overweight_yellow");
         }

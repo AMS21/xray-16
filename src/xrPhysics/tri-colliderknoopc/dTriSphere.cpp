@@ -136,7 +136,7 @@ int dcTriListCollider::dSortedTriSphere(const dReal* /**v1**/, const dReal* /**v
     const dReal* SphereCenter = dGeomGetPosition(Sphere);
     const float SphereRadius = dGeomSphereGetRadius(Sphere);
 
-    //	dNormalize3(triAx);
+    //  dNormalize3(triAx);
     const dReal* ContactNormal = triAx; //{triAx[0],triAx[1],triAx[2]};
     dVector3 ContactPos = {SphereCenter[0] - triAx[0] * SphereRadius, SphereCenter[1] - triAx[1] * SphereRadius,
         SphereCenter[2] - triAx[2] * SphereRadius};
@@ -244,6 +244,6 @@ int dcTriListCollider::dTriSphere(const dReal* v0, const dReal* v1, const dReal*
         dGeomGetUserData(Sphere)->callback(T->T, Contacts);
     SURFACE(Contacts, 0)->mode = T->T->material;
     //////////////////////////////////
-    //	++OutTriCount;
+    //  ++OutTriCount;
     return 1;
 }

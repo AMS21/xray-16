@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cover_loophole.h
-//	Created 	: 16.08.2007
-//	Author		: Alexander Dudin
-//	Description : Loophole class for smart cover
+//  Module      : smart_cover_loophole.h
+//  Created     : 16.08.2007
+//  Author      : Alexander Dudin
+//  Description : Loophole class for smart cover
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

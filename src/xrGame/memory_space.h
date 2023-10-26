@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: memory_space.h
-//	Created 	: 25.12.2003
-//  Modified 	: 25.12.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Memory space
+//  Module      : memory_space.h
+//  Created     : 25.12.2003
+//  Modified    : 25.12.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Memory space
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -28,7 +28,7 @@
 #define USE_FIRST_GAME_TIME
 #endif
 #ifdef USE_LEVEL_TIME
-//#	define USE_FIRST_LEVEL_TIME
+//# define USE_FIRST_LEVEL_TIME
 #endif
 
 //#define USE_UPDATE_COUNT

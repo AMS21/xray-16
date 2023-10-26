@@ -7,15 +7,15 @@
 /*
 class net_task
 {
-    INetReader		*in_stream  ;
-    IWriter			*out_stream ;
+    INetReader      *in_stream  ;
+    IWriter         *out_stream ;
 public:
     net_task(  INetReader* inStream,  IWriter* outStream ): in_stream( inStream ), out_stream( outStream )
     {
         VERIFY(in_stream);
         VERIFY(out_stream);
     };
-    virtual void run()	= 0;
+    virtual void run()  = 0;
 };
 
 */

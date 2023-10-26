@@ -109,7 +109,7 @@ void game_sv_mp_script::SpawnPlayer(ClientID id, LPCSTR N, LPCSTR SkinName, RPoi
     else if (pS)
     {
         Fvector Pos, Angle;
-        ///			ps_who->setFlag(GAME_PLAYER_FLAG_CS_SPECTATOR);
+        ///         ps_who->setFlag(GAME_PLAYER_FLAG_CS_SPECTATOR);
         if (!GetPosAngleFromActor(id, Pos, Angle))
             assign_RP(E, ps_who);
         else
@@ -159,7 +159,7 @@ struct CGameSvMpScriptWrapperBase : public T, public luabind::wrap_base
     DEFINE_LUA_WRAPPER_METHOD_R2P1_V2(net_Export_State, NET_Packet, ClientID)
 
     DEFINE_LUA_WRAPPER_METHOD_V0(OnRoundStart)
-    //	DEFINE_LUA_WRAPPER_METHOD_V1(OnDelayedRoundEnd, ERoundEnd_Result)
+    //  DEFINE_LUA_WRAPPER_METHOD_V1(OnDelayedRoundEnd, ERoundEnd_Result)
     DEFINE_LUA_WRAPPER_METHOD_V0(OnRoundEnd)
 
     game_PlayerState* createPlayerState() override

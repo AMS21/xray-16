@@ -8,7 +8,7 @@ typedef Tface<data_vertex> _face;
 typedef Tvertex<data_vertex> _vertex;
 typedef Tface<data_vertex> _face;
 
-// XRLC_LIGHT_API	poolSS<_vertex,8*1024>	&mu_vertices_pool();
-// XRLC_LIGHT_API	poolSS<_face,8*1024>	&mu_faces_pool();
+// XRLC_LIGHT_API   poolSS<_vertex,8*1024>  &mu_vertices_pool();
+// XRLC_LIGHT_API   poolSS<_face,8*1024>    &mu_faces_pool();
 
 #endif

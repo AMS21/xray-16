@@ -81,7 +81,7 @@ SCRIPT_EXPORT(cphysics_shell_scripted, (),
 });
 
 /*
-Fmatrix	global_transform(CPhysicsElement* E)
+Fmatrix global_transform(CPhysicsElement* E)
 {
     Fmatrix m;
     E->GetGlobalTransformDynamic(&m);
@@ -95,18 +95,18 @@ SCRIPT_EXPORT(CPhysicsElement, (),
     module(luaState)
     [
         class_<CPhysicsElement>("physics_element")
-        .def("apply_force",					(void
+        .def("apply_force",                 (void
 (CPhysicsElement::*)(float,float,float))(&CPhysicsElement::applyForce))
-        .def("is_breakable",				&CPhysicsElement::isBreakable)
-        .def("get_linear_vel",				&CPhysicsElement::get_LinearVel)
-        .def("get_angular_vel",				&CPhysicsElement::get_AngularVel)
-        .def("get_mass",					&CPhysicsElement::getMass)
-        .def("get_density",					&CPhysicsElement::getDensity)
-        .def("get_volume",					&CPhysicsElement::getVolume)
-        .def("fix",							&CPhysicsElement::Fix)
-        .def("release_fixed",				&CPhysicsElement::ReleaseFixed)
-        .def("is_fixed",					&CPhysicsElement::isFixed)
-        .def("global_transform",			&global_transform)
+        .def("is_breakable",                &CPhysicsElement::isBreakable)
+        .def("get_linear_vel",              &CPhysicsElement::get_LinearVel)
+        .def("get_angular_vel",             &CPhysicsElement::get_AngularVel)
+        .def("get_mass",                    &CPhysicsElement::getMass)
+        .def("get_density",                 &CPhysicsElement::getDensity)
+        .def("get_volume",                  &CPhysicsElement::getVolume)
+        .def("fix",                         &CPhysicsElement::Fix)
+        .def("release_fixed",               &CPhysicsElement::ReleaseFixed)
+        .def("is_fixed",                    &CPhysicsElement::isFixed)
+        .def("global_transform",            &global_transform)
     ];
 });
 
@@ -117,33 +117,33 @@ SCRIPT_EXPORT(CPhysicsJoint, (),
     module(luaState)
     [
         class_<CPhysicsJoint>("physics_joint")
-        .def("get_bone_id",							&CPhysicsJoint::BoneID)
-        .def("get_first_element",					&CPhysicsJoint::PFirst_element)
-        .def("get_stcond_element",					&CPhysicsJoint::PSecond_element)
-        .def("set_anchor_global",					(void(CPhysicsJoint::*)(const float,const float,const
+        .def("get_bone_id",                         &CPhysicsJoint::BoneID)
+        .def("get_first_element",                   &CPhysicsJoint::PFirst_element)
+        .def("get_stcond_element",                  &CPhysicsJoint::PSecond_element)
+        .def("set_anchor_global",                   (void(CPhysicsJoint::*)(const float,const float,const
 float))(&CPhysicsJoint::SetAnchor))
-        .def("set_anchor_vs_first_element",			(void(CPhysicsJoint::*)(const float,const float,const
+        .def("set_anchor_vs_first_element",         (void(CPhysicsJoint::*)(const float,const float,const
 float))(&CPhysicsJoint::SetAnchorVsFirstElement))
-        .def("set_anchor_vs_second_element",		(void(CPhysicsJoint::*)(const float,const float,const
+        .def("set_anchor_vs_second_element",        (void(CPhysicsJoint::*)(const float,const float,const
 float))(&CPhysicsJoint::SetAnchorVsSecondElement))
-        .def("get_axes_number",						&CPhysicsJoint::GetAxesNumber)
-        .def("set_axis_spring_dumping_factors",		&CPhysicsJoint::SetAxisSDfactors)
-        .def("set_joint_spring_dumping_factors",	&CPhysicsJoint::SetJointSDfactors)
-        .def("set_axis_dir_global",					(void(CPhysicsJoint::*)(const float,const float,const float,const
+        .def("get_axes_number",                     &CPhysicsJoint::GetAxesNumber)
+        .def("set_axis_spring_dumping_factors",     &CPhysicsJoint::SetAxisSDfactors)
+        .def("set_joint_spring_dumping_factors",    &CPhysicsJoint::SetJointSDfactors)
+        .def("set_axis_dir_global",                 (void(CPhysicsJoint::*)(const float,const float,const float,const
 int ))(&CPhysicsJoint::SetAxisDir))
-        .def("set_axis_dir_vs_first_element",		(void(CPhysicsJoint::*)(const float,const float,const float,const
+        .def("set_axis_dir_vs_first_element",       (void(CPhysicsJoint::*)(const float,const float,const float,const
 int ))(&CPhysicsJoint::SetAxisDirVsFirstElement))
-        .def("set_axis_dir_vs_second_element",		(void(CPhysicsJoint::*)(const float,const float,const float,const
+        .def("set_axis_dir_vs_second_element",      (void(CPhysicsJoint::*)(const float,const float,const float,const
 int ))(&CPhysicsJoint::SetAxisDirVsSecondElement))
-        .def("set_limits",							&CPhysicsJoint::SetLimits)
-        .def("set_max_force_and_velocity",			&CPhysicsJoint::SetForceAndVelocity)
-        .def("get_max_force_and_velocity",			&CPhysicsJoint::GetMaxForceAndVelocity)
-        .def("get_axis_angle",						&CPhysicsJoint::GetAxisAngle)
-        .def("get_limits",							&CPhysicsJoint::GetLimits, policy_list<out_value<2>,
+        .def("set_limits",                          &CPhysicsJoint::SetLimits)
+        .def("set_max_force_and_velocity",          &CPhysicsJoint::SetForceAndVelocity)
+        .def("get_max_force_and_velocity",          &CPhysicsJoint::GetMaxForceAndVelocity)
+        .def("get_axis_angle",                      &CPhysicsJoint::GetAxisAngle)
+        .def("get_limits",                          &CPhysicsJoint::GetLimits, policy_list<out_value<2>,
 out_value<3>>())
-        .def("get_axis_dir",						&CPhysicsJoint::GetAxisDirDynamic)
-        .def("get_anchor",							&CPhysicsJoint::GetAnchorDynamic)
-        .def("is_breakable",						&CPhysicsJoint::isBreakable)
+        .def("get_axis_dir",                        &CPhysicsJoint::GetAxisDirDynamic)
+        .def("get_anchor",                          &CPhysicsJoint::GetAnchorDynamic)
+        .def("is_breakable",                        &CPhysicsJoint::isBreakable)
     ];
 });
 

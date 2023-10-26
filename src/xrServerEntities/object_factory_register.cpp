@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: object_factory_register.cpp
-//	Created 	: 27.05.2004
-//  Modified 	: 27.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Object factory
+//  Module      : object_factory_register.cpp
+//  Created     : 27.05.2004
+//  Modified    : 27.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Object factory
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -224,7 +224,7 @@ void CObjectFactory::register_classes()
 
     // server entities
     add<CSE_ALifeGroupTemplate<CSE_ALifeMonsterBase>>(CLSID_AI_FLESH_GROUP, "flesh_group");
-    //	add<CSE_SpawnGroup>											(CLSID_AI_SPAWN_GROUP			,"spawn_group");
+    //  add<CSE_SpawnGroup>                                         (CLSID_AI_SPAWN_GROUP           ,"spawn_group");
     add<CSE_ALifeGraphPoint>(CLSID_AI_GRAPH, "graph_point");
     add<CSE_ALifeOnlineOfflineGroup>(CLSID_ONLINE_OFFLINE_GROUP, "online_offline_group");
     // client and server entities
@@ -389,7 +389,7 @@ void CObjectFactory::register_classes()
     // objects
     ADD(CProjector, CSE_ALifeObjectProjector, CLSID_OBJECT_PROJECTOR, "projector");
     ADD(CWeaponStatMgun, CSE_ALifeStationaryMgun, CLSID_OBJECT_W_STATMGUN, "wpn_stat_mgun");
-    //	ADD(CTrigger				,CSE_Trigger					,CLSID_OBJECT_TRIGGER			,"trigger");
+    //  ADD(CTrigger                ,CSE_Trigger                    ,CLSID_OBJECT_TRIGGER           ,"trigger");
 
     // entity
     ADD(CHangingLamp, CSE_ALifeObjectHangingLamp, CLSID_OBJECT_HLAMP, "hanging_lamp");
@@ -412,7 +412,7 @@ void CObjectFactory::register_classes()
         return;
 
     ADD(CElectricBall, CSE_ALifeItemArtefact, TEXT2CLSID("SCRPTART"), "artefact_s");
-    //	ADD(CtaGameArtefact			,CSE_ALifeItemArtefact			,TEXT2CLSID("AF_CTA")			,"ctaartefact_s");
+    //  ADD(CtaGameArtefact         ,CSE_ALifeItemArtefact          ,TEXT2CLSID("AF_CTA")           ,"ctaartefact_s");
     ADD(CTorch, CSE_ALifeItemTorch, TEXT2CLSID("TORCH_S"), "device_torch_s");
     ADD(CHangingLamp, CSE_ALifeObjectHangingLamp, TEXT2CLSID("SO_HLAMP"), "hlamp_s");
     ADD(CStalkerOutfit, CSE_ALifeItemCustomOutfit, TEXT2CLSID("E_STLK"), "equ_stalker_s");
@@ -438,7 +438,7 @@ void CObjectFactory::register_classes()
     ADD(CMosquitoBald, CSE_ALifeAnomalousZone, TEXT2CLSID("ZS_MBALD"), "zone_mbald_s");
     ADD(CMincer, CSE_ALifeAnomalousZone, TEXT2CLSID("ZS_GALAN"), "zone_galant_s");
     ADD(CMincer, CSE_ALifeAnomalousZone, TEXT2CLSID("ZS_MINCE"), "zone_mincer_s");
-    ADD(CAmebaZone, CSE_ALifeZoneVisual	, TEXT2CLSID("ZS_AMEBA"), "zone_ameba_s");
+    ADD(CAmebaZone, CSE_ALifeZoneVisual , TEXT2CLSID("ZS_AMEBA"), "zone_ameba_s");
     ADD(CRadioactiveZone, CSE_ALifeAnomalousZone, TEXT2CLSID("ZS_RADIO"), "zone_radio_s");
     ADD(CNoGravityZone, CSE_ALifeAnomalousZone, TEXT2CLSID("ZS_NGRAV"), "zone_nograv_s");
     ADD(CSpaceRestrictor, CSE_ALifeSpaceRestrictor, TEXT2CLSID("SPC_RS_S"), "script_restr");

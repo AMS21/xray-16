@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: debug_renderer.cpp
-//	Created 	: 19.06.2006
-//  Modified 	: 19.06.2006
-//	Author		: Dmitriy Iassenev
-//	Description : debug renderer
+//  Module      : debug_renderer.cpp
+//  Created     : 19.06.2006
+//  Modified    : 19.06.2006
+//  Author      : Dmitriy Iassenev
+//  Description : debug renderer
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

@@ -93,10 +93,10 @@ int ProcessDifference()
         printf("xrCompress.exe -diff <new_data> <old_data> -out <diff_resulf> [options]\n");
         printf("<new_data>, <old_data> and <diff_resulf> values must be a folder name\n");
         printf("[options] are set of:\n");
-        printf("-nofileage		do not perform file age checking\n");
-        printf("-crc			do not perform crc32 checking\n");
-        printf("-nobinary		do not perform binary content checking\n");
-        printf("-nosize			do not perform file size checking\n");
+        printf("-nofileage      do not perform file age checking\n");
+        printf("-crc            do not perform crc32 checking\n");
+        printf("-nobinary       do not perform binary content checking\n");
+        printf("-nosize         do not perform file size checking\n");
         return 3;
     }
 

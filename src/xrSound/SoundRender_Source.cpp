@@ -51,12 +51,12 @@ bool ov_error(int res)
 void CSoundRender_Source::i_decompress_fr(OggVorbis_File* ovf, char* _dest, u32 left)
 {
     // vars
-    //	char		eof = 0;
+    //  char        eof = 0;
     int current_section;
     long TotalRet = 0, ret;
 
-    //.	char		*PCM;
-    //.	PCM = new char[left];
+    //. char        *PCM;
+    //. PCM = new char[left];
 
     // Read loop
     while (TotalRet < (long)left)
@@ -75,8 +75,8 @@ void CSoundRender_Source::i_decompress_fr(OggVorbis_File* ovf, char* _dest, u32 
             TotalRet += ret;
         }
     }
-    //.	memcpy(_dest, PCM,TotalRet);
-    //.	delete [] PCM;
+    //. memcpy(_dest, PCM,TotalRet);
+    //. delete [] PCM;
 }
 
 /*

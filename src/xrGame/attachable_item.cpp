@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: attachable_item.cpp
-//	Created 	: 11.02.2004
-//  Modified 	: 11.02.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Attachable item
+//  Module      : attachable_item.cpp
+//  Created     : 11.02.2004
+//  Modified    : 11.02.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Attachable item
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

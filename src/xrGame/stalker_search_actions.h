@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_search_actions.h
-//	Created 	: 25.03.2004
-//  Modified 	: 08.10.2007
-//	Author		: Dmitriy Iassenev
-//	Description : stalker search enemy action classes
+//  Module      : stalker_search_actions.h
+//  Created     : 25.03.2004
+//  Modified    : 08.10.2007
+//  Author      : Dmitriy Iassenev
+//  Description : stalker search enemy action classes
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef STALKER_SEARCH_ACTIONS_H_INCLUDED

@@ -8,9 +8,9 @@
 #include "xrEngine/pure.h"
 // refs
 struct SGameMtlPair;
-// class	CPHCommander;
-// class	CPHCondition;
-// class	CPHAction;
+// class    CPHCommander;
+// class    CPHCondition;
+// class    CPHAction;
 struct SPHNetState;
 class CPHSynchronize;
 typedef xr_vector<std::pair<CPHSynchronize*, SPHNetState>> V_PH_WORLD_STATE;
@@ -50,7 +50,7 @@ private:
     bool b_processing;
     bool b_exist;
     static const u32 update_delay = 1;
-    ///	dSpaceID					Space														;
+    /// dSpaceID                    Space                                                       ;
 
     CPHMesh Mesh;
     PH_OBJECT_STORAGE m_objects;
@@ -59,7 +59,7 @@ private:
     PH_UPDATE_OBJECT_STORAGE m_update_objects;
     PH_UPDATE_OBJECT_STORAGE m_freezed_update_objects;
     dGeomID m_motion_ray;
-    // CPHCommander				*m_commander;
+    // CPHCommander             *m_commander;
     IPHWorldUpdateCallbck* m_update_callback;
     CObjectSpace* m_object_space;
     CObjectList* m_level_objects;
@@ -91,7 +91,7 @@ public:
     CPHWorld();
     virtual ~CPHWorld(){};
 
-    // IC	dSpaceID					GetSpace						()			{return Space;}	;
+    // IC   dSpaceID                    GetSpace                        ()          {return Space;} ;
     IC bool Exist() { return b_exist; }
     void Create(bool mt, CObjectSpace* os, CObjectList* lo);
     void SetGravity(float g);
@@ -140,7 +140,7 @@ public:
         return *m_level_objects;
     }
 
-//	void						AddCall							(CPHCondition*c,CPHAction*a);
+//  void                        AddCall                         (CPHCondition*c,CPHAction*a);
 #ifdef DEBUG
     virtual void OnRender();
 #endif

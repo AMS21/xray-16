@@ -30,7 +30,7 @@ void ESceneAIMapTool::PackPosition(NodePosition& Dest, Fvector& Src, Fbox& bb, S
 
 bool ESceneAIMapTool::Export(LPCSTR path)
 {
-    //.?	if (!RealUpdateSnapList()) return false;
+    //.?    if (!RealUpdateSnapList()) return false;
     if (!Valid())
         return false;
 
@@ -88,14 +88,14 @@ bool ESceneAIMapTool::Export(LPCSTR path)
 }
 
 /*
-    u32 			id;
-    u16 			pl;
-    NodePosition 	np;
-    F.r			(&id,3); 			n1 = (SAINode*)tools->UnpackLink(id);
-    F.r			(&id,3); 			n2 = (SAINode*)tools->UnpackLink(id);
-    F.r			(&id,3); 			n3 = (SAINode*)tools->UnpackLink(id);
-    F.r			(&id,3); 			n4 = (SAINode*)tools->UnpackLink(id);
-    pl				= F.r_u16(); 		pvDecompress(Plane.n,pl);
-    F.r			(&np,sizeof(np)); 	tools->UnpackPosition(Pos,np,tools->m_BBox,tools->m_Params);
-    Plane.build	(Pos,Plane.n);
+    u32             id;
+    u16             pl;
+    NodePosition    np;
+    F.r         (&id,3);            n1 = (SAINode*)tools->UnpackLink(id);
+    F.r         (&id,3);            n2 = (SAINode*)tools->UnpackLink(id);
+    F.r         (&id,3);            n3 = (SAINode*)tools->UnpackLink(id);
+    F.r         (&id,3);            n4 = (SAINode*)tools->UnpackLink(id);
+    pl              = F.r_u16();        pvDecompress(Plane.n,pl);
+    F.r         (&np,sizeof(np));   tools->UnpackPosition(Pos,np,tools->m_BBox,tools->m_Params);
+    Plane.build (Pos,Plane.n);
 */

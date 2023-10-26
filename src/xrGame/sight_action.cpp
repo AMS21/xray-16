@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: sight_action.cpp
-//	Created 	: 27.12.2003
-//  Modified 	: 03.04.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Sight action
+//  Module      : sight_action.cpp
+//  Created     : 27.12.2003
+//  Modified    : 03.04.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Sight action
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -105,7 +105,7 @@ void CSightAction::remove_links(IGameObject* object)
     if (m_object_to_look->ID() != object->ID())
         return;
 
-    //	execute				();
+    //  execute             ();
 
     m_object_to_look = 0;
 
@@ -184,7 +184,7 @@ void CSightAction::execute_object()
         object().sight().SetPointLookAngles(
             look_pos, object().movement().m_head.target.yaw, object().movement().m_head.target.pitch, my_position);
 
-    //	Msg
+    //  Msg
     //("execute_object(%f)(%s)my_position[%f][%f][%f],object_position[%f][%f][%f]",object().movement().m_head.target.yaw,*m_object_to_look->cName(),VPUSH(m_object->eye_matrix.c),VPUSH(m_object_to_look->Position()));
 
     if (m_no_pitch)
@@ -371,7 +371,7 @@ void CSightAction::execute_fire_object()
     {
     case 0:
     {
-        //			execute_object				();
+        //          execute_object              ();
         predict_object_position(false);
 
         if (!target_reached())
@@ -386,12 +386,12 @@ void CSightAction::execute_fire_object()
         if (m_object_to_look->Position().distance_to_sqr(m_object->Position()) < _sqr(5.f))
             break;
 
-        //			Msg							("%6d switch to mode 1", Device.dwTimeGlobal);
+        //          Msg                         ("%6d switch to mode 1", Device.dwTimeGlobal);
         m_state_fire_object = 1;
         m_state_fire_switch_time = Device.dwTimeGlobal;
         m_object_start_position = m_object_to_look->Position();
         m_holder_start_position = m_object->Position();
-        //			m_vector3d					= m_object->sight().object_position();
+        //          m_vector3d                  = m_object->sight().object_position();
         break;
     }
     case 1:
@@ -404,7 +404,7 @@ void CSightAction::execute_fire_object()
                 {
                     m_vector3d = m_object->sight().object_position();
                     m_already_switched = false;
-                    //						Msg					("%6d switch to mode 0 (reson: holder position
+                    //                      Msg                 ("%6d switch to mode 0 (reson: holder position
                     //changed)",
                     // Device.dwTimeGlobal);
                     m_state_fire_object = 0;
@@ -414,7 +414,7 @@ void CSightAction::execute_fire_object()
                 if (!m_object_start_position.similar(m_object_to_look->Position(), .05f))
                 {
                     m_vector3d = m_object->sight().object_position();
-                    //						Msg					("%6d switch to mode 0 (reson: object position
+                    //                      Msg                 ("%6d switch to mode 0 (reson: object position
                     //changed)",
                     // Device.dwTimeGlobal);
                     m_already_switched = false;
@@ -426,7 +426,7 @@ void CSightAction::execute_fire_object()
             if (!m_already_switched)
             {
                 m_vector3d = m_object->sight().object_position();
-                //					Msg						("%6d switch to mode 0 (reson: time interval)",
+                //                  Msg                     ("%6d switch to mode 0 (reson: time interval)",
                 // Device.dwTimeGlobal);
                 m_already_switched = true;
                 m_state_fire_object = 0;

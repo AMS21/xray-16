@@ -12,8 +12,8 @@
 #include "xrCore/buffer_vector.h"
 #include "base_face_ptr_storage.h"
 
-// const	u32	rms_discard			= 8;
-// extern	BOOL		gl_linear	;
+// const    u32 rms_discard         = 8;
+// extern   BOOL        gl_linear   ;
 
 void Jitter_Select(Fvector2*& Jitter, u32& Jcount)
 {
@@ -44,12 +44,12 @@ void GET(const base_color& surface_color, const u8 marker,
     u32 ref, u32& count, base_color_c& dst)
 {
     // if (x<0) return;
-    // else if (x>=(int)width)		return;
+    // else if (x>=(int)width)      return;
     // if (y<0) return;
-    // else if (y>=(int)height)	return;
+    // else if (y>=(int)height) return;
 
     // summarize
-    // u32		id	= y*width + x;
+    // u32      id  = y*width + x;
     if (marker <= ref)
         return;
 
@@ -83,31 +83,31 @@ void GET(const lm_layer& lm, int x, int y, u32 ref, u32& count, base_color_c& ds
 }
 
 /*
-struct	Get8_res
+struct  Get8_res
 {
     Get8_res():count(0), res_surface_color(0), res_marker(0), ref( u32(-1) ) {}
-    base_color_c	dst;
-    u32				count;
-    base_color		*res_surface_color;
-    u8				*res_marker;
-    u32				ref;
+    base_color_c    dst;
+    u32             count;
+    base_color      *res_surface_color;
+    u8              *res_marker;
+    u32             ref;
     void aplly( int x, int y, u32 _ref, bool &bNeedContinue, lm_layer &result )
     {
         if (count) {
-            dst.scale			(count);
-            result.surface		[y*result.width+x]._set(dst);
-            result.marker		[y*result.width+x]=u8(_ref);
-            bNeedContinue		= TRUE;
+            dst.scale           (count);
+            result.surface      [y*result.width+x]._set(dst);
+            result.marker       [y*result.width+x]=u8(_ref);
+            bNeedContinue       = TRUE;
         }
     }
     void apply_delay(int x, int y, u32 _ref, bool &bNeedContinue, lm_layer &result )
     {
         if (count) {
-            dst.scale			(count);
-            res_surface_color = &(result.surface		[y*result.width+x]);//._set(dst);
-            res_marker		  = &(result.marker		[y*result.width+x]);//=u8(ref);
-            ref				  = _ref;
-            bNeedContinue		= TRUE;
+            dst.scale           (count);
+            res_surface_color = &(result.surface        [y*result.width+x]);//._set(dst);
+            res_marker        = &(result.marker     [y*result.width+x]);//=u8(ref);
+            ref               = _ref;
+            bNeedContinue       = TRUE;
         }
     }
     ~Get8_res()
@@ -117,7 +117,7 @@ struct	Get8_res
             R_ASSERT( res_marker );
             R_ASSERT( ref != u32(-1) );
             res_surface_color->_set(dst);
-            *res_marker		 =u8(ref);
+            *res_marker      =u8(ref);
         }
     }
 };
@@ -173,8 +173,8 @@ struct lm_line
         // marker.resize(  lm.width );
         // for (int x=0; x<(int)lm.width; x++)
         //{
-        //	surface[x] = lm.surface[y*lm.width+x];
-        //	marker[x]	= lm.marker[y*lm.width+x];
+        //  surface[x] = lm.surface[y*lm.width+x];
+        //  marker[x]   = lm.marker[y*lm.width+x];
         //}
     }
 };
@@ -217,7 +217,7 @@ BOOL NEW_ApplyBorders(lm_layer& lm, u32 ref)
 
     try
     {
-        // lm_layer	result	= lm;
+        // lm_layer result  = lm;
 
         lm_line* l_0 = &line0;
         lm_line* l_1 = &line1;
@@ -273,7 +273,7 @@ BOOL NEW_ApplyBorders(lm_layer& lm, u32 ref)
                 }
             }
         }
-        // lm	= result;
+        // lm   = result;
     }
     catch (...)
     {
@@ -503,7 +503,7 @@ void LightPoint(CDB::COLLIDER* DB, u32 ray_options, CDB::MODEL* MDL, base_color_
                     A = 1 - R / L->range;
                 else
                 {
-                    //	Igor: let A equal 0 at the light boundary
+                    //  Igor: let A equal 0 at the light boundary
                     A = scale * (1 / (L->attenuation0 + L->attenuation1 * R + L->attenuation2 * sqD) - R * L->falloff);
                 }
 
@@ -666,10 +666,10 @@ BOOL __stdcall rms_test(lm_layer& lm, u32 w, u32 h, u32 rms)
         //.
         /*
         if ((lm.width/2>1)&&(lm.height/2>1)){
-            imf_Process	(&*pRestored_hemi.begin(),	lm.width/2,	lm.height/2,&*pOriginal_hemi.begin(),
-        lm.width,lm.height,		imf_lanczos3	);
-            imf_Process	(&*pOriginal_hemi.begin(),	lm.width,	lm.height,	&*pRestored_hemi.begin(),
-        lm.width/2,	lm.height/2,imf_filter		);
+            imf_Process (&*pRestored_hemi.begin(),  lm.width/2, lm.height/2,&*pOriginal_hemi.begin(),
+        lm.width,lm.height,     imf_lanczos3    );
+            imf_Process (&*pOriginal_hemi.begin(),  lm.width,   lm.height,  &*pRestored_hemi.begin(),
+        lm.width/2, lm.height/2,imf_filter      );
         }
         */
         imf_Process(&*pScaled_hemi.begin(), w, h, &*pOriginal_hemi.begin(), lm.width, lm.height, imf_lanczos3);
@@ -845,7 +845,7 @@ BOOL compress_RMS(lm_layer& lm, u32 rms, u32& w, u32& h)
             w = lm.width;
         if (0 == h)
             h = lm.height;
-        //		clMsg	("* RMS: [%d,%d] => [%d,%d]",lm.width,lm.height,w,h);
+        //      clMsg   ("* RMS: [%d,%d] => [%d,%d]",lm.width,lm.height,w,h);
         return TRUE;
     }
     return FALSE;

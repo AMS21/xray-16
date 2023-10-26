@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: danger_object_inline.h
-//	Created 	: 14.02.2005
-//  Modified 	: 14.02.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Danger object inline functions
+//  Module      : danger_object_inline.h
+//  Created     : 14.02.2005
+//  Modified    : 14.02.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Danger object inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

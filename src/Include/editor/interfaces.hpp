@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: interfaces.hpp
-//	Created 	: 04.12.2007
-//  Modified 	: 04.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : editor library interfaces
+//  Module      : interfaces.hpp
+//  Created     : 04.12.2007
+//  Modified    : 04.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : editor library interfaces
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef EDITOR_INTERFACES_HPP_INCLUDED

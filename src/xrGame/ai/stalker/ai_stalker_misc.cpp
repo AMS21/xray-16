@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_stalker_misc.cpp
-//	Created 	: 27.02.2003
-//  Modified 	: 27.02.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Miscellaneous functions for monster "Stalker"
+//  Module      : ai_stalker_misc.cpp
+//  Created     : 27.02.2003
+//  Modified    : 27.02.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Miscellaneous functions for monster "Stalker"
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -112,18 +112,18 @@ void CAI_Stalker::react_on_grenades()
     if (Device.dwTimeGlobal < reaction.m_time + GRENADE_INTERVAL)
         return;
 
-    //	u32							interval = AFTER_GRENADE_DESTROYED_INTERVAL;
+    //  u32                         interval = AFTER_GRENADE_DESTROYED_INTERVAL;
     const CMissile* missile = smart_cast<const CMissile*>(reaction.m_grenade);
-    //	if (missile && (missile->destroy_time() > Device.dwTimeGlobal))
-    //		interval				= missile->destroy_time() - Device.dwTimeGlobal + AFTER_GRENADE_DESTROYED_INTERVAL;
-    //	m_object->agent_manager().add_danger_location(reaction.m_game_object->Position(),Device.dwTimeGlobal,interval,GRENADE_RADIUS);
+    //  if (missile && (missile->destroy_time() > Device.dwTimeGlobal))
+    //      interval                = missile->destroy_time() - Device.dwTimeGlobal + AFTER_GRENADE_DESTROYED_INTERVAL;
+    //  m_object->agent_manager().add_danger_location(reaction.m_game_object->Position(),Device.dwTimeGlobal,interval,GRENADE_RADIUS);
 
     if (missile && agent_manager().member().group_behaviour())
     {
-        //		Msg						("%6d : Stalker %s : grenade reaction",Device.dwTimeGlobal,*m_object->cName());
+        //      Msg                     ("%6d : Stalker %s : grenade reaction",Device.dwTimeGlobal,*m_object->cName());
         CEntityAlive* initiator =
             smart_cast<CEntityAlive*>(Level().Objects.net_Find(reaction.m_grenade->CurrentParentID()));
-        /*		VERIFY2					(
+        /*      VERIFY2                 (
                     initiator,
                     make_string(
                         "grenade[%d][%s], parent[%d]",

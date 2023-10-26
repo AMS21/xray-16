@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_alife_actions.cpp
-//	Created 	: 25.03.2004
-//  Modified 	: 26.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker alife action classes
+//  Module      : stalker_alife_actions.cpp
+//  Created     : 25.03.2004
+//  Modified    : 26.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker alife action classes
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -29,7 +29,7 @@
 using namespace StalkerSpace;
 
 #ifdef _DEBUG
-//#	define STALKER_DEBUG_MODE
+//# define STALKER_DEBUG_MODE
 #endif
 
 #ifdef STALKER_DEBUG_MODE
@@ -73,7 +73,7 @@ void CStalkerActionNoALife::initialize()
     object().sight().setup(CSightAction(SightManager::eSightTypeCurrentDirection));
     object().CObjectHandler::set_goal(
         eObjectActionFire1, object().inventory().ItemFromSlot(INV_SLOT_2), 0, 1, 2500, 3000);
-//	object().movement().patrol().set_path		("way_0000",ePatrolStartTypeNearest);
+//  object().movement().patrol().set_path       ("way_0000",ePatrolStartTypeNearest);
 #endif
 }
 
@@ -102,7 +102,7 @@ void CStalkerActionNoALife::execute()
     else
         object().CObjectHandler::set_goal(eObjectActionIdle, object().best_weapon());
 #else
-//	object().movement().set_movement_type		(eMovementTypeRun);
+//  object().movement().set_movement_type       (eMovementTypeRun);
 #endif
 }
 
@@ -167,16 +167,16 @@ void CStalkerActionGatherItems::execute()
         return;
 
     u32 level_vertex_id = object().memory().item().selected()->ai_location().level_vertex_id();
-    //	if (object().movement().restrictions().accessible(level_vertex_id)) {
+    //  if (object().movement().restrictions().accessible(level_vertex_id)) {
     object().movement().set_level_dest_vertex(level_vertex_id);
     object().movement().set_desired_position(&object().memory().item().selected()->Position());
-    //	}
-    //	else {
-    //		object().movement().set_nearest_accessible_position	(
-    //			object().memory().item().selected()->Position(),
-    //			level_vertex_id
-    //		);
-    //	}
+    //  }
+    //  else {
+    //      object().movement().set_nearest_accessible_position (
+    //          object().memory().item().selected()->Position(),
+    //          level_vertex_id
+    //      );
+    //  }
 
     object().sight().setup(SightManager::eSightTypePosition, &object().memory().item().selected()->Position());
 }

@@ -15,17 +15,17 @@ base_Face::base_Face()
 
 /*
 
-    base_basis				basis_tangent		[3];
-    base_basis				basis_binormal		[3];
-    u16						dwMaterial;			// index of material
-    u16						dwMaterialGame;		// unique-id of game material (must persist up to game-CForm saving)
+    base_basis              basis_tangent       [3];
+    base_basis              basis_binormal      [3];
+    u16                     dwMaterial;         // index of material
+    u16                     dwMaterialGame;     // unique-id of game material (must persist up to game-CForm saving)
 
-        struct					{
-        u16					bSplitted			:		1;
-        u16					bProcessed			:		1;
-        u16					bOpaque				:		1;	// For ray-tracing speedup
-        u16					bLocked				:		1;	// For tesselation
-    }						flags;
+        struct                  {
+        u16                 bSplitted           :       1;
+        u16                 bProcessed          :       1;
+        u16                 bOpaque             :       1;  // For ray-tracing speedup
+        u16                 bLocked             :       1;  // For tesselation
+    }                       flags;
 */
 void base_Face::read(INetReader& r)
 {
@@ -44,10 +44,10 @@ void base_Face::write(IWriter& w) const
     w_pod(w, flags);
 }
 
-/*	Fvector					P;
-    Fvector					N;
-    base_color				C;			// all_lighting info
-    int						handle;		// used in mesh-processing/optimization/conversion
+/*  Fvector                 P;
+    Fvector                 N;
+    base_color              C;          // all_lighting info
+    int                     handle;     // used in mesh-processing/optimization/conversion
 */
 
 void base_Vertex::read(INetReader& r)

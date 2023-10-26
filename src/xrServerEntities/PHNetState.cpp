@@ -30,7 +30,7 @@ static void w_qt_q8(NET_Packet& P, const Fquaternion& q)
 {
     // Fvector Q;
     // Q.set(q.x,q.y,q.z);
-    // if(q.w<0.f)	Q.invert();
+    // if(q.w<0.f)  Q.invert();
     // P.w_float_q8(Q.x,-1.f,1.f);
     // P.w_float_q8(Q.y,-1.f,1.f);
     // P.w_float_q8(Q.z,-1.f,1.f);
@@ -172,10 +172,10 @@ void SPHBonesData::net_Save(NET_Packet& P)
         (*i).net_Save(P, get_min(), get_max());
     }
     // XXX Xottab_DUTY: Research the problem Dima encountered
-    //	this comment is added by Dima (correct me if this is wrong)
+    //  this comment is added by Dima (correct me if this is wrong)
     //  if we call 2 times in a row StateWrite then we get different results
-    //	WHY???
-    //	bones.clear		();
+    //  WHY???
+    //  bones.clear     ();
 }
 
 void SPHBonesData::net_Load(NET_Packet& P)

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: space_restrictor.h
-//	Created 	: 17.08.2004
-//  Modified 	: 17.08.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Space restrictor
+//  Module      : space_restrictor.h
+//  Created     : 17.08.2004
+//  Modified    : 17.08.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Space restrictor
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

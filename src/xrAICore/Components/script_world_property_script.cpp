@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_world_property_script.h
-//	Created 	: 19.03.2004
-//  Modified 	: 19.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script world property script export
+//  Module      : script_world_property_script.h
+//  Created     : 19.03.2004
+//  Modified    : 19.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script world property script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: base_client_classes_wrappers.h
-//	Created 	: 20.12.2004
-//  Modified 	: 20.12.2004
-//	Author		: Dmitriy Iassenev
-//	Description : XRay base client classes wrappers
+//  Module      : base_client_classes_wrappers.h
+//  Created     : 20.12.2004
+//  Modified    : 20.12.2004
+//  Author      : Dmitriy Iassenev
+//  Description : XRay base client classes wrappers
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

@@ -39,7 +39,7 @@ public:
     virtual void Die(IGameObject* who);
 
     virtual void Think();
-    //				void	on_phantom_appear	();
+    //              void    on_phantom_appear   ();
     virtual IStateManagerBase* create_state_manager();
 
     pcstr get_monster_class_name() override { return "psydog"; }

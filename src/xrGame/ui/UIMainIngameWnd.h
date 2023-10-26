@@ -75,12 +75,12 @@ protected:
     // - голода
     // - усталости
     CUIStatic* UIWeaponJammedIcon{};
-    //	CUIStatic			UIRadiaitionIcon;
-    //	CUIStatic			UIWoundIcon;
-    //	CUIStatic			UIStarvationIcon;
-    //	CUIStatic			UIPsyHealthIcon;
+    //  CUIStatic           UIRadiaitionIcon;
+    //  CUIStatic           UIWoundIcon;
+    //  CUIStatic           UIStarvationIcon;
+    //  CUIStatic           UIPsyHealthIcon;
     CUIStatic* UIInvincibleIcon{};
-    //	CUIStatic			UISleepIcon;
+    //  CUIStatic           UISleepIcon;
     CUIStatic* UIArtefactIcon{};
 
     CUIScrollView* m_UIIcons{};
@@ -93,11 +93,11 @@ public:
     {
         ewiAll = 0,
         ewiWeaponJammed,
-        //		ewiRadiation,
-        //		ewiWound,
-        //		ewiStarvation,
-        //		ewiPsyHealth,
-        //		ewiSleep,
+        //      ewiRadiation,
+        //      ewiWound,
+        //      ewiStarvation,
+        //      ewiPsyHealth,
+        //      ewiSleep,
         ewiInvincible,
         ewiArtefact,
     };
@@ -135,16 +135,16 @@ protected:
     void InitFlashingIcons(CUIXml* node);
     void DestroyFlashingIcons();
     void UpdateFlashingIcons();
-    //	void				UpdateActiveItemInfo			();
+    //  void                UpdateActiveItemInfo            ();
 
-    //	void				SetAmmoIcon						(const shared_str& seсt_name);
+    //  void                SetAmmoIcon                     (const shared_str& seсt_name);
 
     // first - иконка, second - анимация
     using FlashingIcons = xr_map<EFlashingIcons, CUIStatic*>;
     FlashingIcons m_FlashingIcons;
 
-    //	CMissile*			m_pGrenade{};
-    //	CInventoryItem*		m_pItem{};
+    //  CMissile*           m_pGrenade{};
+    //  CInventoryItem*     m_pItem{};
 
     // Отображение подсказок при наведении прицела на объект
     void RenderQuickInfos();

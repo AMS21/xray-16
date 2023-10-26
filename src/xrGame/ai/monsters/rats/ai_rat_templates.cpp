@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_rat_templates.cpp
-//	Created 	: 23.07.2002
-//  Modified 	: 07.11.2002
-//	Author		: Dmitriy Iassenev
-//	Description : Templates for monster "Rat"
+//  Module      : ai_rat_templates.cpp
+//  Created     : 23.07.2002
+//  Modified    : 07.11.2002
+//  Author      : Dmitriy Iassenev
+//  Description : Templates for monster "Rat"
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -58,7 +58,7 @@ void CAI_Rat::fire(bool const& bFire)
 
 void CAI_Rat::movement_type(float const& fSpeed)
 {
-    //	StandUp();
+    //  StandUp();
     m_bMoving = _abs(fSpeed) > EPS_L;
     m_fSpeed = m_fCurSpeed = fSpeed;
 }
@@ -111,12 +111,12 @@ void CAI_Rat::select_speed()
     }
     else if (_abs(m_fSpeed - m_fAttackSpeed) <= EPS_L)
     {
-        //				if (fAngle >= 2*PI_DIV_3) {
-        //					m_fSpeed = 0;
-        //					m_fASpeed = m_fNullASpeed;
-        //					movement().m_body.target.yaw = -y;
-        //				}
-        //				else
+        //              if (fAngle >= 2*PI_DIV_3) {
+        //                  m_fSpeed = 0;
+        //                  m_fASpeed = m_fNullASpeed;
+        //                  movement().m_body.target.yaw = -y;
+        //              }
+        //              else
         if (fAngle >= PI_DIV_2)
         {
             m_fSpeed = m_fMinSpeed;
@@ -175,11 +175,11 @@ void CAI_Rat::make_turn()
     m_fSpeed = m_fCurSpeed = 0.f;
     if (m_bFiring && (angle_difference(movement().m_body.target.yaw, movement().m_body.current.yaw) < PI_DIV_6))
     {
-        //		movement().m_body.speed	= 0.f;
+        //      movement().m_body.speed = 0.f;
         return;
     }
 
-    //	Msg					("%6d : Rat %s, %f -> %f
+    //  Msg                 ("%6d : Rat %s, %f -> %f
     //[%f]",Device.dwTimeGlobal,*cName(),movement().m_body.current.pitch,movement().m_body.target.pitch,get_custom_pitch_speed(0.f));
 
     m_turning = true;
@@ -493,7 +493,7 @@ bool CAI_Rat::can_stand_here()
 {
     xr_vector<IGameObject*> tpNearestList;
     Level().ObjectSpace.GetNearest(tpNearestList, Position(), Radius(), this);
-    // xr_vector<IGameObject*>				&tpNearestList = Level().ObjectSpace.q_nearest;
+    // xr_vector<IGameObject*>              &tpNearestList = Level().ObjectSpace.q_nearest;
     if (tpNearestList.empty())
         return (true);
 
@@ -575,7 +575,7 @@ void CAI_Rat::draw_way()
         m_sphere.scale(0.25, 0.25, 0.25);
         m_sphere.translate_add(P2);
         Level().debug_renderer().draw_ellipse(m_sphere, color_xrgb(0, 255, 255));
-        // Level().debug_renderer().draw_aabb			(P1,0.5f,0.5f,0.5f,color_xrgb(0,255,255));
+        // Level().debug_renderer().draw_aabb           (P1,0.5f,0.5f,0.5f,color_xrgb(0,255,255));
     }
 
     vertex = m_path->vertex(0);
@@ -588,6 +588,6 @@ void CAI_Rat::draw_way()
     m_sphere.scale(0.25, 0.25, 0.25);
     m_sphere.translate_add(P2);
     Level().debug_renderer().draw_ellipse(m_sphere, color_xrgb(0, 255, 255));
-    // Level().debug_renderer().draw_aabb			(P1,0.5f,0.5f,0.5f,color_xrgb(0,255,255));
+    // Level().debug_renderer().draw_aabb           (P1,0.5f,0.5f,0.5f,color_xrgb(0,255,255));
 }
 #endif

@@ -64,7 +64,7 @@ static HRESULT create_shader(LPCSTR const pTarget, DWORD const* buffer, size_t c
         _result = create_shader(buffer, buffer_size, file_name, svs_result, dx9compatibility);
         if (SUCCEEDED(_result))
         {
-            //	Store input signature (need only for VS)
+            //  Store input signature (need only for VS)
             ID3DBlob* pSignatureBlob;
             CHK_DX(D3DGetInputSignatureBlob(buffer, buffer_size, &pSignatureBlob));
             VERIFY(pSignatureBlob);
@@ -341,7 +341,7 @@ HRESULT CRender::shader_compile(pcstr name, IReader* fs, pcstr pFunctionName,
     // SKIN_4
     appendShaderOption(4 == m_skinning, "SKIN_4", "1");
 
-    //	Igor: need restart options
+    //  Igor: need restart options
     // Soft water
     {
         const bool softWater = RImplementation.o.advancedpp && ps_r2_ls_flags.test(R2FLAG_SOFT_WATER);

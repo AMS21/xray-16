@@ -74,8 +74,8 @@ void CBastArtefact::BastCollision(CEntityAlive* pEntityAlive)
         m_bStrike = true;
         Fvector vel;
         vel.set(0, 0, 0);
-        //	this->m_pPhysicsShell->set_LinearVel(vel);
-        //	this->m_pPhysicsShell->set_AngularVel(vel);
+        //  this->m_pPhysicsShell->set_LinearVel(vel);
+        //  this->m_pPhysicsShell->set_AngularVel(vel);
     }
 }
 
@@ -128,8 +128,8 @@ void CBastArtefact::shedule_Update(u32 dt)
 
 void CBastArtefact::UpdateCLChild()
 {
-    // Log						("--- A - CBastArtefact",*cName());
-    // Log						("--- A - CBastArtefact",renderable.xform);
+    // Log                      ("--- A - CBastArtefact",*cName());
+    // Log                      ("--- A - CBastArtefact",renderable.xform);
 
     //современем энергия по немногу тоже уменьшается
     if (m_fEnergy > 0)
@@ -200,10 +200,10 @@ void CBastArtefact::UpdateCLChild()
 }
 
 // void CBastArtefact::Hit(float P, Fvector &dir,
-//						IGameObject* who, s16 element,
-//						Fvector position_in_object_space,
-//						float impulse,
-//						ALife::EHitType hit_type)
+//                      IGameObject* who, s16 element,
+//                      Fvector position_in_object_space,
+//                      float impulse,
+//                      ALife::EHitType hit_type)
 void CBastArtefact::Hit(SHit* pHDS)
 {
     SHit HDS = *pHDS;
@@ -221,7 +221,7 @@ void CBastArtefact::Hit(SHit* pHDS)
         HDS.impulse = 0;
     }
 
-    //	inherited::Hit(P, dir, who, element, position_in_object_space, impulse, hit_type);
+    //  inherited::Hit(P, dir, who, element, position_in_object_space, impulse, hit_type);
     inherited::Hit(&HDS);
 }
 

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: autosave_manager.cpp
-//	Created 	: 04.11.2004
-//  Modified 	: 04.11.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Autosave manager
+//  Module      : autosave_manager.cpp
+//  Created     : 04.11.2004
+//  Modified    : 04.11.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Autosave manager
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

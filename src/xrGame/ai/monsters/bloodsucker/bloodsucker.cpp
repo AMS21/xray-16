@@ -197,7 +197,7 @@ void CAI_Bloodsucker::Load(LPCSTR section)
     }
 
     // define transitions
-    //	anim().AddTransition(PS_STAND,			eAnimThreaten,	eAnimMiscAction_00,	false);
+    //  anim().AddTransition(PS_STAND,          eAnimThreaten,  eAnimMiscAction_00, false);
     anim().AddTransition(eAnimStandSitDown, eAnimSleep, eAnimSitToSleep, false);
     anim().AddTransition(PS_STAND, eAnimSleep, eAnimStandSitDown, true);
     anim().AddTransition(PS_STAND, PS_SIT, eAnimStandSitDown, false);
@@ -207,7 +207,7 @@ void CAI_Bloodsucker::Load(LPCSTR section)
 
     // define links from Action to animations
     anim().LinkAction(ACT_STAND_IDLE, eAnimStandIdle);
-    // anim().LinkAction(ACT_CAPTURE_PREPARE,	eAnimCapturePrepare);
+    // anim().LinkAction(ACT_CAPTURE_PREPARE,   eAnimCapturePrepare);
     anim().LinkAction(ACT_SIT_IDLE, eAnimSitIdle);
     anim().LinkAction(ACT_LIE_IDLE, eAnimSitIdle);
     anim().LinkAction(ACT_WALK_FWD, eAnimWalkFwd);
@@ -216,7 +216,7 @@ void CAI_Bloodsucker::Load(LPCSTR section)
     anim().LinkAction(ACT_EAT, eAnimEat);
     anim().LinkAction(ACT_SLEEP, eAnimSleep);
     anim().LinkAction(ACT_REST, eAnimSitIdle);
-    // anim().LinkAction(ACT_DRAG,			eAnimWalkBkwd);
+    // anim().LinkAction(ACT_DRAG,          eAnimWalkBkwd);
     anim().LinkAction(ACT_ATTACK, eAnimAttack);
     anim().LinkAction(ACT_STEAL, eAnimSteal);
     anim().LinkAction(ACT_LOOK_AROUND, eAnimLookAround);
@@ -380,36 +380,36 @@ void CAI_Bloodsucker::vfAssignBones()
 void CAI_Bloodsucker::LookDirection(Fvector to_dir, float bone_turn_speed)
 {
     //// получаем вектор направления к источнику звука и его мировые углы
-    // float		yaw,pitch;
+    // float        yaw,pitch;
     // to_dir.getHP(yaw,pitch);
 
     //// установить параметры вращения по yaw
-    // float cur_yaw = -movement().m_body.current.yaw;						// текущий мировой угол монстра
-    // float bone_angle;											// угол для боны
+    // float cur_yaw = -movement().m_body.current.yaw;                      // текущий мировой угол монстра
+    // float bone_angle;                                            // угол для боны
 
-    // float dy = _abs(angle_normalize_signed(yaw - cur_yaw));		// дельта, на которую нужно поворачиваться
+    // float dy = _abs(angle_normalize_signed(yaw - cur_yaw));      // дельта, на которую нужно поворачиваться
 
-    // if (angle_difference(cur_yaw,yaw) <= MAX_BONE_ANGLE) {		// bone turn only
-    //	bone_angle = dy;
-    //} else {													// torso & bone turn
-    //	if (movement().IsMoveAlongPathFinished() || !movement().enabled()) movement().m_body.target.yaw =
+    // if (angle_difference(cur_yaw,yaw) <= MAX_BONE_ANGLE) {       // bone turn only
+    //  bone_angle = dy;
+    //} else {                                                  // torso & bone turn
+    //  if (movement().IsMoveAlongPathFinished() || !movement().enabled()) movement().m_body.target.yaw =
     // angle_normalize(-yaw);
-    //	if (dy / 2 < MAX_BONE_ANGLE) bone_angle = dy / 2;
-    //	else bone_angle = MAX_BONE_ANGLE;
+    //  if (dy / 2 < MAX_BONE_ANGLE) bone_angle = dy / 2;
+    //  else bone_angle = MAX_BONE_ANGLE;
     //}
 
     // bone_angle /= 2;
     // if (from_right(yaw,cur_yaw)) bone_angle *= -1.f;
 
     // Bones.SetMotion(bone_spine, AXIS_X, bone_angle, bone_turn_speed, 100);
-    // Bones.SetMotion(bone_head,	AXIS_X, bone_angle, bone_turn_speed, 100);
+    // Bones.SetMotion(bone_head,   AXIS_X, bone_angle, bone_turn_speed, 100);
 
     //// установить параметры вращения по pitch
     // clamp(pitch, -MAX_BONE_ANGLE, MAX_BONE_ANGLE);
     // pitch /= 2;
 
     // Bones.SetMotion(bone_spine, AXIS_Y, pitch, bone_turn_speed, 100);
-    // Bones.SetMotion(bone_head,	AXIS_Y, pitch, bone_turn_speed, 100);
+    // Bones.SetMotion(bone_head,   AXIS_Y, pitch, bone_turn_speed, 100);
 }
 
 void CAI_Bloodsucker::ActivateVampireEffector()
@@ -617,9 +617,9 @@ void CAI_Bloodsucker::post_fsm_update()
     // EMonsterState state = StateMan->get_state_type();
     //
     // установить агрессивность
-    // bool aggressive =	(is_state(state, eStateAttack)) ||
-    //					(is_state(state, eStatePanic))	||
-    //					(is_state(state, eStateHitted));
+    // bool aggressive =    (is_state(state, eStateAttack)) ||
+    //                  (is_state(state, eStatePanic))  ||
+    //                  (is_state(state, eStateHitted));
 }
 
 bool CAI_Bloodsucker::check_start_conditions(ControlCom::EControlType type)
@@ -715,7 +715,7 @@ void CAI_Bloodsucker::predator_start()
     sound().play(CAI_Bloodsucker::eChangeVisibility);
 
     m_predator = true;
-    // state_invisible				= false;
+    // state_invisible              = false;
 }
 
 void CAI_Bloodsucker::predator_stop()

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: backend.h
-//	Created 	: 14.04.2008
-//  Modified 	: 14.04.2008
-//	Author		: Dmitriy Iassenev
-//	Description : script debugger backend class
+//  Module      : backend.h
+//  Created     : 14.04.2008
+//  Modified    : 14.04.2008
+//  Author      : Dmitriy Iassenev
+//  Description : script debugger backend class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

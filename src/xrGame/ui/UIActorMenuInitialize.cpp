@@ -277,8 +277,8 @@ void CUIActorMenu::InitializeUniversal(CUIXml& uiXml)
 
     m_ItemInfo = xr_new<CUIItemInfo>();
     m_ItemInfo->InitItemInfo(ACTOR_MENU_ITEM_XML);
-    //-	m_ItemInfo->SetAutoDelete			(true);
-    //-	AttachChild							(m_ItemInfo);
+    //- m_ItemInfo->SetAutoDelete           (true);
+    //- AttachChild                         (m_ItemInfo);
 
     if (ai().get_alife())
     {

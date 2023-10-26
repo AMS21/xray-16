@@ -220,7 +220,7 @@ dxRender_Visual* CModelPool::Create(const char* name, IReader* data)
     xr_strlwr(low_name);
     if (strext(low_name))
         *strext(low_name) = 0;
-    //	Msg						("-CREATE %s",low_name);
+    //  Msg                     ("-CREATE %s",low_name);
 
     // 0. Search POOL
     POOL_IT it = Pool.find(low_name);
@@ -269,7 +269,7 @@ dxRender_Visual* CModelPool::CreateChild(LPCSTR name, IReader* data)
 
     // 1. Search for already loaded model
     dxRender_Visual* Base = Instance_Find(low_name);
-    //.	if (0==Base) Base	 	= Instance_Load(name,data,FALSE);
+    //. if (0==Base) Base       = Instance_Load(name,data,FALSE);
     if (nullptr == Base)
     {
         if (data)
@@ -375,7 +375,7 @@ void CModelPool::Discard(dxRender_Visual*& V, BOOL b_complete)
         }
         // Registry
         xr_delete(V);
-        //.		xr_free			(name);
+        //.     xr_free         (name);
         Registry.erase(it);
     }
     else
@@ -561,7 +561,7 @@ void CModelPool::Render(
     {
         PS::CParticleGroup* pG = dynamic_cast<PS::CParticleGroup*>(m_pVisual);
         VERIFY(pG);
-        //		if (_IsBoxVisible(m_pVisual,mTransform))
+        //      if (_IsBoxVisible(m_pVisual,mTransform))
         {
             RCache.set_xform_world(mTransform);
             for (PS::CParticleGroup::SItemVecIt i_it = pG->items.begin(); i_it != pG->items.end(); i_it++)
@@ -576,7 +576,7 @@ void CModelPool::Render(
     break;
     case MT_PARTICLE_EFFECT:
     {
-        //		if (_IsBoxVisible(m_pVisual,mTransform))
+        //      if (_IsBoxVisible(m_pVisual,mTransform))
         {
             if (_IsValidShader(m_pVisual, priority, strictB2F))
             {

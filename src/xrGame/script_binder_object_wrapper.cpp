@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_binder_object_wrapper.cpp
-//	Created 	: 29.03.2004
-//  Modified 	: 29.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script object binder wrapper
+//  Module      : script_binder_object_wrapper.cpp
+//  Created     : 29.03.2004
+//  Modified    : 29.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script object binder wrapper
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

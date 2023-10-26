@@ -29,7 +29,7 @@ CPHGeometryOwner::~CPHGeometryOwner()
     //{
     // VERIFY( m_group );
     // if( m_group )
-    //	dSpaceDestroy( m_group );
+    //  dSpaceDestroy( m_group );
 
     //}
 }

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_game_object.cpp
-//	Created 	: 25.09.2003
-//  Modified 	: 29.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script game object class
+//  Module      : script_game_object.cpp
+//  Created     : 25.09.2003
+//  Modified    : 29.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script game object class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -64,10 +64,10 @@ BIND_FUNCTION10(&object(), CScriptGameObject::Direction, CGameObject, Direction,
 BIND_FUNCTION10(&object(), CScriptGameObject::Mass, CPhysicsShellHolder, GetMass, float, float(-1));
 BIND_FUNCTION10(&object(), CScriptGameObject::ID, CGameObject, ID, u16, u16(-1));
 BIND_FUNCTION10(&object(), CScriptGameObject::getVisible, CGameObject, getVisible, BOOL, FALSE);
-// BIND_FUNCTION01	(&object(),	CScriptGameObject::setVisible,			CGameObject,	setVisible,			BOOL,
+// BIND_FUNCTION01  (&object(), CScriptGameObject::setVisible,          CGameObject,    setVisible,         BOOL,
 // BOOL);
 BIND_FUNCTION10(&object(), CScriptGameObject::getEnabled, CGameObject, getEnabled, BOOL, FALSE);
-// BIND_FUNCTION01	(&object(),	CScriptGameObject::setEnabled,			CGameObject,	setEnabled,			BOOL,
+// BIND_FUNCTION01  (&object(), CScriptGameObject::setEnabled,          CGameObject,    setEnabled,         BOOL,
 // BOOL);
 BIND_FUNCTION10(&object(), CScriptGameObject::story_id, CGameObject, story_id, ALife::_STORY_ID, ALife::_STORY_ID(-1));
 BIND_FUNCTION10(&object(), CScriptGameObject::DeathTime, CEntity, GetLevelDeathTime, u32, 0);

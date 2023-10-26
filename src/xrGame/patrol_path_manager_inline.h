@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: patrol_path_manager_inline.h
-//	Created 	: 03.12.2003
-//  Modified 	: 03.12.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Patrol path manager inline functions
+//  Module      : patrol_path_manager_inline.h
+//  Created     : 03.12.2003
+//  Modified    : 03.12.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Patrol path manager inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

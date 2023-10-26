@@ -25,18 +25,18 @@ private:
     SHit m_fatal_hit;
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /*
-                float						m_random_min
+                float                       m_random_min
        ;
-                float						m_random_hit_imp
+                float                       m_random_hit_imp
        ;
-                u16							ref_bone
+                u16                         ref_bone
        ;
 
-                float						m_imp_transition_factor
+                float                       m_imp_transition_factor
        ;
-                float						m_lv_transition_factor
+                float                       m_lv_transition_factor
        ;
-                float						m_av_transition_factor
+                float                       m_av_transition_factor
        ;
     */
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

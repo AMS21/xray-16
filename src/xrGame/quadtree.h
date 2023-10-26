@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: quadtree.h
-//	Created 	: 23.03.2004
-//  Modified 	: 23.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Quadtree class
+//  Module      : quadtree.h
+//  Created     : 23.03.2004
+//  Modified    : 23.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Quadtree class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

@@ -7,7 +7,7 @@ in vec4 gl_FragCoord;
 in int gl_SampleID;
 #endif
 
-layout(location = TEXCOORD0)	in float4 	p_accum_omni_tc		; // TEXCOORD0;
+layout(location = TEXCOORD0)    in float4   p_accum_omni_tc     ; // TEXCOORD0;
 
 #ifdef MSAA_OPTIMIZATION
 #ifdef GBUFFER_OPTIMIZATION
@@ -27,15 +27,15 @@ void main()
 {
 #ifdef MSAA_OPTIMIZATION
 #ifdef GBUFFER_OPTIMIZATION
-	SV_Target = _main ( p_accum_omni_tc, gl_FragCoord, gl_SampleID );
+    SV_Target = _main ( p_accum_omni_tc, gl_FragCoord, gl_SampleID );
 #else
-	SV_Target = _main ( p_accum_omni_tc, gl_SampleID );
+    SV_Target = _main ( p_accum_omni_tc, gl_SampleID );
 #endif
 #else
 #ifdef GBUFFER_OPTIMIZATION
-	SV_Target = _main ( p_accum_omni_tc, gl_FragCoord );
+    SV_Target = _main ( p_accum_omni_tc, gl_FragCoord );
 #else
-	SV_Target = _main ( p_accum_omni_tc );
+    SV_Target = _main ( p_accum_omni_tc );
 #endif
 #endif
 }

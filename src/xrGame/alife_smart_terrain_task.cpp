@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_smart_terrain_task.cpp
-//	Created 	: 20.09.2005
-//  Modified 	: 20.09.2005
-//	Author		: Dmitriy Iassenev
-//	Description : ALife smart terrain task
+//  Module      : alife_smart_terrain_task.cpp
+//  Created     : 20.09.2005
+//  Modified    : 20.09.2005
+//  Author      : Dmitriy Iassenev
+//  Description : ALife smart terrain task
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

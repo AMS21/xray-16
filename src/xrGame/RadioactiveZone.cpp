@@ -49,14 +49,14 @@ void CRadioactiveZone::Affect(SZoneObjectInfo* O)
         CreateHit(O->object->ID(), ID(), dir, send_power, BI_NONE, Fvector().set(0.0f, 0.0f, 0.0f), impulse,
             m_eHitTypeBlowout);
 #ifdef DEBUG
-//		if(bDebug)
-/*		Msg			(	"Zone[%s]-hit->[%s] Power=%3.3f Frame=%d Time=%3.3f",
+//      if(bDebug)
+/*      Msg         (   "Zone[%s]-hit->[%s] Power=%3.3f Frame=%d Time=%3.3f",
                         cName().c_str(),
                         O->object->cName().c_str(),
                         send_power,
                         Device.dwFrame,
                         tg);*/
-///		Msg( "Zone hit ___   damage = %.4f    Frame=%d ", send_power, Device.dwFrame );
+///     Msg( "Zone hit ___   damage = %.4f    Frame=%d ", send_power, Device.dwFrame );
 #endif
         O->f_time_affected += one;
     } // while

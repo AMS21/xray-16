@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: trade_factors_inline.h
-//	Created 	: 13.01.2006
-//  Modified 	: 13.01.2006
-//	Author		: Dmitriy Iassenev
-//	Description : trade factors class inline functions
+//  Module      : trade_factors_inline.h
+//  Created     : 13.01.2006
+//  Modified    : 13.01.2006
+//  Author      : Dmitriy Iassenev
+//  Description : trade factors class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

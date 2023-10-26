@@ -20,7 +20,7 @@ public:
 
     shared_str const player_name();
     shared_str const player_cdkey_digest();
-    // shared_str const admin_name				();
+    // shared_str const admin_name              ();
     shared_str const creation_date();
 
     bool const verify();

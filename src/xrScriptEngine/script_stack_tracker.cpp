@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_stack_tracker.cpp
-//	Created 	: 21.04.2004
-//  Modified 	: 21.04.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script stack tracker
+//  Module      : script_stack_tracker.cpp
+//  Created     : 21.04.2004
+//  Modified    : 21.04.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script stack tracker
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

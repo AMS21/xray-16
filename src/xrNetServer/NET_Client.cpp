@@ -396,8 +396,8 @@ bool IPureClient::Connect(pcstr options)
         R_CHK(net_Address_server->AddComponent(DPNA_KEY_PORT, &psSV_Port, sizeof(psSV_Port), DPNA_DATATYPE_DWORD));
 
         // Debug
-        // dump_URL		("! cl ",	net_Address_device);
-        // dump_URL		("! en ",	net_Address_server);
+        // dump_URL     ("! cl ",   net_Address_device);
+        // dump_URL     ("! en ",   net_Address_server);
 
         // Now set up the Application Description
         DPN_APPLICATION_DESC dpAppDesc;
@@ -459,7 +459,7 @@ bool IPureClient::Connect(pcstr options)
 
                 if (res != S_OK)
                 {
-                    //			xr_string res = xrDebug::ErrorToString(HostSuccess);
+                    //          xr_string res = xrDebug::ErrorToString(HostSuccess);
 
                     if (bPortWasSet)
                     {
@@ -480,7 +480,7 @@ bool IPureClient::Connect(pcstr options)
                 }
             }
 
-            //		R_CHK(res);
+            //      R_CHK(res);
             if (res != S_OK)
                 return false;
 
@@ -596,7 +596,7 @@ bool IPureClient::Connect(pcstr options)
                 Msg("* HOST #%d: %s\n", I + 1, *net_Hosts[I].dpSessionName);
 
             R_CHK(net_Hosts.front().pHostAddress->Duplicate(&pHostAddress));
-            // dump_URL		("! c2s ",	pHostAddress);
+            // dump_URL     ("! c2s ",  pHostAddress);
             res = NET->Connect(&dpAppDesc, // pdnAppDesc
                 pHostAddress, // pHostAddr
                 net_Address_device, // pDeviceInfo
@@ -638,16 +638,16 @@ bool IPureClient::Connect(pcstr options)
 
         // Caps
         /*
-        GUID			sp_guid;
-        DPN_SP_CAPS		sp_caps;
+        GUID            sp_guid;
+        DPN_SP_CAPS     sp_caps;
 
         net_Address_device->GetSP(&sp_guid);
-        ZeroMemory		(&sp_caps,sizeof(sp_caps));
-        sp_caps.dwSize	= sizeof(sp_caps);
-        R_CHK			(NET->GetSPCaps(&sp_guid,&sp_caps,0));
-        sp_caps.dwSystemBufferSize	= 0;
-        R_CHK			(NET->SetSPCaps(&sp_guid,&sp_caps,0));
-        R_CHK			(NET->GetSPCaps(&sp_guid,&sp_caps,0));
+        ZeroMemory      (&sp_caps,sizeof(sp_caps));
+        sp_caps.dwSize  = sizeof(sp_caps);
+        R_CHK           (NET->GetSPCaps(&sp_guid,&sp_caps,0));
+        sp_caps.dwSystemBufferSize  = 0;
+        R_CHK           (NET->SetSPCaps(&sp_guid,&sp_caps,0));
+        R_CHK           (NET->GetSPCaps(&sp_guid,&sp_caps,0));
         */
     } // psNET_direct_connect
 
@@ -906,7 +906,7 @@ void IPureClient::SendTo_LL(void* data, u32 size, u32 dwFlags, u32 dwTimeout)
     DPNHANDLE hAsync = 0;
     HRESULT hr = NET->Send(&desc, 1, dwTimeout, nullptr, &hAsync, dwFlags | DPNSEND_COALESCE);
 
-    //	Msg("- Client::SendTo_LL [%d]", size);
+    //  Msg("- Client::SendTo_LL [%d]", size);
     if (FAILED(hr))
     {
         Msg("! ERROR: Failed to send net-packet, reason: %s", xrDebug::ErrorToString(hr));
@@ -915,7 +915,7 @@ void IPureClient::SendTo_LL(void* data, u32 size, u32 dwFlags, u32 dwTimeout)
         DXTRACE_ERR(tmp, hr);
     }
 
-    //	UpdateStatistic();
+    //  UpdateStatistic();
 }
 
 void IPureClient::Send(NET_Packet& packet, u32 dwFlags, u32 dwTimeout)
@@ -1067,7 +1067,7 @@ void IPureClient::Sync_Average()
         summary_delta += (summary_delta < 0) ? -1 : 1;
     net_TimeDelta_Calculated = s32(summary_delta);
     net_TimeDelta = (net_TimeDelta * 5 + net_TimeDelta_Calculated) / 6;
-    //	Msg("* CLIENT: d(%d), dc(%d), s(%d)",net_TimeDelta,net_TimeDelta_Calculated,size);
+    //  Msg("* CLIENT: d(%d), dc(%d), s(%d)",net_TimeDelta,net_TimeDelta_Calculated,size);
 }
 
 void IPureClient::net_Syncronize()

@@ -27,7 +27,7 @@ CStateManagerBloodsucker::CStateManagerBloodsucker(CAI_Bloodsucker* monster) : i
     add_state(eStatePanic, xr_new<CStateMonsterPanic<CAI_Bloodsucker>>(monster));
 
     add_state(eStateAttack, xr_new<CStateMonsterAttack<CAI_Bloodsucker>>(monster));
-    // add_state(eStateAttack,				new CBloodsuckerStateAttack<CAI_Bloodsucker>(monster));
+    // add_state(eStateAttack,              new CBloodsuckerStateAttack<CAI_Bloodsucker>(monster));
 
     add_state(eStateEat, xr_new<CStateMonsterEat<CAI_Bloodsucker>>(monster));
     add_state(eStateHearInterestingSound, xr_new<CStateMonsterHearInterestingSound<CAI_Bloodsucker>>(monster));
@@ -128,16 +128,16 @@ void CStateManagerBloodsucker::execute()
         }
 
         // check if start interesting sound state
-        // 	if ( (prev_substate != eStateHearInterestingSound) && (state_id == eStateHearInterestingSound) )
-        // 	{
-        // 		object->start_invisible_predator();
-        // 	}
-        // 	else
-        // 	// check if stop interesting sound state
-        // 	if ( (prev_substate == eStateHearInterestingSound) && (state_id != eStateHearInterestingSound) )
-        // 	{
-        // 		object->stop_invisible_predator();
-        // 	}
+        //  if ( (prev_substate != eStateHearInterestingSound) && (state_id == eStateHearInterestingSound) )
+        //  {
+        //      object->start_invisible_predator();
+        //  }
+        //  else
+        //  // check if stop interesting sound state
+        //  if ( (prev_substate == eStateHearInterestingSound) && (state_id != eStateHearInterestingSound) )
+        //  {
+        //      object->stop_invisible_predator();
+        //  }
 
         select_state(state_id);
 

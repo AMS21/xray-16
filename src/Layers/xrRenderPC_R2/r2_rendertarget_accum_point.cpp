@@ -28,7 +28,7 @@ void CRenderTarget::accum_point(CBackend& cmd_list, light* L)
     // Common
     Fvector L_pos;
     float L_spec;
-    // float		L_R					= L->range;
+    // float        L_R                 = L->range;
     float L_R = L->range * 0.95f;
     Fvector L_clr;
     L_clr.set(L->color.r, L->color.g, L->color.b);
@@ -43,20 +43,20 @@ void CRenderTarget::accum_point(CBackend& cmd_list, light* L)
     enable_scissor(L);
     enable_dbt_bounds(L);
 
-    // *****************************	Mask by stencil		*************************************
+    // *****************************    Mask by stencil     *************************************
     // *** similar to "Carmack's reverse", but assumes convex, non intersecting objects,
     // *** thus can cope without stencil clear with 127 lights
     // *** in practice, 'cause we "clear" it back to 0x1 it usually allows us to > 200 lights :)
     RCache.set_Element(s_accum_mask->E[SE_MASK_POINT]); // masker
     RCache.set_ColorWriteEnable(FALSE);
 
-    // backfaces: if (stencil>=1 && zfail)	stencil = light_id
+    // backfaces: if (stencil>=1 && zfail)  stencil = light_id
     RCache.set_CullMode(CULL_CW);
     RCache.set_Stencil(TRUE, D3DCMP_LESSEQUAL, dwLightMarkerID, 0x01, 0xff, D3DSTENCILOP_KEEP, D3DSTENCILOP_KEEP,
         D3DSTENCILOP_REPLACE);
     draw_volume(RCache, L);
 
-    // frontfaces: if (stencil>=light_id && zfail)	stencil = 0x1
+    // frontfaces: if (stencil>=light_id && zfail)  stencil = 0x1
     RCache.set_CullMode(CULL_CCW);
     RCache.set_Stencil(
         TRUE, D3DCMP_LESSEQUAL, 0x01, 0xff, 0xff, D3DSTENCILOP_KEEP, D3DSTENCILOP_KEEP, D3DSTENCILOP_REPLACE);
@@ -66,13 +66,13 @@ void CRenderTarget::accum_point(CBackend& cmd_list, light* L)
     if (RImplementation.o.nvstencil)
         u_stencil_optimize(RCache);
 
-    // *****************************	Minimize overdraw	*************************************
+    // *****************************    Minimize overdraw   *************************************
     // Select shader (front or back-faces), *** back, if intersect near plane
     RCache.set_ColorWriteEnable();
     RCache.set_CullMode(CULL_CW); // back
     /*
-    if (bIntersect)	RCache.set_CullMode		(CULL_CW);		// back
-    else			RCache.set_CullMode		(CULL_CCW);		// front
+    if (bIntersect) RCache.set_CullMode     (CULL_CW);      // back
+    else            RCache.set_CullMode     (CULL_CCW);     // front
     */
 
     // 2D texgens
@@ -98,7 +98,7 @@ void CRenderTarget::accum_point(CBackend& cmd_list, light* L)
         else
         {
             _id = SE_L_UNSHADOWED;
-            // m_Shadow				= m_Lmap;
+            // m_Shadow             = m_Lmap;
         }
         RCache.set_Element(shader->E[_id]);
 
@@ -140,7 +140,7 @@ void CRenderTarget::accum_point(CBackend& cmd_list, light* L)
 
     RCache.set_Scissor(0);
 
-    // dwLightMarkerID					+=	2;	// keep lowest bit always setted up
+    // dwLightMarkerID                  +=  2;  // keep lowest bit always setted up
     increment_light_marker(RCache);
 
     u_DBT_disable();

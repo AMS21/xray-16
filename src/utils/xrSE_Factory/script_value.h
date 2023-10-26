@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_value.h
-//	Created 	: 16.07.2004
-//  Modified 	: 16.07.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script value
+//  Module      : script_value.h
+//  Created     : 16.07.2004
+//  Modified    : 16.07.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script value
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

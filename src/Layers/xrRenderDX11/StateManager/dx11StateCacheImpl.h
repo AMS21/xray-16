@@ -68,14 +68,14 @@ IDeviceState* dx11StateCache<IDeviceState, StateDecs>::FindState(const StateDecs
             // if ( !memcmp(&descCandidate, &desc, sizeof(desc)) )
             if (descCandidate == desc)
             // break;
-            //	TEST
+            //  TEST
             {
                 res = i;
                 break;
             }
             // else
             //{
-            //	VERIFY(0);
+            //  VERIFY(0);
             //}
         }
     }
@@ -92,4 +92,4 @@ IDeviceState* dx11StateCache<IDeviceState, StateDecs>::FindState(const StateDecs
         */
 }
 
-#endif //	dx11StateCacheImpl_included
+#endif //   dx11StateCacheImpl_included

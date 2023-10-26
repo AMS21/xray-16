@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_rat_fsm.cpp
-//	Created 	: 25.04.2002
-//  Modified 	: 07.11.2002
-//	Author		: Dmitriy Iassenev
-//	Description : AI Behaviour for monster "Rat"
+//  Module      : ai_rat_fsm.cpp
+//  Created     : 25.04.2002
+//  Modified    : 07.11.2002
+//  Author      : Dmitriy Iassenev
+//  Description : AI Behaviour for monster "Rat"
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -28,7 +28,7 @@ using namespace RatSpace;
 
 #undef WRITE_TO_LOG
 #define WRITE_TO_LOG(s) m_bStopThinking = true;
-/*	if (!visible_objects().size())\
+/*  if (!visible_objects().size())\
 Msg("* No objects in frustum",visible_objects().size());\
 else {\
 Msg("* Objects in frustum (%d) :",visible_objects().size());\
@@ -122,7 +122,7 @@ void CAI_Rat::Think()
 
 void CAI_Rat::Death()
 {
-    // WRITE_TO_LOG	("Dying...");
+    // WRITE_TO_LOG ("Dying...");
     vfSetFire(false);
 
     m_bStopThinking = true;
@@ -138,10 +138,10 @@ void CAI_Rat::Death()
         setVisible(false);
         if (Device.dwTimeGlobal - m_previous_query_time > 10000)
         {
-            //			setEnabled			(FALSE);
-            //			NET_Packet			P;
-            //			u_EventGen			(P,GE_DESTROY,ID());
-            //			u_EventSend			(P);
+            //          setEnabled          (FALSE);
+            //          NET_Packet          P;
+            //          u_EventGen          (P,GE_DESTROY,ID());
+            //          u_EventSend         (P);
         }
     }
 }
@@ -261,7 +261,7 @@ void CAI_Rat::UnderFire()
         return;
     }
 
-    //	Msg					("%6d : Rat %s, %f -> %f
+    //  Msg                 ("%6d : Rat %s, %f -> %f
     //[%f]",Device.dwTimeGlobal,*cName(),movement().m_body.current.pitch,movement().m_body.target.pitch,get_custom_pitch_speed(0.f));
 
     vfSetFire(false);
@@ -314,13 +314,13 @@ void CAI_Rat::AttackFire()
         return;
     }
 
-    //	Msg			("%6d : Rat %s, %f -> %f
+    //  Msg         ("%6d : Rat %s, %f -> %f
     //[%f]",Device.dwTimeGlobal,*cName(),movement().m_body.current.pitch,movement().m_body.target.pitch,get_custom_pitch_speed(0.f));
 
     // ERatStates eState =
     // ERatStates(dwfChooseAction(m_dwActionRefreshRate,m_fAttackSuccessProbability,g_Team(),g_Squad(),g_Group(),m_eCurrentState,m_eCurrentState,aiRatRetreat,this,30.f));
     // if (eState != m_eCurrentState)
-    //	GO_TO_NEW_STATE_THIS_UPDATE(eState);
+    //  GO_TO_NEW_STATE_THIS_UPDATE(eState);
 
     CHECK_IF_GO_TO_PREV_STATE(!memory().enemy().selected());
 
@@ -356,7 +356,7 @@ void CAI_Rat::AttackRun()
         return;
     }
 
-    //	Msg			("%6d : Rat %s, %f -> %f
+    //  Msg         ("%6d : Rat %s, %f -> %f
     //[%f]",Device.dwTimeGlobal,*cName(),movement().m_body.current.pitch,movement().m_body.target.pitch,get_custom_pitch_speed(0.f));
     vfSetFire(false);
 
@@ -431,7 +431,7 @@ void CAI_Rat::Retreat()
         ERatStates eState = ERatStates(dwfChooseAction(m_dwActionRefreshRate, m_fAttackSuccessProbability,
             m_fAttackSuccessProbability, m_fAttackSuccessProbability, m_fAttackSuccessProbability, g_Team(), g_Squad(),
             g_Group(), aiRatAttackRun, aiRatAttackRun, aiRatAttackRun, aiRatRetreat, aiRatRetreat, this, 30.f));
-        //		ERatStates eState =
+        //      ERatStates eState =
         // ERatStates(dwfChooseAction(m_dwActionRefreshRate,m_fAttackSuccessProbability,m_fAttackSuccessProbability,m_fAttackSuccessProbability,m_fAttackSuccessProbability,g_Team(),g_Squad(),g_Group(),aiRatAttackRun,aiRatAttackRun,aiRatAttackRun,aiRatAttackRun,aiRatAttackRun,this,30.f));
         if (eState != m_eCurrentState)
         {
@@ -498,7 +498,7 @@ void CAI_Rat::Pursuit()
 
     CHECK_IF_SWITCH_TO_NEW_STATE_THIS_UPDATE((m_fMorale < m_fMoraleNormalValue), aiRatUnderFire);
 
-    //	if ((m_tLastSound.dwTime >= m_dwLastUpdateTime) && ((m_tLastSound.eSoundType & SOUND_TYPE_WEAPON_BULLET_HIT) ==
+    //  if ((m_tLastSound.dwTime >= m_dwLastUpdateTime) && ((m_tLastSound.eSoundType & SOUND_TYPE_WEAPON_BULLET_HIT) ==
     // SOUND_TYPE_WEAPON_BULLET_HIT)) {
     if ((m_tLastSound.dwTime >= m_dwLastUpdateTime) &&
         (!m_tLastSound.tpEntity ||
@@ -553,35 +553,35 @@ void CAI_Rat::FreeRecoil()
         tTemp.mul(m_fUnderFireDistance);
         m_tSpawnPosition.add(Position(), tTemp);
     }
-    //	else
-    //		if (m_dwLastUpdateTime > m_dwLostRecoilTime + 2000)
-    //			m_tSpawnPosition = m_tGoalDir = m_tRecoilPosition;
+    //  else
+    //      if (m_dwLastUpdateTime > m_dwLostRecoilTime + 2000)
+    //          m_tSpawnPosition = m_tGoalDir = m_tRecoilPosition;
     //
-    //	m_fSafeSpeed = m_fSpeed = m_fMaxSpeed;
+    //  m_fSafeSpeed = m_fSpeed = m_fMaxSpeed;
     //
-    //	vfUpdateTime(m_fTimeUpdateDelta);
+    //  vfUpdateTime(m_fTimeUpdateDelta);
     //
-    //	if (m_dwLastUpdateTime > m_dwLostRecoilTime + 2000) {
-    //		m_fASpeed				= m_fAngleSpeed;
-    //		m_fSafeSpeed = m_fSpeed = m_fMinSpeed;
-    //		bfCheckIfGoalChanged	();
-    //		vfComputeNewPosition	(false);
-    //	}
-    //	else
-    //		vfComputeNewPosition(true,true);
-    //	if (m_dwLastUpdateTime > m_dwLostRecoilTime + 2000) {
-    //		m_tSpawnPosition		= m_tRecoilPosition;
-    //		m_fGoalChangeDelta		= 1000;//m_fSafeGoalChangeDelta;
-    //		m_tVarGoal.set			(m_tGoalVariation);
-    //		m_tVarGoal.mul			(.1f);
-    //		m_fASpeed				= m_fAngleSpeed;
-    //		m_fSpeed = m_fSafeSpeed = m_fMaxSpeed;
+    //  if (m_dwLastUpdateTime > m_dwLostRecoilTime + 2000) {
+    //      m_fASpeed               = m_fAngleSpeed;
+    //      m_fSafeSpeed = m_fSpeed = m_fMinSpeed;
+    //      bfCheckIfGoalChanged    ();
+    //      vfComputeNewPosition    (false);
+    //  }
+    //  else
+    //      vfComputeNewPosition(true,true);
+    //  if (m_dwLastUpdateTime > m_dwLostRecoilTime + 2000) {
+    //      m_tSpawnPosition        = m_tRecoilPosition;
+    //      m_fGoalChangeDelta      = 1000;//m_fSafeGoalChangeDelta;
+    //      m_tVarGoal.set          (m_tGoalVariation);
+    //      m_tVarGoal.mul          (.1f);
+    //      m_fASpeed               = m_fAngleSpeed;
+    //      m_fSpeed = m_fSafeSpeed = m_fMaxSpeed;
     //
-    //		bfCheckIfGoalChanged	();
-    //		vfUpdateTime			(m_fTimeUpdateDelta);
-    //		vfComputeNewPosition	(false);
-    //	}
-    //	else
+    //      bfCheckIfGoalChanged    ();
+    //      vfUpdateTime            (m_fTimeUpdateDelta);
+    //      vfComputeNewPosition    (false);
+    //  }
+    //  else
     {
         m_fSpeed = m_fSafeSpeed = m_fMaxSpeed;
         vfComputeNewPosition(true, true);
@@ -678,14 +678,14 @@ void CAI_Rat::EatCorpse()
         SWITCH_TO_NEW_STATE_THIS_UPDATE(aiRatFreeRecoil);
     }
 
-    //	IKinematicsAnimated					*V=
+    //  IKinematicsAnimated                 *V=
     // smart_cast<IKinematicsAnimated*>(const_cast<CGameObject*>(memory().item().selected())->Visual());
-    //	R_ASSERT							(V);
-    //	u16									head_bone = V->LL_BoneID("bip01_head");
-    //	Fmatrix								l_tMatrix;
-    //	l_tMatrix.mul_43
+    //  R_ASSERT                            (V);
+    //  u16                                 head_bone = V->LL_BoneID("bip01_head");
+    //  Fmatrix                             l_tMatrix;
+    //  l_tMatrix.mul_43
     //(const_cast<CGameObject*>(memory().item().selected())->XFORM(),smart_cast<IKinematics*>(const_cast<CGameObject*>(memory().item().selected())->Visual())->LL_GetBoneInstance(head_bone).mTransform);
-    //	Fvector								temp_position = l_tMatrix.c;
+    //  Fvector                             temp_position = l_tMatrix.c;
     Fvector temp_position;
     memory().item().selected()->Center(temp_position);
 

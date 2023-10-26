@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: patrol_path_storage.cpp
-//	Created 	: 15.06.2004
-//  Modified 	: 15.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Patrol path storage
+//  Module      : patrol_path_storage.cpp
+//  Created     : 15.06.2004
+//  Modified    : 15.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Patrol path storage
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"
@@ -35,7 +35,7 @@ void CPatrolPathStorage::load_raw(
         VERIFY3(I == m_registry.end(), "Duplicated patrol path found", *patrol_name);
         m_registry.emplace(
             patrol_name, &(xr_new<CPatrolPath>(patrol_name))->load_raw(level_graph, cross, game_graph, *sub_chunk)
-		);
+        );
     }
 
     chunk->close();

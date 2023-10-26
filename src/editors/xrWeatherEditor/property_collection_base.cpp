@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_collection_base.cpp
-//	Created 	: 24.12.2007
-//  Modified 	: 08.01.2008
-//	Author		: Dmitriy Iassenev
-//	Description : property collection implementation class
+//  Module      : property_collection_base.cpp
+//  Created     : 24.12.2007
+//  Modified    : 08.01.2008
+//  Author      : Dmitriy Iassenev
+//  Description : property collection implementation class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

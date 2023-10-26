@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////
-// ExplosiveItem.cpp:	класс для вещи которая взрывается под
-//						действием различных хитов (канистры,
-//						балоны с газом и т.д.)
+// ExplosiveItem.cpp:   класс для вещи которая взрывается под
+//                      действием различных хитов (канистры,
+//                      балоны с газом и т.д.)
 //////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -27,12 +27,12 @@ void CExplosiveItem::net_Destroy()
     CExplosive::net_Destroy();
 }
 
-// void CExplosiveItem::Hit(float P, Fvector &dir,	IGameObject* who, s16 element,
-//						Fvector position_in_object_space, float impulse,
-//						ALife::EHitType hit_type)
+// void CExplosiveItem::Hit(float P, Fvector &dir,  IGameObject* who, s16 element,
+//                      Fvector position_in_object_space, float impulse,
+//                      ALife::EHitType hit_type)
 void CExplosiveItem::Hit(SHit* pHDS)
 {
-    //	inherited::Hit(P,dir,who,element,position_in_object_space,impulse,hit_type);
+    //  inherited::Hit(P,dir,who,element,position_in_object_space,impulse,hit_type);
     if (CDelayedActionFuse::isActive())
         pHDS->power = 0.f;
     inherited::Hit(pHDS);
@@ -73,7 +73,7 @@ void CExplosiveItem::shedule_Update(u32 dt)
 
 bool CExplosiveItem::shedule_Needed()
 {
-    //.	return true;
+    //. return true;
 
     return (inherited::shedule_Needed() || CDelayedActionFuse::isActive());
 }

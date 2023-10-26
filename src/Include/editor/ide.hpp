@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ide.hpp
-//	Created 	: 04.12.2007
-//  Modified 	: 04.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : IDE interface class
+//  Module      : ide.hpp
+//  Created     : 04.12.2007
+//  Modified    : 04.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : IDE interface class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef EDITOR_IDE_HPP_INCLUDED

@@ -15,7 +15,7 @@ void CLight_DB::Load(IReader* fs)
         // Light itself
         sun = nullptr;
 
-		const size_t size = F->length();
+        const size_t size = F->length();
         const size_t element = sizeof(Flight) + 4;
         const size_t count = (size / element);
         VERIFY((count * element) == size);
@@ -176,7 +176,7 @@ void CLight_DB::Update()
 #ifdef DEBUG
         if (E.sun_dir.y >= 0)
         {
-            //			Log("sect_name", E.sect_name.c_str());
+            //          Log("sect_name", E.sect_name.c_str());
             Log("E.sun_dir", E.sun_dir);
             Log("E.wind_direction", E.wind_direction);
             Log("E.wind_velocity", E.wind_velocity);

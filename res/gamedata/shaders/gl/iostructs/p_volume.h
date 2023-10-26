@@ -7,9 +7,9 @@ in vec4 gl_FragCoord;
 in int gl_SampleID;
 #endif
 
-layout(location = TEXCOORD0)	in 	float4 	p_volume_tc		; // TEXCOORD0;
-#ifdef 	USE_SJITTER
-layout(location = TEXCOORD1)	in 	float4 	p_volume_tcJ	; // TEXCOORD1;
+layout(location = TEXCOORD0)    in  float4  p_volume_tc     ; // TEXCOORD0;
+#ifdef  USE_SJITTER
+layout(location = TEXCOORD1)    in  float4  p_volume_tcJ    ; // TEXCOORD1;
 #endif
 
 #ifdef MSAA_OPTIMIZATION
@@ -28,23 +28,23 @@ float4 _main( p_volume I );
 
 void main()
 {
-	p_volume	I;
-	I.tc		= p_volume_tc;
-#ifdef 	USE_SJITTER
-	I.tcJ 		= p_volume_tcJ;
+    p_volume    I;
+    I.tc        = p_volume_tc;
+#ifdef  USE_SJITTER
+    I.tcJ       = p_volume_tcJ;
 #endif
 
 #ifdef MSAA_OPTIMIZATION
 #ifdef GBUFFER_OPTIMIZATION
-	SV_Target	= _main( I, gl_FragCoord, gl_SampleID );
+    SV_Target   = _main( I, gl_FragCoord, gl_SampleID );
 #else
-	SV_Target	= _main( I, gl_SampleID  );
+    SV_Target   = _main( I, gl_SampleID  );
 #endif
 #else
 #ifdef GBUFFER_OPTIMIZATION
-	SV_Target	= _main( I, gl_FragCoord );
+    SV_Target   = _main( I, gl_FragCoord );
 #else
-	SV_Target	= _main( I );
+    SV_Target   = _main( I );
 #endif
 #endif
 }

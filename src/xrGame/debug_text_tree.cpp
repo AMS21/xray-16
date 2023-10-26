@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: debug_text_tree.cpp
-//	Created 	: 02.04.2008
-//  Modified 	: 03.04.2008
-//	Author		: Lain
-//	Description : Text tree for onscreen debugging
+//  Module      : debug_text_tree.cpp
+//  Created     : 02.04.2008
+//  Modified    : 03.04.2008
+//  Author      : Lain
+//  Description : Text tree for onscreen debugging
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -45,11 +45,11 @@ struct texttree_draw_helper
         }
 
         // dont use multicolumns
-        // 			if ( s_params.cur_row && s_params.cur_row + 1 > s_params.max_rows )
-        // 			{
-        // 				s_params.cur_row = 0;
-        // 				s_params.ori_x  += s_params.column_size;
-        // 			}
+        //          if ( s_params.cur_row && s_params.cur_row + 1 > s_params.max_rows )
+        //          {
+        //              s_params.cur_row = 0;
+        //              s_params.ori_x  += s_params.column_size;
+        //          }
 
         if (!s_params.cur_row)
         {

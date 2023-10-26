@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: car_memory.cpp
-//	Created 	: 11.06.2007
-//  Modified 	: 11.06.2007
-//	Author		: Dmitriy Iassenev
-//	Description : car memory
+//  Module      : car_memory.cpp
+//  Created     : 11.06.2007
+//  Modified    : 11.06.2007
+//  Author      : Dmitriy Iassenev
+//  Description : car memory
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -30,7 +30,7 @@ void car_memory::reload(LPCSTR section)
 bool car_memory::feel_vision_isRelevant(IGameObject* object)
 {
     return (NULL != smart_cast<CActor*>(object));
-    //.	return			(false);
+    //. return          (false);
 }
 
 void car_memory::camera(Fvector& position, Fvector& direction, Fvector& normal, float& field_of_view,

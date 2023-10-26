@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: sight_manager_inline.h
-//	Created 	: 27.12.2003
-//  Modified 	: 08.04.2008
-//	Author		: Dmitriy Iassenev
-//	Description : Sight manager inline functions
+//  Module      : sight_manager_inline.h
+//  Created     : 27.12.2003
+//  Modified    : 08.04.2008
+//  Author      : Dmitriy Iassenev
+//  Description : Sight manager inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

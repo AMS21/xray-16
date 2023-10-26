@@ -50,14 +50,14 @@ inline int ge(float x, float y, const float eps = AINT_EPSILON) { return (x > y)
 // inline float angle_normalize(float psi)
 //{
 //    if (fabs(psi-2*M_PI) < AINT_EPSILON)
-//	psi = 2*M_PI;
+//  psi = 2*M_PI;
 //    else
-//	while (psi > 2*M_PI)  psi -= 2* M_PI;
+//  while (psi > 2*M_PI)  psi -= 2* M_PI;
 //
 //    if (fabs(psi) < AINT_EPSILON)
-//	psi = 0.0;
+//  psi = 0.0;
 //    else
-//	while (psi < 0) psi += 2* M_PI;
+//  while (psi < 0) psi += 2* M_PI;
 //
 //    return psi;
 //}

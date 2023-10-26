@@ -16,7 +16,7 @@ extern "C" XR_IMPORT
 bool DXTCompress(pcstr out_name, u8* raw_data, u8* normal_map,
     u32 w, u32 h, u32 pitch, STextureParams* fmt, u32 depth);
 
-// extern BOOL ApplyBorders	(lm_layer &lm, u32 ref);
+// extern BOOL ApplyBorders (lm_layer &lm, u32 ref);
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -170,7 +170,7 @@ void CLightmap::Save(LPCSTR path)
 
     lm.destroy();
 
-    // Saving			(DXT5.dds)
+    // Saving           (DXT5.dds)
     Logger.Status("Compression base...");
     {
         string_path FN;
@@ -209,8 +209,8 @@ void CLightmap::Save(LPCSTR path)
     }
 }
 /*
-    lm_layer					lm;
-    b_texture					lm_texture;
+    lm_layer                    lm;
+    b_texture                   lm_texture;
 */
 void CLightmap::read(INetReader& r)
 {

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: stalker_decision_space.h
-//	Created 	: 30.03.2004
-//  Modified 	: 30.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Stalker decision space
+//  Module      : stalker_decision_space.h
+//  Created     : 30.03.2004
+//  Modified    : 30.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Stalker decision space
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

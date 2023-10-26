@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: graph_vertex_base_inline.h
-//	Created 	: 14.01.2004
-//  Modified 	: 19.02.2005
-//	Author		: Dmitriy Iassenev
-//	Description : Graph vertex base class template inline functions
+//  Module      : graph_vertex_base_inline.h
+//  Created     : 14.01.2004
+//  Modified    : 19.02.2005
+//  Author      : Dmitriy Iassenev
+//  Description : Graph vertex base class template inline functions
 ////////////////////////////////////////////////////////////////////////////
 #pragma once
 

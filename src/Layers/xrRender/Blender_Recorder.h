@@ -110,7 +110,7 @@ public:
     void Stage_Constant(LPCSTR name);
     void StageEnd();
 
-    // R1/R2-compiler	[programmable]
+    // R1/R2-compiler   [programmable]
     u32 i_Sampler(LPCSTR name) const;
     void i_Texture(u32 s, LPCSTR name);
     void i_Projective(u32 s, bool b);
@@ -125,7 +125,7 @@ public:
     void i_Filter(u32 s, u32 _min, u32 _mip, u32 _mag);
     void i_BorderColor(u32 s, u32 color);
 
-    // R1/R2-compiler	[programmable]		- templates
+    // R1/R2-compiler   [programmable]      - templates
     void r_Pass(LPCSTR vs, LPCSTR ps, bool bFog, BOOL bZtest = TRUE, BOOL bZwrite = TRUE, BOOL bABlend = FALSE,
         D3DBLEND abSRC = D3DBLEND_ONE, D3DBLEND abDST = D3DBLEND_ZERO, BOOL aTest = FALSE, u32 aRef = 0);
 

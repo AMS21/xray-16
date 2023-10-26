@@ -11,10 +11,10 @@ static class DebugOutputEmptyImpl : public IDebugOutput
     virtual const Flags32& ph_dbg_draw_mask1() const { return m2; }
     virtual void DBG_DrawStatBeforeFrameStep() {}
     virtual void DBG_DrawStatAfterFrameStep() {}
-    // virtual	void DBG_RenderUpdate( )												=0;
+    // virtual  void DBG_RenderUpdate( )                                                =0;
     virtual void DBG_OpenCashedDraw() {}
     virtual void DBG_ClosedCashedDraw(u32 remove_time) {}
-    // virtual	void DBG_DrawPHAbstruct( SPHDBGDrawAbsract*	a )							=0;
+    // virtual  void DBG_DrawPHAbstruct( SPHDBGDrawAbsract* a )                         =0;
     virtual void DBG_DrawPHObject(const CPHObject* obj) {}
     virtual void DBG_DrawContact(const dContact& c) {}
     virtual void DBG_DrawTri(CDB::RESULT* T, u32 c) {}
@@ -24,26 +24,26 @@ static class DebugOutputEmptyImpl : public IDebugOutput
     virtual void DBG_DrawOBB(const Fmatrix& m, const Fvector h, u32 c) {}
     virtual void DBG_DrawPoint(const Fvector& p, float size, u32 c) {}
     virtual void DBG_DrawMatrix(const Fmatrix& m, float size, u8 a = 255) {}
-    // virtual	void DBG_DrawRotationX( const Fmatrix &m, float ang0, float ang1, float size, u32 ac, bool solid =
+    // virtual  void DBG_DrawRotationX( const Fmatrix &m, float ang0, float ang1, float size, u32 ac, bool solid =
     // false,
     // u32 tessel = 7 ) = 0;
-    // virtual	void DBG_DrawRotationY( const Fmatrix &m, float ang0, float ang1, float size, u32 ac, bool solid =
+    // virtual  void DBG_DrawRotationY( const Fmatrix &m, float ang0, float ang1, float size, u32 ac, bool solid =
     // false,
     // u32 tessel = 7 ) = 0;
-    // virtual	void DBG_DrawRotationZ( const Fmatrix &m, float ang0, float ang1, float size, u32 ac, bool solid =
+    // virtual  void DBG_DrawRotationZ( const Fmatrix &m, float ang0, float ang1, float size, u32 ac, bool solid =
     // false,
     // u32 tessel = 7 ) = 0;
     virtual void _cdecl DBG_OutText(LPCSTR s, ...) {}
-    // virtual	void DBG_TextOutSet( float x, float y )									=0;
-    // virtual	void DBG_TextSetColor( u32 color )										=0;
-    // virtual	void DBG_DrawBind( IGameObject &O )											=0;
-    // virtual	void DBG_PhysBones( IGameObject &O )										=0;
-    // virtual	void DBG_DrawBones( IGameObject &O )										=0;
+    // virtual  void DBG_TextOutSet( float x, float y )                                 =0;
+    // virtual  void DBG_TextSetColor( u32 color )                                      =0;
+    // virtual  void DBG_DrawBind( IGameObject &O )                                         =0;
+    // virtual  void DBG_PhysBones( IGameObject &O )                                        =0;
+    // virtual  void DBG_DrawBones( IGameObject &O )                                        =0;
     virtual void DBG_DrawFrameStart() {}
     virtual void PH_DBG_Render() {}
     virtual void PH_DBG_Clear() {}
     virtual LPCSTR PH_DBG_ObjectTrackName() { return "none"; }
-    // virtual	bool			draw_frame								()=0;
+    // virtual  bool            draw_frame                              ()=0;
     u32 tries_num;
     virtual u32& dbg_tries_num() { return tries_num; }
     u32 saved_tries_for_active_objects;

@@ -87,16 +87,16 @@ void CControllerAnimation::update_frame()
     return;
 
     // if (m_controller->m_mental_state == CController::eStateIdle) {
-    //	inherited::update_frame();
-    //	return;
+    //  inherited::update_frame();
+    //  return;
     //}
     //
     // if (is_moving()) set_path_direction();
     //
-    // select_legs_animation	();
-    // select_torso_animation	();
+    // select_legs_animation    ();
+    // select_torso_animation   ();
     //
-    // select_velocity			();
+    // select_velocity          ();
 }
 
 void CControllerAnimation::load()
@@ -311,8 +311,8 @@ void CControllerAnimation::set_body_state(ETorsoActionType torso, ELegsActionTyp
 {
     m_current_legs_action = CControllerAnimation::eLegsTypeStealMotion;
     m_current_torso_action = CControllerAnimation::eTorsoSteal;
-    // m_current_legs_action		= legs;
-    // m_current_torso_action		= torso;
+    // m_current_legs_action        = legs;
+    // m_current_torso_action       = torso;
 }
 
 bool CControllerAnimation::is_moving()

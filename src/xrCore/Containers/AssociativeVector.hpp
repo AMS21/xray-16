@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: AssociativeVector.h
-//	Created 	: 14.10.2005
-//  Modified 	: 14.10.2005
-//	Author		: Dmitriy Iassenev
-//	Description : associative vector container
+//  Module      : AssociativeVector.h
+//  Created     : 14.10.2005
+//  Modified    : 14.10.2005
+//  Author      : Dmitriy Iassenev
+//  Description : associative vector container
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

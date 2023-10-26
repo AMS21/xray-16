@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_online_offline_group_brain.h
-//	Created 	: 25.10.2005
-//  Modified 	: 25.10.2005
-//	Author		: Dmitriy Iassenev
-//	Description : ALife Online Offline Group brain class
+//  Module      : alife_online_offline_group_brain.h
+//  Created     : 25.10.2005
+//  Modified    : 25.10.2005
+//  Author      : Dmitriy Iassenev
+//  Description : ALife Online Offline Group brain class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

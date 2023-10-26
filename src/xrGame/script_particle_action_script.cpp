@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_particle_action.cpp
-//	Created 	: 30.09.2003
-//  Modified 	: 29.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script particle action class
+//  Module      : script_particle_action.cpp
+//  Created     : 30.09.2003
+//  Modified    : 29.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script particle action class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

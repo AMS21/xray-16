@@ -39,21 +39,21 @@ void CRender::Screenshot(ScreenshotMode mode /*= SM_NORMAL*/, pcstr name /*= nul
     pDst = (u32*)image.GetPixels();
     pPixel = (u32*)D.pBits;
     pEnd = pPixel + (Device.dwWidth * Device.dwHeight);
-    //	IGOR: Remove inverse color correction and kill alpha
+    //  IGOR: Remove inverse color correction and kill alpha
     /*
-    D3DGAMMARAMP	G;
+    D3DGAMMARAMP    G;
     dxRenderDeviceRender::Instance().gammaGenLUT(G);
     for (int i=0; i<256; i++) {
-        G.red	[i]	/= 256;
-        G.green	[i]	/= 256;
-        G.blue	[i]	/= 256;
+        G.red   [i] /= 256;
+        G.green [i] /= 256;
+        G.blue  [i] /= 256;
     }
-    for (;pPixel!=pEnd; pPixel++)	{
+    for (;pPixel!=pEnd; pPixel++)   {
         u32 p = *pPixel;
-        *pPixel = color_xrgb	(
-            G.red	[color_get_R(p)],
-            G.green	[color_get_G(p)],
-            G.blue	[color_get_B(p)]
+        *pPixel = color_xrgb    (
+            G.red   [color_get_R(p)],
+            G.green [color_get_G(p)],
+            G.blue  [color_get_B(p)]
             );
     }
     */

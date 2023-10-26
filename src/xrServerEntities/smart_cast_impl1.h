@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: smart_cast_impl1.h
-//	Created 	: 17.09.2004
-//  Modified 	: 17.09.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Smart dynamic cast implementation
+//  Module      : smart_cast_impl1.h
+//  Created     : 17.09.2004
+//  Modified    : 17.09.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Smart dynamic cast implementation
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

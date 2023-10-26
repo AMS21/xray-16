@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: eatable_item_object.h
-//	Created 	: 24.03.2003
-//  Modified 	: 29.01.2004
-//	Author		: Yuri Dobronravin
-//	Description : Eatable item object implementation
+//  Module      : eatable_item_object.h
+//  Created     : 24.03.2003
+//  Modified    : 29.01.2004
+//  Author      : Yuri Dobronravin
+//  Description : Eatable item object implementation
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

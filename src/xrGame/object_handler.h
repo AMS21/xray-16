@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: object_handler.h
-//	Created 	: 11.03.2004
-//  Modified 	: 11.03.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Object handler
+//  Module      : object_handler.h
+//  Created     : 11.03.2004
+//  Modified    : 11.03.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Object handler
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

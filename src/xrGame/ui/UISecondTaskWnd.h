@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: UISecondTaskWnd.h
-//	Created 	: 30.05.2008
-//	Author		: Evgeniy Sokolov
-//	Description : UI Secondary Task Wnd class
+//  Module      : UISecondTaskWnd.h
+//  Created     : 30.05.2008
+//  Author      : Evgeniy Sokolov
+//  Description : UI Secondary Task Wnd class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef UI_SECOND_TASK_WND_H_INCLUDED
@@ -52,7 +52,7 @@ protected:
     void OnBtnClose(CUIWindow* w, void* d);
     bool SortingLessFunction(CUIWindow* left, CUIWindow* right);
 
-    //			void	UpdateCounter		();
+    //          void    UpdateCounter       ();
 public:
     UIHint* hint_wnd;
 
@@ -61,10 +61,10 @@ private: // m_
     CUIScrollView* m_list;
 
     CUIStatic* m_caption;
-    //	CUIStatic*			m_counter;
+    //  CUIStatic*          m_counter;
     CUI3tButton* m_bt_close;
 
-    //	u32					m_activ_task_count;
+    //  u32                 m_activ_task_count;
     float m_orig_h;
 
 }; // class UITaskListWnd

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_fvector_script.cpp
-//	Created 	: 28.06.2004
-//  Modified 	: 28.06.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script float vector script export
+//  Module      : script_fvector_script.cpp
+//  Created     : 28.06.2004
+//  Modified    : 28.06.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script float vector script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
@@ -55,7 +55,7 @@ SCRIPT_EXPORT(Fvector, (),
             .def("similar", &Fvector::similar)
             .def("set_length", &Fvector::set_length, return_reference_to<1>())
             .def("align", &Fvector::align, return_reference_to<1>())
-            //			.def("squeeze",						&Fvector::squeeze,
+            //          .def("squeeze",                     &Fvector::squeeze,
             // return_reference_to<1>())
             .def("clamp", (Fvector & (Fvector::*)(const Fvector&))(&Fvector::clamp), return_reference_to<1>())
             .def("clamp", (Fvector & (Fvector::*)(const Fvector&, const Fvector&))(&Fvector::clamp),
@@ -72,47 +72,47 @@ SCRIPT_EXPORT(Fvector, (),
                 return_reference_to<1>())
             .def("mad", (Fvector & (Fvector::*)(const Fvector&, const Fvector&, const Fvector&))(&Fvector::mad),
                 return_reference_to<1>())
-            //			.def("square_magnitude",			&Fvector::square_magnitude)
+            //          .def("square_magnitude",            &Fvector::square_magnitude)
             .def("magnitude", &Fvector::magnitude)
-            //			.def("normalize_magnitude",			&Fvector::normalize_magn)
+            //          .def("normalize_magnitude",         &Fvector::normalize_magn)
             .def("normalize", (Fvector & (Fvector::*)())(&Fvector::normalize_safe), return_reference_to<1>())
             .def("normalize", (Fvector & (Fvector::*)(const Fvector&))(&Fvector::normalize_safe),
                 return_reference_to<1>())
             .def("normalize_safe", (Fvector & (Fvector::*)())(&Fvector::normalize_safe), return_reference_to<1>())
             .def("normalize_safe", (Fvector & (Fvector::*)(const Fvector&))(&Fvector::normalize_safe),
                 return_reference_to<1>())
-            //			.def("random_dir",					(Fvector & (Fvector::*)())(&Fvector::random_dir),
+            //          .def("random_dir",                  (Fvector & (Fvector::*)())(&Fvector::random_dir),
             // return_reference_to<1>())
-            //			.def("random_dir",					(Fvector & (Fvector::*)(const Fvector &,
+            //          .def("random_dir",                  (Fvector & (Fvector::*)(const Fvector &,
             // float))(&Fvector::random_dir), return_reference_to<1>())
-            //			.def("random_point",				(Fvector & (Fvector::*)(const Fvector
+            //          .def("random_point",                (Fvector & (Fvector::*)(const Fvector
             //&))(&Fvector::random_point), return_reference_to<1>())
-            //			.def("random_point",				(Fvector & (Fvector::*)(float))(&Fvector::random_point),
+            //          .def("random_point",                (Fvector & (Fvector::*)(float))(&Fvector::random_point),
             // return_reference_to<1>())
             .def("dotproduct", &Fvector::dotproduct)
             .def("crossproduct", &Fvector::crossproduct, return_reference_to<1>())
             .def("distance_to_xz", &Fvector::distance_to_xz)
             .def("distance_to_sqr", &Fvector::distance_to_sqr)
             .def("distance_to", &Fvector::distance_to)
-            //			.def("from_bary",					(Fvector & (Fvector::*)(const Fvector &, const Fvector
-            //&, const Fvector &, float, float, float))(&Fvector::from_bary),	return_reference_to<1>())
-            //			.def("from_bary",					(Fvector & (Fvector::*)(const Fvector &, const Fvector
-            //&, const Fvector &, const Fvector &))(&Fvector::from_bary),		return_reference_to<1>())
-            //			.def("from_bary4",					&Fvector::from_bary4,
+            //          .def("from_bary",                   (Fvector & (Fvector::*)(const Fvector &, const Fvector
+            //&, const Fvector &, float, float, float))(&Fvector::from_bary),   return_reference_to<1>())
+            //          .def("from_bary",                   (Fvector & (Fvector::*)(const Fvector &, const Fvector
+            //&, const Fvector &, const Fvector &))(&Fvector::from_bary),       return_reference_to<1>())
+            //          .def("from_bary4",                  &Fvector::from_bary4,
             // return_reference_to<1>())
-            //			.def("mknormal_non_normalized",		&Fvector::mknormal_non_normalized,
+            //          .def("mknormal_non_normalized",     &Fvector::mknormal_non_normalized,
             // return_reference_to<1>())
-            //			.def("mknormal",					&Fvector::mknormal,
+            //          .def("mknormal",                    &Fvector::mknormal,
             // return_reference_to<1>())
             .def("setHP", &Fvector::setHP, return_reference_to<1>())
-            //			.def("getHP",						&Fvector::getHP, policy_list<out_value<2>,
+            //          .def("getHP",                       &Fvector::getHP, policy_list<out_value<2>,
             // out_value<3>>())
             .def("getH", &Fvector::getH)
             .def("getP", &Fvector::getP)
 
             .def("reflect", &Fvector::reflect, return_reference_to<1>())
             .def("slide", &Fvector::slide, return_reference_to<1>())
-            //			.def("generate_orthonormal_basis",	&Fvector::generate_orthonormal_basis),
+            //          .def("generate_orthonormal_basis",  &Fvector::generate_orthonormal_basis),
     ];
 });
 

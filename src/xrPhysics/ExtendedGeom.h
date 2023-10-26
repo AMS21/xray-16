@@ -14,7 +14,7 @@
 #endif
 
 #ifdef DEBUG
-// extern	u32				dbg_total_saved_tries					;
+// extern   u32             dbg_total_saved_tries                   ;
 #endif
 class IPhysicsShellHolder;
 
@@ -116,7 +116,7 @@ struct dxGeomUserData
     u16 tri_material;
     ContactCallbackFun* callback;
     void* callback_data;
-    //	ObjectContactCallbackFun	*object_callback								;
+    //  ObjectContactCallbackFun    *object_callback                                ;
     CObjectContactCallback* object_callbacks;
     u16 element_position;
     u16 bone_id;
@@ -124,15 +124,15 @@ struct dxGeomUserData
     Fvector last_aabb_size;
     Fvector last_aabb_pos;
 
-    //	struct ContactsParameters
-    //	{
-    //	dReal damping;
-    //	dReal spring;
-    //	dReal bonce;
-    //	dReal bonce_vel;
-    //	dReal mu;
-    //	unsigned int maxc;
-    //	};
+    //  struct ContactsParameters
+    //  {
+    //  dReal damping;
+    //  dReal spring;
+    //  dReal bonce;
+    //  dReal bonce_vel;
+    //  dReal mu;
+    //  unsigned int maxc;
+    //  };
 };
 
 IC dxGeomUserData* dGeomGetUserData(dxGeom* geom) { return (dxGeomUserData*)dGeomGetData(geom); }
@@ -150,9 +150,9 @@ IC dxGeomUserData* retrieveGeomUserData(dGeomID geom)
 {
     return dGeomGetUserData(retrieveGeom(geom));
     // if(dGeomGetClass(geom)==dGeomTransformClass)
-    //	return dGeomGetUserData(dGeomTransformGetGeom(geom));
+    //  return dGeomGetUserData(dGeomTransformGetGeom(geom));
     // else
-    //	return dGeomGetUserData(geom);
+    //  return dGeomGetUserData(geom);
 }
 
 XRPHYSICS_API void get_user_data(dxGeomUserData*& gd1, dxGeomUserData*& gd2, bool bo1, const dContactGeom& geom);
@@ -247,7 +247,7 @@ IC void dGeomUserDataRemoveObjectContactCallback(dxGeom* geom, ObjectContactCall
     CObjectContactCallback::RemoveCallback((dGeomGetUserData(geom))->object_callbacks, (obj_callback));
 }
 
-// XRPHYSICS_API bool dGeomUserDataHasCallback(dxGeom* geom,ObjectContactCallbackFun	*obj_callback);
+// XRPHYSICS_API bool dGeomUserDataHasCallback(dxGeom* geom,ObjectContactCallbackFun    *obj_callback);
 
 IC void dGeomUserDataSetElementPosition(dxGeom* geom, u16 e_pos) { (dGeomGetUserData(geom))->element_position = e_pos; }
 IC void dGeomUserDataSetBoneId(dxGeom* geom, u16 bone_id) { (dGeomGetUserData(geom))->bone_id = bone_id; }

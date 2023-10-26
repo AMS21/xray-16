@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_converter_float.cpp
-//	Created 	: 23.06.2008
-//  Modified 	: 23.06.2008
-//	Author		: Dmitriy Iassenev
-//	Description : property converter float class
+//  Module      : property_converter_float.cpp
+//  Created     : 23.06.2008
+//  Modified    : 23.06.2008
+//  Author      : Dmitriy Iassenev
+//  Description : property converter float class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

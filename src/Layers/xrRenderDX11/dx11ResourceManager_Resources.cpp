@@ -73,7 +73,7 @@ void CResourceManager::_DeleteVS(const SVS* vs)
             const auto iLayout = iDecl->vs_to_layout.find(vs->signature->signature);
             if (iLayout != iDecl->vs_to_layout.end())
             {
-                //	Release vertex layout
+                //  Release vertex layout
                 _RELEASE(iLayout->second);
                 iDecl->vs_to_layout.erase(iLayout);
             }
@@ -148,8 +148,8 @@ SDeclaration* CResourceManager::_CreateDecl(const D3DVERTEXELEMENT9* dcl)
     // Create _new
     SDeclaration* D = v_declarations.emplace_back(xr_new<SDeclaration>());
     u32 dcl_size = GetDeclLength(dcl) + 1;
-    //	Don't need it for DirectX 10 here
-    // CHK_DX					(HW.pDevice->CreateVertexDeclaration(dcl,&D->dcl));
+    //  Don't need it for DirectX 10 here
+    // CHK_DX                   (HW.pDevice->CreateVertexDeclaration(dcl,&D->dcl));
     D->dcl_code.assign(dcl, dcl + dcl_size);
     ConvertVertexDeclaration(D->dcl_code, D->dx11_dcl_code);
     D->dwFlags |= xr_resource_flagged::RF_REGISTERED;

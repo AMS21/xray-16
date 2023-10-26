@@ -33,7 +33,7 @@ void CHM_Static::Update()
     int v_x = iFloor(view.x / dhm_size);
     int v_z = iFloor(view.z / dhm_size);
 
-    // *****	SCROLL
+    // *****    SCROLL
     if (v_x != c_x)
     {
         if (v_x > c_x)
@@ -113,7 +113,7 @@ void CHM_Static::Update()
         }
     }
 
-    // *****	perform TASKs
+    // *****    perform TASKs
     for (int taskid = 0; (taskid < tasksPerFrame) && (!task.empty()); ++taskid)
     {
         Slot* S = task.back();

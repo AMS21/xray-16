@@ -9,7 +9,7 @@ enum EControlType
     eControlPath, // path builder
     eControlDir, // model direction
     eControlAnimation, // animation manager
-    //		eControlSound,					// sound manager
+    //      eControlSound,                  // sound manager
 
     // 2nd level
     eControlSequencer, // capture: anim

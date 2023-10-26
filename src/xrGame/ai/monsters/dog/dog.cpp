@@ -95,10 +95,10 @@ void CAI_Dog::Load(LPCSTR section)
 
     anim().AddAnim(eAnimCheckCorpse, "stand_check_corpse_", -1, &velocity_none, PS_STAND);
     anim().AddAnim2(eAnimDragCorpse, { "stand_drage_", "stand_drag_" }, -1, &velocity_drag, PS_STAND);
-    // anim().AddAnim(eAnimSniff,		"stand_sniff_",			-1, &velocity_none,		PS_STAND);
-    // anim().AddAnim(eAnimHowling,		"stand_howling_",		-1,	&velocity_none,		PS_STAND);
+    // anim().AddAnim(eAnimSniff,       "stand_sniff_",         -1, &velocity_none,     PS_STAND);
+    // anim().AddAnim(eAnimHowling,     "stand_howling_",       -1, &velocity_none,     PS_STAND);
 
-    // anim().AddAnim(eAnimJumpGlide,   	"jump_glide_",			-1, &velocity_none,		PS_STAND);
+    // anim().AddAnim(eAnimJumpGlide,       "jump_glide_",          -1, &velocity_none,     PS_STAND);
     anim().AddAnim(eAnimJumpGlide, "stand_jump_left_", 0, &velocity_none, PS_STAND);
 
     anim().AddAnim2(eAnimSteal, { "stand_walk_fwd_", "stand_steal_" }, -1, &velocity_steal, PS_STAND);
@@ -107,7 +107,7 @@ void CAI_Dog::Load(LPCSTR section)
     anim().AddAnim(eAnimSitLieDown, "sit_lie_down_", -1, &velocity_none, PS_SIT);
     anim().AddAnim(eAnimStandSitDown, "stand_sit_down_", -1, &velocity_none, PS_STAND);
     anim().AddAnim(eAnimSitStandUp, "sit_stand_up_", -1, &velocity_none, PS_SIT);
-    // anim().AddAnim(eAnimLieToSleep,	"lie_to_sleep_",		-1,	&velocity_none,		PS_LIE);
+    // anim().AddAnim(eAnimLieToSleep,  "lie_to_sleep_",        -1, &velocity_none,     PS_LIE);
     anim().AddAnim(eAnimLieSitUp, "lie_to_sit_", -1, &velocity_none, PS_LIE);
 
     anim().AddAnim(eAnimJumpLeft, "stand_jump_left_", -1, &velocity_none, PS_STAND);
@@ -121,7 +121,7 @@ void CAI_Dog::Load(LPCSTR section)
     /////////////end mob home
 
     // define transitions
-    // order : 1. [anim -> anim]	2. [anim->state]	3. [state -> anim]		4. [state -> state]
+    // order : 1. [anim -> anim]    2. [anim->state]    3. [state -> anim]      4. [state -> state]
     anim().AddTransition(PS_SIT, PS_LIE, eAnimSitLieDown, false);
     anim().AddTransition(PS_STAND, PS_SIT, eAnimStandSitDown, false);
     anim().AddTransition(PS_SIT, PS_STAND, eAnimSitStandUp, false, SKIP_IF_AGGRESSIVE);
@@ -169,7 +169,7 @@ void CAI_Dog::reinit()
     if (ShadowOfChernobylMode)
         com_man().add_melee_jump_data("5","jump_right_0");
     // com_man().add_rotation_jump_data("stand_jump_left_0","stand_jump_left_0",
-    //	                             "stand_jump_right_0","stand_jump_right_0", deg(179));
+    //                               "stand_jump_right_0","stand_jump_right_0", deg(179));
     // com_man().add_melee_jump_data("stand_jump_left_0", "stand_jump_right_0");
 
     b_anim_end = false;

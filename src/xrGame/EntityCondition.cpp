@@ -399,7 +399,7 @@ CWound* CEntityCondition::ConditionHit(SHit* pHDS)
         m_fHealthLost = hit_power * m_fHealthHitPart * m_fHitBoneScale;
         m_fDeltaHealth -= CanBeHarmed() ? m_fHealthLost : 0;
         m_fDeltaPower -= hit_power * m_fPowerHitPart;
-        //		bAddWound		=  is_special_hit_2_self;
+        //      bAddWound       =  is_special_hit_2_self;
         bAddWound = false;
         break;
     case ALife::eHitTypeChemicalBurn:

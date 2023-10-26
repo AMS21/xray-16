@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: UIWarState.h
-//	Created 	: 15.04.2008
-//	Author		: Evgeniy Sokolov
-//	Description : UI war state (PDA) window class
+//  Module      : UIWarState.h
+//  Created     : 15.04.2008
+//  Author      : Evgeniy Sokolov
+//  Description : UI war state (PDA) window class
 ////////////////////////////////////////////////////////////////////////////
 #pragma once
 
@@ -16,8 +16,8 @@ class UIWarState final : public UIHintWindow
     using inherited = UIHintWindow;
 
     CUIStatic* m_static;
-    //	shared_str		m_def_texture;
-    //	bool			m_installed;
+    //  shared_str      m_def_texture;
+    //  bool            m_installed;
 
 public:
     UIWarState();

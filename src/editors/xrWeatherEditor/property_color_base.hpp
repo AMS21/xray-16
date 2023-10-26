@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: property_color_base.hpp
-//	Created 	: 27.12.2007
-//  Modified 	: 27.12.2007
-//	Author		: Dmitriy Iassenev
-//	Description : property color base class
+//  Module      : property_color_base.hpp
+//  Created     : 27.12.2007
+//  Modified    : 27.12.2007
+//  Author      : Dmitriy Iassenev
+//  Description : property color base class
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef PROPERTY_COLOR_BASE_HPP_INCLUDED

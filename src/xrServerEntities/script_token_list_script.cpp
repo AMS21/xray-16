@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_token_list_script.cpp
-//	Created 	: 21.05.2004
-//  Modified 	: 21.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Script token list class export
+//  Module      : script_token_list_script.cpp
+//  Created     : 21.05.2004
+//  Modified    : 21.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Script token list class export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

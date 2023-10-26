@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Created		: 24.06.2009
-//	Author		: Dmitriy Iassenev
-//	Copyright (C) GSC Game World - 2009
+//  Created     : 24.06.2009
+//  Author      : Dmitriy Iassenev
+//  Copyright (C) GSC Game World - 2009
 ////////////////////////////////////////////////////////////////////////////
 
 #ifndef DOORS_ACTOR_H_INCLUDED

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: eatable_item_object.cpp
-//	Created 	: 24.03.2003
-//  Modified 	: 29.01.2004
-//	Author		: Yuri Dobronravin
-//	Description : Eatable item object implementation
+//  Module      : eatable_item_object.cpp
+//  Created     : 24.03.2003
+//  Modified    : 29.01.2004
+//  Author      : Yuri Dobronravin
+//  Description : Eatable item object implementation
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -25,14 +25,14 @@ void CEatableItemObject::Load(LPCSTR section)
 }
 
 // void CEatableItemObject::Hit(float P, Fvector &dir,
-//						 IGameObject* who, s16 element,
-//						 Fvector position_in_object_space,
-//						 float impulse,
-//						 ALife::EHitType hit_type)
+//                       IGameObject* who, s16 element,
+//                       Fvector position_in_object_space,
+//                       float impulse,
+//                       ALife::EHitType hit_type)
 void CEatableItemObject::Hit(SHit* pHDS)
 {
     /*
-    CPhysicItem::Hit			(
+    CPhysicItem::Hit            (
         P,
         dir,
         who,
@@ -42,7 +42,7 @@ void CEatableItemObject::Hit(SHit* pHDS)
         hit_type
     );
 
-    CEatableItem::Hit			(
+    CEatableItem::Hit           (
         P,
         dir,
         who,

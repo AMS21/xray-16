@@ -370,7 +370,7 @@ void CUIDragDropListEx::OnItemFocusedUpdate(CUIWindow* w, void* pData)
 
 void CUIDragDropListEx::OnItemRButtonClick(CUIWindow* w, void* pData)
 {
-    //*	OnItemSelected						(w, pData); // instead call function "SetCurrentItem(itm)";
+    //* OnItemSelected                      (w, pData); // instead call function "SetCurrentItem(itm)";
     CUICellItem* itm = smart_cast<CUICellItem*>(w);
     if (m_f_item_rbutton_click)
         m_f_item_rbutton_click(itm);
@@ -378,7 +378,7 @@ void CUIDragDropListEx::OnItemRButtonClick(CUIWindow* w, void* pData)
 
 void CUIDragDropListEx::OnItemLButtonClick(CUIWindow* w, void* pData)
 {
-    //*	OnItemSelected						(w, pData); // instead call function "SetCurrentItem(itm)";
+    //* OnItemSelected                      (w, pData); // instead call function "SetCurrentItem(itm)";
     CUICellItem* itm = smart_cast<CUICellItem*>(w);
     if (m_f_item_lbutton_click)
         m_f_item_lbutton_click(itm);
@@ -472,7 +472,7 @@ void CUIDragDropListEx::ReinitScroll()
 
     if (dh < 0)
     {
-        //			dh = 0;
+        //          dh = 0;
         m_vScrollBar->SetRange(0, 0);
     }
     else
@@ -481,7 +481,7 @@ void CUIDragDropListEx::ReinitScroll()
     }
     m_vScrollBar->SetScrollPos(0);
     m_vScrollBar->SetStepSize(CellSize().y / 3);
-    //		m_vScrollBar->SetPageSize	(iFloor(GetWndSize().y/float(CellSize().y)));
+    //      m_vScrollBar->SetPageSize   (iFloor(GetWndSize().y/float(CellSize().y)));
     m_vScrollBar->SetPageSize(1 /*CellSize().y*/);
 
     m_container->SetWndPos(Fvector2().set(0, 0));
@@ -640,7 +640,7 @@ CUICellContainer::CUICellContainer(CUIDragDropListEx* parent)
 {
     m_pParentDragDropList = parent;
     hShader->create("hud" DELIMITER "fog_of_war", "ui" DELIMITER "ui_grid");
-    //	hShader_selected->create	( "hud" DELIMITER "fog_of_war", "ui_grid_selected" );
+    //  hShader_selected->create    ( "hud" DELIMITER "fog_of_war", "ui_grid_selected" );
     m_cellSpacing.set(0, 0);
 }
 
@@ -1056,7 +1056,7 @@ void CUICellContainer::Draw()
 
     GEnv.UIRender->StartPrimitive(max_prim_cnt, IUIRender::ptTriList, UI().m_currentPointType);
 
-    //	u32 cell_i = 0;
+    //  u32 cell_i = 0;
     for (int x = 0; x <= tgt_cells.width(); ++x)
     {
         for (int y = 0; y <= tgt_cells.height(); ++y /*, ++cell_i*/)
@@ -1100,9 +1100,9 @@ void CUICellContainer::Draw()
             {
                 const Fvector2& p = pts[k];
                 const Fvector2& uv = uvs[k];
-                // pv->set			(iFloor(drawLT.x + p.x*(f_len.x) + f_len.x*x)-0.5f,
-                //				 iFloor(drawLT.y + p.y*(f_len.y) + f_len.y*y)-0.5f,
-                //				 0xFFFFFFFF,tp.x+uv.x,tp.y+uv.y);
+                // pv->set          (iFloor(drawLT.x + p.x*(f_len.x) + f_len.x*x)-0.5f,
+                //               iFloor(drawLT.y + p.y*(f_len.y) + f_len.y*y)-0.5f,
+                //               0xFFFFFFFF,tp.x+uv.x,tp.y+uv.y);
                 GEnv.UIRender->PushPoint(iFloor(rect_offset.x + p.x * (f_len.x)) - 0.5f,
                     iFloor(rect_offset.y + p.y * (f_len.y)) - 0.5f, 0, m_pParentDragDropList->back_color, tp.x + uv.x,
                     tp.y + uv.y);

@@ -5,7 +5,7 @@ void CRender::render_lights(light_Package& LP)
     //////////////////////////////////////////////////////////////////////////
     // Refactor order based on ability to pack shadow-maps
     // 1. calculate area + sort in descending order
-    // const	u16		smap_unassigned		= u16(-1);
+    // const    u16     smap_unassigned     = u16(-1);
     {
         xr_vector<light*>& source = LP.v_shadowed;
         for (u32 it = 0; it < source.size(); it++)
@@ -70,16 +70,16 @@ void CRender::render_lights(light_Package& LP)
     //////////////////////////////////////////////////////////////////////////
     // sort lights by importance???
     // while (has_any_lights_that_cast_shadows) {
-    //		if (has_point_shadowed)		->	generate point shadowmap
-    //		if (has_spot_shadowed)		->	generate spot shadowmap
-    //		switch-to-accumulator
-    //		if (has_point_unshadowed)	-> 	accum point unshadowed
-    //		if (has_spot_unshadowed)	-> 	accum spot unshadowed
-    //		if (was_point_shadowed)		->	accum point shadowed
-    //		if (was_spot_shadowed)		->	accum spot shadowed
-    //	}
-    //	if (left_some_lights_that_doesn't cast shadows)
-    //		accumulate them
+    //      if (has_point_shadowed)     ->  generate point shadowmap
+    //      if (has_spot_shadowed)      ->  generate spot shadowmap
+    //      switch-to-accumulator
+    //      if (has_point_unshadowed)   ->  accum point unshadowed
+    //      if (has_spot_unshadowed)    ->  accum spot unshadowed
+    //      if (was_point_shadowed)     ->  accum point shadowed
+    //      if (was_spot_shadowed)      ->  accum spot shadowed
+    //  }
+    //  if (left_some_lights_that_doesn't cast shadows)
+    //      accumulate them
     static xr_vector<light*> L_spot_s;
 
     struct task_data_t
@@ -209,12 +209,12 @@ void CRender::render_lights(light_Package& LP)
 
         PIX_EVENT(UNSHADOWED_LIGHTS);
 
-        //		switch-to-accumulator
+        //      switch-to-accumulator
         Target->phase_accumulator(cmd_list);
 
         PIX_EVENT(POINT_LIGHTS);
 
-        //		if (has_point_unshadowed)	-> 	accum point unshadowed
+        //      if (has_point_unshadowed)   ->  accum point unshadowed
         if (!LP.v_point.empty())
         {
             light* L2 = LP.v_point.back();
@@ -229,7 +229,7 @@ void CRender::render_lights(light_Package& LP)
 
         PIX_EVENT(SPOT_LIGHTS);
 
-        //		if (has_spot_unshadowed)	-> 	accum spot unshadowed
+        //      if (has_spot_unshadowed)    ->  accum spot unshadowed
         if (!LP.v_spot.empty())
         {
             light* L2 = LP.v_spot.back();
@@ -245,7 +245,7 @@ void CRender::render_lights(light_Package& LP)
 
         PIX_EVENT(SPOT_LIGHTS_ACCUM_VOLUMETRIC);
 
-        //		if (was_spot_shadowed)		->	accum spot shadowed
+        //      if (was_spot_shadowed)      ->  accum spot shadowed
         if (!L_spot_s.empty())
         {
             PIX_EVENT(ACCUM_SPOT);

@@ -3,9 +3,9 @@
 //.#include "uiscrollbar.h"
 #include "UIFrameLineWnd.h"
 
-//. #define				ACTIVE_BACKGROUND			"ui" DELIMITER "ui_pop_up_active_back"
-//. #define				ACTIVE_BACKGROUND_WIDTH		16
-//. #define				ACTIVE_BACKGROUND_HEIGHT	16
+//. #define             ACTIVE_BACKGROUND           "ui" DELIMITER "ui_pop_up_active_back"
+//. #define             ACTIVE_BACKGROUND_WIDTH     16
+//. #define             ACTIVE_BACKGROUND_HEIGHT    16
 
 // разделитель для интерактивных строк в листе
 static const char cSeparatorChar = '%';
@@ -244,7 +244,7 @@ void CUIListWnd::UpdateList()
     for (u32 k = m_iFirstShownIndex + m_iRowNum; k < m_ItemList.size(); ++k, ++it)
     {
         (*it)->Show(false);
-        //		(*it)->Enable(false);
+        //      (*it)->Enable(false);
     }
 
     UpdateScrollBar();

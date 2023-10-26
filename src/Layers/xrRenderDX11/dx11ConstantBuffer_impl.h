@@ -4,11 +4,11 @@
 
 IC Fvector4* dx11ConstantBuffer::Access(u16 offset)
 {
-    //	TODO: DX11: Implement code which will check if set actually changes code.
+    //  TODO: DX11: Implement code which will check if set actually changes code.
     m_bChanged = true;
 
-    //	Check buffer size in client code: don't know if actual data will cross
-    //	buffer boundaries.
+    //  Check buffer size in client code: don't know if actual data will cross
+    //  buffer boundaries.
     VERIFY(offset < (int)m_uiBufferSize);
     u8* res = ((u8*)m_pBufferData) + offset;
     return (Fvector4*)res;
@@ -17,28 +17,28 @@ IC Fvector4* dx11ConstantBuffer::Access(u16 offset)
 IC void dx11ConstantBuffer::set(R_constant* C, R_constant_load& L, const Fmatrix& A)
 {
     VERIFY(RC_float == C->type);
-    //	TEST
+    //  TEST
     // return;
 
-    // Fvector4*	it	= c_f.access	(L.index);
+    // Fvector4*    it  = c_f.access    (L.index);
     Fvector4* it = Access(L.index);
     switch (L.cls)
     {
     case RC_2x4:
-        // c_f.dirty			(L.index,L.index+2);
+        // c_f.dirty            (L.index,L.index+2);
         VERIFY(u32((u32)L.index + 2 * lineSize) <= m_uiBufferSize);
         it[0].set(A._11, A._21, A._31, A._41);
         it[1].set(A._12, A._22, A._32, A._42);
         break;
     case RC_3x4:
-        // c_f.dirty			(L.index,L.index+3);
+        // c_f.dirty            (L.index,L.index+3);
         VERIFY(u32((u32)L.index + 3 * lineSize) <= m_uiBufferSize);
         it[0].set(A._11, A._21, A._31, A._41);
         it[1].set(A._12, A._22, A._32, A._42);
         it[2].set(A._13, A._23, A._33, A._43);
         break;
     case RC_4x4:
-        // c_f.dirty			(L.index,L.index+4);
+        // c_f.dirty            (L.index,L.index+4);
         VERIFY(u32((u32)L.index + 4 * lineSize) <= m_uiBufferSize);
         it[0].set(A._11, A._21, A._31, A._41);
         it[1].set(A._12, A._22, A._32, A._42);
@@ -58,8 +58,8 @@ IC void dx11ConstantBuffer::set(R_constant* C, R_constant_load& L, const Fvector
 {
     VERIFY(RC_float == C->type);
     VERIFY(RC_1x4 == L.cls || RC_1x3 == L.cls || RC_1x2 == L.cls);
-    // Fvector4*	it	= Access(L.index);
-    // it->set	(A);
+    // Fvector4*    it  = Access(L.index);
+    // it->set  (A);
 
     VERIFY(u32((u32)L.index + lineSize) <= m_uiBufferSize);
     float* it = (float*)Access(L.index);
@@ -75,8 +75,8 @@ IC void dx11ConstantBuffer::set(R_constant* C, R_constant_load& L, const Fvector
 
     CopyMemory(it, &A[0], count * sizeof(float));
 
-    // c_f.access	(L.index)->set	(A);
-    // c_f.dirty	(L.index,L.index+1);
+    // c_f.access   (L.index)->set  (A);
+    // c_f.dirty    (L.index,L.index+1);
 }
 
 IC void dx11ConstantBuffer::set(R_constant* C, R_constant_load& L, float A)
@@ -87,8 +87,8 @@ IC void dx11ConstantBuffer::set(R_constant* C, R_constant_load& L, float A)
     VERIFY(u32((u32)L.index + sizeof(float)) <= m_uiBufferSize);
     *it = A;
 
-    // c_f.access	(L.index)->set	(A);
-    // c_f.dirty	(L.index,L.index+1);
+    // c_f.access   (L.index)->set  (A);
+    // c_f.dirty    (L.index,L.index+1);
 }
 
 IC void dx11ConstantBuffer::set(R_constant* C, R_constant_load& L, int A)
@@ -99,13 +99,13 @@ IC void dx11ConstantBuffer::set(R_constant* C, R_constant_load& L, int A)
     VERIFY(u32((u32)L.index + sizeof(int)) <= m_uiBufferSize);
     *it = A;
 
-    // c_f.access	(L.index)->set	(A);
-    // c_f.dirty	(L.index,L.index+1);
+    // c_f.access   (L.index)->set  (A);
+    // c_f.dirty    (L.index,L.index+1);
 }
 
 IC void dx11ConstantBuffer::seta(R_constant* C, R_constant_load& L, u32 e, const Fmatrix& A)
 {
-    //	TEST
+    //  TEST
     // return;
     VERIFY(RC_float == C->type);
     u32 base;
@@ -113,9 +113,9 @@ IC void dx11ConstantBuffer::seta(R_constant* C, R_constant_load& L, u32 e, const
     switch (L.cls)
     {
     case RC_2x4:
-        // base				= L.index + 2*e;
-        // it					= c_f.access	(base);
-        // c_f.dirty			(base,base+2);
+        // base             = L.index + 2*e;
+        // it                   = c_f.access    (base);
+        // c_f.dirty            (base,base+2);
         base = (u32)L.index + 2 * lineSize * e;
         it = Access((u16)base);
         VERIFY((base + 2 * lineSize) <= m_uiBufferSize);
@@ -123,9 +123,9 @@ IC void dx11ConstantBuffer::seta(R_constant* C, R_constant_load& L, u32 e, const
         it[1].set(A._12, A._22, A._32, A._42);
         break;
     case RC_3x4:
-        // base				= L.index + 3*e;
-        // it					= c_f.access	(base);
-        // c_f.dirty			(base,base+3);
+        // base             = L.index + 3*e;
+        // it                   = c_f.access    (base);
+        // c_f.dirty            (base,base+3);
         base = (u32)L.index + 3 * lineSize * e;
         it = Access((u16)base);
         VERIFY((base + 3 * lineSize) <= m_uiBufferSize);
@@ -134,9 +134,9 @@ IC void dx11ConstantBuffer::seta(R_constant* C, R_constant_load& L, u32 e, const
         it[2].set(A._13, A._23, A._33, A._43);
         break;
     case RC_4x4:
-        // base				= L.index + 4*e;
-        // it					= c_f.access	(base);
-        // c_f.dirty			(base,base+4);
+        // base             = L.index + 4*e;
+        // it                   = c_f.access    (base);
+        // c_f.dirty            (base,base+4);
         base = (u32)L.index + 4 * lineSize * e;
         it = Access((u16)base);
         VERIFY((base + 4 * lineSize) <= m_uiBufferSize);
@@ -156,7 +156,7 @@ IC void dx11ConstantBuffer::seta(R_constant* C, R_constant_load& L, u32 e, const
 
 IC void dx11ConstantBuffer::seta(R_constant* C, R_constant_load& L, u32 e, const Fvector4& A)
 {
-    //	TEST
+    //  TEST
     // return;
     VERIFY(RC_float == C->type);
     VERIFY(RC_1x4 == L.cls || RC_1x3 == L.cls || RC_1x2 == L.cls);
@@ -167,15 +167,15 @@ IC void dx11ConstantBuffer::seta(R_constant* C, R_constant_load& L, u32 e, const
     VERIFY((base + lineSize) <= m_uiBufferSize);
     it->set(A);
 
-    // u32			base	= L.index + e;
-    // c_f.access	(base)->set	(A);
-    // c_f.dirty	(base,base+1);
+    // u32          base    = L.index + e;
+    // c_f.access   (base)->set (A);
+    // c_f.dirty    (base,base+1);
 }
 
 IC void* dx11ConstantBuffer::AccessDirect(R_constant_load& L, size_t DataSize)
 {
-    //	Check buffer size in client code: don't know if actual data will cross
-    //	buffer boundaries.
+    //  Check buffer size in client code: don't know if actual data will cross
+    //  buffer boundaries.
     VERIFY(L.index < (int)m_uiBufferSize);
     u8* res = ((u8*)m_pBufferData) + L.index;
 
@@ -188,4 +188,4 @@ IC void* dx11ConstantBuffer::AccessDirect(R_constant_load& L, size_t DataSize)
         return 0;
 }
 
-#endif //	dx11ConstantBuffer_impl_included
+#endif //   dx11ConstantBuffer_impl_included

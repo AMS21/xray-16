@@ -119,8 +119,8 @@ void SHeliMovementState::UpdatePatrolPath()
         else
         {
             type = eMovNone;
-            //			curLinearSpeed	= 0.0f;
-            //			curLinearAcc	= 0.0f;
+            //          curLinearSpeed  = 0.0f;
+            //          curLinearAcc    = 0.0f;
         }
     }
 }
@@ -151,8 +151,8 @@ bool SHeliMovementState::AlreadyOnPoint()
         float new_dist = desiredPoint.distance_to(P1);
         res = new_dist > dist;
     }
-    //	if(res)
-    //		Msg("--------OnPoint id=[%d] dist=[%f]", currPatrolVertex->vertex_id(), dist);
+    //  if(res)
+    //      Msg("--------OnPoint id=[%d] dist=[%f]", currPatrolVertex->vertex_id(), dist);
 
     return res;
 }
@@ -410,7 +410,7 @@ void SHeliMovementState::SetPointFlags(u32 idx, u32 new_flags)
         pt_curr->position(), u32(-1), new_flags, pt_curr->name());
 
     p->vertex(idx)->data(*pt_new);
-    //	xr_delete(pt_curr);
+    //  xr_delete(pt_curr);
 }
 
 float SHeliMovementState::GetSpeedInDestPoint()
@@ -425,7 +425,7 @@ Fvector CHelicopter::GetCurrVelocityVec()
 {
     Fvector dir;
     dir.setHP(m_movement.currPathH, m_movement.currPathP);
-    //	dir.sub				(m_movement.desiredPoint,m_movement.currP);
+    //  dir.sub             (m_movement.desiredPoint,m_movement.currP);
     dir.normalize_safe();
     return dir;
 }
@@ -446,13 +446,13 @@ void CHelicopter::OnRender()
         }
     */
     /*
-        Fvector pos			= Level().CurrentEntity()->Position();
-        static float	radius		= 50.0f;//meters
-        float	round_len	= 2*PI*radius;
-        static float	dist		= 10.0f;//dist between points
-        float	td			= 2*PI*dist/round_len;
-        float	dir_h		= 0.0f;
-        xr_vector<Fvector>	round_points;
+        Fvector pos         = Level().CurrentEntity()->Position();
+        static float    radius      = 50.0f;//meters
+        float   round_len   = 2*PI*radius;
+        static float    dist        = 10.0f;//dist between points
+        float   td          = 2*PI*dist/round_len;
+        float   dir_h       = 0.0f;
+        xr_vector<Fvector>  round_points;
 
         while(dir_h+td<2*PI){
             Fvector dir, new_pt;
@@ -460,7 +460,7 @@ void CHelicopter::OnRender()
             new_pt.mad(pos,dir,radius);
             new_pt.y += 1.0f;
             round_points.push_back(new_pt);
-            dir_h	+= td;
+            dir_h   += td;
         }
 
         xr_vector<Fvector>::iterator it = round_points.begin();
@@ -469,7 +469,7 @@ void CHelicopter::OnRender()
             Level().debug_renderer().draw_aabb  ((*it),0.1f,0.1f,0.1f,color_xrgb(0,255,0));
         }
     */
-    /*	Level().debug_renderer().draw_line(Fidentity,m_heli->m_right_rocket_bone_xform.c,
+    /*  Level().debug_renderer().draw_line(Fidentity,m_heli->m_right_rocket_bone_xform.c,
        m_heli->m_data.m_destEnemyPos,color_xrgb(0,255,0));
 
         Level().debug_renderer().draw_line(Fidentity,m_heli->XFORM().c,m_heli->m_data.m_destEnemyPos,color_xrgb(255,0,0));

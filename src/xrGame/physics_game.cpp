@@ -17,7 +17,7 @@
 
 #include "Include/xrRender/FactoryPtr.h"
 #include "Include/xrRender/WallMarkArray.h"
-//#ifdef	DEBUG
+//#ifdef    DEBUG
 
 //#endif
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -116,11 +116,11 @@ private:
 };
 
 // class CPHLiquidParticlesComparer :
-//	public CPHReqComparerV
+//  public CPHReqComparerV
 //{
-//	virtual bool			compare							(const	CPHReqComparerV* v)					const	{return
+//  virtual bool            compare                         (const  CPHReqComparerV* v)                 const   {return
 // v->compare(this);}
-//	virtual bool			compare							(const	CPHOnesConditionSelfCmpTrue* v)		const	{return
+//  virtual bool            compare                         (const  CPHOnesConditionSelfCmpTrue* v)     const   {return
 // true;}
 //
 //};
@@ -174,9 +174,9 @@ IC bool play_liquid_particle_criteria(dxGeomUserData& data, float vel_cret)
 
     // return false;
     // if( !data.ph_ref_object || !data.ph_ref_object->ObjectPPhysicsShell() )
-    //	return false;
+    //  return false;
     // if( data.ph_ref_object->ObjectPPhysicsShell()->HasTracedGeoms() )
-    //	return false;
+    //  return false;
 }
 
 template <class Pars>

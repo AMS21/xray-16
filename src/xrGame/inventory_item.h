@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: inventory_item.h
-//	Created 	: 24.03.2003
-//  Modified 	: 29.01.2004
-//	Author		: Victor Reutsky, Yuri Dobronravin
-//	Description : Inventory item
+//  Module      : inventory_item.h
+//  Created     : 24.03.2003
+//  Modified    : 29.01.2004
+//  Author      : Victor Reutsky, Yuri Dobronravin
+//  Description : Inventory item
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -144,7 +144,7 @@ public:
 
     BOOL IsQuestItem() const { return m_flags.test(FIsQuestItem); }
     virtual u32 Cost() const { return m_cost; }
-    //			u32					Cost				()	const	{ return m_cost; }
+    //          u32                 Cost                ()  const   { return m_cost; }
     virtual float Weight() const { return m_weight; }
     void SetWeight(float w) { m_weight = w; }
 

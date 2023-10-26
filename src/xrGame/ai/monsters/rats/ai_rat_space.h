@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ai_rat+space.h
-//	Created 	: 27.07.2004
-//  Modified 	: 27.07.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Space for monster "Rat"
+//  Module      : ai_rat+space.h
+//  Created     : 27.07.2004
+//  Modified    : 27.07.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Space for monster "Rat"
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

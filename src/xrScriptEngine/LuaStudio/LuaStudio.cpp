@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: lua_studio.cpp
-//	Created 	: 21.08.2008
-//  Modified 	: 21.08.2008
-//	Author		: Dmitriy Iassenev
-//	Description : lua studio engine class (copied from the lua studio SDK)
+//  Module      : lua_studio.cpp
+//  Created     : 21.08.2008
+//  Modified    : 21.08.2008
+//  Author      : Dmitriy Iassenev
+//  Description : lua studio engine class (copied from the lua studio SDK)
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.hpp"

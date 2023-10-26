@@ -11,7 +11,7 @@ public:
     {
         VP_VELOCITY0 = 0,
         VP_PRESSURE,
-        VP_COLOR, //	Swap with global after update
+        VP_COLOR, //    Swap with global after update
         VP_NUM_TARGETS
     };
 
@@ -65,7 +65,7 @@ public:
     const Settings& GetSettings() const { return m_Settings; }
 
 #ifndef MASTER_GOLD
-    //	Allow real-time config reload
+    //  Allow real-time config reload
     void ReparseProfile(const xr_string& Profile);
 #endif
 
@@ -92,4 +92,4 @@ private:
     ID3DTexture3D* m_pRTTextures[VP_NUM_TARGETS];
 };
 
-#endif //	dx113DFluidData_included
+#endif //   dx113DFluidData_included

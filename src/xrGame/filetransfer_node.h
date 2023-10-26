@@ -121,9 +121,9 @@ public:
     bool is_complete();
     bool is_ready_to_send();
 
-    // inline	shared_str const &	get_file_name	() { return m_file_name; };
+    // inline   shared_str const &  get_file_name   () { return m_file_name; };
     bool opened() const;
-    // inline	IReader*			get_reader		() { return m_reader; };
+    // inline   IReader*            get_reader      () { return m_reader; };
     inline u32 const get_chunk_size() const { return m_chunk_size; };
 }; // class filetransfer_node
 

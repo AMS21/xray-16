@@ -35,7 +35,7 @@ static struct unload
 u32 g_sessionId = u32(-1);
 
 // bool  GetGlobalData( IAgent* agent,
-//				    u32 sessionId );
+//                  u32 sessionId );
 bool TaskReceive(net_task& task, IAgent* agent, u32 sessionId, IGenericStream* inStream);
 
 bool GetGlobalData(IAgent* agent, u32 sessionId)
@@ -72,7 +72,7 @@ bool GetGlobalData(IAgent* agent, u32 sessionId)
                 if(r>0)
                        globalDataStream->Release();
                 agent->FreeCachedData(sessionId, dataDesc);
-                Memory.mem_compact	();
+                Memory.mem_compact  ();
        */
 
         DataReadCreate(cache_dir);

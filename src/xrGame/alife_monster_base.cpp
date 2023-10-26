@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: alife_monster_base.cpp
-//	Created 	: 07.02.2007
-//  Modified 	: 07.02.2007
-//	Author		: Dmitriy Iassenev
-//	Description : ALife mnster base class
+//  Module      : alife_monster_base.cpp
+//  Created     : 07.02.2007
+//  Modified    : 07.02.2007
+//  Author      : Dmitriy Iassenev
+//  Description : ALife mnster base class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

@@ -6,7 +6,7 @@ void xrServer::PerformSecretKeysSync(xrClientData* xrCL)
 {
     VERIFY(xrCL);
     xrCL->m_last_key_sync_request_seed = m_seed_generator.genrate();
-    // secure_messaging::generate_key	(new_seed, xrCL->m_secret_key);
+    // secure_messaging::generate_key   (new_seed, xrCL->m_secret_key);
 
     NET_Packet key_sync_command;
     key_sync_command.w_begin(M_SECURE_KEY_SYNC);

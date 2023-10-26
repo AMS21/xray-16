@@ -369,7 +369,7 @@ bool CUIMessageBox::InitMessageBox(LPCSTR box_template)
             m_UIEditURL = xr_new<CUIEditBox>();
             AttachChild(m_UIEditURL);
             CUIXmlInitBase::InitEditBox(uiXml, str, 0, m_UIEditURL);
-            //				m_UIEditURL->read_only
+            //              m_UIEditURL->read_only
         }
     }
     break;

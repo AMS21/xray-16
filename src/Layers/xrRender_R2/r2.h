@@ -187,8 +187,8 @@ public:
 
     enum
     {
-        MSAA_ATEST_NONE = 0x0, //	Hi bit - DX10.1 mode
-        MSAA_ATEST_DX10_0_ATOC = 0x1, //	Lo bit - ATOC mode
+        MSAA_ATEST_NONE = 0x0, //   Hi bit - DX10.1 mode
+        MSAA_ATEST_DX10_0_ATOC = 0x1, //    Lo bit - ATOC mode
         MSAA_ATEST_DX10_1_NATIVE = 0x2,
         MSAA_ATEST_DX10_1_ATOC = 0x3,
     };
@@ -246,7 +246,7 @@ public:
         u32 Tshadows : 1; // transluent shadows
         u32 oldshadowcascades : 1;
         u32 disasm : 1;
-        u32 advancedpp : 1; //	advanced post process (DOF, SSAO, volumetrics, etc.)
+        u32 advancedpp : 1; //  advanced post process (DOF, SSAO, volumetrics, etc.)
         u32 volumetricfog : 1;
 
         u32 msaa : 1; // DX10.0 path
@@ -254,7 +254,7 @@ public:
         u32 msaa_opt : 1; // DX10.1 path
         u32 gbuffer_opt : 1;
         u32 dx11_sm4_1 : 1; // DX10.1 path
-        u32 msaa_alphatest : 2; //	A-test mode
+        u32 msaa_alphatest : 2; //  A-test mode
         u32 msaa_samples : 4;
 
         u32 minmax_sm : 2;
@@ -390,7 +390,7 @@ public:
         CROS_impl& LT = *(CROS_impl*)O->renderable_ROS();
         LT.update_smooth(O);
         cmd_list.o_hemi = 0.75f * LT.get_hemi();
-        // o_hemi						= 0.5f*LT.get_hemi			()	;
+        // o_hemi                       = 0.5f*LT.get_hemi          ()  ;
         cmd_list.o_sun = 0.75f * LT.get_sun();
         CopyMemory(cmd_list.o_hemi_cube, LT.get_hemi_cube(), CROS_impl::NUM_FACES * sizeof(float));
     }
@@ -443,7 +443,7 @@ public:
     IRender_Target* getTarget() override;
 
     // Main
-    void add_Visual(u32 context_id, IRenderable* root, IRenderVisual* V, Fmatrix& m) override; // add visual leaf	(no culling performed at all)
+    void add_Visual(u32 context_id, IRenderable* root, IRenderVisual* V, Fmatrix& m) override; // add visual leaf   (no culling performed at all)
     // wallmarks
     void add_StaticWallmark(ref_shader& S, const Fvector& P, float s, CDB::TRI* T, Fvector* V);
     void add_StaticWallmark(IWallMarkArray* pArray, const Fvector& P, float s, CDB::TRI* T, Fvector* V) override;

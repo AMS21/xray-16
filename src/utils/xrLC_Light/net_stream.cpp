@@ -55,18 +55,18 @@ void INetBlockReader::create_block(size_t size)
     /*
         if( !_buffer )
         {
-                _buffer = (u8*)	xr_malloc	( size
+                _buffer = (u8*) xr_malloc   ( size
     #ifdef DEBUG_MEMORY_NAME
-                ,		"INetBlockReader - storage"
+                ,       "INetBlockReader - storage"
     #endif // DEBUG_MEMORY_NAME
                 );
             _block_size = size ;
         }
         if( _block_size < size )
         {
-                _buffer = (u8*)xr_realloc	(_buffer,size
+                _buffer = (u8*)xr_realloc   (_buffer,size
     #ifdef DEBUG_MEMORY_NAME
-                ,	"CMemoryWriter - storage"
+                ,   "CMemoryWriter - storage"
     #endif // DEBUG_MEMORY_NAME
                 );
             _block_size = size ;
@@ -80,13 +80,13 @@ INetBlockReader::~INetBlockReader()
 {
     R_ASSERT(!mem_reader.allocated() || mem_reader.count() == 0);
     mem_reader.free_buff();
-    //	xr_free( _buffer );
+    //  xr_free( _buffer );
 }
 /*
-    IC void			w_string(const char *p)			{	w(p,xr_strlen(p));w_u8(13);w_u8(10);	}
-    IC void			w_stringZ(const char *p)		{	w(p,xr_strlen(p)+1);			}
-    IC void			w_stringZ(const shared_str& p) 	{	w(*p?*p:"",p.size());w_u8(0);		}
-    IC void			w_stringZ(shared_str& p)		{	w(*p?*p:"",p.size());w_u8(0);		}
+    IC void         w_string(const char *p)         {   w(p,xr_strlen(p));w_u8(13);w_u8(10);    }
+    IC void         w_stringZ(const char *p)        {   w(p,xr_strlen(p)+1);            }
+    IC void         w_stringZ(const shared_str& p)  {   w(*p?*p:"",p.size());w_u8(0);       }
+    IC void         w_stringZ(shared_str& p)        {   w(*p?*p:"",p.size());w_u8(0);       }
 */
 
 void INetReader::r_string(char* dest, size_t tgt_sz)
@@ -104,13 +104,13 @@ void INetReader::r_string(char* dest, size_t tgt_sz)
     }
     const size_t length = i - 1;
     R_ASSERT2(length < (tgt_sz - 1), "Dest string less than needed.");
-    // R_ASSERT	(!IsBadReadPtr((void*)src,sz));
+    // R_ASSERT (!IsBadReadPtr((void*)src,sz));
 
     buf[length] = 0;
 
     strncpy_s(dest, tgt_sz, buf, length + 1);
 
-    // dest[sz]	= 0;
+    // dest[sz] = 0;
 }
 
 void INetReader::r_stringZ(char* dest)
@@ -186,15 +186,15 @@ void INetMemoryBuffWriter::w(const void* ptr, size_t count)
 
             send_and_clear();
         }
-        //	create_block();
+        //  create_block();
 
         // VERIFY(mem_writter->rest()>=0);
         // if( !mem_writter.is_empty() && mem_writter.rest()==0 )
         //{
-        //	R_ASSERT(size_t(-1)!=net_block_write_data_size);
+        //  R_ASSERT(size_t(-1)!=net_block_write_data_size);
 
-        //	send_and_clear ();
-        //	create_block();
+        //  send_and_clear ();
+        //  create_block();
 
         //}
 
@@ -212,8 +212,8 @@ void INetFileBuffWriter::w(const void* ptr, size_t count)
 
 // void INetMemoryBuffWriter::create_block()
 //{
-//	VERIFY(!mem_writter);
-//	mem_writter = new CMemoryWriteBlock( net_block_write_data_size );
+//  VERIFY(!mem_writter);
+//  mem_writter = new CMemoryWriteBlock( net_block_write_data_size );
 //}
 INetMemoryBuffWriter::~INetMemoryBuffWriter()
 {
@@ -235,9 +235,9 @@ INetFileBuffWriter::INetFileBuffWriter(LPCSTR _file_name, size_t block_size, boo
 
 INetFileBuffWriter::~INetFileBuffWriter() { xr_delete(mem_writter); }
 /*
-            data = (BYTE*)	xr_realloc	(data,mem_size
+            data = (BYTE*)  xr_realloc  (data,mem_size
 #ifdef DEBUG_MEMORY_NAME
-            ,	"CMemoryWriter - storage"
+            ,   "CMemoryWriter - storage"
 #endif // DEBUG_MEMORY_NAME
             );
 */
@@ -252,9 +252,9 @@ CReadMemoryBlock::CReadMemoryBlock(const size_t buff_size_, u8* buffer)
     : buf_size(buff_size_), file_size(0), position(0), _buffer(buffer)
 {
     /*
-        data = (u8*)	xr_malloc	(file_size_
+        data = (u8*)    xr_malloc   (file_size_
     #ifdef DEBUG_MEMORY_NAME
-                ,		"CReadMemoryBlock - storage"
+                ,       "CReadMemoryBlock - storage"
     #endif // DEBUG_MEMORY_NAME
                 );
     */
@@ -313,7 +313,7 @@ void CFileWriteBlock::send(IGenericStream* _stream)
 
     size_t const position = _stream->GetPos();
     size_t block_size = size;
-    //_stream->SetLength		(position + length + ((int(length) - 1)/block_size + 1)*sizeof(block_size));
+    //_stream->SetLength        (position + length + ((int(length) - 1)/block_size + 1)*sizeof(block_size));
     _stream->SetLength(position + length);
     _stream->Seek(position);
 
@@ -322,19 +322,19 @@ void CFileWriteBlock::send(IGenericStream* _stream)
     for (size_t n = length / block_size, i = 0; i < n; ++i)
     {
         fread(block, 1, block_size, file_map);
-        //	_stream->Write		( &block_size, sizeof( block_size) );
+        //  _stream->Write      ( &block_size, sizeof( block_size) );
         _stream->Write(block, block_size);
     }
 
     block_size = length % block_size;
     if (block_size == 0)
     {
-        //		xr_free				(block);
+        //      xr_free             (block);
         return;
     }
 
     fread(block, 1, block_size, file_map);
-    //	_stream->Write			( &block_size, sizeof( block_size) );
+    //  _stream->Write          ( &block_size, sizeof( block_size) );
     _stream->Write(block, block_size);
 }
 
@@ -376,8 +376,8 @@ void INetReaderFile::r(void* p, size_t cnt)
 CGenStreamOnFile::CGenStreamOnFile(CVirtualFileRW* _file) : file(_file)
 {
     VERIFY(file);
-    // string_path			 lfile_name;
-    // FS.update_path		( lfile_name, "$level$", file_name );
+    // string_path           lfile_name;
+    // FS.update_path       ( lfile_name, "$level$", file_name );
     // file = fopen( lfile_name, "rb" );
 }
 CGenStreamOnFile::~CGenStreamOnFile()

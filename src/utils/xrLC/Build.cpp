@@ -16,9 +16,9 @@ using namespace std;
 struct OGF_Base;
 xr_vector<OGF_Base*> g_tree;
 
-// BOOL					b_noise		= FALSE;
-// BOOL					b_radiosity	= FALSE;
-// BOOL					b_net_light	= FALSE;
+// BOOL                 b_noise     = FALSE;
+// BOOL                 b_radiosity = FALSE;
+// BOOL                 b_net_light = FALSE;
 SBuildOptions g_build_options;
 vec2Face g_XSplit;
 
@@ -33,15 +33,15 @@ void CBuild::CheckBeforeSave(u32 stage)
 }
 
 void CBuild::TempSave(u32 stage) { CheckBeforeSave(stage); }
-// Fbox								scene_bb;
-// xr_vector<b_shader>				shader_render;
-// xr_vector<b_shader>				shader_compile;
-//   xr_vector<b_light_dynamic>		L_dynamic;
-// xr_vector<b_glow>					glows;
-// xr_vector<b_portal>				portals;
-// xr_vector<b_lod>					lods;
-// string_path						path;
-// xr_vector<LPCSTR>					g_Shaders;
+// Fbox                             scene_bb;
+// xr_vector<b_shader>              shader_render;
+// xr_vector<b_shader>              shader_compile;
+//   xr_vector<b_light_dynamic>     L_dynamic;
+// xr_vector<b_glow>                    glows;
+// xr_vector<b_portal>              portals;
+// xr_vector<b_lod>                 lods;
+// string_path                      path;
+// xr_vector<LPCSTR>                    g_Shaders;
 void CBuild::read(INetReader& r)
 {
     r_pod(r, g_build_options);
@@ -178,7 +178,7 @@ void CBuild::Run(LPCSTR P)
     Logger.Phase("Building normals...");
     mem_Compact();
     CalcNormals();
-    // SmoothVertColors			(5);
+    // SmoothVertColors         (5);
 
     //****************************************** Collision DB
     // should be after normals, so that double-sided faces gets separated
@@ -250,7 +250,7 @@ void CBuild::Run(LPCSTR P)
     Logger.Phase("Subdividing geometry...");
     mem_Compact();
     xrPhase_Subdivide();
-    // IsolateVertices				(TRUE);
+    // IsolateVertices              (TRUE);
     lc_global_data()->vertices_isolate_and_pool_reload();
 //****************************************** All lighting + lmaps building and saving
 #ifdef NET_CMP
@@ -265,7 +265,7 @@ void CBuild::Run(LPCSTR P)
 }
 void CBuild::StartMu()
 {
-    // mu_base.start				(new CMUThread (0));
+    // mu_base.start                (new CMUThread (0));
     run_mu_light(!!g_build_options.b_net_light);
 }
 void CBuild::RunAfterLight(IWriter* fs)
@@ -292,11 +292,11 @@ void CBuild::RunAfterLight(IWriter* fs)
         wait_mu_secondary();
 
     ///
-    //	lc_global_data()->clear_mesh	();
+    //  lc_global_data()->clear_mesh    ();
     ////
 
-    //	mu_base.wait				(500);
-    //	mu_secondary.wait			(500);
+    //  mu_base.wait                (500);
+    //  mu_secondary.wait           (500);
 
     //****************************************** Export MU-models
     FPU::m64r();
@@ -315,7 +315,7 @@ void CBuild::RunAfterLight(IWriter* fs)
         for (m = 0; m < mu_refs().size(); m++)
             export_ogf(*mu_refs()[m]);
 
-        //		lc_global_data()->clear_mu_models();
+        //      lc_global_data()->clear_mu_models();
     }
 
     //****************************************** Destroy RCast-model

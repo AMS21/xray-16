@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: attachable_item_inline.h
-//	Created 	: 11.02.2004
-//  Modified 	: 11.02.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Attachable item inline functions
+//  Module      : attachable_item_inline.h
+//  Created     : 11.02.2004
+//  Modified    : 11.02.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Attachable item inline functions
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -14,7 +14,7 @@ IC CAttachableItem::CAttachableItem()
     m_offset.identity();
     m_bone_name = "";
     m_enabled = true;
-//	m_auto_attach		= true;
+//  m_auto_attach       = true;
 #ifdef DEBUG
     m_valid = false;
 #endif
@@ -46,7 +46,7 @@ IC void CAttachableItem::set_bone_id(u16 bone_id)
 
 IC bool CAttachableItem::enabled() const
 {
-    //	VERIFY				(m_valid);
+    //  VERIFY              (m_valid);
     return (m_enabled);
 }
 

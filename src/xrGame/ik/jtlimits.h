@@ -44,7 +44,7 @@ inline float asin1(float x)
 {
     if (_abs(x) > 1.0f)
     {
-        //	printf("Domain error in asin1 %lf\n", x);
+        //  printf("Domain error in asin1 %lf\n", x);
         x = (x > 0.f) ? 1.0f : -1.0f;
     }
     return angle_normalize(asin(x));
@@ -55,7 +55,7 @@ inline float asin2(float x)
 {
     if (_abs(x) > 1.0f)
     {
-        //	printf("Domain error in asin2 %lf\n", x);
+        //  printf("Domain error in asin2 %lf\n", x);
         x = (x > 0) ? 1.0f : -1.0f;
     }
     return angle_normalize(M_PI - asin(x));
@@ -66,7 +66,7 @@ inline float acos1(float x)
 {
     if (_abs(x) > 1.0f)
     {
-        //	printf("Domain error in acos1 %lf\n", x);
+        //  printf("Domain error in acos1 %lf\n", x);
         x = (x > 0) ? 1.0f : -1.0f;
     }
     return angle_normalize(acos(x));
@@ -77,7 +77,7 @@ inline float acos2(float x)
 {
     if (_abs(x) > 1.0f)
     {
-        //	printf("Domain error in acos2 %lf\n", x);
+        //  printf("Domain error in acos2 %lf\n", x);
         x = (x > 0) ? 1.0f : -1.0f;
     }
     return angle_normalize(-acos(x));
@@ -224,9 +224,9 @@ private:
 
 #if 0
     void clip(int family, 
-	      float psi0, float psi1, 
-	      float low, float high, 
-	      AngleIntList &a) const;
+          float psi0, float psi1, 
+          float low, float high, 
+          AngleIntList &a) const;
 #else
     void clip(float low, float high, int family, int n, const float p[], AngleIntList& f) const;
 

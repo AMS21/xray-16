@@ -49,7 +49,7 @@ private:
         m_load_current_profile_qam;
 
     CGameSpy_SAKE* m_sake_obj;
-    // CGameSpy_ATLAS*		m_atlas_obj;
+    // CGameSpy_ATLAS*      m_atlas_obj;
     CGameSpy_Full* m_fullgs_obj;
 
     store_operation_cb m_progress_indicator;

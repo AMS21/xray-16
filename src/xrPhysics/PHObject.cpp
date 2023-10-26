@@ -177,10 +177,10 @@ bool CPHObject::step_single(dReal step)
     bool ret = !m_island.IsObjGroun();
     if (ret)
     {
-        // PhTune							(step);
+        // PhTune                           (step);
         IslandStep(step);
         reinit_single();
-        // PhDataUpdate					(step);
+        // PhDataUpdate                 (step);
         spatial_move();
         CollideDynamics();
         ret = !m_island.IsObjGroun();

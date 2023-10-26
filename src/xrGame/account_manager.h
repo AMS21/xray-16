@@ -21,7 +21,7 @@ struct new_profile_data
     shared_str unique_nick;
     shared_str email;
     shared_str password;
-    // shared_str	cd_key;
+    // shared_str   cd_key;
 }; // struct new_account_data
 
 typedef mixed_delegate<void(bool, char const*), account_operation_cb_tag> account_operation_cb;
@@ -127,7 +127,7 @@ private:
     static void __cdecl unicks_suggestion_cb(GPConnection* connection, void* arg, void* param);
     static void __cdecl delete_profile_cb(GPConnection* connection, void* arg, void* param);
     static void __cdecl search_profile_cb(GPConnection* connection, void* arg, void* param);
-    /*static void __cdecl			profiles_cb		(GPConnection * connection,
+    /*static void __cdecl           profiles_cb     (GPConnection * connection,
                                                  void * arg,
                                                  void * param);*/
 }; // class account_manager

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: ef_storage.h
-//	Created 	: 25.03.2002
-//  Modified 	: 11.10.2002
-//	Author		: Dmitriy Iassenev
-//	Description : Evaluation functions storage class
+//  Module      : ef_storage.h
+//  Created     : 25.03.2002
+//  Modified    : 11.10.2002
+//  Author      : Dmitriy Iassenev
+//  Description : Evaluation functions storage class
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

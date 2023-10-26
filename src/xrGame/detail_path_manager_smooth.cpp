@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: detailed_path_manager_criteria.h
-//	Created 	: 04.12.2003
-//  Modified 	: 04.12.2003
-//	Author		: Dmitriy Iassenev
-//	Description : Detail path manager criteria path builder
+//  Module      : detailed_path_manager_criteria.h
+//  Created     : 04.12.2003
+//  Modified    : 04.12.2003
+//  Author      : Dmitriy Iassenev
+//  Description : Detail path manager criteria path builder
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -277,7 +277,7 @@ bool CDetailPathManager::build_line_trajectory(const STrajectoryPoint& start, co
         return (true);
     }
 
-    //	VERIFY				(ai().level_graph().check_position_in_direction(vertex_id,start.point,dest.point));
+    //  VERIFY              (ai().level_graph().check_position_in_direction(vertex_id,start.point,dest.point));
     return (path ?
             ai().level_graph().create_straight_path<false>(vertex_id, start.point, dest.point, *path, t, false, false) :
             ai().level_graph().valid_vertex_id(
@@ -820,7 +820,7 @@ void CDetailPathManager::add_patrol_point()
 
 void CDetailPathManager::build_smooth_path(const xr_vector<u32>& level_path, u32 intermediate_index)
 {
-    //	Msg									("[%6d][%s] started to build detail
+    //  Msg                                 ("[%6d][%s] started to build detail
     // path",Device.dwFrame,*m_restricted_object->object().cName());
     START_PROFILE("Build Path/Detail Path");
 
@@ -877,6 +877,6 @@ void CDetailPathManager::build_smooth_path(const xr_vector<u32>& level_path, u32
         m_restricted_object->remove_border();
 
     STOP_PROFILE;
-    //	Msg									("[%6d][%s] build_detail_path
+    //  Msg                                 ("[%6d][%s] build_detail_path
     //[%d][%d][%d]",Device.dwFrame,*m_restricted_object->object().cName(),path().size(),curr_travel_point_index(),last_patrol_point());
 }

@@ -103,10 +103,10 @@ type_motion* type_motion::setup( IKinematicsAnimated* k, CInifile* ini, LPCSTR t
     anims.resize( dirs_number, 0 );
     if( ini->section_exist( type ) )
     {
-        set_motion( k, ini, type,  "front",	front);
-        set_motion( k, ini, type,  "back",	back );
-        set_motion( k, ini, type,  "left",	left );
-        set_motion( k, ini, type,  "right",	right);
+        set_motion( k, ini, type,  "front", front);
+        set_motion( k, ini, type,  "back",  back );
+        set_motion( k, ini, type,  "left",  left );
+        set_motion( k, ini, type,  "right", right);
     }
     return this;
 }

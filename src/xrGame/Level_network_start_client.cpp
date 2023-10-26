@@ -24,7 +24,7 @@ bool CLevel::net_start_client1()
     pApp->LoadBegin();
     // name_of_server
     string64 name_of_server = "";
-    //	xr_strcpy						(name_of_server,*m_caClientOptions);
+    //  xr_strcpy                       (name_of_server,*m_caClientOptions);
     if (strchr(*m_caClientOptions, '/'))
         strncpy_s(name_of_server, *m_caClientOptions, strchr(*m_caClientOptions, '/') - *m_caClientOptions);
 
@@ -80,7 +80,7 @@ bool CLevel::net_start_client3()
         if (psNET_direct_connect) // single
         {
             shared_str const& server_options = Server->GetConnectOptions();
-            level_name = name().c_str(); // Server->level_name		(server_options).c_str();
+            level_name = name().c_str(); // Server->level_name      (server_options).c_str();
             level_ver = Server->level_version(server_options).c_str(); // 1.0
         }
         else // multiplayer
@@ -174,7 +174,7 @@ bool CLevel::net_start_client4()
                 {
                     ClientReceive();
                     if(Server)
-                            Server->Update()	;
+                            Server->Update()    ;
                     Sleep(5);
                 }else
 
@@ -182,7 +182,7 @@ bool CLevel::net_start_client4()
                     {
                         ClientReceive();
                         if(Server)
-                            Server->Update()	;
+                            Server->Update()    ;
                         Sleep(5);
                     }
         */

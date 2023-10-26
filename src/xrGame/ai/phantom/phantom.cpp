@@ -286,7 +286,7 @@ void CPhantom::UpdateCL()
         SwitchToState_internal(m_TgtState);
 }
 //---------------------------------------------------------------------
-// void CPhantom::Hit	(float P, Fvector &dir, IGameObject* who, s16 element,Fvector p_in_object_space, float impulse,
+// void CPhantom::Hit   (float P, Fvector &dir, IGameObject* who, s16 element,Fvector p_in_object_space, float impulse,
 // ALife::EHitType hit_type)
 void CPhantom::Hit(SHit* pHDS)
 {
@@ -295,7 +295,7 @@ void CPhantom::Hit(SHit* pHDS)
     if (g_Alive())
     {
         SetfHealth(-1.f);
-        //		inherited::Hit	(P,dir,who,element,p_in_object_space,impulse/100.f, hit_type);
+        //      inherited::Hit  (P,dir,who,element,p_in_object_space,impulse/100.f, hit_type);
         inherited::Hit(pHDS);
     }
 }
@@ -338,15 +338,15 @@ void CPhantom::PsyHit(const IGameObject* object, float value)
 {
     NET_Packet P;
     SHit HS;
-    HS.GenHeader(GE_HIT, object->ID()); //				//	u_EventGen		(P,GE_HIT, object->ID());
-    HS.whoID = (ID()); // own			//	P.w_u16			(object->ID());
-    HS.weaponID = (ID()); // own			//	P.w_u16			(object->ID());
-    HS.dir = (Fvector().set(0.f, 1.f, 0.f)); // direction	//	P.w_dir			(Fvector().set(0.f,1.f,0.f));
-    HS.power = (value); // hit value	//	P.w_float		(value);
-    HS.boneID = (BI_NONE); // bone			//	P.w_s16			(BI_NONE);
-    HS.p_in_bone_space = (Fvector().set(0.f, 0.f, 0.f)); //	P.w_vec3		(Fvector().set(0.f,0.f,0.f));
-    HS.impulse = (0.f); //	P.w_float		(0.f);
-    HS.hit_type = (ALife::eHitTypeTelepatic); //	P.w_u16			(u16(ALife::eHitTypeTelepatic));
+    HS.GenHeader(GE_HIT, object->ID()); //              //  u_EventGen      (P,GE_HIT, object->ID());
+    HS.whoID = (ID()); // own           //  P.w_u16         (object->ID());
+    HS.weaponID = (ID()); // own            //  P.w_u16         (object->ID());
+    HS.dir = (Fvector().set(0.f, 1.f, 0.f)); // direction   //  P.w_dir         (Fvector().set(0.f,1.f,0.f));
+    HS.power = (value); // hit value    //  P.w_float       (value);
+    HS.boneID = (BI_NONE); // bone          //  P.w_s16         (BI_NONE);
+    HS.p_in_bone_space = (Fvector().set(0.f, 0.f, 0.f)); // P.w_vec3        (Fvector().set(0.f,0.f,0.f));
+    HS.impulse = (0.f); //  P.w_float       (0.f);
+    HS.hit_type = (ALife::eHitTypeTelepatic); //    P.w_u16         (u16(ALife::eHitTypeTelepatic));
     HS.Write_Packet(P);
 
     u_EventSend(P);

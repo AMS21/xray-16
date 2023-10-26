@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: script_sound.cpp
-//	Created 	: 06.02.2004
-//  Modified 	: 06.02.2004
-//	Author		: Dmitriy Iassenev
-//	Description : XRay Script sound class
+//  Module      : script_sound.cpp
+//  Created     : 06.02.2004
+//  Modified    : 06.02.2004
+//  Author      : Dmitriy Iassenev
+//  Description : XRay Script sound class
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
@@ -50,7 +50,7 @@ Fvector CScriptSound::GetPosition() const
 void CScriptSound::Play(CScriptGameObject* object, float delay, int flags)
 {
     THROW3(m_sound._handle() || m_bIsNoSound, "There is no sound", *m_caSoundToPlay);
-    //	Msg							("%6d : CScriptSound::Play (%s), delay %f, flags
+    //  Msg                         ("%6d : CScriptSound::Play (%s), delay %f, flags
     //%d",Device.dwTimeGlobal,m_sound._handle()->file_name(),delay,flags);
     m_sound.play((object) ? &object->object() : NULL, flags, delay);
 }
@@ -58,7 +58,7 @@ void CScriptSound::Play(CScriptGameObject* object, float delay, int flags)
 void CScriptSound::PlayAtPos(CScriptGameObject* object, const Fvector& position, float delay, int flags)
 {
     THROW3(m_sound._handle() || m_bIsNoSound, "There is no sound", *m_caSoundToPlay);
-    //	Msg							("%6d : CScriptSound::Play (%s), delay %f, flags
+    //  Msg                         ("%6d : CScriptSound::Play (%s), delay %f, flags
     //%d",m_sound._handle()->file_name(),delay,flags);
     m_sound.play_at_pos((object) ? &object->object() : NULL, position, flags, delay);
 }

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: vision_client.cpp
-//	Created 	: 11.06.2007
-//  Modified 	: 11.06.2007
-//	Author		: Dmitriy Iassenev
-//	Description : vision client
+//  Module      : vision_client.cpp
+//  Created     : 11.06.2007
+//  Modified    : 11.06.2007
+//  Author      : Dmitriy Iassenev
+//  Description : vision client
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"

@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: client_spawn_manager_script.cpp
-//	Created 	: 08.10.2004
-//  Modified 	: 08.10.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Client spawn manager script export
+//  Module      : client_spawn_manager_script.cpp
+//  Created     : 08.10.2004
+//  Modified    : 08.10.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Client spawn manager script export
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"

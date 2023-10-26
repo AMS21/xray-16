@@ -54,7 +54,7 @@ void CBuild::xrPhase_UVmap()
         // ManOwaR, unsure:
         // Call to IsolateVertices() looks useless here
         // Calculation speed up, so commented
-        // IsolateVertices		(FALSE);
+        // IsolateVertices      (FALSE);
 
         // Detect vertex-lighting and avoid this subdivision
         R_ASSERT(!g_XSplit[SP]->empty());
@@ -152,12 +152,12 @@ void CBuild::mem_Compact()
 {
     Memory.mem_compact();
     /*
-    u32					bytes,blocks_used,blocks_free;
-    bytes				= Memory.mem_usage(&blocks_used,&blocks_free);
-    LPCSTR h_status		= 0;
-    if (HeapValidate	(GetProcessHeap(),0,0))	h_status = "OK";
-    else										h_status = "DAMAGED";
-    clMsg				("::MEMORY(%s):: %d MB, %d Bused, %d Bfree",
+    u32                 bytes,blocks_used,blocks_free;
+    bytes               = Memory.mem_usage(&blocks_used,&blocks_free);
+    LPCSTR h_status     = 0;
+    if (HeapValidate    (GetProcessHeap(),0,0)) h_status = "OK";
+    else                                        h_status = "DAMAGED";
+    clMsg               ("::MEMORY(%s):: %d MB, %d Bused, %d Bfree",
         h_status,bytes/(1024*1024),blocks_used,blocks_free);
     */
 }

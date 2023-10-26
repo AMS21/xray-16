@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: date_time.h
-//	Created 	: 08.05.2004
-//  Modified 	: 08.05.2004
-//	Author		: Dmitriy Iassenev
-//	Description : Date and time routines
+//  Module      : date_time.h
+//  Created     : 08.05.2004
+//  Modified    : 08.05.2004
+//  Author      : Dmitriy Iassenev
+//  Description : Date and time routines
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once

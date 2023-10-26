@@ -112,7 +112,7 @@ struct Weapon_Statistic
     //---------------------------
     u32 m_Basket[STAT_TEAM_COUNT][MAX_BASKET];
 
-    // u32				m_dwNumCompleted;
+    // u32              m_dwNumCompleted;
     HITS_VEC m_Hits;
     void add_hit(HitData const& hit);
 

@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: inventory_upgrade_manager.cpp
-//	Created 	: 19.10.2007
-//	Author		: Dmitriy Iassenev, Evgeniy Sokolov
-//	Description : inventory upgrade manager class implementation
+//  Module      : inventory_upgrade_manager.cpp
+//  Created     : 19.10.2007
+//  Author      : Dmitriy Iassenev, Evgeniy Sokolov
+//  Description : inventory upgrade manager class implementation
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch_script.h"
