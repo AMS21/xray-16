@@ -8,7 +8,7 @@
 
 #pragma once
 
-struct intrusive_base
+struct intrusive_base      
 {
     intrusive_base() XR_NOEXCEPT : m_ref_count(0) {}
 

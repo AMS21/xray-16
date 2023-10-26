@@ -3,7 +3,7 @@
 #include "xr_allocator.h"
 
 template <typename K, class P = std::less<K>, typename allocator = xr_allocator<K>>
-using xr_set = std::set<K, P, allocator>;
+	using xr_set = std::set<K, P, allocator>;
 
 template <typename K, class P = std::less<K>, typename allocator = xr_allocator<K>>
 using xr_multiset = std::multiset<K, P, allocator>;
