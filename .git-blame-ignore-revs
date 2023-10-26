@@ -1,0 +1,10 @@
+# .git-blame-ignore-revs
+
+# Style: Replace tabs with 4 spaces
+889c36fbb61da41b5780d8cd7c53d9e1f0d13c11
+
+# Style: Remove trailing spaces
+2b9a84587745264d444dd9635f02a3d5506a0e47
+
+# Style: Ensure files end with a new line
+46bbbbe1b9ef3b123253e3d3eedba4b36c0b4618
