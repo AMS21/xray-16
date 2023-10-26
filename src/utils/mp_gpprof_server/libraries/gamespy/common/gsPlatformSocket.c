@@ -4,7 +4,7 @@
 #include "gsPlatformUtil.h"
 #include "gsMemory.h"
 
-// mj-ToDo: remove these and include the files int the linker instead. 
+// mj-ToDo: remove these and include the files int the linker instead.
 // removing reference to other platforms.
 // remove all plat specific code from here, move it to the platspecific files.
 
@@ -38,7 +38,7 @@
 // Disable compiler warnings for issues that are unavoidable.
 /////////////////////////////////////////////////////////////
 #if defined(_MSC_VER) // DevStudio
-    // Level4, "conditional expression is constant". 
+    // Level4, "conditional expression is constant".
     // Occurs with use of the MS provided macro FD_SET
     #pragma warning ( disable: 4127 )
 #endif // _MSC_VER
@@ -53,25 +53,25 @@ int SetSockBlocking(SOCKET sock, int isblocking)
 
 #if defined(_REVOLUTION)
     int val;
-    
+
     val = SOFcntl(sock, SO_F_GETFL, 0);
-    
+
     if(isblocking)
         val &= ~SO_O_NONBLOCK;
     else
         val |= SO_O_NONBLOCK;
-    
+
     rcode = SOFcntl(sock, SO_F_SETFL, val);
 #elif defined(_NITRO)
     int val;
-    
+
     val = SOC_Fcntl(sock, SOC_F_GETFL, 0);
-    
+
     if(isblocking)
         val &= ~SOC_O_NONBLOCK;
     else
         val |= SOC_O_NONBLOCK;
-    
+
     rcode = SOC_Fcntl(sock, SOC_F_SETFL, val);
 #else
     #if defined(_PS2) || defined(_PS3)
@@ -83,7 +83,7 @@ int SetSockBlocking(SOCKET sock, int isblocking)
     #else
         unsigned long argp;
     #endif
-        
+
         if(isblocking)
             argp = 0;
         else
@@ -150,7 +150,7 @@ int DisableNagle(SOCKET sock)
     int noDelay = 1;
 
     rcode = setsockopt(sock, IPPROTO_TCP, TCP_NODELAY, (char *)&noDelay, sizeof(int));
-    return gsiSocketIsError(rcode); 
+    return gsiSocketIsError(rcode);
 #else
     GSI_UNUSED(sock);
 
@@ -206,7 +206,7 @@ int DisableNagle(SOCKET sock)
 
         return size;
     }
-    
+
     // Formerly known as ghiSocketSelect
 #ifdef SN_SYSTEMS
     #undef FD_SET
@@ -227,12 +227,12 @@ int DisableNagle(SOCKET sock)
         fd_set * aExceptFds = NULL;
         int aResult;
 // 04-13-2005, Saad Nader
-// Added case for SN Systems that would 
+// Added case for SN Systems that would
 // handle errors after performing selects.
 #ifdef SN_SYSTEMS
         int aOut, aOutLen = sizeof(aOut);
 #endif
-        
+
         struct timeval aTimeout = { 0, 0 };
 
         assert(theSocket != INVALID_SOCKET);
@@ -269,14 +269,14 @@ int DisableNagle(SOCKET sock)
         return -1;
 
 // 04-13-2005, Saad Nader
-// Added case for SN Systems that would 
+// Added case for SN Systems that would
 // handle errors after performing selects.
 #ifdef SN_SYSTEMS
         getsockopt(theSocket, SOL_SOCKET, SO_ERROR, (char *)&aOut, &aOutLen);
         if (aOut != 0)
         {
             return 0;
-        }       
+        }
 #endif
         // Check results.
         /////////////////
@@ -304,7 +304,7 @@ int DisableNagle(SOCKET sock)
         return aResult; // 0 or 1 at this point
     }
 #endif // !nitro && !revolution && !insock
-    
+
 
 // Return 1 for immediate recv, otherwise 0
 int CanReceiveOnSocket(SOCKET sock)
@@ -425,9 +425,9 @@ HOSTENT * getlocalhost(void)
     int aNumInterfaces = 0;
     int aInterfaceNum = 0;
     int aCount = 0;
-    
+
     // Get the list of interfaces
-    aNumInterfaces = sceInetGetInterfaceList(&gGSIInsockClientData, 
+    aNumInterfaces = sceInetGetInterfaceList(&gGSIInsockClientData,
                          &gGSIInsockSocketBuffer, aInterfaceIdArray, MAX_IPS);
     if (aNumInterfaces < 1)
         return NULL;
@@ -460,7 +460,7 @@ HOSTENT * getlocalhost(void)
     localhost.h_length = (gsi_u16)sizeof(ips[0]);
     ipPtrs[aCount]     = NULL;
     return &localhost;
-    
+
 #elif defined(_NITRO)
     #define MAX_IPS  5
 
@@ -504,18 +504,18 @@ HOSTENT * getlocalhost(void)
     ret = SOGetInterfaceOpt(NULL, SO_SOL_CONFIG, SO_CONFIG_IP_ADDR_NUMBER, &aNumOfIps, &aSizeNumOfIps);
     if (ret != 0)
         return NULL;
-    
+
     aAddrsSize = (int)(MAX_IPS * sizeof(IPAddrEntry));
     aAddrsSizeInitial = aAddrsSize;
     ret = SOGetInterfaceOpt(NULL, SO_SOL_CONFIG, SO_CONFIG_IP_ADDR_TABLE, &aAddrs, &aAddrsSize);
     if (ret != 0)
         return NULL;
-    
+
     if (aAddrsSize != aAddrsSizeInitial)
     {
         aNumOfIps = aAddrsSize / (int)sizeof(IPAddrEntry);
     }
-    
+
     aLocalHost.h_name = "localhost";
     aLocalHost.h_aliases = &aliases;
     aLocalHost.h_addrtype = AF_INET;
@@ -527,12 +527,12 @@ HOSTENT * getlocalhost(void)
         {
             memcpy(&ips[i], &aAddrs[i].addr, sizeof(aAddrs[i].addr));
             ipPtrs[i] = (u8 *)&ips[i];
-        }           
-        else 
+        }
+        else
             ipPtrs[i] = NULL;
     }
     aLocalHost.h_addr_list = ipPtrs;
-    
+
     return &aLocalHost;
 
 #elif defined(_X360)
@@ -613,14 +613,14 @@ gsi_u32 gsiGetBroadcastIP(void)
     /*
     int length;
     gsi_u32 ip;
-    
+
     length = (gsi_u32)sizeof(ip);
 
     // IP_GetBroadcastAddr replaced by SOGetInterfaceOpt
     // IP_GetBroadcastAddr(NULL, (u8*)&ip);
     SOGetInterfaceOpt(NULL, SO_SOL_IP, SO_INADDR_BROADCAST, (u8*)&ip, &length);
     */
-     IPAddrEntry* addrtbl; 
+     IPAddrEntry* addrtbl;
     int addrnum;
     int ret;
     int length;
@@ -644,9 +644,9 @@ gsi_u32 gsiGetBroadcastIP(void)
         return 0xFFFFFFFF;
 
     ret = SOGetInterfaceOpt(NULL,
-                            SO_SOL_CONFIG, 
-                            SO_CONFIG_IP_ADDR_TABLE, 
-                            (u8*)addrtbl, 
+                            SO_SOL_CONFIG,
+                            SO_CONFIG_IP_ADDR_TABLE,
+                            (u8*)addrtbl,
                             &length);
 
     if( ret < 0 )
@@ -661,12 +661,12 @@ gsi_u32 gsiGetBroadcastIP(void)
             | (addrtbl->bcastAddr[0] << 24));
 
     gsifree( addrtbl );
-    
+
 
     return ip;
 
     return ip;
-    
+
 #else
     return 0xFFFFFFFF;
 #endif

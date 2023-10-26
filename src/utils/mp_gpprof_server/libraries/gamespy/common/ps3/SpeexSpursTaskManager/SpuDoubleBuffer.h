@@ -15,7 +15,7 @@ class DoubleBuffer
     T m_buffer0[size];
     T m_buffer1[size];
 #endif
-    
+
     T *m_frontBuffer;
     T *m_backBuffer;
 

@@ -1,10 +1,10 @@
-/* 
+/*
  *
  * File: darray.c
  * ---------------
  *  David Wright
  *  10/8/98
- * 
+ *
  *  See darray.h for function descriptions
  */
 #include <stdlib.h>
@@ -46,7 +46,7 @@ struct DArrayImplementation
 // PROTOTYPES
 static void *mylsearch(const void *key, void *base, int count, int size,
                      ArrayCompareFn comparator);
-static void *mybsearch(const void *elem, void *base, int num, int elemsize, 
+static void *mybsearch(const void *elem, void *base, int num, int elemsize,
                        ArrayCompareFn comparator, int *found);
 // FUNCTIONS
 
@@ -76,13 +76,13 @@ static void ArrayGrow(DArray array)
 static void SetElement(DArray array, const void *elem, int pos)
 {
     GS_ASSERT(array)            // safety check -mj Oct 31st
-    GS_ASSERT(elem) 
-    GS_ASSERT(array->elemsize)  
+    GS_ASSERT(elem)
+    GS_ASSERT(array->elemsize)
 
     memcpy(ArrayNth(array,pos), elem, (size_t)array->elemsize);
 }
 
-DArray ArrayNew(int elemSize, int numElemsToAllocate, 
+DArray ArrayNew(int elemSize, int numElemsToAllocate,
                 ArrayElementFreeFn elemFreeFn)
 {
     DArray array;
@@ -110,7 +110,7 @@ DArray ArrayNew(int elemSize, int numElemsToAllocate,
 void ArrayFree(DArray array)
 {
     int i;
-    
+
     GS_ASSERT(array);
     for (i = 0; i < array->count; i++)
     {
@@ -132,7 +132,7 @@ void *ArrayGetDataPtr(DArray array)
 void ArraySetDataPtr(DArray array, void *ptr, int count, int capacity)
 {
     int i;
-    
+
     GS_ASSERT(array);
     if (array->list != NULL)
     {
@@ -161,7 +161,7 @@ void *ArrayNth(DArray array, int n)
     GS_ASSERT( (n >= 0) && (n < array->count));
     if( ! ((n >= 0) && (n < array->count)) )
         return NULL;
-    
+
     return (char *)array->list + array->elemsize*n;
 }
 
@@ -184,7 +184,7 @@ void ArrayInsertAt(DArray array, const void *newElem, int n)
         ArrayGrow(array);
     array->count++;
     if (n < array->count - 1) //if we aren't appending
-        memmove(ArrayNth(array, n+1), ArrayNth(array,n), 
+        memmove(ArrayNth(array, n+1), ArrayNth(array,n),
                 (size_t)(array->count - 1 - n) * array->elemsize);
     SetElement(array, newElem, n);
 }
@@ -242,7 +242,7 @@ void ArraySort(DArray array, ArrayCompareFn comparator)
 }
 
 //GS_ASSERT will be raised by ArrayNth if fromindex out of range
-int ArraySearch(DArray array, const void *key, ArrayCompareFn comparator, 
+int ArraySearch(DArray array, const void *key, ArrayCompareFn comparator,
                   int fromIndex, int isSorted)
 {
     void *res;
@@ -254,7 +254,7 @@ int ArraySearch(DArray array, const void *key, ArrayCompareFn comparator,
         res=mybsearch(key, ArrayNth(array,fromIndex),
                     array->count - fromIndex, array->elemsize, comparator, &found);
     else
-        res=mylsearch(key, ArrayNth(array, fromIndex), 
+        res=mylsearch(key, ArrayNth(array, fromIndex),
                       array->count - fromIndex, array->elemsize, comparator);
     if (res != NULL && found)
         return (((char *)res - (char *)array->list) / array->elemsize);
@@ -272,7 +272,7 @@ void ArrayMap(DArray array, ArrayMapFn fn, void *clientData)
 
     for (i = 0; i < array->count; i++)
         fn(ArrayNth(array,i), clientData);
-        
+
 }
 
 void ArrayMapBackwards(DArray array, ArrayMapFn fn, void *clientData)
@@ -283,7 +283,7 @@ void ArrayMapBackwards(DArray array, ArrayMapFn fn, void *clientData)
 
     for (i = (array->count - 1) ; i >= 0 ; i--)
         fn(ArrayNth(array,i), clientData);
-        
+
 }
 
 void * ArrayMap2(DArray array, ArrayMapFn2 fn, void *clientData)
@@ -356,7 +356,7 @@ static void *mylsearch(const void *key, void *base, int count, int size,
 static void *mybsearch(const void *elem, void *base, int num, int elemsize, ArrayCompareFn comparator, int *found)
 {
     int L, H, I, C;
-    
+
     GS_ASSERT(elem);
     GS_ASSERT(base);
     GS_ASSERT(found);
@@ -370,7 +370,7 @@ static void *mybsearch(const void *elem, void *base, int num, int elemsize, Arra
         C = comparator(((char *)base) + I * elemsize,elem);
         if (C == 0)
             *found = 1;
-        if (C < 0) 
+        if (C < 0)
             L = I + 1;
         else
         {

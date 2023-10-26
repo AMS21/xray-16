@@ -200,7 +200,7 @@ static void RocketTouchClient
     ///////////////////
     if(client->dead)
         return;
-    
+
     // Check for self.
     //////////////////
     if(rocket->owner == client->index)
@@ -212,7 +212,7 @@ static void RocketTouchClient
         ClientKilled(client, NULL);
     else
         ClientKilled(client, &clients[rocket->owner]);
-    
+
     // Explode the rocket.
     //////////////////////
     ExplodeObject(rocket);
@@ -320,7 +320,7 @@ static void AsteroidThink
 
     // Move the asteroid.
     /////////////////////
-    ComputeNewPosition(asteroid->position, asteroid->position, FORWARD, asteroid->heading, Diff, asteroid->speed, GT2False);    
+    ComputeNewPosition(asteroid->position, asteroid->position, FORWARD, asteroid->heading, Diff, asteroid->speed, GT2False);
 
     // If it goes past the edge, loop it around.
     ////////////////////////////////////////////
@@ -378,7 +378,7 @@ static void SpawnAsteroids
 {
     SObject * asteroid;
     int i;
-    
+
     NumAsteroids = 0;
     for(i = 0 ; i < NUM_ASTEROIDS ; i++)
     {
@@ -530,7 +530,7 @@ static void ClientThink
 (
     Client * client
 )
-{   
+{
     // Dead?
     ////////
     if(client->dead)

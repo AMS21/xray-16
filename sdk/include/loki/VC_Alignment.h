@@ -20,7 +20,7 @@
 
 template <class TList> struct VC_MaxAlign;
 
-template <> 
+template <>
 struct VC_MaxAlign< ::Loki::NullType >
 {
     enum { result = 0 };
@@ -40,16 +40,16 @@ private:
     enum { tailResult = VC_MaxAlign<Tail>::result };
 
 public:
-    enum { result = headResult > tailResult ? 
+    enum { result = headResult > tailResult ?
            headResult : tailResult };
 };
 
-                         
+
 ////////////////////////////////////////////////////////////////////////////////
 // class VC_AlignedPODBase
 // Defines a host of protected types used by VC_AlignedPOD (defined later)
-// Could be just part of VC_AlignedPOD itself, but making it separate ought to 
-// reduce compile times 
+// Could be just part of VC_AlignedPOD itself, but making it separate ought to
+// reduce compile times
 ////////////////////////////////////////////////////////////////////////////////
 class VC_AlignedPODBase
 {
@@ -62,7 +62,7 @@ protected:
     };
 
 //
-// I used the macro because align(#) 
+// I used the macro because align(#)
 // only works with Integer literals
 //
 #define ALIGNED_POD(_size_)                                   \

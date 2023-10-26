@@ -18,8 +18,8 @@ extern int gNetInterfaceID;
         int r;
         // Get MAC
         // to do, cache this, and do this once at init.
-        r = cellNetCtlGetInfo(  CELL_NET_CTL_INFO_ETHER_ADDR,&gCellNetInfo  );              
-        if (r == CELL_OK)       
+        r = cellNetCtlGetInfo(  CELL_NET_CTL_INFO_ETHER_ADDR,&gCellNetInfo  );
+        if (r == CELL_OK)
         {
 
             return (const char *)&gCellNetInfo.ether_addr;
@@ -65,7 +65,7 @@ gsi_i64 gsiStringToInt64(const char *theNumberStr)
 
 void gsiInt64ToString(char theNumberStr[33], gsi_i64 theNumber)
 {
-    // you want to fit the number! 
+    // you want to fit the number!
     // give me a valid string!
     GS_ASSERT(theNumberStr != NULL);
 

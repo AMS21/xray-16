@@ -34,7 +34,7 @@ unsigned char * gsiFloatSwap(unsigned char buf[4], float f)
 }
 
 // unswap using char pointers
-float gsiFloatUnswap(unsigned char buf[4]) 
+float gsiFloatUnswap(unsigned char buf[4])
 {
     float f;
     unsigned char *src = (unsigned char *)buf;

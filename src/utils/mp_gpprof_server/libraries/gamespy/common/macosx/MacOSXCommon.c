@@ -3,7 +3,7 @@
 #include "../gsDebug.h"
 
 // sample common entry point
-extern int test_main(int argc, char ** argp); 
+extern int test_main(int argc, char ** argp);
 
 // Debug output
 #ifdef GSI_COMMON_DEBUG
@@ -15,13 +15,13 @@ static void DebugCallback(GSIDebugCategory theCat, GSIDebugType theType,
     GSI_UNUSED(theLevel);
     {
         static char    string[256];
-        vsprintf(string, theTokenStr, theParamList);            
+        vsprintf(string, theTokenStr, theParamList);
         printf(string);
     }
-    printf("[%s][%s] ", 
-           gGSIDebugCatStrings[theCat], 
+    printf("[%s][%s] ",
+           gGSIDebugCatStrings[theCat],
            gGSIDebugTypeStrings[theType]);
-    
+
     vprintf(theTokenStr, theParamList);
 }
 #endif
@@ -32,16 +32,16 @@ int main(int argc, char** argp)
     int     ret     = 0;
     // set up memanager
     //void  *heap   = (void*)gsiMemManagedInit();
-    
+
 #ifdef GSI_COMMON_DEBUG
     // Set up debugging
     gsSetDebugCallback(DebugCallback);
     gsSetDebugLevel(GSIDebugCat_All, GSIDebugType_All,    GSIDebugLevel_Verbose);
 #endif
-    
+
     ret = test_main(argc, argp);
-    
+
     //gsiMemManagedClose(heap);
-    
+
     return ret;
 }

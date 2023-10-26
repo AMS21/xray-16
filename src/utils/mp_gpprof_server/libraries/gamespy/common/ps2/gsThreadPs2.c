@@ -13,7 +13,7 @@ gsi_u32 gsiInterlockedIncrement(gsi_u32 * value)
         EI();
 
     // return "ret" rather than "value" here b/c
-    // value may be modified by another thread 
+    // value may be modified by another thread
     // before we can return it
     return ret;
 }
@@ -26,7 +26,7 @@ gsi_u32 gsiInterlockedDecrement(gsi_u32 * value)
         EI();
 
     // return "ret" rather than "value" here b/c
-    // value may be modified by another thread 
+    // value may be modified by another thread
     // before we can return it
     return ret;
 }
@@ -34,14 +34,14 @@ gsi_u32 gsiInterlockedDecrement(gsi_u32 * value)
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-void gsiInitializeCriticalSection(GSICriticalSection *theCrit) 
+void gsiInitializeCriticalSection(GSICriticalSection *theCrit)
 {
-    theCrit->mSemaphore = gsiCreateSemaphore(1, 1, NULL); 
+    theCrit->mSemaphore = gsiCreateSemaphore(1, 1, NULL);
     theCrit->mOwnerThread = 0;
     theCrit->mEntryCount = 0;
 }
-void gsiEnterCriticalSection(GSICriticalSection *theCrit) 
-{ 
+void gsiEnterCriticalSection(GSICriticalSection *theCrit)
+{
     // If we're not already in it, wait for it
     if (GetThreadId() != theCrit->mOwnerThread)
     {
@@ -53,7 +53,7 @@ void gsiEnterCriticalSection(GSICriticalSection *theCrit)
     theCrit->mEntryCount++;
 }
 void gsiLeaveCriticalSection(GSICriticalSection *theCrit)
-{ 
+{
     // We must be the owner? (assert?)
     if (GetThreadId() != theCrit->mOwnerThread)
     {
@@ -66,17 +66,17 @@ void gsiLeaveCriticalSection(GSICriticalSection *theCrit)
     if (theCrit->mEntryCount == 0)
     {
         theCrit->mOwnerThread = 0;
-        gsiReleaseSemaphore(theCrit->mSemaphore, 1);     
+        gsiReleaseSemaphore(theCrit->mSemaphore, 1);
     }
 }
 
-void gsiDeleteCriticalSection(GSICriticalSection *theCrit) 
-{ 
-    gsiCloseSemaphore(theCrit->mSemaphore);       
+void gsiDeleteCriticalSection(GSICriticalSection *theCrit)
+{
+    gsiCloseSemaphore(theCrit->mSemaphore);
 }
 
-gsi_u32 gsiHasThreadShutdown(GSIThreadID theThreadID) 
-{ 
+gsi_u32 gsiHasThreadShutdown(GSIThreadID theThreadID)
+{
     struct ThreadParam aStatus;
     ReferThreadStatus(theThreadID, &aStatus);
     if (aStatus.status == THS_DORMANT)
@@ -92,16 +92,16 @@ GSISemaphoreID gsiCreateSemaphore(gsi_i32 theInitialCount, gsi_i32 theMaxCount, 
 
     aParam.initCount = theInitialCount;
     aParam.maxCount = theMaxCount;
-    
+
     aSemaphore = CreateSema(&aParam);
     if (aSemaphore < 0)
     {
         gsDebugFormat(GSIDebugCat_Common, GSIDebugType_Misc, GSIDebugLevel_WarmError,
             "Failed to create semaphore\r\n");
     }
-    
+
     GSI_UNUSED(theName);
-    
+
     return aSemaphore;
 }
 

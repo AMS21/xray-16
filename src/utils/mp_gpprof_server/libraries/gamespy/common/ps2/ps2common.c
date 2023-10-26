@@ -78,7 +78,7 @@ static void load_network_modules()
 #ifndef _DEBUG
     load_module(MODROOT "snstkrel.irx", 0, NULL);
 #else
-    const char iop_params[] 
+    const char iop_params[]
         = SNPS2_IP_ADDR "\x00" SNPS2_SUB_MSK "\x00" SNPS2_GATEWAY;
 
     load_module(MODROOT "snstkdbg.irx", sizeof(iop_params), (char*) iop_params);
@@ -191,7 +191,7 @@ static sn_int32 do_initialisation(void)
         scePrintf("sndev_set_options() failed %d\n", result);
         return result;
     }
-    
+
     // start the stack
     scePrintf("Starting the TCP/IP stack\n");
     result = sn_stack_state(SN_STACK_STATE_START, &stack_state);
@@ -471,7 +471,7 @@ static int do_initialisation(void)
         scePrintf("create_sema() failed.\n");
         return -1;
     }
-    
+
     // load network modules
     load_network_modules();
 
@@ -573,7 +573,7 @@ static int do_initialisation(void)
 static void do_shutdown(void)
 {
     int rcode;
-    
+
     // bring down the interface
     rcode = sceEENetCtlDownInterface(EENET_IFNAME);
     if(rcode < 0)
@@ -722,7 +722,7 @@ static int do_initialisation(void)
     sceInetAddress_t myaddr;
 
     sceSifInitRpc( 0 );
-    
+
     load_module( IOP_MOD_INET, 0, NULL );
     load_module( IOP_MOD_NETCNF, sizeof( NETCNF_ARG ), NETCNF_ARG );
     load_module( IOP_MOD_INETCTL, sizeof( INETCTL_ARG ), INETCTL_ARG );
@@ -827,7 +827,7 @@ void load_voice_modules(void)
 #endif
 
 // New hooks required by crt0.s
-#if !defined(__MWERKS__) 
+#if !defined(__MWERKS__)
 int _init(){ return 0; }
 int _fini(){ return 0; }
 
@@ -840,11 +840,11 @@ extern int test_main(int argc, char ** argp);
 int main(int argc, char ** argp)
 {
     int result = 0;
-    
+
     GSI_UNUSED(argc);
     GSI_UNUSED(argp);
 
-    printf("\nGameSpy Test App Initializing\n" 
+    printf("\nGameSpy Test App Initializing\n"
            "----------------------------------\n");
 
     // init RPC
@@ -863,13 +863,13 @@ int main(int argc, char ** argp)
 #endif
 
     // start the actual program
-    printf("\nGameSpy Test App Starting\n" 
+    printf("\nGameSpy Test App Starting\n"
            "----------------------------------\n");
     test_main(argc, argp);
 
     // do any needed cleanup
     do_shutdown();
-    printf("\nGameSpy Test App Exiting\n" 
+    printf("\nGameSpy Test App Exiting\n"
            "----------------------------------\n");
 
     return 0;

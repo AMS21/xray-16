@@ -1,6 +1,6 @@
 /*
 gpiConnect.c
-GameSpy Presence SDK 
+GameSpy Presence SDK
 Dan "Mr. Pants" Schoenblum
 
 Copyright 1999-2007 GameSpy Industries, Inc
@@ -68,32 +68,32 @@ gpiStartConnect(
     //int len;
     GPIConnection * iconnection = (GPIConnection*)*connection;
     struct hostent * host;
-    
+
     GSUdpErrorCode anError;
     strncpy(iconnection->mHeader, GPI_UDP_HEADER, GS_UDP_MSG_HEADER_LEN);
 
     if (!gsUdpEngineIsInitialized())
     {
         unsigned short peerPort = GPI_PEER_PORT;
-        gsDebugFormat(GSIDebugCat_GP, GSIDebugType_Network, GSIDebugLevel_Notice, 
+        gsDebugFormat(GSIDebugCat_GP, GSIDebugType_Network, GSIDebugLevel_Notice,
             "Initializing UDP Layer\n");
         anError = gsUdpEngineInitialize(peerPort, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
         if (anError != GS_UDP_NO_ERROR)
         {
             while (anError != GS_UDP_NO_ERROR && peerPort < GPI_PEER_PORT + 100)
             {
-                gsDebugFormat(GSIDebugCat_GP, GSIDebugType_Network, GSIDebugLevel_Comment, 
+                gsDebugFormat(GSIDebugCat_GP, GSIDebugType_Network, GSIDebugLevel_Comment,
                     "Port %d failed, trying next port\n", peerPort);
                 anError = gsUdpEngineInitialize(++peerPort, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
             }
             if (anError != GS_UDP_NO_ERROR)
             {
-                gsDebugFormat(GSIDebugCat_GP, GSIDebugType_Network, GSIDebugLevel_HotError, 
+                gsDebugFormat(GSIDebugCat_GP, GSIDebugType_Network, GSIDebugLevel_HotError,
                     "Tryed all 100 ports after default port, giving up.\n");
-                CallbackFatalError(connection, GP_NETWORK_ERROR, GP_UDP_LAYER, 
+                CallbackFatalError(connection, GP_NETWORK_ERROR, GP_UDP_LAYER,
                     "There was error starting the UDP layer.");
             }
-        }   
+        }
         if (!iconnection->firewall)
         {
             iconnection->peerPort = peerPort;
@@ -101,11 +101,11 @@ gpiStartConnect(
     }
     else
     {
-        gsDebugFormat(GSIDebugCat_GP, GSIDebugType_Network, GSIDebugLevel_Notice, 
+        gsDebugFormat(GSIDebugCat_GP, GSIDebugType_Network, GSIDebugLevel_Notice,
             "UDP Layer already initialized, using existing port.\n");
         iconnection->peerPort = gsUdpEngineGetLocalPort();
     }
-    anError = gsUdpEngineAddMsgHandler(iconnection->mHeader, iconnection->mHeader, NULL, gpiPeerAcceptedCallback, gpiPeerLeftCallback, 
+    anError = gsUdpEngineAddMsgHandler(iconnection->mHeader, iconnection->mHeader, NULL, gpiPeerAcceptedCallback, gpiPeerLeftCallback,
         gpiPeerPingReplyCallback, gpiPeerMessageCallback, connection);
     if (anError != GS_UDP_NO_ERROR)
     {
@@ -113,7 +113,7 @@ gpiStartConnect(
     }
     if(iconnection->firewall)
     {
-        
+
         /*
         // Create the peer listening socket.
         ////////////////////////////////////
@@ -149,8 +149,8 @@ gpiStartConnect(
             CallbackFatalError(connection, GP_NETWORK_ERROR, GP_NETWORK, "There was an error getting a socket's addres.");
         iconnection->peerPort = address.sin_port;
         */
-        
-            
+
+
         iconnection->peerPort = 0;
     }
     /*
@@ -160,15 +160,15 @@ gpiStartConnect(
         // No local port.
         /////////////////
         //iconnection->peerSocket = INVALID_SOCKET;
-        
+
         // Set to nothing because NN will determine this
         //////////////////////////
         //iconnection->peerPort = 0;
     }
     */
-    
 
-    
+
+
     // Create the cm socket.
     ////////////////////////
     iconnection->cmSocket = socket(AF_INET, SOCK_STREAM, 0);
@@ -180,7 +180,7 @@ gpiStartConnect(
     rcode = SetSockBlocking(iconnection->cmSocket,0);
     if(rcode == 0)
         CallbackFatalError(connection, GP_NETWORK_ERROR, GP_NETWORK, "There was an error making a socket non-blocking.");
-/* 
+/*
     // Bind the socket.
     ///////////////////
     memset(&address, 0, sizeof(address));
@@ -521,7 +521,7 @@ gpiSendNewuser(
         char cdkeyxor[GP_CDKEY_LEN];
         char cdkeyenc[GP_CDKEYENC_LEN];
         size_t cdkeylen = strlen(data->cdkey);
-        
+
         Util_RandSeed((unsigned long)GP_XOR_SEED);
         for (i=0; i < cdkeylen; i++)
         {
@@ -666,7 +666,7 @@ gpiProcessConnect(
         operation->state = GPI_LOGIN;
 
         break;
-        
+
     case GPI_LOGIN:
         // This should be \lc\2.
         ////////////////////////
@@ -716,7 +716,7 @@ gpiProcessConnect(
 
         if(data->authtoken[0])
             user = data->authtoken;
-        else if(iconnection->uniquenick[0])  
+        else if(iconnection->uniquenick[0])
         {
             sprintf(userBuffer, "%s%s", partnerBuffer, iconnection->uniquenick);
             user = userBuffer;
@@ -779,7 +779,7 @@ gpiProcessConnect(
 #else
             UTF8ToUCS2StringLen(uniquenick, arg->uniquenick, GP_UNIQUENICK_LEN);
 #endif
-            
+
             CHECK_RESULT(gpiAddCallback(connection, callback, arg, operation, 0));
         }
 
@@ -808,11 +808,11 @@ gpiProcessConnect(
 #endif
 
         break;
-        
+
     default:
         break;
     }
-    
+
     return GP_NO_ERROR;
 }
 
@@ -823,11 +823,11 @@ gpiCheckConnect(
 {
     GPIConnection * iconnection = (GPIConnection*)*connection;
     int state;
-    
+
     // Check if the connection is completed.
     ////////////////////////////////////////
     CHECK_RESULT(gpiCheckSocketConnect(connection, iconnection->cmSocket, &state));
-    
+
     // Check for a failed attempt.
     //////////////////////////////
     if(state == GPI_DISCONNECTED)
@@ -837,7 +837,7 @@ gpiCheckConnect(
     ////////////////////////////////////
     if(state == GPI_NOT_CONNECTED)
         return GP_NO_ERROR;
-    
+
     // We're now negotiating the connection.
     ////////////////////////////////////////
     assert(state == GPI_CONNECTED);
@@ -864,7 +864,7 @@ gpiDisconnectCleanupProfile(
         profile->buddyOrBlockCache = gsi_true;
         freeclear(profile->buddyStatus->statusString);
         freeclear(profile->buddyStatus->locationString);
-        freeclear(profile->buddyStatus);    
+        freeclear(profile->buddyStatus);
     }
     if (profile->buddyStatusInfo)
     {
@@ -946,7 +946,7 @@ gpiDisconnect(
             closesocket(iconnection->cmSocket);
             iconnection->cmSocket = INVALID_SOCKET;
         }
-        
+
         if(/*iconnection->peerSocket != INVALID_SOCKET*/ gsUdpEngineIsInitialized())
         {
             //shutdown(iconnection->peerSocket, 2);
@@ -966,7 +966,7 @@ gpiDisconnect(
         iconnection->userid = 0;
         iconnection->profileid = 0;
     }
-    
+
     // freeclear all the memory.
     ///////////////////////
     freeclear(iconnection->socketBuffer.buffer);
@@ -984,7 +984,7 @@ gpiDisconnect(
         gpiDestroyPeer(connection, delPeer);
     }
     iconnection->peerList = NULL;
-    
+
     // Cleanup buddies.
     // This is not optimal - because we can't continue the mapping
     // after freeing a profile, we need to start it all over again.

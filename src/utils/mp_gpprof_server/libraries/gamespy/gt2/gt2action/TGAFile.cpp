@@ -8,7 +8,7 @@
 
 /*
     TGADefs.h - Tye and Constant declaration file
-    This File defines the Types, and the Constant Values used by the 
+    This File defines the Types, and the Constant Values used by the
     TGAFile Class.
 
     Created By: Timothy A. Bish
@@ -146,7 +146,7 @@ typedef struct _aTGACOLORCORRECTIONTABLE
 #define INVALIDWMF      27      // invalid windows metafile
 #define DEPTHMISMATCHERR    28  // the file was not of the requested bit-depth
 #define INVALIDTGAERR 35        // Invalid TGA File
-#define NOTGATHUMBNAIL 36       // No TGA Thumbnail in the file 
+#define NOTGATHUMBNAIL 36       // No TGA Thumbnail in the file
 
 #pragma pack()
 
@@ -158,7 +158,7 @@ class TGAFile
 public:
 
     // parameters
-    __int32  m_error;   
+    __int32  m_error;
 
 public:
 
@@ -167,7 +167,7 @@ public:
     TGAFile();
 
     BOOL        IsFileTGA(const char * fileName);
-    
+
     LPVOID   LoadTGA(   const char *fileName,       // Name of file
                                         UINT32 *width,          // Width in Pixel
                                         UINT32 *height);        // Height
@@ -177,8 +177,8 @@ public:
                               UINT32  *height,      // Height
                               RGBQUAD *pal);        // Palette of RGBQUADS
 
-    BOOL GetTGADims(const char *fileName, 
-                          UINT32 *width, 
+    BOOL GetTGADims(const char *fileName,
+                          UINT32 *width,
                           UINT32 *height);
 
     BOOL SaveTGA32(const char * fileName,   // output path
@@ -191,7 +191,7 @@ public:
                      UINT32 width,              // Width of image
                      UINT32 height,             // Height of image
                      __int32 colors,                // number of colors (number of RGBQUADs)
-                     RGBQUAD *colormap);        // array of RGBQUADs 
+                     RGBQUAD *colormap);        // array of RGBQUADs
 
     HGLOBAL LoadTGAThumbnail(const char *fileName,  // Name of file
                                    UINT32 *width,   // Width in Pixel
@@ -205,13 +205,13 @@ private:
     BYTE                    TGA_Attribute;  // Number of attribute bytes per pixel
                                             // i.e. 1 for T16 and 8 for T32
     UINT32                  mode;           // Mode of current Read or Write
-    
+
     // RLE Decompression Variables
     BYTE                    Red,            // Stores pixel value for
                             Grn,            // RLE series of oixels
-                            Blu, 
+                            Blu,
                             Alpha;
-    UINT32 l;                               // Used when 8 bit files use RLE 
+    UINT32 l;                               // Used when 8 bit files use RLE
     __int32 RLECount, RLEFlag;              // Indicates whether the RLE series
                                             // is still going or is finished
 
@@ -221,7 +221,7 @@ private:
 
     __int32 TGA_GetFileVersion(FILE *fp);       // Determines whether this is a V1.0
                                             // or V2.0 TGA File
-    BOOL TGA_GetMapEntry(BYTE   *Red,       // Get the Color Values out of the 
+    BOOL TGA_GetMapEntry(BYTE   *Red,       // Get the Color Values out of the
                                              BYTE   *Green,     // Color map in the TGA File
                                              BYTE   *Blue,      // Return TRUE on Success
                                              BYTE   *Alpha,
@@ -237,7 +237,7 @@ private:
                                                UINT32  PixelDepth,
                                                RGBQUAD *CMap);
 
-    // version that takes a buffer ptr                             
+    // version that takes a buffer ptr
     BOOL TGA_GetPixelValue(BYTE    *Red,    // Get and parse a single pixel value
                                                BYTE    *Grn,    // from the TGA file. Handles Unencoding
                                                BYTE    *Blu,    // of RLE encoded files.
@@ -260,11 +260,11 @@ private:
 //    BYTE blue;
 //    BYTE alpha;
 //    } TGAColorComponents;
-    
+
 /* TGA File REader Classs Implementation File
    This Implementation Allows the reading of TGA (Targa) Files
-   into an RGB buffer. Also the class allows an RGB Buffer to be 
-   written to a TGA File. There is also a function to determine 
+   into an RGB buffer. Also the class allows an RGB Buffer to be
+   written to a TGA File. There is also a function to determine
    the dimensions of a TGA file.
 
   Created By: Timothy A. Bish
@@ -340,7 +340,7 @@ TGAFile::GetTGADims(const char * fileName, UINT32 * width, UINT32 * height)
             return NULL;
         }
 
-    // Grab the Image dimensions    
+    // Grab the Image dimensions
     *width = tgahd.Width;
     *height = tgahd.Height;
     fclose(fp);
@@ -348,12 +348,12 @@ TGAFile::GetTGADims(const char * fileName, UINT32 * width, UINT32 * height)
     }
 
 /*****************************************************************************
-* NAME: 
+* NAME:
 *  TGAFile::IsFileTGA
-* 
-* DESCRIPTION: 
+*
+* DESCRIPTION:
 *  Description goes here...
-* 
+*
 *******************************************************************************/
 BOOL
 TGAFile::IsFileTGA(const char * fileName)
@@ -523,7 +523,7 @@ TGAFile::LoadTGA(const char * fileName, UINT32 * width, UINT32 * height)
 //  long lBufSize = lImgDataSize + 16; // slop
 //  if(lBufSize < MAX_IMAGEREAD_BUFFER)
 //      lBufSize = MAX_IMAGEREAD_BUFFER;
-//  if(glImageReadBufferSize < lBufSize) 
+//  if(glImageReadBufferSize < lBufSize)
 //      {
 //      if(gpImageReadBuffer)
 //          {
@@ -531,10 +531,10 @@ TGAFile::LoadTGA(const char * fileName, UINT32 * width, UINT32 * height)
 //          gpImageReadBuffer = NULL; // tidy
 //          gpImageReadBufPos = NULL;
 //          }
-//          
+//
 //      glImageReadBufferSize = lBufSize;
 //      gpImageReadBuffer = (BYTE *) malloc(glImageReadBufferSize);
-//      
+//
 //      if(!gpImageReadBuffer)
 //          {
 //          glImageReadBufferSize = 0;
@@ -553,7 +553,7 @@ TGAFile::LoadTGA(const char * fileName, UINT32 * width, UINT32 * height)
         //free(pNew);
         return NULL;
         }
-        
+
     // Grab the image dimensions
     *width = tgahd.Width;
     *height = tgahd.Height;
@@ -566,7 +566,7 @@ TGAFile::LoadTGA(const char * fileName, UINT32 * width, UINT32 * height)
 ///////////////
 // all out...dorks didn't realize that TGA's memory format == DIBSections!
 //////////////
-#if 0 
+#if 0
     //
     // Read the TGA format data into the local buffer
     //
@@ -580,9 +580,9 @@ TGAFile::LoadTGA(const char * fileName, UINT32 * width, UINT32 * height)
     gpImageReadBufPos = gpImageReadBuffer;
 
     // copy DWORDs instead of bytes...
-    UINT32 * pPixel = (UINT32 *) pRGB; 
+    UINT32 * pPixel = (UINT32 *) pRGB;
     UINT32 * pReadBufPixel = (UINT32 *) gpImageReadBufPos;
-    
+
     for(UINT32 row = 0; row < tgahd.Height; row++)
         {
         for(UINT32 col = 0; col < tgahd.Width; col++)
@@ -591,7 +591,7 @@ TGAFile::LoadTGA(const char * fileName, UINT32 * width, UINT32 * height)
             // Reset RLE Counters
             BYTE  Red, Grn, Blu, Alp;
             TGA_GetPixelValue(&Red, &Grn, &Blu, &Alp, &gpImageReadBufPos, tgahd.PixelDepth, CColMap);
-            
+
             // Invert if the image origin is in Bottom left
             if(TGA_Origin != 0)
                 {  // Bottom Left Origin
@@ -614,7 +614,7 @@ TGAFile::LoadTGA(const char * fileName, UINT32 * width, UINT32 * height)
     //              Grn = *(gpImageReadBufPos++);
     //              Blu = *(gpImageReadBufPos++);
     //              Alp = *(gpImageReadBufPos++);
-    //              
+    //
     //              *(pRGB + destOffset + 0) = Red;
     //              *(pRGB + destOffset + 1) = Grn;
     //              *(pRGB + destOffset + 2) = Blu;
@@ -624,12 +624,12 @@ TGAFile::LoadTGA(const char * fileName, UINT32 * width, UINT32 * height)
                     //  TGAColorComponents  rgbaPixel;
 
                     *(pPixel++) = *(pReadBufPixel++);
-                    
+
     //              BYTE * p = pRGB + destOffset;
     //              *(p++) = *(gpImageReadBufPos++);
     //              *(p++) = *(gpImageReadBufPos++);
     //              *(p++) = *(gpImageReadBufPos++);
-    //              *(p++) = *(gpImageReadBufPos++); 
+    //              *(p++) = *(gpImageReadBufPos++);
     //              destOffset += 4;
     #endif
             } // loop col
@@ -922,7 +922,7 @@ TGAFile::LoadTGAThumbnail
             mode = COLOUR;
             }
 
-        // Check for file Version       
+        // Check for file Version
         // Seek the last 26 bytes of the file
         if(fseek(fp, -26, SEEK_END))
             {
@@ -941,7 +941,7 @@ TGAFile::LoadTGAThumbnail
             return NULL;
             }
 
-        // Check for the Marker at the end of the file  
+        // Check for the Marker at the end of the file
         lResult = strcmp(tgaft.Signature, "TRUEVISION-XFILE.");
 
         if(lResult != 0)
@@ -1112,7 +1112,7 @@ TGAFile::SaveTGA32
                 fclose(fp);
                 return FALSE;
                 }
-                
+
             if(fwrite(&temp, 1, 1, fp) != 1)
                 {
                 m_error = FILEWRITEERR;
@@ -1131,7 +1131,7 @@ TGAFile::SaveTGA32
 
 ///////////////////////////////////////////////////////////////////////////////////
 //      Save8BitTGA
-//      Save's to an 8 Bit Color mapped file using the Palette 
+//      Save's to an 8 Bit Color mapped file using the Palette
 //      passed in to the function.
 BOOL
 TGAFile::Save8BitTGA(const char * fileName, // output path
@@ -1139,7 +1139,7 @@ BYTE * inBuf, // one BYTE per pixel colomapped image
 UINT32 width, // Width of Image
 UINT32 height, // Height of Image
 __int32 colors, // number of colors (number of RGBQUADs)
-RGBQUAD * colormap) // array of RGBQUADs 
+RGBQUAD * colormap) // array of RGBQUADs
     {
     long  lResult = 0;
 
@@ -1332,7 +1332,7 @@ TGAFile::TGA_GetMapEntry(BYTE * Red, BYTE * Green, BYTE * Blue, BYTE * Alpha, FI
 ////////////////////////////////////////////////////////////////////////////////////
 //      TGA_GetFileVersion
 //      Retrieves the Version of the TGA File
-//      BYTES 8-23 of a Version 2.0 Footer will be equal 
+//      BYTES 8-23 of a Version 2.0 Footer will be equal
 //      to "TRUEVISION-XFILE" as ASCII
 //      Returns - Version number 1 or 2
 __int32
@@ -1373,7 +1373,7 @@ TGAFile::TGA_GetFileVersion(FILE * fp)
         return FILEREADERR;
         }
 
-    // Check for the Marker at the end of the file  
+    // Check for the Marker at the end of the file
     if(!strcspn(tgaft.Signature, "TRUEVISION-XFILE"))
         {
         // Marker found its V2.0 TGA
@@ -1394,12 +1394,12 @@ TGAFile::TGA_GetFileVersion(FILE * fp)
 BOOL
 TGAFile::TGA_GetPixelValue
     (
-    BYTE * rRed, 
-    BYTE * rGrn, 
-    BYTE * rBlu, 
-    BYTE * rAlp, 
-    BYTE ** ppTGAData, 
-    UINT32 PixelDepth, 
+    BYTE * rRed,
+    BYTE * rGrn,
+    BYTE * rBlu,
+    BYTE * rAlp,
+    BYTE ** ppTGAData,
+    UINT32 PixelDepth,
     RGBQUAD * CColMap
     )
     {
@@ -1411,7 +1411,7 @@ TGAFile::TGA_GetPixelValue
     *rGrn = *((*ppTGAData)++);
     *rBlu = *((*ppTGAData)++);
     *rAlp = *((*ppTGAData)++);
-    
+
     return TRUE;
     }
 
@@ -1517,7 +1517,7 @@ TGAFile::TGA_GetPixelValue(BYTE * rRed, BYTE * rGrn, BYTE * rBlu, BYTE * rAlp, F
                 return FALSE;
                 }
             break;
-            
+
         case 32:  // With alpha (08jan00/bgw)
             lResult = fread(&i, 1, 1, fp);
             Red = i;
@@ -1540,7 +1540,7 @@ TGAFile::TGA_GetPixelValue(BYTE * rRed, BYTE * rGrn, BYTE * rBlu, BYTE * rAlp, F
             m_error = INVALIDTGAERR;
             return NULL;
         }
-        
+
 PixelEncode:  // Set the actual pixel values
 
     if((mode & MAPPED) == MAPPED)

@@ -1,5 +1,5 @@
  /*
-GameSpy GHTTP SDK 
+GameSpy GHTTP SDK
 Dan "Mr. Pants" Schoenblum
 dan@gamespy.com
 
@@ -103,7 +103,7 @@ typedef struct GHIConnection
     FILE * saveFile;              // If saving to disk, the file being saved to.
 
     GHTTPBool blocking;           // Blocking flag.
-    
+
     GHTTPBool persistConnection;  // If TRUE, Connection: close will not be sent in the headers and the connection will be left open
 
     GHTTPResult result;           // The result of the request.
@@ -114,11 +114,11 @@ typedef struct GHIConnection
     SOCKET socket;                // The socket for this connection.
     int socketError;              // If there was a socket error, the last error code is stored here.
 
-    GHIBuffer sendBuffer;         // The buffer for outgoing data. 
+    GHIBuffer sendBuffer;         // The buffer for outgoing data.
     GHIBuffer encodeBuffer;       // The buffer for outgoing data. (will be encrypted; only used with https)
     GHIBuffer recvBuffer;         // The buffer for incoming data. (plain text)
     GHIBuffer decodeBuffer;       // The buffer for incoming data. (encrypted)(only used with https)
-    
+
     GHIBuffer getFileBuffer;      // ghttpGetFile[Ex] uses this buffer (which may be user-supplied).
     GHTTPBool userBufferSupplied; // True if a user buffer was supplied.
 
@@ -126,7 +126,7 @@ typedef struct GHIConnection
     int statusMinorVersion;       // The minor-version number from the server's response.
     int statusCode;               // The status-code from the server's response.
     int statusStringIndex;        // Index in the recvBuffer where the status string starts.
-    
+
     int headerStringIndex;        // Index in the recvBuffer where the headers begin
 
     GHTTPBool completed;          // This connection is completed - call the callback and kill it.
@@ -151,7 +151,7 @@ typedef struct GHIConnection
 
     GHTTPPost post;               // If not NULL, a reference to a post object to upload with the request.
     GHIPostingState postingState; // If posting, the state of the upload.
-    
+
     gsi_time maxRecvTime;         // Max time spent receiving per call to "Think" - Prevents blocking on ultrafast connections
     char * proxyOverrideServer;   // Allows use of a different proxy than the global proxy
     unsigned short proxyOverridePort;
@@ -161,7 +161,7 @@ typedef struct GHIConnection
 #if !defined(GSI_NO_THREADS)
     GSIResolveHostnameHandle handle; //handle used for asychronous DNS lookups
 #endif
-    
+
 } GHIConnection;
 
 // Create a new connection object.

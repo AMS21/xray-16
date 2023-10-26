@@ -1,5 +1,5 @@
  /*
-GameSpy GHTTP SDK 
+GameSpy GHTTP SDK
 Dan "Mr. Pants" Schoenblum
 dan@gamespy.com
 
@@ -184,7 +184,7 @@ GHTTPBool ghiInitReadOnlyBuffer
 
     // Start with user supplied data
     //////////////////////////////
-    buffer->len = size; 
+    buffer->len = size;
 
     return GHTTPTrue;
 }
@@ -317,13 +317,13 @@ GHTTPBool ghiEncryptDataToBuffer
         return GHTTPTrue; // no data and strlen == 0
     bufSpace = buffer->size - buffer->len;
 
-    do 
-    {   
+    do
+    {
         int fragmentLen = min(dataLen, GS_SSL_MAX_CONTENTLENGTH);
-        
+
         // Call the encryptor function
         //    bufSize is reduced by the number of bytes written
-        result = buffer->connection->encryptor.mEncryptFunc(buffer->connection, &buffer->connection->encryptor, 
+        result = buffer->connection->encryptor.mEncryptFunc(buffer->connection, &buffer->connection->encryptor,
                                                     &data[pos], dataLen,
                                                     &buffer->data[buffer->len], &bufSpace);
         if (result == GHIEncryptionResult_BufferTooSmall)
@@ -508,8 +508,8 @@ GHTTPBool ghiReadDataFromBuffer
 {
     int bytesAvailable = 0;
     int bytesToCopy    = 0;
-    
-    
+
+
     // Verify parameters
     assert(bufferIn != NULL);
     assert(len != NULL);

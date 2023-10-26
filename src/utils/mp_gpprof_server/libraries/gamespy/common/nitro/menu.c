@@ -13,7 +13,7 @@ static MenuScreenConfiguration MenuExitScreenConfiguration;
 static void NewMenuScreen(MenuScreenConfiguration * configuration)
 {
     int count;
-    
+
     memset(&Screen, 0, sizeof(MenuScreen));
     Screen.configuration = configuration;
     Screen.listSelection = -1;
@@ -28,7 +28,7 @@ static void ShowMenuScreen(void)
     MenuScreenConfiguration * configuration = Screen.configuration;
     MenuScreenChoice * choices = configuration->choices;
     int options = configuration->options;
-    
+
     const ScreenColor normalColor = SCGray;
     const ScreenColor highlightColor = SCWhite;
     const ScreenColor disabledColor = SCDarkGray;
@@ -51,7 +51,7 @@ static void ShowMenuScreen(void)
     const int spacePos = (strchr(keyboardRows[2], 's') - keyboardRows[2]);
     const char animationChars[] = "-*";
     const gsi_time animationTickTime = 500;
-    
+
     BOOL done = FALSE;
     int choiceIndex;
     BOOL keyboard;
@@ -84,7 +84,7 @@ static void ShowMenuScreen(void)
 
     // is it animated?
     animated = (options & SCREEN_OPTION_ANIMATED)?TRUE:FALSE;
-    
+
     // is there a keyboard?
     keyboard = (options & SCREEN_OPTION_KEYBOARD)?TRUE:FALSE;
 
@@ -137,7 +137,7 @@ static void ShowMenuScreen(void)
         {
             // figure out which line we're touching
             touchingLine = (y / (TOUCH_Y_RANGE / SCREEN_HEIGHT));
-            
+
             // figure out which position we're touching
             touchingPos = (x / (TOUCH_X_RANGE / SCREEN_WIDTH));
         }
@@ -193,10 +193,10 @@ static void ShowMenuScreen(void)
             }
         }
         wasTouching = touching;
-        
+
         // clear both screens
         ClearScreens();
-        
+
         // show the title on the top screen
         SetTopScreenLineCentered(topTextLine, SCYellow, configuration->topScreenText);
 
@@ -224,14 +224,14 @@ static void ShowMenuScreen(void)
             else
                 SetTopScreenLine(extraTextLine + i, SCWhite, Screen.extraText[i]);
         }
-        
+
         // show the list
         if(list)
         {
             // clear touching vars
             wasTouchingUp = FALSE;
             wasTouchingDown = FALSE;
-            
+
             // show "up" if needed
             if(listScroll > 0)
             {
@@ -246,35 +246,35 @@ static void ShowMenuScreen(void)
                 }
                 SetBottomScreenLineCentered(startListLine, color, "up");
             }
-            
+
             // show the top line
             SetBottomScreenLineCentered(startListLine + 1, normalColor, listBorder);
-            
+
             // show the list items
             for(i = 0 ; i < numListRows ; i++)
             {
                 listItem = (listScroll + i);
-                
+
                 if(listItem >= numListItems)
                     break;
-                
+
                 // is this item being touched?
                 if(touching && (touchingLine == (startListLine + 2 + i)))
                     Screen.listSelection = listItem;
-                
+
                 // set the color
                 if(Screen.listSelection == listItem)
                     color = highlightColor;
                 else
                     color = normalColor;
-                
+
                 // show the item
                 SetBottomScreenLineCentered(startListLine + 2 + i, color, Screen.list[listScroll + i]);
             }
-            
+
             // show the bottom line
             SetBottomScreenLineCentered(startListLine + numListRows + 2, normalColor, listBorder);
-            
+
             // show "down" if needed
             if(listScroll < (numListItems - numListRows))
             {
@@ -290,33 +290,33 @@ static void ShowMenuScreen(void)
                 SetBottomScreenLineCentered(startListLine + numListRows + 3, color, "down");
             }
         }
-        
+
         // show a keyboard
         if(keyboard)
         {
             // show the text
             SetBottomScreenLine(keyboardTextLine, SCGreen, Screen.keyboardText);
-            
+
             // clear touching var
             wasTouchingChar = 0;
-            
+
             // loop through the keyboard rows
             for(i = 0 ; i < numKeyboardRows ; i++)
             {
                 // get the line to show this row on
                 keyboardLine = (startKeyboardRowsLine + i);
-                
+
                 // check if we're touching this row
                 if(touching && (touchingLine == keyboardLine))
                 {
                     // get the char we're touching
                     touchingChar = keyboardRows[i][touchingPos];
-                    
+
                     // handle touching 'space' specially
                     if(islower(touchingChar))
                     {
                         wasTouchingChar = ' ';
-                        
+
                         touchingPos = spacePos;
                         range = 5;
                     }
@@ -324,10 +324,10 @@ static void ShowMenuScreen(void)
                     {
                         if(touchingChar != ' ')
                             wasTouchingChar = touchingChar;
-                        
+
                         range = 1;
                     }
-                    
+
                     // show the keyboard row with the selection highlighted
                     SetBottomScreenLineHighlight(
                         keyboardLine, normalColor, keyboardRows[i],
@@ -340,16 +340,16 @@ static void ShowMenuScreen(void)
                 }
             }
         }
-        
+
         // show the choices
         wasTouchingChoice = -1;
         for(choiceIndex = 0 ; choiceIndex < Screen.numChoices ; choiceIndex++)
         {
             // this is the line to show this choice on
             choiceLine = (startChoicesLine + (choiceIndex * 2));
-            
+
             // check if we're touching this choice
-            if((choices[choiceIndex].options & CHOICE_OPTION_DISABLED) || 
+            if((choices[choiceIndex].options & CHOICE_OPTION_DISABLED) ||
                 ((choices[choiceIndex].options & CHOICE_OPTION_NEEDS_LIST_SELECTION) && (Screen.listSelection == -1)))
             {
                 color = disabledColor;
@@ -363,7 +363,7 @@ static void ShowMenuScreen(void)
             {
                 color = normalColor;
             }
-            
+
             // show the line
             SetBottomScreenLineCentered(choiceLine, color, choices[choiceIndex].text);
         }

@@ -16,7 +16,7 @@ struct      v2p_particle
 
 layout(location = POSITION)     in float4   v_particle_P    ; // POSITION;
 layout(location = TEXCOORD0)    in float2   v_particle_tc   ; // TEXCOORD0;
-layout(location = COLOR)        in float4   v_particle_c    ; // COLOR; 
+layout(location = COLOR)        in float4   v_particle_c    ; // COLOR;
 
 layout(location = COLOR0)       out float4  v2p_particle_color; // COLOR0;
 #if defined(USE_R2_STATIC_SUN) && !defined(USE_LM_HEMI)

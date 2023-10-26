@@ -11,11 +11,11 @@ DATE        VERSION  BY   TYPE     DESCRIPTION
 08-06-2007  1.03.00  RMV  RELEASE  Released to Developer Site
 08-03-2007  1.02.08  SAH  FEATURE  Added mCacheFlag for searchForRecords and getRowCount
 07-19-2007  1.02.07  SAH  FIX      Fixed projects to work with new GP changes
-07-03-2007  1.02.06  SAH  FIX      Fixed memory leak in GetRandomRecord 
-06-29-2007  1.02.05  SAH  OTHER    Added SAKEFileResult_SERVER_ERROR to error code list 
+07-03-2007  1.02.06  SAH  FIX      Fixed memory leak in GetRandomRecord
+06-29-2007  1.02.05  SAH  OTHER    Added SAKEFileResult_SERVER_ERROR to error code list
 06-20-2007  1.02.04  SAH  FEATURE  Added sakeGetRecordCount
                      SAH  FEATURE  Added new input data for sakeSearchForRecords for initial leaderboard support
-06-13-2007  1.02.03  SAH  FIX      Fixed memory leak from not freeing BinaryData fields or UnicodeStrings 
+06-13-2007  1.02.03  SAH  FIX      Fixed memory leak from not freeing BinaryData fields or UnicodeStrings
 05-29-2007  1.02.02  DES  FEATURE  Updated saketest to include GetRandomRecord test
 03-22-2007  1.02.01  DES  FIX      Allow NULL for mFilter and mSort with SearchForRecords
                      DES  FEATURE  Added GetRandomRecord

@@ -48,7 +48,7 @@ int ServerSocketCompare(const void * elem1, const void * elem2)
 void RemoveServerSocket(GT2Socket socket)
 {
     int index;
-    
+
     // find it first
     index = ArraySearch(ServerSockets, &socket, ServerSocketCompare, 0, 0);
     if(index != NOT_FOUND)

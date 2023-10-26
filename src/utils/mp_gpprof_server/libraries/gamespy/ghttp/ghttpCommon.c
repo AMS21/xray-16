@@ -1,5 +1,5 @@
 /*
-GameSpy GHTTP SDK 
+GameSpy GHTTP SDK
 Dan "Mr. Pants" Schoenblum
 dan@gamespy.com
 
@@ -13,7 +13,7 @@ devsupport@gamespy.com
 // Disable compiler warnings for issues that are unavoidable.
 /////////////////////////////////////////////////////////////
 #if defined(_MSC_VER) // DevStudio
-// Level4, "conditional expression is constant". 
+// Level4, "conditional expression is constant".
 // Occurs with use of the MS provided macro FD_SET
 #pragma warning ( disable: 4127 )
 #endif // _MSC_VER
@@ -203,14 +203,14 @@ GHTTPBool ghiDecryptReceivedData(struct GHIConnection * connection)
     do
     {
         // Call the decryption func
-        do 
+        do
         {
             aReadPos  = connection->decodeBuffer.data + connection->decodeBuffer.pos;
-            aReadLen  = connection->decodeBuffer.len  - connection->decodeBuffer.pos; 
+            aReadLen  = connection->decodeBuffer.len  - connection->decodeBuffer.pos;
             aWritePos = connection->recvBuffer.data + connection->recvBuffer.len;
             aWriteLen = connection->recvBuffer.size - connection->recvBuffer.len;    // the amount of room in recvbuffer
 
-            aResult = (connection->encryptor.mDecryptFunc)(connection, &connection->encryptor, 
+            aResult = (connection->encryptor.mDecryptFunc)(connection, &connection->encryptor,
                 aReadPos, &aReadLen, aWritePos, &aWriteLen);
             if (aResult == GHIEncryptionResult_BufferTooSmall)
             {
@@ -229,7 +229,7 @@ GHTTPBool ghiDecryptReceivedData(struct GHIConnection * connection)
         {
             gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_Misc, GSIDebugLevel_HotError,
                 "ghiDecryptReceivedData read past the end of connection->decodeBuffer! (%d\\%d bytes)\r\n",
-                aReadLen, connection->decodeBuffer.len);                                          
+                aReadLen, connection->decodeBuffer.len);
             return GHTTPFalse;
         }
 
@@ -254,7 +254,7 @@ GHTTPBool ghiDecryptReceivedData(struct GHIConnection * connection)
         }
     }
 
-    return GHTTPTrue; 
+    return GHTTPTrue;
 }
 
 // Receive some data.
@@ -303,7 +303,7 @@ GHIRecvResult ghiDoReceive
     {
         GHIEncryptionResult result;
         int recvLength = len;
-        
+
         result = ghiEncryptorSslDecryptRecv(connection, &connection->encryptor, buffer, &recvLength);
         if (result == GHIEncryptionResult_Success)
             rcode = recvLength;
@@ -314,7 +314,7 @@ GHIRecvResult ghiDoReceive
     {
         rcode = recv(connection->socket, buffer, len, 0);
     }
-    
+
 
     // There was an error.
     //////////////////////
@@ -378,7 +378,7 @@ int ghiDoSend
 
     if (buffer == NULL || len == 0)
         return 0;
-    
+
     // Do the send.
     ///////////////
     if (connection->encryptor.mEngine != GHTTPEncryptionEngine_None &&
@@ -387,10 +387,10 @@ int ghiDoSend
     {
         int bytesSent = 0;
         GHIEncryptionResult result;
-        
+
         // send through encryption engine
         result = ghiEncryptorSslEncryptSend(connection, &connection->encryptor, buffer, len, &bytesSent);
-    
+
         // Check for an error.
         //////////////////////
         if(result != GHIEncryptionResult_Success)
@@ -478,7 +478,7 @@ GHITrySendResult ghiTrySendThenBuffer
         if(rcode == len)
             return GHITrySendSent;
     }
-    
+
     // Buffer whatever wasn't sent.
     ///////////////////////////////
     if(!ghiAppendDataToBuffer(&connection->sendBuffer, buffer + rcode, len - rcode))
@@ -574,7 +574,7 @@ GHTTPBool ghiSetRequestProxy
     // If a server was supplied, try to parse it
     if(server && *server)
         return ghiParseProxyServer(server, &connection->proxyOverrideServer, &connection->proxyOverridePort);
-    
+
     // No server supplied results in proxy being cleared
     return GHTTPTrue;
 }

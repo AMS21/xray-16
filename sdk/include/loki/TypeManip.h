@@ -2,14 +2,14 @@
 // The Loki Library
 // Copyright (c) 2001 by Andrei Alexandrescu
 // This code accompanies the book:
-// Alexandrescu, Andrei. "Modern C++ Design: Generic Programming and Design 
+// Alexandrescu, Andrei. "Modern C++ Design: Generic Programming and Design
 //     Patterns Applied". Copyright (c) 2001. Addison-Wesley.
-// Permission to use, copy, modify, distribute and sell this software for any 
-//     purpose is hereby granted without fee, provided that the above copyright 
-//     notice appear in all copies and that both that copyright notice and this 
+// Permission to use, copy, modify, distribute and sell this software for any
+//     purpose is hereby granted without fee, provided that the above copyright
+//     notice appear in all copies and that both that copyright notice and this
 //     permission notice appear in supporting documentation.
-// The author or Addison-Welsey Longman make no representations about the 
-//     suitability of this software for any purpose. It is provided "as is" 
+// The author or Addison-Welsey Longman make no representations about the
+//     suitability of this software for any purpose. It is provided "as is"
 //     without express or implied warranty.
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -19,7 +19,7 @@
 #define TYPEMANIP_INC_
 
 namespace Loki
-{    
+{
 ////////////////////////////////////////////////////////////////////////////////
 // class template Int2Type
 // Converts each integral constant into a unique type
@@ -32,7 +32,7 @@ namespace Loki
     {
         enum { value = v };
     };
-    
+
 ////////////////////////////////////////////////////////////////////////////////
 // class template Type2Type
 // Converts each type into a unique, insipid type
@@ -42,11 +42,11 @@ namespace Loki
 
     template <typename T>
     struct Type2Type
-    {   
+    {
         typedef T OriginalType;
         Type2Type(){} // VC7
     };
-    
+
 ////////////////////////////////////////////////////////////////////////////////
 // class template Select
 // Selects one of two types based upon a boolean constant
@@ -62,7 +62,7 @@ namespace Loki
     {
         using Result = std::conditional_t<flag, T, U>;
     };
-    
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // class template IsSameType
@@ -76,7 +76,7 @@ namespace Loki
     template <typename T, typename U>
     struct IsSameType : std::is_same<T, U>
     {};
-    
+
 ////////////////////////////////////////////////////////////////////////////////
 // Helper types Small and Big - guarantee that sizeof(Small) < sizeof(Big)
 ////////////////////////////////////////////////////////////////////////////////
@@ -89,7 +89,7 @@ namespace Loki
         template<typename T>
         struct IsVoid
         {
-            enum { result = 
+            enum { result =
                 IsSameType<T, void>::value          ||
                 IsSameType<T, const void>::value    ||
                 IsSameType<T, volatile void>::value ||
@@ -124,7 +124,7 @@ namespace Loki
         static Private::Small Test(U1);
         static T1 MakeT();
 
-    public:       
+    public:
         enum { exists = sizeof(Test(MakeT())) == sizeof(Private::Small) };
     };
 
@@ -154,8 +154,8 @@ namespace Loki
 
 ////////////////////////////////////////////////////////////////////////////////
 // class template SuperSubclass
-// Invocation: SuperSubclass<B, D>::value where B and D are types. 
-// Returns true if B is a public base of D, or if B and D are aliases of the 
+// Invocation: SuperSubclass<B, D>::value where B and D are types.
+// Returns true if B is a public base of D, or if B and D are aliases of the
 // same type.
 //
 // Caveat: might not work if T and U are in a private inheritance hierarchy.
@@ -170,7 +170,7 @@ struct SuperSubclass
 
 ////////////////////////////////////////////////////////////////////////////////
 // class template SuperSubclassStrict
-// Invocation: SuperSubclassStrict<B, D>::value where B and D are types. 
+// Invocation: SuperSubclassStrict<B, D>::value where B and D are types.
 // Returns true if B is a public base of D.
 //
 // Caveat: might not work if T and U are in a private inheritance hierarchy.
@@ -188,8 +188,8 @@ struct SuperSubclassStrict
 
 ////////////////////////////////////////////////////////////////////////////////
 // macro SUPERSUBCLASS
-// Invocation: SUPERSUBCLASS(B, D) where B and D are types. 
-// Returns true if B is a public base of D, or if B and D are aliases of the 
+// Invocation: SUPERSUBCLASS(B, D) where B and D are types.
+// Returns true if B is a public base of D, or if B and D are aliases of the
 // same type.
 //
 // Caveat: might not work if T and U are in a private inheritance hierarchy.
@@ -201,7 +201,7 @@ struct SuperSubclassStrict
 
 ////////////////////////////////////////////////////////////////////////////////
 // macro SUPERSUBCLASS_STRICT
-// Invocation: SUPERSUBCLASS(B, D) where B and D are types. 
+// Invocation: SUPERSUBCLASS(B, D) where B and D are types.
 // Returns true if B is a public base of D.
 //
 // Caveat: might not work if T and U are in a private inheritance hierarchy.

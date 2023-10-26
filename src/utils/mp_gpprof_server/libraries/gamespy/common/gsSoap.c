@@ -21,8 +21,8 @@ static gsi_bool gsiSoapTaskCleanup(void* theTask);
 static GSTaskResult gsiSoapTaskThink(void* theTask);
 
 // Http triggered callbacks (don't take action now, wait for task callbacks)
-static GHTTPBool gsiSoapTaskHttpCompletedCallback(GHTTPRequest request, GHTTPResult result, 
-                                             char * buffer, GHTTPByteCount bufferLen, 
+static GHTTPBool gsiSoapTaskHttpCompletedCallback(GHTTPRequest request, GHTTPResult result,
+                                             char * buffer, GHTTPByteCount bufferLen,
                                              void * param);
 
 
@@ -30,7 +30,7 @@ static GHTTPBool gsiSoapTaskHttpCompletedCallback(GHTTPRequest request, GHTTPRes
 ///////////////////////////////////////////////////////////////////////////////
 // Execute a soap function (this should be the only call made from other SDKs)
 GSSoapTask* gsiExecuteSoap(const char* theURL, const char* theService,
-                     GSXmlStreamWriter theRequestSoap, GSSoapCallbackFunc theCallbackFunc, 
+                     GSXmlStreamWriter theRequestSoap, GSSoapCallbackFunc theCallbackFunc,
                      void* theUserData)
 {
     GSSoapTask* aSoapTask = NULL;
@@ -39,7 +39,7 @@ GSSoapTask* gsiExecuteSoap(const char* theURL, const char* theService,
     aSoapTask = (GSSoapTask*)gsimalloc(sizeof(GSSoapTask));
     if (aSoapTask == NULL)
         return NULL; // out of memory
-    
+
     aSoapTask->mCallbackFunc = theCallbackFunc;
     aSoapTask->mCustomFunc   = NULL;
     aSoapTask->mURL          = theURL;
@@ -81,7 +81,7 @@ GSSoapTask* gsiExecuteSoap(const char* theURL, const char* theService,
 // attachments. (The GSSoapCustomFunc parameter could be added to
 // gsiExecuteSoap itself as long as existing client code is updated)
 GSSoapTask* gsiExecuteSoapCustom(const char* theURL, const char* theService,
-                     GSXmlStreamWriter theRequestSoap, GSSoapCallbackFunc theCallbackFunc, 
+                     GSXmlStreamWriter theRequestSoap, GSSoapCallbackFunc theCallbackFunc,
                      GSSoapCustomFunc theCustomFunc, void* theUserData)
 {
     GSSoapTask* aSoapTask = NULL;
@@ -99,7 +99,7 @@ GSSoapTask* gsiExecuteSoapCustom(const char* theURL, const char* theService,
     aSoapTask->mUserData     = theUserData;
     aSoapTask->mRequestResult= (GHTTPResult)0;
     aSoapTask->mCompleted    = gsi_false;
-    
+
     aCoreTask = gsiCoreCreateTask();
     aCoreTask->mCallbackFunc = gsiSoapTaskCallback;
     aCoreTask->mExecuteFunc  = gsiSoapTaskExecute;
@@ -118,8 +118,8 @@ GSSoapTask* gsiExecuteSoapCustom(const char* theURL, const char* theService,
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-// Cancels a soap task.  
-//    - Because of network race conditions, the task may complete before it 
+// Cancels a soap task.
+//    - Because of network race conditions, the task may complete before it
 //      can be cancelled. If this happens, the task callback will be triggered
 //      with status GHTTPRequestCancelled and the result data will be discarded.
 void gsiCancelSoap(GSSoapTask * theTask)
@@ -136,8 +136,8 @@ void gsiCancelSoap(GSSoapTask * theTask)
 ///////////////////////////////////////////////////////////////////////////////
                     //////////  HTTP CALLBACKS  //////////
 
-static GHTTPBool gsiSoapTaskHttpCompletedCallback(GHTTPRequest request, GHTTPResult result, 
-                                             char * buffer, GHTTPByteCount bufferLen, 
+static GHTTPBool gsiSoapTaskHttpCompletedCallback(GHTTPRequest request, GHTTPResult result,
+                                             char * buffer, GHTTPByteCount bufferLen,
                                              void * param)
 {
     gsi_bool parseResult = gsi_false;
@@ -224,7 +224,7 @@ static void gsiSoapTaskExecute(void* theTask)
         (aSoapTask->mCustomFunc)(aSoapTask->mPostData, aSoapTask->mUserData);
 
 
-    aSoapTask->mRequestId = ghttpGetExA(aSoapTask->mURL, aSoapTask->mService, 
+    aSoapTask->mRequestId = ghttpGetExA(aSoapTask->mURL, aSoapTask->mService,
         NULL, 0, aSoapTask->mPostData, GHTTPFalse, GHTTPFalse, NULL,
         gsiSoapTaskHttpCompletedCallback, (void*)aSoapTask);
 }
@@ -254,7 +254,7 @@ static void gsiSoapTaskCallback(void* theTask, GSTaskResult theResult)
     // Call the developer callback
     GSSoapTask* aSoapTask = (GSSoapTask*)theTask;
 
-    (aSoapTask->mCallbackFunc)(aSoapTask->mRequestResult, aSoapTask->mRequestSoap, 
+    (aSoapTask->mCallbackFunc)(aSoapTask->mRequestResult, aSoapTask->mRequestSoap,
         aSoapTask->mResponseSoap, aSoapTask->mUserData);
 
     GSI_UNUSED(theResult);
@@ -275,6 +275,6 @@ static gsi_bool gsiSoapTaskCleanup(void *theTask)
     if (aSoapTask->mPostData != NULL)
         ghttpFreePost(aSoapTask->mPostData); // this also frees the request soap xml
     gsifree(aSoapTask);
-    
+
     return gsi_true;
 }

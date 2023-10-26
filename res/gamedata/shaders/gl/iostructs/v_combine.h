@@ -1,7 +1,7 @@
 
 out gl_PerVertex { vec4 gl_Position; };
 
-struct  _in         
+struct  _in
 {
     float4  P   ; // POSITIONT; // xy=pos, zw=tc0
     float2  tcJ ; // TEXCOORD0; // jitter coords

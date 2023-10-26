@@ -2,14 +2,14 @@
 // The Loki Library
 // Copyright (c) 2001 by Andrei Alexandrescu
 // This code accompanies the book:
-// Alexandrescu, Andrei. "Modern C++ Design: Generic Programming and Design 
+// Alexandrescu, Andrei. "Modern C++ Design: Generic Programming and Design
 //     Patterns Applied". Copyright (c) 2001. Addison-Wesley.
-// Permission to use, copy, modify, distribute and sell this software for any 
-//     purpose is hereby granted without fee, provided that the above copyright 
-//     notice appear in all copies and that both that copyright notice and this 
+// Permission to use, copy, modify, distribute and sell this software for any
+//     purpose is hereby granted without fee, provided that the above copyright
+//     notice appear in all copies and that both that copyright notice and this
 //     permission notice appear in supporting documentation.
-// The author or Addison-Welsey Longman make no representations about the 
-//     suitability of this software for any purpose. It is provided "as is" 
+// The author or Addison-Welsey Longman make no representations about the
+//     suitability of this software for any purpose. It is provided "as is"
 //     without express or implied warranty.
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -37,7 +37,7 @@ namespace Loki
         {
             const char* what() const throw() { return "Unknown Type"; }
         };
-        
+
         static AbstractProduct* OnUnknownType(IdentifierType)
         {
             throw Exception();
@@ -51,13 +51,13 @@ namespace Loki
 
     template
     <
-        class AbstractProduct, 
+        class AbstractProduct,
         typename IdentifierType,
         typename ProductCreator = AbstractProduct* (*)(),
         template<typename, class>
             class FactoryErrorPolicy = DefaultFactoryError
     >
-    class Factory 
+    class Factory
         : public FactoryErrorPolicy<IdentifierType, AbstractProduct>
     {
     public:
@@ -66,12 +66,12 @@ namespace Loki
             return associations_.insert(
                 IdToProductMap::value_type(id, creator)).second;
         }
-        
+
         bool Unregister(const IdentifierType& id)
         {
             return associations_.erase(id) == 1;
         }
-        
+
         AbstractProduct* CreateObject(const IdentifierType& id)
         {
             typename IdToProductMap::iterator i = associations_.find(id);
@@ -81,7 +81,7 @@ namespace Loki
             }
             return OnUnknownType(id);
         }
-        
+
     private:
         typedef AssocVector<IdentifierType, ProductCreator> IdToProductMap;
         IdToProductMap associations_;
@@ -94,8 +94,8 @@ namespace Loki
 
     template
     <
-        class AbstractProduct, 
-        class ProductCreator = 
+        class AbstractProduct,
+        class ProductCreator =
             AbstractProduct* (*)(const AbstractProduct*),
         template<typename, class>
             class FactoryErrorPolicy = DefaultFactoryError
@@ -109,17 +109,17 @@ namespace Loki
             return associations_.insert(
                 IdToProductMap::value_type(ti, creator)).second;
         }
-        
+
         bool Unregister(const TypeInfo& id)
         {
             return associations_.erase(id) == 1;
         }
-        
+
         AbstractProduct* CreateObject(const AbstractProduct* model)
         {
             if (model == 0) return 0;
-            
-            typename IdToProductMap::iterator i = 
+
+            typename IdToProductMap::iterator i =
                 associations_.find(typeid(*model));
             if (i != associations_.end())
             {
@@ -127,7 +127,7 @@ namespace Loki
             }
             return OnUnknownType(typeid(*model));
         }
-        
+
     private:
         typedef AssocVector<TypeInfo, ProductCreator> IdToProductMap;
         IdToProductMap associations_;

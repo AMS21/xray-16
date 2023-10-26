@@ -190,7 +190,7 @@ const char * GetChatBuffer
 {
     if(chatting)
         return (const char *)chatBuffer;
-    
+
     return NULL;
 }
 
@@ -421,7 +421,7 @@ static void JoystickProcess(unsigned int buttonMask, int x, int y, int z)
         localMotion = BACKWARD;
     else
         localMotion = STILL;
-        
+
 }
 
 static int MainMenu;
@@ -569,7 +569,7 @@ void InitializeInput
     /////////////////////////////////////////////////////
     glutSpecialFunc(SpecialKeyboardPress);
     glutSpecialUpFunc(SpecialKeyboardRelease);
-    
+
 
     // The glut handlers for mouse input
     ////////////////////////////////////

@@ -2,7 +2,7 @@
 out vec4 SV_Target0;
 out vec4 SV_Target1;
 
-struct  _input      
+struct  _input
 {
 #ifdef USE_VTF
     float4  tc0     ; // TEXCOORD0; // tc.xy, tc.w = tonemap scale

@@ -22,8 +22,8 @@ struct v2p
     float4  af  ;   // COLOR1;      // alpha&factor //skyloader: COLOR1? maybe COLOR0?
 };
 
-layout(location = POSITION0)        in float3   v_lod_pos0      ; // POSITION0;     
-layout(location = POSITION1)        in float3   v_lod_pos1      ; // POSITION1;     
+layout(location = POSITION0)        in float3   v_lod_pos0      ; // POSITION0;
+layout(location = POSITION1)        in float3   v_lod_pos1      ; // POSITION1;
 layout(location = NORMAL0)      in float3   v_lod_n0        ; // NORMAL0;
 layout(location = NORMAL1)      in float3   v_lod_n1        ; // NORMAL1;
 layout(location = TEXCOORD0)        in float2   v_lod_tc0       ; // TEXCOORD0;

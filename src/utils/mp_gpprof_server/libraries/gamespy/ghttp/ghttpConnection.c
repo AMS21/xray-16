@@ -1,5 +1,5 @@
  /*
-GameSpy GHTTP SDK 
+GameSpy GHTTP SDK
 Dan "Mr. Pants" Schoenblum
 dan@gamespy.com
 
@@ -140,7 +140,7 @@ GHIConnection * ghiNewConnection
     connection->lastThrottleRecv = 0;
     connection->post = NULL;
     connection->maxRecvTime = 500; // Prevent blocking in async mode with systems that never generate WSAEWOULDBLOCK
-    connection->proxyOverridePort = GHI_DEFAULT_PORT;   
+    connection->proxyOverridePort = GHI_DEFAULT_PORT;
     connection->proxyOverrideServer = NULL;
     connection->encryptor.mInterface = NULL;
 
@@ -156,7 +156,7 @@ GHIConnection * ghiNewConnection
         bResult = ghiInitBuffer(connection, &connection->recvBuffer, RECV_BUFFER_INITIAL_SIZE, RECV_BUFFER_INCREMENT_SIZE);
     if (bResult)
         bResult = ghiInitBuffer(connection, &connection->decodeBuffer, DECODE_BUFFER_INITIAL_SIZE, DECODE_BUFFER_INCREMENT_SIZE);
-    
+
     if(!bResult)
     {
         ghiFreeConnection(connection);
@@ -220,13 +220,13 @@ GHTTPBool ghiFreeConnection
     ghiFreeBuffer(&connection->getFileBuffer);
     if(connection->postingState.states)
         ghiPostCleanupState(connection);
-   
+
 #if !defined(GSI_NO_THREADS)
     // Cancel and free asychronous lookup if it has not already been done
     /////////////////////////////////////////////////////////////////////
     if (connection->handle)
     {
-        gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_State, GSIDebugLevel_Comment, 
+        gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_State, GSIDebugLevel_Comment,
             "Cancelling Thread and freeing memory\n");
         gsiCancelResolvingHostname(connection->handle);
     }
@@ -319,7 +319,7 @@ void ghiRedirectConnection
 {
     assert(connection);
     assert(connection->redirectURL);
-    
+
     gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_State, GSIDebugLevel_Comment, "Redirecting Connection\n");
 
     // Reset state.
@@ -331,7 +331,7 @@ void ghiRedirectConnection
     /////////////////////////////////////////////////////////////////////
     if (connection->handle)
     {
-        gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_State, GSIDebugLevel_Comment, 
+        gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_State, GSIDebugLevel_Comment,
             "Cancelling Thread and freeing memory\n");
         gsiCancelResolvingHostname(connection->handle);
     }

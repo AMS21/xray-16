@@ -22,11 +22,11 @@ static const char * GOAGetUniqueID_Internal(void)
     // check if we already have the Unique ID
     if(keyval[0])
         return keyval;
-    
+
     aMacLen = ETH_ALEN;
     SOGetInterfaceOpt (NULL, SO_SOL_CONFIG, SO_CONFIG_MAC_ADDRESS,
                        aMac, &aMacLen);
-    
+
     // format it
     sprintf(keyval, "%02X%02X%02X%02X%02X%02X0000",
         aMac[0] & 0xFF,
@@ -50,10 +50,10 @@ time_t gsiTimeInSec(time_t *timer)
 {
     time_t t = 0;
     t = (gsi_i32)OSTicksToSeconds(OSGetTime());
-    
+
     if (timer)
         *timer = t;
-    
+
     return t;
 }
 
@@ -63,9 +63,9 @@ struct tm *gsiGetGmTime(time_t *theTime)
     static struct tm aTimeStruct;
     static struct tm *aRetVal = &aTimeStruct;
     OSCalendarTime aCalTimeStruct;
-    
+
     OSTicksToCalendarTime(*theTime, &aCalTimeStruct);
-    
+
     aRetVal->tm_sec  = aCalTimeStruct.sec;
     aRetVal->tm_min  = aCalTimeStruct.min;
     aRetVal->tm_hour = aCalTimeStruct.hour;
@@ -100,7 +100,7 @@ gsi_i64 gsiStringToInt64(const char *theNumberStr)
 
 void gsiInt64ToString(char theNumberStr[33], gsi_i64 theNumber)
 {
-    // you want to fit the number! 
+    // you want to fit the number!
     // give me a valid string!
     GS_ASSERT(theNumberStr != NULL);
 

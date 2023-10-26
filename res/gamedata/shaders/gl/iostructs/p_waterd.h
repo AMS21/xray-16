@@ -19,7 +19,7 @@ struct v2p
 
 layout(location = TEXCOORD0)        in float2   v2p_waterd_tbase        ; // TEXCOORD0;
 layout(location = TEXCOORD1)        in float2   v2p_waterd_tdist0       ; // TEXCOORD1;
-layout(location = TEXCOORD2)        in float2   v2p_waterd_tdist1       ; // TEXCOORD2;     
+layout(location = TEXCOORD2)        in float2   v2p_waterd_tdist1       ; // TEXCOORD2;
 #if defined(USE_SOFT_WATER) && defined(NEED_SOFT_WATER)
 layout(location = TEXCOORD3)        in float4   v2p_waterd_tctexgen     ; // TEXCOORD3;
 #endif  // defined(USE_SOFT_WATER) && defined(NEED_SOFT_WATER)

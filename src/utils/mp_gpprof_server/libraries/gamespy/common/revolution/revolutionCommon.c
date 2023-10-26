@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 // (C) Gamespy Industries
-// 
+//
 // Commonly shared network startup code
-// WARNING: Please do not use this code as a basis for 
+// WARNING: Please do not use this code as a basis for
 // Game Network startup code.  This is only for testing
 // purposes.
 //
@@ -25,7 +25,7 @@ static MEMHeapHandle    heapHandleSocket = NULL;
 
 #define SOCKET_HEAPSIZE_DEFAULT (1024*128)
 
-    
+
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 static void SetDefaultIfConfig( NCDIfConfig* theIfConfig )
@@ -45,7 +45,7 @@ static void SetDefaultIpConfig( NCDIpConfig* theIpConfig )
 
     theIpConfig->useDhcp  = TRUE;
 
-    theIpConfig->adjust.maxTransferUnit       = 1300; // Value can be 1460 depending on network library 
+    theIpConfig->adjust.maxTransferUnit       = 1300; // Value can be 1460 depending on network library
     theIpConfig->adjust.tcpRetransTimeout     = 100;
     theIpConfig->adjust.dhcpRetransCount      = 4;
 }
@@ -61,20 +61,20 @@ static void SetDefaultIpConfig( NCDIpConfig* theIpConfig )
 static void* _Alloc(unsigned long theName, long theSize)
 {
     void*       a_memory_p = NULL;
-    
-    (void)theName;     
-        
-    if (0 < theSize) 
+
+    (void)theName;
+
+    if (0 < theSize)
     {
         //OSLockMutex(&gOsMemMutex);
         //a_memory_p = OSAlloc((u32)theSize);
         //OSUnlockMutex(&gOsMemMutex);
-     
+
         // 02OCT07 BED: MEM2 was initialized with MEM_HEAP_OPT_THREAD_SAFE
         //              so we don't need to manually lock it
         a_memory_p = MEMAllocFromExpHeapEx( heapHandleSocket, (u32) theSize, 32 );
     }
-    
+
     return a_memory_p;
 }
 
@@ -84,13 +84,13 @@ static void* _Alloc(unsigned long theName, long theSize)
 static void _Free(unsigned long theName, void* theMemoryPointer, long theSize)
 {
     GSI_UNUSED(theName);
-    
-    if (theMemoryPointer && 0 < theSize) 
+
+    if (theMemoryPointer && 0 < theSize)
     {
         //OSLockMutex(&gOsMemMutex);
         //OSFree(theMemoryPointer);
         //OSUnlockMutex(&gOsMemMutex);
-        
+
         // 02OCT07 BED: MEM2 was initialized with MEM_HEAP_OPT_THREAD_SAFE
         //              so we don't need to manually lock it
         MEMFreeToExpHeap( heapHandleSocket, theMemoryPointer);
@@ -105,7 +105,7 @@ static void _Free(unsigned long theName, void* theMemoryPointer, long theSize)
 BOOL StartNetwork()
 {
     s32 rc;
-    
+
     OSInitMutex(&gOsMemMutex);
 
     // Start up the network interface USB device
@@ -119,7 +119,7 @@ BOOL StartNetwork()
     }
     OSReport( "success\n" );
 
-    
+
     SetDefaultIpConfig( &gIpConfig );
     OSReport( "NCDSetIpConfig() ..." );
     rc = NCDSetIpConfig( &gIpConfig );
@@ -130,8 +130,8 @@ BOOL StartNetwork()
     }
     OSReport( "success\n" );
 
-    
-    // Waiting for the network interface to come with the 
+
+    // Waiting for the network interface to come with the
     // configuration previously set.
     OSReport( "NCDIsInterfaceDecided() " );
     while( NCDIsInterfaceDecided() == FALSE )
@@ -140,7 +140,7 @@ BOOL StartNetwork()
     }
     OSReport( "success\n" );
 
-    
+
     // Finished bringing up network interface
     // Now initializing the socket library
     OSReport( "SOInit() ..." );
@@ -172,7 +172,7 @@ BOOL StartNetwork()
         }
     }
     OSReport( "success\n" );
-    
+
 
     //Now Starting the sockets library
     OSReport( "SOStartup() " );
@@ -213,14 +213,14 @@ void main(int argc, char **argv)
 // init 128k memory for sockets
     void*            arenaLo;
     void*            arenaHi;
-    
+
     DEMOInit(NULL); // Init the OS, game pad, graphics and video.
-   
+
     // Initialize heap for socket allocations
     //     Nintendo samples say this must be in MEM2
     arenaLo = OSGetMEM2ArenaLo();
     arenaHi = OSGetMEM2ArenaHi();
-    
+
     if ((u32) arenaHi - (u32) arenaLo < SOCKET_HEAPSIZE_DEFAULT)
         OSHalt("Insufficient memory in MEM2 for socket lib. Check SOCKET_HEAPSIZE_DEFAULT");
     heapHandleSocket = MEMCreateExpHeapEx( arenaLo, SOCKET_HEAPSIZE_DEFAULT, MEM_HEAP_OPT_THREAD_SAFE );

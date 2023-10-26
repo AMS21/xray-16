@@ -1,6 +1,6 @@
 /*
 gpi.h
-GameSpy Presence SDK 
+GameSpy Presence SDK
 Dan "Mr. Pants" Schoenblum
 
 Copyright 1999-2007 GameSpy Industries, Inc
@@ -105,8 +105,8 @@ typedef struct
   unsigned short peerPort;
   int nextOperationID;
   int numSearches;
-  
-    // new style status info 
+
+    // new style status info
     GPEnum lastStatusState;
     unsigned int hostIp;
     unsigned int hostPrivateIp;
@@ -125,7 +125,7 @@ typedef struct
   // Deprecated
   char lastStatusString[GP_STATUS_STRING_LEN];
   char lastLocationString[GP_LOCATION_STRING_LEN];
-  
+
   GPErrorCode errorCode;
   GPIBool fatalError;
   FILE * diskCache;
@@ -143,14 +143,14 @@ typedef struct
   char loginTicket[GP_LOGIN_TICKET_LEN];
   GPEnum quietModeFlags;
   gsi_time kaTransmit;
-  
+
 #ifdef GSI_UNICODE
   unsigned short errorString_W[GP_ERROR_STRING_LEN];
   unsigned short nick_W[GP_NICK_LEN];
   unsigned short uniquenick_W[GP_UNIQUENICK_LEN];
   unsigned short email_W[GP_EMAIL_LEN];
   unsigned short password_W[GP_PASSWORD_LEN];
-  
+
   // Deprecated
   unsigned short lastStatusString_W[GP_STATUS_STRING_LEN];
   unsigned short lastLocationString_W[GP_LOCATION_STRING_LEN];
@@ -210,13 +210,13 @@ gpiProcess(
 
 GPResult
 gpiEnable(
-  GPConnection * connection, 
+  GPConnection * connection,
   GPEnum state
 );
 
 GPResult
 gpiDisable(
-  GPConnection * connection, 
+  GPConnection * connection,
   GPEnum state
 );
 

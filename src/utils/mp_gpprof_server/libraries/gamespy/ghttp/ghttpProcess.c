@@ -1,5 +1,5 @@
 /*
-GameSpy GHTTP SDK 
+GameSpy GHTTP SDK
 Dan "Mr. Pants" Schoenblum
 dan@gamespy.com
 
@@ -141,7 +141,7 @@ void ghiDoSocketInit
     {
         // default to gamespy engine
         //ghttpSetRequestEncryptionEngine(connection->request, GHTTPEncryptionEngine_GameSpy);
-        
+
         // 02OCT07 BED: Design changed so that only one engine can be active at a time
         //              Use the active engine rather than GameSpy
         gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_Network, GSIDebugLevel_WarmError,
@@ -156,13 +156,13 @@ void ghiDoSocketInit
         gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_Network, GSIDebugLevel_WarmError,
             "Encryption engine set for unsecured URL. Removing encryption.\r\n");
     }
-    
+
     // Init the encryption engine.
     //////////////////////////////
     if ((connection->protocol == GHIHttps) && connection->encryptor.mInitialized == GHTTPFalse)
     {
         GHIEncryptionResult aResult;
-            
+
         gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_State, GSIDebugLevel_Debug, "Initializing SSL engine\n");
         aResult = (connection->encryptor.mInitFunc)(connection, &connection->encryptor);
         if (aResult == GHIEncryptionResult_Error)
@@ -198,7 +198,7 @@ void ghiDoHostLookup
     {
         GSI_UNUSED(host);
         GSI_UNUSED(server);
-        
+
         // Lookup incomplete - set to lookupPending state
         /////////////////////////////////////////////////
         connection->state = GHTTPLookupPending;
@@ -233,7 +233,7 @@ void ghiDoHostLookup
 
         if(host == NULL)
         {
-            gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_State, GSIDebugLevel_HotError, 
+            gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_State, GSIDebugLevel_HotError,
                 "Host Lookup failed\n");
             connection->completed = GHTTPTrue;
             connection->result = GHTTPHostLookupFailed;
@@ -244,11 +244,11 @@ void ghiDoHostLookup
         //////////////
         connection->serverIP = *(unsigned int *)host->h_addr_list[0];
 #else
-        
+
         //threaded version
         if (gsiStartResolvingHostname(server, &(connection->handle)) == -1)
         {
-            gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_State, GSIDebugLevel_HotError, 
+            gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_State, GSIDebugLevel_HotError,
                 "Thread Creation Failed\n");
 
             //make sure to set it back to NULL
@@ -300,7 +300,7 @@ void ghiDoLookupPending
     //make sure there were no problems with the IP
     if (connection->serverIP == GSI_ERROR_RESOLVING_HOSTNAME)
     {
-        gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_State, GSIDebugLevel_HotError, 
+        gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_State, GSIDebugLevel_HotError,
             "Error resolving hostname\n");
 
         //set to NULL
@@ -322,8 +322,8 @@ void ghiDoLookupPending
     {
         //set to NULL
         connection->handle = NULL;
-        
-        gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_State, GSIDebugLevel_Comment, 
+
+        gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_State, GSIDebugLevel_Comment,
             "DNS lookup complete\n");
         //looks like we got ourselves a server! proceed with connection phase
         connection->state = GHTTPConnecting;
@@ -431,7 +431,7 @@ void ghiDoConnecting
             connection->state = GHTTPSecuringSession;
         ghiCallProgressCallback(connection, NULL, 0);
     }
-} 
+}
 
 /******************
 ** SSL HANDSHAKE **
@@ -447,11 +447,11 @@ void ghiDoSecuringSession
     // Server sends finished
 
     // skip the ghiDoSecuringSession step...
-    //     - when not using encryption or 
+    //     - when not using encryption or
     //     - if the connection is already secure
 
     GHIRecvResult result;
-    
+
     // This buffer must be large enough to receive any handshake messages.
     char buffer[1025];
     int bufferLen;
@@ -460,7 +460,7 @@ void ghiDoSecuringSession
     if (connection->encryptor.mSessionStarted == GHTTPFalse)
     {
         GHIEncryptionResult aResult;
-        
+
         gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_State, GSIDebugLevel_Comment, "Securing Session\n");
 
         GS_ASSERT(connection->encryptor.mStartFunc != NULL);
@@ -474,7 +474,7 @@ void ghiDoSecuringSession
                 return;
             }
         }
-        
+
         // Check for session established
         if (connection->encryptor.mSessionEstablished)
         {
@@ -483,7 +483,7 @@ void ghiDoSecuringSession
             return;
         }
     }
-    
+
     // if the SSL lib controls the handshake, just keep calling
     // start until the session has been established
     GS_ASSERT(connection->encryptor.mSessionEstablished == GHTTPFalse);
@@ -500,7 +500,7 @@ void ghiDoSecuringSession
                 return;
             }
         }
-        
+
         // Check for session established
         if (connection->encryptor.mSessionEstablished)
         {
@@ -528,7 +528,7 @@ void ghiDoSecuringSession
         // Get data
         bufferLen = sizeof(buffer);
         result = ghiDoReceive(connection, buffer, &bufferLen);
-        
+
         // Handle error or conn closed.
         ///////////////////////////////
         if((result == GHIError) || (result == GHIConnClosed))
@@ -578,7 +578,7 @@ void ghiDoSendingRequest
     int oldPos;
 
     gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_State, GSIDebugLevel_Comment, "Sending Request\n");
-    
+
     // If we haven't filled the send buffer yet, do that first.
     ///////////////////////////////////////////////////////////
     if(!connection->sendBuffer.len)
@@ -632,7 +632,7 @@ void ghiDoSendingRequest
         /////////////////////////////
         if (connection->sendHeaders == NULL || strstr(connection->sendHeaders, "User-Agent")==NULL)
             ghiAppendHeaderToBuffer(writeBuffer, "User-Agent", "GameSpyHTTP/1.0");
-        
+
         // Check for persistant connections.
         //////////////////////////////////////
         if (connection->persistConnection)
@@ -691,7 +691,7 @@ void ghiDoSendingRequest
     ////////////////////
     if(!ghiSendBufferedData(connection))
         return;
-    
+
     // Log anything we sent.
     ////////////////////////
     #ifdef HTTP_LOG
@@ -767,7 +767,7 @@ void ghiDoPosting
         return;
     }
 
-    // When sending DIME wait for initial 
+    // When sending DIME wait for initial
     // continue before uploading
     /////////////////////////////////////////
     if (result == GHIPostingWaitForContinue)
@@ -956,7 +956,7 @@ void ghiDoReceivingStatus
             }
         }
         else
-        {           
+        {
             // Add the data directly to the buffer.
             ///////////////////////////////////////
             if(!ghiAppendDataToBuffer(&connection->recvBuffer, buffer, bufferLen))
@@ -1151,7 +1151,7 @@ static void ghiAppendToChunkHeaderBuffer
         // How many bytes are we copying?
         /////////////////////////////////
         numBytes = min(CHUNK_HEADER_SIZE - connection->chunkHeaderLen, len);
-        
+
         // Move the (possibly partial) header into the buffer.
         //////////////////////////////////////////////////////
         memcpy(connection->chunkHeader + connection->chunkHeaderLen, data, (unsigned int)numBytes);
@@ -1567,7 +1567,7 @@ void ghiDoReceivingHeaders
             // Verify that the download size is something we can handle
             ///////////////////////////////////////////////////////////
 #if (GSI_MAX_INTEGRAL_BITS >= 64)
-            char  szMaxSize[] = "9223372036854775807"; // == GSI_MAX_I64       
+            char  szMaxSize[] = "9223372036854775807"; // == GSI_MAX_I64
 #else
             char  szMaxSize[] = "2147483647";          // == GSI_MAX_I32
 #endif

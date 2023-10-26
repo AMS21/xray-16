@@ -1,6 +1,6 @@
 /*
 gpiCallback.c
-GameSpy Presence SDK 
+GameSpy Presence SDK
 Dan "Mr. Pants" Schoenblum
 
 Copyright 1999-2007 GameSpy Industries, Inc
@@ -226,7 +226,7 @@ gpiProcessCallbacks(
                     list = pcurr->pnext;
                 if(last == pcurr)
                     last = pprev;
-    
+
                 // Call the callback.
                 /////////////////////
                 gpiCallCallback(connection, pcurr);
@@ -266,7 +266,7 @@ gpiProcessCallbacks(
         for(pcurr = list ; pcurr != NULL ; pcurr = pnext)
         {
             pnext = pcurr->pnext;
-            
+
             // Call the callback.
             /////////////////////
             gpiCallCallback(connection, pcurr);

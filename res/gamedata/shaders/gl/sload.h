@@ -11,7 +11,7 @@ const float2 MSAAOffsets[2] = { float2(4,4), float2(-4,-4) };
 const float2 MSAAOffsets[4] = { float2(-2,-6), float2(6,-2), float2(-6,2), float2(2,6) };
 #endif
 #if MSAA_SAMPLES == 8
-const float2 MSAAOffsets[8] = { float2(1,-3), float2(-1,3), float2(5,1), float2(-3,-5), 
+const float2 MSAAOffsets[8] = { float2(1,-3), float2(-1,3), float2(5,1), float2(-3,-5),
                                                float2(-5,5), float2(-7,-1), float2(3,7), float2(7,-7) };
 #endif
 #endif  //  MSAA_ALPHATEST_DX10_1
@@ -51,7 +51,7 @@ void UpdateTC( inout p_bumped I )
                                      I.M1.z, I.M2.z, I.M3.z), -I.position.xyz);
 
         eye = normalize(eye);
-        
+
         //  Calculate number of steps
         float nNumSteps = lerp( maxSamples, minSamples, eye.z );
 
@@ -67,9 +67,9 @@ void UpdateTC( inout p_bumped I )
         for( int i=0; i<nNumSteps; ++i )
         {
             if (fCurrHeight < fCurrentBound)
-            {   
-                vTexCurrentOffset += vTexOffsetPerStep;     
-                fCurrHeight = textureLod( s_bumpX, vTexCurrentOffset.xy, 0 ).a; 
+            {
+                vTexCurrentOffset += vTexOffsetPerStep;
+                fCurrHeight = textureLod( s_bumpX, vTexCurrentOffset.xy, 0 ).a;
                 fCurrentBound -= fStepSize;
             }
         }
@@ -78,8 +78,8 @@ void UpdateTC( inout p_bumped I )
         [unroll(25)]    //  Doesn't work with [loop]
         for( ;fCurrHeight < fCurrentBound; fCurrentBound -= fStepSize )
         {
-            vTexCurrentOffset += vTexOffsetPerStep;     
-            fCurrHeight = s_bumpX.SampleLevel( smp_base, vTexCurrentOffset.xy, 0 ).a; 
+            vTexCurrentOffset += vTexOffsetPerStep;
+            fCurrHeight = s_bumpX.SampleLevel( smp_base, vTexCurrentOffset.xy, 0 ).a;
         }
 */
         //  Reconstruct previouse step's data
@@ -93,7 +93,7 @@ void UpdateTC( inout p_bumped I )
         float   fParallaxFade   = smoothstep(fParallaxStopFade, fParallaxStartFade, I.position.z);
         float2  vParallaxOffset = vDelta * ((1- fParallaxAmount )*fParallaxFade);
         float2  vTexCoord = I.tcdh + vParallaxOffset;
-    
+
         //  Output the result
         I.tcdh = vTexCoord;
 
@@ -111,7 +111,7 @@ void UpdateTC( inout p_bumped I)
     float3   eye = mul (float3x3(I.M1.x, I.M2.x, I.M3.x,
                                  I.M1.y, I.M2.y, I.M3.y,
                                  I.M1.z, I.M2.z, I.M3.z), -I.position.xyz);
-                                 
+
     float   height  = tex2D( s_bumpX, I.tcdh ).w;   //
             //height  /= 2;
             //height  *= 0.8;
@@ -134,7 +134,7 @@ void UpdateTC( inout p_bumped I)
 surface_bumped sload_i( p_bumped I)
 {
     surface_bumped  S;
-   
+
     UpdateTC(I);    //  All kinds of parallax are applied here.
 
     float4  Nu  = tex2D( s_bump, I.tcdh );      // IN:  normal.gloss
@@ -171,7 +171,7 @@ surface_bumped sload_i( p_bumped I)
 surface_bumped sload_i( p_bumped I, float2 pixeloffset )
 {
     surface_bumped  S;
-   
+
    // apply offset
 #ifdef  MSAA_ALPHATEST_DX10_1
    I.tcdh.xy += pixeloffset.x * ddx(I.tcdh.xy) + pixeloffset.y * ddy(I.tcdh.xy);

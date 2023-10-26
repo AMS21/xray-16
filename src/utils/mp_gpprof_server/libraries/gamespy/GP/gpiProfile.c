@@ -1,6 +1,6 @@
 /*
 gpiProfile.c
-GameSpy Presence SDK 
+GameSpy Presence SDK
 Dan "Mr. Pants" Schoenblum
 
 Copyright 1999-2007 GameSpy Industries, Inc
@@ -135,7 +135,7 @@ gpiOpenDiskProfiles(
     *failed = GPIFalse;
 
     return GP_NO_ERROR;
-    
+
     GSI_UNUSED(write);
 }
 
@@ -224,7 +224,7 @@ gpiReadDiskKeyValue(
     ////////
     *failed = GPIFalse;
     return GP_NO_ERROR;
-    
+
     GSI_UNUSED(value);
     GSI_UNUSED(key);
     GSI_UNUSED(connection);
@@ -452,7 +452,7 @@ gpiReadDiskProfile(
     }
     *failedOut = GPIFalse;
     return GP_NO_ERROR;
-    
+
     GSI_UNUSED(connection);
 }
 
@@ -475,7 +475,7 @@ gpiReadVersion(
         *version = 0;
 
     return GP_NO_ERROR;
-    
+
     GSI_UNUSED(connection);
     GSI_UNUSED(version);
 }
@@ -687,7 +687,7 @@ gpiProcessNewProfile(
         arg = (GPNewProfileResponseArg *)gsimalloc(sizeof(GPNewProfileResponseArg));
         if(arg == NULL)
             Error(connection, GP_MEMORY_ERROR, "Out of memory.");
-        
+
         arg->profile = (GPProfile)pid;
         arg->result = GP_NO_ERROR;
 
@@ -857,7 +857,7 @@ GPResult gpiProcessDeleteProfle
     if(strncmp(input, "\\dpr\\", 5) != 0)
         CallbackFatalError(connection, GP_NETWORK_ERROR, GP_PARSE, "Unexpected data was received from the server.");
 
-    
+
     // Call the callback.
     /////////////////////
     callback = operation->callback;
@@ -867,7 +867,7 @@ GPResult gpiProcessDeleteProfle
         arg = (GPDeleteProfileResponseArg *)gsimalloc(sizeof(GPDeleteProfileResponseArg));
         if(arg == NULL)
             Error(connection, GP_MEMORY_ERROR, "Out of memory.");
-        
+
         arg->profile = iconnection->profileid;
         arg->result = GP_NO_ERROR;
 
@@ -910,7 +910,7 @@ gpiDeleteProfile(
     // Disconnect the connection.
     // PANTS|05.16.00
     /////////////////////////////
-    iconnection->connectState = GPI_PROFILE_DELETING;   
+    iconnection->connectState = GPI_PROFILE_DELETING;
     result = gpiProcess(connection, operation->id);
     if (result != GP_NO_ERROR)
     {
@@ -1090,7 +1090,7 @@ gpiFindBuddy(
 void gpiRemoveBuddyStatus(GPIBuddyStatus *buddyStatus)
 {
     GS_ASSERT(buddyStatus);
-    
+
     freeclear(buddyStatus->locationString);
     freeclear(buddyStatus->statusString);
     freeclear(buddyStatus);
@@ -1099,7 +1099,7 @@ void gpiRemoveBuddyStatus(GPIBuddyStatus *buddyStatus)
 void gpiRemoveBuddyStatusInfo(GPIBuddyStatusInfo *buddyStatusInfo)
 {
     GS_ASSERT(buddyStatusInfo);
-        
+
     freeclear(buddyStatusInfo->richStatus);
     freeclear(buddyStatusInfo->gameType);
     freeclear(buddyStatusInfo->gameVariant);
@@ -1254,7 +1254,7 @@ gpiRemoveFromBlockedList(
     //////////////////////////////////////
     if(gpiGetProfile(connection, profileid, &profile) && profile->blocked)
     {
-        // Set profile as non-blocked 
+        // Set profile as non-blocked
         /////////////////////////////
         profile->blocked = gsi_false;
 
@@ -1267,7 +1267,7 @@ gpiRemoveFromBlockedList(
         gpiProfileMap(connection, gpiFixBlockIndices, (void *)index);
 #endif
     }
-   
+
     // NOTE: There is no callback for this function simply in order to remain consistent
     // with the existing GP structure. If an error occurs, it gets passed to the error callback
     // else its considered the request was processed correctly.
@@ -1348,19 +1348,19 @@ gpiProcessRecvBlockedList(
         CallbackFatalError(connection, GP_NETWORK_ERROR, GP_PARSE, "Unexpected data was received from the server.");
     num = atoi(buffer);
 
-    // Check to make sure list is there 
+    // Check to make sure list is there
     ///////////////////////////////////
     str = strstr(input, "\\list\\");
     if (str == NULL)
         CallbackFatalError(connection, GP_NETWORK_ERROR, GP_PARSE, "Unexpected data was received from the server.");
-    
+
     // Then increment index to get ready for parsing
     ////////////////////////////////////////////////
     str += 6;
     index += 6;
 
     for (i=0; i < num; i++)
-    {     
+    {
         if (i==0)
         {
             // Manually grab first profile in list - comma delimiter
@@ -1388,7 +1388,7 @@ gpiProcessRecvBlockedList(
 
         // Mark as blocked, increment list counter
         //////////////////////////////////////////
-        profile->blocked = gsi_true; 
+        profile->blocked = gsi_true;
         profile->blockIndex = iconnection->profileList.numBlocked++;
     }
 

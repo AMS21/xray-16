@@ -44,7 +44,7 @@ typedef gsi_u8 GSIDebugLevel;
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 // Output types
-typedef enum 
+typedef enum
 {
     GSIDebugType_Network,  // Network activity
     GSIDebugType_File,     // File output
@@ -153,12 +153,12 @@ typedef struct GSIDebugInstance
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 // Logging functions
-void gsDebugFormat(GSIDebugCategory theCat, GSIDebugType theType, 
-             GSIDebugLevel theLevel, const char* theTokenStr, ...);  
+void gsDebugFormat(GSIDebugCategory theCat, GSIDebugType theType,
+             GSIDebugLevel theLevel, const char* theTokenStr, ...);
 
-void gsDebugVaList(GSIDebugCategory theCat, GSIDebugType theType, 
-             GSIDebugLevel theLevel, const char* theTokenStr, 
-             va_list theParams);  
+void gsDebugVaList(GSIDebugCategory theCat, GSIDebugType theType,
+             GSIDebugLevel theLevel, const char* theTokenStr,
+             va_list theParams);
 
 void gsDebugBinary(GSIDebugCategory theCat, GSIDebugType theType,
              GSIDebugLevel theLevel, const char* theBuffer, gsi_i32 theLength);
@@ -167,7 +167,7 @@ void gsDebugBinary(GSIDebugCategory theCat, GSIDebugType theType,
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 // Output functions
-void  gsSetDebugLevel(GSIDebugCategory theCat, GSIDebugType theType, 
+void  gsSetDebugLevel(GSIDebugCategory theCat, GSIDebugType theType,
                       GSIDebugLevel theLevel);
 
 #if !defined(_NITRO)

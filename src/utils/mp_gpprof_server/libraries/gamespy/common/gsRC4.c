@@ -33,7 +33,7 @@ void RC4Init(RC4Context *context, const unsigned char *key, int len)
 
     for (i=0; i<256; i++)
         context->state[i] = (unsigned char)i;
-    
+
     for (i=0; i<256; i++)
     {
         stateIndex = (unsigned char)(stateIndex + context->state[i] + key[keyIndex]);

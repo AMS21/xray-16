@@ -154,7 +154,7 @@ int GSISocketSelect(SOCKET theSocket, int* theReadFlag, int* theWriteFlag, int* 
 {
     SOPollFD pollFD;
     int rcode;
-    
+
     pollFD.fd = theSocket;
     pollFD.events = 0;
     if(theReadFlag != NULL)

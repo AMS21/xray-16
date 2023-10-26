@@ -1,6 +1,6 @@
 /*
 gpiTransfer.h
-GameSpy Presence SDK 
+GameSpy Presence SDK
 Dan "Mr. Pants" Schoenblum
 
 Copyright 1999-2007 GameSpy Industries, Inc
@@ -76,7 +76,7 @@ typedef struct
 {
     char * path;
     char * name;
-    
+
 #ifdef GSI_UNICODE
     unsigned short* name_W; // must have this since developers are given pointers to internal memory
     unsigned short* path_W;

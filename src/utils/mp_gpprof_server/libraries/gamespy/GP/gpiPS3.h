@@ -1,6 +1,6 @@
 /*
 gpiPS3.h
-GameSpy Presence SDK 
+GameSpy Presence SDK
 
 devsupport@gamespy.com
 
@@ -27,7 +27,7 @@ Please see the GameSpy Presence SDK documentation for more information
 
 //STRUCTURES
 ////////////
-typedef struct 
+typedef struct
 {
     int       npTransId;
     SceNpId   *npIdForAdd;

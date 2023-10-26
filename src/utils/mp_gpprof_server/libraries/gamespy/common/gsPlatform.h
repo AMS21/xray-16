@@ -75,14 +75,14 @@
     #else
         #include <winsock.h>
     #endif
-    
+
     #if (_MSC_VER > 1300)
         #define itoa(v, s, r) _itoa(v, s, r)
     #endif
 // PS2
 #elif defined(_PS2)
     // EENet headers must be included before common PS2 headers
-    #ifdef EENET 
+    #ifdef EENET
         #include <libeenet.h>
         #include <eenetctl.h>
         #include <ifaddrs.h>
@@ -93,7 +93,7 @@
         #include <net/if.h>
         #include <sys/select.h>
         #include <malloc.h>
-        
+
     #endif // EENET
 
     // Common PS2 headers
@@ -107,15 +107,15 @@
     #include <ilsock.h>
     #include <ilsocksf.h>
     #include <limits.h>
-    
+
     #ifdef SN_SYSTEMS
         // undefine socket defines from sys/types.h
         // This is to workaround sony now automatically including sys/types.h
         // and SNSystems having not produce a patch yet (they'll likely do the same since
         // the SNSystems fd_set is a slightly different size than the sys/types.h.
-        #undef FD_CLR   
+        #undef FD_CLR
         #undef FD_ZERO
-        #undef FD_SET   
+        #undef FD_SET
         #undef FD_ISSET
         #undef FD_SETSIZE
         #undef fd_set
@@ -172,7 +172,7 @@
     #include <nitroWiFi.h>
     #include <extras.h>  // mwerks
     #include <limits.h>
-    
+
     // Raw sockets are undefined on Nitro
     #define SB_NO_ICMP_SUPPORT
 
@@ -200,7 +200,7 @@
 #include <netex/errno.h>
     #include <sys/process.h>
     #include <sys/time.h>
-    #include <sys/types.h>  
+    #include <sys/types.h>
     #include <sys/select.h>
     #include <sys/socket.h>
     #include <sys/sys_time.h>
@@ -219,7 +219,7 @@
 #elif defined(_REVOLUTION)
     #include <revolution.h>
     #include <revolution/soex.h>
-    #include <revolution/ncd.h> 
+    #include <revolution/ncd.h>
     #include <limits.h>
 
     // Raw sockets are undefined on Revolution
@@ -412,7 +412,7 @@ extern "C" {
 #endif
     #define _tcscmp     strcmp
     #define _tfopen     fopen
-#ifndef _T  
+#ifndef _T
     #define _T(a)       a
 #endif
 
@@ -443,9 +443,9 @@ unsigned short * goawstrdup(const unsigned short *src);
 
 // ------ Cross Plat Alignment macros ------------
 /* ex use
-PRE_ALIGN(16)   struct VECTOR           
+PRE_ALIGN(16)   struct VECTOR
 {
-    float   x,y,z,_unused;  
+    float   x,y,z,_unused;
 }   POST_ALIGN(16);
 
 // another example when defining a variable:
@@ -456,9 +456,9 @@ static char _mempool[MEMPOOL_SIZE]  POST_ALIGN(16);
 #if defined _WIN32
     #define PRE_ALIGN(x)    __declspec(align(x))    // ignore Win32 directive
     #define POST_ALIGN(x)   // ignore
-#elif defined  (_PS2) || defined (_PSP) || defined (_PS3) 
+#elif defined  (_PS2) || defined (_PSP) || defined (_PS3)
     #define PRE_ALIGN(x)    // ignored this on psp/ps2
-    #define POST_ALIGN(x)   __attribute__((aligned (x)))        // 
+    #define POST_ALIGN(x)   __attribute__((aligned (x)))        //
 #elif defined (_REVOLUTION)
     #define PRE_ALIGN(x)  // not needed
     #define POST_ALIGN(x) __attribute__((aligned(32)))
@@ -471,7 +471,7 @@ static char _mempool[MEMPOOL_SIZE]  POST_ALIGN(16);
 #define DIM( x )                ( sizeof( x ) / sizeof((x)[ 0 ]))
 
 unsigned char * gsiFloatSwap(unsigned char buf[4], float);
-float gsiFloatUnswap(unsigned char buf[4]); 
+float gsiFloatUnswap(unsigned char buf[4]);
 extern gsi_u16 gsiByteOrderSwap16(gsi_u16);
 extern gsi_u32 gsiByteOrderSwap32(gsi_u32);
 extern gsi_u64 gsiByteOrderSwap64(gsi_u64);

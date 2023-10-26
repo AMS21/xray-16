@@ -1,6 +1,6 @@
 /*
 gpiBuffer.c
-GameSpy Presence SDK 
+GameSpy Presence SDK
 Dan "Mr. Pants" Schoenblum
 
 Copyright 1999-2007 GameSpy Industries, Inc
@@ -132,7 +132,7 @@ gpiAppendStringToBuffer(
 
 GPResult gpiAppendShortToBuffer(
                                 GPConnection * connection,
-                                GPIBuffer * outputBuffer, 
+                                GPIBuffer * outputBuffer,
                                 short num)
 {
     char shortVal[8];
@@ -142,7 +142,7 @@ GPResult gpiAppendShortToBuffer(
 
 GPResult gpiAppendUShortToBuffer(
                                  GPConnection * connection,
-                                 GPIBuffer * outputBuffer, 
+                                 GPIBuffer * outputBuffer,
                                  unsigned short num)
 {
     char shortVal[8];
@@ -276,13 +276,13 @@ gpiSendOrBufferStringLenToPeer(
 )
 {
     GPIConnection *iconnection;
-    
+
     unsigned int sent;
     unsigned int total;
     unsigned int remaining;
 
     assert(peer->outputBuffer.buffer != NULL);
-    
+
     sent = 0;
     iconnection = (GPIConnection *)*connection;
     remaining = (unsigned int)stringLen;
@@ -307,9 +307,9 @@ gpiSendOrBufferStringLenToPeer(
         {
             unsigned int freeSpace = (unsigned int)gsUdpEngineGetPeerOutBufferFreeSpace(peer->ip, peer->port);
             if (freeSpace > (GS_UDP_MSG_HEADER_LEN + GS_UDP_RELIABLE_MSG_HEADER))
-            {   
+            {
                 sent = freeSpace - (GS_UDP_MSG_HEADER_LEN + GS_UDP_RELIABLE_MSG_HEADER);
-                gsUdpEngineSendMessage(peer->ip, peer->port, iconnection->mHeader, (unsigned char *)string, 
+                gsUdpEngineSendMessage(peer->ip, peer->port, iconnection->mHeader, (unsigned char *)string,
                     sent, gsi_true);
                 total = sent;
                 remaining -= sent;
@@ -335,13 +335,13 @@ gpiSendOrBufferStringLen(
                          int stringLen
                          )
 {
-    
+
     GPIBool closed;
     int sent;
     int total;
     int remaining;
-    
-    
+
+
     assert(peer->outputBuffer.buffer != NULL);
 
     remaining = stringLen;
@@ -373,7 +373,7 @@ gpiSendOrBufferStringLen(
     if(remaining)
         CHECK_RESULT(gpiAppendStringToBufferLen(connection, &peer->outputBuffer, &string[total], remaining));
 
-    
+
     GSI_UNUSED(stringLen);
     GSI_UNUSED(string);
     GSI_UNUSED(peer);
@@ -515,7 +515,7 @@ gpiRecvToBuffer(
         gsDebugFormat(GSIDebugCat_GP, GSIDebugType_Network, GSIDebugLevel_RawDump,
             "RECVTOTL(%s): %d\n", id, total);
     }
-    
+
     // Set output stuff.
     ////////////////////
     inputBuffer->buffer = buffer;
@@ -598,7 +598,7 @@ gpiSendFromBuffer(
     return GP_NO_ERROR;
 }
 
-GPResult gpiSendBufferToPeer(GPConnection * connection, unsigned int ip, unsigned short port, 
+GPResult gpiSendBufferToPeer(GPConnection * connection, unsigned int ip, unsigned short port,
                              GPIBuffer * outputBuffer, GPIBool *closed, GPIBool clipSentData)
 {
     GPIConnection *iconnection = (GPIConnection *)*connection;
@@ -633,7 +633,7 @@ GPResult gpiSendBufferToPeer(GPConnection * connection, unsigned int ip, unsigne
     {
         unsigned int freeSpace =0;
         unsigned int sendAmount = 0;
-        do 
+        do
         {
             freeSpace = (unsigned int)gsUdpEngineGetPeerOutBufferFreeSpace(ip, port);
             sendAmount = freeSpace - (GS_UDP_MSG_HEADER_LEN + GS_UDP_RELIABLE_MSG_HEADER);
@@ -666,7 +666,7 @@ GPResult gpiSendBufferToPeer(GPConnection * connection, unsigned int ip, unsigne
     gsUdpEngineGetPeerState(ip, port, &aPeerState);
     if (aPeerState == GS_UDP_PEER_CLOSED)
         *closed = GPITrue;
-    else 
+    else
         *closed = GPIFalse;
 
     return GP_NO_ERROR;

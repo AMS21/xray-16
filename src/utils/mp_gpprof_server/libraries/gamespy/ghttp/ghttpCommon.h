@@ -1,5 +1,5 @@
  /*
-GameSpy GHTTP SDK 
+GameSpy GHTTP SDK
 Dan "Mr. Pants" Schoenblum
 dan@gamespy.com
 
@@ -22,7 +22,7 @@ extern "C" {
 ////////////////////////
 #define CRLF    "\xD\xA"
 
-// HTTP URL Encoding 
+// HTTP URL Encoding
 ////////////////////////
 #define GHI_LEGAL_URLENCODED_CHARS      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_@-.*"
 #define GHI_DIGITS                      "0123456789ABCDEF"

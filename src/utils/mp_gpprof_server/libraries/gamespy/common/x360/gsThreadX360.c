@@ -12,9 +12,9 @@ void gsiEnterCriticalSection     (GSICriticalSection *theCrit) { EnterCriticalSe
 void gsiLeaveCriticalSection     (GSICriticalSection *theCrit) { LeaveCriticalSection(theCrit);      }
 void gsiDeleteCriticalSection    (GSICriticalSection *theCrit) { DeleteCriticalSection(theCrit);     }
 
-gsi_u32 gsiHasThreadShutdown(GSIThreadID theThreadID) 
-{ 
-    DWORD result = WaitForSingleObject(theThreadID, 0); 
+gsi_u32 gsiHasThreadShutdown(GSIThreadID theThreadID)
+{
+    DWORD result = WaitForSingleObject(theThreadID, 0);
     if (result == WAIT_ABANDONED || result == WAIT_OBJECT_0)
         return 1; // thread is dead
     else

@@ -101,7 +101,7 @@ GT2Bool gti2ConnectedCallback
     assert(connection);
     if(!connection)
         return GT2True;
-    
+
     // store the result
     connection->connectionResult = result;
 

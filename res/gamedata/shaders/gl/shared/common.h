@@ -122,7 +122,7 @@ void    sincos(float x, out float s, out float c) { s = sin(x); c = cos(x); }
 //  uniform float4      screen_res;     // Screen resolution (x-Width,y-Height, zw - 1/resolution)
 //}
 
-float   calc_cyclic     (float x)               
+float   calc_cyclic     (float x)
 {
     float   phase   = 1.0/(2.0*3.141592653589);
     float   sqrt2   = 1.4142136;
@@ -131,7 +131,7 @@ float   calc_cyclic     (float x)
     return  f*f - 1.0;              // [-1     .. +1]
 }
 
-float2  calc_xz_wave    (float2 dir2D, float frac)      
+float2  calc_xz_wave    (float2 dir2D, float frac)
 {
     // Beizer
     float2  ctrl_A  = float2(0.0,       0.0 );

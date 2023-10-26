@@ -141,17 +141,17 @@ GT2Result gti2CreateSocket
     if (type == GTI2VdpProtocol)
 
         socketTemp->socket = socket(AF_INET, SOCK_DGRAM, IPPROTO_VDP);
-    else 
+    else
 #endif
 #ifdef GSI_ADHOC
     if (type == GTI2AdHocProtocol)
     {
         socketTemp->socket = _NetworkAdHocSocketCreate( port);
     }
-    else 
-#endif 
+    else
+#endif
     socketTemp->socket = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
-    
+
     socketTemp->protocolType    = type;
 
     if (type == GTI2AdHocProtocol)
@@ -167,7 +167,7 @@ GT2Result gti2CreateSocket
         SetSockBroadcast(socketTemp->socket);
         socketTemp->protocolOffset  = type;
     }
-#endif 
+#endif
 
     if(socketTemp->socket == INVALID_SOCKET)
     {
@@ -234,11 +234,11 @@ void gti2CloseSocket(GT2Socket socket)
         _NetworkAdHocSocketDestroy(socket->socket);
     }
     else
-#endif 
+#endif
     {
         closesocket(socket->socket);
     }
-    
+
     TableFree(socket->connections);
     ArrayFree(socket->closedConnections);
     gsifree(socket);
@@ -293,7 +293,7 @@ GT2Result gti2NewSocketConnection(GT2Socket socket, GT2Connection * connection, 
     connectionPtr->outgoingBufferMessages = ArrayNew(sizeof(GTI2OutgoingBufferMessage), 64, NULL);
     if(!connectionPtr->outgoingBufferMessages)
         goto out_of_memory;
-    
+
     // allocate the filter arrays
     connectionPtr->sendFilters = ArrayNew(sizeof(gt2SendFilterCallback), 2, NULL);
     if(!connectionPtr->sendFilters)

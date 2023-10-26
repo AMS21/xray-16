@@ -1,6 +1,6 @@
 /*
 gpiUtility.c
-GameSpy Presence SDK 
+GameSpy Presence SDK
 Dan "Mr. Pants" Schoenblum
 
 Copyright 1999-2007 GameSpy Industries, Inc
@@ -32,7 +32,7 @@ Please see the GameSpy Presence SDK documentation for more information
 // Disable compiler warnings for issues that are unavoidable.
 /////////////////////////////////////////////////////////////
 #if defined(_MSC_VER) // DevStudio
-// Level4, "conditional expression is constant". 
+// Level4, "conditional expression is constant".
 // Occurs with use of the MS provided macro FD_SET
 #pragma warning ( disable: 4127 )
 #endif // _MSC_VER
@@ -62,14 +62,14 @@ gpiCheckForError(
 {
     char buffer[16];
     GPIConnection * iconnection = (GPIConnection*)*connection;
-    
+
     if(strncmp(input, "\\error\\", 7) == 0)
     {
         // Get the err code.
         ////////////////////
         if(gpiValueForKey(input, "\\err\\", buffer, sizeof(buffer)))
             iconnection->errorCode = (GPErrorCode)atoi(buffer);
-        
+
         // Get the error string.
         ////////////////////////
         if(!gpiValueForKey(input, "\\errmsg\\", iconnection->errorString, sizeof(iconnection->errorString)))
@@ -86,7 +86,7 @@ gpiCheckForError(
             GPIBool fatal = (GPIBool)(strstr(input, "\\fatal\\") != NULL);
             gpiCallErrorCallback(connection, GP_SERVER_ERROR, fatal ? GP_FATAL : GP_NON_FATAL);
         }
-        
+
         return GPITrue;
     }
 
@@ -344,7 +344,7 @@ gpiSetError(
 )
 {
     GPIConnection * iconnection = (GPIConnection*)*connection;
-    
+
     // Copy the string.
     ///////////////////
     strzcpy(iconnection->errorString, errorString, GP_ERROR_STRING_LEN);
@@ -366,7 +366,7 @@ gpiSetErrorString(
 )
 {
     GPIConnection * iconnection = (GPIConnection*)*connection;
-    
+
     // Copy the string.
     ///////////////////
     strzcpy(iconnection->errorString, errorString, GP_ERROR_STRING_LEN);
@@ -390,7 +390,7 @@ gpiEncodeString(
     // Encrypt the password (xor with random values)
     char passwordxor[GP_PASSWORD_LEN];
     size_t passwordlen = strlen(unencodedString);
-    
+
     Util_RandSeed((unsigned long)GP_XOR_SEED);
     for (i=0; i < passwordlen; i++)
     {

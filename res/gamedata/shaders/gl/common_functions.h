@@ -7,7 +7,7 @@ float Contrast(float Input, float ContrastPower)
      //piecewise contrast function
      bool IsAboveHalf = Input > 0.5 ;
      float ToRaise = saturate(2.0*(IsAboveHalf ? (1.0 - Input) : Input));
-     float Output = 0.5*pow(ToRaise, ContrastPower); 
+     float Output = 0.5*pow(ToRaise, ContrastPower);
      Output = IsAboveHalf ? (1.0 - Output) : Output;
      return Output;
 }
@@ -33,14 +33,14 @@ void tonemap( out float4 low, out float4 high, float3 rgb, float scale)
 }
 #endif // USE_SHOC_RESOURCES
 
-float4 combine_bloom( float3  low, float4 high) 
+float4 combine_bloom( float3  low, float4 high)
 {
     return float4( low + high.rgb*high.a, 1.0 );
 }
 
-float calc_fogging( float4 w_pos )      
+float calc_fogging( float4 w_pos )
 {
-    return dot(w_pos,fog_plane);         
+    return dot(w_pos,fog_plane);
 }
 
 float2 unpack_tc_base( float2 tc, float du, float dv )
@@ -48,17 +48,17 @@ float2 unpack_tc_base( float2 tc, float du, float dv )
     return (tc.xy + float2  (du,dv))*(32.0/32768.0); //!Increase from 32bit to 64bit floating point
 }
 
-float3 calc_sun_r1( float3 norm_w )    
+float3 calc_sun_r1( float3 norm_w )
 {
-    return L_sun_color*saturate(dot((norm_w),-L_sun_dir_w));                 
+    return L_sun_color*saturate(dot((norm_w),-L_sun_dir_w));
 }
 
-float3 calc_model_hemi_r1( float3 norm_w )    
+float3 calc_model_hemi_r1( float3 norm_w )
 {
     return max(0.0,norm_w.y)*L_hemi_color.rgb;
 }
 
-float3 calc_model_lq_lighting( float3 norm_w )    
+float3 calc_model_lq_lighting( float3 norm_w )
 {
     return L_material.x*calc_model_hemi_r1(norm_w) + L_ambient.rgb + L_material.y*calc_sun_r1(norm_w);
 }
@@ -69,7 +69,7 @@ float3  unpack_bx2( float3 v )  { return 2.0*v-1.0; }
 float3  unpack_bx2( float4 v )  { return 2.0*v.xyz-1.0; }
 float3  unpack_bx4( float3 v )  { return 4.0*v-2.0; } //!reduce the amount of stretching from 4*v-2 and increase precision
 float3  unpack_bx4( float4 v )  { return 4.0*v.xyz-2.0; }
-float2  unpack_tc_lmap( float2 tc ) { return tc*(1.0/32768.0);  } // [-1  .. +1 ] 
+float2  unpack_tc_lmap( float2 tc ) { return tc*(1.0/32768.0);  } // [-1  .. +1 ]
 float4  unpack_color( float4 c ) { return c.bgra; }
 float4  unpack_D3DCOLOR( float4 c ) { return c.bgra; }
 float3  unpack_D3DCOLOR( float3 c ) { return c.bgr; }
@@ -107,12 +107,12 @@ float   get_sun(float4 lmh)
 
 float3  v_hemi(float3 n)
 {
-    return L_hemi_color.rgb*(0.5 + 0.5*n.y);                   
+    return L_hemi_color.rgb*(0.5 + 0.5*n.y);
 }
 
-float3  v_sun(float3 n)                         
+float3  v_sun(float3 n)
 {
-    return L_sun_color*dot(n,-L_sun_dir_w);                
+    return L_sun_color*dot(n,-L_sun_dir_w);
 }
 
 float3  calc_reflection( float3 pos_w, float3 norm_w )
@@ -132,7 +132,7 @@ float3  calc_reflection( float3 pos_w, float3 norm_w )
 #define USABLE_BIT_10               uint(0x00400000)
 #define USABLE_BIT_11               uint(0x00800000)   // At least two of those four bit flags must be mutually exclusive (i.e. all 4 bits must not be set together)
 #define USABLE_BIT_12               uint(0x01000000)   // This is because setting 0x47800000 sets all 5 FP16 exponent bits to 1 which means infinity
-#define USABLE_BIT_13               uint(0x02000000)   // This will be translated to a +/-MAX_FLOAT in the FP16 render target (0xFBFF/0x7BFF), overwriting the 
+#define USABLE_BIT_13               uint(0x02000000)   // This will be translated to a +/-MAX_FLOAT in the FP16 render target (0xFBFF/0x7BFF), overwriting the
 #define USABLE_BIT_14               uint(0x04000000)   // mantissa bits where other bit flags are stored.
 #define USABLE_BIT_15               uint(   1 << 31)   // = uint(0x80000000) // fix for integrated Intel cards
 #define MUST_BE_SET                 uint(0x40000000)   // This flag *must* be stored in the floating-point representation of the bit flag to store
@@ -256,7 +256,7 @@ gbuffer_data gbuffer_load_data( float2 tc, float4 pos2d, uint iSample )
 
     // 3d view space pos reconstruction math
     // center of the plane (0,0) or (0.5,0.5) at distance 1 is eyepoint(0,0,0) + lookat (assuming |lookat| ==1
-    // left/right = (0,0,1) -/+ tan(fHorzFOV/2) * (1,0,0 ) 
+    // left/right = (0,0,1) -/+ tan(fHorzFOV/2) * (1,0,0 )
     // top/bottom = (0,0,1) +/- tan(fVertFOV/2) * (0,1,0 )
     // lefttop      = ( -tan(fHorzFOV/2),  tan(fVertFOV/2), 1 )
     // righttop     = (  tan(fHorzFOV/2),  tan(fVertFOV/2), 1 )
@@ -365,7 +365,7 @@ uint alpha_to_coverage ( float alpha, float2 pos2d )
         mask = 0;
     else if( alpha < 0.6666 )
         mask = 1 << ( pos & 1 );
-    else 
+    else
         mask = 3;
 
     return mask;
@@ -382,7 +382,7 @@ uint alpha_to_coverage ( float alpha, float2 pos2d )
     if( alpha < 0.40 )
     {
         if( alpha < 0.20 )
-            mask = 0;   
+            mask = 0;
         else if( alpha < 0.40 ) // only one bit set
             mask = 1;
     }
@@ -392,7 +392,7 @@ uint alpha_to_coverage ( float alpha, float2 pos2d )
     {
         mask = 3;
     }
-    else if( alpha < 0.8 ) // 3 bits set => 1110 0111 1011 1101 
+    else if( alpha < 0.8 ) // 3 bits set => 1110 0111 1011 1101
       mask = 7;
     else
       mask = 0xf;
@@ -414,17 +414,17 @@ uint alpha_to_coverage ( float alpha, float2 pos2d )
     if( alpha < 0.2222 )
     {
         if( alpha < 0.1111 )
-            mask = 0;   
+            mask = 0;
         else // only one bit set 0.2222
             mask = 1;
     }
-    else 
+    else
     {
         if( alpha < 0.3333 ) // 2 bits set0=> 10000001 + 11000000 .. 00000011 : 8 // 0.2222
                            //        set1=> 10100000 .. 00000101 + 10000010 + 01000001 : 8
                            //       set2=> 10010000 .. 00001001 + 10000100 + 01000010 + 00100001 : 8
                            //       set3=> 10001000 .. 00010001 + 10001000 + 01000100 + 00100010 + 00010001 : 8
-        {  
+        {
             mask = 3;
         }
         else // 3 bits set0 => 11100000 .. 00000111 + 10000011 + 11000001 : 8 ? 0.4444 // 0.3333

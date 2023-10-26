@@ -1,6 +1,6 @@
 /*
 gpi.c
-GameSpy Presence SDK 
+GameSpy Presence SDK
 Dan "Mr. Pants" Schoenblum
 
 Copyright 1999-2007 GameSpy Industries, Inc
@@ -194,7 +194,7 @@ gpiResetProfile(
 {
     GSI_UNUSED(connection);
     GSI_UNUSED(data);
-    
+
     profile->buddyStatus = NULL;
     profile->buddyStatusInfo = NULL;
     profile->authSig = NULL;
@@ -321,7 +321,7 @@ gpiProcessConnectionManager(
         {
             if(result == GP_NETWORK_ERROR)
                 CallbackFatalError(connection, GP_NETWORK_ERROR, GP_NETWORK, "There was an error reading from the server.");
-            
+
             return result;
         }
 
@@ -413,7 +413,7 @@ gpiProcessConnectionManager(
                 else if(strncmp(iconnection->inputBuffer, "\\bsi\\", 5) == 0)
                 {
                     CHECK_RESULT(gpiProcessRecvBuddyStatusInfo(connection, iconnection->inputBuffer));
-                }                
+                }
                 else if(strncmp(iconnection->inputBuffer, "\\bdy\\", 5) == 0)
                 {
                     // Process the buddy list - retrieved upon login before final login response
@@ -438,7 +438,7 @@ gpiProcessConnectionManager(
             }
         }
 
-        
+
         // Check for a closed connection.
         /////////////////////////////////
         if(connClosed && iconnection->connectState != GPI_PROFILE_DELETING)
@@ -462,7 +462,7 @@ gpiProcessConnectionManager(
     while(loop);
 
     // Send Keep-Alive. Just need TCP to ack the data
-    /////////////////////////////////////////////////   
+    /////////////////////////////////////////////////
     if ( now - iconnection->kaTransmit > KEEPALIVE_TIMEOUT )
     {
         // keep alive packet will be sent next think
@@ -535,7 +535,7 @@ gpiProcess(
 
     // Only do this stuff if we're connected.
     /////////////////////////////////////////
-    if((iconnection->connectState == GPI_CONNECTED) || (iconnection->connectState == GPI_NEGOTIATING) || 
+    if((iconnection->connectState == GPI_CONNECTED) || (iconnection->connectState == GPI_NEGOTIATING) ||
         (iconnection->connectState == GPI_PROFILE_DELETING))
     {
 #ifdef _PS3
@@ -560,8 +560,8 @@ gpiProcess(
             // Need to check callback for lookups
             gpiProcessNp(connection);
         }
-#endif      
-        
+#endif
+
         // Process the connection.
         //////////////////////////
         if(result == GP_NO_ERROR)
@@ -621,7 +621,7 @@ gpiProcess(
 
 GPResult
 gpiEnable(
-  GPConnection * connection, 
+  GPConnection * connection,
   GPEnum state
 )
 {
@@ -672,7 +672,7 @@ static GPIBool gpiFreeProfileInfo(
 
 GPResult
 gpiDisable(
-  GPConnection * connection, 
+  GPConnection * connection,
   GPEnum state
 )
 {

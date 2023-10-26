@@ -4,8 +4,8 @@ Copyright (c) 2003-2007 Erwin Coumans  http://bulletphysics.com
 
 This software is provided 'as-is', without any express or implied warranty.
 In no event will the authors be held liable for any damages arising from the use of this software.
-Permission is granted to anyone to use this software for any purpose, 
-including commercial applications, and to alter it and redistribute it freely, 
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it freely,
 subject to the following restrictions:
 
 1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
@@ -45,7 +45,7 @@ void*   SamplelsMemoryFunc()
 
 
 
-extern "C" 
+extern "C"
 {
     extern char SPU_SAMPLE_ELF_SYMBOL[];
 };
@@ -84,7 +84,7 @@ int SpursSpeexTaskManager::initialize()
 #ifdef DEBUG_SPU_TASK_SCHEDULING
     printf("SpuSampleTaskProcess::initialize()\n");
 #endif //DEBUG_SPU_TASK_SCHEDULING
-    
+
     for (int i = 0; (unsigned int)i < m_maxNumOutstandingTasks; i++)
     {
         m_taskBusy[i] = false;
@@ -119,7 +119,7 @@ int SpursSpeexTaskManager::issueEncodeInitTask( int theQuality,int theGviSpeexSa
     return 0;
 }
 
-int SpursSpeexTaskManager::issueEncodeTask(int16_t * inBuffer, int inBufferSize, int encodedFrameSize, char *outBuffer, 
+int SpursSpeexTaskManager::issueEncodeTask(int16_t * inBuffer, int inBufferSize, int encodedFrameSize, char *outBuffer,
                                            int outBufferSize, SpursSpeexTaskOutput *taskOuput,char *userAllocatedSpeexBuffer,
                                            int userAllocatedSpeexBufferSize )
 {
@@ -140,7 +140,7 @@ int SpursSpeexTaskManager::issueEncodeTask(int16_t * inBuffer, int inBufferSize,
     return 0;
 }
 
-int SpursSpeexTaskManager::issueDecodeAddTask(char *decoderStateBuffer, int decoderStateBufferSize, char *inBuffer, int inBufferSize, int encodedFrameSize,  
+int SpursSpeexTaskManager::issueDecodeAddTask(char *decoderStateBuffer, int decoderStateBufferSize, char *inBuffer, int inBufferSize, int encodedFrameSize,
                                               short* outBuffer, int outBufferSize, struct SpursSpeexTaskOutput *taskOutput)
 {
     m_taskBusy[m_currentTask] = true;
@@ -244,7 +244,7 @@ int SpursSpeexTaskManager::issueTask( SpursSpeexTaskDesc& taskDesc,uint32_t uiCo
 ///Optional PPU-size post processing for each task
 // void SpuSampleTaskProcess::postProcess(int taskId, int outputSize)
 // {
-// 
+//
 // }
 
 

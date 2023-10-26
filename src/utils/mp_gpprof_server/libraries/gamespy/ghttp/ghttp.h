@@ -1,5 +1,5 @@
  /*
-GameSpy GHTTP SDK 
+GameSpy GHTTP SDK
 Dan "Mr. Pants" Schoenblum
 dan@gamespy.com
 
@@ -115,7 +115,7 @@ typedef enum
     GHTTPEncryptionEngine_GameSpy,   // must add /common/gsSSL.h and /common/gsSSL.c to project
     GHTTPEncryptionEngine_MatrixSsl, // must define MATRIXSSL and include matrixssl source files
     GHTTPEncryptionEngine_RevoEx,    // must define REVOEXSSL and include RevoEX SSL source files
-    
+
     GHTTPEncryptionEngine_Default    // Will use GameSpy unless another engine is defined
                                      //   using MATRIXSSL or REVOEXSSL
 } GHTTPEncryptionEngine;
@@ -133,7 +133,7 @@ typedef int GHTTPRequest;
         GHTTPFailedToOpenFile,
         GHTTPInvalidPost,
         GHTTPInsufficientMemory,
-        GHTTPInvalidFileName,   
+        GHTTPInvalidFileName,
         GHTTPInvalidBufferSize,
         GHTTPInvalidURL,
         GHTTPUnspecifiedError       = -1
@@ -146,7 +146,7 @@ typedef int GHTTPRequest;
         GHTTPFailedToOpenFile       = -1,
         GHTTPInvalidPost            = -1,
         GHTTPInsufficientMemory     = -1,
-        GHTTPInvalidFileName        = -1,   
+        GHTTPInvalidFileName        = -1,
         GHTTPInvalidBufferSize      = -1,
         GHTTPInvalidURL             = -1,
         GHTTPUnspecifiedError       = -1
@@ -164,7 +164,7 @@ typedef struct GHIPost * GHTTPPost;
 
 // Called with updates on the current state of the request.
 // The buffer should not be accessed once this callback returns.
-// If ghttpGetFile[Ex] was used, buffer contains all of the data that has been 
+// If ghttpGetFile[Ex] was used, buffer contains all of the data that has been
 //   received so far, and bufferSize is the total number of bytes received.
 // If ghttpSaveFile[Ex] was used, buffer only contains the most recent data
 //   that has been received.  This same data is saved to the file.  The buffer

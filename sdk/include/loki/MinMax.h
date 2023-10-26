@@ -2,14 +2,14 @@
 // The Loki Library
 // Copyright (c) 2001 by Andrei Alexandrescu
 // This code accompanies the book:
-// Alexandrescu, Andrei. "Modern C++ Design: Generic Programming and Design 
+// Alexandrescu, Andrei. "Modern C++ Design: Generic Programming and Design
 //     Patterns Applied". Copyright (c) 2001. Addison-Wesley.
-// Permission to use, copy, modify, distribute and sell this software for any 
-//     purpose is hereby granted without fee, provided that the above copyright 
-//     notice appear in all copies and that both that copyright notice and this 
+// Permission to use, copy, modify, distribute and sell this software for any
+//     purpose is hereby granted without fee, provided that the above copyright
+//     notice appear in all copies and that both that copyright notice and this
 //     permission notice appear in supporting documentation.
-// The author or Addison-Welsey Longman make no representations about the 
-//     suitability of this software for any purpose. It is provided "as is" 
+// The author or Addison-Welsey Longman make no representations about the
+//     suitability of this software for any purpose. It is provided "as is"
 //     without express or implied warranty.
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -44,10 +44,10 @@ namespace Private
 template <class L, class R>
 class MinMaxTraits
 {
-    typedef typename Loki::Select<Loki::Conversion<R, L>::exists, 
+    typedef typename Loki::Select<Loki::Conversion<R, L>::exists,
             L, R>::Result
         T1;
-    
+
     enum { pos1 = Loki::TL::IndexOf<Private::ArithTypes, const L>::value };
     enum { pos2 = Loki::TL::IndexOf<Private::ArithTypes, const R>::value };
     typedef Loki::Select<pos1 != -1 && pos1 < pos2, R, T1>::Result T2;
@@ -55,14 +55,14 @@ class MinMaxTraits
     enum { rConst = Loki::TypeTraits<R>::isConst >=
         Loki::TypeTraits<L>::isConst };
     enum { l2r = rConst && Loki::Conversion<
-        typename Loki::TypeTraits<L>::NonConstType&, 
+        typename Loki::TypeTraits<L>::NonConstType&,
         typename Loki::TypeTraits<R>::NonConstType&>::exists };
     typedef typename Loki::Select<l2r, R&, T2>::Result T3;
 
     enum { lConst = Loki::TypeTraits<L>::isConst >=
         Loki::TypeTraits<R>::isConst };
     enum { r2l = lConst && Loki::Conversion<
-        typename Loki::TypeTraits<R>::NonConstType&, 
+        typename Loki::TypeTraits<R>::NonConstType&,
         typename Loki::TypeTraits<L>::NonConstType&>::exists };
 public:
     typedef typename Loki::Select<r2l, L&, T3>::Result Result;

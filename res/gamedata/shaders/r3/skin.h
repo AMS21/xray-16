@@ -61,7 +61,7 @@ float4  u_position  (float4 v)  { return float4(v.xyz, 1.f);    }   // -12..+12
 float3  skinning_dir    (float3 dir, float3 m0, float3 m1, float3 m2)
 {
     float3  U   = unpack_normal (dir);
-    return  float3  
+    return  float3
         (
             dot (m0, U),
             dot (m1, U),
@@ -213,7 +213,7 @@ v_model skinning_4  (v_model_skinned_4  v)
     float4  m[4][3];    //  [bone index][matrix row or column???]
     [unroll]
     for (int i=0; i<4; ++i)
-    {       
+    {
         id[i] = v.ind[i]*255+0.3;
         [unroll]
         for (int j=0; j<3; ++j)

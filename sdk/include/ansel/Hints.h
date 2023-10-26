@@ -53,11 +53,11 @@ namespace ansel
     };
 
     // Call this right before setting HDR render target active
-    // bufferType is an optional argument specifying what type of buffer is this - 
+    // bufferType is an optional argument specifying what type of buffer is this -
     // an HDR color buffer, a depth buffer or HUDless buffer. The default option is HDR color buffer.
     // hintType is an optional argument specifying what type of hint is this -
     // it could be called after or before the bind of a buffer that this hint marks.
-    // The default option is kHintTypePreBind, which means the hint should be called before 
+    // The default option is kHintTypePreBind, which means the hint should be called before
     // the render target is bound.
     // threadId is an optional argument allowing Ansel to match the thread which calls
     // SetRenderTarget (or analogous function, since this is graphics API dependent)
@@ -67,7 +67,7 @@ namespace ansel
     // known at integration side.
     ANSEL_SDK_API void markBufferBind(BufferType bufferType = kBufferTypeHDR, HintType hintType = kHintTypePreBind, uint64_t threadId = kThreadingBehaviourNoMatching);
     // Call this right after the last draw call into the HDR render target
-    // bufferType is an optional argument specifying what type of buffer is this - 
+    // bufferType is an optional argument specifying what type of buffer is this -
     // an HDR color buffer, a depth buffer or HUDless buffer. The default option is HDR color buffer.
     // threadId is an optional argument allowing Ansel to match the thread which calls
     // SetRenderTarget (or analogous function, since this is graphics API dependent)

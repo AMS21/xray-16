@@ -12,7 +12,7 @@ uniform float4x4    m_plmap_xform;
 uniform float4      m_plmap_clamp   [2];    // 0.w = factor
 
 half    calc_fogging    (half4 w_pos)   { return dot(w_pos,fog_plane);  }
-half2   calc_detail     (half3 w_pos)   { 
+half2   calc_detail     (half3 w_pos)   {
     float   dtl = distance(w_pos,eye_position)*dt_params.w;
         dtl = min(dtl*dtl, 1);
     half    dt_mul  = 1  - dtl; // dt*  [1 ..  0 ]
@@ -46,7 +46,7 @@ float3  _calc_model_hemi    (float3 norm_w) { return max(0,norm_w.y)*.2*L_hemi_c
 float3  _calc_model_lq_lighting (float3 norm_w) { return calc_model_hemi(norm_w) + L_ambient + .5*calc_sun(norm_w);     }
 float4  calc_model_lmap     (float3 pos_w)  {
     float3  pos_wc  = clamp     (pos_w,m_plmap_clamp[0],m_plmap_clamp[1]);      // clamp to BBox
-    float4  pos_w4c = float4    (pos_wc,1); 
+    float4  pos_w4c = float4    (pos_wc,1);
     float4  plmap   = mul       (m_plmap_xform,pos_w4c);                // calc plmap tc
     return  plmap.xyww;
 }

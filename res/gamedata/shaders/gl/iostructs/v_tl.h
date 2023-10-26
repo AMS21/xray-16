@@ -3,7 +3,7 @@ out gl_PerVertex { vec4 gl_Position; };
 
 layout(location = POSITION)     in float4   v_TL_P      ; // POSITION;
 layout(location = TEXCOORD0)    in float2   v_TL_Tex0   ; // TEXCOORD0;
-layout(location = COLOR)        in float4   v_TL_Color  ; // COLOR; 
+layout(location = COLOR)        in float4   v_TL_Color  ; // COLOR;
 
 layout(location = TEXCOORD0)    out float2  v2p_TL_Tex0 ; // TEXCOORD0;
 layout(location = COLOR)        out float4  v2p_TL_Color; // COLOR;

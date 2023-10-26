@@ -61,7 +61,7 @@ uniform float4  sbones_array    [256-22];
 float3  skinning_dir    (float3 dir, float4 m0, float4 m1, float4 m2)
 {
     float3  U   = unpack_normal (dir);
-    return  float3  
+    return  float3
         (
             dot (m0.xyz, U),
             dot (m1.xyz, U),
@@ -213,7 +213,7 @@ v_model skinning_4  (v_model_skinned_4  v)
     mat3x4  m[4];   //  [bone index][matrix row or column???]
 
     for (int i=0; i<4; ++i)
-    {       
+    {
         id[i] = int(v.ind[i]*255+0.3);
 
         for (int j=0; j<3; ++j)

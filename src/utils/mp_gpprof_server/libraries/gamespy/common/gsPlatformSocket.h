@@ -29,52 +29,52 @@ extern "C" {
 #endif
 
 
-#if (0) 
+#if (0)
 // to do for Saad and Martin, move towards this and phase out the #define jungle.
 // we will trade a little speed for a lot of portability, and stability
 // also out debug libs will assert all params comming in.
 typedef enum
 {
-    GS_SOCKERR_NONE = 0,   
-    GS_SOCKERR_EWOULDBLOCK,   
-    GS_SOCKERR_EINPROGRESS,      
-    GS_SOCKERR_EALREADY,         
-    GS_SOCKERR_ENOTSOCK,         
-    GS_SOCKERR_EDESTADDRREQ,     
-    GS_SOCKERR_EMSGSIZE,         
-    GS_SOCKERR_EPROTOTYPE,       
-    GS_SOCKERR_ENOPROTOOPT ,     
-    GS_SOCKERR_EPROTONOSUPPORT , 
-    GS_SOCKERR_ESOCKTNOSUPPORT,  
-    GS_SOCKERR_EOPNOTSUPP  ,     
-    GS_SOCKERR_EPFNOSUPPORT,     
-    GS_SOCKERR_EAFNOSUPPORT,     
-    GS_SOCKERR_EADDRINUSE  ,     
-    GS_SOCKERR_EADDRNOTAVAIL ,   
-    GS_SOCKERR_ENETDOWN   ,      
-    GS_SOCKERR_ENETUNREACH  ,    
-    GS_SOCKERR_ENETRESET,        
-    GS_SOCKERR_ECONNABORTED,     
-    GS_SOCKERR_ECONNRESET ,      
-    GS_SOCKERR_ENOBUFS ,         
-    GS_SOCKERR_EISCONN ,         
-    GS_SOCKERR_ENOTCONN,         
-    GS_SOCKERR_ESHUTDOWN,        
-    GS_SOCKERR_ETOOMANYREFS ,    
-    GS_SOCKERR_ETIMEDOUT,        
-    GS_SOCKERR_ECONNREFUSED,     
-    GS_SOCKERR_ELOOP,            
-    GS_SOCKERR_ENAMETOOLONG,     
-    GS_SOCKERR_EHOSTDOWN        ,        
-    GS_SOCKERR_EHOSTUNREACH     ,    
-    GS_SOCKERR_ENOTEMPTY        ,        
-    GS_SOCKERR_EPROCLIM         ,        
-    GS_SOCKERR_EUSERS           ,           
-    GS_SOCKERR_EDQUOT           ,           
-    GS_SOCKERR_ESTALE           ,           
-    GS_SOCKERR_EREMOTE          ,          
-    GS_SOCKERR_EINVAL           ,  
-    GS_SOCKERR_COUNT            ,  
+    GS_SOCKERR_NONE = 0,
+    GS_SOCKERR_EWOULDBLOCK,
+    GS_SOCKERR_EINPROGRESS,
+    GS_SOCKERR_EALREADY,
+    GS_SOCKERR_ENOTSOCK,
+    GS_SOCKERR_EDESTADDRREQ,
+    GS_SOCKERR_EMSGSIZE,
+    GS_SOCKERR_EPROTOTYPE,
+    GS_SOCKERR_ENOPROTOOPT ,
+    GS_SOCKERR_EPROTONOSUPPORT ,
+    GS_SOCKERR_ESOCKTNOSUPPORT,
+    GS_SOCKERR_EOPNOTSUPP  ,
+    GS_SOCKERR_EPFNOSUPPORT,
+    GS_SOCKERR_EAFNOSUPPORT,
+    GS_SOCKERR_EADDRINUSE  ,
+    GS_SOCKERR_EADDRNOTAVAIL ,
+    GS_SOCKERR_ENETDOWN   ,
+    GS_SOCKERR_ENETUNREACH  ,
+    GS_SOCKERR_ENETRESET,
+    GS_SOCKERR_ECONNABORTED,
+    GS_SOCKERR_ECONNRESET ,
+    GS_SOCKERR_ENOBUFS ,
+    GS_SOCKERR_EISCONN ,
+    GS_SOCKERR_ENOTCONN,
+    GS_SOCKERR_ESHUTDOWN,
+    GS_SOCKERR_ETOOMANYREFS ,
+    GS_SOCKERR_ETIMEDOUT,
+    GS_SOCKERR_ECONNREFUSED,
+    GS_SOCKERR_ELOOP,
+    GS_SOCKERR_ENAMETOOLONG,
+    GS_SOCKERR_EHOSTDOWN        ,
+    GS_SOCKERR_EHOSTUNREACH     ,
+    GS_SOCKERR_ENOTEMPTY        ,
+    GS_SOCKERR_EPROCLIM         ,
+    GS_SOCKERR_EUSERS           ,
+    GS_SOCKERR_EDQUOT           ,
+    GS_SOCKERR_ESTALE           ,
+    GS_SOCKERR_EREMOTE          ,
+    GS_SOCKERR_EINVAL           ,
+    GS_SOCKERR_COUNT            ,
 } GS_SOCKET_ERROR;
 
 #define  gsiSocketIsError(theReturnValue)       ((theReturnValue) != GS_SOCKERR_NONE)
@@ -83,7 +83,7 @@ typedef enum
 typedef int GSI_SOCKET;
 
 // mj - may need to pragma pack this, otherwise, it will pad after u_short
-typedef struct 
+typedef struct
 {
     // this is the same as the "default" winsocks
     u_short sa_family;              /* address family */
@@ -122,7 +122,7 @@ gsiSocketGethostbyname(n) SOC_GetHostByName(n)
    #define INADDR_NONE 0xffffffff
 #endif
 
-#ifndef INVALID_SOCKET 
+#ifndef INVALID_SOCKET
     #define INVALID_SOCKET (-1)
 #endif
 
@@ -162,7 +162,7 @@ gsiSocketGethostbyname(n) SOC_GetHostByName(n)
         #undef FD_CLR
         #undef FD_ZERO
         #undef timeval
-        #undef FD_SETSIZE   
+        #undef FD_SETSIZE
     #endif
     #define fd_set  SceNetInetFdSet
     #define timeval SceNetInetTimeval
@@ -179,7 +179,7 @@ gsiSocketGethostbyname(n) SOC_GetHostByName(n)
     #define socket      sceNetInetSocket
     #define shutdown    sceNetInetShutdown
     #define closesocket sceNetInetClose
-    
+
     #define setsockopt                    sceNetInetSetsockopt
     #define getsockopt(s, l, on, ov, ol)  sceNetInetGetsockopt(s, l, on, ov, (SceNetInetSocklen_t *)ol)
 
@@ -189,29 +189,29 @@ gsiSocketGethostbyname(n) SOC_GetHostByName(n)
     #define connect         sceNetInetConnect
     #define listen          sceNetInetListen
     #define accept(s,a,l)   sceNetInetAccept(s, a, (SceNetInetSocklen_t *)l)
-    
-    #define send        sceNetInetSend  
+
+    #define send        sceNetInetSend
     #define recv        sceNetInetRecv
-    #define sendto      sceNetInetSendto 
+    #define sendto      sceNetInetSendto
     #define recvfrom(s, b, l, f, fr, fl)    sceNetInetRecvfrom(s, b, l, f, fr, (SceNetInetSocklen_t *)fl)
 
-    
+
     #define inet_addr   sceNetInetInetAddr
     // This is not the correct function for gethostname, it should get the string name of the local host
     // not the sockaddr_in struct
-    #define gethostname // sceNetInetGetsockname 
+    #define gethostname // sceNetInetGetsockname
     #define getsockname(s,n,l) sceNetInetGetsockname(s, n, (SceNetInetSocklen_t *)l)
-    
+
     #define GOAGetLastError(s) sceNetInetGetErrno()
-    
+
     // hostent support
     struct hostent
     {
-        char* h_name;       
-        char** h_aliases;    
+        char* h_name;
+        char** h_aliases;
         gsi_u16 h_addrtype; // AF_INET
-        gsi_u16 h_length;   
-        char** h_addr_list; 
+        gsi_u16 h_length;
+        char** h_addr_list;
     };
 
     #define gethostbyname gsSocketGetHostByName
@@ -232,11 +232,11 @@ gsiSocketGethostbyname(n) SOC_GetHostByName(n)
         // hostent support
         struct hostent
         {
-            char* h_name;       
-            char** h_aliases;    
+            char* h_name;
+            char** h_aliases;
             gsi_u16 h_addrtype; // AF_INET
-            gsi_u16 h_length;   
-            char** h_addr_list; 
+            gsi_u16 h_length;
+            char** h_addr_list;
         };
 
         typedef struct hostent HOSTENT;
@@ -248,7 +248,7 @@ gsiSocketGethostbyname(n) SOC_GetHostByName(n)
     char * inet_ntoa(IN_ADDR in_addr);
 #endif
 
-#if defined(SN_SYSTEMS) 
+#if defined(SN_SYSTEMS)
     #define IPPROTO_TCP PF_INET
     #define IPPROTO_UDP PF_INET
     #define FD_SETSIZE  SN_MAX_SOCKETS
@@ -256,143 +256,143 @@ gsiSocketGethostbyname(n) SOC_GetHostByName(n)
 
 // SOCKET ERROR CODES
 #if defined(_REVOLUTION) //not sure if Wii uses this or _REV
-    #define WSAEWOULDBLOCK      SO_EWOULDBLOCK             
-    #define WSAEINPROGRESS      SO_EINPROGRESS             
-    #define WSAEALREADY         SO_EALREADY                
-    #define WSAENOTSOCK         SO_ENOTSOCK                
-    #define WSAEDESTADDRREQ     SO_EDESTADDRREQ            
-    #define WSAEMSGSIZE         SO_EMSGSIZE                
-    #define WSAEPROTOTYPE       SO_EPROTOTYPE              
-    #define WSAENOPROTOOPT      SO_ENOPROTOOPT             
-    #define WSAEPROTONOSUPPORT  SO_EPROTONOSUPPORT         
-    #define WSAEOPNOTSUPP       SO_EOPNOTSUPP              
-    #define WSAEAFNOSUPPORT     SO_EAFNOSUPPORT            
-    #define WSAEADDRINUSE       SO_EADDRINUSE              
-    #define WSAEADDRNOTAVAIL    SO_EADDRNOTAVAIL           
-    #define WSAENETDOWN         SO_ENETDOWN                
-    #define WSAENETUNREACH      SO_ENETUNREACH             
-    #define WSAENETRESET        SO_ENETRESET               
-    #define WSAECONNABORTED     SO_ECONNABORTED            
-    #define WSAECONNRESET       SO_ECONNRESET              
-    #define WSAENOBUFS          SO_ENOBUFS                 
-    #define WSAEISCONN          SO_EISCONN                 
-    #define WSAENOTCONN         SO_ENOTCONN                
-    #define WSAETIMEDOUT        SO_ETIMEDOUT               
-    #define WSAECONNREFUSED     SO_ECONNREFUSED            
-    #define WSAELOOP            SO_ELOOP                   
-    #define WSAENAMETOOLONG     SO_ENAMETOOLONG            
-    #define WSAEHOSTUNREACH     SO_EHOSTUNREACH            
-    #define WSAENOTEMPTY        SO_ENOTEMPTY               
-    #define WSAEDQUOT           SO_EDQUOT                  
-    #define WSAESTALE           SO_ESTALE                  
+    #define WSAEWOULDBLOCK      SO_EWOULDBLOCK
+    #define WSAEINPROGRESS      SO_EINPROGRESS
+    #define WSAEALREADY         SO_EALREADY
+    #define WSAENOTSOCK         SO_ENOTSOCK
+    #define WSAEDESTADDRREQ     SO_EDESTADDRREQ
+    #define WSAEMSGSIZE         SO_EMSGSIZE
+    #define WSAEPROTOTYPE       SO_EPROTOTYPE
+    #define WSAENOPROTOOPT      SO_ENOPROTOOPT
+    #define WSAEPROTONOSUPPORT  SO_EPROTONOSUPPORT
+    #define WSAEOPNOTSUPP       SO_EOPNOTSUPP
+    #define WSAEAFNOSUPPORT     SO_EAFNOSUPPORT
+    #define WSAEADDRINUSE       SO_EADDRINUSE
+    #define WSAEADDRNOTAVAIL    SO_EADDRNOTAVAIL
+    #define WSAENETDOWN         SO_ENETDOWN
+    #define WSAENETUNREACH      SO_ENETUNREACH
+    #define WSAENETRESET        SO_ENETRESET
+    #define WSAECONNABORTED     SO_ECONNABORTED
+    #define WSAECONNRESET       SO_ECONNRESET
+    #define WSAENOBUFS          SO_ENOBUFS
+    #define WSAEISCONN          SO_EISCONN
+    #define WSAENOTCONN         SO_ENOTCONN
+    #define WSAETIMEDOUT        SO_ETIMEDOUT
+    #define WSAECONNREFUSED     SO_ECONNREFUSED
+    #define WSAELOOP            SO_ELOOP
+    #define WSAENAMETOOLONG     SO_ENAMETOOLONG
+    #define WSAEHOSTUNREACH     SO_EHOSTUNREACH
+    #define WSAENOTEMPTY        SO_ENOTEMPTY
+    #define WSAEDQUOT           SO_EDQUOT
+    #define WSAESTALE           SO_ESTALE
     #define WSAEINVAL           SO_EINVAL
 #elif defined(_NITRO)
-    #define WSAEWOULDBLOCK      SOC_EWOULDBLOCK             
-    #define WSAEINPROGRESS      SOC_EINPROGRESS             
-    #define WSAEALREADY         SOC_EALREADY                
-    #define WSAENOTSOCK         SOC_ENOTSOCK                
-    #define WSAEDESTADDRREQ     SOC_EDESTADDRREQ            
-    #define WSAEMSGSIZE         SOC_EMSGSIZE                
-    #define WSAEPROTOTYPE       SOC_EPROTOTYPE              
-    #define WSAENOPROTOOPT      SOC_ENOPROTOOPT             
-    #define WSAEPROTONOSUPPORT  SOC_EPROTONOSUPPORT         
-    #define WSAEOPNOTSUPP       SOC_EOPNOTSUPP              
-    #define WSAEAFNOSUPPORT     SOC_EAFNOSUPPORT            
-    #define WSAEADDRINUSE       SOC_EADDRINUSE              
-    #define WSAEADDRNOTAVAIL    SOC_EADDRNOTAVAIL           
-    #define WSAENETDOWN         SOC_ENETDOWN                
-    #define WSAENETUNREACH      SOC_ENETUNREACH             
-    #define WSAENETRESET        SOC_ENETRESET               
-    #define WSAECONNABORTED     SOC_ECONNABORTED            
-    #define WSAECONNRESET       SOC_ECONNRESET              
-    #define WSAENOBUFS          SOC_ENOBUFS                 
-    #define WSAEISCONN          SOC_EISCONN                 
-    #define WSAENOTCONN         SOC_ENOTCONN                
-    #define WSAETIMEDOUT        SOC_ETIMEDOUT               
-    #define WSAECONNREFUSED     SOC_ECONNREFUSED            
-    #define WSAELOOP            SOC_ELOOP                   
-    #define WSAENAMETOOLONG     SOC_ENAMETOOLONG            
-    #define WSAEHOSTUNREACH     SOC_EHOSTUNREACH            
-    #define WSAENOTEMPTY        SOC_ENOTEMPTY               
-    #define WSAEDQUOT           SOC_EDQUOT                  
-    #define WSAESTALE           SOC_ESTALE                  
+    #define WSAEWOULDBLOCK      SOC_EWOULDBLOCK
+    #define WSAEINPROGRESS      SOC_EINPROGRESS
+    #define WSAEALREADY         SOC_EALREADY
+    #define WSAENOTSOCK         SOC_ENOTSOCK
+    #define WSAEDESTADDRREQ     SOC_EDESTADDRREQ
+    #define WSAEMSGSIZE         SOC_EMSGSIZE
+    #define WSAEPROTOTYPE       SOC_EPROTOTYPE
+    #define WSAENOPROTOOPT      SOC_ENOPROTOOPT
+    #define WSAEPROTONOSUPPORT  SOC_EPROTONOSUPPORT
+    #define WSAEOPNOTSUPP       SOC_EOPNOTSUPP
+    #define WSAEAFNOSUPPORT     SOC_EAFNOSUPPORT
+    #define WSAEADDRINUSE       SOC_EADDRINUSE
+    #define WSAEADDRNOTAVAIL    SOC_EADDRNOTAVAIL
+    #define WSAENETDOWN         SOC_ENETDOWN
+    #define WSAENETUNREACH      SOC_ENETUNREACH
+    #define WSAENETRESET        SOC_ENETRESET
+    #define WSAECONNABORTED     SOC_ECONNABORTED
+    #define WSAECONNRESET       SOC_ECONNRESET
+    #define WSAENOBUFS          SOC_ENOBUFS
+    #define WSAEISCONN          SOC_EISCONN
+    #define WSAENOTCONN         SOC_ENOTCONN
+    #define WSAETIMEDOUT        SOC_ETIMEDOUT
+    #define WSAECONNREFUSED     SOC_ECONNREFUSED
+    #define WSAELOOP            SOC_ELOOP
+    #define WSAENAMETOOLONG     SOC_ENAMETOOLONG
+    #define WSAEHOSTUNREACH     SOC_EHOSTUNREACH
+    #define WSAENOTEMPTY        SOC_ENOTEMPTY
+    #define WSAEDQUOT           SOC_EDQUOT
+    #define WSAESTALE           SOC_ESTALE
     #define WSAEINVAL           SOC_EINVAL
 #elif defined(_PS3)
-    #define WSAEWOULDBLOCK      SYS_NET_EWOULDBLOCK             
-    #define WSAEINPROGRESS      SYS_NET_EINPROGRESS               //SYS_NET_ERROR_EINPROGRESS                 
-    #define WSAEALREADY         SYS_NET_EALREADY                
-    #define WSAENOTSOCK         SYS_NET_ENOTSOCK                
-    #define WSAEDESTADDRREQ     SYS_NET_EDESTADDRREQ            
-    #define WSAEMSGSIZE         SYS_NET_EMSGSIZE 
-    #define WSAEPROTOTYPE       SYS_NET_EPROTOTYPE              
-    #define WSAENOPROTOOPT      SYS_NET_ENOPROTOOPT             
-    #define WSAEPROTONOSUPPORT  SYS_NET_EPROTONOSUPPORT         
-    #define WSAESOCKTNOSUPPORT  SYS_NET_ESOCKTNOSUPPORT         
-    #define WSAEOPNOTSUPP       SYS_NET_EOPNOTSUPP              
-    #define WSAEPFNOSUPPORT     SYS_NET_EPFNOSUPPORT            
-    #define WSAEAFNOSUPPORT     SYS_NET_EAFNOSUPPORT            
-    #define WSAEADDRINUSE       SYS_NET_EADDRINUSE              
-    #define WSAEADDRNOTAVAIL    SYS_NET_EADDRNOTAVAIL           
-    #define WSAENETDOWN         SYS_NET_ENETDOWN                
-    #define WSAENETUNREACH      SYS_NET_ENETUNREACH             
-    #define WSAENETRESET        SYS_NET_ENETRESET               
-    #define WSAECONNABORTED     SYS_NET_ECONNABORTED            
-    #define WSAECONNRESET       SYS_NET_ECONNRESET              // SYS_NET_ERROR_ECONNRESET 
-    #define WSAENOBUFS          SYS_NET_ENOBUFS                 // SYS_NET_ERROR_ENOBUFS               
-    #define WSAEISCONN          SYS_NET_EISCONN                 
-    #define WSAENOTCONN         SYS_NET_ENOTCONN                
-    #define WSAESHUTDOWN        SYS_NET_ESHUTDOWN               
-    #define WSAETOOMANYREFS     SYS_NET_ETOOMANYREFS            
-    #define WSAETIMEDOUT        SYS_NET_ERROR_ETIMEDOUT 
-    #define WSAECONNREFUSED     SYS_NET_ECONNREFUSED            
-    #define WSAELOOP            SYS_NET_ELOOP                   
-    #define WSAENAMETOOLONG     SYS_NET_ENAMETOOLONG            
-    #define WSAEHOSTDOWN        SYS_NET_EHOSTDOWN             
-    #define WSAEHOSTUNREACH     SYS_NET_EHOSTUNREACH             
-    #define WSAENOTEMPTY        SYS_NET_ENOTEMPTY               
-    #define WSAEPROCLIM         SYS_NET_EPROCLIM                
-    #define WSAEUSERS           SYS_NET_EUSERS                  
-    #define WSAEDQUOT           SYS_NET_EDQUOT                  
-    #define WSAESTALE           SYS_NET_ESTALE                  
+    #define WSAEWOULDBLOCK      SYS_NET_EWOULDBLOCK
+    #define WSAEINPROGRESS      SYS_NET_EINPROGRESS               //SYS_NET_ERROR_EINPROGRESS
+    #define WSAEALREADY         SYS_NET_EALREADY
+    #define WSAENOTSOCK         SYS_NET_ENOTSOCK
+    #define WSAEDESTADDRREQ     SYS_NET_EDESTADDRREQ
+    #define WSAEMSGSIZE         SYS_NET_EMSGSIZE
+    #define WSAEPROTOTYPE       SYS_NET_EPROTOTYPE
+    #define WSAENOPROTOOPT      SYS_NET_ENOPROTOOPT
+    #define WSAEPROTONOSUPPORT  SYS_NET_EPROTONOSUPPORT
+    #define WSAESOCKTNOSUPPORT  SYS_NET_ESOCKTNOSUPPORT
+    #define WSAEOPNOTSUPP       SYS_NET_EOPNOTSUPP
+    #define WSAEPFNOSUPPORT     SYS_NET_EPFNOSUPPORT
+    #define WSAEAFNOSUPPORT     SYS_NET_EAFNOSUPPORT
+    #define WSAEADDRINUSE       SYS_NET_EADDRINUSE
+    #define WSAEADDRNOTAVAIL    SYS_NET_EADDRNOTAVAIL
+    #define WSAENETDOWN         SYS_NET_ENETDOWN
+    #define WSAENETUNREACH      SYS_NET_ENETUNREACH
+    #define WSAENETRESET        SYS_NET_ENETRESET
+    #define WSAECONNABORTED     SYS_NET_ECONNABORTED
+    #define WSAECONNRESET       SYS_NET_ECONNRESET              // SYS_NET_ERROR_ECONNRESET
+    #define WSAENOBUFS          SYS_NET_ENOBUFS                 // SYS_NET_ERROR_ENOBUFS
+    #define WSAEISCONN          SYS_NET_EISCONN
+    #define WSAENOTCONN         SYS_NET_ENOTCONN
+    #define WSAESHUTDOWN        SYS_NET_ESHUTDOWN
+    #define WSAETOOMANYREFS     SYS_NET_ETOOMANYREFS
+    #define WSAETIMEDOUT        SYS_NET_ERROR_ETIMEDOUT
+    #define WSAECONNREFUSED     SYS_NET_ECONNREFUSED
+    #define WSAELOOP            SYS_NET_ELOOP
+    #define WSAENAMETOOLONG     SYS_NET_ENAMETOOLONG
+    #define WSAEHOSTDOWN        SYS_NET_EHOSTDOWN
+    #define WSAEHOSTUNREACH     SYS_NET_EHOSTUNREACH
+    #define WSAENOTEMPTY        SYS_NET_ENOTEMPTY
+    #define WSAEPROCLIM         SYS_NET_EPROCLIM
+    #define WSAEUSERS           SYS_NET_EUSERS
+    #define WSAEDQUOT           SYS_NET_EDQUOT
+    #define WSAESTALE           SYS_NET_ESTALE
     #define WSAEREMOTE          SYS_NET_EREMOTE
     #define WSAEINVAL           SYS_NET_EINVAL
 #elif !defined(_WIN32)
-    #define WSAEWOULDBLOCK      EWOULDBLOCK             
-    #define WSAEINPROGRESS      EINPROGRESS             
-    #define WSAEALREADY         EALREADY                
-    #define WSAENOTSOCK         ENOTSOCK                
-    #define WSAEDESTADDRREQ     EDESTADDRREQ            
-    #define WSAEMSGSIZE         EMSGSIZE                
-    #define WSAEPROTOTYPE       EPROTOTYPE              
-    #define WSAENOPROTOOPT      ENOPROTOOPT             
-    #define WSAEPROTONOSUPPORT  EPROTONOSUPPORT         
-    #define WSAESOCKTNOSUPPORT  ESOCKTNOSUPPORT         
-    #define WSAEOPNOTSUPP       EOPNOTSUPP              
-    #define WSAEPFNOSUPPORT     EPFNOSUPPORT            
-    #define WSAEAFNOSUPPORT     EAFNOSUPPORT            
-    #define WSAEADDRINUSE       EADDRINUSE              
-    #define WSAEADDRNOTAVAIL    EADDRNOTAVAIL           
-    #define WSAENETDOWN         ENETDOWN                
-    #define WSAENETUNREACH      ENETUNREACH             
-    #define WSAENETRESET        ENETRESET               
-    #define WSAECONNABORTED     ECONNABORTED            
-    #define WSAECONNRESET       ECONNRESET              
-    #define WSAENOBUFS          ENOBUFS                 
-    #define WSAEISCONN          EISCONN                 
-    #define WSAENOTCONN         ENOTCONN                
-    #define WSAESHUTDOWN        ESHUTDOWN               
-    #define WSAETOOMANYREFS     ETOOMANYREFS            
-    #define WSAETIMEDOUT        ETIMEDOUT               
-    #define WSAECONNREFUSED     ECONNREFUSED            
-    #define WSAELOOP            ELOOP                   
-    #define WSAENAMETOOLONG     ENAMETOOLONG            
-    #define WSAEHOSTDOWN        EHOSTDOWN               
-    #define WSAEHOSTUNREACH     EHOSTUNREACH            
-    #define WSAENOTEMPTY        ENOTEMPTY               
-    #define WSAEPROCLIM         EPROCLIM                
-    #define WSAEUSERS           EUSERS                  
-    #define WSAEDQUOT           EDQUOT                  
-    #define WSAESTALE           ESTALE                  
+    #define WSAEWOULDBLOCK      EWOULDBLOCK
+    #define WSAEINPROGRESS      EINPROGRESS
+    #define WSAEALREADY         EALREADY
+    #define WSAENOTSOCK         ENOTSOCK
+    #define WSAEDESTADDRREQ     EDESTADDRREQ
+    #define WSAEMSGSIZE         EMSGSIZE
+    #define WSAEPROTOTYPE       EPROTOTYPE
+    #define WSAENOPROTOOPT      ENOPROTOOPT
+    #define WSAEPROTONOSUPPORT  EPROTONOSUPPORT
+    #define WSAESOCKTNOSUPPORT  ESOCKTNOSUPPORT
+    #define WSAEOPNOTSUPP       EOPNOTSUPP
+    #define WSAEPFNOSUPPORT     EPFNOSUPPORT
+    #define WSAEAFNOSUPPORT     EAFNOSUPPORT
+    #define WSAEADDRINUSE       EADDRINUSE
+    #define WSAEADDRNOTAVAIL    EADDRNOTAVAIL
+    #define WSAENETDOWN         ENETDOWN
+    #define WSAENETUNREACH      ENETUNREACH
+    #define WSAENETRESET        ENETRESET
+    #define WSAECONNABORTED     ECONNABORTED
+    #define WSAECONNRESET       ECONNRESET
+    #define WSAENOBUFS          ENOBUFS
+    #define WSAEISCONN          EISCONN
+    #define WSAENOTCONN         ENOTCONN
+    #define WSAESHUTDOWN        ESHUTDOWN
+    #define WSAETOOMANYREFS     ETOOMANYREFS
+    #define WSAETIMEDOUT        ETIMEDOUT
+    #define WSAECONNREFUSED     ECONNREFUSED
+    #define WSAELOOP            ELOOP
+    #define WSAENAMETOOLONG     ENAMETOOLONG
+    #define WSAEHOSTDOWN        EHOSTDOWN
+    #define WSAEHOSTUNREACH     EHOSTUNREACH
+    #define WSAENOTEMPTY        ENOTEMPTY
+    #define WSAEPROCLIM         EPROCLIM
+    #define WSAEUSERS           EUSERS
+    #define WSAEDQUOT           EDQUOT
+    #define WSAESTALE           ESTALE
     #define WSAEREMOTE          EREMOTE
     #define WSAEINVAL           EINVAL
 #endif
@@ -493,8 +493,8 @@ int gsiShutdown(SOCKET s, int how);
     // thread safe DNS lookups
     #define getaddrinfo(n,s,h,r)    SOGetAddrInfo(n,s,h,r)
     #define freeaddrinfo(a)         SOFreeAddrInfo(a)
-    
-    
+
+
     int getsockname(SOCKET sock, SOCKADDR* addr, int* len);
 
     #define htonl(l) SOHtoNl((u32)l)
@@ -559,7 +559,7 @@ int gsiShutdown(SOCKET s, int how);
 
     #define gethostbyaddr(a,l,t) SOC_GetHostByAddr(a,l,t)
     #define gethostbyname(n) SOC_GetHostByName(n)
-    
+
     int getsockname(SOCKET sock, SOCKADDR* addr, int* len);
 
     #define htonl(l) SOC_HtoNl(l)
@@ -600,9 +600,9 @@ int gsiShutdown(SOCKET s, int how);
     #define setsockopt(s,l,o,v,vl) setsockopt(s,l,o,v,(socklen_t)(vl))
 #endif
 
-#if defined(SN_SYSTEMS) 
+#if defined(SN_SYSTEMS)
     int GOAGetLastError(SOCKET s);
-    
+
     #if !defined(__MWERKS__)
         #define send(s,b,l,f) (int)send(s,b,(unsigned long)l,f)
         #define recv(s,b,l,f) (int)recv(s,b,(unsigned long)l,f)

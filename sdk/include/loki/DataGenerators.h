@@ -2,7 +2,7 @@
 // The Loki Library
 // Data Generator by Mr. Shannon Barber
 // This code DOES NOT accompany the book:
-// Alexandrescu, Andrei. "Modern C++ Design: Generic Programming and Design 
+// Alexandrescu, Andrei. "Modern C++ Design: Generic Programming and Design
 //     Patterns Applied". Copyright (c) 2001. Addison-Wesley.
 //
 // Code covered by the MIT License
@@ -39,35 +39,35 @@ namespace Loki
                 {
                 return sizeof(T);
                 }
-            };    
+            };
     template <class TList, template <typename> class UnitFunc>
     struct IterateTypes;
 
     namespace Private
     {
     // for some reason VC7 needs the base definition altough not in use
-    template <typename TListTag> 
+    template <typename TListTag>
     struct IterateTypesHelper1
     {
         template <typename T, template <typename> class GenFunc>
-        struct In 
-        { 
-            typedef typename T::ERROR_THIS_INSTANCE_SELECTED Result; 
+        struct In
+        {
+            typedef typename T::ERROR_THIS_INSTANCE_SELECTED Result;
         };
     };
 
-    template <typename TListTag> 
+    template <typename TListTag>
     struct IterateTypesHelper2
     {
         template <typename T, template <typename> class GenFunc>
-        struct In 
-        { 
-            typedef typename T::ERROR_THIS_INSTANCE_SELECTED Result; 
+        struct In
+        {
+            typedef typename T::ERROR_THIS_INSTANCE_SELECTED Result;
         };
     };
 
-    
-    template <> 
+
+    template <>
     struct IterateTypesHelper1<TL::Typelist_tag>
     {
         template <class TList, template <typename> class GenFunc>
@@ -77,7 +77,7 @@ namespace Loki
         };
     };
 
-    template <> 
+    template <>
     struct IterateTypesHelper2<TL::Typelist_tag>
     {
         template <class TList, template <typename> class GenFunc>
@@ -86,14 +86,14 @@ namespace Loki
             typedef IterateTypes<typename TList::Tail, GenFunc> Result;
         };
     };
-    
 
-    template <> 
+
+    template <>
     struct IterateTypesHelper1<TL::NoneList_tag>
     {
         template <typename AtomicType, template <typename> class GenFunc>
-        struct In 
-        { 
+        struct In
+        {
             struct Result
             {
                 typedef GenFunc<AtomicType> genfunc_t;
@@ -120,47 +120,47 @@ namespace Loki
         };
     };
 
-    template <> 
+    template <>
     struct IterateTypesHelper2<TL::NoneList_tag>
     {
         template <typename AtomicType, template <typename> class GenFunc>
-        struct In 
-        { 
-            struct Result 
+        struct In
+        {
+            struct Result
             {
                 template<class II> void operator()(II) {}
                     template<class II, class P1> void operator()(II, P1) {}
-            }; 
-        };        
+            };
+        };
     };
 
 
-    template <> 
+    template <>
     struct IterateTypesHelper1<TL::NullType_tag>
     {
         template <class TList, template <typename> class GenFunc>
-        struct In 
-        { 
-            struct Result 
+        struct In
+        {
+            struct Result
             {
                 template<class II> void operator()(II) {}
                     template<class II, class P1> void operator()(II, P1) {}
-                }; 
-        };        
+                };
+        };
     };
 
-    template <> 
+    template <>
     struct IterateTypesHelper2<TL::NullType_tag>
     {
         template <class TList, template <typename> class GenFunc>
-        struct In 
-        { 
-            struct Result 
+        struct In
+        {
+            struct Result
             {
                 template<class II> void operator()(II) {}
                     template<class II, class P1> void operator()(II, P1) {}
-            }; 
-        };        
+            };
+        };
     };
 
     } // namespace Private
@@ -175,7 +175,7 @@ namespace Loki
 // can use to output information about the types in the list.
 ////////////////////////////////////////////////////////////////////////////////
 
-    
+
     template <typename T, template <typename> class GenFunc>
     struct IterateTypes
     {
@@ -224,7 +224,7 @@ namespace Loki
 
 ////////////////////////////////////////////////////////////////////////////////
 // Change log:
-// Aug 17, 2002:  Ported to MSVC7 by Rani Sharoni 
+// Aug 17, 2002:  Ported to MSVC7 by Rani Sharoni
 // Aug 18, 2002:  Removed ctor(II), replaced with operator(II) Shannon Barber
 // Oct 10, 2002:  Changed II (insertion iterator) from pass-by-reference to pass-by-value
 ////////////////////////////////////////////////////////////////////////////////

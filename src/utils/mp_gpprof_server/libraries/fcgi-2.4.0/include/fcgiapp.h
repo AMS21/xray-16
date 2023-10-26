@@ -108,7 +108,7 @@ typedef struct FCGX_Request {
     int listen_sock;
 } FCGX_Request;
 
-
+
 /*
  *======================================================================
  * Control
@@ -232,7 +232,7 @@ DLLAPI void FCGX_Finish_r(FCGX_Request *request);
  *
  * FCGX_Free --
  *
- *      Free the memory and, if close is true, 
+ *      Free the memory and, if close is true,
  *      IPC FD associated with the request (multi-thread safe).
  *
  *----------------------------------------------------------------------
@@ -326,7 +326,7 @@ DLLAPI int FCGX_StartFilterData(FCGX_Stream *stream);
  *----------------------------------------------------------------------
  */
 DLLAPI void FCGX_SetExitStatus(int status, FCGX_Stream *stream);
-
+
 /*
  *======================================================================
  * Parameters
@@ -347,7 +347,7 @@ DLLAPI void FCGX_SetExitStatus(int status, FCGX_Stream *stream);
  *----------------------------------------------------------------------
  */
 DLLAPI char *FCGX_GetParam(const char *name, FCGX_ParamArray envp);
-
+
 /*
  *======================================================================
  * Readers
@@ -440,7 +440,7 @@ DLLAPI char *FCGX_GetLine(char *str, int n, FCGX_Stream *stream);
  */
 
 DLLAPI  int FCGX_HasSeenEOF(FCGX_Stream *stream);
-
+
 /*
  *======================================================================
  * Writers
@@ -529,7 +529,7 @@ DLLAPI int FCGX_VFPrintF(FCGX_Stream *stream, const char *format, va_list arg);
  *----------------------------------------------------------------------
  */
 DLLAPI int FCGX_FFlush(FCGX_Stream *stream);
-
+
 /*
  *======================================================================
  * Both Readers and Writers
@@ -584,7 +584,7 @@ DLLAPI void FCGX_ClearError(FCGX_Stream *stream);
  *
  * FCGX_CreateWriter --
  *
- *      Create a FCGX_Stream (used by cgi-fcgi).  This shouldn't 
+ *      Create a FCGX_Stream (used by cgi-fcgi).  This shouldn't
  *      be needed by a FastCGI applictaion.
  *
  *----------------------------------------------------------------------
@@ -600,7 +600,7 @@ DLLAPI FCGX_Stream *FCGX_CreateWriter(
  *
  * FCGX_FreeStream --
  *
- *      Free a FCGX_Stream (used by cgi-fcgi).  This shouldn't 
+ *      Free a FCGX_Stream (used by cgi-fcgi).  This shouldn't
  *      be needed by a FastCGI applictaion.
  *
  *----------------------------------------------------------------------

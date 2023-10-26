@@ -67,7 +67,7 @@ typedef struct
  //Will broadcast network, find coordinator and
  //connect to it. On next time, also start brom broadcasting.
  bool allowDiscardCoordinatorIp;
- 
+
 } TAgentSettings;
 #pragma pack()
 
@@ -77,7 +77,7 @@ typedef struct
 DECLARE_INTERFACE_(IAgent, IUnknown)
 {
   IUNKNOWN_METHODS_PURE(0x85343215,0x00010001)
-   
+
   virtual HRESULT __stdcall GetVersion(OUT DWORD* version) = 0;
 
   //Request global data from user.
@@ -106,7 +106,7 @@ DECLARE_INTERFACE_(IAgent, IUnknown)
 
   //(NOTE: this behaviour has been implemented since version 1.09; now stream access
   //should not be guarded by global critical section).
- 
+
   virtual HRESULT __stdcall GetData(DWORD sessionId, const char* dataDesc, IGenericStream** stream) = 0;
 
   //Remove specified data from agent data cache.
@@ -136,7 +136,7 @@ DECLARE_INTERFACE_(IAgent, IUnknown)
   //
   //I agent wants to suspend execution, it will sleep() inside method.
   virtual HRESULT __stdcall TestConnection(DWORD sessionId) = 0;
-  
+
   //Return path to directory with task dll and data files.
   //If additional files have been specified in IGridUser->RunTask()
   //for transferring along with task dll,

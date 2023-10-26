@@ -14,7 +14,7 @@ in vec4 gl_FragCoord;
 struct  p_particle
 {
     float4  color   ; // COLOR0;
-    p_flat  base;   
+    p_flat  base;
 };
 
 layout(location = COLOR0)       in float4   p_particle_color; // COLOR0;

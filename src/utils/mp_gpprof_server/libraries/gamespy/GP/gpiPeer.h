@@ -1,6 +1,6 @@
 /*
 gpiPeer.h
-GameSpy Presence SDK 
+GameSpy Presence SDK
 Dan "Mr. Pants" Schoenblum
 
 Copyright 1999-2007 GameSpy Industries, Inc
@@ -44,7 +44,7 @@ typedef enum
     GPI_PEER_OP_STATE_REQUESTED,
     GPI_PEER_OP_STATE_FINISHED
 } GPIPeerOpState;
- 
+
 typedef struct GPITransferID_s * GPITransferID_st;
 
 //TYPES
@@ -174,9 +174,9 @@ gpiPeerSendMessages(
 );
 
 void gpiPeerLeftCallback(unsigned int ip, unsigned short port, GSUdpCloseReason reason, void *userData);
-void gpiPeerMessageCallback(unsigned int ip, unsigned short port, unsigned char *message, 
+void gpiPeerMessageCallback(unsigned int ip, unsigned short port, unsigned char *message,
                             unsigned int messageLength, gsi_bool reliable, void *userData);
-void gpiPeerAcceptedCallback(unsigned int ip, unsigned short port, 
+void gpiPeerAcceptedCallback(unsigned int ip, unsigned short port,
                              GSUdpErrorCode error, gsi_bool rejected, void *userData);
 void gpiPeerPingReplyCallback(unsigned int ip, unsigned short port, unsigned int latency, void *userData);
 

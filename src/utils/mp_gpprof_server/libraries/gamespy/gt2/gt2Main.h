@@ -51,9 +51,9 @@ devsupport@gamespy.com
     #define GTI2_STACK_RECV_BUFFER_SIZE  NETBUFSIZE     // Max for Insock. Otherwise SOCKET_ERROR
 #elif defined(_NITRO)
     #define GTI2_STACK_RECV_BUFFER_SIZE  1500
-#elif defined (_XBOX)                                   // Xbox packets are 1304,  
+#elif defined (_XBOX)                                   // Xbox packets are 1304,
     #define GTI2_STACK_RECV_BUFFER_SIZE  4096           // when using VDP sockets, 2 bytes are used for data length
-#else                                                   
+#else
     #define GTI2_STACK_RECV_BUFFER_SIZE  65535
 #endif
 
@@ -211,7 +211,7 @@ typedef struct GTI2Connection
 
     int callbackLevel;  // if >0, then we're inside a callback (or recursive callbacks)
     GT2ConnectionCallbacks callbacks;  // connection callbacks
-    
+
     char * initialMessage;  // this is the initial message for the client
     int initialMessageLen;  // the initial message length
 
@@ -233,7 +233,7 @@ typedef struct GTI2Connection
     GT2Bool pendingAck;  // if true, there is an ack waiting to go out, either on its own or as part of a reliable message
 
     gsi_time pendingAckTime;  // the time at which the pending ack was first set
-    
+
     DArray sendFilters;  // filters that apply to outgoing data
     DArray receiveFilters;  // filters that apply to incoming data
 

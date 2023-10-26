@@ -25,7 +25,7 @@ typedef void(*GSSoapCustomFunc)(GHTTPPost theSoap, void* theUserData);
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-typedef struct 
+typedef struct
 {
     GSSoapCallbackFunc mCallbackFunc;
     GSSoapCustomFunc mCustomFunc;
@@ -56,8 +56,8 @@ GSSoapTask* gsiExecuteSoap(const char *theURL, const char *theService,
 
 // Alternate version with GSSoapCustomFunc parameter allows client access
 // to soap object to set DIME attachments
-GSSoapTask* gsiExecuteSoapCustom(const char* theURL, const char* theService, 
-                     GSXmlStreamWriter theSoapData, GSSoapCallbackFunc theCallbackFunc, 
+GSSoapTask* gsiExecuteSoapCustom(const char* theURL, const char* theService,
+                     GSXmlStreamWriter theSoapData, GSSoapCallbackFunc theCallbackFunc,
                      GSSoapCustomFunc theCustomFunc, void* theUserData);
 
 

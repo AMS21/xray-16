@@ -58,7 +58,7 @@ struct NvShaderExtnStruct
 
 // RW structured buffer for Nvidia shader extensions
 
-// Application needs to define NV_SHADER_EXTN_SLOT as a unused slot, which should be 
+// Application needs to define NV_SHADER_EXTN_SLOT as a unused slot, which should be
 // set using NvAPI_D3D11_SetNvShaderExtnSlot() call before creating the first shader that
 // uses nvidia shader extensions. E.g before including this file in shader define it as:
 // #define NV_SHADER_EXTN_SLOT u7
@@ -316,7 +316,7 @@ uint __NvAtomicOpFP16x2(RWByteAddressBuffer uav, uint byteAddress, uint fp16x2Va
     g_NvidiaExt[index].src2u.x = atomicOpType;
     g_NvidiaExt[index].opcode  = NV_EXTN_OP_FP16_ATOMIC;
 
-    return g_NvidiaExt[index].dst0u.x;    
+    return g_NvidiaExt[index].dst0u.x;
 }
 
 //----------------------------------------------------------------------------//
@@ -325,7 +325,7 @@ uint __NvAtomicOpFP16x2(RWByteAddressBuffer uav, uint byteAddress, uint fp16x2Va
 // the uint paramater 'fp16x2Val' is treated as two fp16 values
 // the passed sub-opcode 'op' should be an immediate constant
 // the returned value are the two fp16 values (.x and .y components) packed into a single uint
-// Warning: Behaviour of these set of functions is undefined if the UAV is not 
+// Warning: Behaviour of these set of functions is undefined if the UAV is not
 // of R16G16_FLOAT format (might result in app crash or TDR)
 
 uint __NvAtomicOpFP16x2(RWTexture1D<float2> uav, uint address, uint fp16x2Val, uint atomicOpType)
@@ -337,7 +337,7 @@ uint __NvAtomicOpFP16x2(RWTexture1D<float2> uav, uint address, uint fp16x2Val, u
     g_NvidiaExt[index].src2u.x    = atomicOpType;
     g_NvidiaExt[index].opcode     = NV_EXTN_OP_FP16_ATOMIC;
 
-    return g_NvidiaExt[index].dst0u.x;    
+    return g_NvidiaExt[index].dst0u.x;
 }
 
 uint __NvAtomicOpFP16x2(RWTexture2D<float2> uav, uint2 address, uint fp16x2Val, uint atomicOpType)
@@ -349,7 +349,7 @@ uint __NvAtomicOpFP16x2(RWTexture2D<float2> uav, uint2 address, uint fp16x2Val, 
     g_NvidiaExt[index].src2u.x    = atomicOpType;
     g_NvidiaExt[index].opcode     = NV_EXTN_OP_FP16_ATOMIC;
 
-    return g_NvidiaExt[index].dst0u.x;    
+    return g_NvidiaExt[index].dst0u.x;
 }
 
 uint __NvAtomicOpFP16x2(RWTexture3D<float2> uav, uint3 address, uint fp16x2Val, uint atomicOpType)
@@ -361,17 +361,17 @@ uint __NvAtomicOpFP16x2(RWTexture3D<float2> uav, uint3 address, uint fp16x2Val, 
     g_NvidiaExt[index].src2u.x    = atomicOpType;
     g_NvidiaExt[index].opcode     = NV_EXTN_OP_FP16_ATOMIC;
 
-    return g_NvidiaExt[index].dst0u.x;    
+    return g_NvidiaExt[index].dst0u.x;
 }
 
 //----------------------------------------------------------------------------//
 
 // performs Atomic operation on a R16G16B16A16_FLOAT UAV at the given address
-// the uint2 paramater 'fp16x2Val' is treated as four fp16 values 
+// the uint2 paramater 'fp16x2Val' is treated as four fp16 values
 // i.e, fp16x2Val.x = uav.xy and fp16x2Val.y = uav.yz
 // the passed sub-opcode 'op' should be an immediate constant
 // the returned value are the four fp16 values (.xyzw components) packed into uint2
-// Warning: Behaviour of these set of functions is undefined if the UAV is not 
+// Warning: Behaviour of these set of functions is undefined if the UAV is not
 // of R16G16B16A16_FLOAT format (might result in app crash or TDR)
 
 uint2 __NvAtomicOpFP16x2(RWTexture1D<float4> uav, uint address, uint2 fp16x2Val, uint atomicOpType)

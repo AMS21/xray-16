@@ -758,7 +758,7 @@ static void FailedToInitializeWirelessInit(void)
     MenuScreen * screen = GetMenuScreen();
 
     strncpy(screen->extraText[0], FailureReason, MAX_EXTRA_TEXT_STRING_LEN + 1);
-    screen->extraText[0][MAX_EXTRA_TEXT_STRING_LEN] = '\0'; 
+    screen->extraText[0][MAX_EXTRA_TEXT_STRING_LEN] = '\0';
 }
 
 static void FailedToInitializeWirelessChose(const char * choice)
@@ -1067,7 +1067,7 @@ static void SearchFailedInit(void)
     MenuScreen * screen = GetMenuScreen();
 
     strncpy(screen->extraText[0], FailureReason, MAX_EXTRA_TEXT_STRING_LEN + 1);
-    screen->extraText[0][MAX_EXTRA_TEXT_STRING_LEN] = '\0'; 
+    screen->extraText[0][MAX_EXTRA_TEXT_STRING_LEN] = '\0';
 }
 
 static void SearchFailedChose(const char * choice)
@@ -1089,7 +1089,7 @@ static void NetworkInformationInit(void)
 
     // BSSID / MAC
     snprintf(screen->extraText[0], MAX_EXTRA_TEXT_STRING_LEN,
-        "  MAC: %02X:%02X:%02X:%02X:%02X:%02X", 
+        "  MAC: %02X:%02X:%02X:%02X:%02X:%02X",
         APList[APIndex].bssid[0],
         APList[APIndex].bssid[1],
         APList[APIndex].bssid[2],
@@ -1099,7 +1099,7 @@ static void NetworkInformationInit(void)
 
     // channel
     snprintf(screen->extraText[1], MAX_EXTRA_TEXT_STRING_LEN,
-        "  Channel: %d", 
+        "  Channel: %d",
         APList[APIndex].channel);
 }
 
@@ -1339,9 +1339,9 @@ static void ConnectingToNetworkThink(void)
 static void FailedToConnectToNetworkInit(void)
 {
     MenuScreen * screen = GetMenuScreen();
-    
+
     strncpy(screen->extraText[0], FailureReason, MAX_EXTRA_TEXT_STRING_LEN + 1);
-    screen->extraText[0][MAX_EXTRA_TEXT_STRING_LEN] = '\0'; 
+    screen->extraText[0][MAX_EXTRA_TEXT_STRING_LEN] = '\0';
 }
 
 static void FailedToConnectToNetworkChose(const char * choice)
@@ -1434,9 +1434,9 @@ static void ConnectingToInternetThink(void)
 static void FailedToConnectToInternetInit(void)
 {
     MenuScreen * screen = GetMenuScreen();
-    
+
     strncpy(screen->extraText[0], FailureReason, MAX_EXTRA_TEXT_STRING_LEN + 1);
-    screen->extraText[0][MAX_EXTRA_TEXT_STRING_LEN] = '\0'; 
+    screen->extraText[0][MAX_EXTRA_TEXT_STRING_LEN] = '\0';
 }
 
 static void FailedToConnectToInternetChose(const char * choice)

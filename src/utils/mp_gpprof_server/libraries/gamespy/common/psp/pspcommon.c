@@ -9,9 +9,9 @@
 
 /********  THIS FILE IS FOR USE BY THE GAMESPY SAMPLE APPLICATIONS ********/
 
-// Portions taken from Sony PSP http_get sample have been modified to suite the 
+// Portions taken from Sony PSP http_get sample have been modified to suite the
 // sample/demonstration of the Gamespy SDKs
-// This code is not intended to be used in a shipping title  
+// This code is not intended to be used in a shipping title
 //    (e.g. You should have your own network setup code which supports other configurations)
 
 
@@ -37,7 +37,7 @@ SCE_MODULE_INFO(PspCommon, 0, 1, 1);
 #define PSPNET_APDUMDLG_STARTED 0x40
 #define PSPNET_CONNECTED        0x20
 // If necessary, use this to select a specific router by SSID.
-#ifndef AUTO_SELECT_ROUTER 
+#ifndef AUTO_SELECT_ROUTER
 #define YOUR_WIRELESS_ROUTER_NAME "PubServ DLink"
 #endif
 
@@ -52,7 +52,7 @@ static struct SceNetApDialogDummyParam gApDialogDummyParam;
 // Globals
 // the sce kernel detects this global variable and sets the heapsize from it
 // see devkit\src\crt0\kernel_bridge.c(232-253)
-int sce_newlib_heap_kb_size = 1000; 
+int sce_newlib_heap_kb_size = 1000;
 SceUID gPspnetApDialogDummyModid = 0;
 int gPspnetApctlHandlerId = -1;
 
@@ -94,14 +94,14 @@ static int gsiPspUnloadModule(SceUID modid)
     int ret = 0;
 
     ret = sceKernelStopModule(modid, 0, NULL, NULL, NULL);
-    if (ret < 0) 
+    if (ret < 0)
     {
         printf("sceKernelStopModule() failed. ret = 0x%x\n", ret);
         return ret;
     }
 
     ret = sceKernelUnloadModule(modid);
-    if (ret < 0) 
+    if (ret < 0)
     {
         printf("sceKernelUnloadModule() failed. ret = 0x%x\n", ret);
         return ret;
@@ -129,7 +129,7 @@ int gsiPspLoadRequiredModules()
     if(ret < 0)
     {
         printf("sceUtilityLoadModule(SCE_UTILITY_MODULE_NET_INET) failed. ret = 0x%x\n", ret);
-        gsiPspUnloadRequiredModules();      
+        gsiPspUnloadRequiredModules();
         return ret;
     }
 
@@ -154,20 +154,20 @@ int gsiPspUnloadRequiredModules()
 
 
     ret = gsiPspUnloadModule(gPspnetApDialogDummyModid);
-    if (ret < 0) 
+    if (ret < 0)
     {
         printf("unload_module() failed. ret = 0x%x\n", ret);
         return ret;
     }
 
     ret = sceUtilityUnloadModule(SCE_UTILITY_MODULE_NET_INET);
-    if (ret < 0) 
+    if (ret < 0)
     {
         printf("sceUtilityUnloadModule(SCE_UTILITY_MODULE_NET_INET) failed. ret = 0x%x\n", ret);
     }
 
     ret = sceUtilityUnloadModule(SCE_UTILITY_MODULE_NET_COMMON);
-    if (ret < 0) 
+    if (ret < 0)
     {
         printf("sceUtilityUnloadModule(SCE_UTILITY_MODULE_NET_COMMON) failed. ret = 0x%x\n", ret);
     }
@@ -192,11 +192,11 @@ void gsiPspApctlHandler(int prev_state, int new_state, int event, int error_code
 }
 
 int gsiPspnetDisconnect()
-{   
+{
     int ret;
-    
+
     gDisconnected = 0;
-    
+
     ret = sceNetApctlDisconnect();
     if(ret < 0)
     {
@@ -222,9 +222,9 @@ void gsiPspnetStop()
     sceNetApctlTerm();
 
     sceNetResolverTerm();
-            
+
     sceNetInetTerm();
-            
+
     sceNetTerm();
 }
 
@@ -237,12 +237,12 @@ void gsiPspnetErrorHandler(int shutDownServices)
 
     if (shutDownServices & PSPNET_APDUMDLG_STARTED)
         sceNetApDialogDummyTerm();
-    
+
     if (shutDownServices & PSPNET_APCTLHDLR)
         if(gPspnetApctlHandlerId >= 0)
             sceNetApctlDelHandler(gPspnetApctlHandlerId);
-    
-    gsiPspnetStop();    
+
+    gsiPspnetStop();
 }
 
 //
@@ -253,7 +253,7 @@ int gsiPspStartNetworkModules()
     int ret;
     // error bit starts at 1 and is shifted left with one added
     int serviceToShutDown = 0;
-    
+
     ret = sceNetInit(PSPNET_POOLSIZE, CALLOUT_TPL, 0,
         NETINTR_TPL, 0);
     if(ret < 0)
@@ -262,7 +262,7 @@ int gsiPspStartNetworkModules()
         return ret;
     }
 
-    
+
     ret = sceNetInetInit();
     if(ret < 0)
     {
@@ -271,7 +271,7 @@ int gsiPspStartNetworkModules()
         return ret;
     }
 
-    
+
     ret = sceNetResolverInit();
     if(ret < 0)
     {
@@ -280,7 +280,7 @@ int gsiPspStartNetworkModules()
         return ret;
     }
 
-    
+
     ret = sceNetApctlInit(SCE_APCTL_STACKSIZE, SCE_APCTL_PRIO);
     if(ret < 0)
     {
@@ -289,7 +289,7 @@ int gsiPspStartNetworkModules()
         return ret;
     }
 
-    
+
     ret = sceNetApctlAddHandler(gsiPspApctlHandler, NULL);
     if(ret < 0)
     {
@@ -307,7 +307,7 @@ int gsiPspStartNetworkModules()
         gsiPspnetErrorHandler(serviceToShutDown);   // called with 31
         return ret;
     }
-    
+
     serviceToShutDown = serviceToShutDown | PSPNET_APDUMDLG_STARTED;
     /* check Wireless LAN switch */
     ret = sceWlanGetSwitchState();
@@ -317,7 +317,7 @@ int gsiPspStartNetworkModules()
         return ret;
     }
 
-    
+
     memset(&gApDialogDummyParam, 0, sizeof(gApDialogDummyParam));
 #ifndef AUTO_SELECT_ROUTER
     strcpy(gApDialogDummyParam.ssid, YOUR_WIRELESS_ROUTER_NAME);
@@ -360,7 +360,7 @@ int gsiPspStartNetworkModules()
 }
 
 // sample entry point
-extern int test_main(int argc, char ** argp); 
+extern int test_main(int argc, char ** argp);
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -368,9 +368,9 @@ extern int test_main(int argc, char ** argp);
 int main(int argc, char** argp)
 {
     int ret = 0;
-    
-    
-    // Load the modules required to do basic TCP/IP networking 
+
+
+    // Load the modules required to do basic TCP/IP networking
     ret = gsiPspLoadRequiredModules();
     if(ret < 0)
     {
@@ -399,7 +399,7 @@ int main(int argc, char** argp)
         printf("gsiPspnetDisconnect failed See previous return value. return = 0x%x\n", ret);
         return ret;
     }
-    
+
     // Shut down the PSPNET network library
     gsiPspnetStop();
 

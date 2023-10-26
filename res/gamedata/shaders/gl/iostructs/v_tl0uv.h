@@ -2,7 +2,7 @@
 out gl_PerVertex { vec4 gl_Position; };
 
 layout(location = POSITION)     in float4   v_TL0uv_P       ; // POSITION;
-layout(location = COLOR)        in float4   v_TL0uv_Color   ; // COLOR; 
+layout(location = COLOR)        in float4   v_TL0uv_Color   ; // COLOR;
 
 layout(location = COLOR)        out float4  v2p_TL0uv_Color ; // COLOR;
 

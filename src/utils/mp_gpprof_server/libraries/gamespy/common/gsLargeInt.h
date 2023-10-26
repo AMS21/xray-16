@@ -30,7 +30,7 @@ extern "C" {
 #define GS_LARGEINT_DIGIT_SIZE_BITS  (GS_LARGEINT_DIGIT_SIZE_BYTES*8)
 
 // short forms for legibility
-#define l_word  GS_LARGEINT_DIGIT_TYPE 
+#define l_word  GS_LARGEINT_DIGIT_TYPE
 #define l_dword GS_LARGEINT_DIGIT_LONG_TYPE
 
 //#define GS_LARGEINT_BYTE_SIZE       32     // binary size of system data type

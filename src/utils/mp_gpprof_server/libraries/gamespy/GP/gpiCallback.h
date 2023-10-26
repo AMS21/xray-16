@@ -1,6 +1,6 @@
 /*
 gpiCallback.h
-GameSpy Presence SDK 
+GameSpy Presence SDK
 Dan "Mr. Pants" Schoenblum
 
 Copyright 1999-2007 GameSpy Industries, Inc
@@ -33,7 +33,7 @@ enum GPICallbackId
     GPI_TRANSFER_CALLBACK          = GP_TRANSFER_CALLBACK,
     GPI_RECV_BUDDY_AUTH            = GP_RECV_BUDDY_AUTH,
     GPI_RECV_BUDDY_REVOKE          = GP_RECV_BUDDY_REVOKE,
-    GPI_NUM_CALLBACKS              
+    GPI_NUM_CALLBACKS
 };
 
 // Add type - not 0 only for a few.

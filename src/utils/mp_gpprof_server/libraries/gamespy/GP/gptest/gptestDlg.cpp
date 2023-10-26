@@ -51,7 +51,7 @@ void vsDebugOut(va_list args, const char * format, ...)
         GSI_UNUSED(theLevel);
 
         vsDebugOut(NULL, "[%s][%s] ",
-                gGSIDebugCatStrings[theCat], 
+                gGSIDebugCatStrings[theCat],
                 gGSIDebugTypeStrings[theType]);
         vsDebugOut(theParamList, theTokenStr);
     }
@@ -137,8 +137,8 @@ CGptestDlg::CGptestDlg(CWnd* pParent /*=NULL*/)
     //}}AFX_DATA_INIT
     // Note that LoadIcon does not require a subsequent DestroyIcon in Win32
     m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
-    
-    
+
+
 }
 
 void CGptestDlg::DoDataExchange(CDataExchange* pDX)
@@ -515,7 +515,7 @@ void GetInfoResponse(GPConnection * connection, void * arg_, void * param)
             dlg->m_status = status.status;
             dlg->m_statusString = status.statusString;
             dlg->m_locationString = status.locationString;
-            
+
             /*
             dlg->m_StatusState = statusInfo.statusState;
             dlg->m_RichStatus = statusInfo.richStatus;
@@ -528,7 +528,7 @@ void GetInfoResponse(GPConnection * connection, void * arg_, void * param)
             dlg->m_HostPrivateIp = inet_ntoa(addr);
             dlg->m_HostPort = statusInfo.hostPort;
             dlg->m_QueryPort = statusInfo.queryPort;
-            
+
             for (int i = 0; i < dlg->m_SessionFlags.GetCount(); i++)
             {
                 int flag = dlg->m_SessionFlags.GetItemData(i);
@@ -545,7 +545,7 @@ void GetInfoResponse(GPConnection * connection, void * arg_, void * param)
             dlg->m_StatusState = 0;
             //dlg->m_statusString = "";
             //dlg->m_locationString = "";
-            
+
             dlg->m_RichStatus = "";
             dlg->m_GameType = "";
             dlg->m_GameVariant = "";
@@ -773,7 +773,7 @@ void RecvBuddyAuth(GPConnection * connection, void * arg_, void * param)
 {
     GPRecvBuddyAuthArg * arg = (GPRecvBuddyAuthArg *)arg_;
     dlg->UpdateData();
-    
+
     gpGetInfo(connection, arg->profile, GP_CHECK_CACHE, GP_BLOCKING, Whois, NULL);
 
     CString msg_for_requester = whois;
@@ -917,7 +917,7 @@ void GetInfoForBuddyKeys(GPConnection * theConnection, void * theArg, void * the
 {
     GPGetInfoResponseArg *anArg = (GPGetInfoResponseArg *)theArg;
     GPGetInfoResponseArg **anInfoArg = (GPGetInfoResponseArg **)theParam;
-    
+
     memcpy(*anInfoArg,anArg, sizeof(GPGetInfoResponseArg));
     GSI_UNUSED(theConnection);
 }
@@ -951,7 +951,7 @@ void GetBuddyKeysCallback(GPConnection * theConnection, void * theArg, void * th
     CString aMessage = "Buddy: " + aUniqueNick;
     aMessage += "\n";
     aMessage += aBuddyeKeys;
-    
+
     dlg->MessageBox(aMessage, "Buddy Keys");
     delete anInfoArg;
     GSI_UNUSED(theParam);
@@ -960,7 +960,7 @@ void GetBuddyKeysCallback(GPConnection * theConnection, void * theArg, void * th
 void RegisterCdKeyCallback(GPConnection * connection, void * _arg, void * param)
 {
     GPRegisterCdKeyResponseArg *arg = (GPRegisterCdKeyResponseArg *)_arg;
-        
+
     if (arg->result == GP_NO_ERROR)
     {
         CString msg = "CDKey is now associated with your account";
@@ -1150,7 +1150,7 @@ BOOL CGptestDlg::OnInitDialog()
 
     GPServerDefault = GPConnectionManagerHostname;
     GPSearchServerDefault = GPSearchManagerHostname;
-    
+
     UpdateData();
 
     CString str = "Closed";
@@ -1178,7 +1178,7 @@ BOOL CGptestDlg::OnInitDialog()
 
     m_namespace.Format("%d", GSI_DEFAULT_NAMESPACE);
     m_productid = GSI_TEST_PRODUCTID;
-    
+
     UpdateData(FALSE);
     FILE * file;
     file = fopen("login.txt", "rt");
@@ -1207,13 +1207,13 @@ BOOL CGptestDlg::OnInitDialog()
         }
         fclose(file);
     }
-    
+
     UpdateData(FALSE);
 
     return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
-void CGptestDlg::OnDestroy() 
+void CGptestDlg::OnDestroy()
 {
     if(m_connection)
         OnDestroyGP();
@@ -1230,7 +1230,7 @@ void CGptestDlg::OnDestroy()
     CDialog::OnDestroy();
 }
 
-void CGptestDlg::OnInitialize() 
+void CGptestDlg::OnInitialize()
 {
     if(m_connection)
     {
@@ -1279,7 +1279,7 @@ void CGptestDlg::OnInitialize()
     CHECK(gpSetCallback(&m_connection, GP_RECV_BUDDY_REVOKE, RecvBuddyRevoke, NULL));
 }
 
-void CGptestDlg::OnDestroyGP() 
+void CGptestDlg::OnDestroyGP()
 {
     if(!m_connection)
         return;
@@ -1312,7 +1312,7 @@ void CGptestDlg::SetHost()
         strcpy(GPConnectionManagerHostname, m_otherServer);
 }
 
-void CGptestDlg::OnConnect() 
+void CGptestDlg::OnConnect()
 {
     if(!m_connection)
         return;
@@ -1325,7 +1325,7 @@ void CGptestDlg::OnConnect()
     CHECK(gpConnect(&m_connection, m_nick, m_email, m_password, (GPEnum)m_firewall, (GPEnum)m_blocking, ConnectResponse, NULL));
 }
 
-void CGptestDlg::OnConnectunique() 
+void CGptestDlg::OnConnectunique()
 {
     if(!m_connection)
         return;
@@ -1339,7 +1339,7 @@ void CGptestDlg::OnConnectunique()
     CHECK(gpConnectUniqueNick(&m_connection, m_uniquenick, m_password, (GPEnum)m_firewall, (GPEnum)m_blocking, ConnectResponse, NULL));
 }
 
-void CGptestDlg::OnConnectpreauth() 
+void CGptestDlg::OnConnectpreauth()
 {
     if(!m_connection)
         return;
@@ -1353,7 +1353,7 @@ void CGptestDlg::OnConnectpreauth()
     CHECK(gpConnectPreAuthenticated(&m_connection, m_authtoken, m_partnerchallenge, (GPEnum)m_firewall, (GPEnum)m_blocking, ConnectResponse, NULL));
 }
 
-void CGptestDlg::OnDisconnect() 
+void CGptestDlg::OnDisconnect()
 {
     if(!m_connection)
         return;
@@ -1363,7 +1363,7 @@ void CGptestDlg::OnDisconnect()
     m_buddies.ResetContent();
 }
 
-void CGptestDlg::OnCheck() 
+void CGptestDlg::OnCheck()
 {
     if(!m_connection)
         return;
@@ -1372,7 +1372,7 @@ void CGptestDlg::OnCheck()
     CHECK(gpCheckUser(&m_connection, m_nick, m_email, m_password, (GPEnum)m_blocking, CheckResponse, NULL));
 }
 
-void CGptestDlg::OnNewuser() 
+void CGptestDlg::OnNewuser()
 {
     if(!m_connection)
         return;
@@ -1383,7 +1383,7 @@ CHECK(gpNewUser(&m_connection, m_nick, m_uniquenick, m_email, m_password, NULL, 
 //  CHECK(gpConnectNewUser(&m_connection, m_nick, m_uniquenick, m_email, m_password, NULL, (GPEnum)m_firewall, (GPEnum)m_blocking, ConnectResponse, NULL));
 }
 
-void CGptestDlg::OnUpdate() 
+void CGptestDlg::OnUpdate()
 {
     if(!m_connection)
         return;
@@ -1398,7 +1398,7 @@ void CGptestDlg::OnUpdate()
 }
 
 
-void CGptestDlg::OnTimer(UINT nIDEvent) 
+void CGptestDlg::OnTimer(UINT nIDEvent)
 {
     if(!m_connection)
         return;
@@ -1409,7 +1409,7 @@ void CGptestDlg::OnTimer(UINT nIDEvent)
 
     if(nIDEvent == 1)
     {
-        CHECK(gpProcess(&m_connection));        
+        CHECK(gpProcess(&m_connection));
     }
 
     if(nIDEvent == 2)
@@ -1426,13 +1426,13 @@ void CGptestDlg::OnTimer(UINT nIDEvent)
         m_string = buffer;
         UpdateData(FALSE);
     }
-    
+
     CDialog::OnTimer(nIDEvent);
 
     m_InTimer = 0;
 }
 
-void CGptestDlg::OnSelchangeBuddies() 
+void CGptestDlg::OnSelchangeBuddies()
 {
     if(!m_connection)
         return;
@@ -1452,7 +1452,7 @@ void CGptestDlg::OnSelchangeBuddies()
     }
 }
 
-void CGptestDlg::OnSet() 
+void CGptestDlg::OnSet()
 {
     if(!m_connection)
         return;
@@ -1462,7 +1462,7 @@ void CGptestDlg::OnSet()
     CHECK(gpSetStatus(&m_connection, (GPEnum)m_status, m_statusString, m_locationString));
 }
 
-void CGptestDlg::OnSend() 
+void CGptestDlg::OnSend()
 {
     if(!m_connection)
         return;
@@ -1471,7 +1471,7 @@ void CGptestDlg::OnSend()
     if(index != LB_ERR)
     {
         GPProfile profile = (GPProfile)m_buddies.GetItemData(index);
-                
+
         // Send a message to this guy.
         //////////////////////////////
         UpdateData();
@@ -1479,7 +1479,7 @@ void CGptestDlg::OnSend()
     }
 }
 
-void CGptestDlg::OnRefresh() 
+void CGptestDlg::OnRefresh()
 {
     if(!m_connection)
         return;
@@ -1498,7 +1498,7 @@ void CGptestDlg::OnRefresh()
     }
 }
 
-void CGptestDlg::OnSearch() 
+void CGptestDlg::OnSearch()
 {
     if(!m_connection)
         return;
@@ -1510,7 +1510,7 @@ void CGptestDlg::OnSearch()
     CHECK(gpProfileSearch(&m_connection, m_snick, m_suniquenick, m_semail, m_sfirstname, m_slastname, m_sicquin, (GPEnum)m_blocking, ProfileSearchResponse, NULL));
 }
 
-void CGptestDlg::OnValidate() 
+void CGptestDlg::OnValidate()
 {
     if(!m_connection)
         return;
@@ -1519,7 +1519,7 @@ void CGptestDlg::OnValidate()
     CHECK(gpIsValidEmail(&m_connection, m_semail, (GPEnum)m_blocking, IsValidEmailResponse, NULL));
 }
 
-void CGptestDlg::OnNicks() 
+void CGptestDlg::OnNicks()
 {
     if(!m_connection)
         return;
@@ -1534,7 +1534,7 @@ void CGptestDlg::OnNicks()
     CHECK(gpGetUserNicks(&m_connection, m_semail, m_password, (GPEnum)m_blocking, GetUserNicksResponse, NULL));
 }
 
-void CGptestDlg::OnSuggest() 
+void CGptestDlg::OnSuggest()
 {
     if(!m_connection)
         return;
@@ -1549,7 +1549,7 @@ void CGptestDlg::OnSuggest()
     CHECK(gpSuggestUniqueNick(&m_connection, m_suniquenick, (GPEnum)m_blocking, SuggestUniqueNickResponse, NULL));
 }
 
-void CGptestDlg::OnSelchangeResults() 
+void CGptestDlg::OnSelchangeResults()
 {
     if(!m_connection)
         return;
@@ -1585,7 +1585,7 @@ void CGptestDlg::OnSelchangeResults()
     }
 }
 
-void CGptestDlg::OnSendrequest() 
+void CGptestDlg::OnSendrequest()
 {
     if(!m_connection)
         return;
@@ -1599,7 +1599,7 @@ void CGptestDlg::OnSendrequest()
     }
 }
 
-void CGptestDlg::OnInfoCache() 
+void CGptestDlg::OnInfoCache()
 {
     if(!m_connection)
         return;
@@ -1615,7 +1615,7 @@ void CGptestDlg::OnInfoCache()
     }
 }
 
-void CGptestDlg::OnDelete() 
+void CGptestDlg::OnDelete()
 {
     if(!m_connection)
         return;
@@ -1635,7 +1635,7 @@ void CGptestDlg::OnDelete()
     }
 }
 
-void CGptestDlg::OnSetinfo() 
+void CGptestDlg::OnSetinfo()
 {
     if(!m_connection)
         return;
@@ -1670,7 +1670,7 @@ void CGptestDlg::OnSetinfo()
 static void DeleteResponseCallback(GPConnection *connection, void * _arg, void *param)
 {
     GPDeleteProfileResponseArg *anArg = (GPDeleteProfileResponseArg *)_arg;
-    
+
     if (anArg->result == GP_NO_ERROR)
     {
         AfxMessageBox("Profile delete success!", MB_ICONINFORMATION|MB_OK);
@@ -1683,7 +1683,7 @@ static void DeleteResponseCallback(GPConnection *connection, void * _arg, void *
     GSI_UNUSED(param);
 }
 
-void CGptestDlg::OnDeletepro() 
+void CGptestDlg::OnDeletepro()
 {
     if(!m_connection)
         return;
@@ -1692,7 +1692,7 @@ void CGptestDlg::OnDeletepro()
 
 }
 
-void CGptestDlg::OnNewpro() 
+void CGptestDlg::OnNewpro()
 {
     if(!m_connection)
         return;
@@ -1701,7 +1701,7 @@ void CGptestDlg::OnNewpro()
     CHECK(gpNewProfile(&m_connection, m_newnick, m_replace?GP_REPLACE:GP_DONT_REPLACE, (GPEnum)m_blocking, NewProfileResponse, NULL));
 }
 
-void CGptestDlg::OnDeleteall() 
+void CGptestDlg::OnDeleteall()
 {
     if(!m_connection)
         return;
@@ -1719,7 +1719,7 @@ void CGptestDlg::OnDeleteall()
     }
 }
 
-void CGptestDlg::OnInvitePlayer() 
+void CGptestDlg::OnInvitePlayer()
 {
     if(!m_connection)
         return;
@@ -1745,7 +1745,7 @@ void report(const char * text)
     OutputDebugString("\n");
 }
 
-void CGptestDlg::OnReport() 
+void CGptestDlg::OnReport()
 {
 #ifdef _DEBUG
     gpProfilesReport(&m_connection, report);
@@ -1763,7 +1763,7 @@ void SendFilesCallback(GPConnection * connection, int index, const char ** path,
     GSI_UNUSED(param);
 }
 
-void CGptestDlg::OnSendFiles() 
+void CGptestDlg::OnSendFiles()
 {
     if(!m_connection)
         return;
@@ -1781,7 +1781,7 @@ void CGptestDlg::OnSendFiles()
     }
 }
 
-void CGptestDlg::OnChangeSearchServer() 
+void CGptestDlg::OnChangeSearchServer()
 {
     if(!m_connection)
         return;
@@ -1794,7 +1794,7 @@ void CGptestDlg::OnChangeSearchServer()
         strcpy(GPSearchManagerHostname, m_searchServer);
 }
 
-void CGptestDlg::OnPublicmaskAll() 
+void CGptestDlg::OnPublicmaskAll()
 {
     if(!m_connection)
         return;
@@ -1811,7 +1811,7 @@ void CGptestDlg::OnPublicmaskAll()
     UpdateData(FALSE);
 }
 
-void CGptestDlg::OnPublicmaskNone() 
+void CGptestDlg::OnPublicmaskNone()
 {
     if(!m_connection)
         return;
@@ -1828,7 +1828,7 @@ void CGptestDlg::OnPublicmaskNone()
     UpdateData(FALSE);
 }
 
-void CGptestDlg::OnRevoke() 
+void CGptestDlg::OnRevoke()
 {
     if(!m_connection)
         return;
@@ -1836,7 +1836,7 @@ void CGptestDlg::OnRevoke()
     CHECK(gpGetReverseBuddies(&m_connection, (GPEnum)m_blocking, GetReverseBuddiesResponse, NULL));
 }
 
-void CGptestDlg::OnUTM() 
+void CGptestDlg::OnUTM()
 {
     if(!m_connection)
         return;
@@ -1877,8 +1877,8 @@ void CGptestDlg::OnSetstatusinfo()
         sessFlags+= itemData;
     }
 
-    gpSetStatusInfo(&m_connection, aStatusState, aHostIp, aHostPrivateIp, aQueryPort, aHostPort, sessFlags, (LPCSTR)m_RichStatus, 
-        m_RichStatus.GetLength(), (LPCSTR)m_GameType, m_GameType.GetLength(), (LPCSTR)m_GameVariant, m_GameVariant.GetLength(), 
+    gpSetStatusInfo(&m_connection, aStatusState, aHostIp, aHostPrivateIp, aQueryPort, aHostPort, sessFlags, (LPCSTR)m_RichStatus,
+        m_RichStatus.GetLength(), (LPCSTR)m_GameType, m_GameType.GetLength(), (LPCSTR)m_GameVariant, m_GameVariant.GetLength(),
         (LPCSTR)m_GameMapname, m_GameMapname.GetLength());
     delete[] aSessionFlagsSelected;
     */
@@ -1956,7 +1956,7 @@ void CGptestDlg::OnRegisterCdKey()
         return;
 
     UpdateData();
-    
+
     // make sure the length isn't too much
     if (m_cdkey.GetLength() > GP_CDKEY_LEN)
         return;
@@ -1992,7 +1992,7 @@ void CGptestDlg::OnGetBlocked()
     }
 }
 
-void CGptestDlg::OnSelchangeBlocklist() 
+void CGptestDlg::OnSelchangeBlocklist()
 {
     if(!m_connection)
         return;

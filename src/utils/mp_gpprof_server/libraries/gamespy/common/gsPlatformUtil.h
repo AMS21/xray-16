@@ -42,7 +42,7 @@ unsigned int gsiGetResolvedIP(GSIResolveHostnameHandle handle);
     #define GSI_UNUSED(x) {void* y=&x;y=NULL;}
 #elif defined(_PSP)
 #define GSI_UNUSED(x) (void)x;
-    
+
 #else
     #define GSI_UNUSED(x)
 #endif
@@ -91,7 +91,7 @@ gsi_i8 * gsXxteaDecrypt(const gsi_i8 * iStr, gsi_i32 iLength, gsi_i8 key[XXTEA_K
 #if defined(_DEBUG)
     void gsiCheckStack(void);
 #else
-    #define gsiCheckStack() 
+    #define gsiCheckStack()
 #endif
 
 
@@ -113,13 +113,13 @@ char * gsiSecondsToString(const time_t *timp);          //ctime
 ///////////////////////////////////////////////////////////////////////////////
 // Misc utilities
 
-    
-#if defined(_NITRO) 
+
+#if defined(_NITRO)
     time_t time(time_t *timer);
-    
+
     #define gmtime(t)   gsiSecondsToDate(t)
     #define ctime(t)    gsiSecondsToString(t)
-    #define mktime(t)   gsiDateToSeconds(t) 
+    #define mktime(t)   gsiDateToSeconds(t)
 #elif defined(_REVOLUTION)
     time_t gsiTimeInSec(time_t *timer);
     struct tm *gsiGetGmTime(time_t *theTime);

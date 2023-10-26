@@ -201,13 +201,13 @@ static void DebugCallback(GSIDebugCategory category, GSIDebugType type,
                           GSIDebugLevel level, const char * format, va_list params)
 {
     // Output line prefix
-    Printf("[%s][%s][%s] ", 
-        gGSIDebugCatStrings[category], 
+    Printf("[%s][%s][%s] ",
+        gGSIDebugCatStrings[category],
         gGSIDebugTypeStrings[type],
         gGSIDebugLevelStrings[DebugLog2(level)]);
-    
+
     // Output to file
-    VPrintf(format, 
+    VPrintf(format,
         params);
 }
 
@@ -220,7 +220,7 @@ int main(int argc, char * argv)
     GSI_UNUSED(argv);
 
     StartMenuScreen(&msCheckingBackendAvailability);
-    
+
     return 0;
 }
 
@@ -315,7 +315,7 @@ static void ServerKeyCallback(PEER peer, int key, qr2_buffer_t buffer, void * pa
     default:
         qr2_buffer_add(buffer, _T(""));
     }
-    
+
     GSI_UNUSED(peer);
     GSI_UNUSED(param);
 }

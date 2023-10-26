@@ -23,7 +23,7 @@ static void Startup(void)
     //    power control system - PM_Init()
     OS_Init();
 
-/* Time */  
+/* Time */
     // init the system tick count
     OS_InitTick();
 
@@ -40,7 +40,7 @@ static void Startup(void)
 /* Screen */
     ScreenInit();
     Printf("Screen initialized\n");
-    
+
     SetTopScreenLineCentered(SCREEN_HEIGHT / 2, SCWhite, "Starting GameSpy Sample");
 
 /* Keys */
@@ -81,11 +81,11 @@ static void Shutdown(void)
     // close down wireless
     Printf("Wireless cleanup\n");
     WirelessCleanup();
-    
+
 //  ClearScreens();
 //  SetTopScreenLineCentered(SCREEN_HEIGHT / 2, SCWhite, "GameSpy Sample Shutdown");
 //  SVC_WaitVBlankIntr();
-    
+
     // terminate the os system
     Printf("Terminating OS\n");
     OS_Terminate();
@@ -100,7 +100,7 @@ static void Run(void)
     Printf("\n");
     Printf("GameSpy Test App Starting\n");
     Printf("-------------------------\n");
-    
+
     test_main(0, NULL);
 
     Printf("------------------------\n");
@@ -116,7 +116,7 @@ void NitroMain(void)
 
     // do stuff
     Run();
-    
+
     // shutdown the system
     Shutdown();
 }

@@ -10,7 +10,7 @@ void gpiStatusInfoKeyFree(void *element)
 GPResult gpiStatusInfoKeysInit(GPConnection * connection)
 {
     GPIConnection * iconnection = (GPIConnection*)*connection;
-    
+
     iconnection->extendedInfoKeys = ArrayNew(sizeof(GPIKey), GPI_INITIAL_NUM_KEYS, gpiStatusInfoKeyFree);
     if(!iconnection->extendedInfoKeys)
         Error(connection, GP_MEMORY_ERROR, "Out of memory.");
@@ -30,7 +30,7 @@ void gpiStatusInfoKeysDestroy(GPConnection * connection)
 
 int gpiStatusInfoKeyCompFunc(const void *elem1, const void *elem2)
 {
-    GPIKey *key1 = (GPIKey *)elem1, 
+    GPIKey *key1 = (GPIKey *)elem1,
            *key2 = (GPIKey *)elem2;
     return strcmp(key1->keyName, key2->keyName);
 }
@@ -61,7 +61,7 @@ GPResult gpiStatusInfoDelKey(GPConnection *connection, DArray keys, const char *
     int anIndex;
     GS_ASSERT(keys);
     GS_ASSERT(keyName);
-    
+
     if (!keyName)
         Error(connection, GP_PARAMETER_ERROR, "Invalid key name");
 
@@ -71,7 +71,7 @@ GPResult gpiStatusInfoDelKey(GPConnection *connection, DArray keys, const char *
     {
         ArrayDeleteAt(keys, anIndex);
     }
-    
+
     freeclear(aKey.keyName);
     return GP_NO_ERROR;
 }
@@ -104,7 +104,7 @@ GPResult gpiStatusInfoGetKey(GPConnection *connection, DArray keys, const char *
     int anIndex;
     GS_ASSERT(keys);
     GS_ASSERT(keyName);
-    
+
     if (!keyName)
         Error(connection, GP_PARAMETER_ERROR, "Invalid key name");
 
@@ -147,10 +147,10 @@ GPResult gpiSaveKeysToBuffer(GPConnection *connection, char **buffer)
     int sizeKeys = 0, i, bytesWritten;
     int base64KeyNameLen, base64KeyValLen;
     int aLength = ArrayLength(iconnection->extendedInfoKeys);
-    
+
     char keysHeader[64];
     sprintf(keysHeader, "\\keys\\%d", aLength);
-    
+
     // figure out the size of the buffer to allocate
     // by adding up the key value pairs with backslashes
     for (i = 0; i < aLength; i++)
@@ -158,11 +158,11 @@ GPResult gpiSaveKeysToBuffer(GPConnection *connection, char **buffer)
         GPIKey *aKey = (GPIKey *)ArrayNth(iconnection->extendedInfoKeys, i);
         if (strlen(aKey->keyName) % 3 != 0)
             base64KeyNameLen = (int)(strlen(aKey->keyName) * 4 / 3) + (int)(4 - (strlen(aKey->keyName) % 3));
-        else 
+        else
             base64KeyNameLen = (int)(strlen(aKey->keyName) * 4 / 3);
         if (strlen(aKey->keyValue) % 3 != 0)
             base64KeyValLen= (int)(strlen(aKey->keyValue) * 4 / 3) + (int)(4 - (strlen(aKey->keyValue) % 3));
-        else 
+        else
             base64KeyValLen = (int)(strlen(aKey->keyValue) * 4 / 3);
         sizeKeys += 1 + base64KeyNameLen + 1 + base64KeyValLen;
     }
@@ -182,14 +182,14 @@ GPResult gpiSaveKeysToBuffer(GPConnection *connection, char **buffer)
         B64Encode(aKey->keyName, tempPoint, (int)strlen(aKey->keyName), 2);
         if (strlen(aKey->keyName) % 3 != 0)
             tempPoint+= (int)(strlen(aKey->keyName) * 4 / 3) + (4 - (strlen(aKey->keyName) % 3));
-        else 
+        else
             tempPoint+= (int)(strlen(aKey->keyName) * 4 / 3);
         strcat(tempPoint, "\\");
         tempPoint++;
         B64Encode(aKey->keyValue, tempPoint, (int)strlen(aKey->keyValue), 2);
         if (strlen(aKey->keyValue) % 3 != 0)
             tempPoint+= (int)(strlen(aKey->keyValue) * 4 / 3) + (4 - (strlen(aKey->keyValue) % 3));
-        else 
+        else
             tempPoint+= (int)(strlen(aKey->keyValue) * 4 / 3);
     }
     return GP_NO_ERROR;

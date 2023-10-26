@@ -162,7 +162,7 @@ static int GetStringWidth
 )
 {
     int width = 0;
-    
+
     if(!string)
         return 0;
 
@@ -1153,7 +1153,7 @@ static void DrawFPS
 
     {
     char buf[64];
-    sprintf(buf, "%d asteroid%s", ClientNumAsteroids, 
+    sprintf(buf, "%d asteroid%s", ClientNumAsteroids,
         (ClientNumAsteroids==1) ? "" : "s");
     DrawString(buf, WINDOW_MAX - 3500, 600, Grey, 0.2);
     }
@@ -1422,7 +1422,7 @@ static void Display
     // Clear the color buffer.
     //////////////////////////
     glClear(GL_COLOR_BUFFER_BIT);
-    
+
     // We want to know how long since the last server update.
     /////////////////////////////////////////////////////////
     Now = now;

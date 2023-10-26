@@ -44,20 +44,20 @@
 //------------------------- Warp Shuffle Functions ---------------------------//
 //----------------------------------------------------------------------------//
 
-// all functions have variants with width parameter which permits sub-division 
-// of the warp into segments - for example to exchange data between 4 groups of 
-// 8 lanes in a SIMD manner. If width is less than warpSize then each subsection 
-// of the warp behaves as a separate entity with a starting logical lane ID of 0. 
-// A thread may only exchange data with others in its own subsection. Width must 
-// have a value which is a power of 2 so that the warp can be subdivided equally; 
-// results are undefined if width is not a power of 2, or is a number greater 
+// all functions have variants with width parameter which permits sub-division
+// of the warp into segments - for example to exchange data between 4 groups of
+// 8 lanes in a SIMD manner. If width is less than warpSize then each subsection
+// of the warp behaves as a separate entity with a starting logical lane ID of 0.
+// A thread may only exchange data with others in its own subsection. Width must
+// have a value which is a power of 2 so that the warp can be subdivided equally;
+// results are undefined if width is not a power of 2, or is a number greater
 // than warpSize.
 
 //
 // simple variant of SHFL instruction
 // returns val from the specified lane
 // optional width parameter must be a power of two and width <= 32
-// 
+//
 int NvShfl(int val, uint srcLane, int width = NV_WARP_SIZE)
 {
     uint index = g_NvidiaExt.IncrementCounter();
@@ -65,7 +65,7 @@ int NvShfl(int val, uint srcLane, int width = NV_WARP_SIZE)
     g_NvidiaExt[index].src0u.y  =  srcLane;                         // source lane
     g_NvidiaExt[index].src0u.z  =  __NvGetShflMaskFromWidth(width);
     g_NvidiaExt[index].opcode   =  NV_EXTN_OP_SHFL;
-    
+
     // result is returned as the return value of IncrementCounter on fake UAV slot
     return g_NvidiaExt.IncrementCounter();
 }
@@ -104,7 +104,7 @@ int NvShflXor(int val, uint laneMask, int width = NV_WARP_SIZE)
     uint index = g_NvidiaExt.IncrementCounter();
     g_NvidiaExt[index].src0u.x  =  val;           // variable to be shuffled
     g_NvidiaExt[index].src0u.y  =  laneMask;      // laneMask to be XOR'ed with current laneId to get the source lane id
-    g_NvidiaExt[index].src0u.z  =  __NvGetShflMaskFromWidth(width); 
+    g_NvidiaExt[index].src0u.z  =  __NvGetShflMaskFromWidth(width);
     g_NvidiaExt[index].opcode   =  NV_EXTN_OP_SHFL_XOR;
     return g_NvidiaExt.IncrementCounter();
 }
@@ -159,8 +159,8 @@ int NvGetLaneId()
 //----------------------------- FP16 Atmoic Functions-------------------------//
 //----------------------------------------------------------------------------//
 
-// The functions below performs atomic operations on two consecutive fp16 
-// values in the given raw UAV. 
+// The functions below performs atomic operations on two consecutive fp16
+// values in the given raw UAV.
 // The uint paramater 'fp16x2Val' is treated as two fp16 values byteAddress must be multiple of 4
 // The returned value are the two fp16 values packed into a single uint
 
@@ -202,7 +202,7 @@ uint NvInterlockedMaxFp16x2(RWByteAddressBuffer uav, uint byteAddress, float2 va
 // The functions below perform atomic operation on a R16G16_FLOAT UAV at the given address
 // the uint paramater 'fp16x2Val' is treated as two fp16 values
 // the returned value are the two fp16 values (.x and .y components) packed into a single uint
-// Warning: Behaviour of these set of functions is undefined if the UAV is not 
+// Warning: Behaviour of these set of functions is undefined if the UAV is not
 // of R16G16_FLOAT format (might result in app crash or TDR)
 
 uint NvInterlockedAddFp16x2(RWTexture1D<float2> uav, uint address, uint fp16x2Val)
@@ -301,10 +301,10 @@ uint NvInterlockedMaxFp16x2(RWTexture3D<float2> uav, uint3 address, float2 val)
 //----------------------------------------------------------------------------//
 
 // The functions below perform Atomic operation on a R16G16B16A16_FLOAT UAV at the given address
-// the uint2 paramater 'fp16x2Val' is treated as four fp16 values 
+// the uint2 paramater 'fp16x2Val' is treated as four fp16 values
 // i.e, fp16x2Val.x = uav.xy and fp16x2Val.y = uav.yz
 // The returned value are the four fp16 values (.xyzw components) packed into uint2
-// Warning: Behaviour of these set of functions is undefined if the UAV is not 
+// Warning: Behaviour of these set of functions is undefined if the UAV is not
 // of R16G16B16A16_FLOAT format (might result in app crash or TDR)
 
 uint2 NvInterlockedAddFp16x4(RWTexture1D<float4> uav, uint address, uint2 fp16x2Val)
@@ -416,7 +416,7 @@ float NvInterlockedAddFp32(RWByteAddressBuffer uav, uint byteAddress, float val)
 
 // The functions below perform atomic add on a R32_FLOAT UAV at the given address
 // the returned value is the value before performing the atomic add
-// Warning: Behaviour of these set of functions is undefined if the UAV is not 
+// Warning: Behaviour of these set of functions is undefined if the UAV is not
 // of R32_FLOAT format (might result in app crash or TDR)
 
 float NvInterlockedAddFp32(RWTexture1D<float> uav, uint address, float val)

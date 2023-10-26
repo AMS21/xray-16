@@ -1,4 +1,4 @@
-/* 
+/*
  *
  * File: hashtable.c
  * ---------------
@@ -31,7 +31,7 @@
 #endif
 
 
-struct HashImplementation 
+struct HashImplementation
 {
     DArray *buckets;
     int nbuckets;
@@ -40,14 +40,14 @@ struct HashImplementation
     TableCompareFn compfn;
 };
 
-HashTable TableNew(int elemSize, int nBuckets, 
-                   TableHashFn hashFn, TableCompareFn compFn, 
+HashTable TableNew(int elemSize, int nBuckets,
+                   TableHashFn hashFn, TableCompareFn compFn,
                      TableElementFreeFn freeFn)
 {
     return TableNew2(elemSize, nBuckets, 4, hashFn, compFn, freeFn);
 }
 HashTable TableNew2(int elemSize, int nBuckets, int nChains,
-                   TableHashFn hashFn, TableCompareFn compFn, 
+                   TableHashFn hashFn, TableCompareFn compFn,
                      TableElementFreeFn freeFn)
 {
     HashTable table;
@@ -60,7 +60,7 @@ HashTable TableNew2(int elemSize, int nBuckets, int nChains,
 
     table = (HashTable)gsimalloc(sizeof(struct HashImplementation));
     assert(table);
-    
+
     table->buckets = (DArray *)gsimalloc(nBuckets * sizeof(DArray));
     assert(table->buckets);
     for (i = 0; i < nBuckets; i++) //ArrayNew will assert if allocation fails
@@ -77,12 +77,12 @@ HashTable TableNew2(int elemSize, int nBuckets, int nChains,
 void TableFree(HashTable table)
 {
     int i;
-    
+
     assert(table);
 
     if (NULL == table )
         return;
-    
+
     for (i = 0 ; i < table->nbuckets ; i++)
         ArrayFree(table->buckets[i]);
     gsifree(table->buckets);
@@ -93,7 +93,7 @@ void TableFree(HashTable table)
 int TableCount(HashTable table)
 {
     int i, count = 0;
-    
+
     assert(table);
 
     if (NULL == table )
@@ -101,7 +101,7 @@ int TableCount(HashTable table)
 
     for (i = 0 ; i < table->nbuckets ; i++)
         count += ArrayLength(table->buckets[i]);
-    
+
     return count;
 }
 
@@ -109,7 +109,7 @@ int TableCount(HashTable table)
 void TableEnter(HashTable table, const void *newElem)
 {
     int hash, itempos;
-    
+
     assert(table);
 
     if (NULL == table )
@@ -126,7 +126,7 @@ void TableEnter(HashTable table, const void *newElem)
 int TableRemove(HashTable table, const void *delElem)
 {
     int hash, itempos;
-    
+
     assert(table);
 
     if (NULL == table )
@@ -144,7 +144,7 @@ int TableRemove(HashTable table, const void *delElem)
 void *TableLookup(HashTable table, const void *elemKey)
 {
     int hash, itempos;
-    
+
     assert(table);
 
     if (NULL == table )
@@ -163,36 +163,36 @@ void *TableLookup(HashTable table, const void *elemKey)
 void TableMap(HashTable table, TableMapFn fn, void *clientData)
 {
     int i;
-    
+
     assert(table);
     assert(fn);
 
     if (NULL == table || NULL == fn)
         return;
-    
+
     for (i = 0 ; i < table->nbuckets ; i++)
         ArrayMap(table->buckets[i], fn, clientData);
-    
+
 }
 
 void TableMapSafe(HashTable table, TableMapFn fn, void *clientData)
 {
     int i;
-    
+
     assert(fn);
-    
+
     for (i = 0 ; i < table->nbuckets ; i++)
         ArrayMapBackwards(table->buckets[i], fn, clientData);
-    
+
 }
 
 void * TableMap2(HashTable table, TableMapFn2 fn, void *clientData)
 {
     int i;
     void * pcurr;
-    
+
     assert(fn);
-    
+
     for (i = 0 ; i < table->nbuckets ; i++)
     {
         pcurr = ArrayMap2(table->buckets[i], fn, clientData);
@@ -207,9 +207,9 @@ void * TableMapSafe2(HashTable table, TableMapFn2 fn, void *clientData)
 {
     int i;
     void * pcurr;
-    
+
     assert(fn);
-    
+
     for (i = 0 ; i < table->nbuckets ; i++)
     {
         pcurr = ArrayMapBackwards2(table->buckets[i], fn, clientData);

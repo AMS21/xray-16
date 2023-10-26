@@ -29,15 +29,15 @@ HOSTENT * getlocalhost(void)
     ipPtrs[1] = NULL;
 
     // to do, cache this, and do this once at init.
-    r = cellNetCtlGetInfo(  CELL_NET_CTL_INFO_IP_ADDRESS,&gCellNetInfo  );              
-    if (r == CELL_OK)       
+    r = cellNetCtlGetInfo(  CELL_NET_CTL_INFO_IP_ADDRESS,&gCellNetInfo  );
+    if (r == CELL_OK)
     {
         ips[0] = inet_addr(gCellNetInfo.ip_address);
-        
+
 
         return &localhost;
     }
-    else    
+    else
     return NULL;
 
 }

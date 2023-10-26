@@ -10,7 +10,7 @@
 #include <cell/spurs.h>
 
 #ifdef __cplusplus
-extern "C" { 
+extern "C" {
 #endif
 
 #define CELL_SPURS_DEFAULT_SPU_COUNT 1
@@ -27,7 +27,7 @@ enum CellSpursReturn {
 /**
  * \brief This class controls the SPU usage of SPURS
  *
- * There are three ways to initialize SPU usage.  
+ * There are three ways to initialize SPU usage.
  *
  * The first way is to initialize SPURS yourself, and to pass in a pointer to
  * SPURS as well as priorities for the use of the SPUs, using initWithSpurs.

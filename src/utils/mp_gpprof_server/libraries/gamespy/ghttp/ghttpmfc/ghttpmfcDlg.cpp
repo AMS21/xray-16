@@ -126,7 +126,7 @@ BOOL CGhttpmfcDlg::OnInitDialog()
     m_request = -1;
     m_memFile = NULL;
     SetTimer(50, 50, NULL);
-    
+
     return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
@@ -134,7 +134,7 @@ BOOL CGhttpmfcDlg::OnInitDialog()
 //  to draw the icon.  For MFC applications using the document/view model,
 //  this is automatically done for you by the framework.
 
-void CGhttpmfcDlg::OnPaint() 
+void CGhttpmfcDlg::OnPaint()
 {
     if (IsIconic())
     {
@@ -290,7 +290,7 @@ void PostCallback
     GSI_UNUSED(request);
 }
 
-void CGhttpmfcDlg::OnStart() 
+void CGhttpmfcDlg::OnStart()
 {
     UpdateData();
 
@@ -391,7 +391,7 @@ void CGhttpmfcDlg::OnStart()
         MessageBox("Unable to start request");
     else if(m_url.Left(8).Compare("https://") == 0)
         ghttpSetRequestEncryptionEngine(m_request, GHTTPEncryptionEngine_GameSpy);
-    
+
     m_state = 0;
     m_soFar = "";
     m_file = "";
@@ -401,13 +401,13 @@ void CGhttpmfcDlg::OnStart()
     UpdateData(FALSE);
 }
 
-void CGhttpmfcDlg::OnCancel_() 
+void CGhttpmfcDlg::OnCancel_()
 {
     if(m_request >= 0)
         ghttpCancelRequest(m_request);
 }
 
-void CGhttpmfcDlg::OnTimer(UINT nIDEvent) 
+void CGhttpmfcDlg::OnTimer(UINT nIDEvent)
 {
     if(nIDEvent == 50)
     {
@@ -440,11 +440,11 @@ void CGhttpmfcDlg::OnTimer(UINT nIDEvent)
             UpdateData(FALSE);
         }
     }
-    
+
     CDialog::OnTimer(nIDEvent);
 }
 
-void CGhttpmfcDlg::OnDestroy() 
+void CGhttpmfcDlg::OnDestroy()
 {
     CDialog::OnDestroy();
 
@@ -470,7 +470,7 @@ void CGhttpmfcDlg::OnDestroy()
     m_memFile = NULL;
 }
 
-void CGhttpmfcDlg::OnThrottle() 
+void CGhttpmfcDlg::OnThrottle()
 {
     UpdateData();
 
@@ -478,13 +478,13 @@ void CGhttpmfcDlg::OnThrottle()
         ghttpSetThrottle(m_request, (GHTTPBool)m_throttle);
 }
 
-void CGhttpmfcDlg::OnThink() 
+void CGhttpmfcDlg::OnThink()
 {
     if(m_request >= 0)
         ghttpThink();
 }
 
-void CGhttpmfcDlg::OnSetProxy() 
+void CGhttpmfcDlg::OnSetProxy()
 {
     UpdateData();
 
@@ -492,7 +492,7 @@ void CGhttpmfcDlg::OnSetProxy()
 }
 
 // Copied from JED's ProxyInfo.  Edited down for this app's purposes.
-void CGhttpmfcDlg::OnIeSettings() 
+void CGhttpmfcDlg::OnIeSettings()
 {
     HKEY key;
     LONG result;
@@ -504,7 +504,7 @@ void CGhttpmfcDlg::OnIeSettings()
     int nEnd;
 
     UpdateData();
-    
+
     // Open the IE settings in the registry.
     ////////////////////////////////////////
     result = RegOpenKeyEx(HKEY_CURRENT_USER, REGSTR_PATH_INTERNETSETTINGS, 0, KEY_READ, &key);
@@ -516,7 +516,7 @@ void CGhttpmfcDlg::OnIeSettings()
         data = 0;
         result = RegQueryValueEx(key, REGSTR_VAL_PROXYENABLE, 0, &type, (LPBYTE)&data, &len);
         if(SUCCEEDED(result) && data)
-        {       
+        {
             //----------------------------------------------------------------------
             //
             // The list of proxy servers to use
@@ -563,7 +563,7 @@ void CGhttpmfcDlg::OnIeSettings()
                     str = "";
             }
         }
-        
+
         // Cleanup.
         ///////////
         RegCloseKey(key);

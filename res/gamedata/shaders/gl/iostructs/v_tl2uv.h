@@ -4,7 +4,7 @@ out gl_PerVertex { vec4 gl_Position; };
 layout(location = POSITIONT)    in float4   v_TL2uv_P       ; // POSITIONT;
 layout(location = TEXCOORD0)    in float2   v_TL2uv_Tex0    ; // TEXCOORD0;
 layout(location = TEXCOORD1)    in float2   v_TL2uv_Tex1    ; // TEXCOORD1;
-layout(location = COLOR)        in float4   v_TL2uv_Color   ; // COLOR; 
+layout(location = COLOR)        in float4   v_TL2uv_Color   ; // COLOR;
 
 layout(location = TEXCOORD0)    out float2  v2p_TL2uv_Tex0  ; // TEXCOORD0;
 layout(location = TEXCOORD1)    out float2  v2p_TL2uv_Tex1  ; // TEXCOORD1;

@@ -35,7 +35,7 @@ extern "C" {
 #define UTF8_TWO_BYTE_MASK       0x1F    //:0001 1111    // The value bits in a two byte tag
 #define UTF8_THREE_BYTE_MASK     0x0F    //:0000 1111    // The value bits in a three byte tag
 
-#define UTF8_IS_THREE_BYTE(a)    (((UTF8ByteType)a & UTF8_FOUR_BYTE_TAG)==UTF8_THREE_BYTE_TAG)  
+#define UTF8_IS_THREE_BYTE(a)    (((UTF8ByteType)a & UTF8_FOUR_BYTE_TAG)==UTF8_THREE_BYTE_TAG)
 #define UTF8_IS_TWO_BYTE(a)      (((UTF8ByteType)a & UTF8_THREE_BYTE_TAG)==UTF8_TWO_BYTE_TAG)
 #define UTF8_IS_FOLLOW_BYTE(a)   (((UTF8ByteType)a & UTF8_TWO_BYTE_TAG)==UTF8_FOLLOW_BYTE_TAG)
 #define UTF8_IS_SINGLE_BYTE(a)   ((UTF8ByteType)a <= 0x7F)  // 0-127
@@ -63,7 +63,7 @@ int AsciiToUCS2String(const char*      theAsciiString, UCS2String theUCS2String 
 // similar to strncpy
 //int UCS2ToUTF8StringLength(const UCS2String theUCS2String, UTF8String theUTF8String, int theMaxLength);
 int UTF8ToUCS2StringLen(const UTF8String theUTF8String, UCS2String theUCS2String, int theMaxLength);
-    
+
 // Convert a string, allocate space for the new string
 UTF8String UCS2ToUTF8StringAlloc(const UCS2String theUCS2String);
 UCS2String UTF8ToUCS2StringAlloc(const UTF8String theUTF8String);

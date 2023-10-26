@@ -14,11 +14,11 @@
         GSI_UNUSED(theLevel);
         {
             static char    string[256];
-            vsprintf(string, theTokenStr, theParamList);            
+            vsprintf(string, theTokenStr, theParamList);
             printf(string);
         }
-        printf("[%s][%s] ", 
-                gGSIDebugCatStrings[theCat], 
+        printf("[%s][%s] ",
+                gGSIDebugCatStrings[theCat],
                 gGSIDebugTypeStrings[theType]);
 
         vprintf(theTokenStr, theParamList);
@@ -38,7 +38,7 @@ void *  gsiMemManagedInit()
         return NULL;
     }
     {
-        gsMemMgrContext c = gsMemMgrCreate(gsMemMgrContext_Default, "Default",aMemoryPool, aMemoryPoolSize);    
+        gsMemMgrContext c = gsMemMgrCreate(gsMemMgrContext_Default, "Default",aMemoryPool, aMemoryPoolSize);
     }
     return aMemoryPool;
 #else
@@ -66,7 +66,7 @@ void gsiMemManagedClose(void * aMemoryPool)
 */
 
 // sample common entry point
-extern int test_main(int argc, char ** argp); 
+extern int test_main(int argc, char ** argp);
 
 
 // Common entry point

@@ -616,7 +616,7 @@ int FCGX_VFPrintF(FCGX_Stream *stream, const char *format, va_list arg)
                                 break;
                             case 'L':
                                 lDoubleArg = va_arg(arg, LONG_DOUBLE);
-                                /* XXX Need to check for the presence of 
+                                /* XXX Need to check for the presence of
                                  * frexpl() and use it if available */
                                 frexp((double) lDoubleArg, &exp);
                                 break;
@@ -953,7 +953,7 @@ static void SetError(FCGX_Stream *stream, int FCGI_errno)
     if(stream->FCGI_errno == 0) {
         stream->FCGI_errno = FCGI_errno;
     }
-  
+
     stream->isClosed = TRUE;
 }
 
@@ -2028,7 +2028,7 @@ void FCGX_Finish_r(FCGX_Request *reqDataPtr)
 
 void FCGX_Free(FCGX_Request * request, int close)
 {
-    if (request == NULL) 
+    if (request == NULL)
         return;
 
     FCGX_FreeStream(&request->in);

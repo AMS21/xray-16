@@ -18,7 +18,7 @@ uniform float3x4    m_v2w;
 
 void hmodel
 (
-    out float3 hdiffuse, out float3 hspecular, 
+    out float3 hdiffuse, out float3 hspecular,
     float m, float h, float s, float3 Pnt, float3 normal
 )
 {

@@ -14,7 +14,7 @@ using namespace VITALENGINE;
 //
 // IAgent - interface to agent we are running at;
 //
-// sessioId - unique sessionId. Agent can run tasks from diferent users 
+// sessioId - unique sessionId. Agent can run tasks from diferent users
 //            at the same time.
 //
 // IAgent and sessionId can be used to request global data.
@@ -24,7 +24,7 @@ using namespace VITALENGINE;
 // inStream is seeked to 0, and ready to read data.
 //
 // outStream - stream to write output data.
-// outStream is created and owned by the library. 
+// outStream is created and owned by the library.
 //
 // Callback should return false, if job has been aborted (see IAgent->TestConnection()).
 typedef bool (__cdecl TTaskProc)(DWORD sessionId, IGenericStream* inStream, IGenericStream* outStream);
@@ -46,7 +46,7 @@ typedef void (__cdecl EndSession)(IAgent* agent, DWORD sessionId);
 // from tasks
 //
 // outStream - data, returned from remote task.
-// 
+//
 // GridUser will release outStream just after the call returns.
 // Finalize is allowed to add reference to keep stream in memory
 // as long as needed. See GridGMP example.
@@ -69,8 +69,8 @@ typedef void (__cdecl TGetDataProc)(const char* dataDesc, IGenericStream** outSt
 //===========================================================
 //===========================================================
 #pragma pack(1)
-typedef struct 
-{ 
+typedef struct
+{
  //maximum number of tasks, allowed to be sent to agent,
  //without waiting for completion of curent task
  //
@@ -115,7 +115,7 @@ typedef struct
 
  float agentMinFreeMemoryFactor;
 
- //send dublicate tasks to free agent 
+ //send dublicate tasks to free agent
  //
  //this allows not to wait for slow agent
  //
@@ -131,7 +131,7 @@ typedef struct
  bool  allowSwapping;
 
  //if stream size if larger then this value, library will compress it before sending.
- //compression speed is about 10-20 MB/sec - this will speedup network transfer significanly 
+ //compression speed is about 10-20 MB/sec - this will speedup network transfer significanly
  //on 100MBit and slower networks
  //aslo lowers memory usage, since tasks streams are kept compressed until task is run
  //
@@ -155,7 +155,7 @@ typedef struct
 
  //suspend sending tasks to agent if it failed last task, ms
  //default is 10000
- //if agent has failed task for some reason, we better suspend sending 
+ //if agent has failed task for some reason, we better suspend sending
  //tasks to it; let other agents do the job
  DWORD failSuspendTimeout;
 
@@ -196,7 +196,7 @@ typedef struct
 typedef struct
 {
  bool bConnectedToCoordinator;
- DWORD connectedAgentsCount; 
+ DWORD connectedAgentsCount;
 } TGridUserConnectionStatus;
 #pragma pack()
 
@@ -212,20 +212,20 @@ DECLARE_INTERFACE_(IGridUser, IUnknown)
 
  //moduleName - dll filename with function code
  //
- //Please note, that some dependent DLLs, for example, 
- //VC++ runtime libraries, can be missing on remote workstation. 
- //It is advised to build with static libraries, 
- //and always check dependencies with tdump utility.  
- //To send additional DLLs to workstation, 
- //their names should be specified in RunTask() method, 
+ //Please note, that some dependent DLLs, for example,
+ //VC++ runtime libraries, can be missing on remote workstation.
+ //It is advised to build with static libraries,
+ //and always check dependencies with tdump utility.
+ //To send additional DLLs to workstation,
+ //their names should be specified in RunTask() method,
  //separated with comma:
  //
  //user.RunTask('GridGMP_task.dll,GMPPort.dll','RunTask',stream,Finalize,d,true);
 
- //taskProcName - Symbolic name of function 
+ //taskProcName - Symbolic name of function
  //(function should be exported from DLL by name)
 
- //inStream - input stream. 
+ //inStream - input stream.
  //Library is receiving ownership of the stream object.
 
  //finalizeProc - completion callback address
@@ -234,11 +234,11 @@ DECLARE_INTERFACE_(IGridUser, IUnknown)
 
  //blocking - blocking flag.
 
- //If task can not be added to queue immediately 
- //(due to limitations to queue length or queue input streams size), 
- //and blocking flag is set, method will not return until task 
- //is added to queue. Otherwise method will return S_FALSE, 
- //and application can wait for good moment 
+ //If task can not be added to queue immediately
+ //(due to limitations to queue length or queue input streams size),
+ //and blocking flag is set, method will not return until task
+ //is added to queue. Otherwise method will return S_FALSE,
+ //and application can wait for good moment
  //with User->WaitForCompletionEvent())
 
  virtual HRESULT __stdcall RunTask(IN const char* moduleName,
@@ -286,6 +286,6 @@ DECLARE_INTERFACE_(IGridUser, IUnknown)
 
  //return current connection status
  //used for progress monitoring
- //see \Mandelbrot\GridGMP sample 
+ //see \Mandelbrot\GridGMP sample
  virtual void __stdcall GetConnectionStatus(OUT TGridUserConnectionStatus* status) = 0;
 };

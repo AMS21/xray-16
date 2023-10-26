@@ -48,10 +48,10 @@ static void ScrollTopScreen(void)
 void PrintChar(char c)
 {
     u8 palette = 0xf;
-    
+
     if(c == '\r')
         return;
-    
+
     if(gPos == SCREEN_WIDTH)
     {
         ScrollTopScreen();
@@ -59,7 +59,7 @@ void PrintChar(char c)
         if(c == '\n')
             return;
     }
-    
+
     if(c == '\n')
     {
         gPos = SCREEN_WIDTH;

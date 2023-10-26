@@ -59,7 +59,7 @@ typedef GSTaskResult(*GSTaskThinkFunc)(void* theTaskData);
 // "Private" struct for dispatching tasks.  Once tasks have been put in the queue
 // they should only be modified from the think thread.
 //      - When creating a task, you should set only the task data and delegates
-typedef struct 
+typedef struct
 {
     int mId;
     gsi_time mTimeout;
@@ -67,7 +67,7 @@ typedef struct
     gsi_bool mAutoThink;
 
     // These are not exclusive states (use bit flags?)
-    gsi_i32  mIsStarted;   
+    gsi_i32  mIsStarted;
     gsi_i32  mIsRunning;
     gsi_i32  mIsCanceled;
     gsi_i32  mIsCallbackPending; // does the task require a callback?
@@ -84,7 +84,7 @@ typedef struct
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-typedef struct 
+typedef struct
 {
     gsi_u32  mRefCount;
 
@@ -98,7 +98,7 @@ typedef struct
     #else
         GSTask* mTaskArray[GSICORE_MAXTASKS];
     #endif
-        
+
 } GSCoreMgr;
 
 

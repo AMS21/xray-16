@@ -11,7 +11,7 @@ typedef plReal  plVector3[3];
 typedef plReal  plQuaternion[4];
 
 #ifdef __cplusplus
-extern "C" { 
+extern "C" {
 #endif
 
 #define GVI_REMAINING_BYTES 3
@@ -21,8 +21,8 @@ extern "C" {
 int initializeSpursSampleTask();
 
 ///submit some work to SPURS
-int issueSampleTaskEncode(short* inBuffer, int inBufferSize, int encodedFrameSize,  char *outBuffer, int outBufferSize, 
-                          struct SpursSpeexTaskOutput *taskOuput, char *userAllocatedSpeexBuffer, 
+int issueSampleTaskEncode(short* inBuffer, int inBufferSize, int encodedFrameSize,  char *outBuffer, int outBufferSize,
+                          struct SpursSpeexTaskOutput *taskOuput, char *userAllocatedSpeexBuffer,
                           int userAllocatedSpeexBufferSize);
 
 ///not finished, need to pass proper data

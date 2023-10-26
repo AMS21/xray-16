@@ -18,16 +18,16 @@ extern "C" {
     /*
     * EAX Wrapper Interface (using Direct X 7) {4FF53B81-1CE0-11d3-AAB8-00A0C95949D5}
     */
-    DEFINE_GUID(CLSID_EAXDirectSound, 
-        0x4ff53b81, 
-        0x1ce0, 
+    DEFINE_GUID(CLSID_EAXDirectSound,
+        0x4ff53b81,
+        0x1ce0,
         0x11d3,
         0xaa, 0xb8, 0x0, 0xa0, 0xc9, 0x59, 0x49, 0xd5);
 
     /*
     * EAX Wrapper Interface (using Direct X 8) {CA503B60-B176-11d4-A094-D0C0BF3A560C}
     */
-    DEFINE_GUID(CLSID_EAXDirectSound8, 
+    DEFINE_GUID(CLSID_EAXDirectSound8,
         0xca503b60,
         0xb176,
         0x11d4,
@@ -79,10 +79,10 @@ extern "C" {
 /*
 * EAX 2.0 listener property set {0306A6A8-B224-11d2-99E5-0000E8D8C722}
 */
-DEFINE_GUID(DSPROPSETID_EAX20_ListenerProperties, 
-    0x306a6a8, 
-    0xb224, 
-    0x11d2, 
+DEFINE_GUID(DSPROPSETID_EAX20_ListenerProperties,
+    0x306a6a8,
+    0xb224,
+    0x11d2,
     0x99, 0xe5, 0x0, 0x0, 0xe8, 0xd8, 0xc7, 0x22);
 
 // For compatibility with future EAX versions:
@@ -108,7 +108,7 @@ typedef enum
     DSPROPERTY_EAXLISTENER_AIRABSORPTIONHF,
     DSPROPERTY_EAXLISTENER_FLAGS
 } DSPROPERTY_EAX_LISTENERPROPERTY;
-    
+
 // OR these flags with property id
 #define DSPROPERTY_EAXLISTENER_IMMEDIATE 0x00000000 // changes take effect immediately
 #define DSPROPERTY_EAXLISTENER_DEFERRED  0x80000000 // changes take effect later
@@ -128,7 +128,7 @@ typedef enum
 //              myListener.dwFlags = myFlags /* see EAXLISTENERFLAGS below */ ;
 //       instead of:
 //              myListener = { -1000, -100, ... , 0x00000009 };
-//       If you want to save and load presets in binary form, you 
+//       If you want to save and load presets in binary form, you
 //       should define your own structure to insure future compatibility.
 //
 typedef struct _EAXLISTENERPROPERTIES
@@ -199,7 +199,7 @@ enum
 
 // This flag limits high-frequency decay time according to air absorption.
 #define EAXLISTENERFLAGS_DECAYHFLIMIT          0x00000020
- 
+
 #define EAXLISTENERFLAGS_RESERVED              0xFFFFFFC0 // reserved future use
 
 // property ranges and defaults:
@@ -268,10 +268,10 @@ enum
 /*
 * EAX 2.0 buffer property set {0306A6A7-B224-11d2-99E5-0000E8D8C722}
 */
-DEFINE_GUID(DSPROPSETID_EAX20_BufferProperties, 
-    0x306a6a7, 
-    0xb224, 
-    0x11d2, 
+DEFINE_GUID(DSPROPSETID_EAX20_BufferProperties,
+    0x306a6a7,
+    0xb224,
+    0x11d2,
     0x99, 0xe5, 0x0, 0x0, 0xe8, 0xd8, 0xc7, 0x22);
 
 // For compatibility with future EAX versions:
@@ -284,17 +284,17 @@ typedef enum
     DSPROPERTY_EAXBUFFER_DIRECT,
     DSPROPERTY_EAXBUFFER_DIRECTHF,
     DSPROPERTY_EAXBUFFER_ROOM,
-    DSPROPERTY_EAXBUFFER_ROOMHF, 
+    DSPROPERTY_EAXBUFFER_ROOMHF,
     DSPROPERTY_EAXBUFFER_ROOMROLLOFFFACTOR,
     DSPROPERTY_EAXBUFFER_OBSTRUCTION,
     DSPROPERTY_EAXBUFFER_OBSTRUCTIONLFRATIO,
-    DSPROPERTY_EAXBUFFER_OCCLUSION, 
+    DSPROPERTY_EAXBUFFER_OCCLUSION,
     DSPROPERTY_EAXBUFFER_OCCLUSIONLFRATIO,
     DSPROPERTY_EAXBUFFER_OCCLUSIONROOMRATIO,
     DSPROPERTY_EAXBUFFER_OUTSIDEVOLUMEHF,
     DSPROPERTY_EAXBUFFER_AIRABSORPTIONFACTOR,
     DSPROPERTY_EAXBUFFER_FLAGS
-} DSPROPERTY_EAX_BUFFERPROPERTY;    
+} DSPROPERTY_EAX_BUFFERPROPERTY;
 
 // OR these flags with property id
 #define DSPROPERTY_EAXBUFFER_IMMEDIATE 0x00000000 // changes take effect immediately
@@ -321,7 +321,7 @@ typedef struct _EAXBUFFERPROPERTIES
     long lRoom;                  // room effect level
     long lRoomHF;                // room effect level at high frequencies
     float flRoomRolloffFactor;   // like DS3D flRolloffFactor but for room effect
-    long lObstruction;           // main obstruction control (attenuation at high frequencies) 
+    long lObstruction;           // main obstruction control (attenuation at high frequencies)
     float flObstructionLFRatio;  // obstruction low-frequency level re. main control
     long lOcclusion;             // main occlusion control (attenuation at high frequencies)
     float flOcclusionLFRatio;    // occlusion low-frequency level re. main control

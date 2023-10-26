@@ -14,7 +14,7 @@
 #include "../gsPlatformUtil.h"
 #include "../gsMemory.h"
 // entry point for GameSpy samples
-extern int test_main(int argc, char ** argp); 
+extern int test_main(int argc, char ** argp);
 
 #define PRIO      (1001)
 #define HOST_NAME "localhost"
@@ -72,7 +72,7 @@ gsi_bool    _NetworkInit()
 {
     int r = sys_net_initialize_network();
 
-    if (r!=CELL_OK) 
+    if (r!=CELL_OK)
     {
         printf("ccNetworkInitializeNetwork: sys_net_initialize_network() failed: %i\n",r);
         return gsi_false;
@@ -89,14 +89,14 @@ gsi_bool    _NetworkStart()
     int iReturn, iNetworkState;
 
     /*iReturn = cellSysutilInit();
-    if (iReturn < 0) 
+    if (iReturn < 0)
     {
         printf("cellSysutilInit() failed(%x)\n", iReturn);
         return gsi_false;
     }*/
 
     iReturn = cellNetCtlInit();
-    if (iReturn!=CELL_OK) 
+    if (iReturn!=CELL_OK)
     {
         printf("ccNetworkInitializeNetwork: cellNetCtlInit() failed: %i\n",
                iReturn);
@@ -104,7 +104,7 @@ gsi_bool    _NetworkStart()
     }
 
 
-    while (1) 
+    while (1)
     {
         iReturn=cellNetCtlGetState(&iNetworkState);
 
@@ -116,11 +116,11 @@ gsi_bool    _NetworkStart()
             return gsi_false;
         }
 
-        if (iNetworkState!=CELL_NET_CTL_STATE_IPObtained) 
+        if (iNetworkState!=CELL_NET_CTL_STATE_IPObtained)
         {
             sys_timer_usleep(100 * 1000);
-        } 
-        else 
+        }
+        else
         {
             break;
         }
@@ -132,7 +132,7 @@ gsi_bool    _NetworkStart()
 void        _NetworkStop()
 {
     cellNetCtlTerm();
-    //cellSysutilShutdown(); 
+    //cellSysutilShutdown();
 }
 
 void        _NetworkClose()
@@ -191,7 +191,7 @@ int main(int argc, char ** argp)
     //int id_list[10];
     //int i=0;
     void *heap;
-    printf("\nGameSpy Test App Initializing\n" 
+    printf("\nGameSpy Test App Initializing\n"
            "----------------------------------\n");
 /*
     // spawn IO module
@@ -209,7 +209,7 @@ int main(int argc, char ** argp)
     }
 
     // initialize network using hardcoded settings above
-    if(!_NetworkInit()) 
+    if(!_NetworkInit())
     {
         printf("_NetworkInit() failed\n");
         return (0);
@@ -220,15 +220,15 @@ int main(int argc, char ** argp)
         printf("_NetworkStart() failed\n");
         return (0);
     }
-    
+
     heap = gsiMemManagedInit();
     // start the actual program
-    printf("\nGameSpy Test App Starting\n" 
+    printf("\nGameSpy Test App Starting\n"
            "----------------------------------\n");
     test_main(argc, argp);
 
     // do any needed cleanup
-    printf("\nGameSpy Test App Exiting\n" 
+    printf("\nGameSpy Test App Exiting\n"
            "----------------------------------\n");
     gsiMemManagedClose(heap);
     // close network

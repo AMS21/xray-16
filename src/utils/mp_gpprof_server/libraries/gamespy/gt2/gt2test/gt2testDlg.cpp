@@ -177,7 +177,7 @@ BOOL CGt2testDlg::OnInitDialog()
     return TRUE;
 }
 
-void CGt2testDlg::OnDestroy() 
+void CGt2testDlg::OnDestroy()
 {
     CDialog::OnDestroy();
 
@@ -195,7 +195,7 @@ void CGt2testDlg::OnDestroy()
 }
 
 // MFC stuff
-void CGt2testDlg::OnPaint() 
+void CGt2testDlg::OnPaint()
 {
     if (IsIconic())
     {
@@ -276,7 +276,7 @@ static void RemoveDelayedMessages(DArray delayedMessages, GT2Connection connecti
     }
 }
 
-void CGt2testDlg::OnTimer(UINT nIDEvent) 
+void CGt2testDlg::OnTimer(UINT nIDEvent)
 {
     // check for our timer
     if(nIDEvent == 100)
@@ -354,7 +354,7 @@ void CGt2testDlg::OnTimer(UINT nIDEvent)
     CDialog::OnTimer(nIDEvent);
 }
 
-BOOL CGt2testDlg::PreTranslateMessage(MSG* pMsg) 
+BOOL CGt2testDlg::PreTranslateMessage(MSG* pMsg)
 {
     // Redirect enter.
     //////////////////
@@ -517,7 +517,7 @@ GT2Connection CGt2testDlg::GetConnection(int nIndex)
     ConnectionInfo * info = (ConnectionInfo *)m_connections.GetItemDataPtr(nIndex);
     if(!info)
         return NULL;
-    
+
     return info->connection;
 }
 
@@ -699,7 +699,7 @@ void CGt2testDlg::AddMessageString(GT2Connection connection, const char *string)
     ConnectionInfo * info = GetConnectionInfo(connection);
     if(info)
         info->messages += string;
-    
+
     // is this the active connection?
     if(GetActiveConnection() == connection)
     {
@@ -749,7 +749,7 @@ static void ReceiveDumpCallback(GT2Socket socket, GT2Connection connection, unsi
     GSI_UNUSED(message);
 }
 
-void CGt2testDlg::OnCreateSocket() 
+void CGt2testDlg::OnCreateSocket()
 {
     UpdateData();
 
@@ -778,7 +778,7 @@ void CGt2testDlg::OnCreateSocket()
     UpdateData(FALSE);
 }
 
-void CGt2testDlg::OnCloseSocket() 
+void CGt2testDlg::OnCloseSocket()
 {
     // close the socket
     gt2CloseSocket(m_socket);
@@ -787,7 +787,7 @@ void CGt2testDlg::OnCloseSocket()
     EnableSocketControls(FALSE);
 }
 
-void CGt2testDlg::OnThink() 
+void CGt2testDlg::OnThink()
 {
     // let the socket think, if it's not already thinking
     if(m_thinking)
@@ -811,7 +811,7 @@ static void ConnectAttemptCallback
     GT2Bool accept;
 
     dlg->UpdateData();
-    
+
     // check for an empty message
     if(!message)
         message = (GT2Byte *)"";
@@ -865,7 +865,7 @@ static void ConnectAttemptCallback
     GSI_UNUSED(socket);
 }
 
-void CGt2testDlg::OnListen() 
+void CGt2testDlg::OnListen()
 {
     UpdateData();
 
@@ -888,7 +888,7 @@ void CGt2testDlg::OnListen()
     }
 }
 
-void CGt2testDlg::OnConnect() 
+void CGt2testDlg::OnConnect()
 {
     UpdateData();
 
@@ -919,13 +919,13 @@ void CGt2testDlg::OnConnect()
     UpdateData(FALSE);
 }
 
-void CGt2testDlg::OnCloseAllConnections() 
+void CGt2testDlg::OnCloseAllConnections()
 {
     // close all the connections
     gt2CloseAllConnections(m_socket);
 }
 
-void CGt2testDlg::OnCloseAllConnectionsHard() 
+void CGt2testDlg::OnCloseAllConnectionsHard()
 {
     // close all the connections without waiting for a response
     gt2CloseAllConnectionsHard(m_socket);
@@ -1020,7 +1020,7 @@ void CGt2testDlg::SetupConnectionCallbacks(GT2ConnectionCallbacks &callbacks)
     callbacks.ping = PingCallback;
 }
 
-void CGt2testDlg::OnSend() 
+void CGt2testDlg::OnSend()
 {
     GT2Connection connection = GetActiveConnection();
 
@@ -1035,25 +1035,25 @@ void CGt2testDlg::OnSend()
     gt2Send(connection, (const GT2Byte *)(LPCSTR)m_message, -1, m_reliable);
 }
 
-void CGt2testDlg::OnPing() 
+void CGt2testDlg::OnPing()
 {
     // send the ping
     gt2Ping(GetActiveConnection());
 }
 
-void CGt2testDlg::OnCloseConnection() 
+void CGt2testDlg::OnCloseConnection()
 {
     // start closing the connection
     gt2CloseConnection(GetActiveConnection());
 }
 
-void CGt2testDlg::OnCloseConnectionHard() 
+void CGt2testDlg::OnCloseConnectionHard()
 {
     // close the ocnnection without waiting for a response
     gt2CloseConnectionHard(GetActiveConnection());
 }
 
-void CGt2testDlg::OnSelchangeConnections() 
+void CGt2testDlg::OnSelchangeConnections()
 {
     // make sure the newly selected connection is activated
     UpdateData();
@@ -1177,7 +1177,7 @@ static void ReceiveFilterCallbackDelay(GT2Connection connection, int filterID, G
     AddDelayedMessage(dlg->m_delayedReceives, atoi(dlg->m_receiveDelayValue), connection, filterID, message, len, reliable);
 }
 
-void CGt2testDlg::OnSendRot13() 
+void CGt2testDlg::OnSendRot13()
 {
     UpdateData();
 
@@ -1193,7 +1193,7 @@ void CGt2testDlg::OnSendRot13()
     GetConnectionInfo(connection)->sendROT13 = m_sendROT13;
 }
 
-void CGt2testDlg::OnReceiveRot13() 
+void CGt2testDlg::OnReceiveRot13()
 {
     UpdateData();
 
@@ -1209,7 +1209,7 @@ void CGt2testDlg::OnReceiveRot13()
     GetConnectionInfo(connection)->receiveROT13 = m_receiveROT13;
 }
 
-void CGt2testDlg::OnSendDrop() 
+void CGt2testDlg::OnSendDrop()
 {
     UpdateData();
 
@@ -1225,7 +1225,7 @@ void CGt2testDlg::OnSendDrop()
     GetConnectionInfo(connection)->sendDrop = m_sendDrop;
 }
 
-void CGt2testDlg::OnReceiveDrop() 
+void CGt2testDlg::OnReceiveDrop()
 {
     UpdateData();
 
@@ -1241,7 +1241,7 @@ void CGt2testDlg::OnReceiveDrop()
     GetConnectionInfo(connection)->receiveDrop = m_receiveDrop;
 }
 
-void CGt2testDlg::OnSendDelay() 
+void CGt2testDlg::OnSendDelay()
 {
     UpdateData();
 
@@ -1257,7 +1257,7 @@ void CGt2testDlg::OnSendDelay()
     GetConnectionInfo(connection)->sendDelay = m_sendDelay;
 }
 
-void CGt2testDlg::OnReceiveDelay() 
+void CGt2testDlg::OnReceiveDelay()
 {
     UpdateData();
 
@@ -1273,7 +1273,7 @@ void CGt2testDlg::OnReceiveDelay()
     GetConnectionInfo(connection)->receiveDelay = m_receiveDelay;
 }
 
-void CGt2testDlg::OnChangeSendDropValue() 
+void CGt2testDlg::OnChangeSendDropValue()
 {
     UpdateData();
 
@@ -1281,7 +1281,7 @@ void CGt2testDlg::OnChangeSendDropValue()
     GetConnectionInfo(GetActiveConnection())->sendDropValue = m_sendDropValue;
 }
 
-void CGt2testDlg::OnChangeReceiveDropValue() 
+void CGt2testDlg::OnChangeReceiveDropValue()
 {
     UpdateData();
 
@@ -1289,7 +1289,7 @@ void CGt2testDlg::OnChangeReceiveDropValue()
     GetConnectionInfo(GetActiveConnection())->receiveDropValue = m_receiveDropValue;
 }
 
-void CGt2testDlg::OnChangeSendDelayValue() 
+void CGt2testDlg::OnChangeSendDelayValue()
 {
     UpdateData();
 
@@ -1297,7 +1297,7 @@ void CGt2testDlg::OnChangeSendDelayValue()
     GetConnectionInfo(GetActiveConnection())->sendDelayValue = m_sendDelayValue;
 }
 
-void CGt2testDlg::OnChangeReceiveDelayValue() 
+void CGt2testDlg::OnChangeReceiveDelayValue()
 {
     UpdateData();
 
@@ -1309,7 +1309,7 @@ void CGt2testDlg::OnChangeReceiveDelayValue()
 ** ADDRESS **
 ************/
 
-void CGt2testDlg::OnAddressTo() 
+void CGt2testDlg::OnAddressTo()
 {
     UpdateData();
 
@@ -1330,7 +1330,7 @@ void CGt2testDlg::OnAddressTo()
     UpdateData(FALSE);
 }
 
-void CGt2testDlg::OnAddressFrom() 
+void CGt2testDlg::OnAddressFrom()
 {
     UpdateData();
 
@@ -1375,7 +1375,7 @@ void CGt2testDlg::HandleHostInfo(const char * hostname, char ** aliases, unsigne
     }
 }
 
-void CGt2testDlg::OnGetIpHostInfo() 
+void CGt2testDlg::OnGetIpHostInfo()
 {
     UpdateData();
 
@@ -1405,7 +1405,7 @@ void CGt2testDlg::OnGetIpHostInfo()
     UpdateData(FALSE);
 }
 
-void CGt2testDlg::OnGetStringHostInfo() 
+void CGt2testDlg::OnGetStringHostInfo()
 {
     UpdateData();
 

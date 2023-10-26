@@ -1,6 +1,6 @@
 /*
 gpiUnique.c
-GameSpy Presence SDK 
+GameSpy Presence SDK
 Dan "Mr. Pants" Schoenblum
 
 Copyright 1999-2007 GameSpy Industries, Inc
@@ -41,7 +41,7 @@ gpiSendRegisterUniqueNick(
     gpiAppendStringToBuffer(connection, &iconnection->outputBuffer, "\\id\\");
     gpiAppendIntToBuffer(connection, &iconnection->outputBuffer, operationid);
     gpiAppendStringToBuffer(connection, &iconnection->outputBuffer, "\\final\\");
-    
+
     return GP_NO_ERROR;
 }
 
@@ -134,9 +134,9 @@ gpiSendRegisterCdKey(
     const int useAlternateEncoding = 1;
     char cdkeyxor[GP_CDKEY_LEN];
     char cdkeyenc[GP_CDKEYENC_LEN];
-    int cdkeylen = (int)strlen(cdkey);      
+    int cdkeylen = (int)strlen(cdkey);
     int i=0;
-    
+
     Util_RandSeed((unsigned long)GP_XOR_SEED);
     for (i=0; i < cdkeylen; i++)
     {
@@ -158,7 +158,7 @@ gpiSendRegisterCdKey(
     gpiAppendStringToBuffer(connection, &iconnection->outputBuffer, "\\id\\");
     gpiAppendIntToBuffer(connection, &iconnection->outputBuffer, operationid);
     gpiAppendStringToBuffer(connection, &iconnection->outputBuffer, "\\final\\");
-    
+
     return GP_NO_ERROR;
 }
 

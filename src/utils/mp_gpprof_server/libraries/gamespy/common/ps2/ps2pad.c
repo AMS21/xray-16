@@ -23,7 +23,7 @@
 #define BUTTON_R2(d)        ((d[3] & (1 << 1))==0)
 #define BUTTON_L2(d)        ((d[3] & (1 << 0))==0)
 
-static int term_id = 0;     
+static int term_id = 0;
 
 static u_long128 mPadDMABuf[scePadDmaBufferMax] __attribute__((aligned (64)));
 static int mPadState;
@@ -89,7 +89,7 @@ int PadInit(void)
         mActDirect[i] = 0;
         mActAlign[i] = 0;
     }
-    
+
     // Load serial io module
     if (0 >= sceSifLoadModule(ROOT_DIR "sio2man.irx", 0, NULL))
         return 0;
@@ -158,7 +158,7 @@ void PadReadInput(int events[NumPadEvents])
         }
 
     // 1st step special processing for "standard" controller
-    case 40: 
+    case 40:
         if (scePadInfoMode(0, 0, InfoModeCurExID, 0)==0)
         {
             // Skip to end if this was set from an extended ID

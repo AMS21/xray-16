@@ -674,7 +674,7 @@ static GT2Bool gti2HandleReliableMessage(GT2Connection connection, GTI2MessageTy
         message += headerLength;
         len -= headerLength;
     }
-    
+
     // handle the ESN
     if(!gti2HandleESN(connection, ESN))
         return GT2False;
@@ -844,7 +844,7 @@ static GT2Bool gti2HandleUnreliableMessage(GT2Connection connection, GTI2Message
     headerLength = (connection->socket->protocolOffset + GTI2_MAGIC_STRING_LEN + 1);
     dataStart = (message + headerLength);
     dataLen = (len - headerLength);
-    
+
     // handle unreliable messages based on type
     if(type == GTI2MsgAck)
     {
@@ -887,7 +887,7 @@ static GT2Bool gti2HandleMessage(GT2Socket socket, GT2Byte * message, int len, u
 
     // VDP messages have 2 byte header which is removed based on protocol
     GT2Byte *actualMessage = message + socket->protocolOffset;
-    
+
     // find out if we have an existing connection for this address
     connection = gti2SocketFindConnection(socket, ip, port);
 
@@ -897,11 +897,11 @@ static GT2Bool gti2HandleMessage(GT2Socket socket, GT2Byte * message, int len, u
         if(!gti2DumpCallback(socket, connection, ip, port, GT2False, message, len, GT2False))
             return GT2False;
     }
-    
+
     // check if the message starts with the magic string
     // use greater than for the len compare because it also must have a type
     magicString = ((actualLength > GTI2_MAGIC_STRING_LEN) && (memcmp(actualMessage, GTI2_MAGIC_STRING, GTI2_MAGIC_STRING_LEN) == 0));
-    
+
     // check if we don't have a connection
     if(!connection)
     {
@@ -923,8 +923,8 @@ static GT2Bool gti2HandleMessage(GT2Socket socket, GT2Byte * message, int len, u
                     return GT2False;
             }
             return GT2True;
-        }   
-        
+        }
+
         // if we're not listening, we just ignore this
         if(!socket->connectAttemptCallback)
             return GT2True;
@@ -956,7 +956,7 @@ static GT2Bool gti2HandleMessage(GT2Socket socket, GT2Byte * message, int len, u
 
         return GT2True;
     }
-    
+
     // check if this is an unreliable app message with a magic string header
     if(magicString && ((actualLength >= (GTI2_MAGIC_STRING_LEN * 2)) && (memcmp(actualMessage + GTI2_MAGIC_STRING_LEN, GTI2_MAGIC_STRING, GTI2_MAGIC_STRING_LEN) == 0)))
     {
@@ -968,14 +968,14 @@ static GT2Bool gti2HandleMessage(GT2Socket socket, GT2Byte * message, int len, u
         len -= GTI2_MAGIC_STRING_LEN;
         magicString = GT2False;
     }
-    
+
     // if it doesn't have a magic string it's an app unreliable
     if(!magicString)
     {
         // First determine if the connection found has gone throught the internal challenge response
         if (connection->state < GTI2Connected)
         {
-            // pass any message that doesn't have a magic string to 
+            // pass any message that doesn't have a magic string to
             // the app so that the SDK doesn't drop them
             if(!gti2UnrecognizedMessageCallback(socket, ip, port, message, len, &handled))
                 return GT2False;
@@ -1144,12 +1144,12 @@ GT2Bool gti2ReceiveAdHocMessages(GT2Socket socket,char *buffer, int buffersize)
                             if(!gti2HandleConnectionReset(socket, address.sin_addr.s_addr, ntohs(address.sin_port)))
                                 return GT2False;
                     }
-                    else 
+                    else
                     if (rcode == WSAEHOSTUNREACH)
                     {
                         if (!gti2HandleHostUnreachable(socket, address.sin_addr.s_addr, ntohs(address.sin_port), GT2False))
                             return GT2False;
-                    }           
+                    }
                     else
                 #endif
                     {
@@ -1214,9 +1214,9 @@ GT2Bool gti2ReceiveMessages(GT2Socket socket)
 
         // receive the message
         addressLen = sizeof(address);
-        
+
         rcode = recvfrom(socket->socket, buffer, sizeof(buffer), 0, (SOCKADDR *)&address, &addressLen);
-        
+
         if (gsiSocketIsError(rcode))
         {
             rcode = GOAGetLastError(socket->socket);
@@ -1288,7 +1288,7 @@ static GT2Bool gti2BeginReliableMessage(GT2Connection connection, GTI2MessageTyp
 
     // VDP data length needed in the front of every packet
     unsigned short vdpDataLength = (unsigned short)(len - connection->socket->protocolOffset);
-    
+
     // check how much free space is in the outgoing buffer
     freeSpace = gti2GetBufferFreeSpace(&connection->outgoingBuffer);
 
@@ -1536,7 +1536,7 @@ GT2Bool gti2SendAppUnreliable(GT2Connection connection, const GT2Byte * message,
     GT2Byte * start;
 
     // check if we can send it right away (unreliable that doesn't start with the magic string)
-    if((len < GTI2_MAGIC_STRING_LEN) || 
+    if((len < GTI2_MAGIC_STRING_LEN) ||
         (memcmp(message + connection->socket->protocolOffset, GTI2_MAGIC_STRING, GTI2_MAGIC_STRING_LEN) != 0))
     {
         if(!gti2ConnectionSendData(connection, message, len))
@@ -1544,7 +1544,7 @@ GT2Bool gti2SendAppUnreliable(GT2Connection connection, const GT2Byte * message,
 
         return GT2True;
     }
-    
+
     // magic string + message
     totalLen = (GTI2_MAGIC_STRING_LEN + len);
 
@@ -1561,24 +1561,24 @@ GT2Bool gti2SendAppUnreliable(GT2Connection connection, const GT2Byte * message,
     // store the start of the actual message in the buffer
     start = (connection->outgoingBuffer.buffer + connection->outgoingBuffer.len);
 
-    // Copy the VDP data length if necessary    
+    // Copy the VDP data length if necessary
     if (connection->socket->protocolType == GTI2VdpProtocol)
         gti2BufferWriteData(&connection->outgoingBuffer, message, 2);
-    
+
     // copy it in, repeating the magic string at the beginning
     gti2BufferWriteData(&connection->outgoingBuffer, (const GT2Byte *)GTI2_MAGIC_STRING, GTI2_MAGIC_STRING_LEN);
-    
+
     // copy the data at the starting position + offset based on the protocol
-    gti2BufferWriteData(&connection->outgoingBuffer, message + connection->socket->protocolOffset, 
+    gti2BufferWriteData(&connection->outgoingBuffer, message + connection->socket->protocolOffset,
         (int)(len - connection->socket->protocolOffset));
-    
+
     // do the send
     if(!gti2ConnectionSendData(connection, start, totalLen))
         return GT2False;
 
     // we don't need to save the message
     gti2BufferShorten(&connection->outgoingBuffer, -1, totalLen);
-    
+
     return GT2True;
 }
 
@@ -1588,7 +1588,7 @@ GT2Bool gti2SendAck(GT2Connection connection)
     // part of the buffer may not be used but more efficience to be on stack
     char buffer[MAX_PROTOCOL_OFFSET + GTI2_MAGIC_STRING_LEN + 1 + 2];
     int pos = 0;
-    
+
     // write the VDP data length
     if (connection->socket->protocolType == GTI2VdpProtocol)
     {
@@ -1607,7 +1607,7 @@ GT2Bool gti2SendAck(GT2Connection connection)
     // write the ESN
     gti2UShortToBuffer((GT2Byte *)buffer, pos, connection->expectedSerialNumber);
     pos += 2;
-    
+
     // send it
     if(!gti2ConnectionSendData(connection, (const GT2Byte *)buffer, pos))
         return GT2False;
@@ -1719,7 +1719,7 @@ GT2Bool gti2SendClosedOnSocket(GT2Socket socket, unsigned int ip, unsigned short
 {
     // Vdp data length (not including voice) + magic string + type
     // part of the buffer may not be used but more efficience to be on stack
-    char buffer[MAX_PROTOCOL_OFFSET + GTI2_MAGIC_STRING_LEN + 1]; 
+    char buffer[MAX_PROTOCOL_OFFSET + GTI2_MAGIC_STRING_LEN + 1];
     int pos = 0;
 
     // write the data length
@@ -1752,7 +1752,7 @@ GT2Bool gti2ResendMessage(GT2Connection connection, GTI2OutgoingBufferMessage * 
 
     // replace the ESN (it's after the magic string, the type, and the SN)
     pos = (message->start + connection->socket->protocolOffset + GTI2_MAGIC_STRING_LEN + 1 + 2);
-    
+
     gti2UShortToBuffer(connection->outgoingBuffer.buffer, pos, connection->expectedSerialNumber);
 
     // send the message
@@ -1764,7 +1764,7 @@ GT2Bool gti2ResendMessage(GT2Connection connection, GTI2OutgoingBufferMessage * 
 
     // if it was a server challenge, update that time too
     type = (GTI2MessageType)connection->outgoingBuffer.buffer[message->start + connection->socket->protocolOffset + GTI2_MAGIC_STRING_LEN];
-    
+
     if(type == GTI2MsgServerChallenge)
         connection->challengeTime = connection->lastSend;
 

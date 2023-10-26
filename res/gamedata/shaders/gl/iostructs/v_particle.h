@@ -23,7 +23,7 @@ struct v2p
 
 layout(location = POSITION)     in float4   v_particle_P    ; // POSITION;
 layout(location = TEXCOORD0)    in float2   v_particle_tc   ; // TEXCOORD0;
-layout(location = COLOR)        in float4   v_particle_c    ; // COLOR; 
+layout(location = COLOR)        in float4   v_particle_c    ; // COLOR;
 
 layout(location = TEXCOORD0)    out float2  v2p_particle_tc ; // TEXCOORD0;
 layout(location = COLOR0)       out float4  v2p_particle_c  ; // COLOR0;

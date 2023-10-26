@@ -1,6 +1,6 @@
 /*
 gp.c
-GameSpy Presence SDK 
+GameSpy Presence SDK
 Dan "Mr. Pants" Schoenblum
 
 Copyright 1999-2007 GameSpy Industries, Inc
@@ -52,7 +52,7 @@ void gpDestroy(
 }
 
 GPResult gpEnable(
-  GPConnection * connection, 
+  GPConnection * connection,
   GPEnum state
 )
 {
@@ -65,7 +65,7 @@ GPResult gpEnable(
 }
 
 GPResult gpDisable(
-  GPConnection * connection, 
+  GPConnection * connection,
   GPEnum state
 )
 {
@@ -96,7 +96,7 @@ GPResult gpProcess(
     /////////////////////////////
     if(iconnection->simulation)
         return GP_NO_ERROR;
-    
+
     return gpiProcess(connection, 0);
 }
 
@@ -235,7 +235,7 @@ GPResult gpConnectNewUserA(
     /////////////////////////
     if(callback == NULL)
         Error(connection, GP_PARAMETER_ERROR, "No callback.");
-    
+
     // Check the length of the nick.
     ////////////////////////////////
     if(strlen(nick) >= GP_NICK_LEN)
@@ -840,8 +840,8 @@ GPResult gpRegisterCdKeyA(
 }
 #ifdef GSI_UNICODE
 GPResult gpRegisterCdKeyW(
-  GPConnection * connection, 
-  const gsi_char cdkey[GP_CDKEY_LEN], 
+  GPConnection * connection,
+  const gsi_char cdkey[GP_CDKEY_LEN],
   GPEnum blocking,
   GPCallback callback,
   void * param
@@ -1049,8 +1049,8 @@ GPResult gpDeleteProfile(
 }
 
 GPResult gpProfileFromID(
-  GPConnection * connection, 
-  GPProfile * profile, 
+  GPConnection * connection,
+  GPProfile * profile,
   int id
 )
 {
@@ -1259,7 +1259,7 @@ GPResult gpProfileSearchUniquenickW(
 
 GPResult gpGetInfo(
   GPConnection * connection,
-  GPProfile profile, 
+  GPProfile profile,
   GPEnum checkCache,
   GPEnum blocking,
   GPCallback callback,
@@ -1335,8 +1335,8 @@ GPResult gpGetInfoNoWait(
 }
 
 GPResult gpSetInfoi(
-  GPConnection * connection, 
-  GPEnum info, 
+  GPConnection * connection,
+  GPEnum info,
   int value
 )
 {
@@ -1362,8 +1362,8 @@ GPResult gpSetInfoi(
 }
 
 GPResult gpSetInfosA(
-  GPConnection * connection, 
-  GPEnum info, 
+  GPConnection * connection,
+  GPEnum info,
   const char * value
 )
 {
@@ -1389,8 +1389,8 @@ GPResult gpSetInfosA(
 }
 #ifdef GSI_UNICODE
 GPResult gpSetInfosW(
-  GPConnection * connection, 
-  GPEnum info, 
+  GPConnection * connection,
+  GPEnum info,
   const unsigned short* value
 )
 {
@@ -1625,14 +1625,14 @@ GPResult gpGetNumBuddies(
 #ifndef GP_NEW_STATUS_INFO
 GPResult gpGetBuddyStatus(
   GPConnection * connection,
-  int index, 
+  int index,
   GPBuddyStatus * status
 )
 {
     GPIConnection * iconnection;
     int num;
     GPIProfile * profile;
-    
+
     // Error check.
     ///////////////
     if((connection == NULL) || (*connection == NULL))
@@ -1667,7 +1667,7 @@ GPResult gpGetBuddyStatus(
     if(!profile)
         Error(connection, GP_PARAMETER_ERROR, "Invalid index.");
 
-    
+
     assert(profile->buddyStatus);
     status->profile = (GPProfile)profile->profileId;
     status->status = profile->buddyStatus->status;
@@ -1676,7 +1676,7 @@ GPResult gpGetBuddyStatus(
         strzcpy(status->statusString, profile->buddyStatus->statusString, GP_STATUS_STRING_LEN);
     else
         status->statusString[0] = '\0';
-    
+
 
     if(profile->buddyStatus->locationString)
         strzcpy(status->locationString, profile->buddyStatus->locationString, GP_LOCATION_STRING_LEN);
@@ -1698,7 +1698,7 @@ GPResult gpGetBuddyStatus(
     status->ip = profile->buddyStatus->ip;
     status->port = profile->buddyStatus->port;
     status->quietModeFlags = profile->buddyStatus->quietModeFlags;
-    
+
     return GP_NO_ERROR;
 }
 #endif
@@ -1706,7 +1706,7 @@ GPResult gpGetBuddyStatus(
 #ifdef GP_NEW_STATUS_INFO
 GPResult gpGetBuddyStatusInfo(
     GPConnection * connection,
-    int index, 
+    int index,
     GPBuddyStatusInfo * statusInfo
 )
 {
@@ -1750,7 +1750,7 @@ GPResult gpGetBuddyStatusInfo(
     if(!profile)
         Error(connection, GP_PARAMETER_ERROR, "Invalid index.");
 
-    
+
     buddyStatus = profile->buddyStatus;
     buddyStatusInfo = profile->buddyStatusInfo;
     assert(buddyStatus || buddyStatusInfo);
@@ -1805,12 +1805,12 @@ GPResult gpGetBuddyStatusInfo(
         UTF8ToUCS2String(buddyStatusInfo->gameMapName, statusInfo->gameMapName);
 #endif
     }
-    
+
     return GP_NO_ERROR;
 }
 
 GPResult gpSetBuddyAddr(
-    GPConnection *connection, 
+    GPConnection *connection,
     int index,
     unsigned int buddyIp,
     unsigned short buddyPort
@@ -1819,7 +1819,7 @@ GPResult gpSetBuddyAddr(
     GPIConnection * iconnection;
     int num;
     GPIProfile * profile;
-    
+
     // Error check.
     ///////////////
     if((connection == NULL) || (*connection == NULL))
@@ -1839,7 +1839,7 @@ GPResult gpSetBuddyAddr(
     num = iconnection->profileList.numBuddies;
     if((index < 0) || (index >= num))
         Error(connection, GP_PARAMETER_ERROR, "Invalid index.");
-    
+
     // Find the buddy with this index.
     //////////////////////////////////
     profile = gpiFindBuddy(connection, index);
@@ -1858,8 +1858,8 @@ GPResult gpSetBuddyAddr(
 #endif
 
 GPResult gpGetBuddyIndex(
-  GPConnection * connection, 
-  GPProfile profile, 
+  GPConnection * connection,
+  GPProfile profile,
   int * index
 )
 {
@@ -1928,7 +1928,7 @@ int gpIsBuddy(
 }
 
 int gpIsBuddyConnectionOpen(
-  GPConnection * connection, 
+  GPConnection * connection,
   GPProfile profile
 )
 {
@@ -1962,7 +1962,7 @@ GPResult gpDeleteBuddy(
 )
 {
     GPIConnection * iconnection;
-    
+
     // Error check.
     ///////////////
     if((connection == NULL) || (*connection == NULL))
@@ -2014,7 +2014,7 @@ GPResult gpAddToBlockedList(
     /////////////////////////////
     if(iconnection->simulation)
         return GP_NO_ERROR;
-    
+
     // Add em to the internal list - remove buddy status if already a buddy
     ///////////////////////////////////////////////////////////////////////
     return gpiAddToBlockedList(connection, profile);
@@ -2083,7 +2083,7 @@ GPResult gpGetNumBlocked(
 }
 
 GPResult gpGetBlockedProfile(
-  GPConnection * connection, 
+  GPConnection * connection,
   int index,
   GPProfile * profile
 )
@@ -2105,7 +2105,7 @@ GPResult gpGetBlockedProfile(
     /////////////////////////////
     if(iconnection->simulation)
         return GP_NO_ERROR;
-       
+
     // Check for a NULL profile.
     ////////////////////////////
     if(profile == NULL)
@@ -2261,9 +2261,9 @@ GPResult gpSetStatusW(
 
 #ifdef GP_NEW_STATUS_INFO
 GPResult gpSetStatusInfoA(
-                         GPConnection *connection, 
+                         GPConnection *connection,
                          GPEnum statusState,
-                         unsigned int hostIp, 
+                         unsigned int hostIp,
                          unsigned int hostPrivateIp,
                          unsigned short queryPort,
                          unsigned short hostPort,
@@ -2279,7 +2279,7 @@ GPResult gpSetStatusInfoA(
 )
 {
     GPIConnection * iconnection;
-    
+
 #ifndef GSI_UNICODE
     char gameTypeFixed[GP_STATUS_BASIC_STR_LEN];
     char gameVariantFixed[GP_STATUS_BASIC_STR_LEN];
@@ -2355,7 +2355,7 @@ GPResult gpSetStatusInfoA(
     gameVariantFixed = goastrdup(gameVariant);
     gameMapNameFixed = goastrdup(gameMapName);
 #endif
-    
+
     iconnection->lastStatusState = statusState;
     iconnection->hostIp = hostIp;
     iconnection->hostPrivateIp = hostPrivateIp;
@@ -2369,7 +2369,7 @@ GPResult gpSetStatusInfoA(
     strzcpy(iconnection->gameMapName, gameMapNameFixed, GP_STATUS_BASIC_STR_LEN);
     strzcpy(iconnection->richStatus, richStatus, GP_RICH_STATUS_LEN);
 #endif
-    
+
     gpiAppendStringToBuffer(connection, &iconnection->outputBuffer, "\\statusinfo\\\\state\\");
     gpiAppendIntToBuffer(connection, &iconnection->outputBuffer, statusState);
     gpiAppendStringToBuffer(connection, &iconnection->outputBuffer, "\\sesskey\\");
@@ -2403,9 +2403,9 @@ GPResult gpSetStatusInfoA(
 
 #ifdef GSI_UNICODE
 GPResult gpSetStatusInfoW(
-                          GPConnection *connection, 
+                          GPConnection *connection,
                           GPEnum statusState,
-                          unsigned int hostIp, 
+                          unsigned int hostIp,
                           unsigned int hostPrivateIp,
                           unsigned short queryPort,
                           unsigned short hostPort,
@@ -2439,19 +2439,19 @@ GPResult gpSetStatusInfoW(
 
     if (richStatusLen <= GP_RICH_STATUS_LEN)
         richStatus_A = UCS2ToUTF8StringAlloc(richStatus);
-    else 
+    else
         richStatus_A = UCS2ToUTF8StringAlloc((UCS2String)_T(""));
     if (gameType && (gameTypeLen <= GP_STATUS_BASIC_STR_LEN))
         gameType_A = UCS2ToUTF8StringAlloc(gameType);
-    else 
+    else
         gameType_A = UCS2ToUTF8StringAlloc((UCS2String)_T(""));
     if (gameVariant && (gameVariantLen <= GP_STATUS_BASIC_STR_LEN))
         gameVariant_A = UCS2ToUTF8StringAlloc(gameVariant);
-    else 
+    else
         gameVariant_A = UCS2ToUTF8StringAlloc((UCS2String)_T(""));
     if (gameMapName && (gameMapNameLen <= GP_STATUS_BASIC_STR_LEN))
         gameMapName_A = UCS2ToUTF8StringAlloc(gameMapName);
-    else 
+    else
         gameMapName_A = UCS2ToUTF8StringAlloc((UCS2String)_T(""));
 
     if ((statusState == iconnection->lastStatusState) &&
@@ -2472,8 +2472,8 @@ GPResult gpSetStatusInfoW(
     _tcsncpy(iconnection->gameVariant_W, gameVariant, GP_STATUS_BASIC_STR_LEN);
     _tcsncpy(iconnection->gameMapName_W, gameMapName, GP_STATUS_BASIC_STR_LEN);
 
-    aResult = gpSetStatusInfoA(connection, statusState, hostIp, hostPrivateIp, queryPort, hostPort, 
-        sessionFlags, richStatus_A, (int)strlen(richStatus_A), gameType_A, (int)strlen(gameType_A), 
+    aResult = gpSetStatusInfoA(connection, statusState, hostIp, hostPrivateIp, queryPort, hostPort,
+        sessionFlags, richStatus_A, (int)strlen(richStatus_A), gameType_A, (int)strlen(gameType_A),
         gameVariant_A, (int)strlen(gameVariant_A), gameMapName_A, (int)strlen(gameMapName_A));
     gsifree(richStatus_A);
     gsifree(gameType_A);
@@ -2628,9 +2628,9 @@ GPResult gpGetStatusInfoKeyValW(GPConnection *connection, const unsigned short *
 {
     GPResult aResult;
     char *keyValue_A;
-    
+
     char *keyName_A = UCS2ToUTF8StringAlloc(keyName);
-    
+
     aResult = gpGetStatusInfoKeyValA(connection, keyName_A, &keyValue_A);
     *keyValue = UTF8ToUCS2StringAlloc(keyValue_A);
 
@@ -2678,10 +2678,10 @@ GPResult gpGetBuddyStatusInfoKeys(GPConnection *connection, int index, GPCallbac
 
     if (pProfile->buddyStatus)
         CallbackError(connection, GP_PARAMETER_ERROR, GP_BM_EXT_INFO_NOT_SUPPORTED, "The profile does not support extended info keys.")
-        
+
     if (!pProfile->buddyStatusInfo && !pProfile->buddyStatus)
         CallbackError(connection, GP_PARAMETER_ERROR, GP_BM_NOT_BUDDY, "The profile used to get extended info keys is not a buddy.")
-    
+
     if (pProfile->buddyStatusInfo && pProfile->buddyStatusInfo->statusState == GP_OFFLINE)
         CallbackError(connection, GP_NETWORK_ERROR, GP_BM_BUDDY_OFFLINE, "The profile used to get extended info keys is offline.");
 
@@ -3145,7 +3145,7 @@ GPResult gpGetReverseBuddies(
 }
 
 GPResult gpGetReversBuddiesList( GPConnection * connection,
-    GPProfile *targets, int numOfTargets, 
+    GPProfile *targets, int numOfTargets,
     GPEnum blocking,
     GPCallback callback,
     void * param)
@@ -3534,10 +3534,10 @@ GPResult gpSendFilesW(
 {
     char* message_A = NULL;
     GPResult result;
-    
+
     if (message == NULL)
         return gpSendFilesA(connection, transfer, profile, NULL, callback, param);
-    
+
     message_A = UCS2ToUTF8StringAlloc(message);
     result = gpSendFilesA(connection, transfer, profile, message_A, callback, param);
     gsifree(message_A);
@@ -3600,16 +3600,16 @@ GPResult gpAcceptTransferW(
 {
     char* message_A = NULL;
     GPResult result;
-    
+
     if (message == NULL)
         return gpAcceptTransferA(connection, transfer, NULL);
-    
+
     message_A = UCS2ToUTF8StringAlloc(message);
     result = gpAcceptTransferA(connection, transfer, message_A);
     gsifree(message_A);
     return result;
 }
-    
+
 
 GPResult gpRejectTransferA(
   GPConnection * connection,
@@ -3648,10 +3648,10 @@ GPResult gpRejectTransferW(
 {
     char* message_A = NULL;
     GPResult result;
-    
+
     if (message == NULL)
         return gpRejectTransferA(connection, transfer, NULL);
-    
+
     message_A = UCS2ToUTF8StringAlloc(message);
     result = gpRejectTransferA(connection, transfer, message_A);
     gsifree(message_A);

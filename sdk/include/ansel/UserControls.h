@@ -49,7 +49,7 @@ namespace ansel
         kUserControlBoolean
     };
 
-    // This is a structure that is being passed into the UserControlCallback and used to specify 
+    // This is a structure that is being passed into the UserControlCallback and used to specify
     // a control about to be created.
     // It contains id of control that was changed in the Ansel UI or about to be created, it's type and
     // associated value
@@ -69,7 +69,7 @@ namespace ansel
         // A type of the user control (slider, boolean)
         UserControlType userControlType;
         // A value - boolean or float, depending on the control type
-        // Needs to be casted to the apropriate type and dereferenced 
+        // Needs to be casted to the apropriate type and dereferenced
         const void* value;
         // User defined pointer which is then passed to all the callbacks (nullptr by default)
         void* userPointer;
@@ -92,7 +92,7 @@ namespace ansel
     // not exceed 20 characters not counting the trailing zero.
     struct UserControlDesc
     {
-        const char* labelUtf8; 
+        const char* labelUtf8;
         UserControlCallback callback;
         UserControlInfo info;
 

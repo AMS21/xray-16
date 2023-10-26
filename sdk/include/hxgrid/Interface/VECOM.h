@@ -31,20 +31,20 @@ typedef unsigned int TCLASSID;
 #define IUNKNOWN_METHODS_IMPLEMENTATION_REFERENCE()    \
   virtual HRESULT __stdcall QueryInterface(REFIID riid, void** ppv) {*ppv=NULL; return E_NOINTERFACE;};  \
   virtual ULONG __stdcall AddRef() {return 1;};  \
-  virtual ULONG __stdcall Release() {return 1;};  
+  virtual ULONG __stdcall Release() {return 1;};
 
 #define IUNKNOWN_METHODS_IMPLEMENTATION_REFERENCE_EXCLUDEQUERYINTERFACE()    \
     virtual ULONG __stdcall AddRef() {return 1;};  \
     virtual ULONG __stdcall Release() {return 1;};
 
 //REVIEW: QueryInterface()
-//The interface returned by QueryInterface in response to a request for IID_IUnknown (the interface 
-//ID for IUnknown) should have the same pointer value at all times and from all interfaces on that 
-//instance. This is not required of any other interface. This pointer value is the instance's 
-//identity. The identity of an object is the way in which one compares two objects to see if they 
-//are actually the same one. This can be found only by comparing the IUnknown interface pointers. 
-//You can find the identity of the object behind any interface by first doing a QueryInterface for IUnknown 
-//and then comparing the pointers. 
+//The interface returned by QueryInterface in response to a request for IID_IUnknown (the interface
+//ID for IUnknown) should have the same pointer value at all times and from all interfaces on that
+//instance. This is not required of any other interface. This pointer value is the instance's
+//identity. The identity of an object is the way in which one compares two objects to see if they
+//are actually the same one. This can be found only by comparing the IUnknown interface pointers.
+//You can find the identity of the object behind any interface by first doing a QueryInterface for IUnknown
+//and then comparing the pointers.
 
 namespace VECOM
 {
@@ -55,17 +55,17 @@ namespace VECOM
 //helper class in refcount initialization and holding
 class TRefCountHolder
 {
- public: 
-  std::atomic<ULONG> RefCount;  
- 
+ public:
+  std::atomic<ULONG> RefCount;
+
   TRefCountHolder()
   {
    RefCount.store(1, std::memory_order_release);
-  } 
+  }
 };
 
 } //namespace
- 
+
 //for instantiated classes - tracks refcount
 #define IUNKNOWN_METHODS_IMPLEMENTATION_INSTANCE()    \
   VECOM::TRefCountHolder RefCountHolder; \
@@ -86,15 +86,15 @@ typedef IUnknown* (__cdecl *PInterfaceFactoryMethod)(TINTERFACEID InterfaceId, D
 //======================================
 // IInstanceInterfaceProvider
 //======================================
-//используетс€ экземпл€рами объектов дл€ регистрации себ€ 
-//чтобы можно было отдавать интерфейсы, которые реализует этот экземпл€р 
+//используетс€ экземпл€рами объектов дл€ регистрации себ€
+//чтобы можно было отдавать интерфейсы, которые реализует этот экземпл€р
 //(экземпл€ры одного и того же различаютс€ по ExData)
 DECLARE_INTERFACE_(IInstanceInterfaceProvider, IUnknown)
 {
- IUNKNOWN_METHODS_PURE(0x78923789,0x00010000)    
- 
+ IUNKNOWN_METHODS_PURE(0x78923789,0x00010000)
+
  virtual DWORD __stdcall GetVersion() const = 0;
- 
+
  //каждый экземпл€р объекта регистрирует этот метод в registry в конструкторе,
  //чтобы по запросу отдавать указатели на интерфейсы, которые он реализует
  //экземпл€ры распознаютс€ по Exdata
@@ -104,7 +104,7 @@ DECLARE_INTERFACE_(IInstanceInterfaceProvider, IUnknown)
  virtual IUnknown* __stdcall GetInterface(TINTERFACEID InterfaceId, DWORD version, const void* ExData) = 0;
 };
 
-  
+
 
 //===================================================
 // class TInterfaceObject
@@ -118,6 +118,6 @@ public:
     {
         return InterfaceClass::VERSION;
     }
-}; 
+};
 
 #endif VECOM_INCLUDED

@@ -17,7 +17,7 @@ extern "C"
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 // GameSpy XML parser for soap messages
-//   Create the stream object and attach to an XML text buffer.  
+//   Create the stream object and attach to an XML text buffer.
 //   The stream will not modify the buffer.
 //   The buffer should not be released until after the stream is destroyed
 //

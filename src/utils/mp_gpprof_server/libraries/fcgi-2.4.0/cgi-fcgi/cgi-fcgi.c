@@ -59,7 +59,7 @@ static int fcgiWritePending = 0;
 
 static void ScheduleIo(void);
 
-
+
 /*
  * Simple buffer (not ring buffer) type, used by all event handlers.
  */
@@ -91,7 +91,7 @@ static int GetPtr(char **ptr, int n, Buffer *pBuf)
     pBuf->next += result;
     return result;
 }
-
+
 /*
  *----------------------------------------------------------------------
  *
@@ -120,7 +120,7 @@ static FCGI_Header MakeHeader(
     header.reserved         =  0;
     return header;
 }
-
+
 /*
  *----------------------------------------------------------------------
  *
@@ -143,7 +143,7 @@ static FCGI_BeginRequestBody MakeBeginRequestBody(
     return body;
 }
 
-
+
 static int bytesToRead;    /* number of bytes to read from Web Server */
 static int appServerSock = -1;  /* Socket connected to FastCGI application,
                                  * used by AppServerReadHandler and
@@ -174,7 +174,7 @@ static int exitStatusSet = FALSE;
 
 static int stdinFds[3];
 
-
+
 /*
  *----------------------------------------------------------------------
  *
@@ -198,7 +198,7 @@ static void FCGIexit(int exitCode)
 #undef exit
 #define exit FCGIexit
 
-
+
 /*
  *----------------------------------------------------------------------
  *
@@ -339,7 +339,7 @@ static void AppServerReadHandler(ClientData dc, int bytesRead)
     } /*while*/
     ScheduleIo();
 }
-
+
 static Buffer fromWS;   /* Buffer for data read from Web server
                          * and written to FastCGI application. Used
                          * by WebServerReadHandler and
@@ -397,7 +397,7 @@ static void WebServerReadHandler(ClientData dc, int bytesRead)
 
     ScheduleIo();
 }
-
+
 /*
  *----------------------------------------------------------------------
  *
@@ -433,7 +433,7 @@ static void AppServerWriteHandler(ClientData dc, int bytesWritten)
     ScheduleIo();
 }
 
-
+
 /*
  * ScheduleIo --
  *
@@ -497,7 +497,7 @@ static void ScheduleIo(void)
     }
 }
 
-
+
 /*
  *----------------------------------------------------------------------
  *
@@ -533,7 +533,7 @@ static void FCGI_Start(char *bindPath, char *appPath, int nServers)
     }
     OS_Close(listenFd);
 }
-
+
 /*
  *----------------------------------------------------------------------
  *
@@ -577,7 +577,7 @@ static void FCGIUtil_BuildNameValueHeader(
     }
     *headerLenPtr = headerBuffPtr - startHeaderBuffPtr;
 }
-
+
 
 #define MAXARGS 16
 static int ParseArgs(int argc, char *argv[],
@@ -716,7 +716,7 @@ static int ParseArgs(int argc, char *argv[],
     }
     return err;
 }
-
+
 int main(int argc, char **argv)
 {
     char **envp = environ;

@@ -2,14 +2,14 @@
 // The Loki Library
 // Copyright (c) 2001 by Andrei Alexandrescu
 // This code accompanies the book:
-// Alexandrescu, Andrei. "Modern C++ Design: Generic Programming and Design 
+// Alexandrescu, Andrei. "Modern C++ Design: Generic Programming and Design
 //     Patterns Applied". Copyright (c) 2001. Addison-Wesley.
-// Permission to use, copy, modify, distribute and sell this software for any 
-//     purpose is hereby granted without fee, provided that the above copyright 
-//     notice appear in all copies and that both that copyright notice and this 
+// Permission to use, copy, modify, distribute and sell this software for any
+//     purpose is hereby granted without fee, provided that the above copyright
+//     notice appear in all copies and that both that copyright notice and this
 //     permission notice appear in supporting documentation.
-// The author or Addison-Welsey Longman make no representations about the 
-//     suitability of this software for any purpose. It is provided "as is" 
+// The author or Addison-Welsey Longman make no representations about the
+//     suitability of this software for any purpose. It is provided "as is"
 //     without express or implied warranty.
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -34,7 +34,7 @@ namespace Loki
     public:
         virtual ~BaseVisitor() {}
     };
-    
+
 ////////////////////////////////////////////////////////////////////////////////
 // class template Visitor
 // Forward decleration
@@ -46,27 +46,27 @@ namespace Loki
     namespace Private
     {
     // for some reason VC7 needs the base definition altough not in use
-    template <typename TListTag> 
+    template <typename TListTag>
     struct VisitorHelper1
     {
         template <typename T, typename R>
-        struct In 
-        { 
-            typedef typename T::ERROR_THIS_INSTANCE_SELECTED Result; 
+        struct In
+        {
+            typedef typename T::ERROR_THIS_INSTANCE_SELECTED Result;
         };
     };
-    
-    template <typename TListTag> 
+
+    template <typename TListTag>
     struct VisitorHelper2
     {
         template <typename T, typename R>
-        struct In 
-        { 
-            typedef typename T::ERROR_THIS_INSTANCE_SELECTED Result; 
+        struct In
+        {
+            typedef typename T::ERROR_THIS_INSTANCE_SELECTED Result;
         };
     };
-    
-    template <> 
+
+    template <>
     struct VisitorHelper1<TL::Typelist_tag>
     {
         template <class TList, typename R>
@@ -75,8 +75,8 @@ namespace Loki
             typedef Visitor<typename TList::Head, R> Result;
         };
     };
-    
-    template <> 
+
+    template <>
     struct VisitorHelper2<TL::Typelist_tag>
     {
         template <class TList, typename R>
@@ -99,14 +99,14 @@ namespace Loki
             typedef typename In1<typename TList::Tail>::Result Result;
         };
     };
-    
-    
-    template <> 
+
+
+    template <>
     struct VisitorHelper1<TL::NoneList_tag>
     {
         template <class T, typename R>
-        struct In 
-        { 
+        struct In
+        {
             struct Result
             {
                 typedef R ReturnType;
@@ -114,14 +114,14 @@ namespace Loki
             };
         };
     };
-    
-    template <> 
+
+    template <>
     struct VisitorHelper2<TL::NoneList_tag>
     {
         template <class T, typename R>
-        struct In { struct Result {}; };        
+        struct In { struct Result {}; };
     };
-    
+
     } // namespace Private
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -142,7 +142,7 @@ namespace Loki
             typename TL::is_Typelist<T>::type_tag
           >
           ::template In<T, R>::Result
-    {  
+    {
     public:
         typedef R ReturnType;
     };
@@ -153,48 +153,48 @@ namespace Loki
 // Implements non-strict visitation (you can implement only part of the Visit
 //     functions)
 ////////////////////////////////////////////////////////////////////////////////
-    template <class TList, typename R = void> 
+    template <class TList, typename R = void>
     class BaseVisitorImpl;
 
     namespace Private
     {
     // for some reason VC7 needs the base definition altough not in use
-    template<typename TListTag> 
+    template<typename TListTag>
     struct BaseVisitorImplHelper
     {
         template <typename T, typename R>
-        struct In 
-        { 
-            typedef typename T::ERROR_THIS_INSTANCE_SELECTED Result; 
-        };
-    };
-    
-    template<> 
-    struct BaseVisitorImplHelper<TL::Typelist_tag>
-    {
-        template <typename TList, typename R>
-        struct In 
-        { 
-            typedef BaseVisitorImpl<TList, R> Result; 
+        struct In
+        {
+            typedef typename T::ERROR_THIS_INSTANCE_SELECTED Result;
         };
     };
 
-    template<> 
+    template<>
+    struct BaseVisitorImplHelper<TL::Typelist_tag>
+    {
+        template <typename TList, typename R>
+        struct In
+        {
+            typedef BaseVisitorImpl<TList, R> Result;
+        };
+    };
+
+    template<>
     struct BaseVisitorImplHelper<TL::NullType_tag>
     {
         template <typename TList, typename R>
-        struct In 
-        { 
-            struct Result {}; 
+        struct In
+        {
+            struct Result {};
         };
     };
 
     } // namespace Private
-    
+
     template <class TList, typename R>
     class BaseVisitorImpl
         : public Visitor<typename TList::Head, R>
-        
+
         , public Private::BaseVisitorImplHelper
           <
             typename TL::is_Typelist<typename TList::Tail>::type_tag
@@ -209,7 +209,7 @@ namespace Loki
         virtual R Visit(typename TList::Head&)
         { return R(); }
     };
-    
+
 ////////////////////////////////////////////////////////////////////////////////
 // class template NonStrictVisitor
 // Implements non-strict visitation (you can implement only part of the Visit
@@ -226,11 +226,11 @@ namespace Loki
         }
     };
 
-    template <class TList, typename R = void> 
-    class NonStrictVisitor 
+    template <class TList, typename R = void>
+    class NonStrictVisitor
         : public GenLinearHierarchy<
-            TList, 
-            NonStrictVisitorUnit, 
+            TList,
+            NonStrictVisitorUnit,
             Visitor<TList, R> >
     {
     };
@@ -250,9 +250,9 @@ struct DefaultCatchAll
 // class template BaseVisitable
 ////////////////////////////////////////////////////////////////////////////////
 
-    template 
+    template
     <
-        typename R = void, 
+        typename R = void,
         template <typename, class> class CatchAll = DefaultCatchAll
     >
     class BaseVisitable
@@ -261,7 +261,7 @@ struct DefaultCatchAll
         typedef R ReturnType;
         virtual ~BaseVisitable() {}
         virtual ReturnType Accept(BaseVisitor&) = 0;
-        
+
     protected: // give access only to the hierarchy
         template <class T>
         static ReturnType AcceptImpl(T& visited, BaseVisitor& guest)
@@ -277,7 +277,7 @@ struct DefaultCatchAll
 
 ////////////////////////////////////////////////////////////////////////////////
 // macro DEFINE_VISITABLE
-// Put it in every class that you want to make visitable (in addition to 
+// Put it in every class that you want to make visitable (in addition to
 //     deriving it from BaseVisitable<R>
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -287,7 +287,7 @@ struct DefaultCatchAll
 
 ////////////////////////////////////////////////////////////////////////////////
 // class template CyclicVisitor
-// Put it in every class that you want to make visitable (in addition to 
+// Put it in every class that you want to make visitable (in addition to
 //     deriving it from BaseVisitable<R>
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -297,7 +297,7 @@ struct DefaultCatchAll
     public:
         typedef R ReturnType;
         // using Visitor<TList, R>::Visit;
-        
+
         virtual ~CyclicVisitor() {}
 
         template <class Visited>
@@ -307,7 +307,7 @@ struct DefaultCatchAll
             return subObj.Visit(host);
         }
     };
-    
+
 ////////////////////////////////////////////////////////////////////////////////
 // macro DEFINE_CYCLIC_VISITABLE
 // Put it in every class that you want to make visitable by a cyclic visitor

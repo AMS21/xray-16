@@ -2,14 +2,14 @@
 // The Loki Library
 // Copyright (c) 2001 by Andrei Alexandrescu
 // This code accompanies the book:
-// Alexandrescu, Andrei. "Modern C++ Design: Generic Programming and Design 
+// Alexandrescu, Andrei. "Modern C++ Design: Generic Programming and Design
 //     Patterns Applied". Copyright (c) 2001. Addison-Wesley.
-// Permission to use, copy, modify, distribute and sell this software for any 
-//     purpose is hereby granted without fee, provided that the above copyright 
-//     notice appear in all copies and that both that copyright notice and this 
+// Permission to use, copy, modify, distribute and sell this software for any
+//     purpose is hereby granted without fee, provided that the above copyright
+//     notice appear in all copies and that both that copyright notice and this
 //     permission notice appear in supporting documentation.
-// The author or Addison-Welsey Longman make no representations about the 
-//     suitability of this software for any purpose. It is provided "as is" 
+// The author or Addison-Welsey Longman make no representations about the
+//     suitability of this software for any purpose. It is provided "as is"
 //     without express or implied warranty.
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -25,7 +25,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 // macros TYPELIST_1, TYPELIST_2, ... TYPELIST_50
 // Each takes a number of arguments equal to its numeric suffix
-// The arguments are type names. TYPELIST_NN generates a typelist containing 
+// The arguments are type names. TYPELIST_NN generates a typelist containing
 //     all types passed as arguments, in that order.
 // Example: TYPELIST_2(char, int) generates a type containing char and int.
 ////////////////////////////////////////////////////////////////////////////////
@@ -385,17 +385,17 @@ namespace Loki
             typename T10 = NullType, typename T11 = NullType, typename T12 = NullType,
             typename T13 = NullType, typename T14 = NullType, typename T15 = NullType,
             typename T16 = NullType, typename T17 = NullType, typename T18 = NullType
-        > 
+        >
         struct MakeTypelist
         {
         private:
             typedef typename MakeTypelist
             <
-                T2 , T3 , T4 , 
-                T5 , T6 , T7 , 
-                T8 , T9 , T10, 
+                T2 , T3 , T4 ,
+                T5 , T6 , T7 ,
+                T8 , T9 , T10,
                 T11, T12, T13,
-                T14, T15, T16, 
+                T14, T15, T16,
                 T17, T18
             >
             ::Result TailResult;
@@ -407,9 +407,9 @@ namespace Loki
         template<>
         struct MakeTypelist
         <
-            NullType, NullType, NullType, 
-            NullType, NullType, NullType, 
-            NullType, NullType, NullType, 
+            NullType, NullType, NullType,
+            NullType, NullType, NullType,
+            NullType, NullType, NullType,
             NullType, NullType, NullType,
             NullType, NullType, NullType,
             NullType, NullType, NullType
@@ -425,14 +425,14 @@ namespace Loki
 // is_Typelist<T>::value
 // returns a compile-time boolean constant containing true iff T is some Typelist<T1,T2>
 // is_Typelist<T>::type_tag
-// returns a compile-time unsigned constant containing 
+// returns a compile-time unsigned constant containing
 // 1 iff T == Typelist<T1,T2>, 2 iff T == NullType and 3 otherwise
 ////////////////////////////////////////////////////////////////////////////////
         struct Typelist_tag {};
         struct NullType_tag {};
         struct NoneList_tag {};
-        
-        enum 
+
+        enum
         {
             Typelist_ID = 1,
             NullType_ID = 2,
@@ -485,8 +485,8 @@ typedef char _type_##_is_not_a_Typelist[true]
 ////////////////////////////////////////////////////////////////////////////////
 
         template <class TList> struct Length;
-        
-        template <> 
+
+        template <>
         struct Length<NullType>
         : std::integral_constant<int, 0> {};
 
@@ -497,14 +497,14 @@ typedef char _type_##_is_not_a_Typelist[true]
 ////////////////////////////////////////////////////////////////////////////////
 // class template TypeAt
 // Finds the type at a given index in a typelist
-// Invocation (TList is a typelist and index is a compile-time integral 
+// Invocation (TList is a typelist and index is a compile-time integral
 //     constant):
 // TypeAt<TList, index>::Result
 // returns the type in position 'index' in TList
 // If you pass an out-of-bounds index, the result is a compile-time error
 ////////////////////////////////////////////////////////////////////////////////
 
-        template <class TList, unsigned int index> 
+        template <class TList, unsigned int index>
         struct TypeAt
         {
             using Result = typename TypeAt<typename TList::Tail, index - 1>::Result;
@@ -522,17 +522,17 @@ typedef char _type_##_is_not_a_Typelist[true]
 ////////////////////////////////////////////////////////////////////////////////
 // class template TypeAtNonStrict
 // Finds the type at a given index in a typelist
-// Invocations (TList is a typelist and index is a compile-time integral 
+// Invocations (TList is a typelist and index is a compile-time integral
 //     constant):
 // a) TypeAt<TList, index>::Result
-// returns the type in position 'index' in TList, or NullType if index is 
+// returns the type in position 'index' in TList, or NullType if index is
 //     out-of-bounds
 // b) TypeAt<TList, index, D>::Result
 // returns the type in position 'index' in TList, or D if index is out-of-bounds
 ////////////////////////////////////////////////////////////////////////////////
 
 
-        template <class TList, unsigned int index, typename DefaultType = NullType> 
+        template <class TList, unsigned int index, typename DefaultType = NullType>
         struct TypeAtNonStrict
         {
             using Tail = typename TList::Tail;
@@ -744,20 +744,20 @@ typedef char _type_##_is_not_a_Typelist[true]
 ////////////////////////////////////////////////////////////////////////////////
 
         template <class TList> struct Reverse;
-        
+
         template <>
         struct Reverse<NullType>
         {
             typedef NullType Result;
         };
-        
-        template <class TList> 
+
+        template <class TList>
         struct Reverse
         {
         private:
             typedef typename TList::Head Head;
             typedef typename TList::Tail Tail;
-        
+
             ASSERT_TYPELIST(TList);
 
         public:
@@ -800,17 +800,17 @@ typedef char _type_##_is_not_a_Typelist[true]
 // Arranges the types in a typelist so that the most derived types appear first
 // Invocation (TList is a typelist):
 // DerivedToFront<TList>::Result
-// returns the reordered TList 
+// returns the reordered TList
 ////////////////////////////////////////////////////////////////////////////////
-        
+
         template <class TList> struct DerivedToFront;
-        
+
         template <>
         struct DerivedToFront<NullType>
         {
             typedef NullType Result;
         };
-        
+
         template <class TList>
         struct DerivedToFront
         {
@@ -819,7 +819,7 @@ typedef char _type_##_is_not_a_Typelist[true]
 
             typedef typename TList::Head Head;
             typedef typename TList::Tail Tail;
-        
+
             typedef typename MostDerived<Tail, Head>::Result TheMostDerived;
             typedef typename Replace<Tail, TheMostDerived, Head>::Result Temp;
             typedef typename DerivedToFront<Temp>::Result L;
@@ -827,24 +827,24 @@ typedef char _type_##_is_not_a_Typelist[true]
         public:
             typedef Typelist<TheMostDerived, L> Result;
         };
-                
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // class template DerivedToFrontAll
 // Arranges all the types in a typelist so that the most derived types appear first
 // Invocation (TList is a typelist):
 // DerivedToFront<TList>::Result
-// returns the reordered TList 
+// returns the reordered TList
 ////////////////////////////////////////////////////////////////////////////////
-        
+
         template <class TList> struct DerivedToFrontAll;
-        
+
         template <>
         struct DerivedToFrontAll<NullType>
         {
             typedef NullType Result;
         };
-        
+
         template <class TList>
         struct DerivedToFrontAll
         {
@@ -853,16 +853,16 @@ typedef char _type_##_is_not_a_Typelist[true]
 
             typedef typename TList::Head Head;
             typedef typename TList::Tail Tail;
-        
+
             typedef typename MostDerived<Tail, Head>::Result TheMostDerived;
             typedef typename Replace<Tail, TheMostDerived, Head>::Result L;
-            
+
             typedef typename DerivedToFrontAll<L>::Result TailResult;
 
         public:
             typedef Typelist<TheMostDerived, TailResult> Result;
         };
-                                    
+
     }   // namespace TL
 }   // namespace Loki
 

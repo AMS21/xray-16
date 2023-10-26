@@ -36,8 +36,8 @@
     #define ANSEL_SDK_INTERNAL_API extern "C" __declspec(dllimport)
     #define ANSEL_SDK_CLASS_API __declspec(dllimport)
 #else
-    #define ANSEL_SDK_API 
-    #define ANSEL_SDK_INTERNAL_API 
+    #define ANSEL_SDK_API
+    #define ANSEL_SDK_INTERNAL_API
     #define ANSEL_SDK_CLASS_API
 #endif
 

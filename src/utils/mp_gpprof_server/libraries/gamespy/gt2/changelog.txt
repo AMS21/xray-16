@@ -52,12 +52,12 @@ DATE        VERSION  BY   TYPE     DESCRIPTION
 04-14-2006  2.06.52  SAH  FIX      few more typecasts in gt2memcpy calls (forgot to do PC ones)
 04-14-2006  2.06.51  SAH  FIX      Added some typecasts in gt2memcpy calls to get rid of warnings
 01-27-2006  2.05.50  SN   RELEASE  Releasing to developer site
-01-27-2006  2.05.50  SN   FIX      Updated test_main define for PSP 
+01-27-2006  2.05.50  SN   FIX      Updated test_main define for PSP
                      SN   FIX      PSP and PS2 only use messages smaller than 8K
                      SN   OTHER    Added psp prodg project and solution to sgv
 01-26-2006  2.05.49  SN   FIX      Force gt2IPToHostInfo to return NULL for PSP since PSP doesn't have a gethostbyaddr
 01-11-2006  2.05.49  SN   FIX      Added platform checks to socket error handlers
-                     SN   FIX      Added visual studio .net project and solution           
+                     SN   FIX      Added visual studio .net project and solution
 01-11-2006  2.05.48  SN   FIX      updated callling convention to only be WIN32
 12-20-2005  2.05.47  SN   OTHER    Cleaned up and added missing common code to projects if needed
 12-20-2005  2.05.46  SN   FIX      Fixed VDP specific changes that caused messages to be truncated
@@ -108,12 +108,12 @@ DATE        VERSION  BY   TYPE     DESCRIPTION
 08-25-2004  2.05.22  DES  FEATURE  Added OSX makefile
 08-16-2004  2.05.22  SN   FEATURE  Updated gt2hostmig and gt2nat to use QR2 instead of legacy Q & R
 08-05-2004  2.05.21  SN   RELEASE  Releasing to developer site.
-07-20-2004  2.05.21  SN   FIX      Updated code with explicit casts to remove implicit cast error 
+07-20-2004  2.05.21  SN   FIX      Updated code with explicit casts to remove implicit cast error
                                    when compiling at highest level and warnings treated as errors.
 06-18-2004  2.05.20  BED  RELEASE  Releasing to developer site.
 06-18-2004  2.05.20  DES  FIX      Checking for trying to connect to an invalid IP range.
 10-21-2003  2.05.19  BED  RELEASE  Releasing to developer site.  (UNIQUE NICK AND UNICODE SUPPORT)
-10-21-2003  2.05.19  BED  FIX      Added #ifdef because SN_SYSTEMS doesn't support EHOSTDOWN  
+10-21-2003  2.05.19  BED  FIX      Added #ifdef because SN_SYSTEMS doesn't support EHOSTDOWN
 10-09-2003  2.05.18  BED  FIX      Switched to gsi_time type instead of unsinged long for PS2 compatibility
 07-25-2003  2.05.17  DES  FIX      Ignoring EHOSTDOWN sendto error.
 07-24-2003  2.05.16  DES  RELEASE  Releasing to developer site.

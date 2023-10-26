@@ -7,7 +7,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // INSOCK
 #if defined(INSOCK)
-#define INSOCK_MAX_UDP_BUFSIZE 8000000  // default max 
+#define INSOCK_MAX_UDP_BUFSIZE 8000000  // default max
 #define INSOCK_MAX_TCP_BUFSIZE 32000
 
 extern sceSifMClientData gGSIInsockClientData;
@@ -23,7 +23,7 @@ int SetSendBufferSize(SOCKET sock, int size)
 
 int GetReceiveBufferSize(SOCKET sock)
 {return NETBUFSIZE; GSI_UNUSED(sock); }
-    
+
 int GetSendBufferSize(SOCKET sock)
 {return NETBUFSIZE; GSI_UNUSED(sock); }
 
@@ -63,10 +63,10 @@ int GSISocketSelect(SOCKET theSocket, int* theReadFlag, int* theWriteFlag, int* 
         if ((theExceptFlag != NULL))
             *theExceptFlag  = (aPollFdSet.revents & sceINET_POLLERR) ? 1:0;
     }
-    return result;  
+    return result;
 }
 
-// shutdown needs to have a timeout that can be done 
+// shutdown needs to have a timeout that can be done
 // right before shutting down
 int gsiShutdown(SOCKET s, int how)
 {

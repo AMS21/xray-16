@@ -107,8 +107,8 @@ public:
 protected:
     HICON m_hIcon;
     mutable long m_InTimer;
-    
-    
+
+
 
     void CodeToString(CString & string);
     void SetHost();
@@ -158,7 +158,7 @@ protected:
     DECLARE_MESSAGE_MAP()
 public:
     int m_StatusState;
-    
+
     short m_QueryPort;
     short m_HostPort;
     afx_msg void OnSetstatusinfo();

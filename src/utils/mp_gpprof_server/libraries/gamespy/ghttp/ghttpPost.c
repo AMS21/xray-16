@@ -1,5 +1,5 @@
 /*
-GameSpy GHTTP SDK 
+GameSpy GHTTP SDK
 Dan "Mr. Pants" Schoenblum
 dan@gamespy.com
 
@@ -571,7 +571,7 @@ static int ghiPostGetHasFilesContentLength
     static int fileBaseLen;
     static int endLen;
     static int xmlBaseLen;
-    
+
     if(!boundaryLen)
     {
         if (post->useDIME)
@@ -940,7 +940,7 @@ static GHIPostingResult ghiPostStringStateDoPosting
 )
 {
     //GHTTPBool result;
-    
+
     assert(state->pos >= 0);
 
     // Is this an empty string?
@@ -963,7 +963,7 @@ static GHIPostingResult ghiPostStringStateDoPosting
 
         // When encrypting, we need space for two copies
         if (connection->encryptor.mEngine == GHTTPEncryptionEngine_None)
-            writeBuffer = &connection->sendBuffer; 
+            writeBuffer = &connection->sendBuffer;
         else
             writeBuffer = &connection->encodeBuffer;
 
@@ -1000,7 +1000,7 @@ static GHIPostingResult ghiPostStringStateDoPosting
     else
     {
         // copy the string as-is, encrypting if necessary
-        GHITrySendResult result = ghiTrySendThenBuffer(connection, 
+        GHITrySendResult result = ghiTrySendThenBuffer(connection,
             state->data->data.string.string, state->data->data.string.len);
         if (result == GHITrySendError)
             return GHIPostingError;
@@ -1037,7 +1037,7 @@ static GHIPostingResult ghiPostXmlStateDoPosting
     GSXmlStreamWriter xml = state->data->data.xml.xml;
     char pad[3] = { '\0', '\0', '\0' };
     int padlen = 0;
-    
+
     // make sure state is valid
     GS_ASSERT(state->pos >= 0);
     GS_ASSERT(connection->post != NULL);
@@ -1220,14 +1220,14 @@ static GHIPostingResult ghiPostFileMemoryStateDoPosting
     {
         // Encrypted: can't avoid the copy due to encryption+MAC
         GHITrySendResult result;
-        do 
+        do
         {
             len = (state->data->data.fileMemory.len - state->pos);
             len = min(len, GS_SSL_MAX_CONTENTLENGTH);
             result = ghiTrySendThenBuffer(connection, state->data->data.fileMemory.buffer + state->pos, len);
             if (result == GHITrySendError)
                 return GHIPostingError;
-            
+
             // Update the pos.
             //////////////////
             state->pos += len;
@@ -1249,7 +1249,7 @@ static GHIPostingResult ghiPostFileMemoryStateDoPosting
                 }
                 return GHIPostingDone;
             }
-        } 
+        }
         while(result == GHITrySendSent);
         return GHIPostingPosting;
     }
@@ -1271,7 +1271,7 @@ static GHIPostingResult ghiPostStateDoPosting
     if(state->pos == -1)
     {
         char buffer[2048];
-        
+
         // Bump up the position so we only send the header once.
         ////////////////////////////////////////////////////////
         state->pos = 0;
@@ -1585,7 +1585,7 @@ GHIPostingResult ghiPostDoPosting
 
         // Upload the current data.
         ///////////////////////////
-        postingResult = ghiPostStateDoPosting(postState, connection, 
+        postingResult = ghiPostStateDoPosting(postState, connection,
             (postingState->index == 0)?GHTTPTrue:GHTTPFalse,
             (postingState->index == (ArrayLength(postingState->states)-1))?GHTTPTrue:GHTTPFalse);
 
@@ -1617,7 +1617,7 @@ GHIPostingResult ghiPostDoPosting
         if (connection->encodeBuffer.len > 0)
         {
             GS_ASSERT(connection->encodeBuffer.pos == 0); // if you hit this, it means you forgot the clear the buffer
-            if (GHTTPFalse == ghiEncryptDataToBuffer(&connection->sendBuffer, 
+            if (GHTTPFalse == ghiEncryptDataToBuffer(&connection->sendBuffer,
                         connection->encodeBuffer.data, connection->encodeBuffer.len))
             {
                 return GHIPostingError;

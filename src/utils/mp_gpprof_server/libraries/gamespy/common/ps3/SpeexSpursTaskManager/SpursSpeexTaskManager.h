@@ -7,8 +7,8 @@ Copyright (c) 2003-2007 Erwin Coumans  http://bulletphysics.com
 
 This software is provided 'as-is', without any express or implied warranty.
 In no event will the authors be held liable for any damages arising from the use of this software.
-Permission is granted to anyone to use this software for any purpose, 
-including commercial applications, and to alter it and redistribute it freely, 
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it freely,
 subject to the following restrictions:
 
 1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
@@ -36,19 +36,19 @@ struct SpursSpeexTaskDesc
     SpursSpeexTaskDesc()
         :mDebugPause(false)
     {
-        
+
     }
-    int           mQuality; 
+    int           mQuality;
     int           mSamplesPerSecond;
     int           mEncodedFrameSize;
-    void          *mInputBuffer;     // make it 
-    unsigned int   mInputBufferSize; 
+    void          *mInputBuffer;     // make it
+    unsigned int   mInputBufferSize;
 
     SpursSpeexTaskOutput    *mSpeexTaskOutput;
-    void            *mOutputBuffer; 
+    void            *mOutputBuffer;
     unsigned int     mOutputBufferSize;
 
-    char            *mSpeexStateBuffer; 
+    char            *mSpeexStateBuffer;
     unsigned int     mSpeexStateBufferSize;
     bool    mDebugPause;
 
@@ -73,7 +73,7 @@ class SpursSpeexTaskManager
     // track task buffers that are being used, and total busy tasks
     spursAlignedObjectArray<bool>   m_taskBusy;
     spursAlignedObjectArray<SpursSpeexTaskDesc>mSpursSpeexTaskDesc;
-    
+
     unsigned int   m_numBusyTasks;
 
     // the current task and the current entry to insert a new work unit
@@ -82,7 +82,7 @@ class SpursSpeexTaskManager
     bool m_initialized;
 
     //void postProcess(int taskId, int outputSize);
-    
+
     class   spursThreadSupportInterface*    m_threadInterface;
 
     unsigned int    m_maxNumOutstandingTasks;
@@ -93,13 +93,13 @@ class SpursSpeexTaskManager
 
 public:
     SpursSpeexTaskManager(spursThreadSupportInterface*  threadInterface, unsigned int maxNumOutstandingTasks);
-    
+
     ~SpursSpeexTaskManager();
-    
+
     ///call initialize in the beginning of the frame, before addCollisionPairToTask
     int initialize();
 
-    int issueEncodeTask(int16_t * inBuffer, int inBufferSize, int encodedFrameSize, char *outBuffer, int outBufferSize, 
+    int issueEncodeTask(int16_t * inBuffer, int inBufferSize, int encodedFrameSize, char *outBuffer, int outBufferSize,
                         SpursSpeexTaskOutput *taskOuput,char *m_userAllocatedSpeexBuffer,int userAllocatedSpeexBufferSize);
 
     int issueEncodeInitTask(int theQuality,int theGviSpeexSamplesPerSecond,  SpursSpeexTaskOutput *taskOutput, char *m_userAllocatedSpeexBuffer,
@@ -110,7 +110,7 @@ public:
 
     int issueDecodeSetTask(char *decoderStateBuffer, int decoderStateBufferSize, char *inBuffer, int inBufferSize, int encodedFrameSize,
                            short* outBuffer, int outBufferSize, struct SpursSpeexTaskOutput *taskOutput);
-    
+
     int issueDecodeInitTask(char *decoderStateBuffer, int decoderStateBufferSize, int sampleRate, struct SpursSpeexTaskOutput *taskOutput);
 
     ///call flush to submit potential outstanding work to SPUs and wait for all involved SPUs to be finished

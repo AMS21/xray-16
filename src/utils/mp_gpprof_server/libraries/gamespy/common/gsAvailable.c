@@ -35,7 +35,7 @@ static int get_sockaddrin(const char * hostname, int port, SOCKADDR_IN * saddr)
     saddr->sin_family = AF_INET;
     saddr->sin_port = htons((unsigned short)port);
     saddr->sin_addr.s_addr = inet_addr(hostname);
-    
+
     if(saddr->sin_addr.s_addr == INADDR_NONE)
     {
         HOSTENT * host = gethostbyname(hostname);

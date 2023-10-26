@@ -61,7 +61,7 @@ namespace ansel
     // Converts quaternion to rotation matrix vectors.
     ANSEL_SDK_API void quaternionToRotationMatrixVectors(const nv::Quat& q, nv::Vec3& right, nv::Vec3& up, nv::Vec3& forward);
 
-    // Converts rotation matrix vectors to quaternion. 
+    // Converts rotation matrix vectors to quaternion.
     ANSEL_SDK_API void rotationMatrixVectorsToQuaternion(const nv::Vec3& right, const nv::Vec3& up, const nv::Vec3& forward, nv::Quat& q);
 }
 

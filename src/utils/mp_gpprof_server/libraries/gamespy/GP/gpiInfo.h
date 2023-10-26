@@ -1,6 +1,6 @@
 /*
 gpiInfo.h
-GameSpy Presence SDK 
+GameSpy Presence SDK
 Dan "Mr. Pants" Schoenblum
 
 Copyright 1999-2007 GameSpy Industries, Inc
@@ -57,22 +57,22 @@ typedef struct
 ///////////
 GPResult
 gpiSetInfoi(
-  GPConnection * connection, 
-  GPEnum info, 
+  GPConnection * connection,
+  GPEnum info,
   int value
 );
 
 GPResult
 gpiSetInfos(
-  GPConnection * connection, 
-  GPEnum info, 
+  GPConnection * connection,
+  GPEnum info,
   const char * value
 );
 
 GPResult
 gpiSetInfod(
-  GPConnection * connection, 
-  GPEnum info, 
+  GPConnection * connection,
+  GPEnum info,
   int day,
   int month,
   int year
@@ -80,7 +80,7 @@ gpiSetInfod(
 
 GPResult
 gpiSetInfoMask(
-  GPConnection * connection, 
+  GPConnection * connection,
   GPEnum mask
 );
 
@@ -93,7 +93,7 @@ gpiInfoCacheToArg(
 GPResult
 gpiGetInfo(
   GPConnection * connection,
-  GPProfile profile, 
+  GPProfile profile,
   GPEnum checkCache,
   GPEnum blocking,
   GPCallback callback,

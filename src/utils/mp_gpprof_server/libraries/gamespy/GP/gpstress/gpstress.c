@@ -1457,7 +1457,7 @@ void StartShutdown(unsigned long now)
             }
 #endif
 
-            // Set when to disconnect, 
+            // Set when to disconnect,
             //////////////////////////
             profile->disconnectTime = (now + ((rand() * ((numConnections / SHUTDOWN_DISCONNECTS_PER_SEC) * 1000)) / RAND_MAX));
         }

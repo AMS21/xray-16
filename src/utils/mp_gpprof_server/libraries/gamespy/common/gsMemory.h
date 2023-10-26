@@ -13,7 +13,7 @@
 // - collecting mem usage stats
 // (x) is a enumerated type for the specific module
 #if(1)
-    #define GSI_PRE_ALLOC(x)        
+    #define GSI_PRE_ALLOC(x)
     #define GSI_POST_ALLOC()
 #elif(0)
     // - collecting mem usage stats
@@ -58,12 +58,12 @@ void* gsimemalign   (size_t boundary, size_t size); // TODO
 typedef void    *(__cdecl *gsMallocCB)  (size_t size);
 typedef void     (__cdecl *gsFreeCB)    (void* ptr);
 typedef void    *(__cdecl *gsReallocCB) (void* ptr, size_t size);
-typedef void    *(__cdecl *gsMemalignCB)(size_t boundary, size_t size); 
+typedef void    *(__cdecl *gsMemalignCB)(size_t boundary, size_t size);
 #else
 typedef void    *(*gsMallocCB)  (size_t size);
 typedef void     (*gsFreeCB)    (void* ptr);
 typedef void    *(*gsReallocCB) (void* ptr, size_t size);
-typedef void    *(*gsMemalignCB)(size_t boundary, size_t size); 
+typedef void    *(*gsMemalignCB)(size_t boundary, size_t size);
 #endif
 // call this to override above gsi.... calls with your own.
 void gsiMemoryCallbacksSet(gsMallocCB p_malloc, gsFreeCB p_free, gsReallocCB p_realloc, gsMemalignCB p_memalign);
@@ -77,7 +77,7 @@ void gsiMemoryCallbacksSet(gsMallocCB p_malloc, gsFreeCB p_free, gsReallocCB p_r
 // the gsi mem manager uses the concept of multiple memory pools or contexts.
 // use pop and push commands to pop and push the current context off of the stack
 
-typedef enum 
+typedef enum
 {
     gsMemMgrContext_Invalid=  -1,
     gsMemMgrContext_Default=   0,
@@ -104,7 +104,7 @@ typedef enum
     Call gsMemMgrCreate once at app start with a static buffer.  Make all calls to this.
     Alternatively, call it once per API to sue a seperate pool per API.
 */
-gsMemMgrContext gsMemMgrCreate      (gsMemMgrContext context, const char *PoolName,void* thePoolBuffer, size_t thePoolSize);    
+gsMemMgrContext gsMemMgrCreate      (gsMemMgrContext context, const char *PoolName,void* thePoolBuffer, size_t thePoolSize);
 
 // Use this to determine which pool and subsequent allocations will be taken from.
 //exx use
@@ -113,11 +113,11 @@ gsMemMgrContext gsMemMgrCreate      (gsMemMgrContext context, const char *PoolNa
     {
         gsMemMgrContextPush(thisAPIContext);
 
-        make allocations. 
+        make allocations.
 
         //restore settings
         gsMemMgrContextPop(thisAPIContext);
-        
+
     }
 */
 // note, this is not neccessary for "free".
@@ -126,7 +126,7 @@ gsMemMgrContext gsMemMgrContextPop  ();
 
 
 // clear contents, original mempool ptr must still be freed by app.
-void            gsMemMgrDestroy(gsMemMgrContext context);   
+void            gsMemMgrDestroy(gsMemMgrContext context);
 
 // -------------Diagnostics------------------------
 // These functions all run on the current mempool context.
@@ -154,7 +154,7 @@ gsi_u32         gsMemMgrMemUsedByTagGet(gsi_u8 tag);
 gsi_u32         gsMemMgrMemAvailGet         (gsMemMgrContext context);
 // return total used memory for the given memory pool context
 gsi_u32         gsMemMgrMemUsedGet          (gsMemMgrContext context);
-// return largest allocatable chunk within the given memory pool context.  This 
+// return largest allocatable chunk within the given memory pool context.  This
 // will be the same or probably smaller then the value returned by gsMemMgrMemAvailGet
 // depending on degree of memory fragmentation.
 gsi_u32         gsMemMgrMemLargestAvailGet  (gsMemMgrContext context);
@@ -162,7 +162,7 @@ gsi_u32         gsMemMgrMemLargestAvailGet  (gsMemMgrContext context);
 // The Highwater mark for memory used is the highest memory usage ever gets to for this
 // given heap.  It is the most important stat, as your mempool must be at least this big.
 // Exactly how big your pool needs to be depends on fragmentation.  So it may need to be slightly
-// bigger then this amount.  
+// bigger then this amount.
 gsi_u32         gsMemMgrMemHighwaterMarkGet (gsMemMgrContext context);
 
 

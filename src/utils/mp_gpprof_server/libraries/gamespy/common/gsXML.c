@@ -231,7 +231,7 @@ GSXmlStreamReader gsXmlCreateStreamReader()
             "Out of memory in gsXmlCreateStream, needed %d bytes", sizeof(GSIXmlStreamReader));
         return NULL; // OOM
     }
-    
+
     newStream->mElementArray = ArrayNew(sizeof(GSIXmlElement), GS_XML_INITIAL_ELEMENT_ARRAY_COUNT, gsiXmlUtilElementFree);
     if (newStream->mElementArray == NULL)
     {
@@ -323,7 +323,7 @@ gsi_bool gsXmlCloseWriter(GSXmlStreamWriter stream)
 
     if (gsi_is_false(gsiXmlUtilWriteString(writer, GS_XML_SOAP_FOOTER)))
         return gsi_false;
-    
+
     writer->mClosed = gsi_true;
     return gsi_true;
 }
@@ -390,7 +390,7 @@ static gsi_bool gsiXmlUtilSkipWhiteSpace(GSIXmlStreamReader * stream, const char
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-static gsi_bool gsiXmlUtilParseElement(GSIXmlStreamReader * stream, char * buffer, 
+static gsi_bool gsiXmlUtilParseElement(GSIXmlStreamReader * stream, char * buffer,
                                       int len, int * pos, int parentIndex)
 {
     GSIXmlElement newElem;
@@ -454,7 +454,7 @@ static gsi_bool gsiXmlUtilParseElement(GSIXmlStreamReader * stream, char * buffe
         GS_XML_CHECK(gsiXmlUtilSkipWhiteSpace(stream, buffer, len, pos));
 
         // Store it in the array
-        if (storeElement) 
+        if (storeElement)
         {
             GS_ASSERT(newElem.mName.mData != NULL);
             GS_ASSERT(newElem.mIndex != -1);
@@ -472,7 +472,7 @@ static gsi_bool gsiXmlUtilParseElement(GSIXmlStreamReader * stream, char * buffe
     // Check for immediate termination (no value or children)
     //    non-element tags end with the same character they start with
     //    element tags ending with '/>' also have no children
-    if ( (!isalnum(buffer[startPos+1]) && buffer[*pos] == buffer[startPos+1]) 
+    if ( (!isalnum(buffer[startPos+1]) && buffer[*pos] == buffer[startPos+1])
             || buffer[*pos] == '/')
     {
         (*pos)++;
@@ -544,7 +544,7 @@ static gsi_bool gsiXmlUtilParseElement(GSIXmlStreamReader * stream, char * buffe
 // Parse element name
 //   Must begin with a letter and contains only alphanumeric | '_' | '-' characters
 //   Element names may consist of two "names", <namespace>:<elementname>
-static gsi_bool gsiXmlUtilParseName(GSIXmlStreamReader * stream, const char * buffer, 
+static gsi_bool gsiXmlUtilParseName(GSIXmlStreamReader * stream, const char * buffer,
                                    int len, int * pos, GSIXmlString * strOut)
 {
     gsi_bool haveNamespace = gsi_false;
@@ -581,7 +581,7 @@ static gsi_bool gsiXmlUtilParseName(GSIXmlStreamReader * stream, const char * bu
         (*pos)++;
     }
 
-    return gsi_true;    
+    return gsi_true;
 }
 
 
@@ -614,7 +614,7 @@ static gsi_bool gsiXmlUtilParseString(GSIXmlStreamReader * stream, char * buffer
         // empty string ?
         strOut->mData = (const gsi_u8*)strStart;
         (*pos)++; // skip the terminating character
-        return gsi_true; 
+        return gsi_true;
     }
 
     while(buffer[*pos] != startCh)
@@ -627,7 +627,7 @@ static gsi_bool gsiXmlUtilParseString(GSIXmlStreamReader * stream, char * buffer
 
         (*pos)++;
         strOut->mLen++;
-    } 
+    }
     (*pos)++; // skip the terminating character
 
     // decode the string if necessary
@@ -759,7 +759,7 @@ static gsi_bool gsiXmlUtilDecodeString(char * buffer, int * len)
         //      "&amp;&amp;" becomes "&&amp;    " after one iteration
         memmove(&buffer[readPos], &buffer[readPos+charsToRemove], (size_t)(*len-(readPos+charsToRemove)));
         memset(&buffer[*len-charsToRemove], ' ', (size_t)charsToRemove);
-        (*len) -= charsToRemove; 
+        (*len) -= charsToRemove;
     }
 
     return gsi_true;
@@ -795,14 +795,14 @@ static gsi_bool gsiXmlUtilParseValue(GSIXmlStreamReader * stream, char * buffer,
         }
         (*pos)++;
         strOut->mLen++;
-    } 
+    }
     return gsi_false; // EOF before tag end
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-gsi_bool gsXmlWriteOpenTag(GSXmlStreamWriter stream, const char * namespaceName, 
+gsi_bool gsXmlWriteOpenTag(GSXmlStreamWriter stream, const char * namespaceName,
                            const char * tag)
 {
     GSIXmlStreamWriter * writer = (GSIXmlStreamWriter*)stream;
@@ -816,7 +816,7 @@ gsi_bool gsXmlWriteOpenTag(GSXmlStreamWriter stream, const char * namespaceName,
          gsi_is_false(gsiXmlUtilWriteString(writer, namespaceName)) ||
          gsi_is_false(gsiXmlUtilWriteChar(writer, ':')) ||
          gsi_is_false(gsiXmlUtilWriteString(writer, tag)) ||
-         gsi_is_false(gsiXmlUtilWriteChar(writer, '>')) 
+         gsi_is_false(gsiXmlUtilWriteChar(writer, '>'))
          )
     {
         return gsi_false;
@@ -827,7 +827,7 @@ gsi_bool gsXmlWriteOpenTag(GSXmlStreamWriter stream, const char * namespaceName,
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-gsi_bool gsXmlWriteCloseTag(GSXmlStreamWriter stream,   const char * namespaceName, 
+gsi_bool gsXmlWriteCloseTag(GSXmlStreamWriter stream,   const char * namespaceName,
                             const char * tag)
 {
     GSIXmlStreamWriter * writer = (GSIXmlStreamWriter*)stream;
@@ -853,7 +853,7 @@ gsi_bool gsXmlWriteCloseTag(GSXmlStreamWriter stream,   const char * namespaceNa
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-gsi_bool gsXmlWriteStringElement(GSXmlStreamWriter stream, const char * namespaceName, 
+gsi_bool gsXmlWriteStringElement(GSXmlStreamWriter stream, const char * namespaceName,
                                  const char * tag, const char * value)
 {
     GSIXmlStreamWriter * writer = (GSIXmlStreamWriter*)stream;
@@ -900,7 +900,7 @@ gsi_bool gsXmlWriteStringElement(GSXmlStreamWriter stream, const char * namespac
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 // Converts unicode to ascii strings for writing to XML writer
-gsi_bool gsXmlWriteAsciiStringElement(GSXmlStreamWriter stream, const char * namespaceName, 
+gsi_bool gsXmlWriteAsciiStringElement(GSXmlStreamWriter stream, const char * namespaceName,
                                  const char * tag, const gsi_char * value)
 {
     GSIXmlStreamWriter * writer = (GSIXmlStreamWriter*)stream;
@@ -957,7 +957,7 @@ gsi_bool gsXmlWriteAsciiStringElement(GSXmlStreamWriter stream, const char * nam
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-gsi_bool gsXmlWriteUnicodeStringElement(GSXmlStreamWriter stream, const char * namespaceName, 
+gsi_bool gsXmlWriteUnicodeStringElement(GSXmlStreamWriter stream, const char * namespaceName,
                                         const char * tag, const unsigned short * value)
 {
     GSIXmlStreamWriter * writer = (GSIXmlStreamWriter*)stream;
@@ -1003,7 +1003,7 @@ gsi_bool gsXmlWriteUnicodeStringElement(GSXmlStreamWriter stream, const char * n
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-gsi_bool gsXmlWriteIntElement(GSXmlStreamWriter stream, const char * namespaceName, 
+gsi_bool gsXmlWriteIntElement(GSXmlStreamWriter stream, const char * namespaceName,
                               const char * tag, gsi_u32 value)
 {
     GSIXmlStreamWriter * writer = (GSIXmlStreamWriter*)stream;
@@ -1029,7 +1029,7 @@ gsi_bool gsXmlWriteIntElement(GSXmlStreamWriter stream, const char * namespaceNa
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-gsi_bool gsXmlWriteInt64Element(GSXmlStreamWriter stream, const char * namespaceName, 
+gsi_bool gsXmlWriteInt64Element(GSXmlStreamWriter stream, const char * namespaceName,
                                 const char * tag,   gsi_i64 value)
 {
     GSIXmlStreamWriter * writer = (GSIXmlStreamWriter*)stream;
@@ -1055,7 +1055,7 @@ gsi_bool gsXmlWriteInt64Element(GSXmlStreamWriter stream, const char * namespace
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-gsi_bool gsXmlWriteFloatElement(GSXmlStreamWriter stream, const char * namespaceName, 
+gsi_bool gsXmlWriteFloatElement(GSXmlStreamWriter stream, const char * namespaceName,
                                 const char * tag, float value)
 {
     GSIXmlStreamWriter * writer = (GSIXmlStreamWriter*)stream;
@@ -1087,7 +1087,7 @@ gsi_bool gsXmlWriteHexBinaryElement(GSXmlStreamWriter stream, const char * names
     GSIXmlStreamWriter * writer = (GSIXmlStreamWriter*)stream;
     int pos = 0;
     int temp = 0;
-    
+
     char hex[3];
     hex[2] = '\0';
 
@@ -1111,10 +1111,10 @@ gsi_bool gsXmlWriteHexBinaryElement(GSXmlStreamWriter stream, const char * names
         if (gsi_is_false(gsiXmlUtilWriteChar(writer, hex[1])))
             return gsi_false;
     }
-    
+
     if (gsi_is_false(gsXmlWriteCloseTag(stream, namespaceName, tag)))
         return gsi_false;
-    
+
     return gsi_true;
 }
 
@@ -1143,10 +1143,10 @@ gsi_bool gsXmlWriteBase64BinaryElement(GSXmlStreamWriter stream, const char * na
         if (gsi_is_false(gsiXmlUtilWriteString(writer, b64)))
             return gsi_false;
     }
-    
+
     if (gsi_is_false(gsXmlWriteCloseTag(stream, namespaceName, tag)))
         return gsi_false;
-    
+
     return gsi_true;
 }
 
@@ -1327,13 +1327,13 @@ static gsi_bool gsiXmlUtilWriteUnicodeString(GSIXmlStreamWriter * stream, const 
 
     strLen = gsUnicodeStringLen(str);
     utf8String[3] = '\0';
-    
+
     for (pos = 0; pos < strLen; pos++)
     {
         utf8Len = _UCS2CharToUTF8String(str[pos], utf8String);
         utf8String[utf8Len] = '\0'; // null terminate it
         if (gsi_is_false(gsiXmlUtilWriteXmlSafeString(stream, utf8String)))
-            return gsi_false;   
+            return gsi_false;
     }
     return gsi_true;
 }
@@ -1472,7 +1472,7 @@ gsi_bool gsXmlMoveToSibling (GSXmlStreamReader stream, const char * matchtag)
 
     int curElemParent = -1;
     GSIXmlElement * searchElem = NULL;
-    
+
     // If the current element is valid use its parent id
     if (reader->mElemReadIndex < ArrayLength(reader->mElementArray))
     {
@@ -1528,7 +1528,7 @@ gsi_bool gsXmlMoveToChild(GSXmlStreamReader stream, const char * matchtag)
             }
         }
         // check if we've reached a higher branch
-        //    -- we know this when we've reached an element whose 
+        //    -- we know this when we've reached an element whose
         //       parent is above our level in the tree
         if (searchElem->mParentIndex < reader->mElemReadIndex)
             return gsi_false;
@@ -1538,7 +1538,7 @@ gsi_bool gsXmlMoveToChild(GSXmlStreamReader stream, const char * matchtag)
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-gsi_bool gsXmlReadChildAsString(GSXmlStreamReader stream, const char * matchtag, 
+gsi_bool gsXmlReadChildAsString(GSXmlStreamReader stream, const char * matchtag,
                                  const char ** valueOut, int * lenOut)
 {
     GSIXmlStreamReader * reader = (GSIXmlStreamReader*)stream;
@@ -1573,7 +1573,7 @@ gsi_bool gsXmlReadChildAsString(GSXmlStreamReader stream, const char * matchtag,
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 /*
-gsi_bool gsXmlReadChildAsUnicodeString(GSXmlStreamReader stream, const char * matchtag, 
+gsi_bool gsXmlReadChildAsUnicodeString(GSXmlStreamReader stream, const char * matchtag,
                                         gsi_char ** valueOut, int * lenOut)
 {
     GSIXmlStreamReader * reader = (GSIXmlStreamReader*)stream;
@@ -1657,7 +1657,7 @@ gsi_bool gsXmlReadChildAsUnicodeStringNT(GSXmlStreamReader stream, const char * 
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-gsi_bool gsXmlReadChildAsHexBinary(GSXmlStreamReader stream, const char * matchtag, 
+gsi_bool gsXmlReadChildAsHexBinary(GSXmlStreamReader stream, const char * matchtag,
                                  gsi_u8 valueOut[], int maxLen, int * lenOut)
 {
     GSIXmlStreamReader * reader = (GSIXmlStreamReader*)stream;
@@ -1777,7 +1777,7 @@ gsi_bool gsXmlReadChildAsBase64Binary(GSXmlStreamReader stream, const char * mat
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-gsi_bool gsXmlReadChildAsInt    (GSXmlStreamReader stream, const char * matchtag, 
+gsi_bool gsXmlReadChildAsInt    (GSXmlStreamReader stream, const char * matchtag,
                                  int * valueOut)
 {
     GSIXmlStreamReader * reader = (GSIXmlStreamReader*)stream;
@@ -1813,7 +1813,7 @@ gsi_bool gsXmlReadChildAsInt    (GSXmlStreamReader stream, const char * matchtag
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-gsi_bool gsXmlReadChildAsInt64(GSXmlStreamReader stream, const char * matchtag, 
+gsi_bool gsXmlReadChildAsInt64(GSXmlStreamReader stream, const char * matchtag,
                                gsi_i64 * valueOut)
 {
     GSIXmlStreamReader * reader = (GSIXmlStreamReader*)stream;
@@ -1849,12 +1849,12 @@ gsi_bool gsXmlReadChildAsInt64(GSXmlStreamReader stream, const char * matchtag,
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-gsi_bool gsXmlReadChildAsDateTimeElement    (GSXmlStreamReader stream, const char * matchtag, 
+gsi_bool gsXmlReadChildAsDateTimeElement    (GSXmlStreamReader stream, const char * matchtag,
                                              time_t * valueOut)
 {
     GSIXmlStreamReader * reader = (GSIXmlStreamReader*)stream;
     GSIXmlElement * searchValueElem = NULL;
-    int i=0;    
+    int i=0;
     struct tm timePtr;
 
 
@@ -1896,7 +1896,7 @@ gsi_bool gsXmlReadChildAsDateTimeElement    (GSXmlStreamReader stream, const cha
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-gsi_bool gsXmlReadChildAsFloat  (GSXmlStreamReader stream, const char * matchtag, 
+gsi_bool gsXmlReadChildAsFloat  (GSXmlStreamReader stream, const char * matchtag,
                                  float * valueOut)
 {
     GSIXmlStreamReader * reader = (GSIXmlStreamReader*)stream;
@@ -2031,7 +2031,7 @@ int gsXmlCountChildren(GSXmlStreamReader stream, const char * matchtag)
             }
         }
         // check if we've reached a higher branch
-        //    -- we know this when we've reached an element whose 
+        //    -- we know this when we've reached an element whose
         //       parent is above our level in the tree
         else if (searchElem->mParentIndex < reader->mElemReadIndex)
             break;

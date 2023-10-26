@@ -70,7 +70,7 @@ const char * gt2AddressToString(unsigned int ip, unsigned short port, char strin
     if(ip)
     {
         IN_ADDR inAddr;
-        
+
         inAddr.s_addr = ip;
 
         if(port)
@@ -191,7 +191,7 @@ gsi_u32 gti2MacToIp(const char *mac)
     memcpy(&ip,mac,4);      // store rest in table
 
 
-    // find match in table 
+    // find match in table
     for (i=0;i< MAC_TABLE_SIZE;i++)
     {
         if(MacTable[i].ip == ip)
@@ -214,7 +214,7 @@ void gti2IpToMac(gsi_u32 ip,char *mac)
 // change IP address to mac ethernet
 {
     int i;
-    // find match in table 
+    // find match in table
     for (i=0;i< MAC_TABLE_SIZE;i++)
     {
         if(MacTable[i].ip == ip)
@@ -227,7 +227,7 @@ void gti2IpToMac(gsi_u32 ip,char *mac)
     memset(mac,0,6);
     GS_FAIL();
 }
-#endif 
+#endif
 
 #if defined(_XBOX)
 
@@ -281,7 +281,7 @@ const char * gt2IPToHostInfo(unsigned int ip, char *** aliases, unsigned int ***
 
     GSI_UNUSED(ip);
     return gti2HandleHostInfo(host, aliases, ips);
-#endif  
+#endif
 }
 
 const char * gt2StringToHostInfo(const char * string, char *** aliases, unsigned int *** ips)

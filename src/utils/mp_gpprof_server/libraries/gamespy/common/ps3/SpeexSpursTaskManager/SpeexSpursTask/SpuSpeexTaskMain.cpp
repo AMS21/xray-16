@@ -1,6 +1,6 @@
 // Copyright 2007 GameSpy Industries, Inc
-// 
-// Speex SPURS Task 
+//
+// Speex SPURS Task
 // Encode supported
 // Decode supported
 //
@@ -85,7 +85,7 @@ void gviSpursSpeexEncoderInitialize(SpursSpeexTaskOutput *spuOutput)
 
     //spuDebugPrintf("[Speex][SPU] Done getting speex mode\n");
     //spuDebugPrintf("[Speex][SPU] encoder state addr: 0x%8x\n", gviSpeexEncoderState);
-    
+
     // set the sampling rate
     speex_encoder_ctl(gviSpeexEncoderState, SPEEX_SET_SAMPLING_RATE, &sampleRate);
 
@@ -150,7 +150,7 @@ void gviSpursSpeexDecoderInitialize(SpursSpeexTaskOutput *spuTaskOut)
 }
 
 void gviSpursSpeexEncode(SpursSpeexTaskOutput *spuTaskOut)
-{   
+{
     short *inBuffer;
     float *speexBuffer;
     char *outBuffer;
@@ -164,14 +164,14 @@ void gviSpursSpeexEncode(SpursSpeexTaskOutput *spuTaskOut)
     speexBuffer = (float *)memalign(16, gviSpursSpeexTaskDesc.mInputBufferSize * sizeof(float));
     inBuffer = (short *)memalign(16, gviSpursSpeexTaskDesc.mInputBufferSize * sizeof(short));
     outBuffer = (char *)memalign(16, gviSpursSpeexTaskDesc.mOutputBufferSize);
-    
+
     memset(speexBuffer, 0, gviSpursSpeexTaskDesc.mInputBufferSize * sizeof(float));
     memset(inBuffer, 0, gviSpursSpeexTaskDesc.mInputBufferSize * sizeof(short));
     memset(outBuffer, 0, gviSpursSpeexTaskDesc.mOutputBufferSize);
 
     cellDmaGet(inBuffer, (uint64_t)gviSpursSpeexTaskDesc.mInputBuffer, gviSpursSpeexTaskDesc.mInputBufferSize * sizeof(short), DMA_TAG(1), 0,0);
     cellDmaWaitTagStatusAll(DMA_MASK(1));
-        
+
     // convert the input to floats for encoding
     for(i = 0 ; i < gviSpursSpeexTaskDesc.mInputBufferSize ; i++)
         speexBuffer[i] = inBuffer[i];
@@ -203,7 +203,7 @@ void gviSpursSpeexDecodeAdd(SpursSpeexTaskOutput *spuTaskOut)
     short *outBuffer;
     int rcode;
     unsigned int i;
-    
+
     //spuDebugPrintf("[Speex][SPU] allocating buffers for decoding\n");
     speexBuffer = (float *)memalign(16, gviSpursSpeexTaskDesc.mOutputBufferSize * sizeof(float));
     outBuffer = (short *)memalign(16, gviSpursSpeexTaskDesc.mOutputBufferSize * sizeof(short));
@@ -212,8 +212,8 @@ void gviSpursSpeexDecodeAdd(SpursSpeexTaskOutput *spuTaskOut)
     memset(speexBuffer, 0, gviSpursSpeexTaskDesc.mOutputBufferSize * sizeof(float));
     memset(outBuffer, 0, gviSpursSpeexTaskDesc.mOutputBufferSize);
     memset(inBuffer, 0, gviSpursSpeexTaskDesc.mInputBufferSize * sizeof(short));
-    
-    
+
+
     //spuDebugPrintf("[Speex][SPU] done allocating, getting input data, inbuffer size: %d\n", gSpuSampleTaskDesc.mInputBufferSize);
     cellDmaGet(inBuffer, (uint64_t)gviSpursSpeexTaskDesc.mInputBuffer, gviSpursSpeexTaskDesc.mInputBufferSize, DMA_TAG(1), 0,0);
     cellDmaWaitTagStatusAll(DMA_MASK(1));
@@ -231,7 +231,7 @@ void gviSpursSpeexDecodeAdd(SpursSpeexTaskOutput *spuTaskOut)
     // convert the output from floats
     for(i = 0 ; i < gviSpursSpeexTaskDesc.mOutputBufferSize ; i++)
         outBuffer[i] = (short)speexBuffer[i];
-    
+
     //spuDebugPrintf("[Speex][SPU] transferring data back\n");
     cellDmaPut(outBuffer, (uint64_t)gviSpursSpeexTaskDesc.mOutputBuffer, gviSpursSpeexTaskDesc.mOutputBufferSize * sizeof(short), DMA_TAG(1), 0, 0);
     cellDmaWaitTagStatusAll(DMA_MASK(1));
@@ -288,7 +288,7 @@ void procesEncodeInit(unsigned int uiPtr)
     //spuDebugPrintf("[Speex][SPU] CMD_SAMPLE_TASK_ENCODE_INIT_COMMAND\n");
     cellDmaGet(&gviSpursSpeexTaskDesc, uiPtr, sizeof(SpursSpeexTaskDesc), DMA_TAG(1), 0, 0);
     cellDmaWaitTagStatusAll(DMA_MASK(1));
-    
+
     if (gviSpursSpeexTaskDesc.mDebugPause)
     {
         snPause();
@@ -323,7 +323,7 @@ void processDecodeInit(unsigned int uiPtr)
     cellDmaWaitTagStatusAll(DMA_MASK(1));
 
     //spuDebugPrintf("[Speex][SPU] CMD_SAMPLE_TASK_DECODE_INIT_COMMAND\n");
-    
+
     if (gviSpursSpeexTaskDesc.mDebugPause)
     {
         snPause();
@@ -340,7 +340,7 @@ void processDecodeInit(unsigned int uiPtr)
         0, 0);
     cellDmaWaitTagStatusAll(DMA_MASK(1));
 
-    cellDmaLargePut(gviSpursSpeexStateBuffer, (uint64_t)gviSpursSpeexTaskDesc.mSpeexStateBuffer, 
+    cellDmaLargePut(gviSpursSpeexStateBuffer, (uint64_t)gviSpursSpeexTaskDesc.mSpeexStateBuffer,
         gviSpursSpeexTaskDesc.mSpeexStateBufferSize, DMA_TAG(1), 0,0);
     cellDmaWaitTagStatusAll(DMA_MASK(1));
 
@@ -361,7 +361,7 @@ void processEncode(unsigned int uiPtr)
     }
     cellDmaLargeGet(gviSpursSpeexStateBuffer, (uint64_t)gviSpursSpeexTaskDesc.mSpeexStateBuffer, SPEEX_ENCODER_STATE_BUFFER_SIZE, DMA_TAG(1), 0,0);
     cellDmaWaitTagStatusAll(DMA_MASK(1));
-    
+
     gviSpursSpeexEncode(&spuOutput);
 
     if (spuOutput.mSpeexReturnCode < 0)
@@ -392,10 +392,10 @@ void processDecodeAdd(unsigned int uiPtr)
     {
         snPause();
     }
-    
+
     cellDmaLargeGet(gviSpursSpeexStateBuffer, (uint64_t)gviSpursSpeexTaskDesc.mSpeexStateBuffer, gviSpursSpeexTaskDesc.mSpeexStateBufferSize, DMA_TAG(1), 0,0);
     cellDmaWaitTagStatusAll(DMA_MASK(1));
-    
+
     gviSpursSpeexDecodeAdd(&spuOutput);
 
     if (spuOutput.mSpeexReturnCode < 0)
@@ -406,7 +406,7 @@ void processDecodeAdd(unsigned int uiPtr)
     cellDmaPut(&spuOutput, (uint64_t)gviSpursSpeexTaskDesc.mSpeexTaskOutput, sizeof(SpursSpeexTaskOutput), DMA_TAG(1),
         0, 0);
     cellDmaWaitTagStatusAll(DMA_MASK(1));
-    
+
     cellDmaLargePut(gviSpursSpeexStateBuffer, (uint64_t)gviSpursSpeexTaskDesc.mSpeexStateBuffer, SPEEX_DECODER_STATE_BUFFER_SIZE, DMA_TAG(1), 0,0);
     cellDmaWaitTagStatusAll(DMA_MASK(1));
 
@@ -427,7 +427,7 @@ void processDecodeSet(unsigned int uiPtr)
     }
     cellDmaLargeGet(gviSpursSpeexStateBuffer, (uint64_t)gviSpursSpeexTaskDesc.mSpeexStateBuffer, SPEEX_DECODER_STATE_BUFFER_SIZE, DMA_TAG(1), 0,0);
     cellDmaWaitTagStatusAll(DMA_MASK(1));
-    
+
     gviSpursSpeexDecodeSet(&spuOutput);
 
     if (spuOutput.mSpeexReturnCode < 0)
@@ -447,7 +447,7 @@ void processDecodeSet(unsigned int uiPtr)
 
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
-void cellSpursMain(qword argTask, uint64_t argTaskset) 
+void cellSpursMain(qword argTask, uint64_t argTaskset)
 {
     // grab the arguments to extract the command
     CellSPURSArgument args={uiQWord : (vec_uint4) argTask};
@@ -457,53 +457,53 @@ void cellSpursMain(qword argTask, uint64_t argTaskset)
     //int taskId = cellSpursGetTaskId();
 
     //spuDebugPrintf("[Speex][SPU] taskid: %d, spuId: %d\n", taskId, spuId);
-    
+
     // grab the command and arguments to be processed below
     uiCommand=args.uiCommand;
     uiArg1=args.uiArgument0;
     uiArg2=args.uiArgument1;
-    
+
     uint64_t uiPtr = uiArg1;
-    
-    switch(uiCommand) 
+
+    switch(uiCommand)
     {
-        
+
         case SPEEX_TASK_ENCODE_INIT_COMMAND:
         {
             // cleaner this way
             procesEncodeInit(uiPtr);
-            
-            sendResponseToPPUAndExit(args.ppuResponseQueue, (uint32_t)uiArg2, 0);   
+
+            sendResponseToPPUAndExit(args.ppuResponseQueue, (uint32_t)uiArg2, 0);
             break;
         }
-    
+
         case SPEEX_TASK_ENCODE_COMMAND:
-        {           
+        {
             processEncode(uiPtr);
-            sendResponseToPPUAndExit(args.ppuResponseQueue, (uint32_t)uiArg2, 0);   
+            sendResponseToPPUAndExit(args.ppuResponseQueue, (uint32_t)uiArg2, 0);
             break;
         }
-    
+
         case SPEEX_TASK_DECODE_INIT_COMMAND:
         {
             processDecodeInit(uiPtr);
-            sendResponseToPPUAndExit(args.ppuResponseQueue, (uint32_t)uiArg2, 0);   
+            sendResponseToPPUAndExit(args.ppuResponseQueue, (uint32_t)uiArg2, 0);
             break;
         }
         case SPEEX_TASK_DECODEADD_COMMAND:
         {
             processDecodeAdd(uiPtr);
-            sendResponseToPPUAndExit(args.ppuResponseQueue, (uint32_t)uiArg2, 0);   
+            sendResponseToPPUAndExit(args.ppuResponseQueue, (uint32_t)uiArg2, 0);
             break;
         }
-        
+
         case SPEEX_TASK_DECODESET_COMMAND:
         {
             processDecodeSet(uiPtr);
             sendResponseToPPUAndExit(args.ppuResponseQueue, (uint32_t)uiArg2, 0);
             break;
         }
-    
+
         default:
         {
             //spuDebugPrintf("SPURS Sample:unknown case in switch uiCommand: %x uiArg1 %x uiArg2 %x\n",uiCommand,uiArg1,uiArg2);

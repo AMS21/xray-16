@@ -64,7 +64,7 @@ uniform float3      L_sun_dir_e;
 uniform float3      eye_normal;
 */
 
-float   calc_cyclic     (float x)               
+float   calc_cyclic     (float x)
 {
     float   phase   = 1/(2*3.141592653589f);
     float   sqrt2   = 1.4142136f;
@@ -73,7 +73,7 @@ float   calc_cyclic     (float x)
     return  f*f - 1.f;              // [-1     .. +1]
 }
 
-float2  calc_xz_wave    (float2 dir2D, float frac)      
+float2  calc_xz_wave    (float2 dir2D, float frac)
 {
     // Beizer
     float2  ctrl_A  = float2(0.f,       0.f );

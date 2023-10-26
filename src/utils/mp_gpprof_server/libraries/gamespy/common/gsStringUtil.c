@@ -12,7 +12,7 @@
 
 #ifdef __cplusplus
 extern "C" {
-#endif  
+#endif
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -64,7 +64,7 @@ int _ReadUCS2CharFromUTF8String(const UTF8String theUTF8String,  UCS2Char* theUn
             return 0; // not enough data
         }
 
-        // Make sure the second byte is valid 
+        // Make sure the second byte is valid
         if (UTF8_IS_FOLLOW_BYTE(theUTF8String[1]))
         {
             // Construct 11 bit unicode character
@@ -98,7 +98,7 @@ int _ReadUCS2CharFromUTF8String(const UTF8String theUTF8String,  UCS2Char* theUn
             *theUnicodeChar  =  (unsigned short)(((theUTF8String[0] & UTF8_THREE_BYTE_MASK) << 12) +
                                 ((theUTF8String[1] & UTF8_FOLLOW_BYTE_MASK) << 6) +
                                 ((theUTF8String[2] & UTF8_FOLLOW_BYTE_MASK)));
-            return 3;   
+            return 3;
         }
     }
 
@@ -107,13 +107,13 @@ int _ReadUCS2CharFromUTF8String(const UTF8String theUTF8String,  UCS2Char* theUn
 
     // The second byte on could have been the start of a new valid UTF8 character
     // so we can only safely discard one invalid character
-    return 1; 
+    return 1;
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-// Converts UCS2 (Unicode) character into UTF8String 
+// Converts UCS2 (Unicode) character into UTF8String
 //
 // [in]     theUCS2Char     :   The 2 byte character to convert
 // [out]    theUTF8String   :   The 1-3 byte UTF8 equivalent
@@ -122,7 +122,7 @@ int _ReadUCS2CharFromUTF8String(const UTF8String theUTF8String,  UCS2Char* theUn
 //
 //  Remarks:
 //      theUTF8String may be up to 3 bytes, caller is responsible for allocating memory
-//      theUTF8String is NOT NULL terminated, 
+//      theUTF8String is NOT NULL terminated,
 int _UCS2CharToUTF8String(UCS2Char theUCS2Char, UTF8String theUTF8String)
 {
 #ifndef _PS2
@@ -184,7 +184,7 @@ int AsciiToUTF8String(const char* theAsciiString, UTF8String theUTF8String)
         {
             *(theUTF8String++) = *(theAsciiString++);
             aLength++;
-        } 
+        }
 
         // Append the null
         *theUTF8String = '\0';
@@ -279,7 +279,7 @@ int UCS2ToUTF8String(const UCS2String theUCS2String, UTF8String theUTF8String)
         // Record number of bytes written
         aTotalBytesWritten += aUTF8CharLength;
     }
-    
+
     // Copy over the null terminator
     *anOutStream = '\0';
     aTotalBytesWritten++;
@@ -333,7 +333,7 @@ int _UTF8ToUCS2ConversionLengthOnly(const UTF8String theUTF8String)
             theReadPos += 2;
 
         // Check for valid three byte string
-        else if (UTF8_IS_THREE_BYTE(theReadPos[0]) && 
+        else if (UTF8_IS_THREE_BYTE(theReadPos[0]) &&
                  UTF8_IS_FOLLOW_BYTE(theReadPos[1]) &&
                  UTF8_IS_FOLLOW_BYTE(theReadPos[2]))
         {
@@ -374,7 +374,7 @@ int _UCS2ToUTF8ConversionLengthOnly(const UCS2String theUCS2String)
         if (*theReadPos <= 0x7F)
             length++;
         // Values > 0x7F and <= 0x07FF are two bytes in UTF8
-        else if (*theReadPos <= 0x07FF) 
+        else if (*theReadPos <= 0x07FF)
             length += 2;
         // Anything else is 3 bytes of UTF8
         else
@@ -396,7 +396,7 @@ int _UCS2ToUTF8ConversionLengthOnly(const UCS2String theUCS2String)
 //
 //  [in]    theUTF8String, NULL terminated UTF8String
 //
-//  returns the newly allocated UCS2String 
+//  returns the newly allocated UCS2String
 //
 //    Remarks:
 //      The callee is responsible for freeing the allocated memory block
@@ -426,7 +426,7 @@ UCS2String UTF8ToUCS2StringAlloc(const UTF8String theUTF8String)
 //
 //  [in]    UCS2String, NULL terminated UCS2String
 //
-//  returns the newly allocated UTF8String 
+//  returns the newly allocated UTF8String
 //
 //    Remarks:
 //      The callee is responsible for freeing the allocated memory block
@@ -605,7 +605,7 @@ int AsciiToUCS2String(const char* theAsciiString, UCS2String theUCS2String)
 //  [in/out] theUTF8String, The UTF8 equivilent of theUCS2String
 //  [in]     theMaxLength, maximum number of UTF8 characters to write
 //
-//  returns the length of the UTF8String 
+//  returns the length of the UTF8String
 //
 //    Remarks:
 //      The length of theUTF8String will not exceed theMaxLength supplied.
@@ -623,7 +623,7 @@ int UCS2ToUTF8StringLength(const UCS2String theUCS2String, UTF8String theUTF8Str
 //  [in/out] theUCS2String, The UCS2 equivilent of theUTF8String
 //  [in]     theMaxLength, maximum number of UTF8 characters to write
 //
-//  returns the length of the UCS2String 
+//  returns the length of the UCS2String
 //
 //    Remarks:
 //      The length of theUCS2String will not exceed theMaxLength supplied.
@@ -668,7 +668,7 @@ int UTF8ToUCS2StringLen(const UTF8String theUTF8String, UCS2String theUCS2String
     // NULL terminate the UCS2String
     *anOutStream = 0x0000;
     aNumCharsWritten++;
-    
+
     return aNumCharsWritten;
 }
 
@@ -677,7 +677,7 @@ int UTF8ToUCS2StringLen(const UTF8String theUTF8String, UCS2String theUCS2String
 ///////////////////////////////////////////////////////////////////////////////
 #ifdef __cplusplus
 } //extern "C"
-#endif  
+#endif
 
 
 

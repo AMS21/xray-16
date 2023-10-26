@@ -1,11 +1,11 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Copyright (c) 2001, 2002 by Andrei Alexandrescu
-// Permission to use, copy, modify, distribute and sell this software for any 
-//     purpose is hereby granted without fee, provided that the above copyright 
-//     notice appear in all copies and that both that copyright notice and this 
+// Permission to use, copy, modify, distribute and sell this software for any
+//     purpose is hereby granted without fee, provided that the above copyright
+//     notice appear in all copies and that both that copyright notice and this
 //     permission notice appear in supporting documentation.
-// The author makes no representations about the suitability of this software 
-//     for any purpose. It is provided "as is" 
+// The author makes no representations about the suitability of this software
+//     for any purpose. It is provided "as is"
 //     without express or implied warranty.
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -39,7 +39,7 @@ template <> union ConfigurableUnion< ::Loki::NullType >
 {
 };
 
-template <class TList> 
+template <class TList>
 union ConfigurableUnion
 {
 private:
@@ -62,7 +62,7 @@ public:
 
 template <class TList> struct MaxSize;
 
-template <> 
+template <>
 struct MaxSize< ::Loki::NullType >
 {
     enum { result = 0 };
@@ -82,7 +82,7 @@ private:
     enum { tailResult = MaxSize<Tail>::result };
 
 public:
-    enum { result = headResult > tailResult ? 
+    enum { result = headResult > tailResult ?
            headResult : tailResult };
 };
 
@@ -90,22 +90,22 @@ public:
 ////////////////////////////////////////////////////////////////////////////////
 // class AlignedPODBase
 // Defines a host of protected types used by AlignedPOD (defined later)
-// Could be just part of AlignedPOD itself, but making it separate ought to 
-// reduce compile times 
+// Could be just part of AlignedPOD itself, but making it separate ought to
+// reduce compile times
 ////////////////////////////////////////////////////////////////////////////////
 
 class AlignedPODBase
 {
 protected:
-    template <class TList, std::size_t size> 
+    template <class TList, std::size_t size>
     struct ComputeAlignBound
     {
     private:
         ASSERT_TYPELIST(TList);
-    
+
         typedef typename TList::Head Head;
         typedef typename TList::Tail Tail;
-    
+
     private:
         template<class TList1>
         struct In
@@ -113,9 +113,9 @@ protected:
         private:
             typedef typename TList1::Head Head1;
             typedef typename TList1::Tail Tail1;
-    
+
             typedef typename ComputeAlignBound<Tail1, size>::Result TailResult;
-    
+
         public:
             typedef typename ::Loki::Select
             <
@@ -138,12 +138,12 @@ protected:
 
     template <typename U> struct Structify
     { U dummy_; };
-    
+
     class Unknown;
 
     // VC7: fatal error C1067: compiler limit :
     // debug information module size exceeded
-    // Therfore I decreased the list to 26 without 
+    // Therfore I decreased the list to 26 without
     // changing the rage of detectable alignment
     typedef TYPELIST_26(
             char,
@@ -159,9 +159,9 @@ protected:
             Unknown (*)(Unknown),
             Unknown* Unknown::*,
             Unknown (Unknown::*)(Unknown),
-            Structify<char>, 
-            Structify<wchar_t>, 
-            Structify<short int>, 
+            Structify<char>,
+            Structify<wchar_t>,
+            Structify<short int>,
             Structify<int>,
             Structify<long int>,
             Structify<float>,
@@ -189,7 +189,7 @@ class AlignedPOD : private AlignedPODBase
 
     typedef typename ComputeAlignBound
     <
-        TypesOfAllAlignments, 
+        TypesOfAllAlignments,
         maxSize
     >
     ::Result AlignTypes;
@@ -200,9 +200,9 @@ public:
 
 ////////////////////////////////////////////////////////////////////////////////
 // class template MakeConst
-// Given a typelist TList, returns a typelist that contains the types in TList 
+// Given a typelist TList, returns a typelist that contains the types in TList
 // adding a const qualifier to each.
-// Usage: MakeConst<TList>::Result 
+// Usage: MakeConst<TList>::Result
 ////////////////////////////////////////////////////////////////////////////////
 
 template <class TList> struct MakeConst;
@@ -220,24 +220,24 @@ private:
 
     typedef typename TList::Head Head;
     typedef typename TList::Tail Tail;
-    
+
 private:
     typedef typename MakeConst<Tail>::Result NewTail;
 
 public:
-    typedef ::Loki::Typelist<const Head, NewTail> Result; 
+    typedef ::Loki::Typelist<const Head, NewTail> Result;
 };
 
 ////////////////////////////////////////////////////////////////////////////////
 // class template Converter
 // Supports the Variant-to-Variant conversion constructor
 // Guaranteed to issue an internal compiler error on:
-//      1. Metrowerks CodeWarrior 7.0 (internal compiler error: File: 
-//          'CTemplateTools.c' Line: 1477 
+//      1. Metrowerks CodeWarrior 7.0 (internal compiler error: File:
+//          'CTemplateTools.c' Line: 1477
 //          Variant.h line 244           UnitBase > VisitorBase;)
-//      2. Microsoft Visual C++ 7.1 alpha release (Assertion failed: 
-//          ( name - nameBuf ) < LIMIT_ID_LENGTH, 
-//          file f:\vs70builds\2108\vc\Compiler\CxxFE\sl\P1\C\outdname.c, 
+//      2. Microsoft Visual C++ 7.1 alpha release (Assertion failed:
+//          ( name - nameBuf ) < LIMIT_ID_LENGTH,
+//          file f:\vs70builds\2108\vc\Compiler\CxxFE\sl\P1\C\outdname.c,
 //          line 4583)
 //      3. GNU gcc 2.95.3-6 (Internal compiler error 980422)
 ////////////////////////////////////////////////////////////////////////////////
@@ -252,7 +252,7 @@ struct Converter
         VariantTo* storageForDestination;
     };
 
-    template <class Type, class Base> 
+    template <class Type, class Base>
     struct Unit : public Base
     {
     private:
@@ -272,14 +272,14 @@ struct Converter
             this->DoVisit(obj, Int2Type<dispatch>());
         }
     };
-    
+
 private:
     typedef ::Loki::GenLinearHierarchy
     <
         typename VariantFrom::Types,
         Unit,
-        UnitBase 
-    > 
+        UnitBase
+    >
     VisitorBase;
 
 public:
@@ -303,7 +303,7 @@ template <class VariantFrom, class T>
 struct ConverterTo
 {
 private:
-    struct DestHolder 
+    struct DestHolder
         : VariantFrom::ConstStrictVisitor
     {
     protected:
@@ -312,21 +312,21 @@ private:
         T destination_;
     };
 
-    template <class TList> 
+    template <class TList>
     struct VisitorBase
         : VisitorBase<typename TList::Tail>
     {
     private:
         ASSERT_TYPELIST(TList);
-    
+
         typedef typename TList::Head Type;
         typedef typename TList::Tail Tail;
-    
+
     protected:
         VisitorBase<TList>() {}
-        VisitorBase<TList>(const T& dest) 
+        VisitorBase<TList>(const T& dest)
             : VisitorBase<Tail>(dest) {}
-    
+
     private:
         void DoVisit(const Type& obj, ::Loki::Int2Type<true>)
         {   //
@@ -347,33 +347,33 @@ private:
             this->DoVisit(obj, Int2Type<dispatch>());
         }
     };
-    
-    template <> 
-    struct VisitorBase< ::Loki::NullType > 
+
+    template <>
+    struct VisitorBase< ::Loki::NullType >
         : DestHolder
     {
     protected:
         VisitorBase< ::Loki::NullType >() {}
-        VisitorBase< ::Loki::NullType >(const T& dest) 
+        VisitorBase< ::Loki::NullType >(const T& dest)
             : DestHolder(dest) {}
     };
 
-    
+
     typedef VisitorBase
     <
         typename VariantFrom::Types
     >
     VisitorBaseType;
-    
+
 public:
     struct Visitor : public VisitorBaseType
     {
         Visitor() {}
 
-        explicit Visitor(const T& dest) 
+        explicit Visitor(const T& dest)
             : VisitorBaseType(dest) {}
 
-        const T &GetDestination() const 
+        const T &GetDestination() const
         { return this->destination_; }
     };
 };
@@ -390,7 +390,7 @@ struct ConverterTo
         T destination_;
     };
 
-    template <class Type, class Base> 
+    template <class Type, class Base>
     struct Unit : public Base
     {
     private:
@@ -409,7 +409,7 @@ struct ConverterTo
             this->DoVisit(obj, Int2Type<dispatch>());
         }
     };
-    
+
     typedef ::Loki::GenLinearHierarchy<
         typename VariantFrom::Types,
         Unit,
@@ -418,19 +418,19 @@ struct ConverterTo
 public:
     struct Visitor : public VisitorBase
     {
-        const T &GetDestination() const 
+        const T &GetDestination() const
         { return this->destination_; }
     };
 };
 
 #endif
 
-namespace Private 
+namespace Private
 {
     template<typename T>
     struct RawDataKeeper
-    {        
-    private:        
+    {
+    private:
         typedef char RawBuffer_t[sizeof(T)];
         enum ObjectState_e { eNone, ePreConstruct, ePostConstruct };
 
@@ -443,18 +443,18 @@ namespace Private
         void SetObj(const RawBuffer_t &buf) throw()
         {
             memcpy(&reinterpret_cast<char &>(obj_), buf, sizeof(buf));
-        }    
+        }
 
         void GetObj(RawBuffer_t &buf) throw()
         {
             memcpy(buf, &reinterpret_cast<const char &>(obj_), sizeof(buf));
-        }    
+        }
 
     public:
-        explicit RawDataKeeper(T &obj) 
+        explicit RawDataKeeper(T &obj)
             : obj_(obj), eObjState_(eNone)
         {}
-    
+
         // add const U & version ?
         template<typename U>
         void ConstructNew(U &src)
@@ -462,7 +462,7 @@ namespace Private
             assert(eObjState_ == eNone);
 
             GetObj(bufferOrg_);
-            
+
             eObjState_ = ePreConstruct;
             new (&obj_) T(src);
             eObjState_ = ePostConstruct;
@@ -488,7 +488,7 @@ namespace Private
                 SetObj(bufferNew_);
                 obj_.~T();
                 // fall
-            
+
             case ePreConstruct:
                 SetObj(bufferOrg_);
                 // fall
@@ -504,7 +504,7 @@ namespace Private
     };
 
     //
-    // based on Eric Fridman's safe_swap from boost Variant 
+    // based on Eric Fridman's safe_swap from boost Variant
     //
     //   strong exception-safety guarantee.
     //
@@ -520,17 +520,17 @@ namespace Private
 
         RhsDataKeeper rhsKeeper(rhs);
         rhsKeeper.ConstructNew(lhs);
-            
+
         LhsDataKeeper lhsKeeper(lhs);
         lhsKeeper.ConstructNew(rhs);
-    
+
         rhsKeeper.SetNew();
         lhsKeeper.SetNew();
     }
 
 
     //
-    // based on Eric Fridman's safe_assign from boost Variant 
+    // based on Eric Fridman's safe_assign from boost Variant
     //
     //   strong exception-safety guarantee.
     //
@@ -554,7 +554,7 @@ namespace Private
         using namespace std;
         swap(lhs, rhs);
     }
-} // namespace Private 
+} // namespace Private
 
 ////////////////////////////////////////////////////////////////////////////////
 // class template Variant
@@ -566,14 +566,14 @@ class Variant
 {
     // VC7: fatal error C1067: compiler limit :
     // debug information module size exceeded
-    // Therfore define this type here 
+    // Therfore define this type here
     typedef typename AlignedPODType::Result Align;
 
 public:
     typedef TList Types;
 
     // Default constructor
-    // Initializes the Variant with a default-constructed object of the 
+    // Initializes the Variant with a default-constructed object of the
     // first type in the typelist
     Variant()
     {
@@ -590,23 +590,23 @@ public:
 
 private:
     // Converting constructor; accepts any type in the typelist
-    // @@@ Suggested simple improvement: accept any type convertible to one of 
+    // @@@ Suggested simple improvement: accept any type convertible to one of
     // the types in the typelist. Use Loki::Conversion as a building block
     template <class T>
     void VariantConstruct(const T& val, double)
     {
-        STATIC_CHECK((::Loki::TL::IndexOf<TList, T>::value >= 0), 
+        STATIC_CHECK((::Loki::TL::IndexOf<TList, T>::value >= 0),
             Invalid_Type_Used_As_Initializer);
-        
+
         new(&buffer_[0]) T(val);
         vptr_ = VTableImpl<T>::GetVPTR();
     }
-    
+
     // Inter-Variant conversion constructor
-    // Current policy is: conversion succeeds iff the actual type of the source 
+    // Current policy is: conversion succeeds iff the actual type of the source
     // is one of the types accepted by the target
     // @@@ Possible change: accept if the actual type of the source is
-    //     convertible to one of the types accepted by the target. Problem to 
+    //     convertible to one of the types accepted by the target. Problem to
     //     solve: handle ambiguities in a satisfactory manner. Suggestion: when
     //     in doubt, do closest to what the compiler would do.
     template <class TList2, typename Align2>
@@ -619,7 +619,7 @@ private:
 
 public:
     // VC7 don't support partial ordering
-    // The constructor initialization section 
+    // The constructor initialization section
     // is empty which make it to use function instead
     // without the int = 0 the explicit seems to confuse
     // VC7 when the copy constructor should be selected
@@ -636,26 +636,26 @@ public:
         Private::SafeAssign(*this, rhs);
         return *this;
     }
-    
+
 private:
     // Assignment operator from one of the allowed types
     // This is necessary because the constructor is explicit
-    template <class T> 
+    template <class T>
     void VariantAssign(const T& rhs, double)
     {
         Private::SafeAssign(*this, rhs);
     }
-    
+
     // Assignment from another Variant instantiation
     template <class TList2, typename Align2>
     void VariantAssign(const Variant<TList2, Align2>& rhs, int)
     {
         Private::SafeAssign(*this, rhs);
     }
-    
+
 public:
     // VC7 don't support partial ordering
-    template <class T> 
+    template <class T>
     Variant& operator=(const T& rhs)
     {
         // Both VariantAssign are the same in this implementation
@@ -677,7 +677,7 @@ public:
     typedef ::Loki::Visitor<typename MakeConst<TList>::Result, void>
         ConstStrictVisitor;
     typedef ::Loki::NonStrictVisitor<TList, void> NonStrictVisitor;
-    typedef ::Loki::NonStrictVisitor<typename MakeConst<TList>::Result, void> 
+    typedef ::Loki::NonStrictVisitor<typename MakeConst<TList>::Result, void>
         ConstNonStrictVisitor;
 
 private:
@@ -711,13 +711,13 @@ private:
         {
             return typeid(T);
         }
-        
+
         static void Destroy(const VariantType& var)
         {
             const T& data = *reinterpret_cast<const T*>(&var.buffer_[0]);
             (void)data.~T();
         }
-        
+
         static void Swap(void* lhs, void* rhs)
         {
             Private::SwapHelper(*static_cast<T*>(lhs), *static_cast<T*>(rhs));
@@ -729,22 +729,22 @@ private:
                 *reinterpret_cast<const T*>(&src.buffer_[0]));
             dest.vptr_ = src.vptr_;
         }
-                
+
         static void Accept(VariantType& var, StrictVisitor& visitor)
         {
             typedef typename StrictVisitor::ReturnType RType;
             ::Loki::Visitor<T,RType> &v = visitor;
 
             v.Visit(*reinterpret_cast<T*>(&var.buffer_[0]));
-        }        
-        
+        }
+
         static void AcceptConst(const VariantType& var, ConstStrictVisitor& visitor)
         {
             typedef typename ConstStrictVisitor::ReturnType RType;
             ::Loki::Visitor<const T,RType> &v = visitor;
 
             v.Visit(*reinterpret_cast<const T*>(&var.buffer_[0]));
-        }        
+        }
 
     public:
         static const VTable *GetVPTR()
@@ -775,7 +775,7 @@ private:   // should be private; some compilers prefer 'public' :o}
         Align dummy_;
         char buffer_[neededSize];
     };
-    
+
 public:
     void swap(Variant& rhs)
     {
@@ -788,33 +788,33 @@ public:
             Private::SafeSwap(*this, rhs);
         }
     }
-    
+
     const std::type_info& TypeId() const
     {
         return (vptr_->typeId_)();
     }
-    
+
     template <typename T> T* GetPtr()
     {
-        return TypeId() == typeid(T) 
+        return TypeId() == typeid(T)
             ? reinterpret_cast<T*>(&buffer_[0])
             : 0;
     }
-    
+
     template <typename T> const T* GetPtr() const
     {
-        return TypeId() == typeid(T) 
+        return TypeId() == typeid(T)
             ? reinterpret_cast<const T*>(&buffer_[0])
             : 0;
     }
-    
+
     template <typename T> T& Get()
     {
         T* p = GetPtr<T>();
         if (!p) throw std::runtime_error("Variant::Get() Invalid variant type");
         return *p;
     }
-    
+
     template <typename T> const T& Get() const
     {
         const T* p = GetPtr<T>();
@@ -823,7 +823,7 @@ public:
     }
 
     // Visitation primitives
-    // Although there are four visitor types, only two Accept functions are 
+    // Although there are four visitor types, only two Accept functions are
     // necessary, because the non-strict visitors inherit the strict visitors
 
     void Accept(StrictVisitor& visitor)

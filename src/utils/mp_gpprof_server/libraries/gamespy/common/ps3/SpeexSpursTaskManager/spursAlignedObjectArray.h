@@ -7,8 +7,8 @@ Copyright (c) 2003-2006 Erwin Coumans  http://continuousphysics.com/Bullet/
 
 This software is provided 'as-is', without any express or implied warranty.
 In no event will the authors be held liable for any damages arising from the use of this software.
-Permission is granted to anyone to use this software for any purpose, 
-including commercial applications, and to alter it and redistribute it freely, 
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it freely,
 subject to the following restrictions:
 
 1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
@@ -44,8 +44,8 @@ subject to the following restrictions:
 
 ///btAlignedObjectArray uses a subset of the stl::vector interface for its methods
 ///It is developed to replace stl::vector to avoid STL alignment issues to add SIMD/SSE data
-template <typename T> 
-//template <class T> 
+template <typename T>
+//template <class T>
 class spursAlignedObjectArray
 {
     spursAlignedAllocator<T , 16>   m_allocator;
@@ -100,11 +100,11 @@ class spursAlignedObjectArray
             }
         }
 
-    
+
 
 
     public:
-        
+
         spursAlignedObjectArray()
         {
             init();
@@ -119,12 +119,12 @@ class spursAlignedObjectArray
         {   // return current length of allocated storage
             return m_capacity;
         }
-        
+
         SIMD_FORCE_INLINE   int size() const
         {   // return length of sequence
             return m_size;
         }
-        
+
         SIMD_FORCE_INLINE const T& operator[](int n) const
         {
             return m_data[n];
@@ -134,14 +134,14 @@ class spursAlignedObjectArray
         {
             return m_data[n];
         }
-        
+
 
         SIMD_FORCE_INLINE   void    clear()
         {
             destroy(0,size());
-            
+
             deallocate();
-            
+
             init();
         }
 
@@ -178,10 +178,10 @@ class spursAlignedObjectArray
 
             m_size = newsize;
         }
-    
+
 
         SIMD_FORCE_INLINE   T&  expand( const T& fillValue=T())
-        {   
+        {
             int sz = size();
             if( sz == capacity() )
             {
@@ -192,29 +192,29 @@ class spursAlignedObjectArray
             new (&m_data[sz]) T(fillValue); //use the in-place new (not really allocating heap memory)
 #endif
 
-            return m_data[sz];      
+            return m_data[sz];
         }
 
 
         SIMD_FORCE_INLINE   void push_back(const T& _Val)
-        {   
+        {
             int sz = size();
             if( sz == capacity() )
             {
                 reserve( allocSize(size()) );
             }
-            
+
 #ifdef BT_USE_PLACEMENT_NEW
             new ( &m_data[m_size] ) T(_Val);
 #else
-            m_data[size()] = _Val;          
+            m_data[size()] = _Val;
 #endif //BT_USE_PLACEMENT_NEW
 
             m_size++;
         }
 
-    
-        
+
+
         SIMD_FORCE_INLINE   void reserve(int _Count)
         {   // determine new minimum length of allocated storage
             if (capacity() < _Count)
@@ -228,7 +228,7 @@ class spursAlignedObjectArray
                 deallocate();
 
                 m_data = s;
-                
+
                 m_capacity = _Count;
 
             }
@@ -244,7 +244,7 @@ class spursAlignedObjectArray
                     return ( a < b );
                 }
         };
-    
+
 
         ///heap sort from http://www.csse.monash.edu.au/~lloyd/tildeAlgDS/Sort/Heap/
         template <typename L>
@@ -252,13 +252,13 @@ class spursAlignedObjectArray
         {
             /*  PRE: a[k+1..N] is a heap */
             /* POST:  a[k..N]  is a heap */
-            
+
             T temp = pArr[k - 1];
             /* k has child(s) */
-            while (k <= n/2) 
+            while (k <= n/2)
             {
                 int child = 2*k;
-                
+
                 if ((child < n) && CompareFunc(pArr[child - 1] , pArr[child]))
                 {
                     child++;
@@ -299,13 +299,13 @@ class spursAlignedObjectArray
         /* sort a[0..N-1],  N.B. 0 to N-1 */
         int k;
         int n = m_size;
-        for (k = n/2; k > 0; k--) 
+        for (k = n/2; k > 0; k--)
         {
             downHeap(m_data, k, n, CompareFunc);
         }
 
         /* a[1..N] is now a heap */
-        while ( n>=1 ) 
+        while ( n>=1 )
         {
             swap(0,n-1); /* largest of a[0..n-1] */
 
@@ -313,7 +313,7 @@ class spursAlignedObjectArray
             n = n - 1;
             /* restore a[1..i-1] heap */
             downHeap(m_data, 1, n, CompareFunc);
-        } 
+        }
     }
 
     ///non-recursive binary search, assumes sorted array
@@ -325,9 +325,9 @@ class spursAlignedObjectArray
         //assume sorted array
         while (first <= last) {
             int mid = (first + last) / 2;  // compute mid point.
-            if (key > m_data[mid]) 
+            if (key > m_data[mid])
                 first = mid + 1;  // repeat search in top half.
-            else if (key < m_data[mid]) 
+            else if (key < m_data[mid])
                 last = mid - 1; // repeat search in bottom half.
             else
                 return mid;     // found it. return position /////

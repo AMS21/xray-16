@@ -333,7 +333,7 @@ void gti2ConnectionCleanup(GT2Connection connection)
         ArrayFree(connection->incomingBufferMessages);
     if(connection->outgoingBufferMessages)
         ArrayFree(connection->outgoingBufferMessages);
-    
+
     if(connection->sendFilters)
         ArrayFree(connection->sendFilters);
     if(connection->receiveFilters)

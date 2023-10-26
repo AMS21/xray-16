@@ -38,7 +38,7 @@
  * solver may be asked to do a collision detection job.
  */
 //////////////////////////////////////////////////////////////////////////
-// only one type of SPURS Task ELF 
+// only one type of SPURS Task ELF
 // typedef enum {
 // //   SPU_ELF_MID_PHASE=0,
 // //   SPU_ELF_SOLVER,
@@ -46,9 +46,9 @@
 //  SPU_ELF_LAST,
 // } CellSpursElfId_t;
 
-typedef union CellSPURSArgument 
+typedef union CellSPURSArgument
 {
-    struct 
+    struct
     {
         CELL_PPU_POINTER(CellSpursQueue) ppuResponseQueue;
         uint32_t uiCommand;
@@ -69,7 +69,7 @@ typedef union CellSPURSArgument
 
 static inline void sendResponseToPPU(uint32_t ppuQueueEA, uint32_t uiArgument0,
                                             uint32_t uiArgument1, int iTag=1) {
-    CellSPURSArgument response 
+    CellSPURSArgument response
         __attribute__ ((aligned(16)));
 
     response.uiArgument0=uiArgument0;
@@ -89,7 +89,7 @@ static inline void sendResponseToPPU(uint32_t ppuQueueEA, uint32_t uiArgument0,
 
 static inline void sendResponseToPPUAndExit(uint32_t ppuQueueEA, uint32_t uiArgument0,
                                             uint32_t uiArgument1, int iTag=1) {
-    CellSPURSArgument response 
+    CellSPURSArgument response
         __attribute__ ((aligned(16)));
 
     response.uiArgument0=uiArgument0;

@@ -81,7 +81,7 @@ void gt2Think(GT2Socket socket)
     // let the connections think
     if(!gti2SocketConnectionsThink(socket))
         return;
-    
+
     // free closed connections
     gti2FreeClosedConnections(socket);
 }
@@ -241,14 +241,14 @@ GT2Result gt2Send
 {
     // used to check for voice data in reliable messages
     unsigned short vdpDataLength;
-    
+
     // can't send a message if not connected
     if(connection->state != GTI2Connected)
         return GT2InvalidConnection;
 
     // check the message and len
     gti2MessageCheck(&message, &len);
-    
+
     if (reliable && connection->socket->protocolType == GTI2VdpProtocol)
     {
         memcpy(&vdpDataLength, message, sizeof(unsigned short));
@@ -256,7 +256,7 @@ GT2Result gt2Send
         if (vdpDataLength + connection->socket->protocolOffset != len)
             return GT2InvalidMessage;
     }
-        
+
     // do we need to filter it?
     if(ArrayLength(connection->sendFilters))
     {
@@ -266,7 +266,7 @@ GT2Result gt2Send
 
     if (gti2Send(connection, message, len, reliable))
         return GT2Success;
-    
+
     return GT2SendFailed;
 }
 
@@ -288,7 +288,7 @@ void gt2CloseConnectionHard(GT2Connection connection)
 static void gti2CloseAllConnectionsMap(void * elem, void * clientData)
 {
     gt2CloseConnection(*(GT2Connection *)elem);
-    
+
     GSI_UNUSED(clientData);
 }
 
@@ -300,7 +300,7 @@ void gt2CloseAllConnections(GT2Socket socket)
 static void gti2CloseAllConnectionsHardMap(void * elem, void * clientData)
 {
     gt2CloseConnectionHard(*(GT2Connection *)elem);
-    
+
     GSI_UNUSED(clientData);
 }
 

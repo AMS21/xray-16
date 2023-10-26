@@ -68,7 +68,7 @@ string, you should use GT_RAW (see below).
 GT_DBSTR: Same as a GT_CSTR, except with 2-byte characters instead of single byte.
 String must be terminated with a double NUL character.
 
-GT_RAW: Use raw to send data blocks, structures, arrays, etc - although you must 
+GT_RAW: Use raw to send data blocks, structures, arrays, etc - although you must
 make sure they're the same on all platforms!
 Requires you to pass both a buffer and a length arguement to Encode and Decode.
 You should pass the buffer first, then the length.
@@ -99,7 +99,7 @@ However, you must make sure you don't try to use the pointers after the
 input buffer is freed/changed.
 Note that the buffer passed in gtReceivedCallback must be copied off if
 you want to continue using it after you return from the callback (or, you
-can use the non-PTR versions that copy off into the buffers you provide 
+can use the non-PTR versions that copy off into the buffers you provide
 automatically)
 You can pass the _PTR versions to Encode and they will behave exactly as
 the regular versions.
@@ -114,7 +114,7 @@ packed together to save space. So, the format string "zzzzzzzz" will only take
 Note that if you have other types between the bits, the packing will NOT occur,
 e.g.: "ziz" will use 6 bytes (2 for the bits, 4 for the int), whereas "zzi" would use
 only 5 bytes (1 for the bits, 4 for the int)
-The argument type for bits is char for Encode and char * for Decode - 
+The argument type for bits is char for Encode and char * for Decode -
 If the char is 0, the bit will not be set, if it's non-zero, the bit will be set.
 Note that in Decode, the set bit will always be returned as 1 (not the non-zero value
 you set)

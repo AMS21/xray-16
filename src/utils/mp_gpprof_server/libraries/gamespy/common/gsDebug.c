@@ -73,12 +73,12 @@ static void gsiDebugCallback(GSIDebugCategory category, GSIDebugType type,
 
     #elif defined(_WIN32)
         static char string[256];
-        vsprintf(string, format, params);           
+        vsprintf(string, format, params);
         OutputDebugStringA(string);
 
     #elif defined(_LINUX) || defined(_MACOSX)
         //static char    string[256];
-        //vsprintf(string, format, params);             
+        //vsprintf(string, format, params);
         vprintf(format, params);
     #elif defined(_NITRO)
         VPrintf(format, params);
@@ -90,11 +90,11 @@ static void gsiDebugCallback(GSIDebugCategory category, GSIDebugType type,
         va_list argptr;
         static char    string[256];
         va_start(argptr, format);
-        vsprintf(string, format, argptr); 
+        vsprintf(string, format, argptr);
         va_end(argptr);
         gsDebugTTyPrint(string);
     #endif
-    
+
     GSI_UNUSED(category);
     GSI_UNUSED(type);
     GSI_UNUSED(level);
@@ -107,8 +107,8 @@ static void gsiDebugCallback(GSIDebugCategory category, GSIDebugType type,
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 // process debug output
-void gsDebugVaList(GSIDebugCategory theCat, GSIDebugType theType, 
-                      GSIDebugLevel theLevel, const char* theTokenStr, 
+void gsDebugVaList(GSIDebugCategory theCat, GSIDebugType theType,
+                      GSIDebugLevel theLevel, const char* theTokenStr,
                       va_list theParamList)
 {
     // Retrieve the current debug level
@@ -141,13 +141,13 @@ void gsDebugVaList(GSIDebugCategory theCat, GSIDebugType theType,
         // Output line prefix
         if (gGSIDebugInstance.mGSIDebugFile)
         {
-            fprintf(gGSIDebugInstance.mGSIDebugFile, "[%s][%s][%s] ", 
-                gGSIDebugCatStrings[theCat], 
+            fprintf(gGSIDebugInstance.mGSIDebugFile, "[%s][%s][%s] ",
+                gGSIDebugCatStrings[theCat],
                 gGSIDebugTypeStrings[theType],
                 gGSIDebugLevelStrings[gsiDebugLog2(theLevel)]);
-            
+
             // Output to file
-            vfprintf(gGSIDebugInstance.mGSIDebugFile, theTokenStr, 
+            vfprintf(gGSIDebugInstance.mGSIDebugFile, theTokenStr,
                 theParamList);
         }
 #endif
@@ -163,7 +163,7 @@ void gsDebugVaList(GSIDebugCategory theCat, GSIDebugType theType,
                                                  theTokenStr, theParamList);
         }
     }
-    
+
     gsiLeaveCriticalSection(&gGSIDebugInstance.mDebugCrit);
 }
 
@@ -171,8 +171,8 @@ void gsDebugVaList(GSIDebugCategory theCat, GSIDebugType theType,
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 // process debug output
-void gsDebugFormat(GSIDebugCategory theCat, GSIDebugType theType, 
-                      GSIDebugLevel theLevel, const char* theTokenStr, 
+void gsDebugFormat(GSIDebugCategory theCat, GSIDebugType theType,
+                      GSIDebugLevel theLevel, const char* theTokenStr,
                       ...)
 {
     va_list aParameterList;
@@ -185,7 +185,7 @@ void gsDebugFormat(GSIDebugCategory theCat, GSIDebugType theType,
 
     // Find start of var arg list
     va_start(aParameterList, theTokenStr);
-    
+
     // Pass to VA version
     gsDebugVaList(theCat, theType, theLevel, theTokenStr, aParameterList);
 
@@ -197,7 +197,7 @@ void gsDebugFormat(GSIDebugCategory theCat, GSIDebugType theType,
 ///////////////////////////////////////////////////////////////////////////////
 // Converts binary buffer to memory view form:
 //    0000 0000 0000 0000 0000 0000 0000 0000  ................
-static void HexEncode16(const char* theInStream, char* theOutStream, 
+static void HexEncode16(const char* theInStream, char* theOutStream,
                  unsigned int theInLen)
 {
     const int  aRowWidth     = 64;     // width of the output
@@ -268,7 +268,7 @@ void gsDebugBinary(GSIDebugCategory theCat, GSIDebugType theType,
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-void gsSetDebugLevel(GSIDebugCategory theCat, GSIDebugType theType, 
+void gsSetDebugLevel(GSIDebugCategory theCat, GSIDebugType theType,
                       GSIDebugLevel theLevel)
 {
     // Verify Parameters
@@ -289,7 +289,7 @@ void gsSetDebugLevel(GSIDebugCategory theCat, GSIDebugType theType,
 
         return;
     }
-    
+
     // Set for all types?
     if (theType == GSIDebugType_Count)
     {
@@ -308,11 +308,11 @@ void gsSetDebugLevel(GSIDebugCategory theCat, GSIDebugType theType,
     if (gGSIDebugInstance.mGSIDebugLevel[theCat][theType] != theLevel)
     {
         // Notify of the change
-        gsDebugFormat(GSIDebugCat_Common, GSIDebugType_Misc, 
+        gsDebugFormat(GSIDebugCat_Common, GSIDebugType_Misc,
             GSIDebugLevel_Comment,
             "Changing debug level: [%s][%s][%02X]\r\n",
-            gGSIDebugCatStrings[theCat], 
-            gGSIDebugTypeStrings[theType], 
+            gGSIDebugCatStrings[theCat],
+            gGSIDebugTypeStrings[theType],
             theLevel );
         gGSIDebugInstance.mGSIDebugLevel[theCat][theType] = theLevel;
     }

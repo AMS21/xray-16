@@ -1,6 +1,6 @@
 /*
 gpiInfo.c
-GameSpy Presence SDK 
+GameSpy Presence SDK
 Dan "Mr. Pants" Schoenblum
 
 Copyright 1999-2007 GameSpy Industries, Inc
@@ -122,13 +122,13 @@ gpiDateToInt(
 )
 {
     int temp;
-    
+
     // Pack the day/month/year into an int.
     // 31-22: day
     // 23-16: month
     // 15-00: year
     ///////////////////////////////////////
-    
+
     // Error check.
     ///////////////
     assert(gpiIsValidDate(day, month, year));
@@ -509,7 +509,7 @@ gpiProcessGetInfo(
         arg = (GPGetInfoResponseArg *)gsimalloc(sizeof(GPGetInfoResponseArg));
         if(arg == NULL)
             Error(connection, GP_MEMORY_ERROR, "Out of memory.");
-        
+
         gpiInfoCacheToArg(&infoCache, arg);
         arg->result = GP_NO_ERROR;
         arg->profile = (GPProfile)profileid;
@@ -593,8 +593,8 @@ gpiSendUserInfo(
 
 GPResult
 gpiSetInfoi(
-  GPConnection * connection, 
-  GPEnum info, 
+  GPConnection * connection,
+  GPEnum info,
   int value
 )
 {
@@ -653,7 +653,7 @@ gpiSetInfoi(
         CHECK_RESULT(gpiSendLocalInfo(connection, "\\icquin\\", intValue));
 
         break;
-        
+
     case GP_CPUBRANDID:
         // Convert it to a string.
         //////////////////////////
@@ -845,19 +845,19 @@ gpiSetInfoi(
 
 GPResult
 gpiSetInfos(
-  GPConnection * connection, 
-  GPEnum info, 
+  GPConnection * connection,
+  GPEnum info,
   const char * value
 )
 {
-    
+
     GPIConnection * iconnection = (GPIConnection*)*connection;
     char buffer[256];
     char sex;
-    
+
     //password encryption stuff
     char passwordenc[GP_PASSWORDENC_LEN];
-    
+
     // Error check.
     ///////////////
     if(value == NULL)
@@ -1048,8 +1048,8 @@ gpiSetInfos(
 
 GPResult
 gpiSetInfod(
-  GPConnection * connection, 
-  GPEnum info, 
+  GPConnection * connection,
+  GPEnum info,
   int day,
   int month,
   int year
@@ -1080,7 +1080,7 @@ gpiSetInfod(
 
 GPResult
 gpiSetInfoMask(
-  GPConnection * connection, 
+  GPConnection * connection,
   GPEnum mask
 )
 {
@@ -1114,14 +1114,14 @@ gpiSendGetInfo(
     gpiAppendStringToBuffer(connection, &iconnection->outputBuffer, "\\id\\");
     gpiAppendIntToBuffer(connection, &iconnection->outputBuffer, operationid);
     gpiAppendStringToBuffer(connection, &iconnection->outputBuffer, "\\final\\");
-    
+
     return GP_NO_ERROR;
 }
 
 GPResult
 gpiGetInfo(
   GPConnection * connection,
-  GPProfile profile, 
+  GPProfile profile,
   GPEnum checkCache,
   GPEnum blocking,
   GPCallback callback,
@@ -1158,7 +1158,7 @@ gpiGetInfo(
         gpiInfoCacheToArg(pProfile->cache, arg);
         arg->result = GP_NO_ERROR;
         arg->profile = profile;
-        
+
         gpiCallback.callback = callback;
         gpiCallback.param = param;
 
@@ -1274,7 +1274,7 @@ gpiFreeInfoCache(
 {
     if(!profile->cache)
         return;
-    
+
     freeclear(profile->cache->nick);
     freeclear(profile->cache->uniquenick);
     freeclear(profile->cache->email);

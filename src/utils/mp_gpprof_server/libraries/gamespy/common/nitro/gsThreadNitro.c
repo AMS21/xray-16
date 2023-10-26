@@ -12,7 +12,7 @@ gsi_u32 gsiInterlockedIncrement(gsi_u32 * value)
     OS_RestoreInterrupts_IrqAndFiq(state);
 
     // return "ret" rather than "value" here b/c
-    // value may be modified by another thread 
+    // value may be modified by another thread
     // before we can return it
     return ret;
 }
@@ -24,7 +24,7 @@ gsi_u32 gsiInterlockedDecrement(gsi_u32 * value)
     OS_RestoreInterrupts_IrqAndFiq(state);
 
     // return "ret" rather than "value" here b/c
-    // value may be modified by another thread 
+    // value may be modified by another thread
     // before we can return it
     return ret;
 }

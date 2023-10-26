@@ -35,13 +35,13 @@ extern "C"
 //#define GS_SSL_HANDSHAKE_HELLOREQUEST       (0)
 #define GS_SSL_HANDSHAKE_CLIENTHELLO        (1)
 #define GS_SSL_HANDSHAKE_SERVERHELLO        (2)
-#define GS_SSL_HANDSHAKE_CERTIFICATE        (11) 
-//#define GS_SSL_HANDSHAKE_SERVERKEYEXCHANGE  (12) 
-//#define GS_SSL_HANDSHAKE_CERTIFICATEREQUEST (13) 
-#define GS_SSL_HANDSHAKE_SERVERHELLODONE    (14) 
+#define GS_SSL_HANDSHAKE_CERTIFICATE        (11)
+//#define GS_SSL_HANDSHAKE_SERVERKEYEXCHANGE  (12)
+//#define GS_SSL_HANDSHAKE_CERTIFICATEREQUEST (13)
+#define GS_SSL_HANDSHAKE_SERVERHELLODONE    (14)
 //#define GS_SSL_HANDSHAKE_CERTIFICATEVERIFY  (15)
-#define GS_SSL_HANDSHAKE_CLIENTKEYEXCHANGE  (16) 
-#define GS_SSL_HANDSHAKE_FINISHED           (20) 
+#define GS_SSL_HANDSHAKE_CLIENTKEYEXCHANGE  (16)
+#define GS_SSL_HANDSHAKE_FINISHED           (20)
 
 // the largest payload for a single SSL packet, RFC const
 // ----> RFC includes MAC and any padding, actual user data must be less
@@ -129,7 +129,7 @@ typedef struct gsSSLRecordHeaderMsg
     unsigned char versionMajor; // = GS_SSL_VERSION_MAJOR;
     unsigned char versionMinor; // = GS_SSL_VERSION_MINOR;
     unsigned char lengthNBO[2]; // length of msg, limited to 2^14
-    
+
     // WARNING: lengthNBO can NOT be an unsigned short
     //          This would create alignment issues from the previous 3 parameters
 
@@ -145,7 +145,7 @@ typedef struct gsSSLClientHelloMsg
     unsigned char time[4];       // 4 byte random (spec says set to current unix-time)
     unsigned char random[28];    // 28 byte random, total of 32 random bytes
     unsigned char sessionIdLen;  // how many of the bytes that follow are session info? (def:0)
-    
+
     // ALIGNMENT: 44 bytes prior to this, alignment should be OK
     unsigned short cipherSuitesLength; // 2* number of cipher suites
     unsigned short cipherSuites[GS_SSL_NUM_CIPHER_SUITES];

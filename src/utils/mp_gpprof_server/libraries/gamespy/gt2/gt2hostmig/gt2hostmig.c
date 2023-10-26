@@ -2,16 +2,16 @@
 gt2hostmig.c
 GameSpy Transport 2 SDK
 GameSpy Query & Reporting 2 SDK
-  
+
 Copyright 2000 GameSpy Industries, Inc
 
 ******
 
  This sample demonstrates the use of the Transport 2 SDK to do host migration.
- It also uses the Query & Reporting 2 SDK to report the host to the 
+ It also uses the Query & Reporting 2 SDK to report the host to the
  Master Server.
 
- Please see the GameSpy Transport 2 SDK documentation for more 
+ Please see the GameSpy Transport 2 SDK documentation for more
  information
 
 ******/
@@ -179,7 +179,7 @@ void server_key_callback(int keyid, qr2_buffer_t outbuf, void *userdata)
     default:
         qr2_buffer_add(outbuf, _T(""));
     }
-    
+
     GSI_UNUSED(userdata);
 }
 
@@ -199,9 +199,9 @@ void playerkey_callback(int keyid, int index, qr2_buffer_t outbuf, void *userdat
             break;
         default:
             qr2_buffer_add(outbuf, _T(""));
-            break;      
+            break;
     }
-    
+
     GSI_UNUSED(userdata);
 }
 
@@ -213,7 +213,7 @@ void teamkey_callback(int keyid, int index, qr2_buffer_t outbuf, void *userdata)
     GSI_UNUSED(userdata);
     GSI_UNUSED(index);
     GSI_UNUSED(keyid);
-}   
+}
 
 // Called when we need to report the list of keys we report values for
 void keylist_callback(qr2_key_type keytype, qr2_keybuffer_t keybuffer, void *userdata)
@@ -235,7 +235,7 @@ void keylist_callback(qr2_key_type keytype, qr2_keybuffer_t keybuffer, void *use
     case key_team:
         break;
     }
-    
+
     GSI_UNUSED(userdata);
 }
 
@@ -249,7 +249,7 @@ int count_callback(qr2_key_type keytype, void *userdata)
         return 0;
     else
         return 0;
-        
+
     GSI_UNUSED(userdata);
 }
 
@@ -257,7 +257,7 @@ int count_callback(qr2_key_type keytype, void *userdata)
 void adderror_callback(qr2_error_t error, gsi_char *errmsg, void *userdata)
 {
     _tprintf(_T("Error adding server: %d, %s\n"), error, errmsg);
-    
+
     GSI_UNUSED(userdata);
 }
 
@@ -443,7 +443,7 @@ void ClosedCallback
     if(hosting)
     {
         int i;
-        
+
         // Get the index.
         i = (int)gt2GetConnectionData(connection);
 
@@ -511,19 +511,19 @@ GT2Bool StartHosting
 #ifdef REPORT
     // Start reporting.
     printf("Starting reporting...\n");
-    
+
     rcode = qr2_init(NULL, NULL, QR2_BASE_PORT, "gmtest", "HA6zkS", 1, 1, server_key_callback, playerkey_callback,
                      teamkey_callback, keylist_callback, count_callback, adderror_callback, NULL);
-    
+
     if(rcode != e_qrnoerror)
         return GT2False;
 #endif
-    
+
     // Think.
     while(!quit)
     {
         gt2Think(socket);
-        
+
 #ifdef REPORT
         qr2_think(NULL);
 #endif
@@ -533,7 +533,7 @@ GT2Bool StartHosting
 #ifdef REPORT
     qr2_shutdown(NULL);
 #endif
-    
+
     return GT2True;
 }
 

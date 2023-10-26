@@ -1,6 +1,6 @@
 /*
 gpiSearch.c
-GameSpy Presence SDK 
+GameSpy Presence SDK
 Dan "Mr. Pants" Schoenblum
 
 Copyright 1999-2007 GameSpy Industries, Inc
@@ -71,7 +71,7 @@ gpiStartProfileSearch(
     if (gsiSocketIsError(rcode))
         CallbackFatalError(connection, GP_NETWORK_ERROR, GP_NETWORK, "There was an error binding a socket.");
     */
-    
+
     // Get the server host.
     ///////////////////////
     host = gethostbyname(GPSearchManagerHostname);
@@ -458,7 +458,7 @@ GPResult gpiOthersBuddy(
 
 GPResult gpiOthersBuddyList(
     GPConnection * connection,
-    int *profiles, 
+    int *profiles,
     int numOfProfiles,
     GPEnum blocking,
     GPCallback callback,
@@ -469,7 +469,7 @@ GPResult gpiOthersBuddyList(
 
 
     CHECK_RESULT(gpiInitSearchData(connection, &data, GPI_SEARCH_OTHERS_BUDDY_LIST));
-    
+
     data->revBuddyProfileIds = profiles;
     data->numOfRevBuddyProfiles = numOfProfiles;
 
@@ -532,7 +532,7 @@ gpiProcessSearch(
 
     //password encryption stuff
     char passwordenc[GP_PASSWORDENC_LEN];
-    
+
     // Get a pointer to the data.
     /////////////////////////////
     data = (GPISearchData*)operation->data;
@@ -543,7 +543,7 @@ gpiProcessSearch(
         loop = GPITrue;
     else
         loop = GPIFalse;
-    
+
     if (!operation->blocking && (current_time() - data->searchStartTime > GPI_SEARCH_TIMEOUT))
     {
         data->remove = GPITrue;
@@ -563,7 +563,7 @@ gpiProcessSearch(
             // Check the connect state.
             ///////////////////////////
             CHECK_RESULT(gpiCheckSocketConnect(connection, data->sock, &state));
-            
+
             // Check for a failed attempt.
             //////////////////////////////
             if(state == GPI_DISCONNECTED)
@@ -638,7 +638,7 @@ gpiProcessSearch(
                         for(i = 0 ; i < data->numNamespaces ; i++)
                         {
                             if(i > 0)
-                                gpiAppendCharToBuffer(connection, &data->outputBuffer, ','); 
+                                gpiAppendCharToBuffer(connection, &data->outputBuffer, ',');
                             gpiAppendIntToBuffer(connection, &data->outputBuffer, data->namespaceIDs[i]);
                         }
                     }
@@ -660,7 +660,7 @@ gpiProcessSearch(
                     gpiAppendStringToBuffer(connection, &data->outputBuffer, "\\nicks\\");
                     gpiAppendStringToBuffer(connection, &data->outputBuffer, "\\email\\");
                     gpiAppendStringToBuffer(connection, &data->outputBuffer, data->email);
-                    
+
                     gpiEncodeString(data->password, passwordenc);
                     gpiAppendStringToBuffer(connection, &data->outputBuffer, "\\passenc\\");
                     gpiAppendStringToBuffer(connection, &data->outputBuffer, passwordenc);
@@ -741,7 +741,7 @@ gpiProcessSearch(
                     if (data->revBuddyProfileIds)
                     {
                         int i;
-                        
+
                         gpiAppendIntToBuffer(connection, &data->outputBuffer, data->revBuddyProfileIds[0]);
 
                         for (i = 1; i < data->numOfRevBuddyProfiles; i++)
@@ -1099,7 +1099,7 @@ gpiProcessSearch(
                     {
                         GPFindPlayersResponseArg * arg;
                         GPFindPlayerMatch * match;
-                        
+
                         // Start setting up the arg.
                         ////////////////////////////
                         arg = (GPFindPlayersResponseArg *)gsimalloc(sizeof(GPFindPlayersResponseArg));
@@ -1584,7 +1584,7 @@ gpiProcessSearch(
     } while(loop);
 
 
-    
+
     return GP_NO_ERROR;
 }
 

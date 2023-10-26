@@ -1,15 +1,15 @@
 /******
 gt2nat.c
-GameSpy Transport 2 SDK 
-  
+GameSpy Transport 2 SDK
+
 Copyright 2000 GameSpy Industries, Inc
 
 ******
 
- This sample demonstrates sharing a UDP socket with the Query & Reporting 2 SDK 
+ This sample demonstrates sharing a UDP socket with the Query & Reporting 2 SDK
  to enable developers to create games that can be hosted behind a NAT.
 
- Please see the GameSpy Query & Reporting 2 SDK documentation for more 
+ Please see the GameSpy Query & Reporting 2 SDK documentation for more
  information
 
 ******/
@@ -127,7 +127,7 @@ void serverkey_callback(int keyid, qr2_buffer_t outbuf, void *userdata)
     default:
         qr2_buffer_add(outbuf, _T(""));
     }
-    
+
     GSI_UNUSED(userdata);
 }
 
@@ -162,9 +162,9 @@ void playerkey_callback(int keyid, int index, qr2_buffer_t outbuf, void *userdat
         break;
     default:
         qr2_buffer_add(outbuf, _T(""));
-        break;      
+        break;
     }
-    
+
     GSI_UNUSED(userdata);
 }
 
@@ -176,7 +176,7 @@ void teamkey_callback(int keyid, int index, qr2_buffer_t outbuf, void *userdata)
     GSI_UNUSED(userdata);
     GSI_UNUSED(index);
     GSI_UNUSED(keyid);
-}   
+}
 
 // Called when we need to report the list of keys we report values for
 void keylist_callback(qr2_key_type keytype, qr2_keybuffer_t keybuffer, void *userdata)
@@ -209,7 +209,7 @@ void keylist_callback(qr2_key_type keytype, qr2_keybuffer_t keybuffer, void *use
     case key_team:
         break;
     }
-    
+
     GSI_UNUSED(userdata);
 }
 
@@ -222,7 +222,7 @@ int count_callback(qr2_key_type keytype, void *userdata)
         return 0;
     else
         return 0;
-        
+
     GSI_UNUSED(userdata);
 }
 
@@ -230,7 +230,7 @@ int count_callback(qr2_key_type keytype, void *userdata)
 void adderror_callback(qr2_error_t error, gsi_char *errmsg, void *userdata)
 {
     _tprintf(_T("Error adding server: %d, %s\n"), error, errmsg);
-    
+
     GSI_UNUSED(userdata);
 }
 
@@ -275,7 +275,7 @@ static void init_game(void)
 
 /*******
  DoGameStuff
-Simulate whatever else a game server does 
+Simulate whatever else a game server does
 ********/
 void DoGameStuff(void)
 {
@@ -346,7 +346,7 @@ int main(int argc, char **argp)
         return -1;
 
     gt2Listen(socket, ConnectAttemptCallback);
-    
+
     //set the secret key, in a semi-obfuscated manner
     secret_key[0] = 'H';
     secret_key[1] = 'A';
@@ -355,11 +355,11 @@ int main(int argc, char **argp)
     secret_key[4] = 'k';
     secret_key[5] = 'S';
     secret_key[6] = '\0';
-    
+
     qr2_register_key(QR2_RANKINGSON_KEY, _T("rankingson"));
     /*
     //call qr_init_socket with the socket and gamename
-    if (qr_init_socket(NULL,gt2GetSocketSOCKET(socket), QR2_GAME_NAME, secret_key, basic_callback, 
+    if (qr_init_socket(NULL,gt2GetSocketSOCKET(socket), QR2_GAME_NAME, secret_key, basic_callback,
         info_callback, rules_callback, players_callback, NULL) != 0)
     {
         printf("Error starting Q&R SDK\n");

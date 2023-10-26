@@ -86,7 +86,7 @@ typedef struct SObject
     float radius;             // This object's radius (for collision).
     GT2Bool explode;           // Explode this object when done thinking.
     GT2Bool remove;            // Remove this object when done thinking.
-    
+
     float heading;            // The direction the object is moving
     float speed;              // The speed of the object
 } SObject;

@@ -33,7 +33,7 @@ DATE        VERSION  BY   TYPE     DESCRIPTION
 07-10-2007  1.11.01  RMV  FIX      Fixed gptest/gptestc Project files to get rid of Unicode warnings
                      RMV  FIX      Fixed memory allocation to prevent possible use of uninitialized pointer in gp.c
 06-07-2007  1.11.00  SN   RELEASE  Releasing to developer site
-06-07-2007  1.11.00  SN   FEATURE  Added newer style buddy status info 
+06-07-2007  1.11.00  SN   FEATURE  Added newer style buddy status info
                      SN   FEATURE  Replaced old TCP peer to peer code with UDP Layer
                      SN   FEATURE  Added keys/values pair feature
 05-22-2007  1.10.05  DES  FEATURE  Added gpGetInfoNoWait
@@ -123,7 +123,7 @@ DATE        VERSION  BY   TYPE     DESCRIPTION
                      DES  CLEANUP  Fixed warnings under OSX
                      DES  CLEANUP  Updated OSX Makefile
 08-05-2004  1.09.18  SN   RELEASE  Releasing to developer site.
-07-19-2004  1.09.18  SN   FIX      Updated code with explicit casts to remove implicit cast error 
+07-19-2004  1.09.18  SN   FIX      Updated code with explicit casts to remove implicit cast error
                                    when compiling at highest level and warnings treated as errors.
 06-25-2004  1.09.18  BED  FEATURE  Added location string to gpInvitePlayer
 06-24-2004  1.09.17  BED  FEATURE  Now encrypting password and cdkey for gpNewUser

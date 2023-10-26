@@ -1,6 +1,6 @@
 /*
 gpiOperation.c
-GameSpy Presence SDK 
+GameSpy Presence SDK
 Dan "Mr. Pants" Schoenblum
 
 Copyright 1999-2007 GameSpy Industries, Inc
@@ -188,7 +188,7 @@ gpiDestroyOperation(
 )
 {
     GPIConnection * iconnection = (GPIConnection*)*connection;
-    
+
     // Search?
     //////////
     if(operation->type == GPI_PROFILE_SEARCH)
@@ -331,7 +331,7 @@ gpiProcessOperation(
     case GPI_NEW_PROFILE:
         result = gpiProcessNewProfile(connection, operation, input);
         break;
-    
+
     case GPI_DELETE_PROFILE:
         result = gpiProcessDeleteProfle(connection, operation, input);
         break;
@@ -357,7 +357,7 @@ gpiProcessOperation(
 
     if(result != GP_NO_ERROR)
         operation->result = result;
-    
+
     return result;
 }
 

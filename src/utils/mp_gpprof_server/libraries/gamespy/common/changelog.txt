@@ -36,11 +36,11 @@ DATE        VERSION  BY   TYPE     DESCRIPTION
 04-17-2007  2.04.02  SAH  OTHER    Added gsiFloatSwap and Unswap byte reversal functions
 03-15-2007  2.04.01  SN   FIX      Fixed some compiler warnings and errors for other platforms.
 03-05-2007  2.04.00  SAH  RELEASE  Released to Developer Site
-03-02-2007  2.03.10  SN   FIX      Fixed gsi common debug printing for Revolution 
+03-02-2007  2.03.10  SN   FIX      Fixed gsi common debug printing for Revolution
                      SN   FIX      Switched printf for nitro to properly print common debug logs
                      SN   FIX      Fixed warnings for code warrior
 03-02-2007  2.03.09  SAH  FIX      Fixed MACOSX endian-ness to default to GSI_LITTLE_ENDIAN
-03-02-2007  2.03.08  SN   FIX      Fixed declaration warning in gsXml.c 
+03-02-2007  2.03.08  SN   FIX      Fixed declaration warning in gsXml.c
 02-22-2007  2.03.07  SN   FIX      Fixed prototypes for extern aligned mem functions
 01-30-2007  2.03.06  DES  FIX      Fixed compile error in gsXml.c
 01-24-2007  2.03.05  SN   FIX      Fixed some Visual Studio 2005 warnings
@@ -49,7 +49,7 @@ DATE        VERSION  BY   TYPE     DESCRIPTION
 01-17-2007  2.03.03  DES  RELEASE  Limited Release
 01-16-2007  2.03.03  DES  FEATURE  Added X360 support
 01-04-2007  2.03.02  BED  FIX      Added 2 new functions used in large int to ensure proper endian-ness for encryption
-            2.03.02  BED  FIX      Fixed EncryptBuffer function to fix PS3 byte-order bug 
+            2.03.02  BED  FIX      Fixed EncryptBuffer function to fix PS3 byte-order bug
 12-20-2006  2.03.01  SN   FIX      Added code to free allocated memory for memory manager
 12-15-2006  2.03.00  MJW  RELEASE  Released to Developer Site
 12-13-2006  2.02.23  SN   FIX      Fixed issue where PSP uses the wrong FD_SETSIZE
@@ -84,7 +84,7 @@ DATE        VERSION  BY   TYPE     DESCRIPTION
 08-17-2006  2.02.03  SAH  FIX      Cleaned up the gsi threaded/nonthreaded DNS lookup calls in gsPlatformUtil.c
                      SAH  OTHER    GSI_NO_ASYNC_DNS can now be defined to turn off threaded lookups
 08-04-2006  2.02.02  SN   FIX      Fixed XML date and time read function to use time_t
-08-04-2006  2.02.02  SN   FIX      Fixed the resolve host name thread function for Nintendo Wii   
+08-04-2006  2.02.02  SN   FIX      Fixed the resolve host name thread function for Nintendo Wii
 08-04-2006  2.02.01  SAH  OTHER    Added gsi time utility functions as wrappers for gmtime, ctime, mktime
                      SAH  FIX      Added gsXmlReadChildAsDateTimeElement function to fix SAKE readTimeDate
                      SAH  OTHER    Removed function definitions/prototypes for NITRO ctime/gtime, now uses gsi versions
@@ -111,7 +111,7 @@ DATE        VERSION  BY   TYPE     DESCRIPTION
                      SAH  FIX      Added LinuxCommon.c for linux projects
 05-30-2006  2.00.42  SAH  FIX      #include "time.h" for PS3 time support in gsPlatform.h
                      SAH  FIX      Added newlines to end of files, couple GSI_UNUSED calls
-                     SAH  FIX      Added PS3 Threads stub in gsPlatformThreads       
+                     SAH  FIX      Added PS3 Threads stub in gsPlatformThreads
 05-25-2006  2.00.41  SAH  FIX      added GSI_UNUSED call to gsAssert to get rid of Nitro warning
 05-24-2006  2.00.40  SAH  FIX      moved GSI_UNUSED call below #endif in win32common.c
 05-23-2006  2.00.39  SAH  FIX      Got rid of month/week arrays in gsXML.c - they are declared in nitroThread
@@ -137,7 +137,7 @@ DATE        VERSION  BY   TYPE     DESCRIPTION
                      SAH  FIX      Changed gsi_64 variables to long long - PS3 now uses 32 bit
                      SAH  FIX      added _tstrncpy defines for UNICODE && WIN32
                      SAH  FIX      made a returned local variable static in gsUtilPS3
-                     SAH  FIX      Added a (char *) typecast ot gsSocketPS3                                                            
+                     SAH  FIX      Added a (char *) typecast ot gsSocketPS3
 04-18-2006  2.00.27  SAH  FIX      Added newline to end of gsXML.h to get rid of error
 04-13-2006  2.00.26  SAH  FIX      Added #ifdef UNICODE, #include <wchar.h> to platform.h
 04-13-2006  2.00.26  SAH  FIX      Added #ifdef UNICODE headers around functions that call wcslen
@@ -148,7 +148,7 @@ DATE        VERSION  BY   TYPE     DESCRIPTION
                      DES  FEATURE  Added writing Base64Binary and DateTime to XML streams
 02-23-2006  2.00.21  DES  FEATURE  Added reading and writing functionality to the Xml code.
 01-27-2006  2.00.20  SN   RELEASE  Releasing to developer site
-01-11-2006  2.00.20  SN   FIX      Fixed function to return value for insock 
+01-11-2006  2.00.20  SN   FIX      Fixed function to return value for insock
 01-09-2006  2.00.19  SN   FIX      Separated code for WIN32 and WIN32 Console in the assert function
                                    Added platform checks around types and function pointers for memory code
 10-08-2005  2.00.18  DES  FIX      Don't assert when freeing NULL, just ignore it.
@@ -175,9 +175,9 @@ DATE        VERSION  BY   TYPE     DESCRIPTION
 07-27-2005  2.00.04  SN   FIX      Fixed backwards IP address problem for Insock
 06-23-2005  2.00.03  BED  FEATURE  Added PSP support.
 06-03-2005  2.00.02  SN   RELEASE  Releasing to developer site.
-05-26-2005  2.00.02  BED  RELEASE  Releasing to developer site.  
+05-26-2005  2.00.02  BED  RELEASE  Releasing to developer site.
 05-26-2005  2.00.02  BED  FIX      Added missing extern "C" brace to end of gsMemory.h
-05-26-2005  2.00.01  BED  RELEASE  Releasing to developer site.  
+05-26-2005  2.00.01  BED  RELEASE  Releasing to developer site.
 05-26-2005  2.00.01  BED  FIX      Added old header stubs for new common code compatability with old sdks
 05-26-2005  2.00.00  BED  RELEASE  Releasing to developer site.
 05-16-2005  2.00.00  BED  OTHER    Moved common code into /common folder.
@@ -234,7 +234,7 @@ DATE        VERSION  BY   TYPE     DESCRIPTION
 07-12-2004  1.10.48  SN   FIX      Cleared warnings when warnings are treated as errors for gamspy common code.
 07-09-2004  1.10.47  SN   FIX      Updated portions of code to eliminate warnings for PS2
 07-08-2004  1.10.46  SN   FIX      Commented an include line <if_types.h>
-07-01-2004  1.10.46  SN   FIX      Includeded <malloc.h> for ps2 
+07-01-2004  1.10.46  SN   FIX      Includeded <malloc.h> for ps2
 06-29-2004  1.10.45  BED  RELEASE  Releasing to developer site.
 06-28-2004  1.10.45  DES  FEATURE  Added gsimemalign to the list of memory functions.
 06-24-2004  1.10.44  BED  FEATURE  Util_Rand functions no longer static.
@@ -315,7 +315,7 @@ DATE        VERSION  BY   TYPE     DESCRIPTION
                           CLEANUP  Cleaned up to compile without warnings on the PS2.
 11-18-2002  1.10.04  JED  FIX      nonport.c now using ansi registry funcs for WIN32/unicode
 11-14-2002  1.10.03  DES  FEATURE  Added assert.h include to nonport.h.
-11-13-2002  1.10.02  DDW  FEATURE  Changed GOAGetUniqueID to use redefinable function pointer. 
+11-13-2002  1.10.02  DDW  FEATURE  Changed GOAGetUniqueID to use redefinable function pointer.
                                    Made Cisco the default stack for PS2.
 11-13-2002  1.10.01  DES  FIX      Removed Reference to unsupported non-blocking CISCO stack
 09-25-2002  1.10.00  DDW  OTHER    Changelog started

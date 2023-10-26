@@ -221,9 +221,9 @@ typedef struct sockaddr SOCKADDR;
 
 
 /*
- * 
- * This function is no longer supported.  It is recommended that CoCreateInstance be used to create 
- * DirectPlay8 address objects. 
+ *
+ * This function is no longer supported.  It is recommended that CoCreateInstance be used to create
+ * DirectPlay8 address objects.
  *
  * HRESULT WINAPI DirectPlay8AddressCreate( const GUID * pcIID, void **ppvInterface, IUnknown *pUnknown);
  *
@@ -264,7 +264,7 @@ DECLARE_INTERFACE_(IDirectPlay8Address,IUnknown)
     STDMETHOD(GetNumComponents)(THIS_ PDWORD pdwNumComponents ) PURE;
     STDMETHOD(GetComponentByName)(THIS_ const WCHAR * const pwszName, void *pvBuffer, PDWORD pdwBufferSize, PDWORD pdwDataType ) PURE;
     STDMETHOD(GetComponentByIndex)(THIS_ const DWORD dwComponentID, WCHAR * pwszName, PDWORD pdwNameLen, void *pvBuffer, PDWORD pdwBufferSize, PDWORD pdwDataType ) PURE;
-    STDMETHOD(AddComponent)(THIS_ const WCHAR * const pwszName, const void * const lpvData, const DWORD dwDataSize, const DWORD dwDataType ) PURE;  
+    STDMETHOD(AddComponent)(THIS_ const WCHAR * const pwszName, const void * const lpvData, const DWORD dwDataSize, const DWORD dwDataType ) PURE;
     STDMETHOD(GetDevice)(THIS_  GUID * ) PURE;
     STDMETHOD(SetDevice)(THIS_  const GUID * const) PURE;
     STDMETHOD(BuildFromDPADDRESS)( THIS_ LPVOID pvAddress, DWORD dwDataSize ) PURE;

@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "SpursSpeexTaskManager.h"
 #include "spursSupportInterface.h"
-#include <sys/spu_initialize.h> 
+#include <sys/spu_initialize.h>
 
 SpursSpeexTaskManager* gSpursSpeexTaskManager = 0;
 SpursSupportInterface* gSpursSupport = 0;
@@ -14,9 +14,9 @@ const unsigned int MAX_SPURS_SPEEX_TASKS=1;
 int initializeSpursSampleTask()
 {
     gSpursSupport = new SpursSupportInterface();
-    
+
     gSpursSpeexTaskManager = new SpursSpeexTaskManager(gSpursSupport,MAX_SPURS_SPEEX_TASKS);
-    return gSpursSpeexTaskManager->initialize();    
+    return gSpursSpeexTaskManager->initialize();
 }
 
 ///not finished, need to pass proper data
@@ -27,11 +27,11 @@ int issueSampleTaskEncodeInit(int quality, int samplesPerFrame, SpursSpeexTaskOu
 
     return gSpursSpeexTaskManager->issueEncodeInitTask(quality, samplesPerFrame, taskOutput,userAllocatedSpeexBuffer,userAllocatedSpeexBufferSize);
 
-    //printf("issueSampleTaskEncodeInit called\n"); 
+    //printf("issueSampleTaskEncodeInit called\n");
 }
 
 ///submit some work to SPURS
-int issueSampleTaskEncode(short* inBuffer, int inBufferSize, int encodedFrameSize,  char *outBuffer, int outBufferSize, 
+int issueSampleTaskEncode(short* inBuffer, int inBufferSize, int encodedFrameSize,  char *outBuffer, int outBufferSize,
                           struct SpursSpeexTaskOutput *taskOuput,   char *userAllocatedSpeexBuffer, int userAllocatedSpeexBufferSize )
 {
     btAssert(gSpursSpeexTaskManager!=0);

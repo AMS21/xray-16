@@ -6,8 +6,8 @@ Copyright (c) 2003-2006 Gino van den Bergen / Erwin Coumans  http://continuousph
 
 This software is provided 'as-is', without any express or implied warranty.
 In no event will the authors be held liable for any damages arising from the use of this software.
-Permission is granted to anyone to use this software for any purpose, 
-including commercial applications, and to alter it and redistribute it freely, 
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it freely,
 subject to the following restrictions:
 
 1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
@@ -60,9 +60,9 @@ typedef float btScalar;
 
 //////////////////////////////////////////////////////////////////////////
 // removed since not needed
-/* 
+/*
 #if defined(BT_USE_DOUBLE_PRECISION) || defined(BT_FORCE_DOUBLE_FUNCTIONS)
-        
+
 SIMD_FORCE_INLINE btScalar btSqrt(btScalar x) { return sqrt(x); }
 SIMD_FORCE_INLINE btScalar btFabs(btScalar x) { return fabs(x); }
 SIMD_FORCE_INLINE btScalar btCos(btScalar x) { return cos(x); }
@@ -77,7 +77,7 @@ SIMD_FORCE_INLINE btScalar btLog(btScalar x) { return log(x); }
 SIMD_FORCE_INLINE btScalar btPow(btScalar x,btScalar y) { return pow(x,y); }
 
 #else
-        
+
 SIMD_FORCE_INLINE btScalar btSqrt(btScalar x) { return sqrtf(x); }
 SIMD_FORCE_INLINE btScalar btFabs(btScalar x) { return fabsf(x); }
 SIMD_FORCE_INLINE btScalar btCos(btScalar x) { return cosf(x); }
@@ -90,7 +90,7 @@ SIMD_FORCE_INLINE btScalar btAtan2(btScalar x, btScalar y) { return atan2f(x, y)
 SIMD_FORCE_INLINE btScalar btExp(btScalar x) { return expf(x); }
 SIMD_FORCE_INLINE btScalar btLog(btScalar x) { return logf(x); }
 SIMD_FORCE_INLINE btScalar btPow(btScalar x,btScalar y) { return powf(x,y); }
-    
+
 #endif
 */
 
@@ -112,7 +112,7 @@ SIMD_FORCE_INLINE btScalar btPow(btScalar x,btScalar y) { return powf(x,y); }
 #define SIMD_INFINITY     FLT_MAX
 #endif
 
-SIMD_FORCE_INLINE btScalar btAtan2Fast(btScalar y, btScalar x) 
+SIMD_FORCE_INLINE btScalar btAtan2Fast(btScalar y, btScalar x)
 {
     btScalar coeff_1 = SIMD_PI / 4.0f;
     btScalar coeff_2 = 3.0f * coeff_1;

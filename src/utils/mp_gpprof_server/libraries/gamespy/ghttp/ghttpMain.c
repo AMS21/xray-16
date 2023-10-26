@@ -1,5 +1,5 @@
  /*
-GameSpy GHTTP SDK 
+GameSpy GHTTP SDK
 Dan "Mr. Pants" Schoenblum
 dan@gamespy.com
 
@@ -137,8 +137,8 @@ static GHTTPBool ghiProcessConnection
     // Grab completed before we possibly free it.
     /////////////////////////////////////////////
     completed = connection->completed;
-    
-    // Graceful shutdown support.  
+
+    // Graceful shutdown support.
     // Close connection when there is no more data
     if (connection->result == GHTTPRequestCancelled && !connection->completed && !CanReceiveOnSocket(connection->socket))
     {
@@ -1027,7 +1027,7 @@ void ghttpCancelRequest
 }
 
 #if !defined(INSOCK)
-// INSOCK does not support partial shutdown 
+// INSOCK does not support partial shutdown
 void ghttpCloseRequest
 (
     GHTTPRequest request
@@ -1145,8 +1145,8 @@ GHTTPBool ghttpSetProxy
 
 GHTTPBool ghttpSetRequestProxy
 (
-    GHTTPRequest request, 
-    const char * server 
+    GHTTPRequest request,
+    const char * server
 )
 {
     return ghiSetRequestProxy(request, server);
@@ -1204,7 +1204,7 @@ SOCKET ghttpGetSocket(GHTTPRequest request);
 GHTTPBool ghttpReuseSocket(GHTTPRequest request, SOCKET socket);
 
 // For use in persistent HTTP connections
-// Call this in the completed callback to obtain the socket, which can be used with 
+// Call this in the completed callback to obtain the socket, which can be used with
 // ghttpReuseSocket to make a second request to the same host
 ///////////////////////////////////////////////////////////////////
 SOCKET ghttpGetSocket
@@ -1229,7 +1229,7 @@ SOCKET ghttpGetSocket
     ret = connection->socket;
     // Mark the connection as invalid so that it doesn't get closed
     connection->socket = INVALID_SOCKET;
-    
+
     return ret;
 }
 
@@ -1270,7 +1270,7 @@ GHTTPBool ghttpReuseSocket
 
     // Skip the host lookup & connect - send data once the socket is writable
     //////////////////////////////////////////////
-    connection->state = GHTTPConnecting;    
+    connection->state = GHTTPConnecting;
     */
     return GHTTPTrue;
 }
@@ -1447,9 +1447,9 @@ GHTTPBool ghttpPostAddFileFromMemoryW
     if (contentType != NULL)
         UCS2ToAsciiString(contentType, contentType_A);
 
-    
+
     return ghttpPostAddFileFromMemoryA(post, name_A, buffer, bufferLen, reportFilename_A, contentType_A);
-    
+
     GSI_UNUSED(reportFilename);
     GSI_UNUSED(contentType);
 }

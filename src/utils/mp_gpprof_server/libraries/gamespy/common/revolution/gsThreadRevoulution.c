@@ -1,9 +1,9 @@
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 #include "../gsCommon.h"
-    
- 
-// Begin of Threading for Revolution    
+
+
+// Begin of Threading for Revolution
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 gsi_u32 gsiInterlockedIncrement(gsi_u32 * value)
@@ -14,7 +14,7 @@ gsi_u32 gsiInterlockedIncrement(gsi_u32 * value)
     OSRestoreInterrupts(enabled);
 
     // return "ret" rather than "value" here b/c
-    // value may be modified by another thread 
+    // value may be modified by another thread
     // before we can return it
     return ret;
 }
@@ -26,7 +26,7 @@ gsi_u32 gsiInterlockedDecrement(gsi_u32 * value)
     OSRestoreInterrupts(state);
 
     // return "ret" rather than "value" here b/c
-    // value may be modified by another thread 
+    // value may be modified by another thread
     // before we can return it
     return ret;
 }
@@ -45,8 +45,8 @@ int gsiStartThread(GSThreadFunc aThreadFunc, gsi_u32 theStackSize, void *arg, GS
     theThreadIdOut->mStack = gsimalloc(theStackSize);
     aStackBase = (char *)theThreadIdOut->mStack;
     aStackBase += theStackSize;
-    
-    OSCreateThread(&theThreadIdOut->mThread, aThreadFunc, arg, (void *)aStackBase, 
+
+    OSCreateThread(&theThreadIdOut->mThread, aThreadFunc, arg, (void *)aStackBase,
                    theStackSize, 16, OS_THREAD_ATTR_DETACH);
 
     OSResumeThread(&theThreadIdOut->mThread);
@@ -137,7 +137,7 @@ GSISemaphoreID gsiCreateSemaphore(gsi_i32 theInitialCount, gsi_i32 theMaxCount, 
 
     GSI_UNUSED(theName);
     GSI_UNUSED(theMaxCount);
-    
+
     return semaphore;
 }
 
@@ -178,6 +178,6 @@ void gsiExitThread(GSIThreadID theThreadID)
 
 
 
-// End of Threading for Revolution 
+// End of Threading for Revolution
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////

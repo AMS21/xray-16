@@ -1,6 +1,6 @@
 //
 // Linux Threading Support (pthreads)
-// 
+//
 // NOTE: when implementing this make sure the "-lpthread" compiler option is used
 //
 ///////////////////////////////////////////////////////////////////////////////
@@ -69,7 +69,7 @@ void gsiExitThread(GSIThreadID id)
 {
     // detach the thread so that it knows to free resources upon exit
     pthread_detach(id.thread);
-    
+
     // exit thread to free up resources
     pthread_exit(NULL);
 }
@@ -80,8 +80,8 @@ void gsiCleanupThread(GSIThreadID id)
     pthread_attr_destroy(&id.attr);
 }
 
-gsi_u32 gsiHasThreadShutdown(GSIThreadID id) 
-{ 
+gsi_u32 gsiHasThreadShutdown(GSIThreadID id)
+{
     // pthreads lacks detection mechanism for this
     GSI_UNUSED(id);
     return 1;

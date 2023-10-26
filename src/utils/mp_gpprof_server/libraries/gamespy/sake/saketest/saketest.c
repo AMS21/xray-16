@@ -18,7 +18,7 @@
 #define SECRET_KEY  _T("HA6zkS")
 #define GAMEID      0
 
-#define PRODUCTID   0       
+#define PRODUCTID   0
 #define NAMESPACEID 0
 #define NICKNAME    _T("gptestc1")
 #define EMAIL       _T("gptestc@gptestc.com")
@@ -46,8 +46,8 @@ GPProfile profileid;
     {
         GSI_UNUSED(theLevel);
 
-        printf("[%s][%s] ", 
-                gGSIDebugCatStrings[theCat], 
+        printf("[%s][%s] ",
+                gGSIDebugCatStrings[theCat],
                 gGSIDebugTypeStrings[theType]);
 
         vprintf(theTokenStr, theParamList);
@@ -86,7 +86,7 @@ static GSIACResult CheckServices(void)
     default:
         break;
     };
-        
+
     return aResult;
 }
 
@@ -100,7 +100,7 @@ static void ConnectResponse(GPConnection * pconnection, GPConnectResponseArg * a
         printf("GP Connection Attempt Failed\n");
 
     profileid = arg->profile;
-        
+
     GSI_UNUSED(pconnection);
     GSI_UNUSED(param);
 }
@@ -190,7 +190,7 @@ static void Error(GPConnection * pconnection, GPErrorArg * arg, void * param)
     _tprintf( _T("RESULT: %s (%d)\n"), resultString, arg->result);
     _tprintf( _T("ERROR CODE: %s (0x%X)\n"), errorCodeString, arg->errorCode);
     _tprintf( _T("ERROR STRING: %s\n"), arg->errorString);
-    
+
     GSI_UNUSED(pconnection);
     GSI_UNUSED(param);
 }
@@ -441,7 +441,7 @@ static void CreateRecordCallback(SAKE sake, SAKERequest request, SAKERequestResu
 
     if(HandleRequestResult(result, "CreateRecord") == gsi_false)
         return;
-    
+
     printf("Created recordid %d\n", output->mRecordId);
 
     GSI_UNUSED(sake);
@@ -453,7 +453,7 @@ static void CreateRecordCallback(SAKE sake, SAKERequest request, SAKERequestResu
 static void UpdateRecordCallback(SAKE sake, SAKERequest request, SAKERequestResult result, void *inputData, void *outputData, void *userData)
 {
     NumOperations--;
-    
+
     GSI_UNUSED(sake);
     GSI_UNUSED(request);
     GSI_UNUSED(inputData);
@@ -672,7 +672,7 @@ static GHTTPBool DownloadCompletedCallback(GHTTPRequest request, GHTTPResult res
     }
 
     printf("File Download: Downloaded %d byte file\n", bufferLen);
- 
+
     return GHTTPTrue;
 }
 
@@ -685,7 +685,7 @@ static void postCallback(GHTTPRequest request, int bytesPosted, int totalBytes, 
     printf("* totalObjects: %7d\n", totalObjects);
     GSI_UNUSED(request);
     GSI_UNUSED(param);
-} 
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -730,7 +730,7 @@ static void RunTests(SAKE sake)
         int index = 0;
         SAKERequest request;
         SAKEStartRequestResult startRequestResult;
-        
+
 
         input.mTableId = "test";
         input.mRecordId = 158;
@@ -961,7 +961,7 @@ static void RunTests(SAKE sake)
         GHTTPRequest request;
         //const char *memFile = "This is a test file";
         gsi_char url[SAKE_MAX_URL_LENGTH];
-        
+
         int i;
         DataStruct data;
 
@@ -987,7 +987,7 @@ static void RunTests(SAKE sake)
         //ghttpPostAddFileFromMemory(post, "memory.file", memFile, (int)strlen(memFile), "memory.file", NULL);
         ghttpPostAddFileFromMemory(post, _T("memory.file"), (const char *)&data, SAKE_UPLOAD_AMOUNT, _T("memory.file"), NULL);
         request = ghttpPostEx(url, NULL, post, GHTTPFalse, GHTTPTrue, NULL, UploadCompletedCallback, NULL);
-        
+
         if(request == -1)
         {
             printf("Error starting file upload\n");
@@ -1049,10 +1049,10 @@ static void LoginAndAuthenticate(SAKE sake)
     // connect to GP
     printf("Connecting to GP...\n");
     CHECK_GP_RESULT(gpConnect(pconn, NICKNAME, EMAIL, PASSWORD, GP_NO_FIREWALL, GP_BLOCKING, (GPCallback)ConnectResponse, NULL), "gpConnect failed");
-    
+
     // retrieve the login ticket
     CHECK_GP_RESULT(gpGetLoginTicket(pconn, loginTicket), "gpGetLoginTicket failed");
-    
+
     // process
     CHECK_GP_RESULT(gpProcess(pconn), "gpProcess failed");
 
@@ -1094,7 +1094,7 @@ int test_main(int argc, char* argv[])
     gsSetDebugLevel(GSIDebugCat_All, GSIDebugType_All, GSIDebugLevel_Hardcore);
 #endif
 
-    // enable Win32 C Runtime debugging 
+    // enable Win32 C Runtime debugging
 #if defined(_WIN32) && !defined(_XBOX) && defined(_DEBUG)
     {
         int tempFlag = _CrtSetDbgFlag(_CRTDBG_REPORT_FLAG);
@@ -1142,7 +1142,7 @@ int test_main(int argc, char* argv[])
     printf("Shutting down the GameSpy Core\n");
     gsCoreShutdown();
 
-    // Wait for core shutdown 
+    // Wait for core shutdown
     //   (should be instantaneous unless you have multiple cores)
     while(gsCoreIsShutdown() == GSCore_SHUTDOWN_PENDING)
     {

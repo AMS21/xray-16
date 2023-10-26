@@ -2,14 +2,14 @@
 // The Loki Library
 // Copyright (c) 2001 by Andrei Alexandrescu
 // This code accompanies the book:
-// Alexandrescu, Andrei. "Modern C++ Design: Generic Programming and Design 
+// Alexandrescu, Andrei. "Modern C++ Design: Generic Programming and Design
 //     Patterns Applied". Copyright (c) 2001. Addison-Wesley.
-// Permission to use, copy, modify, distribute and sell this software for any 
-//     purpose is hereby granted without fee, provided that the above copyright 
-//     notice appear in all copies and that both that copyright notice and this 
+// Permission to use, copy, modify, distribute and sell this software for any
+//     purpose is hereby granted without fee, provided that the above copyright
+//     notice appear in all copies and that both that copyright notice and this
 //     permission notice appear in supporting documentation.
-// The author or Addison-Welsey Longman make no representations about the 
-//     suitability of this software for any purpose. It is provided "as is" 
+// The author or Addison-Welsey Longman make no representations about the
+//     suitability of this software for any purpose. It is provided "as is"
 //     without express or implied warranty.
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -32,7 +32,7 @@ void FixedAllocator::Chunk::Init(std::size_t blockSize, unsigned char blocks)
     assert(blocks > 0);
     // Overflow check
     assert((blockSize * blocks) / blockSize == blocks);
-    
+
     pData_ = new unsigned char[blockSize * blocks];
     Reset(blockSize, blocks);
 }
@@ -78,15 +78,15 @@ void FixedAllocator::Chunk::Release()
 void* FixedAllocator::Chunk::Allocate(std::size_t blockSize)
 {
     if (!blocksAvailable_) return 0;
-    
-    assert((firstAvailableBlock_ * blockSize) / blockSize == 
+
+    assert((firstAvailableBlock_ * blockSize) / blockSize ==
         firstAvailableBlock_);
 
     unsigned char* pResult =
         pData_ + (firstAvailableBlock_ * blockSize);
     firstAvailableBlock_ = *pResult;
     --blocksAvailable_;
-    
+
     return pResult;
 }
 
@@ -123,13 +123,13 @@ FixedAllocator::FixedAllocator(std::size_t blockSize)
     , deallocChunk_(0)
 {
     assert(blockSize_ > 0);
-    
+
     prev_ = next_ = this;
 
     std::size_t numBlocks = DEFAULT_CHUNK_SIZE / blockSize;
     if (numBlocks > UCHAR_MAX) numBlocks = UCHAR_MAX;
     else if (numBlocks == 0) numBlocks = 8 * blockSize;
-    
+
     numBlocks_ = static_cast<unsigned char>(numBlocks);
     assert(numBlocks_ == numBlocks);
 }
@@ -148,7 +148,7 @@ FixedAllocator::FixedAllocator(const FixedAllocator& rhs)
     next_ = rhs.next_;
     rhs.next_->prev_ = this;
     rhs.next_ = this;
-    
+
     allocChunk_ = rhs.allocChunk_
         ? &chunks_.front() + (rhs.allocChunk_ - &rhs.chunks_.front())
         : 0;
@@ -177,7 +177,7 @@ FixedAllocator::~FixedAllocator()
         next_->prev_ = prev_;
         return;
     }
-    
+
     assert(prev_ == next_);
     Chunks::iterator i = chunks_.begin();
     for (; i != chunks_.end(); ++i)
@@ -194,7 +194,7 @@ FixedAllocator::~FixedAllocator()
 void FixedAllocator::Swap(FixedAllocator& rhs)
 {
     using namespace std;
-    
+
     swap(blockSize_, rhs.blockSize_);
     swap(numBlocks_, rhs.numBlocks_);
     chunks_.swap(rhs.chunks_);
@@ -234,7 +234,7 @@ void* FixedAllocator::Allocate()
     }
     assert(allocChunk_ != 0);
     assert(allocChunk_->blocksAvailable_ > 0);
-    
+
     return allocChunk_->Allocate(blockSize_);
 }
 
@@ -249,7 +249,7 @@ void FixedAllocator::Deallocate(void* p)
     assert(!chunks_.empty());
     assert(&chunks_.front() <= deallocChunk_);
     assert(&chunks_.back() >= deallocChunk_);
-    
+
     deallocChunk_  = VicinityFind(p);
     assert(deallocChunk_);
 
@@ -287,7 +287,7 @@ FixedAllocator::Chunk* FixedAllocator::VicinityFind(void* p)
             if (lo == loBound) lo = 0;
             else --lo;
         }
-        
+
         if (hi)
         {
             if (p >= hi->pData_ && p < hi->pData_ + chunkLength)
@@ -297,7 +297,7 @@ FixedAllocator::Chunk* FixedAllocator::VicinityFind(void* p)
             if (++hi == hiBound) hi = 0;
         }
     }
-    
+
     // assert(false);
     // return 0;
 }
@@ -317,15 +317,15 @@ void FixedAllocator::DoDeallocate(void* p)
 
     if (deallocChunk_->blocksAvailable_ == numBlocks_)
     {
-        // deallocChunk_ is completely free, should we release it? 
-        
+        // deallocChunk_ is completely free, should we release it?
+
         Chunk& lastChunk = chunks_.back();
-        
+
         if (&lastChunk == deallocChunk_)
         {
             // check if we have two last chunks empty
-            
-            if (chunks_.size() > 1 && 
+
+            if (chunks_.size() > 1 &&
                 deallocChunk_[-1].blocksAvailable_ == numBlocks_)
             {
                 // Two free chunks, discard the last one
@@ -335,7 +335,7 @@ void FixedAllocator::DoDeallocate(void* p)
             }
             return;
         }
-        
+
         if (lastChunk.blocksAvailable_ == numBlocks_)
         {
             // Two free blocks, discard one
@@ -359,23 +359,23 @@ void FixedAllocator::DoDeallocate(void* p)
 ////////////////////////////////////////////////////////////////////////////////
 
 SmallObjAllocator::SmallObjAllocator(
-        std::size_t chunkSize, 
+        std::size_t chunkSize,
         std::size_t maxObjectSize)
     : pLastAlloc_(0), pLastDealloc_(0)
-    , chunkSize_(chunkSize), maxObjectSize_(maxObjectSize) 
-{   
+    , chunkSize_(chunkSize), maxObjectSize_(maxObjectSize)
+{
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // SmallObjAllocator::Allocate
 // Allocates 'numBytes' memory
-// Uses an internal pool of FixedAllocator objects for small objects  
+// Uses an internal pool of FixedAllocator objects for small objects
 ////////////////////////////////////////////////////////////////////////////////
 
 void* SmallObjAllocator::Allocate(std::size_t numBytes)
 {
     if (numBytes > maxObjectSize_) return operator new(numBytes);
-    
+
     if (pLastAlloc_ && pLastAlloc_->BlockSize() == numBytes)
     {
         return pLastAlloc_->Allocate();
@@ -414,7 +414,7 @@ void SmallObjAllocator::Deallocate(void* p, std::size_t numBytes)
 
 ////////////////////////////////////////////////////////////////////////////////
 // Change log:
-// March 20: fix exception safety issue in FixedAllocator::Allocate 
+// March 20: fix exception safety issue in FixedAllocator::Allocate
 //     (thanks to Chris Udazvinis for pointing that out)
 // June 20, 2001: ported by Nick Thurn to gcc 2.95.3. Kudos, Nick!!!
 // May  10, 2002: ported by Rani Sharoni to VC7 (RTM - 9466)

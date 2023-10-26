@@ -26,7 +26,7 @@ int SetSockBlocking(SOCKET sock, int isblocking)
 {
     int rcode;
     unsigned long argp;
-        
+
     if(isblocking)
         argp = 0;
     else
@@ -62,7 +62,7 @@ struct hostent* gsSocketGetHostByName(const char* name)
         #define GetHostByNameBufferSize 1024
         char *buf = gsimalloc(GetHostByNameBufferSize);//[GetHostByNameBufferSize]; // PSP documentation recommends 1024
         struct in_addr ip;
-        
+
         static struct hostent ahostent;
         static char * aliases = NULL;
         static char * ipPtrs[MAX_IPS + 1];
@@ -74,12 +74,12 @@ struct hostent* gsSocketGetHostByName(const char* name)
         ahostent.h_aliases = &aliases;
         ahostent.h_addrtype = AF_INET;
         ahostent.h_addr_list = ipPtrs;
-        
+
         result = sceNetResolverCreate(&resolverID, buf, GetHostByNameBufferSize);
         if (result < 0)
         {
             gsifree(buf);
-            return NULL;  
+            return NULL;
         }
         // this will block until completed
         result = sceNetResolverStartNtoA(resolverID, name, &ip, GSI_RESOLVER_TIMEOUT, GSI_RESOLVER_RETRY);
@@ -169,7 +169,7 @@ int _NetworkAdHocSocketCreate(gsi_u16 port)
     static struct SceNetEtherAddr addr;
     // Get local MAC address
     ret = sceWlanGetEtherAddr(&tmp_local);
-    if (ret < 0) 
+    if (ret < 0)
     {
         // Error handling
         return -1;// INVALID_SOCKET
@@ -181,7 +181,7 @@ int _NetworkAdHocSocketCreate(gsi_u16 port)
 
     // Set socket buffer to 8192 bytes
     id = sceNetAdhocPdpCreate(&addr, port, RXBUFLEN, 0);
-    if (id < 0) 
+    if (id < 0)
     {
         // SCE_ERROR_NET_ADHOC_INVALID_ADDR
         // ToDo: Error handling
@@ -194,7 +194,7 @@ void _NetworkAdHocSocketDestroy(int socket)
 {
     int ret;
     ret = sceNetAdhocPdpDelete(socket,0);
-    if (ret < 0) 
+    if (ret < 0)
     {
         // ToDo: Error handling
     }
@@ -279,7 +279,7 @@ int _NetworkAdHocCanReceiveOnSocket(int socket_id)
 
     stat_buflen = sizeof(struct SceNetAdhocPdpStat);
     ret = sceNetAdhocGetPdpStat(&stat_buflen, (void *)&stat);
-    if (ret < 0) 
+    if (ret < 0)
     {
         // Error Condition
 
@@ -299,7 +299,7 @@ int _NetworkAdHocCanReceiveOnSocket(int socket_id)
         return -1;
     }
 
-    if (stat_buflen == 0 || stat.id != socket_id) 
+    if (stat_buflen == 0 || stat.id != socket_id)
     {
         printf("sceNetAdhocGetPdpStat() invalid data.\n");
         return 0;
@@ -318,12 +318,12 @@ int _NetworkAdHocSocketRecv(int socket_id,
                             u_int16 *sport
                             )
 {
-    int ret = sceNetAdhocPdpRecv(   
-            socket_id,              // id       Socket ID   
-            saddr,                  // saddr    Sender’s MAC address  
+    int ret = sceNetAdhocPdpRecv(
+            socket_id,              // id       Socket ID
+            saddr,                  // saddr    Sender’s MAC address
             sport,                  // sport    Sender port number
-            buf,                    // buf      Pointer to receive buffer   
-            &bufferlen,             // len      Receive buffer size (IN), receive data length (OUT) 
+            buf,                    // buf      Pointer to receive buffer
+            &bufferlen,             // len      Receive buffer size (IN), receive data length (OUT)
             0,                      // timeout  Timeout (µsec)
             SCE_NET_ADHOC_F_NONBLOCK// flag     Receive options
             );
@@ -333,7 +333,7 @@ int _NetworkAdHocSocketRecv(int socket_id,
     {
         return ret;
     }
-    if (ret == (int)SCE_ERROR_NET_ADHOC_WOULD_BLOCK) 
+    if (ret == (int)SCE_ERROR_NET_ADHOC_WOULD_BLOCK)
     {
         // no data, just return
         return SCE_OK;

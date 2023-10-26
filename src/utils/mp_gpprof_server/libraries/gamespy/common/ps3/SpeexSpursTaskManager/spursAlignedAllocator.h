@@ -33,9 +33,9 @@ typedef int size_type;
 
 template < typename T , unsigned Alignment >
 class spursAlignedAllocator {
-    
+
     typedef spursAlignedAllocator< T , Alignment > self_type;
-    
+
 public:
 
     //just going down a list:
@@ -64,7 +64,7 @@ public:
         spursAlignedFree( reinterpret_cast< void * >( ptr ) );
     }
     void          destroy   ( pointer          ptr )                                 { ptr->~value_type(); }
-    
+
 
     template < typename O > struct rebind {
         typedef spursAlignedAllocator< O , Alignment > other;

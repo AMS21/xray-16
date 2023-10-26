@@ -1,6 +1,6 @@
 /*
 gpiBuddy.h
-GameSpy Presence SDK 
+GameSpy Presence SDK
 Dan "Mr. Pants" Schoenblum
 
 Copyright 1999-2007 GameSpy Industries, Inc
@@ -28,7 +28,7 @@ Please see the GameSpy Presence SDK documentation for more information
 #define GPI_BM_AUTH                       4
 #define GPI_BM_UTM                        5
 #define GPI_BM_REVOKE                     6  // remote buddy removed from local list
-#define GPI_BM_STATUS                   100                     
+#define GPI_BM_STATUS                   100
 #define GPI_BM_INVITE                   101
 #define GPI_BM_PING                     102
 #define GPI_BM_PONG                     103
@@ -54,9 +54,9 @@ gpiProcessRecvBuddyMessage(
 
 GPResult gpiProcessRecvBuddyStatusInfo(GPConnection *connection, const char *input);
 
-GPResult 
+GPResult
 gpiProcessRecvBuddyList(
-  GPConnection * connection, 
+  GPConnection * connection,
   const char * input
 );
 

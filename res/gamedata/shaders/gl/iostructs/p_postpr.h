@@ -1,7 +1,7 @@
 
 out vec4 SV_Target;
 
-layout(location = TEXCOORD0)    in float2   p_postpr_Tex0   ; // TEXCOORD0; // base1 (duality)  
+layout(location = TEXCOORD0)    in float2   p_postpr_Tex0   ; // TEXCOORD0; // base1 (duality)
 layout(location = TEXCOORD1)    in float2   p_postpr_Tex1   ; // TEXCOORD1; // base2 (duality)
 layout(location = TEXCOORD2)    in float2   p_postpr_Tex2   ; // TEXCOORD2; // base  (noise)
 layout(location = COLOR0)       in float4   p_postpr_Color  ; // COLOR0;        // multiplier, color.w = noise_amount

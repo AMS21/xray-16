@@ -1,6 +1,6 @@
 /*
 gpiTransfer.c
-GameSpy Presence SDK 
+GameSpy Presence SDK
 Dan "Mr. Pants" Schoenblum
 
 Copyright 1999-2007 GameSpy Industries, Inc
@@ -602,7 +602,7 @@ static GPIBool gpiHandleSendRequest
     transfer->totalSize = totalSize;
 
     return GPITrue;
-    
+
     GSI_UNUSED(bufferLen);
 }
 
@@ -1810,7 +1810,7 @@ void gpiTransferPeerDestroyed
                 arg->type = GP_TRANSFER_LOST_CONNECTION;
                 gpiAddCallback(connection, iconnection->callbacks[GPI_TRANSFER_CALLBACK], arg, NULL, GPI_ADD_TRANSFER_CALLBACK);
             }
-        
+
             // So long tranfer.
             ///////////////////
             transfer->state = GPITransferNoConnection;

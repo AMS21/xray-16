@@ -2,14 +2,14 @@
 // The Loki Library
 // Copyright (c) 2001 by Andrei Alexandrescu
 // This code accompanies the book:
-// Alexandrescu, Andrei. "Modern C++ Design: Generic Programming and Design 
+// Alexandrescu, Andrei. "Modern C++ Design: Generic Programming and Design
 //     Patterns Applied". Copyright (c) 2001. Addison-Wesley.
-// Permission to use, copy, modify, distribute and sell this software for any 
-//     purpose is hereby granted without fee, provided that the above copyright 
-//     notice appear in all copies and that both that copyright notice and this 
+// Permission to use, copy, modify, distribute and sell this software for any
+//     purpose is hereby granted without fee, provided that the above copyright
+//     notice appear in all copies and that both that copyright notice and this
 //     permission notice appear in supporting documentation.
-// The author or Addison-Welsey Longman make no representations about the 
-//     suitability of this software for any purpose. It is provided "as is" 
+// The author or Addison-Welsey Longman make no representations about the
+//     suitability of this software for any purpose. It is provided "as is"
 //     without express or implied warranty.
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -27,7 +27,7 @@ namespace Loki
 ////////////////////////////////////////////////////////////////////////////////
 // class template IsCustomUnsignedInt
 // Offers a means to integrate nonstandard built-in unsigned integral types
-// (such as unsigned __int64 or unsigned long long int) with the TypeTraits 
+// (such as unsigned __int64 or unsigned long long int) with the TypeTraits
 //     class template defined below.
 // Invocation: IsCustomUnsignedInt<T> where T is any type
 // Defines 'value', an enum that is 1 iff T is a custom built-in unsigned
@@ -40,12 +40,12 @@ namespace Loki
     struct IsCustomUnsignedInt
     {
         enum { value = 0 };
-    };        
+    };
 
 ////////////////////////////////////////////////////////////////////////////////
 // class template IsCustomSignedInt
 // Offers a means to integrate nonstandard built-in unsigned integral types
-// (such as unsigned __int64 or unsigned long long int) with the TypeTraits 
+// (such as unsigned __int64 or unsigned long long int) with the TypeTraits
 //     class template defined below.
 // Invocation: IsCustomSignedInt<T> where T is any type
 // Defines 'value', an enum that is 1 iff T is a custom built-in signed
@@ -58,7 +58,7 @@ namespace Loki
     struct IsCustomSignedInt
     {
         enum { value = 0 };
-    };        
+    };
 
 ////////////////////////////////////////////////////////////////////////////////
 // class template IsCustomFloat
@@ -75,7 +75,7 @@ namespace Loki
     struct IsCustomFloat
     {
         enum { value = 0 };
-    };        
+    };
 
 ////////////////////////////////////////////////////////////////////////////////
 // Helper types for class template TypeTraits defined below
@@ -90,10 +90,10 @@ namespace Loki
         typedef TYPELIST_3(bool, char, wchar_t) StdOtherInts;
         typedef TYPELIST_3(float, double, long double) StdFloats;
     }
-        
+
     namespace Private
     {
-        
+
         template<typename T>
         class IsArray
         {
@@ -101,27 +101,27 @@ namespace Loki
 
             typedef char (&yes)[1];
             typedef char (&no) [2];
-        
+
             template<typename U, size_t N>
             static void vc7_need_this_for_is_array(Type2Type2<U(*)[N]>);
-        
+
             template<typename U, size_t N>
             static yes is_array1(Type2Type2<U[N]>*);
             static no  is_array1(...);
-        
+
             template<typename U>
             static yes is_array2(Type2Type2<U[]>*);
             static no  is_array2(...);
-        
+
         public:
-            enum { 
+            enum {
                 value =
                     sizeof(is_array1((Type2Type2<T>*)0)) == sizeof(yes) ||
                     sizeof(is_array2((Type2Type2<T>*)0)) == sizeof(yes)
             };
-            
+
         };
-        
+
 
     } // Private Namespace
 
@@ -216,71 +216,71 @@ namespace Loki
         static yes is_volatile(Type2Type<volatile U>);
         static no  is_volatile(...);
 
-    public:        
+    public:
         //
         // VC7 BUG - will not detect reference to function
         //
-        enum { 
-            isReference = 
-                sizeof(is_reference(Type2Type<T>())) == sizeof(yes) 
+        enum {
+            isReference =
+                sizeof(is_reference(Type2Type<T>())) == sizeof(yes)
         };
-        
+
         //
         // VC7 BUG - will not detect pointer to function
         //
-        enum { 
-            isPointer = 
+        enum {
+            isPointer =
                 sizeof(is_pointer1(Type2Type<T>())) == sizeof(yes) ||
                 sizeof(is_pointer2(Type2Type<T>())) == sizeof(yes) ||
                 sizeof(is_pointer3(Type2Type<T>())) == sizeof(yes) ||
                 sizeof(is_pointer4(Type2Type<T>())) == sizeof(yes)
         };
-        
-        enum { 
-            isMemberPointer = 
+
+        enum {
+            isMemberPointer =
                 sizeof(is_pointer2member(Type2Type<T>())) == sizeof(yes)
         };
-    
-        enum { 
+
+        enum {
             isArray = Private::IsArray<T>::value
         };
 
-        enum { 
-            isVoid = 
+        enum {
+            isVoid =
                 IsSameType<T, void>::value          ||
                 IsSameType<T, const void>::value    ||
                 IsSameType<T, volatile void>::value ||
                 IsSameType<T, const volatile void>::value
         };
 
-        enum { isStdUnsignedInt = 
+        enum { isStdUnsignedInt =
             TL::IndexOf<Private::StdUnsignedInts, T>::value >= 0 };
-        enum { isStdSignedInt = 
+        enum { isStdSignedInt =
             TL::IndexOf<Private::StdSignedInts, T>::value >= 0 };
         enum { isStdIntegral = isStdUnsignedInt || isStdSignedInt ||
             TL::IndexOf<Private::StdOtherInts, T>::value >= 0 };
         enum { isStdFloat = TL::IndexOf<Private::StdFloats, T>::value >= 0 };
         enum { isStdArith = isStdIntegral || isStdFloat };
         enum { isStdFundamental = isStdArith || isStdFloat || isVoid };
-            
+
         enum { isUnsignedInt = isStdUnsignedInt || IsCustomUnsignedInt<T>::value };
         enum { isSignedInt = isStdSignedInt || IsCustomSignedInt<T>::value };
         enum { isIntegral = isStdIntegral || isUnsignedInt || isSignedInt };
         enum { isFloat = isStdFloat || IsCustomFloat<T>::value };
         enum { isArith = isIntegral || isFloat };
         enum { isFundamental = isStdFundamental || isArith || isFloat };
-        
-        enum { 
-            isConst = 
+
+        enum {
+            isConst =
                 sizeof(is_const(Type2Type<T>())) == sizeof(yes)
         };
 
-        enum { 
-            isVolatile = 
+        enum {
+            isVolatile =
                 sizeof(is_volatile(Type2Type<T>())) == sizeof(yes)
         };
 
-        
+
     private:
         // is_scalar include functions types
         struct is_scalar
@@ -295,11 +295,11 @@ namespace Loki
 
             typedef typename Select
             <
-                isVoid || isReference || isArray, 
+                isVoid || isReference || isArray,
                 NotScalar, T
             >
             ::Result RetType;
-            
+
             static RetType& get();
 
         public:
@@ -317,7 +317,7 @@ namespace Loki
 #endif
         }; // is_scalar
 
-    
+
     private:
         template<bool IsRef>
         struct AdjReference
@@ -336,7 +336,7 @@ namespace Loki
         typedef typename AdjReference<isReference || isVoid>::
                 template In<T>::Result AdjType;
 
-    public:        
+    public:
         enum { isScalar = is_scalar::value };
 
 
@@ -345,18 +345,18 @@ namespace Loki
             isScalar || isArray, T, AdjType
         >
         ::Result ParameterType;
-        
+
         //
         // We get is_class for free
         // BUG - fails with functions types (ICE) and unknown size array
         // (but works for other incomplete types)
         // (the boost one (Paul Mensonides) is better)
         //
-        enum { isClass = 
-                !isScalar    && 
-                !isArray     && 
+        enum { isClass =
+                !isScalar    &&
+                !isArray     &&
                 !isReference &&
-                !isVoid 
+                !isVoid
         };
     };
 }

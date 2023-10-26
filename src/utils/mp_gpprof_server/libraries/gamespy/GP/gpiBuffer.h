@@ -1,6 +1,6 @@
 /*
 gpiBuffer.h
-GameSpy Presence SDK 
+GameSpy Presence SDK
 Dan "Mr. Pants" Schoenblum
 
 Copyright 1999-2007 GameSpy Industries, Inc
@@ -58,13 +58,13 @@ gpiAppendStringToBuffer(
 
 GPResult gpiAppendShortToBuffer(
     GPConnection * connection,
-    GPIBuffer * outputBuffer, 
+    GPIBuffer * outputBuffer,
     short num
 );
 
 GPResult gpiAppendUShortToBuffer(
     GPConnection * connection,
-    GPIBuffer * outputBuffer, 
+    GPIBuffer * outputBuffer,
     unsigned short num
 );
 
@@ -162,6 +162,6 @@ gpiClipBufferToPosition(
   GPIBuffer * buffer
 );
 
-GPResult gpiSendBufferToPeer(GPConnection * connection, unsigned int ip, unsigned short port, 
+GPResult gpiSendBufferToPeer(GPConnection * connection, unsigned int ip, unsigned short port,
                              GPIBuffer * outputBuffer, GPIBool *closed, GPIBool clipSentData);
 #endif

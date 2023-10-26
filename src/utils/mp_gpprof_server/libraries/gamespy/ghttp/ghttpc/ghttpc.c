@@ -1,5 +1,5 @@
  /*
-GameSpy GHTTP SDK 
+GameSpy GHTTP SDK
 Dan "Mr. Pants" Schoenblum
 dan@gamespy.com
 
@@ -83,16 +83,16 @@ int test_main(int argc, char **argv);
     {
         GSI_UNUSED(theLevel);
 
-        printf("[%s][%s] ", 
-                gGSIDebugCatStrings[theCat], 
+        printf("[%s][%s] ",
+                gGSIDebugCatStrings[theCat],
                 gGSIDebugTypeStrings[theType]);
         vprintf(theTokenStr, theParamList);
 
 #if defined(_WIN32) && !defined(_XBOX)
         {
             static char buffer[4098];
-            sprintf(buffer, "[%s][%s] ", 
-                    gGSIDebugCatStrings[theCat], 
+            sprintf(buffer, "[%s][%s] ",
+                    gGSIDebugCatStrings[theCat],
                     gGSIDebugTypeStrings[theType]);
             OutputDebugString(buffer);
             vsprintf(buffer, theTokenStr, theParamList);
@@ -174,7 +174,7 @@ static void ProgressCallback
     }
     else
         _tprintf(_T("\n"));
-        
+
     GSI_UNUSED(request);
     GSI_UNUSED(buffer);
     GSI_UNUSED(bufferLen);
@@ -265,7 +265,7 @@ int test_main(int argc, char **argv)
     CheckRequest(request, pendingRequests);
     pendingRequests++;
 
-    // stream a secure page 
+    // stream a secure page
     request = ghttpStreamEx(
 #if defined(_REVOLUTION)
         _T("https://mariokartwii.race.gs.nintendowifi.net/RaceService/test.txt"),

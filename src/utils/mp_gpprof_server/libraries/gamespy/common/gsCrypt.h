@@ -18,7 +18,7 @@ extern "C" {
 // RSA
 //
 //     Based on PKCS #1 v2.1, RSA Laboratories June 14, 2002
-//     
+//
 //
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -27,10 +27,10 @@ extern "C" {
 #define GS_CRYPT_SHA1_HASHSIZE     20
 #define GS_CRYPT_MD5_HASHSIZE      16
 
-//#define GS_CRYPT_RSA_ES_OAEP          
-#define GS_CRYPT_RSA_ES_PKCS1v1_5 
+//#define GS_CRYPT_RSA_ES_OAEP
+#define GS_CRYPT_RSA_ES_PKCS1v1_5
 
-#ifndef GS_CRYPT_RSA_BINARY_SIZE 
+#ifndef GS_CRYPT_RSA_BINARY_SIZE
 #define GS_CRYPT_RSA_BINARY_SIZE   1024
 #endif
 
@@ -44,20 +44,20 @@ extern "C" {
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-typedef struct 
+typedef struct
 {
     gsLargeInt_t modulus;
     gsLargeInt_t exponent;
 } gsCryptRSAKey;
 
-typedef struct 
+typedef struct
 {
     gsi_u8 headerByte; // always 0x00
     gsi_u8 maskedSeed[GS_CRYPT_HASHSIZE]; // not a MD5 hash, but must be same size
     gsi_u8 maskedData[GS_CRYPT_RSA_DATABLOCKSIZE]; // data block xor'd
 } gsCryptRSAOAEPPacket;
 
-typedef struct 
+typedef struct
 {
     gsi_u8 headerByte[2]; // always 0x00 0x02
     gsi_u8 data[GS_CRYPT_RSA_BYTE_SIZE-2]; // data block xor'd

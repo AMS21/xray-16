@@ -1,5 +1,5 @@
  /*
-GameSpy GHTTP SDK 
+GameSpy GHTTP SDK
 Dan "Mr. Pants" Schoenblum
 dan@gamespy.com
 
@@ -21,7 +21,7 @@ void ghiCallCompletedCallback
     GHTTPByteCount bufferLen;
 
     assert(connection);
-    
+
 #ifdef GSI_COMMON_DEBUG
     if(connection->result != GHTTPSuccess)
     {
@@ -68,7 +68,7 @@ void ghiCallProgressCallback
     const char * buffer,
     GHTTPByteCount bufferLen
 )
-{   
+{
     assert(connection);
 
     // Check for no callback.

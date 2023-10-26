@@ -1,6 +1,6 @@
 /*
 gp.h
-GameSpy Presence SDK 
+GameSpy Presence SDK
 Dan "Mr. Pants" Schoenblum
 
 Copyright 1999-2007 GameSpy Industries, Inc
@@ -35,7 +35,7 @@ typedef enum _GPEnum
     GP_TRANSFER_CALLBACK,
     GP_RECV_BUDDY_AUTH,
     GP_RECV_BUDDY_REVOKE,
-        
+
     // Global States.
     /////////////////
     GP_INFO_CACHING = 0x0100,
@@ -150,7 +150,7 @@ typedef enum _GPEnum
     GP_SESS_HAS_PASSWORD = 0x00000004,
     GP_SESS_IS_BEHIND_NAT = 0x00000008,
     GP_SESS_IS_RANKED = 0x000000010,
-    
+
 
     // CPU Brand ID
     ///////////////
@@ -222,7 +222,7 @@ typedef enum _GPEnum
 //////////
 typedef enum _GPResult
 {
-    GP_NO_ERROR,            
+    GP_NO_ERROR,
     GP_MEMORY_ERROR,
     GP_PARAMETER_ERROR,
     GP_NETWORK_ERROR,
@@ -397,8 +397,8 @@ typedef enum _GPErrorCode
 #define GP_RICH_STATUS_LEN          256
 #define GP_STATUS_BASIC_STR_LEN     33
 
-// Random number seed for PASSWORDENC and CDKEYENC 
-//   MUST MATCH SERVER - If you change this, you'll have to 
+// Random number seed for PASSWORDENC and CDKEYENC
+//   MUST MATCH SERVER - If you change this, you'll have to
 //                       release an updated server
 #define GP_XOR_SEED                 0x79707367 // "gspy"
 
@@ -502,7 +502,7 @@ typedef struct
 // GPDeleteProfileResponseArg
 /////////////////////////////
 
-typedef struct  
+typedef struct
 {
     GPResult result;
     GPProfile profile;
@@ -569,7 +569,7 @@ typedef struct
 // GPRecvBuddyRequestArg
 ////////////////////////
 typedef struct
-{ 
+{
   GPProfile profile;
   unsigned int date;
   gsi_char reason[GP_REASON_LEN];
@@ -578,12 +578,12 @@ typedef struct
 // GPBuddyStatus
 ////////////////
 typedef struct
-{ 
-  GPProfile profile; 
+{
+  GPProfile profile;
   GPEnum status;
   gsi_char statusString[GP_STATUS_STRING_LEN];
   gsi_char locationString[GP_LOCATION_STRING_LEN];
-  unsigned int ip; 
+  unsigned int ip;
   int port;
   GPEnum quietModeFlags;
 } GPBuddyStatus;
@@ -613,7 +613,7 @@ typedef struct
 
 //GPGetBuddyStatusInfoKeysArg
 /////////////////////////////
-typedef struct  
+typedef struct
 {
     GPProfile profile;
     gsi_char **keys;
@@ -627,7 +627,7 @@ typedef struct
 ///////////////////////
 typedef struct
 {
-    GPProfile profile; 
+    GPProfile profile;
     unsigned int date;
     int index;
 } GPRecvBuddyStatusArg;
@@ -635,26 +635,26 @@ typedef struct
 // GPRecvBuddyMessageArg
 ////////////////////////
 typedef struct
-{ 
+{
   GPProfile profile;
   unsigned int date;
   gsi_char * message;
 } GPRecvBuddyMessageArg;
 
-typedef struct 
+typedef struct
 {
   GPProfile profile;
   unsigned int date;
   gsi_char * message;
 } GPRecvBuddyUTMArg;
 
-typedef struct  
+typedef struct
 {
     GPProfile profile;
     unsigned int date;
 } GPRecvBuddyAuthArg;
 
-typedef struct 
+typedef struct
 {
     GPProfile profile;
     unsigned int date;
@@ -729,13 +729,13 @@ typedef struct
     GPProfileSearchMatch * profiles;
 } GPGetReverseBuddiesResponseArg;
 
-typedef struct  
+typedef struct
 {
     GPProfile profile;
     gsi_char uniqueNick[GP_UNIQUENICK_LEN];
 } GPUniqueMatch;
 
-typedef struct  
+typedef struct
 {
     GPResult result;
     int numOfUniqueMatchs;
@@ -848,8 +848,8 @@ GPResult gpInitialize
 (
   GPConnection * connection,
   int productID,                // The productID is a unique ID that identifies your product
-  int namespaceID,              // The namespaceID identified which namespace to login under. A namespaceID of 0 indicates that no 
-                                // namespace should be used. A namespaceID of 1 represents the default GameSpy namespace 
+  int namespaceID,              // The namespaceID identified which namespace to login under. A namespaceID of 0 indicates that no
+                                // namespace should be used. A namespaceID of 1 represents the default GameSpy namespace
   int partnerID                 // The partnerID identifies the account system being used.
                                 // Use GP_PARTNERID_GAMESPY for GSID accounts.
                                 // Use GP_PARTNERID_IGN for IGN accounts.
@@ -865,7 +865,7 @@ void gpDestroy(
 ///////////
 GPResult gpEnable
 (
-  GPConnection * connection, 
+  GPConnection * connection,
   GPEnum state
 );
 
@@ -873,7 +873,7 @@ GPResult gpEnable
 ////////////
 GPResult gpDisable
 (
-  GPConnection * connection, 
+  GPConnection * connection,
   GPEnum state
 );
 
@@ -1066,8 +1066,8 @@ GPResult gpDeleteProfile(
 // and will be removed in a future version of GP.
 /////////////////////////////////////////////////////
 GPResult gpProfileFromID(
-  GPConnection * connection, 
-  GPProfile * profile, 
+  GPConnection * connection,
+  GPProfile * profile,
   int id
 );
 
@@ -1121,7 +1121,7 @@ GPResult gpProfileSearchUniquenick(
 ////////////
 GPResult gpGetInfo(
   GPConnection * connection,
-  GPProfile profile, 
+  GPProfile profile,
   GPEnum checkCache,
   GPEnum blocking,
   GPCallback callback,
@@ -1139,8 +1139,8 @@ GPResult gpGetInfoNoWait(
 // gpSetInfoi
 /////////////
 GPResult gpSetInfoi(
-  GPConnection * connection, 
-  GPEnum info, 
+  GPConnection * connection,
+  GPEnum info,
   int value
 );
 
@@ -1223,7 +1223,7 @@ GPResult gpGetNumBlocked(
 // gpGetBlockedProfile
 /////////////////////
 GPResult gpGetBlockedProfile(
-  GPConnection * connection, 
+  GPConnection * connection,
   int index,
   GPProfile * profile
 );
@@ -1258,12 +1258,12 @@ GPResult gpGetBuddyStatus(
 //////////////////////////////
 GPResult gpGetBuddyStatusInfo(
     GPConnection * connection,
-    int index, 
+    int index,
     GPBuddyStatusInfo * statusInfo
 );
 
 GPResult gpSetBuddyAddr(
-    GPConnection *connection, 
+    GPConnection *connection,
     int index,
     unsigned int buddyIp,
     unsigned short buddyPort
@@ -1272,8 +1272,8 @@ GPResult gpSetBuddyAddr(
 // gpGetBuddyIndex
 //////////////////
 GPResult gpGetBuddyIndex(
-  GPConnection * connection, 
-  GPProfile profile, 
+  GPConnection * connection,
+  GPProfile profile,
   int * index
 );
 
@@ -1303,9 +1303,9 @@ GPResult gpSetStatus(
 
 #ifdef GP_NEW_STATUS_INFO
 GPResult gpSetStatusInfo(
-    GPConnection *connection, 
+    GPConnection *connection,
     GPEnum statusState,
-    unsigned int hostIp, 
+    unsigned int hostIp,
     unsigned int hostPrivateIp,
     unsigned short queryPort,
     unsigned short hostPort,
@@ -1410,11 +1410,11 @@ GPResult gpGetReverseBuddies(
 );
 
 // gpGetReverseBuddiesList
-// Get profile ids and unique nicks for profiles 
+// Get profile ids and unique nicks for profiles
 // that have you on their buddy list.
 //////////////////////////////////////////////////
 GPResult gpGetReversBuddiesList( GPConnection * connection,
-    GPProfile *targets, int numOfTargets, 
+    GPProfile *targets, int numOfTargets,
     GPEnum blocking,
     GPCallback callback,
     void * param

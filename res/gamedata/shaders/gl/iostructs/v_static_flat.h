@@ -2,7 +2,7 @@
 out gl_PerVertex { vec4 gl_Position; };
 
 #if defined(USE_R2_STATIC_SUN) && !defined(USE_LM_HEMI)
-#define v_in    v_static_color  
+#define v_in    v_static_color
 #else
 #define v_in    v_static
 #endif

@@ -4,7 +4,7 @@ Changelog for: GameSpy HTTP SDK
 DATE        VERSION  BY   TYPE     DESCRIPTION
 ----------  -------  ---  -------  ---------------------------------------------------------
 12-12-2007  1.11.00  RMV  RELEASE  Released to Developer Site
-12-12-2007  1.10.05  RMV  FIX      Updated ghttpStreamEx call in ghttpc.c to use a URL requiring Nintendo certification, since it 
+12-12-2007  1.10.05  RMV  FIX      Updated ghttpStreamEx call in ghttpc.c to use a URL requiring Nintendo certification, since it
                                    uses REVOEXSSL
 11-27-2007  1.10.04  SAH  FIX      Fixed bug where hostname lookup thread wasn't cancelled if request was
                      SAH  CLEANUP  Moved extern "c" block below includes to prevent linker errors
@@ -19,7 +19,7 @@ DATE        VERSION  BY   TYPE     DESCRIPTION
 04-19-2007  1.09.01  SAH  FIX      Fixed ghiDoReceivingHeaders/File to support DS limited stack size - uses heap allocation now.
 03-05-2007  1.09.00  SAH  RELEASE  Released to Developer Site
 03-02-2007  1.08.06  SN   FIX      Fixed some compiler warnings for code warrior
-02-22-2007  1.08.05  SN   FIX      Changed parts of code that used strdup to use goastrdup  
+02-22-2007  1.08.05  SN   FIX      Changed parts of code that used strdup to use goastrdup
 01-22-2007  1.08.04  SAH  FIX      Fixed unicode-specific bug for PostAddFileFromMemory
 01-16-2007  1.08.03  DES  FEATURE  Added X360 support
 01-04-2007  1.08.02  BED  FIX      Fixed PS3 Byte order bug in encryption algorithm
@@ -33,7 +33,7 @@ DATE        VERSION  BY   TYPE     DESCRIPTION
 09-28-2006  1.07.46  SAH  FIX      Fixed PS3 project to work with PS3 095.00x SDK; changed included libaries in linker input.
 08-24-2006  1.07.45  SAH  FIX      Fixed VC7 project file
 08-04-2006  1.07.44  SN   FIX      Fixed asynchronous DNS lookup code: removed unnecessary memory allocation
-08-02-2006  1.07.43  SAH  RELEASE  Releasing to developer site 
+08-02-2006  1.07.43  SAH  RELEASE  Releasing to developer site
 07-31-2006  1.07.43  SAH  FIX      Fixed PS3 project file - added post-build step to create *.SELF for execution
 07-25-2006  1.07.42  SAH  FIX      Fixed NITRO project, include for crt0.o now above others so it add correct file
 07-07-2006  1.07.41  SAH  FIX      Fixed HTTP DNS cleanup - needed to explicitly free handle pointer memory
@@ -68,7 +68,7 @@ DATE        VERSION  BY   TYPE     DESCRIPTION
 04-13-2006  1.07.21  SAH  FIX      Replaced all (rcode == SOCKET_ERROR) w/ (gsiSocketIsError(rcode))
 02-21-2006  1.07.20  BED  OTHER    Adjusted debug output level for http continue.
 01-26-2006  1.07.19  SN   FIX      Added psp to the test_main definition
-                     SN   OTHER    Added and updated psp prodg project and solution      
+                     SN   OTHER    Added and updated psp prodg project and solution
 01-26-2006  1.07.18  BED  FIX      Added error checking between REQUEST and POST.
                      BED  OTHER    HTTPS requests now default to GameSpy SSL encryptor.
                      BED  FIX      Fixed an efficiency bug with plain text posts.
@@ -109,7 +109,7 @@ DATE        VERSION  BY   TYPE     DESCRIPTION
                      DES  CLEANUP  Updated OSX Makefile
 08-13-2004  1.06.24  SN   FIX      Changed asserts in ghiParseProxyServer to reflect the correct checks on parameters
 08-04-2004  1.06.23  SN   RELEASE  Releasing to developer site.
-07-19-2004  1.06.23  SN   FIX      Updated code with explicit casts to remove implicit cast error 
+07-19-2004  1.06.23  SN   FIX      Updated code with explicit casts to remove implicit cast error
                                    when compiling at highest level and warnings treated as errors.
 06-18-2004  1.06.22  BED  RELEASE  Releasing to developer site.
 06-17-2004  1.06.22  BED  FIX      ghttpc sample no longer builds UNICODE mode by default

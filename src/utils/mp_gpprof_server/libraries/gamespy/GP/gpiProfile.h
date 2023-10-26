@@ -1,6 +1,6 @@
 /*
 gpiProfile.h
-GameSpy Presence SDK 
+GameSpy Presence SDK
 Dan "Mr. Pants" Schoenblum
 
 Copyright 1999-2007 GameSpy Industries, Inc
@@ -28,7 +28,7 @@ Please see the GameSpy Presence SDK documentation for more information
 //////////////////////////////////
 
 // New Status Info
-typedef struct _GPIBuddyStatusInfo 
+typedef struct _GPIBuddyStatusInfo
 {
     int buddyIndex;
     GPEnum statusState;
@@ -49,7 +49,7 @@ typedef struct _GPIBuddyStatusInfo
     DArray extendedInfoKeys;
 } GPIBuddyStatusInfo;
 
-// Old status 
+// Old status
 typedef struct
 {
     int buddyIndex;
@@ -216,7 +216,7 @@ gpiRemoveFromBlockedList(
 
 GPIProfile *
 gpiFindBlockedProfile(
-  GPConnection * connection, 
+  GPConnection * connection,
   int blockIndex
 );
 

@@ -132,7 +132,7 @@ const char * GOAGetUniqueID_Internal(void)
 
 #endif
 
-//NEED These again since MAX INTEGRAL BITS is not defined 
+//NEED These again since MAX INTEGRAL BITS is not defined
 #define GSI_MIN_I64       LONG_LONG_MIN
 #define GSI_MAX_I64       LONG_LONG_MAX
 #define GSI_MAX_U64       ULONG_LONG_MAX
@@ -152,27 +152,27 @@ gsi_i64 gsiStringToInt64(const char *theNumberStr)
     int flags = 0;
     // Added for compatibility reasons
     int ibase = 10;
-    
+
     p = theNumberStr; // p is our scanning pointer
     number = 0;       // start with zero
 
-    // read char 
-    c = *p++;            
+    // read char
+    c = *p++;
 
-    // skip whitespace 
+    // skip whitespace
     while ( isspace(c) )
-        c = *p++;        
+        c = *p++;
 
-     
+
     if (c == '-') {
         flags |= FL_NEG;    // remember minus sign
         c = *p++;
     }
     // skip sign
     else if (c == '+')
-        c = *p++;        
+        c = *p++;
 
-    if (ibase == 0) 
+    if (ibase == 0)
     {
         // determine base free-lance, based on first two chars of
         // string
@@ -184,7 +184,7 @@ gsi_i64 gsiStringToInt64(const char *theNumberStr)
             ibase = 8;
     }
 
-    if (ibase == 16) 
+    if (ibase == 16)
     {
         // we might have 0x in front of number; remove if there
         if (c == '0' && (*p == 'x' || *p == 'X')) {
@@ -193,13 +193,13 @@ gsi_i64 gsiStringToInt64(const char *theNumberStr)
         }
     }
 
-    // if our number exceeds this, we will overflow on multiply 
+    // if our number exceeds this, we will overflow on multiply
     maxval = GSI_MAX_U64 / ibase;
 
 
     // exit in middle of loop
-    for (;;) 
-    {    
+    for (;;)
+    {
         // convert c to value
         if ( isdigit(c) )
             digval = c - '0';
@@ -210,7 +210,7 @@ gsi_i64 gsiStringToInt64(const char *theNumberStr)
 
         // exit loop if bad digit found
         if (digval >= (unsigned)ibase)
-            break;        
+            break;
 
         /* record the fact we have read one digit */
         flags |= FL_READDIGIT;
@@ -220,12 +220,12 @@ gsi_i64 gsiStringToInt64(const char *theNumberStr)
         // a tricky pre-check.
 
         if (number < maxval || (number == maxval &&
-            (gsi_u64)digval <= GSI_MAX_U64 % ibase)) 
+            (gsi_u64)digval <= GSI_MAX_U64 % ibase))
         {
                 // we won't overflow, go ahead and multiply
                 number = number * ibase + digval;
         }
-        else 
+        else
         {
             // we have overflowed, set the flag
             flags |= FL_OVERFLOW;
@@ -236,7 +236,7 @@ gsi_i64 gsiStringToInt64(const char *theNumberStr)
     }
 
     --p;                /* point to place that stopped scan */
-    
+
     if (!(flags & FL_READDIGIT)) {
         /* no number there; return 0 and point to beginning of
         string */
@@ -254,7 +254,7 @@ gsi_i64 gsiStringToInt64(const char *theNumberStr)
         else
             number = GSI_MAX_I64;
     }
-    
+
     if (flags & FL_NEG)
         /* negate result if there was a neg sign */
         number = -number;
@@ -264,7 +264,7 @@ gsi_i64 gsiStringToInt64(const char *theNumberStr)
 
 void gsiInt64ToString(char theNumberStr[33], gsi_i64 theNumber)
 {
-    // you want to fit the number! 
+    // you want to fit the number!
     // give me a valid string!
     GS_ASSERT(theNumberStr != NULL);
 

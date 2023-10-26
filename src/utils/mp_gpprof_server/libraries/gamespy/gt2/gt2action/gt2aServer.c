@@ -107,7 +107,7 @@ static int AddClient
 
 static void RemoveClient
 (
-    int clientIndex 
+    int clientIndex
 )
 {
     // Not in use anymore.
@@ -516,7 +516,7 @@ static void ServerReceivedCallback
         BroadcastText(buffer, -1, GT2True);
     }
 }
- 
+
 static void ServerClosedCallback
 (
     GT2Connection connection,

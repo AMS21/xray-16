@@ -54,7 +54,7 @@ const KeyInformation * KeyRead(void)
         }
     }
     KeyInfo.cnt = r;      // Unprocessed key input
-    
+
     return &KeyInfo;
 }
 

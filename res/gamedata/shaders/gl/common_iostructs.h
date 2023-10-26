@@ -15,13 +15,13 @@
 struct  v_TL0uv_positiont
 {
     float4  P       ; // POSITIONT;
-    float4  Color   ; // COLOR; 
+    float4  Color   ; // COLOR;
 };
 
 struct  v_TL0uv
 {
     float4  P       ; // POSITION;
-    float4  Color   ; // COLOR; 
+    float4  Color   ; // COLOR;
 };
 
 struct  v2p_TL0uv
@@ -42,14 +42,14 @@ struct  v_TL_positiont
 {
     float4  P       ; // POSITIONT;
     float2  Tex0    ; // TEXCOORD0;
-    float4  Color   ; // COLOR; 
+    float4  Color   ; // COLOR;
 };
 
 struct  v_TL
 {
     float4  P       ; // POSITION;
     float2  Tex0    ; // TEXCOORD0;
-    float4  Color   ; // COLOR; 
+    float4  Color   ; // COLOR;
 };
 
 struct  v2p_TL
@@ -73,7 +73,7 @@ struct  v_TL2uv
     float4  P       ; // POSITIONT;
     float2  Tex0    ; // TEXCOORD0;
     float2  Tex1    ; // TEXCOORD1;
-    float4  Color   ; // COLOR; 
+    float4  Color   ; // COLOR;
 };
 
 struct  v2p_TL2uv
@@ -96,7 +96,7 @@ struct  p_TL2uv
 struct  v_postpr
 {
     float4  P       ; // POSITIONT;
-    float2  Tex0    ; // TEXCOORD0; // base1 (duality)  
+    float2  Tex0    ; // TEXCOORD0; // base1 (duality)
     float2  Tex1    ; // TEXCOORD1; // base2 (duality)
     float2  Tex2    ; // TEXCOORD2; // base  (noise)
     float4  Color   ; // COLOR0;        // multiplier, color.w = noise_amount
@@ -105,7 +105,7 @@ struct  v_postpr
 
 struct  v2p_postpr
 {
-    float2  Tex0    ; // TEXCOORD0; // base1 (duality)  
+    float2  Tex0    ; // TEXCOORD0; // base1 (duality)
     float2  Tex1    ; // TEXCOORD1; // base2 (duality)
     float2  Tex2    ; // TEXCOORD2; // base  (noise)
     float4  Color   ; // COLOR0;        // multiplier, color.w = noise_amount
@@ -115,7 +115,7 @@ struct  v2p_postpr
 
 struct  p_postpr
 {
-    float2  Tex0    ; // TEXCOORD0; // base1 (duality)  
+    float2  Tex0    ; // TEXCOORD0; // base1 (duality)
     float2  Tex1    ; // TEXCOORD1; // base2 (duality)
     float2  Tex2    ; // TEXCOORD2; // base  (noise)
     float4  Color   ; // COLOR0;        // multiplier, color.w = noise_amount
@@ -301,7 +301,7 @@ struct  v_static_color
 ////////////////////////////////////////////////////////////////
 //  defer
 #ifndef GBUFFER_OPTIMIZATION
-struct                  f_deffer                
+struct                  f_deffer
 {
     float4  position; // SV_Target0;        // px,py,pz, m-id
     float4  Ne        ; // SV_Target1;        // nx,ny,nz, hemi
@@ -311,7 +311,7 @@ struct                  f_deffer
 #endif
 };
 #else
-struct                  f_deffer                
+struct                  f_deffer
 {
     float4  position; // SV_Target0;        // xy=encoded normal, z = pz, w = encoded(m-id,hemi)
     float4  C         ; // SV_Target1;        // r, g, b,  gloss
@@ -462,7 +462,7 @@ struct  v_tree
 
 ////////////////////////////////////////////////////////////////
 //  Details
-struct        v_detail                    
+struct        v_detail
 {
         float4      pos         ; // POSITION;                // (float,float,float,1)
         float4      misc        ; // TEXCOORD0;        // (u(Q),v(Q),frac,matrix-id)

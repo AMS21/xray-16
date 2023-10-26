@@ -215,7 +215,7 @@ static SAKERequestResult SAKE_CALL sakeiReadOutputRecords(SAKERequest request, S
                 int len;
                 gsi_bool boolval;
                 if(gsi_is_false(gsXmlReadChildAsString(request->mSoapResponse, "value", (const char**)&value, &len)))
-                    return SAKERequestResult_MALFORMED_RESPONSE;    
+                    return SAKERequestResult_MALFORMED_RESPONSE;
                 if(value)
                 {
                     value[len] = '\0';
@@ -346,7 +346,7 @@ static SAKEStartRequestResult SAKE_CALL sakeiSearchForRecordsValidateInput(SAKER
 
     // check the max
     if(input->mMaxRecords <= 0)
-        return SAKEStartRequestResult_BAD_MAX; 
+        return SAKEStartRequestResult_BAD_MAX;
 
     // check the field names
     return sakeiValidateRequestFieldNames(input->mFieldNames, input->mNumFields);
@@ -475,7 +475,7 @@ static SAKERequestResult sakeiGetMyRecordsProcessSoapResponse(SAKERequest reques
 
 static void sakeiGetMyRecordsFreeData(SAKERequest request)
 {
-    SAKEGetMyRecordsInput *input = (SAKEGetMyRecordsInput *)request->mInput;    
+    SAKEGetMyRecordsInput *input = (SAKEGetMyRecordsInput *)request->mInput;
     SAKEGetMyRecordsOutput *output = (SAKEGetMyRecordsOutput *)request->mOutput;
 
     if(output)
@@ -557,7 +557,7 @@ static SAKERequestResult sakeiGetSpecificRecordsProcessSoapResponse(SAKERequest 
 
 static void sakeiGetSpecificRecordsFreeData(SAKERequest request)
 {
-    SAKEGetSpecificRecordsInput *input = (SAKEGetSpecificRecordsInput *)request->mInput;    
+    SAKEGetSpecificRecordsInput *input = (SAKEGetSpecificRecordsInput *)request->mInput;
     SAKEGetSpecificRecordsOutput *output = (SAKEGetSpecificRecordsOutput *)request->mOutput;
 
     if(output)
@@ -648,7 +648,7 @@ static SAKERequestResult sakeiGetRandomRecordProcessSoapResponse(SAKERequest req
 
 static void sakeiGetRandomRecordFreeData(SAKERequest request)
 {
-    SAKEGetRandomRecordInput *input = (SAKEGetRandomRecordInput *)request->mInput;  
+    SAKEGetRandomRecordInput *input = (SAKEGetRandomRecordInput *)request->mInput;
     SAKEGetRandomRecordOutput *output = (SAKEGetRandomRecordOutput *)request->mOutput;
 
     if(output)

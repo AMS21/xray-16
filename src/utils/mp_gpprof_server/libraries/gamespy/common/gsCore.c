@@ -13,7 +13,7 @@
 
 
 // This defines how long the core will wait if there is a thread synchronization
-// problem when initializing or shutting down the core.  
+// problem when initializing or shutting down the core.
 #define GSI_CORE_INIT_YIELD_MS      100
 #define GSI_CORE_SHUTDOWN_YIELD_MS  50
 
@@ -100,7 +100,7 @@ void gsCoreInitialize()
     else
     {
         // Core is already initialized -OR- another thread will initialize the core
-        
+
         // make sure critical section has been initialized
         while(gsi_is_false(aCore->mIsStaticInitComplete))
             msleep(GSI_CORE_INIT_YIELD_MS);
@@ -112,7 +112,7 @@ void gsCoreInitialize()
 
         // wait for other thread to initial core
         while(gsi_is_false(aCore->mIsInitialized))
-            msleep(GSI_CORE_INIT_YIELD_MS); 
+            msleep(GSI_CORE_INIT_YIELD_MS);
     }
 }
 
@@ -290,7 +290,7 @@ void gsCoreThink(gsi_time theMS)
 
     // leave queue critical section
     gsiLeaveCriticalSection(&aCore->mQueueCrit);
-    
+
     GSI_UNUSED(theMS);
 }
 
@@ -379,8 +379,8 @@ void gsiCoreExecuteTask(GSTask* theTask, gsi_time theTimeoutMs)
     theTask->mIsStarted = 1;
     theTask->mIsRunning = 1;
     theTask->mTimeout = theTimeoutMs;
-    theTask->mStartTime = current_time();   
-    
+    theTask->mStartTime = current_time();
+
     // Execute the task
     if (theTask->mExecuteFunc)
         (theTask->mExecuteFunc)(theTask->mTaskData);
@@ -418,7 +418,7 @@ void gsiCoreCancelTask(GSTask* theTask)
 {
     GSCoreMgr* aCore = gsiGetStaticCore();
 
-    // Enter critical secction here so the developer 
+    // Enter critical secction here so the developer
     // may cancel a task from any thread.  (e.g. The task thread has blocked)
     gsiEnterCriticalSection(&aCore->mQueueCrit);
     if (theTask->mIsRunning && !theTask->mIsCanceled)

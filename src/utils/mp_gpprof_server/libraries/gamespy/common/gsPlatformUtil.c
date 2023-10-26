@@ -38,7 +38,7 @@
 extern "C" {
 #endif
 
-    
+
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -81,7 +81,7 @@ typedef struct GSIResolveHostnameInfo
         GSIResolveHostnameHandle handle = (GSIResolveHostnameHandle)arg;
 
         SocketStartUp();
-        
+
         #ifdef SN_SYSTEMS
         sockAPIregthr();
         #endif
@@ -129,14 +129,14 @@ static void *gsiResolveHostnameThread(void * arg)
     HOSTENT *aHostAddr;
     //int retval;
     GSIResolveHostnameHandle handle = (GSIResolveHostnameHandle)arg;
-        
+
     if (!aInitialized)
     {
         gsiInitializeCriticalSection(&aHostnameCrit);
         aInitialized = 1;
     }
     gsiEnterCriticalSection(&aHostnameCrit);
-    
+
     //retval = getaddrinfo(handle->hostname, NULL, NULL, &aHostAddr);
     aHostAddr = gethostbyname(handle->hostname);
     if (aHostAddr != 0)
@@ -147,7 +147,7 @@ static void *gsiResolveHostnameThread(void * arg)
 
         gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_State, GSIDebugLevel_Comment,
                 "Resolved host '%s' to ip '%s'\n", handle->hostname, ip);
-        
+
         handle->ip = inet_addr(ip);
         //freeaddrinfo(aHostAddr);
     }
@@ -156,12 +156,12 @@ static void *gsiResolveHostnameThread(void * arg)
         // couldnt reach host - debug output is printed later
         handle->ip = GSI_ERROR_RESOLVING_HOSTNAME;
     }
-    
-    
+
+
     // finished resolving
     handle->finishedResolving = 1;
-    
-    gsiLeaveCriticalSection(&aHostnameCrit);    
+
+    gsiLeaveCriticalSection(&aHostnameCrit);
 }
 #endif // _REVOLUTION
 ////////////////////////////////////////////////////////////////////////////////
@@ -247,7 +247,7 @@ int gsiStartResolvingHostname(const char * hostname, GSIResolveHostnameHandle * 
     // not resolved yet
     info->finishedResolving = 0;
 
-    gsDebugFormat(GSIDebugCat_Common, GSIDebugType_State, GSIDebugLevel_Comment, 
+    gsDebugFormat(GSIDebugCat_Common, GSIDebugType_State, GSIDebugLevel_Comment,
         "(Asynchrounous) DNS lookup starting\n");
 
     // start the thread
@@ -309,7 +309,7 @@ unsigned int gsiGetResolvedIP(GSIResolveHostnameHandle handle)
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 // ********** NON-ASYNC DNS ********** //
-// 
+//
 // These are the non-threaded version of the above functions.
 // The following platforms have synchronous DNS lookups:
 // _NITRO || _XBOX || _X360 || _PS3 || _PS2 || _PSP
@@ -320,9 +320,9 @@ int gsiStartResolvingHostname(const char * hostname, GSIResolveHostnameHandle * 
     GSIResolveHostnameInfo * info;
     HOSTENT * hostent;
 
-    gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_State, GSIDebugLevel_Comment, 
+    gsDebugFormat(GSIDebugCat_HTTP, GSIDebugType_State, GSIDebugLevel_Comment,
         "(NON-Asynchrounous) DNS lookup starting\n");
-    
+
     // do the lookup now
     hostent = gethostbyname(hostname);
     if(hostent == NULL)
@@ -378,10 +378,10 @@ char * goastrdup(const char *src)
 unsigned short * goawstrdup(const unsigned short *src)
 {
     unsigned short *res;
-    if(src == NULL)      
+    if(src == NULL)
         return NULL;
     res = (unsigned short *)gsimalloc((wcslen((wchar_t*)src) + 1) * sizeof(unsigned short));
-    if(res != NULL)      
+    if(res != NULL)
         wcscpy((wchar_t*)res, (const wchar_t*)src);
     return res;
 }
@@ -418,7 +418,7 @@ char *_strupr(char *string)
 ///////////////////////////////////////////////////////////////////////////////
 void SocketStartUp()
 {
-#if defined(_WIN32) 
+#if defined(_WIN32)
     WSADATA data;
 
     #if defined(_X360)
@@ -520,7 +520,7 @@ static time_t _gmtotime_t (
         tb.tm_year = yr;
         tb.tm_mon = mo - 1;
         tb.tm_hour = hr;
-        
+
         return (tmptim >= 0) ? (time_t)tmptim : (time_t)(-1);
 }
 
@@ -540,7 +540,7 @@ time_t time(time_t *timer)
 
     if(timer)
         *timer = tim;
-        
+
     return tim;
 }
 
@@ -550,9 +550,9 @@ time_t time(time_t *timer)
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 gsi_time current_time()  //returns current time in milliseconds
-{ 
+{
 #if defined(_WIN32)
-    return (SDL_GetTicks()); 
+    return (SDL_GetTicks());
 
 #elif defined(_PS2)
     unsigned int ticks;
@@ -580,7 +580,7 @@ gsi_time current_time()  //returns current time in milliseconds
 
 #elif defined(_UNIX)
     struct timeval time;
-    
+
     gettimeofday(&time, NULL);
     return (time.tv_sec * 1000 + time.tv_usec / 1000);
 
@@ -598,7 +598,7 @@ gsi_time current_time()  //returns current time in milliseconds
         ScePspDateTime time;
         result = sceRtcGetCurrentClock(&time, 0);
         if (result < 0)
-            return 0; // um...error handling? //Nope, should return zero since time cannot be zero                    
+            return 0; // um...error handling? //Nope, should return zero since time cannot be zero
         result = sceRtcGetTick(&time, &ticks);
         if (result < 0)
             return 0; //Nope, should return zero since time cannot be zero
@@ -617,7 +617,7 @@ gsi_time current_time()  //returns current time in milliseconds
     // unrecognized platform! contact devsupport
     assert(0);
 #endif
-    
+
 }
 
 gsi_time current_time_hires()  // returns current time in microseconds
@@ -643,7 +643,7 @@ gsi_time current_time_hires()  // returns current time in microseconds
         }
     }
 #endif
-    
+
     return (current_time() / 1000);
 #endif
 
@@ -694,7 +694,7 @@ gsi_time current_time_hires()  // returns current time in microseconds
 
 #ifdef _UNIX
     struct timeval time;
-    
+
     gettimeofday(&time, NULL);
     return (time.tv_sec * 1000000 + time.tv_usec);
 #endif
@@ -753,7 +753,7 @@ void msleep(gsi_time msec)
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 // Cross-platform GSI wrapper time conversion functions
-// 
+//
 // NOTE: some portions of this copied from standard C library
 #if defined(_NITRO) || defined(_REVOLUTION)
 
@@ -832,12 +832,12 @@ struct tm * gsiSecondsToDate(const time_t *timp)
      */
     tmptim = (tmptim * 4) + 70;         /* 1970, 1974, 1978,...,etc. */
 
-    if ( caltim >= YEAR_SEC ) 
+    if ( caltim >= YEAR_SEC )
     {
         tmptim++;                       /* 1971, 1975, 1979,...,etc. */
         caltim -= YEAR_SEC;
 
-        if ( caltim >= YEAR_SEC ) 
+        if ( caltim >= YEAR_SEC )
         {
             tmptim++;                   /* 1972, 1976, 1980,...,etc. */
             caltim -= YEAR_SEC;
@@ -846,12 +846,12 @@ struct tm * gsiSecondsToDate(const time_t *timp)
              * Note, it takes 366 days-worth of seconds to get past a leap
              * year.
              */
-            if ( caltim >= (YEAR_SEC + DAY_SEC) ) 
+            if ( caltim >= (YEAR_SEC + DAY_SEC) )
             {
                 tmptim++;           /* 1973, 1977, 1981,...,etc. */
                 caltim -= (YEAR_SEC + DAY_SEC);
             }
-            else 
+            else
             {
                 /*
                  * In a leap year after all, set the flag.
@@ -1031,7 +1031,7 @@ time_t gsiDateToSeconds(struct tm *tb)
 
     if ( (tbtemp = gsiSecondsToDate(&tmptm1)) == NULL )
         return MKTIME_ERROR;
-        
+
 
     /***** HERE: tmptm1 holds number of elapsed seconds, adjusted *****/
     /*****       for local time if requested                      *****/
@@ -1145,7 +1145,7 @@ int Util_RandInt(int low, int high)
 {
     unsigned int range = (unsigned int)high-low;
     int num;
-    
+
     if (range == 0)
         return (low); // Prevent divide by zero
 
@@ -1202,7 +1202,7 @@ void B64Decode(const char *input, char *output, int inlen, int * outlen, int enc
     int readpos = 0;
     int writepos = 0;
     char block[4];
-    
+
     //int outlen = -1;
     //int inlen = (int)strlen(input);
 
@@ -1210,8 +1210,8 @@ void B64Decode(const char *input, char *output, int inlen, int * outlen, int enc
     // now supports URL safe encoding
     ////////////////////////////////////////////////
     switch(encodingType)
-    {   
-        case 1: 
+    {
+        case 1:
             encoding = alternateEncoding;
             break;
         case 2:
@@ -1253,7 +1253,7 @@ void B64Decode(const char *input, char *output, int inlen, int * outlen, int enc
             break;
         else if (input[readpos] == '\0')
             break;
-        else 
+        else
         {
             //  (assert(0)); //bad input data
             if (outlen)
@@ -1275,13 +1275,13 @@ void B64Decode(const char *input, char *output, int inlen, int * outlen, int enc
     if ((readpos != 0) && (readpos%4 != 0))
     {
         // fill block with pad (required for QuartToTrip)
-        memset(&block[readpos%4], encoding[2], (unsigned int)4-(readpos%4)); 
+        memset(&block[readpos%4], encoding[2], (unsigned int)4-(readpos%4));
         QuartToTrip(block, &output[writepos], readpos%4);
 
         // output bytes depend on the number of non-pad input bytes
         if (readpos%4 == 3)
             writepos += 2;
-        else 
+        else
             writepos += 1;
     }
 
@@ -1299,13 +1299,13 @@ void B64Encode(const char *input, char *output, int inlen, int encodingType)
     char *holdout = output;
     char *lastchar;
     int todo = inlen;
-    
+
     // 10-31-2004 : Added by Saad Nader
     // now supports URL safe encoding
     ////////////////////////////////////////////////
     switch(encodingType)
-    {   
-        case 1: 
+    {
+        case 1:
             encoding = alternateEncoding;
             break;
         case 2:
@@ -1313,7 +1313,7 @@ void B64Encode(const char *input, char *output, int inlen, int encodingType)
             break;
         default: encoding = defaultEncoding;
     }
-    
+
 //assume interval of 3
     while (todo > 0)
     {
@@ -1343,7 +1343,7 @@ void B64Encode(const char *input, char *output, int inlen, int encodingType)
             *output = encoding[0];
         else if (*output == 63)
             *output = encoding[1];
-    } 
+    }
 }
 
 int B64DecodeLen(const char *input, int encodingType)
@@ -1352,8 +1352,8 @@ int B64DecodeLen(const char *input, int encodingType)
     const char *holdin = input;
 
     switch(encodingType)
-    {   
-        case 1: 
+    {
+        case 1:
             encoding = alternateEncoding;
             break;
         case 2:
@@ -1387,13 +1387,13 @@ gsi_bool B64EncodeStream(B64StreamData *data, char output[4])
 
     if(data->len <= 0)
         return gsi_false;
-    
+
     // 10-31-2004 : Added by Saad Nader
     // now supports URL safe encoding
     ////////////////////////////////////////////////
     switch(data->encodingType)
-    {   
-        case 1: 
+    {
+        case 1:
             encoding = alternateEncoding;
             break;
         case 2:
@@ -1440,7 +1440,7 @@ void gsiPadRight(char *cArray, char padChar, int cLength)
 {
     int diff;
     int length = (int)strlen(cArray);
-    
+
     diff = cLength - length;
     memset(&cArray[length], padChar, (size_t)diff);
 }
@@ -1464,7 +1464,7 @@ char * gsiXxteaAlg(const char *sIn, int nIn, char key[XXTEA_KEY_SIZE], int bEnc,
     // ERROR CHECK!
     if (!sIn || !key[0] || nIn == 0)
         return NULL;
-    
+
     // Convert stream length to a round number of 32-bit words
     // Convert byte count to 32-bit word count
     if (nIn % 4 == 0)           // Fix for null terminated strings divisible by 4
@@ -1494,12 +1494,12 @@ char * gsiXxteaAlg(const char *sIn, int nIn, char key[XXTEA_KEY_SIZE], int bEnc,
     if (bEnc == 1)      // Encrypt
     {
         unsigned int sum = 0;
-        while ( i-- != 0 ) 
+        while ( i-- != 0 )
         {
             int e;
             sum += 0x9E3779B9;
             e = ( int )( sum >> 2 );
-            for ( p = -1; ++p < nIn; ) 
+            for ( p = -1; ++p < nIn; )
             {
                 y = v[( p < n1 ) ? p + 1 : 0 ];
                 z = ( v[ p ] +=
@@ -1513,7 +1513,7 @@ char * gsiXxteaAlg(const char *sIn, int nIn, char key[XXTEA_KEY_SIZE], int bEnc,
     else if (bEnc == 0)         // Decrypt
     {
         unsigned int sum = ( unsigned int ) i * 0x9E3779B9;
-        while ( sum != 0 ) 
+        while ( sum != 0 )
         {
             int e = ( int )( sum >> 2 );
             for ( p = nIn; p-- != 0; )
@@ -1530,15 +1530,15 @@ char * gsiXxteaAlg(const char *sIn, int nIn, char key[XXTEA_KEY_SIZE], int bEnc,
     }
     else return NULL;
     // Convert result from 32-bit words to a byte stream
-    
-    
+
+
     oStr = (char *)gsimalloc((size_t)(4 * nIn + 1));
     pStr = oStr;
     *nOut = 4 *nIn;
-    for ( i = -1; ++i < nIn; ) 
+    for ( i = -1; ++i < nIn; )
     {
         unsigned int q = v[ i ];
-        
+
         *pStr++ = (char)(q & 0xFF);
         *pStr++ = (char)(( q >>  8 ) & 0xFF);
         *pStr++ = (char)(( q >> 16 ) & 0xFF);
@@ -1547,7 +1547,7 @@ char * gsiXxteaAlg(const char *sIn, int nIn, char key[XXTEA_KEY_SIZE], int bEnc,
     *pStr = '\0';
     gsifree(sIn2);
 
-    return oStr;    
+    return oStr;
 }
 
 
@@ -1655,7 +1655,7 @@ static const char * GOAGetUniqueID_Internal(void)
 #endif
 
 
-#ifdef _PS2 
+#ifdef _PS2
 #ifdef UNIQUEID
 
 #if defined(EENET)
@@ -1743,7 +1743,7 @@ static const char * GetMAC(void)
         extern u_int             gGSIInsockSocketBuffer[NETBUFSIZE] __attribute__((aligned(64)));
 
         int result = sceInetInterfaceControl(&gGSIInsockClientData, &gGSIInsockSocketBuffer,
-                                             1, sceInetCC_GetHWaddr, MAC, sizeof(MAC));     
+                                             1, sceInetCC_GetHWaddr, MAC, sizeof(MAC));
         if (result == sceINETE_OK)
             return MAC;
 
@@ -1880,7 +1880,7 @@ const char * GOAGetUniqueID_Internal(void)
     memmove(keyval + 8, keyval + 10, 4);
     memmove(keyval + 12, keyval + 15, 4);
     keyval[16] = '\0';
-    
+
     return keyval;
 }
 

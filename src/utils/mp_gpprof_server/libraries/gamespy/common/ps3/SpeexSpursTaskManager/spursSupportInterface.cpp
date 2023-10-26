@@ -86,7 +86,7 @@ static uint32_t g_uiSpursReferenceCounter=0;
  * then notifies the SPU of completion by using a mailbox.
  */
 //UPDATE: this function is not currently being used in the speex task or spurs manager
-void _SpursPrintfThreadMain(uint64_t arg) 
+void _SpursPrintfThreadMain(uint64_t arg)
 {
     sys_event_t event;
     int iReturn;
@@ -97,7 +97,7 @@ void _SpursPrintfThreadMain(uint64_t arg)
     while (1) {
         iReturn=sys_event_queue_receive(_g_SpuPrintfEventQueue, &event,
                                         SYS_NO_TIMEOUT);
-    
+
         if (iReturn!=CELL_OK) {
             fprintf(stderr, "Event queue receive wasn't successful: %i\n",
                     iReturn);
@@ -167,7 +167,7 @@ int loadBulletSpursElfs() {
             (_g_aSPURSElfs[iELF].pvElfImage==0); iPath++) {
             char acFullPath[CELL_FS_MAX_FS_PATH_LENGTH+1];
             snprintf(acFullPath, CELL_FS_MAX_FS_PATH_LENGTH,
-                "%s%s", _g_apcSPURSELFSearchPaths[iPath], 
+                "%s%s", _g_apcSPURSELFSearchPaths[iPath],
                 _g_aSPURSElfs[iELF].pcElfName);
             _g_aSPURSElfs[iELF].pvElfImage=loadBulletImage(acFullPath);
         }
@@ -189,7 +189,7 @@ int loadBulletSpursElfs() {
 }
 */
 
-int initializeSpursTaskSet(CellSpurs *pSpurs, int iSPUCount, uint8_t *puiPriorities) 
+int initializeSpursTaskSet(CellSpurs *pSpurs, int iSPUCount, uint8_t *puiPriorities)
 {
     uint8_t auiLocalPriorities[8]={1,1,1,1,1,1,1,1};
     uint8_t *pPriorities=auiLocalPriorities;
@@ -202,15 +202,15 @@ int initializeSpursTaskSet(CellSpurs *pSpurs, int iSPUCount, uint8_t *puiPriorit
 //      return CELL_SPURS_EINVAL;
 //  }
 
-    if (pSpurs) 
+    if (pSpurs)
     {
         g_bUserSpursGiven=true;
 
         pPriorities=puiPriorities;
         iNumSPUs=iSPUCount;
         g_spursInstance=pSpurs;
-    } 
-    else 
+    }
+    else
     {
         g_bUserSpursGiven=false;
 
@@ -221,7 +221,7 @@ int initializeSpursTaskSet(CellSpurs *pSpurs, int iSPUCount, uint8_t *puiPriorit
         int iCurrentThreadPriority;
 
         iReturn=sys_ppu_thread_get_id(&idCurrentThread);
-        if (iReturn!=CELL_OK) 
+        if (iReturn!=CELL_OK)
         {
             //fprintf(stderr, "Bullet: Cannot get current thread ID (%d)\n", iReturn);
             return CELL_SPURS_EINVAL;
@@ -229,7 +229,7 @@ int initializeSpursTaskSet(CellSpurs *pSpurs, int iSPUCount, uint8_t *puiPriorit
 
         iReturn=sys_ppu_thread_get_priority(idCurrentThread,
                                             &iCurrentThreadPriority);
-        if (iReturn!=CELL_OK) 
+        if (iReturn!=CELL_OK)
         {
             //fprintf(stderr, "Bullet: Cannot get current thread priority (%d)\n", iReturn);
             return CELL_SPURS_EINVAL;
@@ -238,10 +238,10 @@ int initializeSpursTaskSet(CellSpurs *pSpurs, int iSPUCount, uint8_t *puiPriorit
         g_spursInstance=(CellSpurs *) memalign(128, sizeof(CellSpurs));
         if (!g_spursInstance)
         {
-            //fprintf(stderr,"Cannot allocate room for SPURS\n");       
+            //fprintf(stderr,"Cannot allocate room for SPURS\n");
             return CELL_SPURS_EINVAL;
         }
-        
+
         sys_spu_initialize(iNumSPUs, 0);
         // E Initialize spurs, setting SPU count, priorities, and letting SPURS
         // E know that it should NOT release the SPUs when there is no work to
@@ -249,7 +249,7 @@ int initializeSpursTaskSet(CellSpurs *pSpurs, int iSPUCount, uint8_t *puiPriorit
         iReturn=cellSpursInitialize(g_spursInstance, iNumSPUs,
                                     SPURS_SPU_THREAD_PRIORITY,
                                     iCurrentThreadPriority - 1, false);
-        if (iReturn!=CELL_OK) 
+        if (iReturn!=CELL_OK)
         {
             //fprintf(stderr, "Bullet: Cannot initialize SPURS (%d)\n", iReturn);
             free(g_spursInstance);
@@ -266,8 +266,8 @@ int initializeSpursTaskSet(CellSpurs *pSpurs, int iSPUCount, uint8_t *puiPriorit
 //  iReturn=sys_event_queue_create(&_g_SpuPrintfEventQueue, &queue_attr,
 //                                  _SpursSupportGetUniqueEventQueueKey(),
 //                                  SPU_PRINTF_EVENT_QUEUE_SIZE);
-// 
-//  if (iReturn!=CELL_OK) 
+//
+//  if (iReturn!=CELL_OK)
 //  {
 //      return CELL_SPURS_EMISC;
 //  }
@@ -275,20 +275,20 @@ int initializeSpursTaskSet(CellSpurs *pSpurs, int iSPUCount, uint8_t *puiPriorit
     // E We need a thread on the PPU side to handle SPU printf requests.
     // E It will wait indefinitely for messages in the queue we just created.
 //  iReturn = sys_ppu_thread_create (&_g_SpursPrintfThread,
-//                                      _SpursPrintfThreadMain, 
+//                                      _SpursPrintfThreadMain,
 //                                      (uint64_t) 0, SPU_PRINTF_THREAD_PRIO,
-//                                      SPU_PRINTF_THREAD_STACK_SIZE, 
+//                                      SPU_PRINTF_THREAD_STACK_SIZE,
 //                                      SYS_PPU_THREAD_CREATE_JOINABLE,
 //                                      "Bullet_spu_printf_handler");
 
-//  if (iReturn != CELL_OK) 
+//  if (iReturn != CELL_OK)
 //  {
 //      return CELL_SPURS_EMISC;
 //  }
 
     // E Now, we attach the PPU-side printf support to SPURS
 //  uint8_t uiPrintfPort=SPU_PRINTF_EVENT_QUEUE_PORT;
-// 
+//
 //  iReturn=cellSpursAttachLv2EventQueue(g_spursInstance, _g_SpuPrintfEventQueue,
 //                                       &uiPrintfPort, 0);
 //  if (iReturn!=CELL_OK) {
@@ -298,7 +298,7 @@ int initializeSpursTaskSet(CellSpurs *pSpurs, int iSPUCount, uint8_t *puiPriorit
     iReturn=cellSpursCreateTaskset(g_spursInstance, &g_spursTaskSet, 0, pPriorities,
                                    iNumSPUs);
 
-    if (iReturn!=CELL_OK) 
+    if (iReturn!=CELL_OK)
     {
         cellSpursFinalize(g_spursInstance);
         free(g_spursInstance);
@@ -310,9 +310,9 @@ int initializeSpursTaskSet(CellSpurs *pSpurs, int iSPUCount, uint8_t *puiPriorit
     return CELL_SPURS_OK;
 }
 
-int checkSpursTaskSet() 
+int checkSpursTaskSet()
 {
-    if (!g_bSpursInitialized) 
+    if (!g_bSpursInitialized)
     {
         int returnCode = initializeSpursTaskSet(0, g_iDefaultSPUCount, 0)!=CELL_SPURS_OK;
         return returnCode;
@@ -328,19 +328,19 @@ int checkSpursTaskSet()
  * CELL_SPURS_EBUSY if SPU usage has already been initialized
  * CELL_SPURS_EINVAL if the priorities or SPURS pointer is invalid.
  */
-int spursConfiguration_initWithSpurs(CellSpurs *pSpurs, int iSPUCount, uint8_t auiPriorities[8]) 
+int spursConfiguration_initWithSpurs(CellSpurs *pSpurs, int iSPUCount, uint8_t auiPriorities[8])
 {
-    if (g_bSpursInitialized) 
+    if (g_bSpursInitialized)
     {
         return CELL_SPURS_EBUSY;
     }
 
-    if ((!pSpurs) || (((uintptr_t) pSpurs) & 0x7f)) 
+    if ((!pSpurs) || (((uintptr_t) pSpurs) & 0x7f))
     {
         return CELL_SPURS_EINVAL;
     }
 
-    if (iSPUCount<1 || iSPUCount>6) 
+    if (iSPUCount<1 || iSPUCount>6)
     {
         return CELL_SPURS_EINVAL;
     }
@@ -357,14 +357,14 @@ int spursConfiguration_initWithSpurs(CellSpurs *pSpurs, int iSPUCount, uint8_t a
  * CELL_SPURS_EINVAL if iSPUCount is out of range or if SPURS couldn't be
  *   initialized to that many SPUs.
  */
-int spursConfiguration_initWithSpuCount(int iSPUCount) 
+int spursConfiguration_initWithSpuCount(int iSPUCount)
 {
-    if (g_bSpursInitialized) 
+    if (g_bSpursInitialized)
     {
         return CELL_SPURS_EBUSY;
     }
 
-    if (iSPUCount<1 || iSPUCount>6) 
+    if (iSPUCount<1 || iSPUCount>6)
     {
         return CELL_SPURS_EINVAL;
     }
@@ -379,14 +379,14 @@ int spursConfiguration_initWithSpuCount(int iSPUCount)
  *   never initialized.
  * CELL_SPURS_EBUSY if there are existing Scenes which would need SPURS.
  */
-int spursConfiguration_terminate() 
+int spursConfiguration_terminate()
 {
-    if (!g_bSpursInitialized) 
+    if (!g_bSpursInitialized)
     {
         return CELL_SPURS_OK;
     }
 
-    if (g_uiSpursReferenceCounter) 
+    if (g_uiSpursReferenceCounter)
     {
         return CELL_SPURS_EBUSY;
     }
@@ -397,24 +397,24 @@ int spursConfiguration_terminate()
     g_bUserSpursGiven=false;
 
     iReturn=cellSpursShutdownTaskset(&g_spursTaskSet);
-    if (iReturn!=CELL_OK) 
+    if (iReturn!=CELL_OK)
     {
         return -1;
         //fprintf(stderr, "Bullet: Error shutting down SPURS task set: %i\n", iReturn);
     }
 
     iReturn=cellSpursJoinTaskset(&g_spursTaskSet);
-    if (iReturn!=CELL_OK) 
+    if (iReturn!=CELL_OK)
     {
         return -2;
         //fprintf(stderr, "Bullet: Error joining SPURS task set: %i\n", iReturn);
     }
 
-    if (!bUserSpurs) 
+    if (!bUserSpurs)
     {
         int iReturn=cellSpursFinalize(g_spursInstance);
 
-        if (iReturn!=CELL_OK) 
+        if (iReturn!=CELL_OK)
         {
             return -3;
             //fprintf(stderr, "Bullet: Error shutting down SPURS: %d\n", iReturn);
@@ -438,13 +438,13 @@ int spursConfiguration_terminate()
  * Return is:
  * true if initialized.
  */
-bool spursConfiguration_isSpursInitialized() 
+bool spursConfiguration_isSpursInitialized()
 {
     return g_bSpursInitialized;
 }
 
 
-SpursSupportInterface::SpursSupportInterface() 
+SpursSupportInterface::SpursSupportInterface()
 {
     //assert(elfId < SPU_ELF_LAST);
     //m_elfId=elfId;
@@ -453,18 +453,18 @@ SpursSupportInterface::SpursSupportInterface()
     cellAtomicIncr32(&g_uiSpursReferenceCounter);
 }
 
-SpursSupportInterface::~SpursSupportInterface() 
+SpursSupportInterface::~SpursSupportInterface()
 {
     stopSPU();
 
     cellAtomicDecr32(&g_uiSpursReferenceCounter);
 }
 
-int SpursSupportInterface::startSPU() 
+int SpursSupportInterface::startSPU()
 {
     int iReturn;
 
-    if (!m_bQueueInitialized) 
+    if (!m_bQueueInitialized)
     {
         if (checkSpursTaskSet() != CELL_SPURS_OK)
         {
@@ -474,13 +474,13 @@ int SpursSupportInterface::startSPU()
         iReturn=cellSpursQueueInitialize(&g_spursTaskSet,
             &m_responseQueue, m_aResponseBuffer, sizeof(CellSPURSArgument),
             CELL_SPURS_RESPONSE_QUEUE_SIZE, CELL_SPURS_QUEUE_SPU2PPU);
-        if (iReturn!=CELL_OK) 
+        if (iReturn!=CELL_OK)
         {
             return -2;
         }
 
         iReturn=cellSpursQueueAttachLv2EventQueue(&m_responseQueue);
-        if (iReturn!=CELL_OK) 
+        if (iReturn!=CELL_OK)
         {
             return -3;
         }
@@ -490,9 +490,9 @@ int SpursSupportInterface::startSPU()
     return 0;
 }
 
-int SpursSupportInterface::stopSPU() 
+int SpursSupportInterface::stopSPU()
 {
-    if (m_bQueueInitialized) 
+    if (m_bQueueInitialized)
     {
         int iReturn=cellSpursQueueDetachLv2EventQueue(&m_responseQueue);
         if (iReturn != CELL_OK)
@@ -502,7 +502,7 @@ int SpursSupportInterface::stopSPU()
     return 0;
 }
 
-int SpursSupportInterface::sendRequest(uint32_t uiCommand, uint32_t uiArgument0, uint32_t uiArgument1) 
+int SpursSupportInterface::sendRequest(uint32_t uiCommand, uint32_t uiArgument0, uint32_t uiArgument1)
 {
     int iReturn;
     CellSpursTaskId taskId;
@@ -519,11 +519,11 @@ int SpursSupportInterface::sendRequest(uint32_t uiCommand, uint32_t uiArgument0,
     }
 
     iReturn=cellSpursCreateTask(&g_spursTaskSet, &taskId, g_SpursTaskElfStart, NULL, 0, 0, &arguments.spursArgument);
-    if (iReturn!=CELL_OK) 
+    if (iReturn!=CELL_OK)
     {
         return -2;
     }
-    
+
     return 0;
 }
 
@@ -531,14 +531,14 @@ int SpursSupportInterface::sendRequest(uint32_t uiCommand, uint32_t uiArgument0,
 /**
  * Wait for the SPU to send an event back to our event queue.
  */
-int SpursSupportInterface::waitForResponse(unsigned int *puiArgument0, unsigned int *puiArgument1) 
+int SpursSupportInterface::waitForResponse(unsigned int *puiArgument0, unsigned int *puiArgument1)
 {
     CellSPURSArgument response __attribute__((aligned(16)));
     int iReturn;
 
     iReturn=cellSpursQueuePop(&m_responseQueue, (void *) &response);
-    
-    if (iReturn!=CELL_OK) 
+
+    if (iReturn!=CELL_OK)
     {
         return -1;
     }
