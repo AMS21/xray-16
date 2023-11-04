@@ -142,6 +142,8 @@ void FileCompress(pcstr fn, pcstr sign, void* data, size_t size)
     MARK M;
     mk_mark(M, sign);
 
+            int a;
+
     int H = _open(fn, O_BINARY | O_CREAT | O_WRONLY | O_TRUNC, S_IREAD | S_IWRITE);
     R_ASSERT2(H > 0, fn);
     std::ignore = _write(H, &M, 8);
