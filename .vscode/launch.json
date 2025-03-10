@@ -12,15 +12,21 @@
       "args": [
         "-soc",
         "-nointro",
-        "-fsltx",
-        "${SOC_LTX_FILE_PATH}",
       ],
       "stopAtEntry": false,
-      "cwd": "${workspaceFolder}/bin",
+      "cwd": "${workspaceFolder}/data/SoC",
       "environment": [
         {
           "name": "LD_LIBRARY_PATH",
           "value": "${workspaceFolder}/bin/x86_64/${input:buildType}"
+        },
+        {
+          "name": "UBSAN_OPTIONS",
+          "value": "print_stacktrace=1"
+        },
+        {
+          "name": "ASAN_OPTIONS",
+          "value": "detect_odr_violation=0"
         }
       ],
       "preLaunchTask": "Compile",
@@ -35,15 +41,21 @@
       "args": [
         "-cs",
         "-nointro",
-        "-fsltx",
-        "${CS_LTX_FILE_PATH}",
       ],
       "stopAtEntry": false,
-      "cwd": "${workspaceFolder}/bin",
+      "cwd": "${workspaceFolder}/data/CS",
       "environment": [
         {
           "name": "LD_LIBRARY_PATH",
           "value": "${workspaceFolder}/bin/x86_64/${input:buildType}"
+        },
+        {
+          "name": "UBSAN_OPTIONS",
+          "value": "print_stacktrace=1"
+        },
+        {
+          "name": "ASAN_OPTIONS",
+          "value": "detect_odr_violation=0"
         }
       ],
       "preLaunchTask": "Compile",
@@ -57,15 +69,21 @@
       "program": "${workspaceFolder}/bin/x86_64/${input:buildType}/xr_3da",
       "args": [
         "-nointro",
-        "-fsltx",
-        "${COP_LTX_FILE_PATH}",
       ],
       "stopAtEntry": false,
-      "cwd": "${workspaceFolder}/bin",
+      "cwd": "${workspaceFolder}/data/CoP",
       "environment": [
         {
           "name": "LD_LIBRARY_PATH",
           "value": "${workspaceFolder}/bin/x86_64/${input:buildType}"
+        },
+        {
+          "name": "UBSAN_OPTIONS",
+          "value": "print_stacktrace=1"
+        },
+        {
+          "name": "ASAN_OPTIONS",
+          "value": "detect_odr_violation=0"
         }
       ],
       "preLaunchTask": "Compile",
@@ -79,15 +97,49 @@
       "program": "${workspaceFolder}/bin/x86_64/${input:buildType}/xr_3da",
       "args": [
         "-nointro",
-        "-fsltx",
-        "${COC_LTX_FILE_PATH}",
       ],
       "stopAtEntry": false,
-      "cwd": "${workspaceFolder}/bin",
+      "cwd": "${workspaceFolder}/data/CoC",
       "environment": [
         {
           "name": "LD_LIBRARY_PATH",
           "value": "${workspaceFolder}/bin/x86_64/${input:buildType}"
+        },
+        {
+          "name": "UBSAN_OPTIONS",
+          "value": "print_stacktrace=1"
+        },
+        {
+          "name": "ASAN_OPTIONS",
+          "value": "detect_odr_violation=0"
+        }
+      ],
+      "preLaunchTask": "Compile",
+      "externalConsole": false,
+      "MIMode": "gdb"
+    },
+    {
+      "name": "(gdb) Anomaly",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/x86_64/${input:buildType}/xr_3da",
+      "args": [
+        "-nointro",
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/data/Anomaly",
+      "environment": [
+        {
+          "name": "LD_LIBRARY_PATH",
+          "value": "${workspaceFolder}/bin/x86_64/${input:buildType}"
+        },
+        {
+          "name": "UBSAN_OPTIONS",
+          "value": "print_stacktrace=1"
+        },
+        {
+          "name": "ASAN_OPTIONS",
+          "value": "detect_odr_violation=0"
         }
       ],
       "preLaunchTask": "Compile",
@@ -104,7 +156,7 @@
         "Debug",
         "Release",
         "Mixed",
-        "ReleaseMasterGold"
+        "ReleaseMasterGold",
       ],
       "default": "ReleaseMasterGold"
     }

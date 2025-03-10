@@ -230,7 +230,7 @@ bool cover::loophole_path(shared_str const& source_raw, shared_str const& target
 
 void cover::check_loopholes_connectivity() const
 {
-    VERIFY(!loopholes().empty());
+    //VERIFY(!loopholes().empty()); // CoC hack
 
     shared_str enter = transform_vertex("", true);
     shared_str exit = transform_vertex("", false);

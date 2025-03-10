@@ -182,8 +182,12 @@ bool CCarLights::findLight(u16 bone_id, SCarLight*& light)
     SCarLight find_light;
     find_light.bone_id = bone_id;
     auto i = std::find_if(m_lights.begin(), e, SFindLightPredicate(&find_light));
+    // Fix ASAN problem when dereferencing an end iterator
+    if (i == e)
+        return false;
+
     light = *i;
-    return i != e;
+    return true;
 }
 CCarLights::~CCarLights()
 {

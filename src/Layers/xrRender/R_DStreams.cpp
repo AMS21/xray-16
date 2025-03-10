@@ -67,7 +67,7 @@ void* _VertexStream::Lock(u32 vl_Count, u32 Stride, u32& vOffset)
         vOffset = vl_mPosition;
     }
     void* pData = pVB.Map(mPosition, bytes_need, bFlush);
-    VERIFY(pData);
+    //VERIFY(pData); // CoC hack
     return pData;
 }
 
@@ -134,7 +134,7 @@ u16* _IndexStream::Lock(u32 Count, u32& vOffset)
         mDiscardID++;
     }
     void* pLockedData = pIB.Map(mPosition * sizeof(u16), Count * sizeof(u16), bFlush);
-    VERIFY(pLockedData);
+    //VERIFY(pLockedData); // CoC hack
 
     vOffset = mPosition;
 

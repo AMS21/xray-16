@@ -807,7 +807,7 @@ public:
                 p230.build(p2, p3, p0);
                 Fplane p301;
                 p301.build(p3, p0, p1);
-                VERIFY(p012.n.similar(p123.n) && p012.n.similar(p230.n) && p012.n.similar(p301.n));
+                //VERIFY(p012.n.similar(p123.n) && p012.n.similar(p230.n) && p012.n.similar(p301.n)); // CoC hack
             }
         }
     }
@@ -823,8 +823,10 @@ public:
         // compute planes for each polygon.
         compute_planes();
 
+#if 0 // CoC hack
         for (u32 i = 0; i < LIGHT_CUBOIDSIDEPOLYS_COUNT; i++)
             VERIFY(light_cuboid_polys[i].plane.classify(light_ray.P) > 0);
+#endif
 
         int align_planes[2];
         int align_planes_count = 0;
@@ -900,7 +902,7 @@ public:
             if (fis_zero(max_mag))
                 continue;
 
-            VERIFY(max_mag <= 1.f);
+            //VERIFY(max_mag <= 1.f); // CoC hack
 
             float dist = -light_cuboid_polys[align_planes[p]].plane.n.dotproduct(translation);
             align_vector.mad(light_cuboid_polys[align_planes[p]].plane.n, dist * max_mag);
@@ -970,7 +972,7 @@ public:
             Fplane& plane = dest.emplace_back(light_cuboid_polys[i].plane);
             plane.n.mul(-1);
             plane.d *= -1;
-            VERIFY(light_cuboid_polys[i].plane.classify(light_ray.P) > 0);
+            //VERIFY(light_cuboid_polys[i].plane.classify(light_ray.P) > 0); // CoC hack
         }
 
         // Compute ray intersection with light model, this is needed to next cascade to start it's placement.

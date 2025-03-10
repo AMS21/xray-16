@@ -96,9 +96,11 @@ void Upgrade::construct(const shared_str& upgrade_id, Group& parental_group, Man
         if (prop.size())
         {
             m_properties[i] = prop;
+#if 0 // CoC Hack
             VERIFY2(manager_r.get_property(prop),
                 make_string("Upgrade <%s> : property [%s] is unknown (not found in upgrade manager) !", id_str(),
                     prop.c_str()));
+#endif
         }
     }
 

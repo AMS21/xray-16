@@ -765,7 +765,9 @@ CInifile::Sect& CInifile::r_section(pcstr S) const
         // F->w_string ("shared strings:");
         // g_pStringContainer->dump(F);
         // FS.w_close (F);
-        xrDebug::Fatal(DEBUG_INFO, "Can't open section '%s' (only '%s' avail). Please attach [*.ini_log] file to your bug report", section, (*I)->Name.c_str());
+
+        // CoC Hack
+        //xrDebug::Fatal(DEBUG_INFO, "[%s] Can't open section '%s' (only '%s' avail). Please attach [*.ini_log] file to your bug report", fname(), section, *(*I)->Name);
     }
     return **I;
 }

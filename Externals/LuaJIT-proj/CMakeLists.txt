@@ -137,6 +137,10 @@ set(CCOPTIONS "${CCOPT};${XCFLAGS}")
 
 target_compile_options(xrLuaJIT PRIVATE ${CCOPTIONS})
 
+if (USE_ADDRESS_SANITIZER)
+    target_compile_options(xrLuaJIT PRIVATE -fno-sanitize=all)
+endif()
+
 execute_process(
     COMMAND ${CMAKE_C_COMPILER} ${CCOPTIONS} -E lj_arch.h -dM
     WORKING_DIRECTORY "${LUAJIT_DIR}"

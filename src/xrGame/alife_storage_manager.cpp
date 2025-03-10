@@ -108,10 +108,17 @@ void CALifeStorageManager::save(LPCSTR save_name_no_check, bool update_name)
 
 void CALifeStorageManager::load(void* buffer, const u32& buffer_size, LPCSTR file_name)
 {
+    // CoC hack to fix loading saves
+    string_path os_file_name;
+    xr_strcpy(os_file_name, file_name);
+#if !defined(XR_PLATFORM_WINDOWS)
+    convert_path_separators(os_file_name);
+#endif
+
 	//Alundaio: So we can get the fname to make our own custom save states
     luabind::functor<void> funct;
     if (GEnv.ScriptEngine->functor("alife_storage_manager.CALifeStorageManager_load", funct))
-        funct(file_name);
+        funct(os_file_name);
 	//-Alundaio
 
     IReader source(buffer, buffer_size);
@@ -147,7 +154,7 @@ void CALifeStorageManager::load(void* buffer, const u32& buffer_size, LPCSTR fil
 	//Neloreck: For consistency with before/after save callbacks.
     luabind::functor<void> funct2;
     if (GEnv.ScriptEngine->functor("alife_storage_manager.CALifeStorageManager_after_load", funct2))
-        funct2(file_name);
+        funct2(os_file_name);
 	//-Neloreck
 }
 

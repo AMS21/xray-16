@@ -139,10 +139,12 @@ bool actor::add_new_door(float const average_speed, door* const door, doors_type
 {
     if (door->is_locked(state))
     {
+#if 0 // CoC hack, causes excessive spam
 #ifdef DEBUG
         if (g_debug_doors)
             Msg("actor[%s] is waiting for the locked door[%s]", get_name(), door->get_name());
 #endif // #ifdef DEBUG
+#endif
         return false;
     }
 

@@ -191,7 +191,11 @@ void CGameMtlLibrary::Load()
         return;
     }
 
-	m_library_crc32 = crc32(fs.pointer(), fs.length());
+    // andre: Anomaly hack, this is caused by the file being literally just a null byte but length reports 1 which inside crc32 then causes it to deference a null pointer
+    if (fs.length() <= 1)
+        m_library_crc32 = 0xFFFFFFFF;
+    else
+	    m_library_crc32 = crc32(fs.pointer(), fs.length());
 
     R_ASSERT(fs.find_chunk(GAMEMTLS_CHUNK_AUTOINC));
     material_index = fs.r_u32();

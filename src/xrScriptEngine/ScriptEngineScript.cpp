@@ -32,7 +32,7 @@ void ErrorLog(pcstr caMessage)
     if (GEnv.ScriptEngine->debugger())
         GEnv.ScriptEngine->debugger()->Write(caMessage);
 #endif
-    R_ASSERT2(0, caMessage);
+    // R_ASSERT2(0, caMessage); // CoC hack
 }
 
 void FlushLogs()

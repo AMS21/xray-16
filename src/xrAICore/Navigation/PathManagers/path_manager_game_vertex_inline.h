@@ -35,9 +35,11 @@ IC bool CGameVertexPathManager::is_accessible(const _index_type& vertex_id) cons
     if (!m_start_is_accessible)
         return true;
 
+#if 0 // CoC hack, causes excessive spam
 #ifdef DEBUG
     if (m_evaluator->m_vertex_types->empty())
         Msg("! warning : empty vertex types");
+#endif
 #endif
     for (const auto& it : *(m_evaluator->m_vertex_types))
         if (this->graph->mask(it.tMask, this->graph->vertex(vertex_id)->vertex_type()))

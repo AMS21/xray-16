@@ -58,9 +58,13 @@ bool CWeaponMagazined::WeaponSoundExist(pcstr section, pcstr sound_name) const
     pcstr str;
     if (process_if_exists_set(section, sound_name, &CInifile::r_string, str, true))
         return true;
+
+#if 0 // Coc hack, causes excessive warnings
 #ifdef DEBUG
     Msg("~ [WARNING] ------ Sound [%s] does not exist in [%s]", sound_name, section);
 #endif
+#endif
+
     return false;
 }
 

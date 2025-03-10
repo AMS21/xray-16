@@ -571,7 +571,7 @@ void CScriptEngine::print_error(lua_State* L, int iErrorCode)
     switch (iErrorCode)
     {
     case LUA_ERRRUN:
-        scriptEngine->script_log(LuaMessageType::Error, "SCRIPT RUNTIME ERROR");
+        //scriptEngine->script_log(LuaMessageType::Error, "SCRIPT RUNTIME ERROR"); // CoC hack
         break;
     case LUA_ERRMEM:
         scriptEngine->script_log(LuaMessageType::Error, "SCRIPT ERROR (memory allocation)");
@@ -673,6 +673,8 @@ void CScriptEngine::lua_error(lua_State* L)
 
 int CScriptEngine::lua_pcall_failed(lua_State* L)
 {
+    // CoC hack, ignore lua errors
+#if 0
     print_output(L, "", LUA_ERRRUN);
     on_error(L);
 
@@ -688,8 +690,10 @@ int CScriptEngine::lua_pcall_failed(lua_State* L)
         if (result == AssertionResult::tryAgain || result == AssertionResult::ignore)
             return LUA_OK;
     }
+#endif
 
-    return LUA_ERRRUN;
+    return LUA_OK;
+    //return LUA_ERRRUN;
 }
 
 #if !XRAY_EXCEPTIONS

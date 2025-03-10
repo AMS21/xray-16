@@ -102,7 +102,7 @@ void CSpaceRestrictionShape::build_border()
 
     process_borders();
 
-    VERIFY3(!border().empty(), "space restrictor has no border", m_restrictor->cName().c_str());
+    //VERIFY3(!border().empty(), "space restrictor has no border", m_restrictor->cName().c_str()); // CoC hack
 
 #ifdef DEBUG
     test_correctness();

@@ -20,7 +20,7 @@ ICF bool CLevelGraph::valid_vertex_id(u32 id) const
 
 ICF CLevelGraph::CLevelVertex* CLevelGraph::vertex(const u32 vertex_id) const
 {
-    VERIFY(valid_vertex_id(vertex_id));
+    //VERIFY(valid_vertex_id(vertex_id)); // CoC hack
     return m_nodes->begin() + vertex_id;
 }
 

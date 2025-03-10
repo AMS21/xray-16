@@ -167,9 +167,11 @@ void CSoundPlayer::play(
     CSoundCollectionParamsFull& sound = (*I).second.first;
     if ((*I).second.second->m_sounds.empty())
     {
+#if 0 // CoC hack, causes excessive spam
 #ifdef DEBUG
         Msg("- There are no sounds in sound collection \"%s\" with internal type %d (sound_script = %d)",
             sound.m_sound_prefix.c_str(), internal_type, StalkerSpace::eStalkerSoundScript);
+#endif
 #endif
         return;
     }

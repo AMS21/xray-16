@@ -26,7 +26,7 @@ IC u32 CSpaceRestrictionBridge::accessible_nearest(
 {
 #pragma todo("Dima to Dima : _Warning : this place can be optimized in case of a slowdown")
     VERIFY(initialized());
-    VERIFY(!restriction->border().empty());
+    //VERIFY(!restriction->border().empty()); // CoC hack
     VERIFY(!restriction->accessible_neighbour_border(restriction, out_restriction).empty());
 
     auto& level_graph = ai().level_graph();

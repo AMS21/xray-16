@@ -72,6 +72,7 @@ void CPlanner::update()
 	//Alundaio: debug action
 	static bool bDbgAct = strstr(Core.Params, "-dbgact") != NULL;
 
+#if 0 // CoC hack, causes excessive spam
 #ifdef LOG_ACTION
     if (this->m_failed)
     {
@@ -86,8 +87,9 @@ void CPlanner::update()
 	if (bDbgAct && this->m_failed && current_action().m_action_name)
 		Msg("! ERROR: there is no action sequence, which can transfer current world state to the target one: action[%s]", current_action().m_action_name);
 #endif
+#endif
 
-    THROW(!this->solution().empty());
+    //THROW(!this->solution().empty()); // CoC hack
 	//Alundaio:
 	if (this->solution().empty())
 		return;

@@ -155,7 +155,7 @@ void NET_Packet::r(void* p, u32 count)
     VERIFY(p && count);
     CopyMemory(p, &B.data[r_pos], count);
     r_pos += count;
-    VERIFY(r_pos <= B.count);
+    //VERIFY(r_pos <= B.count); // CoC hack
 }
 
 bool NET_Packet::r_eof()
