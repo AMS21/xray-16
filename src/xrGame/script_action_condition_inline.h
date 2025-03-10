@@ -8,6 +8,7 @@
 
 #pragma once
 
+__attribute__((no_sanitize("undefined")))
 IC CScriptActionCondition::CScriptActionCondition(u32 dwFlags, double dTime)
 {
     m_dwFlags = dwFlags;

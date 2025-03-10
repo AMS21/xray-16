@@ -111,7 +111,12 @@ bool CUITextureMaster::InitTexture(
         sh_pair p = {it->second.file, shader_name};
         xr_map<sh_pair, ui_shader>::iterator sh_it = m_shaders.find(p);
         if (sh_it == m_shaders.end())
-            m_shaders[p]->create(shader_name.c_str(), it->second.file.c_str());
+        {
+          m_shaders[p]->create(shader_name.c_str(), it->second.file.c_str());
+          if (!m_shaders[p]->inited())
+              Msg("! UITextureMaster: UI shader '%s' failed to create (texture file '%s')",
+                  shader_name.c_str(), it->second.file.c_str());
+        }
 
         out_shader = m_shaders[p];
         out_rect = (*it).second.rect;
@@ -119,6 +124,10 @@ bool CUITextureMaster::InitTexture(
     }
 
     out_shader->create(shader_name.c_str(), texture_name.c_str());
+    if (!out_shader->inited())
+        Msg("! UITextureMaster: UI shader '%s' failed to create (texture '%s' "
+            "not in texture master)", shader_name.c_str(), texture_name.c_str());
+
     return false;
 }
 
@@ -130,7 +139,12 @@ bool CUITextureMaster::InitTexture(const shared_str& texture_name, CUIStaticItem
         sh_pair p = {it->second.file, shader_name};
         xr_map<sh_pair, ui_shader>::iterator sh_it = m_shaders.find(p);
         if (sh_it == m_shaders.end())
+        {
             m_shaders[p]->create(shader_name.c_str(), it->second.file.c_str());
+            if (!m_shaders[p]->inited())
+                Msg("! UITextureMaster: UI shader '%s' failed to create (texture file '%s')",
+                  shader_name.c_str(), it->second.file.c_str());
+        }
 
         tc->SetShader(m_shaders[p]);
         tc->SetTextureRect((*it).second.rect);
@@ -236,4 +250,7 @@ void CUITextureMaster::GetTextureShader(const shared_str& texture_name, ui_shade
     R_ASSERT3(it != m_textures.end(), "can't find texture", texture_name.c_str());
 
     sh->create("hud\\default", it->second.file.c_str());
+    if (!sh->inited())
+        Msg("! UITextureMaster: UI shader 'hud\\default' failed to create for texture '%s' (file '%s')",
+            texture_name.c_str(), it->second.file.c_str());
 }

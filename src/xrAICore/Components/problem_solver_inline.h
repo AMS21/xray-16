@@ -174,7 +174,11 @@ IC typename CProblemSolverAbstract::condition_evaluator_ptr_type CProblemSolverA
     const condition_type& condition_id) const
 {
     typename EVALUATORS::const_iterator I = evaluators().find(condition_id);
-    THROW(evaluators().end() != I);
+    // Coc hack
+    //THROW(evaluators().end() != I);
+    if (evaluators().end() == I)
+        return nullptr;
+
     return ((*I).second);
 }
 

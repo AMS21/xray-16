@@ -683,7 +683,8 @@ void CKinematicsAnimated::LL_SetChannelFactor(u16 channel, float factor) { chann
 void CKinematicsAnimated::IBlend_Startup()
 {
     _DBG_SINGLE_USE_MARKER;
-    CBlend B;
+    // NOTE(andre): Change made to prevent uninitialized reads in release builds
+    CBlend B{};
     // B.blend				= CBlend::eFREE_SLOT;
 
     B.set_free_state();

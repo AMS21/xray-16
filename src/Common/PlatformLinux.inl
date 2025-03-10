@@ -267,8 +267,8 @@ inline int strncpy_s(char * dest, size_t dst_size, const char * source, size_t n
     for(i = 0; i < end && source[i]; i++)
         dest[i] = source[i];
 
-    if(!source[i] || end == num)
-    {
+    // NOTE(ams21): Changed condition order to avoid out-of-bounds read and make ASAN happy
+    if (end == num || !source[i]) {
         dest[i] = '\0';
         return 0;
     }

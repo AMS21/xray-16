@@ -493,7 +493,7 @@ void CEntityCondition::UpdateHealth()
     m_fDeltaHealth -= CanBeHarmed() ? bleeding_speed : 0;
     m_fDeltaHealth += m_fDeltaTime * m_change_v.m_fV_HealthRestore;
 
-    VERIFY(_valid(m_fDeltaHealth));
+    //VERIFY(_valid(m_fDeltaHealth)); // CoC hack
     ChangeBleeding(m_change_v.m_fV_WoundIncarnation * m_fDeltaTime);
 }
 

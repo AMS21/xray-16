@@ -9,5 +9,9 @@
     "editor.formatOnSave": false
   },
   "files.trimTrailingWhitespace": false,
-  "files.insertFinalNewline": true
+  "files.insertFinalNewline": true,
+  "git.ignoreLimitWarning": true,
+  "Lua.diagnostics.disable": [
+    "lowercase-global"
+  ]
 }

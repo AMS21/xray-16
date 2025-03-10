@@ -471,6 +471,7 @@ void stalker_movement_manager_base::parse_velocity_mask(stalker_movement_params&
     switch (point.velocity & eVelocityMentalState)
     {
     case eVelocityFree: {
+#if 0 // CoC hack, causes excessive spam
 #ifdef DEBUG
         if (m_object->brain().current_action_id() == StalkerDecisionSpace::eWorldOperatorCombatPlanner)
         {
@@ -480,6 +481,7 @@ void stalker_movement_manager_base::parse_velocity_mask(stalker_movement_params&
                     planner.current_action().m_action_name);
         }
 #endif // DEBUG
+#endif
         movement_params.m_mental_state = eMentalStateFree;
         break;
     }
@@ -767,9 +769,11 @@ void stalker_movement_manager_base::check_for_bad_path(stalker_movement_params& 
         float angle = acosf(cos_angle);
         if (angle > BAD_PATH_ANGLE)
         {
+#if 0 // CoC hack, causes excessive spam
 #ifdef DEBUG
             Msg("bad path check changed movement type from RUN to WALK");
 #endif // DEBUG
+#endif
             movement_params.m_movement_type = eMovementTypeWalk;
             return;
         }

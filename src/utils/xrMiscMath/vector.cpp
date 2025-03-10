@@ -290,7 +290,7 @@ T _vector3<T>::normalize_magn()
 template <typename T>
 _vector3<T>& _vector3<T>::normalize()
 {
-	VERIFY(square_magnitude() > std::numeric_limits<T>::min());
+	//VERIFY(square_magnitude() > std::numeric_limits<T>::min()); // CoC hack
 	T mag = _sqrt(T(1) / (x*x + y*y + z*z));
 	x *= mag;
 	y *= mag;

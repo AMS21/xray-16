@@ -265,7 +265,7 @@ void CAI_Crow::state_Flying(float fdt)
     vOldPosition.set(Position());
     XFORM().setHPB(vHPB.x, vHPB.y, vHPB.z);
     Position().mad(vOldPosition, vDirection, fSpeed * fdt);
-    VERIFY2(valid_pos(Position()), dbg_valide_pos_string(Position(), this, "state_Flying		(float fdt)"));
+    //VERIFY2(valid_pos(Position()), dbg_valide_pos_string(Position(), this, "state_Flying		(float fdt)")); // CoC hack
 }
 
 void CAI_Crow::state_DeathFall()

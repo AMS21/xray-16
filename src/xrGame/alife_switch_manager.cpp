@@ -133,8 +133,10 @@ bool CALifeSwitchManager::synchronize_location(CSE_ALifeDynamicObject* I)
 {
     START_PROFILE("ALife/switch/synchronize_location")
 #ifdef DEBUG
+#if 0 // CoC hack
     VERIFY3(ai().level_graph().level_id() == ai().game_graph().vertex(I->m_tGraphID)->level_id(), I->s_name.c_str(),
         I->name_replace());
+#endif
     if (!I->children.empty())
     {
         u32 size = I->children.size();
@@ -192,10 +194,12 @@ void CALifeSwitchManager::try_switch_online(CSE_ALifeDynamicObject* I)
         return;
     }
 
+#if 0 // CoC hack
     VERIFY2((ai().game_graph().vertex(I->m_tGraphID)->level_id() != ai().level_graph().level_id()) ||
             !Level().Objects.net_Find(I->ID) || Level().Objects.dump_all_objects(),
         make_string("frame [%d] time [%d] object [%s] with id [%d] is offline, but is on the level", Device.dwFrame,
             Device.dwTimeGlobal, I->name_replace(), I->ID));
+#endif
 
     I->try_switch_online();
 

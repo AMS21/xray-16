@@ -262,7 +262,8 @@ Fvector CALifeMonsterDetailPathManager::draw_level_position() const
     if (path_size == 1)
         return (object().get_object().Position());
 
-    VERIFY(m_path.back() == object().get_object().m_tGraphID);
+    // CoC hack
+    //VERIFY(m_path.back() == object().get_object().m_tGraphID);
 
     const GameGraph::CGameVertex* current = ai().game_graph().vertex(object().get_object().m_tGraphID);
     const GameGraph::CGameVertex* next = ai().game_graph().vertex(m_path[path_size - 2]);

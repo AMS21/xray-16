@@ -642,6 +642,8 @@ CUICellContainer::CUICellContainer(CUIDragDropListEx* parent)
 {
     m_pParentDragDropList = parent;
     hShader->create("hud" DELIMITER "fog_of_war", "ui" DELIMITER "ui_grid");
+    if (!hShader->inited())
+        Msg("! CUICellContainer: UI shader 'hud\\fog_of_war' failed to create (texture 'ui\\ui_grid')");
     //	hShader_selected->create	( "hud" DELIMITER "fog_of_war", "ui_grid_selected" );
     m_cellSpacing.set(0, 0);
 }
