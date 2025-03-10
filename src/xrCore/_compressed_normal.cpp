@@ -44,7 +44,12 @@ void pvInitializeStatics(void)
 
 u16 pvCompress(const Fvector& vec)
 {
+    // CoC hack
+#if 0
     R_ASSERT1_CURE(_valid(vec), return 0);
+#endif
+    if (! _valid(vec))
+        return 0;
 
     if (fis_zero(vec.x) && fis_zero(vec.y) && fis_zero(vec.z))
         return 0;
@@ -83,12 +88,12 @@ u16 pvCompress(const Fvector& vec)
     int xbits = iFloor(tmp.x * w);
     int ybits = iFloor(tmp.y * w);
 
-    /*
+    // NOTE(andre): Some extra safety checks to avoid invalid values
+    VERIFY( _valid(w) );
     VERIFY( xbits < 127 );
     VERIFY( xbits >= 0 );
     VERIFY( ybits < 127 );
     VERIFY( ybits >= 0 );
-    */
 
     // Now we can be sure that 0<=xp<=126, 0<=yp<=126, 0<=xp+yp<=126
 

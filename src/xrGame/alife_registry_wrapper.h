@@ -47,7 +47,7 @@ const typename _registry_type::_data* CALifeRegistryWrapper<_registry_type>::obj
         return (&(*I).second);
     }
 
-    VERIFY(0xffff != id);
+    //VERIFY(0xffff != id); // CoC hack
 
     typename _registry_type::_data* registy_container = ai().alife().registry((_registry_type*)NULL).object(id, true);
     return registy_container;

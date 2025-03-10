@@ -173,9 +173,10 @@ TEMPLATE_SPECIALIZATION
 IC typename CProblemSolverAbstract::condition_evaluator_ptr_type CProblemSolverAbstract::evaluator(
     const condition_type& condition_id) const
 {
-    typename EVALUATORS::const_iterator I = evaluators().find(condition_id);
-    THROW(evaluators().end() != I);
-    return ((*I).second);
+    if (const auto I = evaluators().find(condition_id); I != evaluators().end())
+        return I->second;
+    else
+        return nullptr;
 }
 
 TEMPLATE_SPECIALIZATION
@@ -188,8 +189,13 @@ TEMPLATE_SPECIALIZATION
 IC void CProblemSolverAbstract::evaluate_condition(typename xr_vector<_operator_condition>::const_iterator& I,
     typename xr_vector<_operator_condition>::const_iterator& E, const condition_type& condition_id) const
 {
-    size_t index = I - m_current_state.conditions().begin();
-    m_current_state.add_condition(I, _operator_condition(condition_id, evaluator(condition_id)->evaluate()));
+    const size_t index = I - m_current_state.conditions().begin();
+
+    if (const auto& eval = evaluator(condition_id); eval)
+        m_current_state.add_condition(I, _operator_condition(condition_id, evaluator(condition_id)->evaluate()));
+    else
+        Msg("! cannot find corresponding evaluator to the property with id %d", condition_id);
+
     I = m_current_state.conditions().begin() + index;
     E = m_current_state.conditions().end();
 }

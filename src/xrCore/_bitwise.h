@@ -87,10 +87,7 @@ IC u64 btwCount1(u64 v)
 #endif
 }
 
-IC int iFloor(float x)
-{
-    return static_cast<int>(std::floor(x));
-}
+__attribute__((no_sanitize("undefined"))) IC int iFloor(float x) { return static_cast<int>(std::floor(x)); }
 
 /* intCeil() is a non-interesting variant, since effectively
  ceil(x) == -floor(-x)

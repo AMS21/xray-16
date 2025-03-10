@@ -68,8 +68,6 @@ struct R_dsgraph_structure
     xrXRC Sectors_xrc;
 
     // Runtime structures
-    xr_vector<R_dsgraph::mapNormal_T::value_type*> nrmPasses;
-    xr_vector<R_dsgraph::mapMatrix_T::value_type*> matPasses;
     xr_vector<R_dsgraph::_LodItem> lstLODs;
     xr_vector<int> lstLODgroups;
     xr_vector<ISpatial*> lstRenderables;
@@ -119,9 +117,6 @@ struct R_dsgraph_structure
 
         val_recorder = nullptr;
         val_feedback = nullptr;
-
-        nrmPasses.clear();
-        matPasses.clear();
 
         lstLODs.clear();
         lstLODgroups.clear();

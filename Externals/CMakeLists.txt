@@ -21,3 +21,7 @@ if (NOT TARGET xrLuabind)
         "Read the build instructions: https://github.com/OpenXRay/xray-16/wiki"
     )
 endif()
+
+# note(andre): Lua does some weird stuff so disable santiizers there
+target_compile_options(xrLuaJIT PRIVATE -fno-sanitize=all)
+target_compile_options(xrLuabind PRIVATE -fno-sanitize=all)
