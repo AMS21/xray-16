@@ -138,7 +138,9 @@ IC s64 _max(s64 x, s64 y) { return x - ((x - y) & ((x - y) >> (sizeof(s64) * 8 -
 
 // return pointer to ".ext"
 IC char* strext(const char* S) { return (char*)strrchr(S, '.'); }
-IC size_t xr_strlen(const char* S) { return strlen(S); }
+
+// NOTE(andre): Let's xr_strlen safely handle null pointers without triggering UBSAN.
+IC size_t xr_strlen(const char* S) { if (S) return strlen(S); else return 0; }
 
 #ifndef MASTER_GOLD
 

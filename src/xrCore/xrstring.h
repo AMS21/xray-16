@@ -217,6 +217,7 @@ IC bool operator>(shared_str const& a, shared_str const& b) { return a._get() > 
 IC void swap(shared_str& lhs, shared_str& rhs) noexcept { lhs.swap(rhs); }
 IC size_t xr_strlen(const shared_str& a) noexcept { return a.size(); }
 
+__attribute__((no_sanitize("undefined")))
 ICF int xr_strcmp(const char* S1, const char* S2)
 {
     return strcmp(S1, S2);

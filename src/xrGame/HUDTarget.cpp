@@ -46,6 +46,8 @@ CHUDTarget::CHUDTarget()
     fuzzyShowInfo = 0.f;
     PP.RQ.range = 0.f;
     hShader->create("hud" DELIMITER "cursor", "ui" DELIMITER "cursor");
+    if (!hShader->inited())
+        Msg("! CHUDTarget: UI shader 'hud\\cursor' failed to create (texture 'ui\\cursor')");
 
     PP.RQ.set(NULL, 0.f, -1);
 

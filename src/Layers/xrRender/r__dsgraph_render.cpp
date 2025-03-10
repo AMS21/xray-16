@@ -51,6 +51,8 @@ void R_dsgraph_structure::render_graph(u32 _priority)
         ZoneScopedN("dsgraph_render_static");
         PIX_EVENT_CTX(cmd_list, dsgraph_render_static);
 
+        xr_vector<mapNormal_T::value_type*> nrmPasses;
+
         for (u32 iPass = 0; iPass < SHADER_PASSES_MAX; ++iPass)
         {
             auto& map = mapNormalPasses[_priority][iPass];
@@ -92,6 +94,8 @@ void R_dsgraph_structure::render_graph(u32 _priority)
     {
         ZoneScopedN("dsgraph_render_dynamic");
         PIX_EVENT_CTX(cmd_list, dsgraph_render_dynamic);
+
+        xr_vector<mapMatrix_T::value_type*> matPasses;
 
         for (u32 iPass = 0; iPass < SHADER_PASSES_MAX; ++iPass)
         {

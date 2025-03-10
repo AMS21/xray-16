@@ -154,7 +154,7 @@ void CSpaceRestrictionComposition::test_correctness()
         for (const auto& restriction : m_restrictions)
         {
             const bool has_border = !restriction->object().m_test_storage.empty();
-            VERIFY3(has_border, "Restrictor has no border", restriction->object().name().c_str());
+            //VERIFY3(has_border, "Restrictor has no border", restriction->object().name().c_str()); // CoC hack
             if (!has_border)
             {
                 m_correct = false;

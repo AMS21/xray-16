@@ -5,6 +5,8 @@ namespace xray::render::RENDER_NAMESPACE
 {
 static constexpr float RSQRTDIV2 = 0.70710678118654752440084436210485f;
 
+// AMS21: Reported here: https://github.com/OpenXRay/xray-16/issues/1807
+__attribute__((no_sanitize("undefined")))
 light::light() : SpatialBase(g_pGamePersistent->SpatialSpace)
 {
     spatial.type = STYPE_LIGHTSOURCE;

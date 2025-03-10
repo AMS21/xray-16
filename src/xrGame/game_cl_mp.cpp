@@ -698,10 +698,16 @@ void game_cl_mp::LoadTeamData(const shared_str& TeamName)
         LPCSTR ShaderType = pSettings->r_string(TeamName, "indicator_shader");
         LPCSTR ShaderTexture = pSettings->r_string(TeamName, "indicator_texture");
         Team.IndicatorShader->create(ShaderType, ShaderTexture);
+        if (!Team.IndicatorShader->inited())
+            Msg("! game_cl_mp: team '%s' indicator UI shader '%s' failed to create (texture '%s')",
+                TeamName.c_str(), ShaderType, ShaderTexture);
 
         ShaderType = pSettings->r_string(TeamName, "invincible_shader");
         ShaderTexture = pSettings->r_string(TeamName, "invincible_texture");
         Team.InvincibleShader->create(ShaderType, ShaderTexture);
+        if (!Team.InvincibleShader->inited())
+            Msg("! game_cl_mp: team '%s' invincible UI shader '%s' failed to create (texture '%s')",
+                TeamName.c_str(), ShaderType, ShaderTexture);
     };
     TeamList.push_back(Team);
 }

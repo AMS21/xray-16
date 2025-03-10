@@ -222,8 +222,11 @@ void CSpaceRestriction::initialize()
     {
         if (!m_out_space_restriction->object().correct())
         {
+            // CoC hack, causes exsessive spamming
+#if 0
             Msg("~ BAD out restrictions combination :");
             Msg("~ %s", m_out_space_restriction->name().c_str());
+#endif
         }
     }
 #endif

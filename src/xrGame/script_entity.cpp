@@ -269,10 +269,12 @@ void CScriptEntity::ProcessScripts()
 
     if (m_tpActionQueue.empty())
     {
+#if 0 // CoC hack, ignore excessive logs
 #ifdef DEBUG
         if (empty_queue)
             GEnv.ScriptEngine->script_log(
                 LuaMessageType::Info, "Object %s has an empty script queue!", object().cName().c_str());
+#endif
 #endif
         return;
     }

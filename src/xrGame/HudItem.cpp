@@ -398,9 +398,11 @@ bool CHudItem::isHUDAnimationExist(pcstr anim_name, bool silent) const
     }
     else
         return false; // No hud section, no warning
+#if 0 // Coc hack, causes excessive warnings
 #ifdef DEBUG
     if (!silent)
         Msg("~ [WARNING] ------ Animation [%s] does not exist in [%s]", anim_name, HudSection().c_str());
+#endif
 #endif
     return false;
 }

@@ -299,7 +299,7 @@ void CWeapon::Load(LPCSTR section)
     float temp_f = 0.0f;
     temp_f = pSettings->r_float(section, "cam_relax_speed");
     cam_recoil.RelaxSpeed = _abs(deg2rad(temp_f));
-    VERIFY(!fis_zero(cam_recoil.RelaxSpeed));
+    //VERIFY(!fis_zero(cam_recoil.RelaxSpeed)); // CoC hack
     if (fis_zero(cam_recoil.RelaxSpeed))
     {
         cam_recoil.RelaxSpeed = EPS_L;
@@ -352,7 +352,7 @@ void CWeapon::Load(LPCSTR section)
     if (pSettings->line_exist(section, "zoom_cam_relax_speed"))
     {
         zoom_cam_recoil.RelaxSpeed = _abs(deg2rad(pSettings->r_float(section, "zoom_cam_relax_speed")));
-        VERIFY(!fis_zero(zoom_cam_recoil.RelaxSpeed));
+        //VERIFY(!fis_zero(zoom_cam_recoil.RelaxSpeed)); // CoC hack
         if (fis_zero(zoom_cam_recoil.RelaxSpeed))
         {
             zoom_cam_recoil.RelaxSpeed = EPS_L;

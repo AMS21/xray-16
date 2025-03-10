@@ -10,6 +10,9 @@
 CHUDCrosshair::CHUDCrosshair()
 {
     hShader->create("hud" DELIMITER "crosshair");
+    if (!hShader->inited())
+        Msg("! CHUDCrosshair: UI shader 'hud\\crosshair' failed to create");
+
     radius = 0;
 }
 

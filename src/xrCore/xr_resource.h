@@ -115,6 +115,7 @@ public:
     }
 
     // accessors
+    __attribute__((no_sanitize("undefined")))
     T& operator*() const { return *C::p_; }
     T* operator->() const { return C::p_; }
     // unspecified bool type

@@ -116,6 +116,11 @@ void CStepManager::on_animation_start(MotionID motion_id, CBlend* blend)
     if (!m_blend)
         return;
 
+    if (m_blend->speed == 0.0f) {
+        Msg("[BAD] ZERO BLEND SPEED IN STEP MANAGER");
+        return;
+    }
+
     if (m_object->character_ik_controller())
         m_object->character_ik_controller()->PlayLegs(blend);
 
@@ -158,7 +163,7 @@ void CStepManager::update(bool b_hud_view)
 
     if (m_step_info.disable)
         return;
-    if (!m_blend)
+    if (!m_blend || m_blend->speed == 0.0f)
         return;
 
     float dist_sqr = m_object->Position().distance_to_sqr(Device.vCameraPosition);
@@ -169,7 +174,17 @@ void CStepManager::update(bool b_hud_view)
     u32 cur_time = Device.dwTimeGlobal;
 
     // время одного цикла анимации
+    // TODO: Yes the problem is get_blend_time() returning nan
+    if (isnan(get_blend_time())) {
+        Msg("[BAD] BLOOD SUCKER UB NAN HERE");
+        return;
+    }
+
     float cycle_anim_time = get_blend_time() / step.cycles;
+    // TODO: Find root cause of this issue and upstream fix
+    VERIFY(!isnan(get_blend_time())); // NOTE: This one fails
+    VERIFY(step.cycles > 0); // NOTE: This one does NOT fail
+    VERIFY(!isnan(cycle_anim_time)); // NOTE: This one fails
 
     // пройти по всем ногам и проверить время
     SGameMtlPair* mtl_pair = 0;
@@ -177,6 +192,8 @@ void CStepManager::update(bool b_hud_view)
 
     for (u32 i = 0; i < m_legs_count; i++)
     {
+        VERIFY(!isnan(step.step[i].time));
+
         // если событие уже обработано для этой ноги, то skip
         if (m_step_info.activity[i].handled && (m_step_info.activity[i].cycle == m_step_info.cur_cycle))
             continue;

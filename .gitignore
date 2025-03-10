@@ -6,7 +6,7 @@
 !.vscode
 
 # exclude binaries and temporary files
-[Bb]in/
+[Bb]in*/
 [Bb]uild*/
 
 # User-specific files
@@ -22,3 +22,8 @@
 
 # exclude doxygen output
 doc/doxygen/html/*
+
+# exclude own stuff
+data/
+fuzzer/
+compile_commands.json
