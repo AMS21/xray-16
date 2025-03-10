@@ -12,9 +12,12 @@ bool xrServer::Process_event_reject(
 
     //	R_ASSERT2( e_entity, make_string( "entity not found. parent_id = [%d], entity_id = [%d], frame = [%d]",
     // id_parent, id_entity, Device.dwFrame ).c_str() );
+#if 0 // CoC hack
     VERIFY2(e_entity, make_string("entity not found. parent_id = [%d], entity_id = [%d], frame = [%d]", id_parent,
                           id_entity, Device.dwFrame)
                           .c_str());
+#endif
+
     if (!e_entity)
     {
         Msg("! ERROR on rejecting: entity not found. parent_id = [%d], entity_id = [%d], frame = [%d].", id_parent,

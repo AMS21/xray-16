@@ -16,6 +16,9 @@ CTracer::CTracer()
     m_circle_size_k = pSettings->read_if_exists<float>("bullet_manager", "fire_circle_k", 2.0f);
 
     sh_Tracer->create(sh_name, tx_name);
+    if (!sh_Tracer->inited())
+        Msg("! CTracer: UI shader '%s' failed to create (texture '%s')",
+        sh_name ? sh_name : "<null>", tx_name ? tx_name : "<null>");
 
     m_aColors.clear();
     string64 LineName;

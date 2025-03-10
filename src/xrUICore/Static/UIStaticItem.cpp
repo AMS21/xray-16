@@ -208,6 +208,9 @@ void CUIStaticItem::Render(float angle)
 void CUIStaticItem::CreateShader(LPCSTR tex, LPCSTR sh)
 {
     hShader->create(sh, tex);
+    if (!hShader->inited())
+        Msg("! CUIStaticItem: UI shader '%s' failed to create (texture '%s')", sh, tex ? tex : "<null>");
+
     uFlags.set(flValidSize, FALSE);
     uFlags.set(flValidTextureRect, FALSE);
 }

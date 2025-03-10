@@ -18,10 +18,19 @@ CHitMarker::CHitMarker()
     InitShader_Grenade(READ_IF_EXISTS(pSettings, r_string, "hud_hitmark", "grenade_mark_texture", nullptr));
 }
 
-void CHitMarker::InitShader(LPCSTR tex_name) { hShader2->create("hud" DELIMITER "default", tex_name); }
+void CHitMarker::InitShader(LPCSTR tex_name)
+{
+    hShader2->create("hud" DELIMITER "default", tex_name);
+    if (!hShader2->inited())
+        Msg("! CHitMarker: UI shader 'hud\\default' failed to create (texture '%s')", tex_name ? tex_name : "<null>");
+}
+
 void CHitMarker::InitShader_Grenade(LPCSTR tex_name)
 {
     hShader_Grenade->create("hud" DELIMITER "default", tex_name); // "hud" DELIMITER "default2"
+    if (!hShader_Grenade->inited())
+        Msg("! CHitMarker: grenade UI shader 'hud\\default' failed to create (texture '%s')",
+            tex_name ? tex_name : "<null>");
 }
 
 //--------------------------------------------------------------------

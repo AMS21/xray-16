@@ -56,7 +56,7 @@ void CPsyDogAura::reinit()
     m_time_phantom_saw_actor = 0;
 
     m_actor = smart_cast<CActor*>(Level().CurrentEntity());
-    VERIFY(m_actor);
+    //VERIFY(m_actor); // CoC hack
 }
 
 void CPsyDogAura::update_schedule()

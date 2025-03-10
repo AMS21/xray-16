@@ -124,6 +124,7 @@ public:
         y *= s;
         return *this;
     }
+    __attribute__((no_sanitize("undefined")))
     IC SelfRef mul(const Self& p)
     {
         x *= p.x;

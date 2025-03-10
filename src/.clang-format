@@ -12,7 +12,11 @@ AlignConsecutiveAssignments: None
 AlignConsecutiveBitFields: AcrossComments
 AlignConsecutiveDeclarations: None
 AlignConsecutiveMacros: None
-AlignConsecutiveShortCaseStatements: AcrossComments
+AlignConsecutiveShortCaseStatements:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: true
+  AlignCaseColons: false
 AlignEscapedNewlines: LeftWithLastLine
 AlignOperands: DontAlign
 AlignTrailingComments:
@@ -94,7 +98,7 @@ IndentRequiresClause: false
 IndentWrappedFunctionNames: false
 InsertBraces: false
 InsertNewlineAtEOF: true
-InsertTrailingCommas: false
+InsertTrailingCommas: Wrapped
 KeepEmptyLines:
   AtEndOfFile: false
   AtStartOfBlock: false
